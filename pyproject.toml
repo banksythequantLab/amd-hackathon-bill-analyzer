@@ -1,0 +1,65 @@
+[project]
+name = "amd-hackathon-bill-analyzer"
+version = "0.1.0"
+description = "Multi-agent legislative bill analyzer on AMD MI300X"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+    { name = "Derek J. Soltis", email = "derek@28usc1782.com" }
+]
+
+# NOTE: vLLM, Qwen tokenizer, LangGraph versions intentionally pinned at
+# install-time on the cloud instance, not here. Day 1 engineer will resolve
+# these via Context7 against current ROCm-supported releases.
+dependencies = [
+    # Core data + storage
+    "lmdb>=1.4.1",
+    "orjson>=3.10",
+    "pydantic>=2.6",
+    "tenacity>=8.2",  # retry wrapper
+
+    # PDF / vision pre-processing
+    "pdfplumber>=0.11",
+    "Pillow>=10",
+
+    # HTTP / tool calls
+    "httpx>=0.27",
+
+    # Telemetry
+    "psutil>=5.9",
+
+    # UI (Day 6)
+    "gradio>=4.40",
+
+    # Agent framework — exact version resolved Day 3 via Context7
+    # "langgraph",
+    # "langchain-core",
+
+    # vLLM client — exact version resolved Day 1 via Context7
+    # "vllm",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.5",
+    "mypy>=1.10",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "B", "UP"]
+ignore = ["E501"]  # let formatter handle long lines
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

@@ -1,0 +1,67 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+
+# --- uv ---
+.uv/
+uv.lock
+
+# --- Secrets / config ---
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# --- Data / artifacts (do NOT commit) ---
+*.lmdb
+*.lmdb-lock
+*.db
+*.sqlite
+data/
+models/
+checkpoints/
+.cache/
+
+# Test fixtures: keep small_bill.pdf, ignore large bills
+tests/fixtures/big_beautiful_bill.pdf
+tests/fixtures/*.pdf
+!tests/fixtures/small_bill.pdf
+!tests/fixtures/.gitkeep
+
+# Eval outputs
+eval/result_*.json
+eval/golden_findings.json
+!eval/.gitkeep
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Logs / telemetry ---
+*.log
+logs/
+telemetry/
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- ROCm / vLLM scratch ---
+.vllm_cache/
+.hf_cache/
