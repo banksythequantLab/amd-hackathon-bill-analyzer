@@ -1,0 +1,17 @@
+# Line ending policy
+# Shell scripts must keep LF endings — they run on Linux (MI300X)
+*.sh text eol=lf
+
+# Python files: LF for portability across Linux container & Windows dev
+*.py text eol=lf
+
+# Markdown / config: native is fine
+*.md text
+*.toml text
+*.yml text
+*.yaml text
+
+# Binary files
+*.pdf binary
+*.lmdb binary
+*.mdb binary
