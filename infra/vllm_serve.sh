@@ -28,48 +28,65 @@
 #   8002 = vision       (Qwen3-VL-8B-Thinking)
 #   8003 = reasoner     (Qwen3-32B)
 #
-# Day 1 TODO before first launch:
-#   - Resolve EXACT HuggingFace ids for SPINE_MODEL and VISION_MODEL via Context7
-#   - Confirm FP8 weights exist on HF (else use --quantization fp8 for on-the-fly)
-#   - Re-test if Qwen3.6 endpoint name is "Qwen3.6" or some variant
+# Models verified on Hugging Face Hub, May 4 2026:
+#   Qwen/Qwen3.6-35B-A3B           BF16 weights, 2.7M+ downloads
+#   Qwen/Qwen3.6-35B-A3B-FP8       FP8 pre-quantized, 2.5M+ downloads
+#   Qwen/Qwen3-VL-8B-Thinking      BF16 weights, 721K+ downloads
+#   Qwen/Qwen3-VL-8B-Thinking-FP8  FP8 pre-quantized, 31K+ downloads
+#   Qwen/Qwen3-32B                 BF16 weights, 4.7M+ downloads
+#   Qwen/Qwen3-32B-FP8             FP8 pre-quantized, 277K+ downloads
+#
+# Pre-quantized FP8 weights mean no on-the-fly quant step — cold start
+# saves ~10-15 min vs. quantizing BF16 at launch.
 
 set -euo pipefail
 
-# --- Config ----------------------------------------------------------------
-# CONFIRM these HF ids on Day 1 — Qwen3.6 was released ~April 2026 and
-# the canonical id may differ from this guess. Context7 vLLM docs first.
-SPINE_MODEL="${SPINE_MODEL:-Qwen/Qwen3.6-35B-A3B-Instruct}"
-VISION_MODEL="${VISION_MODEL:-Qwen/Qwen3-VL-8B-Thinking}"
-REASONER_MODEL="${REASONER_MODEL:-Qwen/Qwen3-32B}"
+# --- Model selector (BF16 vs pre-quantized FP8) ----------------------------
+# When PRECISION=fp8, prefer the pre-quantized HF id to skip on-the-fly quant.
 
+resolve_model() {
+    local role="$1" precision="$2"
+    case "$role:$precision" in
+        spine:bf16)     echo "Qwen/Qwen3.6-35B-A3B" ;;
+        spine:fp8)      echo "Qwen/Qwen3.6-35B-A3B-FP8" ;;
+        vision:bf16)    echo "Qwen/Qwen3-VL-8B-Thinking" ;;
+        vision:fp8)     echo "Qwen/Qwen3-VL-8B-Thinking-FP8" ;;
+        reasoner:bf16)  echo "Qwen/Qwen3-32B" ;;
+        reasoner:fp8)   echo "Qwen/Qwen3-32B-FP8" ;;
+        *) echo "ERROR: unknown role:precision '$role:$precision'" >&2; exit 1 ;;
+    esac
+}
+
+# --- Config ----------------------------------------------------------------
 PRECISION="${PRECISION:-fp8}"
 PRECISION_REASONER="${PRECISION_REASONER:-bf16}"
 MAX_LEN="${MAX_LEN:-262144}"
 GPU_MEM_UTIL="${GPU_MEM_UTIL:-0.92}"
 
+# Default scratch paths — override via env if your instance uses a different mount
 LOG_DIR="${LOG_DIR:-/scratch/vllm-logs}"
 PID_DIR="${PID_DIR:-/scratch/vllm-pids}"
-mkdir -p "$LOG_DIR" "$PID_DIR"
+HF_HOME="${HF_HOME:-/scratch/hf-cache}"
+mkdir -p "$LOG_DIR" "$PID_DIR" "$HF_HOME"
+export HF_HOME
 
 # --- Helpers ---------------------------------------------------------------
-
-quant_flag() {
-    case "$1" in
-        fp8)  echo "--quantization fp8" ;;
-        bf16) echo "" ;;
-        *)    echo "ERROR: unknown precision='$1' (expected fp8|bf16)" >&2; exit 1 ;;
-    esac
-}
 
 dtype_flag() {
     case "$1" in
         fp8)  echo "--dtype auto" ;;
         bf16) echo "--dtype bfloat16" ;;
+        *)    echo "ERROR: unknown precision='$1'" >&2; exit 1 ;;
     esac
 }
 
+# Note: with pre-quantized FP8 weights, --quantization is NOT needed.
+# vLLM auto-detects from the model config. Only set it for on-the-fly quant.
+
 launch() {
-    local name="$1" model="$2" port="$3" precision="$4" extra="${5:-}"
+    local name="$1" role="$2" port="$3" precision="$4" extra="${5:-}"
+    local model
+    model=$(resolve_model "$role" "$precision")
     local log_file="$LOG_DIR/$name.log"
     local pid_file="$PID_DIR/$name.pid"
 
@@ -87,7 +104,7 @@ launch() {
         --gpu-memory-utilization "$GPU_MEM_UTIL" \
         --enable-prefix-caching \
         --trust-remote-code \
-        $(dtype_flag "$precision") $(quant_flag "$precision") $extra \
+        $(dtype_flag "$precision") $extra \
         > "$log_file" 2>&1 &
     echo $! > "$pid_file"
     echo "[$name] pid=$(cat "$pid_file")  log=$log_file"
@@ -126,7 +143,7 @@ status() {
 }
 
 wait_healthy() {
-    local port="$1" name="$2" max_wait=600
+    local port="$1" name="$2" max_wait=900
     echo "[$name] waiting for /health on port $port (up to ${max_wait}s)..."
     local elapsed=0
     while ! curl -sf "http://localhost:$port/health" >/dev/null 2>&1; do
@@ -146,30 +163,30 @@ cmd="${1:-all}"
 
 case "$cmd" in
     spine)
-        launch spine "$SPINE_MODEL" 8001 "$PRECISION"
+        launch spine spine 8001 "$PRECISION"
         wait_healthy 8001 spine
         ;;
     vision)
         # VL-8B is small — keep at FP8 even if reasoner runs BF16
-        launch vision "$VISION_MODEL" 8002 fp8 "--limit-mm-per-prompt image=10"
+        launch vision vision 8002 fp8 "--limit-mm-per-prompt image=10"
         wait_healthy 8002 vision
         ;;
     reasoner)
         # Reasoner runs BF16 by default to preserve citation/math fidelity.
         # The demo swaps to FP8 by setting PRECISION_REASONER=fp8.
-        launch reasoner "$REASONER_MODEL" 8003 "$PRECISION_REASONER"
+        launch reasoner reasoner 8003 "$PRECISION_REASONER"
         wait_healthy 8003 reasoner
         ;;
     all)
         # Launch order matters: spine first (biggest KV-cache footprint),
         # then vision, then reasoner.
-        launch spine "$SPINE_MODEL" 8001 "$PRECISION"
+        launch spine spine 8001 "$PRECISION"
         wait_healthy 8001 spine || exit 1
 
-        launch vision "$VISION_MODEL" 8002 fp8 "--limit-mm-per-prompt image=10"
+        launch vision vision 8002 fp8 "--limit-mm-per-prompt image=10"
         wait_healthy 8002 vision || exit 1
 
-        launch reasoner "$REASONER_MODEL" 8003 "$PRECISION_REASONER"
+        launch reasoner reasoner 8003 "$PRECISION_REASONER"
         wait_healthy 8003 reasoner || exit 1
 
         echo
