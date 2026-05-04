@@ -64,6 +64,17 @@ class AgentBase:
 
     # ------------------------------------------------------------------
     # Core LLM call (synchronous, OpenAI-compatible)
+    #
+    # Hardened against the Windows + httpx + chunked-encoding hang we hit
+    # repeatedly during development: spine returned "200 OK" cleanly but
+    # Python stayed blocked on response read for minutes, then never
+    # returned. Mitigations:
+    #   - Connection: close header so server tears the socket down cleanly
+    #   - http2=False (we don't want any HTTP/2 path complexity)
+    #   - Explicit response.read() before .json() so the body is drained
+    #     in one go rather than chunked-streamed through .json()
+    #   - Granular timeouts (connect, read, write, pool) instead of one
+    #     blanket value
     # ------------------------------------------------------------------
     def call_llm(self, messages: list[dict], stream: bool = False) -> dict:
         payload = {
@@ -72,9 +83,19 @@ class AgentBase:
             "max_tokens": self.max_tokens,
             "temperature": self.temperature,
         }
-        with httpx.Client(timeout=600.0) as client:
-            r = client.post(f"{self.target_endpoint}/chat/completions", json=payload)
+        # Connect fast, but read can take minutes on a 230K-token cold prefill.
+        # Cap read at 15 min — anything longer is a real problem worth surfacing.
+        timeout = httpx.Timeout(connect=10.0, read=900.0, write=120.0, pool=30.0)
+        headers = {"Connection": "close", "Accept": "application/json"}
+        with httpx.Client(timeout=timeout, http2=False, headers=headers) as client:
+            r = client.post(
+                f"{self.target_endpoint}/chat/completions",
+                json=payload,
+            )
             r.raise_for_status()
+            # Drain the body explicitly before json() — works around the hang
+            # where chunked-encoding response bodies stayed half-read.
+            r.read()
             return r.json()
 
     # ------------------------------------------------------------------
