@@ -34,6 +34,10 @@ class CrossReferenceOutput(BaseModel):
     citations: list[IdentifiedCitation] = Field(default_factory=list)
     note: Optional[str] = Field(default=None, description="Optional note about citation density, gaps, etc.")
 
+    # Allow the truncation-recovery flag from base.extract_json without breaking validation.
+    # When True, the citations list is partial (the LLM was cut off at max_tokens).
+    model_config = {"extra": "allow"}
+
 
 class UscCrossReference(AgentBase):
     """Pass 1 of USC cross-reference: identify citations only.
@@ -46,7 +50,7 @@ class UscCrossReference(AgentBase):
     target_endpoint = SPINE_ENDPOINT
     target_model = "spine"
     temperature = 0.0
-    max_tokens = 4000
+    max_tokens = 8000   # ~30 citations with bill_context excerpts ≈ 6-7K tokens
     output_schema = CrossReferenceOutput
 
     def system_prompt(self) -> str:
@@ -85,6 +89,7 @@ Return a JSON object with this exact shape:
 Important:
 - Cap citations at 30 total. If the chunk has more, focus on the most consequential.
 - The "relevance" field should be one of: amend, repeal, cross-reference, definitions, transitional, other.
+- The "bill_context" field MUST be 30 words or fewer. Just enough context to recognize where in the bill the citation appears. DO NOT quote whole statutory paragraphs.
 - Skip purely procedural references (e.g. "1 USC 1" rules of construction) unless the bill specifically modifies them.
 - Return ONLY the JSON object, no commentary, no markdown fences.
 

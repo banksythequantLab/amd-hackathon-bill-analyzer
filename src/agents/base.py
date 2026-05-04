@@ -92,6 +92,109 @@ class AgentBase:
     # the LAST balanced JSON object in the response
     # ------------------------------------------------------------------
     @staticmethod
+    def _try_parse_truncated(text: str) -> Optional[dict]:
+        """Attempt to recover from a JSON response truncated at max_tokens.
+
+        Strategy: walk forward from start tracking bracket depth and string
+        state. When we run out of input, close the open structures from the
+        deepest level out, dropping the last (likely incomplete) array element.
+        """
+        # Find the start of the JSON object
+        start = text.find("{")
+        if start < 0:
+            return None
+        s = text[start:]
+
+        # Walk char by char, tracking string state and a stack of open delimiters
+        stack: list[str] = []  # entries: '{' or '['
+        in_string = False
+        escape = False
+        # Track positions of last comma at the OUTERMOST array/object level
+        # so we can drop the trailing partial element.
+        last_array_comma_at_depth: dict[int, int] = {}
+
+        for i, ch in enumerate(s):
+            if escape:
+                escape = False
+                continue
+            if ch == "\\":
+                escape = True
+                continue
+            if ch == '"':
+                in_string = not in_string
+                continue
+            if in_string:
+                continue
+            if ch == "{":
+                stack.append("{")
+            elif ch == "[":
+                stack.append("[")
+            elif ch == "}":
+                if stack and stack[-1] == "{":
+                    stack.pop()
+            elif ch == "]":
+                if stack and stack[-1] == "[":
+                    stack.pop()
+            elif ch == ",":
+                # Only track commas at array level (the truncation typically
+                # cuts off mid-citation in the citations array)
+                if stack and stack[-1] == "[":
+                    last_array_comma_at_depth[len(stack)] = i
+
+        # If stack is empty, the full JSON parsed without truncation — caller
+        # would have caught it. We're only here for truncated input.
+        if not stack:
+            return None
+
+        # We're truncated. Truncate `s` to the last "safe" array comma,
+        # then close all open arrays/objects.
+        if last_array_comma_at_depth:
+            deepest_array_depth = max(last_array_comma_at_depth.keys())
+            cut = last_array_comma_at_depth[deepest_array_depth]
+            # Cut just before the comma (drop the partial element after it)
+            s = s[:cut]
+            # Recompute stack state for the truncated string
+            in_string = False
+            escape = False
+            stack = []
+            for ch in s:
+                if escape:
+                    escape = False
+                    continue
+                if ch == "\\":
+                    escape = True
+                    continue
+                if ch == '"':
+                    in_string = not in_string
+                    continue
+                if in_string:
+                    continue
+                if ch == "{":
+                    stack.append("{")
+                elif ch == "[":
+                    stack.append("[")
+                elif ch == "}":
+                    if stack and stack[-1] == "{": stack.pop()
+                elif ch == "]":
+                    if stack and stack[-1] == "[": stack.pop()
+
+        # Close any still-open delimiters (deepest first)
+        suffix = ""
+        for opener in reversed(stack):
+            suffix += "}" if opener == "{" else "]"
+
+        candidate = s + suffix
+        try:
+            parsed = json.loads(candidate)
+            if isinstance(parsed, dict):
+                # Mark that we recovered from truncation
+                parsed["_truncated_recovered"] = True
+                return parsed
+        except json.JSONDecodeError:
+            return None
+        return None
+
+    @staticmethod
     def extract_json(content: str) -> Optional[dict]:
         # Strip <think>...</think> blocks (Qwen3 Thinking variants) — both closed
         # tags and the leading-`<think>` / trailing-`</think>` stragglers.
@@ -113,14 +216,27 @@ class AgentBase:
             except json.JSONDecodeError:
                 pass
 
-        # Find the OUTERMOST balanced JSON object. Scan forward from the FIRST
-        # `{` to its matching `}` (depth back to 0). That gives us the wrapping
-        # envelope rather than an inner object.
+        # Try the OUTERMOST balanced JSON object first. Scan forward from the
+        # FIRST `{` to its matching `}` (depth back to 0). That gives us the
+        # wrapping envelope rather than an inner object.
         first_open = content.find("{")
-        while first_open >= 0:
+        if first_open >= 0:
             depth = 0
+            in_string = False
+            escape = False
             for i in range(first_open, len(content)):
                 ch = content[i]
+                if escape:
+                    escape = False
+                    continue
+                if ch == "\\":
+                    escape = True
+                    continue
+                if ch == '"':
+                    in_string = not in_string
+                    continue
+                if in_string:
+                    continue
                 if ch == "{":
                     depth += 1
                 elif ch == "}":
@@ -132,17 +248,33 @@ class AgentBase:
                             if isinstance(parsed, dict):
                                 return parsed
                         except json.JSONDecodeError:
-                            pass
+                            break  # malformed; try truncation recovery
                         break
-            # didn't parse; try the next `{` after this position
-            first_open = content.find("{", first_open + 1)
+
+        # Outer parse failed — try truncation recovery (typical for max_tokens cutoffs)
+        recovered = AgentBase._try_parse_truncated(content)
+        if recovered is not None:
+            return recovered
 
         # Fallback: try a top-level JSON ARRAY (some models return bare lists)
         first_bracket = content.find("[")
-        while first_bracket >= 0:
+        if first_bracket >= 0:
             depth = 0
+            in_string = False
+            escape = False
             for i in range(first_bracket, len(content)):
                 ch = content[i]
+                if escape:
+                    escape = False
+                    continue
+                if ch == "\\":
+                    escape = True
+                    continue
+                if ch == '"':
+                    in_string = not in_string
+                    continue
+                if in_string:
+                    continue
                 if ch == "[":
                     depth += 1
                 elif ch == "]":
@@ -152,13 +284,9 @@ class AgentBase:
                         try:
                             parsed = json.loads(candidate)
                             if isinstance(parsed, list):
-                                # Wrap in a synthetic envelope so downstream
-                                # schema validation can adapt.
                                 return {"_bare_array": parsed}
                         except json.JSONDecodeError:
-                            pass
-                        break
-            first_bracket = content.find("[", first_bracket + 1)
+                            break
 
         return None
 

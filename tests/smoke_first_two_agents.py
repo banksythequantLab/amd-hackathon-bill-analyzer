@@ -61,26 +61,25 @@ def main() -> int:
         json.dumps(summary.output, indent=2), encoding="utf-8")
 
     # ----------------------------------------------------------------
-    # Agent 2: USC Cross-Reference (reasoner endpoint, NOT long-context)
+    # Agent 2: USC Cross-Reference (spine endpoint, full chunk)
     #
-    # Reasoner only has 32K context. Chunk 1 is 246K tokens — too big to fit.
-    # For this smoke we'll truncate to the first ~25K tokens (~80K chars) so
-    # it fits within reasoner's window. Production would route this agent to
-    # the spine instead, OR we can split the chunk further OR run the agent
-    # on chunk-summaries rather than full text. For Day 2 we prove the pattern.
+    # USC now runs on spine (262K context). This means it gets the FULL chunk
+    # AND benefits from APC: the summarizer just primed spine with this same
+    # chunk text, so USC's prefill should be largely a cache hit. Watch the
+    # second agent's TTFT — it should be dramatically faster than the first.
     # ----------------------------------------------------------------
-    print(f"\n[smoke] === USC Cross-Reference (reasoner, truncated) ===")
-    truncated_text = chunk["text"][:80_000]  # ~25K tokens
-    print(f"[smoke]   truncating chunk text from {len(chunk['text']):,} -> {len(truncated_text):,} chars")
+    print(f"\n[smoke] === USC Cross-Reference (spine, full chunk, APC warm) ===")
     xref = UscCrossReference()
     t0 = time.perf_counter()
     crossref = xref.run(
-        chunk_text=truncated_text,
+        chunk_text=chunk["text"],
         chunk_id=chunk["chunk_id"],
         title_marker=chunk["marker_label"],
     )
     dt = time.perf_counter() - t0
     print(f"[smoke]   elapsed: {dt:.1f}s")
+    print(f"[smoke]   APC-WARMUP COMPARISON: summarizer was {summary.elapsed_ms/1000:.1f}s, "
+          f"USC xref was {dt:.1f}s")
     print(f"[smoke]   tokens:  prompt={crossref.prompt_tokens:,}  completion={crossref.completion_tokens:,}")
     if crossref.errors:
         print(f"[smoke]   ERRORS: {crossref.errors}")
