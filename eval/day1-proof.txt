@@ -1,0 +1,36 @@
+=== DOCKER PS THREE MODELS ===
+NAMES           STATUS          PORTS
+vllm-vision     Up 15 minutes   
+vllm-reasoner   Up 39 minutes   
+vllm-spine      Up 54 minutes   
+
+=== ROCM-SMI VRAM ===
+
+
+GPU[0]		: GPU use (%): 0
+GPU[0]		: VRAM Total Memory (B): 205822885888
+GPU[0]		: VRAM Total Used Memory (B): 176305127424
+
+=== APC BENCHMARK JSON ===
+{
+  "model": "spine",
+  "endpoint": "http://localhost:8001/v1",
+  "prefix_tokens": 99727,
+  "request_a_cold": {
+    "ttft_ms": 51046.1,
+    "total_ms": 52097.8,
+    "output_chars": 261,
+    "stream_chunks": 50,
+    "question": "Summarize the first major Title of the bill in two sentences."
+  },
+  "request_b_warm": {
+    "ttft_ms": 542.2,
+    "total_ms": 1604.1,
+    "output_chars": 238,
+    "stream_chunks": 50,
+    "question": "List three named entities mentioned in the bill text above."
+  },
+  "speedup_ttft": 94.15,
+  "passes_3x_floor": true,
+  "passes_5x_target": true
+}
