@@ -225,7 +225,9 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("pdf", type=Path, help="Bill PDF path")
-    ap.add_argument("--max-tokens", type=int, default=250_000)
+    ap.add_argument("--max-tokens", type=int, default=240_000,
+                    help="cl100k tokens per chunk; default 240K leaves ~22K headroom for "
+                         "prompt overhead and Qwen tokenizer's ~5%% inflation vs cl100k")
     ap.add_argument("--out", type=Path, help="Optional path to write JSON")
     ap.add_argument("--summary-only", action="store_true",
                     help="Print only chunk summaries to stdout, don't write text")
