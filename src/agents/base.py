@@ -113,23 +113,53 @@ class AgentBase:
             except json.JSONDecodeError:
                 pass
 
-        # Try LAST balanced top-level JSON
-        last_close = content.rfind("}")
-        while last_close > 0:
+        # Find the OUTERMOST balanced JSON object. Scan forward from the FIRST
+        # `{` to its matching `}` (depth back to 0). That gives us the wrapping
+        # envelope rather than an inner object.
+        first_open = content.find("{")
+        while first_open >= 0:
             depth = 0
-            for i in range(last_close, -1, -1):
+            for i in range(first_open, len(content)):
                 ch = content[i]
-                if ch == "}":
+                if ch == "{":
                     depth += 1
-                elif ch == "{":
+                elif ch == "}":
                     depth -= 1
                     if depth == 0:
-                        candidate = content[i:last_close + 1]
+                        candidate = content[first_open:i + 1]
                         try:
-                            return json.loads(candidate)
+                            parsed = json.loads(candidate)
+                            if isinstance(parsed, dict):
+                                return parsed
                         except json.JSONDecodeError:
-                            break
-            last_close = content.rfind("}", 0, last_close)
+                            pass
+                        break
+            # didn't parse; try the next `{` after this position
+            first_open = content.find("{", first_open + 1)
+
+        # Fallback: try a top-level JSON ARRAY (some models return bare lists)
+        first_bracket = content.find("[")
+        while first_bracket >= 0:
+            depth = 0
+            for i in range(first_bracket, len(content)):
+                ch = content[i]
+                if ch == "[":
+                    depth += 1
+                elif ch == "]":
+                    depth -= 1
+                    if depth == 0:
+                        candidate = content[first_bracket:i + 1]
+                        try:
+                            parsed = json.loads(candidate)
+                            if isinstance(parsed, list):
+                                # Wrap in a synthetic envelope so downstream
+                                # schema validation can adapt.
+                                return {"_bare_array": parsed}
+                        except json.JSONDecodeError:
+                            pass
+                        break
+            first_bracket = content.find("[", first_bracket + 1)
+
         return None
 
     # ------------------------------------------------------------------
