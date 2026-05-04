@@ -45,6 +45,14 @@ BOUNDARY_PATTERNS = [
     ("Subtitle",  re.compile(r"^\s*(Subtitle\s+([A-Z]|[0-9]+))(?:\b|$)",     re.MULTILINE)),
 ]
 
+# Default token budget per chunk. Empirically calibrated against the spine
+# (Qwen3-30B-A3B-Instruct-2507-FP8) tokenizer: legislative English inflates
+# from cl100k_base to Qwen at ~16.5% (measured on BBB-2021 chunk: 234,379
+# cl100k -> 272,946 Qwen). With a 262,144-token spine context and a 1500-
+# token output budget, the safe input ceiling is ~223,800 cl100k tokens.
+# We set 220K to leave additional safety margin for prompt-wrapper overhead.
+MAX_TOKENS_DEFAULT = 220_000
+
 
 @dataclass
 class Boundary:
@@ -225,9 +233,9 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("pdf", type=Path, help="Bill PDF path")
-    ap.add_argument("--max-tokens", type=int, default=240_000,
-                    help="cl100k tokens per chunk; default 240K leaves ~22K headroom for "
-                         "prompt overhead and Qwen tokenizer's ~5%% inflation vs cl100k")
+    ap.add_argument("--max-tokens", type=int, default=MAX_TOKENS_DEFAULT,
+                    help=f"cl100k tokens per chunk; default {MAX_TOKENS_DEFAULT:,} "
+                         f"calibrated for Qwen-tokenizer 16.5% inflation on legal text")
     ap.add_argument("--out", type=Path, help="Optional path to write JSON")
     ap.add_argument("--summary-only", action="store_true",
                     help="Print only chunk summaries to stdout, don't write text")

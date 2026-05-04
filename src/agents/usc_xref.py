@@ -20,7 +20,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from .base import AgentBase, REASONER_ENDPOINT
+from .base import AgentBase, SPINE_ENDPOINT
 
 
 class IdentifiedCitation(BaseModel):
@@ -36,12 +36,17 @@ class CrossReferenceOutput(BaseModel):
 
 
 class UscCrossReference(AgentBase):
-    """Pass 1 of USC cross-reference: identify citations only."""
+    """Pass 1 of USC cross-reference: identify citations only.
+
+    Runs on the SPINE endpoint (262K context) because bill chunks routinely
+    exceed the reasoner's 32K window. APC means the second agent against the
+    same chunk gets a warm KV cache and runs much faster than the first.
+    """
     name = "usc_cross_reference"
-    target_endpoint = REASONER_ENDPOINT
-    target_model = "reasoner"
+    target_endpoint = SPINE_ENDPOINT
+    target_model = "spine"
     temperature = 0.0
-    max_tokens = 8000  # Reasoner emits a long <think> chain before JSON
+    max_tokens = 4000
     output_schema = CrossReferenceOutput
 
     def system_prompt(self) -> str:

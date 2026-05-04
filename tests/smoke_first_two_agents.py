@@ -60,7 +60,9 @@ def load_chunk(bill: str, chunk_id: str) -> dict:
         text, page_starts = extract_text_with_pages(bill_pdf)
         enc = tiktoken.get_encoding("cl100k_base")
         boundaries = find_boundaries(text, page_starts)
-        chunks = pack_chunks(text, boundaries, page_starts, 250_000, enc)
+        # Use the chunker's calibrated default (see MAX_TOKENS_DEFAULT comment).
+        from src.chunking.smart_chunker import MAX_TOKENS_DEFAULT
+        chunks = pack_chunks(text, boundaries, page_starts, MAX_TOKENS_DEFAULT, enc)
         from dataclasses import asdict
         data = [asdict(c) for c in chunks]
         p.write_text(json.dumps(data), encoding="utf-8")
