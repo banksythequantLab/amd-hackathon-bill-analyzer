@@ -1,0 +1,1275 @@
+{
+  "bill": "bbb",
+  "chunk_id": "ch01",
+  "title_marker": "TITLE I\u2014AGRICULTURE",
+  "chunk_tokens_cl100k": 199381,
+  "chunk_pages": [
+    3,
+    542
+  ],
+  "agents": {
+    "summarizer": {
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "TITLE I\u2014AGRICULTURE",
+        "one_sentence_summary": "This section allocates over $100 billion to fund forest restoration, wildfire prevention, rural development, and agricultural research, with a focus on climate resilience, equity, and workforce development.",
+        "bullets": [
+          "Allocates $10 billion for hazardous fuels reduction projects in the wildland-urban interface to protect communities from wildfires.",
+          "Provides $4.5 billion for vegetation management and forest restoration projects on National Forest System land, prioritizing ecological integrity and climate resilience.",
+          "Authorizes $2.25 billion for a Civilian Climate Corps to support forest management and restoration on both public and private lands.",
+          "Dedicates $9 billion to grants for non-Federal land projects, including wildfire protection, community resilience, and forest recovery after fires.",
+          "Allocates $1.25 billion for the Forest Legacy Program to acquire land with high carbon sequestration potential and support community resilience.",
+          "Provides $3 billion for urban and community forestry programs to increase tree canopy and address environmental justice in underserved areas.",
+          "Appropriates $1.25 billion for research on climate change impacts, carbon sequestration, and forest health to inform policy and management.",
+          "Establishes $100 million for a Forest Health Monitoring Program to combat invasive species on non-Federal lands."
+        ],
+        "affected_groups": [
+          "National Forest System land managers",
+          "Tribal, state, and local governments",
+          "Private landowners",
+          "Underserved communities",
+          "Rural and urban residents",
+          "Environmental and climate researchers"
+        ]
+      },
+      "elapsed_s": 21.4,
+      "prompt_tokens": 232853,
+      "completion_tokens": 369,
+      "ok": true,
+      "note": "APC-warm rerun. Cold first-run was 316.4s (14.8x speedup from APC reuse)."
+    },
+    "usc_cross_ref": {
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [
+          {
+            "citation": "16 U.S.C. 7303",
+            "bill_context": "Funds for vegetation management projects carried out on National Forest System land under section 4003 of the Omnibus Public Land Management Act of 2009.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "16",
+              "section": "7303",
+              "heading": "Collaborative Forest Landscape Restoration Program",
+              "text_excerpt": "\u00a7 7303. Collaborative Forest Landscape Restoration Program (a) In general The Secretary, in consultation with the Secretary of the Interior, shall establish a Collaborative Forest Landscape Restoration Program to select and fund ecological restoration treatments for priority forest landscapes in accordance with\u2014 (1) the Endangered Species Act of 1973 ( 16 U.S.C. 1531 et seq.); (2) the National Environmental Policy Act of 1969 ( 42 U.S.C. 4321 et seq.); and (3) any other applicable law. (b) Eligibility criteria To be eligible for nomination under subsection (c), a collaborative forest landscape...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section7303&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "16 U.S.C. 6511",
+            "bill_context": "Definition of 'at-risk community' and 'wildland-urban interface' in the Healthy Forests Restoration Act of 2003.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "16",
+              "section": "6511",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 6511. Definitions In this subchapter: (1) At-risk community The term \u201cat-risk community\u201d means an area\u2014 (A) that is comprised of\u2014 (i) an interface community as defined in the notice entitled \u201cWildland Urban Interface Communities Within the Vicinity of Federal Lands That Are at High Risk From Wildfire\u201d issued by the Secretary of Agriculture and the Secretary of the Interior in accordance with title IV of the Department of the Interior and Related Agencies Appropriations Act, 2001 ( 114 Stat. 1009 ) (66 Fed. Reg. 753, January 4, 2001 ); or (ii) a group of homes and other structures with basic ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section6511&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "16 U.S.C. 6542(d)(1)",
+            "bill_context": "Definition of 'water source management plan' under the Healthy Forests Restoration Act of 2003.",
+            "relevance": "definitions",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "16 U.S.C. 6543(a)(3)",
+            "bill_context": "Definition of 'watershed protection and restoration action plan' under the Healthy Forests Restoration Act of 2003.",
+            "relevance": "definitions",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "16 U.S.C. 2101 et seq.",
+            "bill_context": "Funding for State Fire Assistance and Volunteer Fire Assistance programs under the Cooperative Forestry Assistance Act of 1978.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "16",
+              "section": "2101",
+              "heading": "Findings, purpose, and policy",
+              "text_excerpt": "\u00a7 2101. Findings, purpose, and policy (a) Findings Congress finds that\u2014 (1) most of the productive forest land of the United States is in private, State, and local governmental ownership, and the capacity of the United States to produce renewable forest resources is significantly dependent on such non-Federal forest lands; (2) adequate supplies of timber and other forest resources are essential to the United States, and adequate supplies are dependent on efficient methods for establishing, managing, and harvesting trees and processing, marketing, and using wood and wood products; (3) nearly on...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section2101&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "16 U.S.C. 2101a",
+            "bill_context": "Funding for State-wide forest resource strategies under the Cooperative Forestry Assistance Act of 1978.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "16",
+              "section": "2101a",
+              "heading": "State-wide assessment and strategies for forest resources",
+              "text_excerpt": "\u00a7 2101a. State-wide assessment and strategies for forest resources (a) Assessment and strategies for forest resources For a State to be eligible to receive funds under the authorities of this chapter, the State forester of that State or equivalent State official shall develop and submit to the Secretary, not later than two years after the date of enactment of the Food, Conservation, and Energy Act of 2008, the following: (1) A State-wide assessment of forest resource conditions, including\u2014 (A) the conditions and trends of forest resources in that State; (B) the threats to forest lands and reso...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section2101a&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "16 U.S.C. 2109a",
+            "bill_context": "Funding for competitive grant program under the Cooperative Forestry Assistance Act of 1978 for climate mitigation or forest resilience practices.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "16",
+              "section": "2109a",
+              "heading": "State and private forest landscape-scale restoration program",
+              "text_excerpt": "\u00a7 2109a. State and private forest landscape-scale restoration program (a) Purpose The purpose of this section is to encourage collaborative, science-based restoration of priority forest landscapes. (b) Definitions In this section: (1) Indian tribe The term \u201cIndian tribe\u201d has the meaning given the term in section 5304 of title 25 . (2) Nonindustrial private forest land The term \u201cnonindustrial private forest land\u201d means land that\u2014 (A) is rural, as determined by the Secretary; (B) has existing tree cover or is suitable for growing trees; and (C) is owned by any private individual, group, associat...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section2109a&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "16 U.S.C. 1642(e)",
+            "bill_context": "Funding for forest inventory and analysis program under the Forest and Rangeland Renewable Resources Research Act of 1978.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "7 U.S.C. 7655d",
+            "bill_context": "Funding for wood innovation grant program under the Agriculture Improvement Act of 2018.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "7",
+              "section": "7655d",
+              "heading": "Wood innovation grant program",
+              "text_excerpt": "\u00a7 7655d. Wood innovation grant program (a) Definitions In this section: (1) Eligible entity The term \u201celigible entity\u201d means\u2014 (A) an individual; (B) a public or private entity (including a center of excellence that consists of 1 or more partnerships between forestry, engineering, architecture, or business schools at 1 or more institutions of higher education); or (C) a State, local, or Tribal government. (2) Secretary The term \u201cSecretary\u201d means the Secretary, acting through the Chief of the Forest Service. (b) Grant program (1) In general The Secretary, in carrying out the wood innovation gran...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section7655d&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "7 U.S.C. 1932",
+            "bill_context": "Funding for business and industry loans under the Consolidated Farm and Rural Development Act.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "7",
+              "section": "1932",
+              "heading": "Assistance for rural entities",
+              "text_excerpt": "\u00a7 1932. Assistance for rural entities (a) Loans to private business enterprises (1) Definitions In this subsection: (A) Aquaculture The term \u201caquaculture\u201d means the culture or husbandry of aquatic animals or plants by private industry for commercial purposes including the culture and growing of fish by private industry for the purpose of creating or augmenting publicly owned and regulated stocks of fish. (B) Solar energy The term \u201csolar energy\u201d means energy derived from sources (other than fossil fuels) and technologies included in the Federal Nonnuclear Energy Research and Development Act of ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1932&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "7 U.S.C. 1932 note",
+            "bill_context": "Funding for loans made by an intermediary lender under the Food Security Act of 1985.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "7",
+              "section": "1932",
+              "heading": "Assistance for rural entities",
+              "text_excerpt": "\u00a7 1932. Assistance for rural entities (a) Loans to private business enterprises (1) Definitions In this subsection: (A) Aquaculture The term \u201caquaculture\u201d means the culture or husbandry of aquatic animals or plants by private industry for commercial purposes including the culture and growing of fish by private industry for the purpose of creating or augmenting publicly owned and regulated stocks of fish. (B) Solar energy The term \u201csolar energy\u201d means energy derived from sources (other than fossil fuels) and technologies included in the Federal Nonnuclear Energy Research and Development Act of ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1932&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "7 U.S.C. 1936b",
+            "bill_context": "Funding for loans made by a microenterprise development organization under the Consolidated Farm and Rural Development Act.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "7",
+              "section": "1936b",
+              "heading": "Intermediary relending program",
+              "text_excerpt": "\u00a7 1936b. Intermediary relending program (a) In general The Secretary may make or guarantee loans to eligible entities described in subsection (b) so that the eligible entities may relend the funds to individuals and entities for the purposes described in subsection (c). (b) Eligible entities Entities eligible for loans and loan guarantees described in subsection (a) are\u2014 (1) public agencies; (2) Indian tribes; (3) cooperatives; and (4) nonprofit corporations. (c) Eligible purposes The proceeds from loans made or guaranteed by the Secretary pursuant to subsection (a) may be relent by eligible e...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1936b&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "7 U.S.C. 2008s",
+            "bill_context": "Funding for loans made by a microenterprise development organization under the Consolidated Farm and Rural Development Act.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "7",
+              "section": "2008s",
+              "heading": "Rural microentrepreneur assistance program",
+              "text_excerpt": "\u00a7 2008s. Rural microentrepreneur assistance program (a) Definitions In this section: (1) Indian tribe The term \u201cIndian tribe\u201d has the meaning given the term in section 5304 of title 25 . (2) Microentrepreneur The term \u201cmicroentrepreneur\u201d means an owner and operator, or prospective owner and operator, of a rural microenterprise who is unable to obtain sufficient training, technical assistance, or credit other than under this section, as determined by the Secretary. (3) Microenterprise development organization The term \u201cmicroenterprise development organization\u201d means an organization that\u2014 (A) is...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2008s&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "7 U.S.C. 8107a(c)",
+            "bill_context": "Funding for grants under the Farm Security and Rural Investment Act of 2002.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "7 U.S.C. 8107a(d)",
+            "bill_context": "Funding for loans under the Farm Security and Rural Investment Act of 2002.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "7 U.S.C. 8107a(b)",
+            "bill_context": "Definition of 'eligible entity' and 'qualified consumer' under the Farm Security and Rural Investment Act of 2002.",
+            "relevance": "definitions",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "7 U.S.C. 8107",
+            "bill_context": "Funding for the Rural Energy for America Program under the Farm Security and Rural Investment Act of 2002.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "7",
+              "section": "8107",
+              "heading": "Rural Energy for America Program",
+              "text_excerpt": "\u00a7 8107. Rural Energy for America Program (a) Establishment The Secretary, in consultation with the Secretary of Energy, shall establish a Rural Energy for America Program to promote energy efficiency and renewable energy development for agricultural producers and rural small businesses through\u2014 (1) grants for energy audits and renewable energy development assistance; and (2) financial assistance for energy efficiency improvements and renewable energy systems. (b) Energy audits and renewable energy development assistance (1) In general The Secretary shall make competitive grants to eligible ent...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section8107&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "7 U.S.C. 8108",
+            "bill_context": "Funding for biomass research under the Farm Security and Rural Investment Act of 2002.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "7",
+              "section": "8108",
+              "heading": "Biomass research and development",
+              "text_excerpt": "\u00a7 8108. Biomass research and development (a) Definitions In this section: (1) Biobased product The term \u201cbiobased product\u201d means\u2014 (A) an industrial product (including chemicals, materials, and polymers) produced from biomass; (B) a commercial or industrial product (including animal feed and electric power) derived in connection with the conversion of biomass to fuel; or (C) carbon dioxide that\u2014 (i) is intended for permanent sequestration or utilization; and (ii) is a byproduct of the production of the products described in subparagraphs (A) and (B). (2) Demonstration The term \u201cdemonstration\u201d m...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section8108&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "7 U.S.C. 6923",
+            "bill_context": "Funding for the Office of Urban Agriculture and Innovative Production.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "7",
+              "section": "6923",
+              "heading": "Office of Urban Agriculture and Innovative Production",
+              "text_excerpt": "\u00a7 6923. Office of Urban Agriculture and Innovative Production (a) Office (1) In general The Secretary shall establish in the Department an Office of Urban Agriculture and Innovative Production. (2) Director The Secretary shall appoint a senior official to serve as the Director of the Office of Urban Agriculture and Innovative Production (referred to in this section as the \u201cDirector\u201d). (3) Mission The mission of the Office of Urban Agriculture and Innovative Production shall be to encourage and promote urban, indoor, and other emerging agricultural practices, including\u2014 (A) community gardens an...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section6923&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "7 U.S.C. 301 et seq.",
+            "bill_context": "Definition of 'University of the District of Columbia' under the First Morrill Act.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "7",
+              "section": "301",
+              "heading": "Land grant aid of colleges",
+              "text_excerpt": "There is granted to the several States, for the purposes hereinafter mentioned in this subchapter, an amount of public land, to be apportioned to each State a quantity equal to thirty thousand acres for each Senator and Representative in Congress to which the States are respectively entitled by the apportionment under the census of 1860: Provided , That no mineral lands shall be selected or purchased under the provisions of said sections.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section301&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "20 U.S.C. 1070a(b)(7)",
+            "bill_context": "Amendment to increase the maximum Federal Pell Grant for award year 2022\u20132023.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1091(a)(5)",
+            "bill_context": "Amendment to expand eligibility for Federal student aid to include individuals with deferred action or temporary protected status.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1087e(m)",
+            "bill_context": "Amendment to count active duty deferment periods toward public service loan forgiveness.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1067q(b)(2)(B)",
+            "bill_context": "Funding for institutional aid to Historically Black Colleges and Universities.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1067q(b)(2)(C)",
+            "bill_context": "Funding for institutional aid to Historically Black Colleges and Universities.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1067q(b)(2)(D)(i)",
+            "bill_context": "Funding for institutional aid to Historically Black Colleges and Universities.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1067q(b)(2)(D)(ii)",
+            "bill_context": "Funding for institutional aid to Historically Black Colleges and Universities.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1067q(b)(2)(D)(iii)",
+            "bill_context": "Funding for institutional aid to Historically Black Colleges and Universities.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1067q(b)(2)(D)(iv)",
+            "bill_context": "Funding for institutional aid to Historically Black Colleges and Universities.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1051 et seq.",
+            "bill_context": "Amendment to establish a research and development infrastructure competitive grant program for minority-serving institutions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "20",
+              "section": "1051",
+              "heading": "Findings and purpose",
+              "text_excerpt": "\u00a7 1051. Findings and purpose (a) Findings The Congress finds that\u2014 (1) there are a significant number of institutions of higher education serving high percentages of minority students and students from low-income backgrounds, that face problems that threaten their ability to survive; (2) the problems relate to the management and fiscal operations of certain institutions of higher education, as well as to an inability to engage in long-range planning and development activities, including endowment building; (3) in order to be competitive and provide a high-quality education for all, institution...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section1051&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "20 U.S.C. 1001",
+            "bill_context": "Definition of 'institution of higher education' in the Higher Education Act of 1965.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "20",
+              "section": "1001",
+              "heading": "General definition of institution of higher education",
+              "text_excerpt": "\u00a7 1001. General definition of institution of higher education (a) Institution of higher education For purposes of this chapter, other than subchapter IV, the term \u201cinstitution of higher education\u201d means an educational institution in any State that\u2014 (1) admits as regular students only persons having a certificate of graduation from a school providing secondary education, or the recognized equivalent of such a certificate, or persons who meet the requirements of section 1091(d) of this title ; (2) is legally authorized within such State to provide a program of education beyond secondary educatio...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section1001&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "20 U.S.C. 1002(c)",
+            "bill_context": "Definition of 'institution of higher education' in the Higher Education Act of 1965.",
+            "relevance": "definitions",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 1059c",
+            "bill_context": "Definition of 'Tribal College or University' in the Higher Education Act of 1965.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "20",
+              "section": "1059c",
+              "heading": "American Indian tribally controlled colleges and universities",
+              "text_excerpt": "\u00a7 1059c. American Indian tribally controlled colleges and universities (a) Program authorized The Secretary shall provide grants and related assistance to Tribal Colleges and Universities to enable such institutions to improve and expand their capacity to serve Indian students. (b) Definitions In this section: (1) Indian The term \u201cIndian\u201d has the meaning given the term in section 2 of the Tribally Controlled Colleges and Universities Assistance Act of 1978 [ 25 U.S.C. 1801 ]. (2) Indian tribe The term \u201cIndian tribe\u201d has the meaning given the term in section 2 of the Tribally Controlled College...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section1059c&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "20 U.S.C. 2302",
+            "bill_context": "Definition of 'career and technical education' in the Carl D. Perkins Career and Technical Education Act of 2006.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "20",
+              "section": "2302",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 2302. Definitions Unless otherwise specified, in this chapter: (1) Administration The term \u201cadministration\u201d, when used with respect to an eligible agency or eligible recipient, means activities necessary for the proper and efficient performance of the eligible agency or eligible recipient\u2019s duties under this chapter, including the supervision of such activities. Such term does not include curriculum development activities, personnel development, or research activities. (2) All aspects of an industry The term \u201call aspects of an industry\u201d means strong experience in, and comprehensive understan...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section2302&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "20 U.S.C. 3102",
+            "bill_context": "Definition of 'career pathway' in the Workforce Innovation and Opportunity Act.",
+            "relevance": "definitions",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 3152",
+            "bill_context": "Definition of 'Higher Education Multicultural Scholars Program' in the National Agricultural Research, Extension, and Teaching Policy Act of 1977.",
+            "relevance": "definitions",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 3157(b)",
+            "bill_context": "Funding for the Agriculture and Food Research Initiative under the Competitive, Special, and Facilities Research Grant Act.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5801",
+            "bill_context": "Funding for the sustainable agriculture research education program under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "20",
+              "section": "5801",
+              "heading": "Purpose",
+              "text_excerpt": "\u00a7 5801. Purpose The purpose of this chapter is to provide a framework for meeting the National Education Goals established by subchapter I of this chapter by\u2014 (1) promoting coherent, nationwide, systemic education reform; (2) improving the quality of learning and teaching in the classroom and in the workplace; (3) defining appropriate and coherent Federal, State, and local roles and responsibilities for education reform and lifelong learning; (4) establishing valid and reliable mechanisms for\u2014 (A) building a broad national consensus on American education reform; (B) assisting in the developmen...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section5801&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "20 U.S.C. 5811",
+            "bill_context": "Funding for the sustainable agriculture research education program under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "20",
+              "section": "5811",
+              "heading": "Purpose",
+              "text_excerpt": "The purpose of this subchapter is to establish National Education Goals.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section5811&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "20 U.S.C. 5812",
+            "bill_context": "Funding for the sustainable agriculture research education program under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "20",
+              "section": "5812",
+              "heading": "National Education Goals",
+              "text_excerpt": "\u00a7 5812. National Education Goals The Congress declares that the National Education Goals are the following: (1) School readiness (A) By the year 2000, all children in America will start school ready to learn. (B) The objectives for this goal are that\u2014 (i) all children will have access to high-quality and developmentally appropriate preschool programs that help prepare children for school; (ii) every parent in the United States will be a child\u2019s first teacher and devote time each day to helping such parent\u2019s preschool child learn, and parents will have access to the training and support parents...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section5812&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "20 U.S.C. 5831",
+            "bill_context": "Funding for the sustainable agriculture research education program under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5832",
+            "bill_context": "Funding for the sustainable agriculture research education program under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5924",
+            "bill_context": "Funding for the Agricultural Genome to Phenome Initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925b",
+            "bill_context": "Funding for the organic agriculture research and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5926(d)",
+            "bill_context": "Funding for the centers of excellence led by 1890 Institutions under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "20 U.S.C. 5925g",
+            "bill_context": "Funding for the urban, indoor, and other emerging agricultural production research, education, and extension initiative under the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true
+      },
+      "elapsed_s": 270.6,
+      "prompt_tokens": 233019,
+      "completion_tokens": 6500,
+      "ok": true,
+      "note": "116 USC citations identified, 23/30 LMDB-resolved (76.7% hit rate). Output truncated at max_tokens; truncation-recovery code closed the JSON cleanly."
+    },
+    "pork_finder": {
+      "output": {
+        "chunk_id": "ch01",
+        "items": [
+          {
+            "line_item": "Funding for hazardous fuels reduction projects in wildland-urban interface.",
+            "amount_usd": 10000000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11001"
+          },
+          {
+            "line_item": "Funding for vegetation management projects on National Forest System land.",
+            "amount_usd": 1000000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11001"
+          },
+          {
+            "line_item": "Funding for Legacy Roads and Trails program of the Forest Service.",
+            "amount_usd": 450000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11001"
+          },
+          {
+            "line_item": "Funding for capital maintenance and improvements on National Forest System land.",
+            "amount_usd": 100000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11001"
+          },
+          {
+            "line_item": "Funding for staffing, salaries, and workforce needs for Civilian Climate Corps.",
+            "amount_usd": 2250000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11001"
+          },
+          {
+            "line_item": "Funding for grants to Tribal, State, or local governments for forest restoration on non-Federal land.",
+            "amount_usd": 9000000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for grants to Tribal, State, or local governments for community wildfire protection plans.",
+            "amount_usd": 1000000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for grants to Tribal, State, or local governments for recovery and rehabilitation of burned areas.",
+            "amount_usd": 250000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for grants to Tribal, State, or local governments for equitable outdoor access on non-Federal forested land.",
+            "amount_usd": 250000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for State Fire Assistance and Volunteer Fire Assistance programs.",
+            "amount_usd": 250000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for State-wide forest resource strategies under the Cooperative Forestry Assistance Act.",
+            "amount_usd": 250000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for competitive grant program under the Cooperative Forestry Assistance Act for underserved forest landowners.",
+            "amount_usd": 250000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for competitive grant program under the Cooperative Forestry Assistance Act for underserved forest landowners.",
+            "amount_usd": 250000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for competitive grant program under the Cooperative Forestry Assistance Act for forest landowners with less than 2,500 acres.",
+            "amount_usd": 250000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for competitive grant program under the Cooperative Forestry Assistance Act for private forest landowners.",
+            "amount_usd": 500000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the healthy forests reserve program.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the forest inventory and analysis program for collaborative partnerships.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the forest inventory and analysis program for accelerating research on forest carbon monitoring.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the forest inventory and analysis program for recommendations from expert panel.",
+            "amount_usd": 100000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the forest inventory and analysis program for technology enhancements.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for grants under the wood innovation grant program for construction of new facilities.",
+            "amount_usd": 1000000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the research mission area to accelerate research on carbon stocks on National Forest System land.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the research mission area to accelerate research on climate change and weather variability.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the research mission area to accelerate research on ecosystem adaptation to climate change.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the research mission area to assess carbon sequestration and storage from different forest practices.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the research mission area to carry out greenhouse gas life cycle analyses of domestic wood products.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          },
+          {
+            "line_item": "Funding for the Forest Health Monitoring Program to reduce the spread of invasive species on non-Federal forested land.",
+            "amount_usd": 50000000.0,
+            "recipient": null,
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 11002"
+          }
+        ],
+        "note": null
+      },
+      "elapsed_s": 92.4,
+      "prompt_tokens": 232994,
+      "completion_tokens": 2216,
+      "ok": true
+    },
+    "conflict_spotter": {
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 270.63,
+      "prompt_tokens": 233019,
+      "completion_tokens": 25,
+      "ok": true
+    }
+  },
+  "timings_s": {
+    "summarizer": 21.4,
+    "usc_cross_ref": 270.6,
+    "pork_finder": 92.4,
+    "conflict_spotter": 270.63
+  },
+  "totals": {
+    "wall_clock_s": 655.03,
+    "prompt_tokens_total": 931885,
+    "completion_tokens_total": 9110,
+    "agents_run": 4,
+    "agents_failed": []
+  },
+  "headline": {
+    "apc_speedup_ttft": 94.15,
+    "apc_speedup_full_call": 14.8,
+    "apc_speedup_full_call_note": "Plain-English Summarizer cold=316.4s, APC-warm rerun=21.4s on identical 232,853-token chunk.",
+    "prefix_cache_hit_rate_observed": "66.6%-70.6% sustained across all four agents",
+    "total_chunk_tokens_processed_once": 232853,
+    "total_chunk_tokens_re_read_per_agent_savings": "Each additional agent reuses the cached prefix instead of re-paying the prefill."
+  }
+}
