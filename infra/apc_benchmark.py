@@ -58,10 +58,12 @@ def trim_to_token_target(text: str, target_tokens: int, model: str, endpoint: st
     """
     client = httpx.Client(timeout=30.0)
 
+    # vLLM's /tokenize lives at the server root, not under /v1
+    base = endpoint.rsplit("/v1", 1)[0]
+
     def count_tokens(s: str) -> int:
-        # vLLM exposes /tokenize for OpenAI-compatible servers
         r = client.post(
-            f"{endpoint}/tokenize",
+            f"{base}/tokenize",
             json={"model": model, "prompt": s},
         )
         r.raise_for_status()
@@ -150,7 +152,8 @@ def main() -> int:
 
     # Token count for the actual prefix used
     client = httpx.Client(timeout=30.0)
-    r = client.post(f"{args.endpoint}/tokenize", json={"model": args.model, "prompt": prefix})
+    base = args.endpoint.rsplit("/v1", 1)[0]
+    r = client.post(f"{base}/tokenize", json={"model": args.model, "prompt": prefix})
     r.raise_for_status()
     actual_prefix_tokens = r.json()["count"]
     print(f"[apc_benchmark] Actual prefix tokens: {actual_prefix_tokens:,}", file=sys.stderr)

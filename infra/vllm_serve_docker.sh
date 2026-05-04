@@ -41,8 +41,11 @@ mkdir -p "$HF_CACHE"
 resolve_model() {
     local role="$1" precision="$2"
     case "$role:$precision" in
-        spine:bf16)     echo "Qwen/Qwen3.6-35B-A3B" ;;
-        spine:fp8)      echo "Qwen/Qwen3.6-35B-A3B-FP8" ;;
+        # Spine: pivoted from Qwen3.6-35B-A3B (vLLM 0.17.1's transformers
+        # 4.57.6 doesn't know qwen3_5_moe yet) to Qwen3-30B-A3B-Instruct-2507.
+        # Same A3B MoE topology, 30B/3B-active, 256K context, FP8 prequantized.
+        spine:bf16)     echo "Qwen/Qwen3-30B-A3B-Instruct-2507" ;;
+        spine:fp8)      echo "Qwen/Qwen3-30B-A3B-Instruct-2507-FP8" ;;
         vision:bf16)    echo "Qwen/Qwen3-VL-8B-Thinking" ;;
         vision:fp8)     echo "Qwen/Qwen3-VL-8B-Thinking-FP8" ;;
         reasoner:bf16)  echo "Qwen/Qwen3-32B" ;;
@@ -84,6 +87,9 @@ launch() {
         --network host \
         -v "$HF_CACHE:/root/.cache/huggingface" \
         -e HF_HUB_ENABLE_HF_TRANSFER=1 \
+        -e GLOO_SOCKET_IFNAME=lo \
+        -e NCCL_SOCKET_IFNAME=lo \
+        -e VLLM_HOST_IP=127.0.0.1 \
         --restart no \
         "$IMG" \
         --model "$model" \
