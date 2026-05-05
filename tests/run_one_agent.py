@@ -145,6 +145,22 @@ def main():
         except Exception as e:
             print(f"[run] WARN: enrich_with_usc failed: {type(e).__name__}: {e}", flush=True)
 
+    # Pass 2 for the fiscal agent: compute totals_by_domain + grand_total_usd
+    # in Python from the items[] the LLM returned. Keeping the LLM out of
+    # arithmetic - it was burning tokens on aggregation in v1 and timing out.
+    if args.agent == "fiscal" and result.output and not result.errors:
+        try:
+            from src.agents.fiscal_impact_estimator import FiscalImpactOutput, compute_totals
+            validated = FiscalImpactOutput(**result.output)
+            validated = compute_totals(validated)
+            result.output = validated.model_dump()
+            n_items = len(result.output.get("items", []))
+            grand = result.output.get("grand_total_usd") or 0.0
+            n_vision = len(result.output.get("vision_pages_suggested", []))
+            print(f"[run] compute_totals: {n_items} items, grand=${grand:,.0f}, vision_pages_suggested={n_vision}", flush=True)
+        except Exception as e:
+            print(f"[run] WARN: compute_totals failed: {type(e).__name__}: {e}", flush=True)
+
     out_file = args.out_dir / f"{agent.name}-{args.chunk_id}.json"
     out_file.write_text(json.dumps(result.output if result.output else {"errors": result.errors}, indent=2), encoding="utf-8")
 

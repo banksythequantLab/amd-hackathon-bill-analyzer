@@ -1,77 +1,58 @@
 """
-Agent #5: Fiscal Impact Estimator
+Agent #5: Fiscal Impact Estimator (v2 — Day 6 prompt rewrite)
 
-Reads a bill chunk and extracts structured appropriations data:
-  - per line item: amount, recipient class, fiscal year, purpose
-  - aggregated totals by domain category
-  - flags items where amount appears in a TABLE (not prose) for vision augmentation
+Day 5 v1 hung in the retry loop for 16+ minutes on BBB ch01. Three changes
+in v2 to make it ship clean:
 
-Two-tier design:
-  Tier 1: TEXT pass on the spine model. Reads the full chunk, extracts
-    all appropriations expressible as prose ("$10,000,000,000 for X").
-    Most appropriations in BBB-2021 / HR1 are this shape.
-  Tier 2 (optional): VISION pass. The agent identifies pages where the
-    bill formats appropriations as tables (rate schedules, allocation
-    matrices, etc.). A separate caller can route those pages to the
-    vision endpoint for structured extraction. The text-pass output
-    flags these pages so downstream code knows where to call vision.
+1. Domain enum: 12 -> 6 categories. Less "right answer" pressure on the model
+   under truncation; broader buckets are easier to pick correctly.
+2. max_tokens 6000 -> 4000. Cap items 40 -> 25. Tighter budget = faster fail
+   if validation issues, less wall clock per attempt.
+3. Totals aggregation pulled OUT of the LLM. The model returns items[] only;
+   totals_by_domain and grand_total_usd are computed in Python from the
+   items array. The LLM was using its limited token budget on arithmetic
+   and aggregation logic that python.sum() handles trivially. This is the
+   biggest win.
 
-The agent itself is text-only; it returns "vision_pages_suggested" with
-page numbers the spine thinks contain table-formatted appropriations.
-The caller decides whether to act on those suggestions.
+Two-tier vision design preserved from v1:
+  - Text pass extracts dollar-amount items from prose
+  - vision_pages_suggested[] flags pages where the bill formats numbers as
+    tables (rate schedules, allocation matrices). Orchestrator routes
+    those to the vision endpoint separately.
 
-Why this split:
-  Vision calls are expensive (a single page is ~2K image tokens through
-  Qwen3-VL). Asking the spine "which pages have tables?" is cheap because
-  the chunk is already cached via APC. The text agent does the cheap
-  routing decision; vision is invoked only when worthwhile.
+The agent itself is text-only; vision call is the orchestrator's
+responsibility. Per-page vision invocation is heavy (~2K image tokens)
+and shouldn't fire on every chunk.
 """
 from __future__ import annotations
 
-from typing import Optional, Literal
+from typing import Optional
 from pydantic import BaseModel, Field, field_validator
 
 from .base import AgentBase, SPINE_ENDPOINT
 
 
-# Aggregation buckets. Each line item gets categorized into one of these.
+# 6 categories, deliberately broad. The model picks the dominant theme;
+# downstream code can re-bucket more finely from the items[] field if needed.
 DOMAIN_CATEGORIES = {
-    "agriculture-conservation",
-    "energy-climate",
-    "health-medicare-medicaid",
-    "education-workforce",
-    "housing-community",
-    "transportation-infrastructure",
-    "tax-credits",
-    "defense-veterans",
-    "immigration-border",
-    "research-science",
-    "general-administration",
-    "other",
+    "agriculture-conservation-energy",   # USDA, EPA, DOE, Forest, climate
+    "health-human-services",             # HHS, Medicare, Medicaid, education
+    "infrastructure-housing-transport",  # housing, roads, water, broadband
+    "tax-and-revenue",                   # tax credits, deductions, IRS
+    "defense-immigration-law",           # DOD, DHS, immigration, justice
+    "research-administration-other",     # NSF, generic admin, catch-all
 }
 
 
 class LineItem(BaseModel):
     amount_usd: float = Field(description="Dollar amount in USD as a number (no $, no commas)")
-    purpose: str = Field(description="Brief paraphrase of what the funds are for, <=25 words")
-    recipient_class: str = Field(
-        description=(
-            "What kind of recipient. Examples: 'Forest Service program', 'state grants', "
-            "'tribal governments', 'national lab consortium', 'veterans of the Vietnam War'. "
-            "Distinct from Pork Finder's 'specific named entity' field."
-        )
-    )
-    fiscal_years: list[int] = Field(
-        default_factory=list,
-        description="Fiscal years the appropriation covers, e.g. [2024, 2025, 2026]",
-    )
+    purpose: str = Field(description="Brief paraphrase of what the funds are for, <=20 words")
+    recipient_class: str = Field(description="Kind of recipient (e.g. 'Forest Service program', 'state grants')")
+    fiscal_years: list[int] = Field(default_factory=list, description="FY ints, e.g. [2024, 2025]")
     domain: str = Field(description=" | ".join(sorted(DOMAIN_CATEGORIES)))
-    bill_section: Optional[str] = Field(default=None, description="Bill section ID like 'SEC. 11001'")
-    source_page: Optional[int] = Field(default=None, description="Page in the original PDF, if known")
-    table_formatted: bool = Field(
-        default=False,
-        description="True if the agent thinks this amount is part of a table/schedule that vision could clarify",
-    )
+    bill_section: Optional[str] = Field(default=None)
+    source_page: Optional[int] = Field(default=None)
+    table_formatted: bool = Field(default=False, description="True if amount is in a table the model thinks vision could clarify")
 
     @field_validator("domain")
     @classmethod
@@ -88,85 +69,86 @@ class LineItem(BaseModel):
         return v
 
 
-class DomainTotal(BaseModel):
-    domain: str
-    total_usd: float
-    item_count: int
-
-
 class FiscalImpactOutput(BaseModel):
     chunk_id: str
     items: list[LineItem] = Field(default_factory=list)
-    totals_by_domain: list[DomainTotal] = Field(default_factory=list)
-    grand_total_usd: float = Field(default=0.0)
-    vision_pages_suggested: list[int] = Field(
-        default_factory=list,
-        description=(
-            "Page numbers where the chunk contains table-formatted appropriations "
-            "that text-only extraction may have missed. The orchestrator can route "
-            "these pages to the vision endpoint."
-        ),
-    )
+    vision_pages_suggested: list[int] = Field(default_factory=list)
     note: Optional[str] = Field(default=None)
+    # totals_by_domain and grand_total_usd are NOT requested from the LLM.
+    # They get computed in Python after validation passes; see compute_totals().
+    totals_by_domain: Optional[dict] = Field(default=None, description="Computed post-hoc; not LLM-emitted")
+    grand_total_usd: Optional[float] = Field(default=None, description="Computed post-hoc; not LLM-emitted")
     model_config = {"extra": "allow"}
+
+
+def compute_totals(output: FiscalImpactOutput) -> FiscalImpactOutput:
+    """Post-process: compute totals_by_domain and grand_total_usd from items[].
+
+    Keeps the LLM out of arithmetic. Mutates output in place AND returns it.
+    """
+    by_domain: dict[str, dict] = {}
+    grand = 0.0
+    for item in output.items:
+        d = item.domain
+        if d not in by_domain:
+            by_domain[d] = {"total_usd": 0.0, "item_count": 0}
+        by_domain[d]["total_usd"] += item.amount_usd
+        by_domain[d]["item_count"] += 1
+        grand += item.amount_usd
+    output.totals_by_domain = by_domain
+    output.grand_total_usd = grand
+    return output
 
 
 class FiscalImpactEstimator(AgentBase):
     """Text-pass appropriations extractor on spine.
 
-    Routes vision augmentation decisions to the orchestrator via
-    vision_pages_suggested. Doesn't call vision itself; that's the
-    orchestrator's job because page->image conversion + base64 encoding
-    is heavy I/O and shouldn't live in an agent.
+    Items extraction only -- aggregation handled in Python via compute_totals().
     """
     name = "fiscal_impact_estimator"
     target_endpoint = SPINE_ENDPOINT
     target_model = "spine"
     temperature = 0.0
-    max_tokens = 6000
+    max_tokens = 4000
     output_schema = FiscalImpactOutput
 
     def system_prompt(self) -> str:
         return (
             "You are a federal budget analyst extracting structured appropriations data "
-            "from US legislative bills. For each dollar amount in the chunk, you record: "
-            "the amount, the purpose, the kind of recipient, fiscal years covered, and "
-            "the bill section.\n\n"
-            "FRAMING: most legislative chunks contain 5-30 distinct appropriations. Some "
-            "have zero (procedural-only chunks). Your job is to find the real numbers and "
-            "structure them, not to invent or duplicate.\n\n"
+            "from US legislative bills. For each dollar amount, you record: amount, purpose, "
+            "recipient class, fiscal years, domain category.\n\n"
+            "FRAMING: most chunks have 5-25 distinct appropriations. Some have zero "
+            "(procedural-only). Find the real numbers and structure them. Do not invent "
+            "or duplicate.\n\n"
             "WHAT COUNTS AS A LINE ITEM:\n"
             "- Direct appropriations: '$10,000,000,000 for hazardous fuels reduction'\n"
             "- Authorizations: 'There are authorized to be appropriated $500,000,000...'\n"
-            "- Funding limits: 'not to exceed $250,000,000 in any fiscal year'\n"
+            "- Funding ceilings: 'not to exceed $250,000,000 in any fiscal year'\n"
             "- Tax expenditures: 'a credit equal to $X per qualified...'\n"
             "WHAT DOES NOT COUNT:\n"
             "- Citations to dollar amounts in OTHER laws (e.g. references to 26 USC limits)\n"
-            "- Threshold values that aren't appropriations (e.g. '$50,000 income limit')\n"
-            "- Historical figures cited for context\n\n"
-            "DOMAIN ASSIGNMENT: pick the BEST single category from the enum. If a line item "
-            "spans two domains, pick the dominant one. 'other' is a real choice — use it for "
-            "items that don't fit cleanly.\n\n"
-            "TABLE FLAGS: if you see a structured table or rate schedule in the bill text "
-            "(parallel columns of numbers, dense numerical layout that's hard to parse from "
-            "text alone, references like 'see table at end of section'), set table_formatted "
-            "to true on the affected items AND add the bill page number to "
-            "vision_pages_suggested. Tax bracket schedules, formula tables, and allocation "
-            "matrices typically warrant this.\n\n"
-            "AGGREGATION: after extracting items, compute totals_by_domain (sum amount_usd "
-            "per domain bucket) and grand_total_usd (sum of all items). Be honest about "
-            "the precision: if amounts are 'such sums as may be necessary' (open-ended), "
-            "OMIT the item rather than guessing.\n\n"
-            "Return a single JSON object matching the schema. Cap items at 40."
+            "- Threshold values that are not appropriations (e.g. '$50,000 income limit')\n"
+            "- Open-ended 'such sums as may be necessary' without a number — OMIT, do not guess\n\n"
+            "DOMAINS (pick exactly one per item):\n"
+            "  agriculture-conservation-energy : USDA, EPA, DOE, Forest, climate, water\n"
+            "  health-human-services           : HHS, Medicare, Medicaid, education, workforce\n"
+            "  infrastructure-housing-transport: HUD, DOT, broadband, public works, housing\n"
+            "  tax-and-revenue                 : tax credits, deductions, IRS, revenue provisions\n"
+            "  defense-immigration-law         : DOD, DHS, justice, immigration, veterans\n"
+            "  research-administration-other   : NSF, generic admin, catch-all\n\n"
+            "TABLE FLAGS: if the bill has a table or rate schedule (parallel columns of "
+            "numbers), set table_formatted=true on the affected items AND add the bill page "
+            "number to vision_pages_suggested. Tax bracket schedules are the canonical case.\n\n"
+            "Cap items at 25. Prefer the largest/most-consequential when over-cap.\n\n"
+            "Return a single JSON object matching the schema. Do NOT include totals; those "
+            "are computed downstream from items[]."
         )
 
     def user_prompt(self, chunk_text: str, chunk_id: str, title_marker: str = "(unknown)", **context) -> str:
-        page_hint = context.get("page_range", "")
-        page_str = f"\nPage range: {page_hint}" if page_hint else ""
         return f"""Extract appropriations from this bill chunk.
 
 Chunk ID: {chunk_id}
-Structural marker: {title_marker}{page_str}
+Structural marker: {title_marker}
 
 Return a JSON object with this exact shape:
 {{
@@ -174,32 +156,28 @@ Return a JSON object with this exact shape:
   "items": [
     {{
       "amount_usd": 10000000000,
-      "purpose": "Hazardous fuels reduction projects in the wildland-urban interface.",
+      "purpose": "Hazardous fuels reduction in wildland-urban interface.",
       "recipient_class": "Forest Service program",
       "fiscal_years": [2022, 2023, 2024, 2025, 2026],
-      "domain": "agriculture-conservation",
+      "domain": "agriculture-conservation-energy",
       "bill_section": "SEC. 11001",
       "source_page": 5,
       "table_formatted": false
     }}
   ],
-  "totals_by_domain": [
-    {{"domain": "agriculture-conservation", "total_usd": 12500000000, "item_count": 3}}
-  ],
-  "grand_total_usd": 12500000000,
-  "vision_pages_suggested": [2222],
+  "vision_pages_suggested": [],
   "note": null
 }}
 
 Reminders:
-- amount_usd is a number, no $ sign, no commas
-- domain MUST be one of: agriculture-conservation, energy-climate, health-medicare-medicaid,
-  education-workforce, housing-community, transportation-infrastructure, tax-credits,
-  defense-veterans, immigration-border, research-science, general-administration, other
-- If you can't find any appropriations, return items: [] and grand_total_usd: 0
-- Compute totals_by_domain yourself from the items you extracted
-- Set vision_pages_suggested to page numbers with table-formatted appropriations
-- Return ONLY the JSON. No commentary, no markdown fences.
+- amount_usd: number, no $ sign, no commas
+- domain MUST be one of: agriculture-conservation-energy, health-human-services,
+  infrastructure-housing-transport, tax-and-revenue, defense-immigration-law,
+  research-administration-other
+- items[] empty is fine for procedural chunks; use note to explain
+- Cap at 25 items; pick the most consequential
+- Do NOT compute totals; just extract items
+- Return ONLY the JSON object. No commentary, no markdown fences.
 
 ==== BILL TEXT ====
 {chunk_text}
