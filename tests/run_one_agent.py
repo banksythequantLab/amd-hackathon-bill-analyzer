@@ -126,6 +126,23 @@ def main():
         print(f"[run] ERRORS: {result.errors}", flush=True)
         (args.out_dir / f"{agent.name}-raw-{args.chunk_id}.txt").write_text(result.raw_response or "", encoding="utf-8")
 
+    # Pass 2 enrichment for the xref agent: attach LMDB-resolved USC text to each citation.
+    # Without this, downstream Citation Validator sees bare citations and can't audit.
+    if args.agent == "xref" and result.output and not result.errors:
+        try:
+            from src.agents.usc_xref import enrich_with_usc
+            from src.tools.fetch_usc import FetchUsc
+            lmdb_path = os.environ.get("BILL_ANALYZER_USC_LMDB", r"B:\amd-hackathon-bill-analyzer\data\usc.lmdb")
+            fetcher = FetchUsc(lmdb_path)
+            t1 = time.perf_counter()
+            result.output = enrich_with_usc(result.output, fetcher)
+            enrich_elapsed = time.perf_counter() - t1
+            ok_count = sum(1 for c in result.output.get("citations", []) if c.get("resolution_status") == "ok")
+            total = len(result.output.get("citations", []))
+            print(f"[run] enrich_with_usc: {ok_count}/{total} resolved in {enrich_elapsed*1000:.1f}ms (LMDB at {lmdb_path})", flush=True)
+        except Exception as e:
+            print(f"[run] WARN: enrich_with_usc failed: {type(e).__name__}: {e}", flush=True)
+
     out_file = args.out_dir / f"{agent.name}-{args.chunk_id}.json"
     out_file.write_text(json.dumps(result.output if result.output else {"errors": result.errors}, indent=2), encoding="utf-8")
 

@@ -1,0 +1,68 @@
+{
+  "source_xref_file": "/root/agent-smoke/usc_cross_reference-bbb-ch01-enriched.json",
+  "citations_audited": 6,
+  "elapsed_s": 143.87,
+  "summary": {
+    "valid": 2,
+    "format-error": 0,
+    "wrong-section": 1,
+    "intent-mismatch": 3,
+    "unverifiable": 0,
+    "errored": 0
+  },
+  "results": [
+    {
+      "citation": "16 U.S.C. 6511",
+      "verdict": "valid",
+      "confidence": "high",
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "citation": "16 U.S.C. 6542(d)(1)",
+      "verdict": "wrong-section",
+      "confidence": "high",
+      "issues": [
+        "The cited subsection (d)(1) does not exist in the actual USC text. Definitions for \u00a7 6542 are located in subsection (a)(1), not (d)(1)."
+      ],
+      "suggested_fix": "16 U.S.C. 6542(a)(1)"
+    },
+    {
+      "citation": "16 U.S.C. 6543(a)(3)",
+      "verdict": "intent-mismatch",
+      "confidence": "high",
+      "issues": [
+        "The cited section (16 U.S.C. 6543) defines a 'Watershed Condition Framework' and does not contain definitions relevant to the bill's context.",
+        "The subsection (a)(3) is not present in the provided USC text excerpt, which only shows (a)(1) through (a)(7)."
+      ],
+      "suggested_fix": "16 U.S.C. 6543(a)"
+    },
+    {
+      "citation": "16 U.S.C. 7125",
+      "verdict": "intent-mismatch",
+      "confidence": "high",
+      "issues": [
+        "Bill claims the section provides 'definitions' but the actual USC text defines 'Resource advisory committees' and their operational framework, not general definitions"
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "16 U.S.C. 7303",
+      "verdict": "intent-mismatch",
+      "confidence": "high",
+      "issues": [
+        "The bill claims the citation is for 'definitions', but the actual USC section (\u00a7 7303) establishes a program (Collaborative Forest Landscape Restoration Program) and does not contain definitional content."
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "16 U.S.C. 7655d",
+      "verdict": "valid",
+      "confidence": "medium",
+      "issues": [
+        "USC text excerpt is empty, making verification impossible"
+      ],
+      "suggested_fix": null
+    }
+  ]
+}

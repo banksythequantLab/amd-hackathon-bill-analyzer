@@ -102,19 +102,71 @@ Important:
 # ----------------------------------------------------------------------
 # Pass 2: enrich identified citations with USC data via fetch_usc tool
 # ----------------------------------------------------------------------
+def _strip_subparagraph(citation: str) -> str:
+    """Strip sub-paragraph notation: '16 U.S.C. 6542(d)(1)' -> '16 U.S.C. 6542'.
+    LMDB stores at section level only. Falling back to bare section is the
+    right semantics for citation enrichment - downstream Citation Validator
+    can flag if the bill's claimed sub-paragraph doesn't exist in the section.
+    """
+    import re as _re
+    return _re.sub(r"\([^)]*\)(?:\([^)]*\))*\s*$", "", citation).strip()
+
+
+def _dedup_citations(citations: list) -> list:
+    """Drop duplicate (citation, bill_context) pairs left by truncation-recovery.
+    The Day 3 BBB run produced 13 copies of '16 U.S.C. 7655d' with identical
+    bill_context because the model truncated mid-citation and recovery duplicated
+    the trailing partial entry. This collapses such duplicates."""
+    seen = set()
+    out = []
+    for c in citations:
+        key = (c.get("citation", ""), (c.get("bill_context", "") or "")[:100])
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(c)
+    return out
+
+
 def enrich_with_usc(crossref: dict, fetcher) -> dict:
     """Enrich each citation with the actual USC text via fetch_usc.
 
     Mutates `crossref` in place by adding 'usc_data' to each citation entry.
+    Two-tier lookup: first try the citation as written, then strip
+    sub-paragraphs and retry. If both miss, mark as not_found.
+    Also dedupes citations on (citation, first 100 chars of bill_context) to
+    drop truncation-recovery artifacts.
     Returns the same dict for chaining.
     """
-    for c in crossref.get("citations", []):
-        record = fetcher(c["citation"])
+    # Dedup BEFORE enrichment so we don't pay LMDB lookups for duplicates.
+    citations = crossref.get("citations", [])
+    deduped = _dedup_citations(citations)
+    if len(deduped) < len(citations):
+        crossref.setdefault("_pipeline_notes", []).append(
+            f"deduped {len(citations)} -> {len(deduped)} citations (truncation-recovery artifacts)"
+        )
+    crossref["citations"] = deduped
+
+    for c in crossref["citations"]:
+        # Tier 1: try the citation as written
+        cit_str = c["citation"]
+        record = fetcher(cit_str)
+        resolution = "ok"
+
+        # Tier 2: if the citation has sub-paragraphs, strip and retry at section level
+        if record is None:
+            stripped = _strip_subparagraph(cit_str)
+            if stripped and stripped != cit_str:
+                record = fetcher(stripped)
+                if record is not None:
+                    resolution = "ok-section-level"
+                    c["resolved_to"] = stripped
+
         if record is None:
             c["usc_data"] = None
             c["resolution_status"] = "not_found"
             continue
-        # Compact the heavy fields for downstream agents
+
         c["usc_data"] = {
             "title": record["title"],
             "section": record["section"],
@@ -123,5 +175,5 @@ def enrich_with_usc(crossref: dict, fetcher) -> dict:
             "source_url": record["source_url"],
             "release_point": record["release_point"],
         }
-        c["resolution_status"] = "ok"
+        c["resolution_status"] = resolution
     return crossref
