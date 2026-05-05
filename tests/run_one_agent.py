@@ -56,6 +56,7 @@ AGENT_MAP = {
     "fiscal":      ("src.agents.fiscal_impact_estimator", "FiscalImpactEstimator"),
     "stakeholder": ("src.agents.stakeholder_tracer", "StakeholderTracer"),
     "podcast":     ("src.agents.podcast_generator", "PodcastGenerator"),
+    "relay":       ("src.agents.prompt_relay_author", "PromptRelayAuthor"),
 }
 
 DEFAULT_CHUNKS_DIR = Path(os.environ.get("BILL_ANALYZER_CHUNKS_DIR", r"B:\hackathon-build"))
@@ -106,7 +107,7 @@ def main():
     re_target_agent_to_endpoint(AgentClass)
 
     # Podcast agent uses a report JSON as input, not a bill chunk.
-    if args.agent == "podcast":
+    if args.agent in ("podcast", "relay"):
         if args.report_file is None:
             print("[run] ERROR: --report-file required for the podcast agent", flush=True)
             return 1

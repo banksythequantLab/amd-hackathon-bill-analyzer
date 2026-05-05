@@ -62,7 +62,7 @@ CHUNK_FILE_NAMES = {
     "ndaa": "chunks-ndaa-full.json",
 }
 
-AGENT_VALID = {"summarizer", "xref", "pork", "conflict", "fiscal", "stakeholder", "podcast"}
+AGENT_VALID = {"summarizer", "xref", "pork", "conflict", "fiscal", "stakeholder", "podcast", "relay"}
 
 # Use Git's bundled SSH on Windows (Windows OpenSSH stderr is broken under subprocess)
 GIT_SSH = r"C:\Program Files\Git\usr\bin\ssh.exe"
@@ -214,7 +214,7 @@ def main() -> int:
 
     # If podcast agent, upload the report file first
     remote_report_path = ""
-    if args.agent == "podcast":
+    if args.agent in ("podcast", "relay"):
         if not args.report_file:
             print("[remote] ERROR: --report-file required for podcast agent", flush=True)
             return 1
