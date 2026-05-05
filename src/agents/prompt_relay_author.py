@@ -134,9 +134,23 @@ class PromptRelayAuthor(AgentBase):
             "  - Keep characters CONSISTENT. Bake the FULL character descriptions INLINE "
             "    into every reference_image_prompt. Do NOT use placeholders like "
             "    \"<Alex desc>\" — write out the description text in full each time.\n"
-            "  - VARY the framing per scene. Wide two-shot, medium two-shot, single "
-            "    of Alex, single of Jordan, over-shoulder, close-up - mix it up so the "
-            "    video doesn't look static.\n"
+            "  - PODCAST REALISM: This is a 2-host podcast. Both hosts are seated at "
+            "    the desk for the whole episode. Real podcasts do NOT cut between single-"
+            "    host close-ups or over-the-shoulder shots — those would imply the hosts "
+            "    are switching seats or one stood up and walked behind the other, which "
+            "    breaks continuity. EVERY scene must be a TWO-SHOT showing BOTH Alex and "
+            "    Jordan visible at the desk, both facing the camera. Alex is ALWAYS on "
+            "    the left side of the desk. Jordan is ALWAYS on the right side.\n"
+            "  - FORBIDDEN framings: 'over-the-shoulder', 'OTS', 'close-up of Alex' "
+            "    (alone), 'close-up of Jordan' (alone), 'single of Alex', 'single of "
+            "    Jordan', 'back of head', any framing that shows only one host or shows "
+            "    the back of either host. Do not use these phrases.\n"
+            "  - ALLOWED framings (vary the camera, NOT the seating): 'medium two-shot', "
+            "    'wide two-shot', 'tight two-shot', 'medium two-shot, slight push-in', "
+            "    'medium two-shot, slight pull-back', 'medium two-shot, slight low "
+            "    angle', 'medium two-shot, slight high angle'. Always describe the "
+            "    framing as a two-shot of both hosts, then add a small camera-language "
+            "    delta for variety.\n"
             "  - Match scene boundaries to natural conversational beats (e.g. when the "
             "    speaker changes topic, group those lines together).\n"
             "  - HARD CAP: 16 scenes total. For a 38-line podcast that means about 2-3 "
@@ -169,7 +183,7 @@ Return a JSON object with this exact shape:
     {{
       "scene_id": "scene-01",
       "line_indices": [0, 1],
-      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) seated at a wooden podcast desk. Warm key light from above. Two condenser microphones in the foreground.",
+      "reference_image_prompt": "Medium two-shot of Alex on the left (30s male, light brown hair, navy button-down) and Jordan on the right (30s woman, dark hair pulled back, charcoal blazer over white shirt), both seated at a wooden podcast desk and facing the camera. Warm key light from above. Two condenser microphones in the foreground.",
       "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts smiling, ready to start. | Action 50: Alex leans into his mic and begins to speak. Jordan turns toward him attentively. | Reaction 20: Slow push-in to Jordan's face as she nods.",
       "notes": null
     }}
