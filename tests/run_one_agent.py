@@ -1,8 +1,52 @@
-"""Run a single agent against a chunk. One python process per agent."""
+"""Run a single agent against a chunk. One python process per agent.
+
+Local (Vesper) defaults: chunks under B:\hackathon-build\, out under same.
+Cloud-side defaults (Day 3): when invoked with the env vars below, runs
+against /root/bills/, /root/agent-smoke/, and the localhost endpoints.
+
+Env var overrides (optional):
+  BILL_ANALYZER_CHUNKS_DIR    - directory containing chunks-{bill}-full.json
+  BILL_ANALYZER_OUT_DIR       - directory to write agent outputs
+  BILL_ANALYZER_USC_LMDB      - path to the USC LMDB
+  BILL_ANALYZER_SPINE_URL     - spine endpoint URL (default: http://165.245.134.1:8001/v1)
+  BILL_ANALYZER_REASONER_URL  - reasoner endpoint URL
+  BILL_ANALYZER_VISION_URL    - vision endpoint URL
+
+Local example (Windows):
+  python tests/run_one_agent.py --agent summarizer --bill bbb --chunk-id ch01
+
+Cloud example (Linux on instance, hitting localhost):
+  BILL_ANALYZER_CHUNKS_DIR=/root/bills \
+  BILL_ANALYZER_OUT_DIR=/root/agent-smoke \
+  BILL_ANALYZER_USC_LMDB=/root/usc/usc.lmdb \
+  BILL_ANALYZER_SPINE_URL=http://localhost:8001/v1 \
+  BILL_ANALYZER_REASONER_URL=http://localhost:8003/v1 \
+  /root/repo/.venv/bin/python -u tests/run_one_agent.py --agent summarizer --bill bbb --chunk-id ch01
+"""
 from __future__ import annotations
-import argparse, json, sys, time
+import argparse, json, os, sys, time
 from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+# Endpoint overrides MUST be applied before any agent module is imported,
+# because base.py reads SPINE_ENDPOINT etc. at module-import time and the
+# agent classes capture target_endpoint as class attributes from those.
+def _apply_endpoint_env_overrides() -> None:
+    """Patch src.agents.base endpoint constants from env vars, if set."""
+    import importlib
+    base = importlib.import_module("src.agents.base")
+    spine = os.environ.get("BILL_ANALYZER_SPINE_URL")
+    reas  = os.environ.get("BILL_ANALYZER_REASONER_URL")
+    vis   = os.environ.get("BILL_ANALYZER_VISION_URL")
+    if spine:
+        base.SPINE_ENDPOINT = spine
+    if reas:
+        base.REASONER_ENDPOINT = reas
+    if vis:
+        base.VISION_ENDPOINT = vis
+
+_apply_endpoint_env_overrides()
 
 AGENT_MAP = {
     "summarizer":  ("src.agents.summarizer",       "PlainEnglishSummarizer"),
@@ -11,19 +55,42 @@ AGENT_MAP = {
     "conflict":    ("src.agents.conflict_spotter", "ConflictSpotter"),
 }
 
-CHUNK_FILES = {
-    "bbb":  Path(r"B:\hackathon-build\chunks-bbb-full.json"),
-    "hr1":  Path(r"B:\hackathon-build\chunks-hr1-full.json"),
-    "ndaa": Path(r"B:\hackathon-build\chunks-ndaa-full.json"),
+DEFAULT_CHUNKS_DIR = Path(os.environ.get("BILL_ANALYZER_CHUNKS_DIR", r"B:\hackathon-build"))
+DEFAULT_OUT_DIR    = Path(os.environ.get("BILL_ANALYZER_OUT_DIR",    r"B:\hackathon-build\agent-smoke"))
+
+CHUNK_FILE_NAMES = {
+    "bbb":  "chunks-bbb-full.json",
+    "hr1":  "chunks-hr1-full.json",
+    "ndaa": "chunks-ndaa-full.json",
 }
+
+
+def chunks_path(bill: str) -> Path:
+    return DEFAULT_CHUNKS_DIR / CHUNK_FILE_NAMES[bill]
+
+
+def re_target_agent_to_endpoint(AgentClass) -> None:
+    """If env vars set new endpoints, agent class attributes need re-targeting too.
+    They were captured at class-definition time before our env override could land.
+    """
+    import importlib
+    base = importlib.import_module("src.agents.base")
+    # Each agent picks its endpoint by name. Update the captured class attr.
+    name_to_const = {
+        "spine":    base.SPINE_ENDPOINT,
+        "reasoner": base.REASONER_ENDPOINT,
+        "vision":   base.VISION_ENDPOINT,
+    }
+    if AgentClass.target_model in name_to_const:
+        AgentClass.target_endpoint = name_to_const[AgentClass.target_model]
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--agent", required=True, choices=list(AGENT_MAP))
-    ap.add_argument("--bill", default="bbb", choices=list(CHUNK_FILES))
+    ap.add_argument("--bill", default="bbb", choices=list(CHUNK_FILE_NAMES))
     ap.add_argument("--chunk-id", default="ch01")
-    ap.add_argument("--out-dir", type=Path, default=Path(r"B:\hackathon-build\agent-smoke"))
+    ap.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     args = ap.parse_args()
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -31,17 +98,23 @@ def main():
     import importlib
     mod = importlib.import_module(mod_name)
     AgentClass = getattr(mod, cls_name)
+    re_target_agent_to_endpoint(AgentClass)
 
-    # Load chunk
-    chunks = json.loads(CHUNK_FILES[args.bill].read_text(encoding="utf-8"))
+    chunks_file = chunks_path(args.bill)
+    if not chunks_file.exists():
+        print(f"[run] ERROR: chunks file not found: {chunks_file}", flush=True)
+        return 1
+
+    chunks = json.loads(chunks_file.read_text(encoding="utf-8"))
     chunk = next((c for c in chunks if c["chunk_id"] == args.chunk_id), None)
     if not chunk:
-        print(f"[run] chunk_id {args.chunk_id} not found", flush=True)
+        print(f"[run] chunk_id {args.chunk_id} not found in {chunks_file}", flush=True)
         return 1
 
     chunk_text = chunk["text"]
     title_marker = chunk["marker_label"]
     print(f"[run] agent={args.agent} bill={args.bill} chunk={args.chunk_id} tokens={chunk['tokens']:,}", flush=True)
+    print(f"[run] endpoint={AgentClass.target_endpoint}", flush=True)
 
     agent = AgentClass()
     t0 = time.perf_counter()

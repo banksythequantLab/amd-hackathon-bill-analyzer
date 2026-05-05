@@ -1,4 +1,4 @@
-﻿"""Agent: Pork Finder - flags suspect earmarks/sole-source spending in a bill chunk.
+"""Agent: Pork Finder - flags suspect earmarks/sole-source spending in a bill chunk.
 
 Day 3 prompt rewrite (2026-05-04 evening):
 
