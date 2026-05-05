@@ -131,12 +131,17 @@ class PromptRelayAuthor(AgentBase):
             "  - Do NOT invent dialogue. The scenes describe the framing only; the "
             "    audio comes from the existing podcast TTS render.\n"
             "  - Do NOT use text overlays in any prompt. No '$30.8B' captions, no signs.\n"
-            "  - Keep characters CONSISTENT. Use the same character descriptions in every "
-            "    reference_image_prompt of every scene.\n"
+            "  - Keep characters CONSISTENT. Bake the FULL character descriptions INLINE "
+            "    into every reference_image_prompt. Do NOT use placeholders like "
+            "    \"<Alex desc>\" — write out the description text in full each time.\n"
+            "  - VARY the framing per scene. Wide two-shot, medium two-shot, single "
+            "    of Alex, single of Jordan, over-shoulder, close-up - mix it up so the "
+            "    video doesn't look static.\n"
             "  - Match scene boundaries to natural conversational beats (e.g. when the "
             "    speaker changes topic, group those lines together).\n"
-            "  - Aim for 10-15 total scenes from a 38-line podcast. Don't go below 8 or "
-            "    above 18.\n"
+            "  - HARD CAP: 16 scenes total. For a 38-line podcast that means about 2-3 "
+            "    lines per scene. The current podcast is the canonical 38-line one; "
+            "    target 13-16 scenes.\n"
             "  - Each scene should cover ~3-8 seconds of audio. The Alex/Jordan TTS lines "
             "    are roughly 4-7 seconds each, so 2-4 lines per scene is ~10-25 seconds of "
             "    a single LTX clip - too long. Cap scenes at 1-2 lines per scene if the "
@@ -164,7 +169,7 @@ Return a JSON object with this exact shape:
     {{
       "scene_id": "scene-01",
       "line_indices": [0, 1],
-      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) seated at a wooden podcast desk. Warm key light from above. Two condenser microphones in the foreground.",
       "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts smiling, ready to start. | Action 50: Alex leans into his mic and begins to speak. Jordan turns toward him attentively. | Reaction 20: Slow push-in to Jordan's face as she nods.",
       "notes": null
     }}
