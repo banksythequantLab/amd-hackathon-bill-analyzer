@@ -1,0 +1,50 @@
+[
+  {
+    "candidate": "cover-seed137.png",
+    "brief_match": true,
+    "brief_notes": "The image features a dense evergreen forest at golden hour with a visible fire watchtower and cinematic misty atmosphere.",
+    "overlay_zone_clean": true,
+    "overlay_zone_notes": "The top portion has a soft gradient sky providing ample clean space for title overlay.",
+    "quality_issues": [],
+    "verdict": "use",
+    "confidence": "high",
+    "_filename": "cover-seed137.png",
+    "_elapsed_s": 4.25
+  },
+  {
+    "candidate": "cover-seed256.png",
+    "brief_match": true,
+    "brief_notes": "The image features a dense evergreen forest, golden hour lighting, a visible fire watchtower, and a cinematic atmosphere with mist.",
+    "overlay_zone_clean": true,
+    "overlay_zone_notes": "The top portion of the frame has a clear, unobstructed sky providing ample negative space for title overlay.",
+    "quality_issues": [],
+    "verdict": "use",
+    "confidence": "high",
+    "_filename": "cover-seed256.png",
+    "_elapsed_s": 3.88
+  },
+  {
+    "candidate": "cover-seed42.png",
+    "brief_match": true,
+    "brief_notes": "The image features a dense evergreen forest with a fire watchtower visible under golden hour lighting, creating a cinematic atmosphere.",
+    "overlay_zone_clean": true,
+    "overlay_zone_notes": "The top portion of the frame has a clear sky gradient providing ample negative space for title overlay.",
+    "quality_issues": [],
+    "verdict": "use",
+    "confidence": "high",
+    "_filename": "cover-seed42.png",
+    "_elapsed_s": 4.61
+  },
+  {
+    "candidate": "cover-seed999.png",
+    "brief_match": true,
+    "brief_notes": "The image features a dense evergreen forest at golden hour with a visible fire watchtower and cinematic misty atmosphere.",
+    "overlay_zone_clean": true,
+    "overlay_zone_notes": "The top sky area provides a soft, gradient background ideal for legible title overlay.",
+    "quality_issues": [],
+    "verdict": "use",
+    "confidence": "high",
+    "_filename": "cover-seed999.png",
+    "_elapsed_s": 4.39
+  }
+]
