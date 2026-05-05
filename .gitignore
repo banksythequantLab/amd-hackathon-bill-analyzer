@@ -65,3 +65,7 @@ telemetry/
 # --- ROCm / vLLM scratch ---
 .vllm_cache/
 .hf_cache/
+
+# Qwen TTS render scratch
+eval/*-qwen-tts-tmp/
+

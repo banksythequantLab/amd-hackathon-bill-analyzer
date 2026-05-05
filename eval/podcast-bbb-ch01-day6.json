@@ -1,0 +1,238 @@
+{
+  "bill": "bbb",
+  "chunk_id": "ch01",
+  "title": "Wildfire Prevention in the Build Back Better Act",
+  "hook": "A new bill would spend $30.8 billion to stop wildfires before they start\u2014here\u2019s how.",
+  "lines": [
+    {
+      "speaker": "Alex",
+      "text": "Did you know there's a bill that would put $10 billion into preventing wildfires?",
+      "shot_prompt": "aerial shot of a forest on a sunny day, dense evergreens, no people",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Yeah, and that's just one piece of TITLE I of the Build Back Better Act. There's a lot more in there.",
+      "shot_prompt": "extreme close-up of a hardback US legislative bill with the title page visible",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "So this whole section is about agriculture? That seems like a stretch for wildfire prevention.",
+      "shot_prompt": "wide shot of a rural farm field with a few trees in the distance, dry and dusty",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "It\u2019s not just about farming. This section focuses on land management\u2014especially forests and wildfire risk.",
+      "shot_prompt": "aerial view of a forest with visible fire scars on the ground, trees charred but standing",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "So how much total money is this bill putting into wildfire prevention?",
+      "shot_prompt": "a stack of dollar bills growing into a tower, labeled '30.8B' in bold",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "About $30.8 billion over five years. That\u2019s not just fire suppression\u2014it\u2019s prevention and restoration.",
+      "shot_prompt": "infographic-style animation of a timeline with $10B, $9B, $4B, $2.25B, $1B marked across 2022\u20132026",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "Wait\u2014$10 billion just for projects near homes? That sounds like a big chunk.",
+      "shot_prompt": "a suburban neighborhood with trees and houses, one house with a fire-resistant fence",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Yes\u2014this is called the wildland-urban interface. That\u2019s where homes meet forests, and fires spread fast.",
+      "shot_prompt": "side-by-side images: one of a dense forest, one of a neighborhood with houses near trees",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "So they\u2019re clearing brush and trees near homes to slow down fires?",
+      "shot_prompt": "a crew of workers using chainsaws and rakes to clear underbrush near a house",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Exactly. They\u2019re creating defensible space\u2014places where firefighters can stop a fire from spreading.",
+      "shot_prompt": "a firefighter standing on a cleared hillside, looking toward a forest fire in the distance",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "What about the other $9 billion? That\u2019s going to non-Federal land?",
+      "shot_prompt": "a map of the western U.S. with green zones showing state and tribal land projects",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Yes\u2014grants to tribes, states, nonprofits, and local governments to do forest restoration on their own land.",
+      "shot_prompt": "a tribal council meeting with maps and project plans on a table",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "So they\u2019re not just clearing brush\u2014this is about making forests healthier long-term?",
+      "shot_prompt": "a forest with young trees growing under a canopy, sunlight filtering through",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Exactly. It\u2019s about reducing fuel loads, restoring natural fire cycles, and building resilience.",
+      "shot_prompt": "a forest fire burning slowly in a controlled burn, smoke rising into the sky",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "And what about the $4 billion for noncommercial projects outside the wildland-urban interface?",
+      "shot_prompt": "a forest ranger walking through a dense, overgrown woodland with thick underbrush",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "That\u2019s for areas where there\u2019s no homes nearby. They\u2019re still clearing trees and brush to reduce fire risk.",
+      "shot_prompt": "a team of workers using hand tools to clear thick undergrowth in a remote forest",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "But they can still sell small trees or biomass? That\u2019s not commercial logging, right?",
+      "shot_prompt": "a pile of small-diameter logs and wood chips being loaded onto a truck",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Right. The rule is: only small trees or waste biomass can be sold. No big timber harvesting.",
+      "shot_prompt": "a close-up of a small tree being cut down with a hand saw, bark still on",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "And the $2.25 billion for the Civilian Climate Corps? That\u2019s new, right?",
+      "shot_prompt": "a group of young people in work uniforms planting trees in a burned forest area",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Yes\u2014this would fund jobs for young people to work on forest restoration, paid at least 200% of the poverty line.",
+      "shot_prompt": "a diverse group of young adults working on a forest restoration project, wearing vests and backpacks",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "So they\u2019re not just fighting fires\u2014they\u2019re helping prevent them?",
+      "shot_prompt": "a young worker using a rake to clear debris from a forest trail",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Exactly. It\u2019s a workforce program with a climate and safety mission.",
+      "shot_prompt": "a close-up of a worker\u2019s hands raking leaves and branches into a pile",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "What about the $1 billion for vegetation management on National Forest land?",
+      "shot_prompt": "a forest ranger reviewing a map with red zones marked for vegetation work",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "That\u2019s for projects selected under a 2009 law. The Forest Service picks which areas to treat.",
+      "shot_prompt": "a forest ranger pointing at a map with red zones and project proposals on a clipboard",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "Wait\u2014how do we know these numbers are accurate? I\u2019ve heard bills sometimes misquote laws.",
+      "shot_prompt": "a person holding a magnifying glass over a legal document with highlighted sections",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Good question. A review found that 8 out of 15 citations in the bill were wrong or mismatched.",
+      "shot_prompt": "a red 'X' over a legal citation on a screen, with a warning symbol",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "Like what? Did they get the law wrong?",
+      "shot_prompt": "a close-up of a legal text with '16 U.S.C. 6542(d)(1)' highlighted in red",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Yes\u2014section (d)(1) doesn\u2019t exist. The definition was actually in (a)(1). And some citations were for programs, not definitions.",
+      "shot_prompt": "a legal document with a highlighted section showing 'a(1)' instead of 'd(1)'",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "So the funding might be okay, but the legal references are messy?",
+      "shot_prompt": "a stack of legal papers with red flags and notes saying 'wrong section' and 'intent mismatch'",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Exactly. The money is real, but the legal citations don\u2019t always match the actual law.",
+      "shot_prompt": "a government worker looking at a computer screen with a bill and a legal code side by side",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "And no pork? No special projects for one district?",
+      "shot_prompt": "a map of the U.S. with no red dots or highlighted local projects",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "No flags for pork. The funding is spread across programs, not tied to specific districts.",
+      "shot_prompt": "a national map with green zones showing broad program areas, no local highlights",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "And no conflicts of interest? No groups pushing this for profit?",
+      "shot_prompt": "a clean table with no documents showing lobbying or donor names",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "No conflicts found. The biggest recipients are the Forest Service and tribal and state governments.",
+      "shot_prompt": "a group of tribal leaders and Forest Service officials signing a grant agreement",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "So this is really about protecting communities and forests, not politics?",
+      "shot_prompt": "a family walking through a restored forest, kids playing near a cleared trail",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Yes\u2014this is about long-term safety, healthier ecosystems, and creating jobs in rural areas.",
+      "shot_prompt": "a forest with new trees growing, sunlight breaking through the canopy",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Alex",
+      "text": "It\u2019s not just about stopping fires. It\u2019s about building a safer future.",
+      "shot_prompt": "a child planting a sapling in a restored forest, smiling at the camera",
+      "est_seconds": 0.0
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Exactly. And the full breakdown of every dollar is available for anyone who wants to check.",
+      "shot_prompt": "a laptop screen showing a detailed report with dollar amounts and project names",
+      "est_seconds": 0.0
+    }
+  ],
+  "closer": "Read the full agent-by-agent breakdown at bills.nota.lawyer.",
+  "note": null
+}

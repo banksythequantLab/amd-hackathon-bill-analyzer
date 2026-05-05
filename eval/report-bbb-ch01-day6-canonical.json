@@ -1,0 +1,238 @@
+{
+  "bill": "bbb",
+  "bill_full_name": "Build Back Better Act, H.R. 5376 (2021)",
+  "chunk_id": "ch01",
+  "title_marker": "TITLE I-AGRICULTURE",
+  "page_range": "pp. 3-542",
+  "tokens": 199381,
+  "generated_on": "2026-05-05",
+  "pipeline_version": "day-6-canonical",
+  "summarizer": null,
+  "usc_cross_reference": {
+    "total_citations": 140,
+    "ok_resolved": 57,
+    "not_found": 83,
+    "resolution_pct": 40.7,
+    "notes": [],
+    "sample_citations": [
+      {
+        "citation": "16 U.S.C. 6511",
+        "bill_context": "Defined in section 101 of the Healthy Forests Restoration Act of 2003.",
+        "resolution": "ok",
+        "usc_heading": "Definitions"
+      },
+      {
+        "citation": "16 U.S.C. 6542(d)(1)",
+        "bill_context": "Defined in section 303(d)(1) of the Healthy Forests Restoration Act of 2003.",
+        "resolution": "ok-section-level",
+        "usc_heading": "Water Source Protection Program"
+      },
+      {
+        "citation": "16 U.S.C. 6543(a)(3)",
+        "bill_context": "Defined in section 304(a)(3) of the Healthy Forests Restoration Act of 2003.",
+        "resolution": "ok-section-level",
+        "usc_heading": "Watershed Condition Framework"
+      },
+      {
+        "citation": "16 U.S.C. 7125",
+        "bill_context": "Defined in section 205 of the Secure Rural Schools and Community Self-Determination Act of 2000.",
+        "resolution": "ok",
+        "usc_heading": "Resource advisory committees"
+      },
+      {
+        "citation": "16 U.S.C. 7303",
+        "bill_context": "Defined in section 4003 of the Omnibus Public Land Management Act of 2009.",
+        "resolution": "ok",
+        "usc_heading": "Collaborative Forest Landscape Restoration Program"
+      }
+    ]
+  },
+  "citation_validator": {
+    "audited_count": 15,
+    "elapsed_s": 317.21,
+    "summary": {
+      "valid": 1,
+      "format-error": 0,
+      "wrong-section": 5,
+      "intent-mismatch": 3,
+      "unverifiable": 6,
+      "errored": 0
+    },
+    "findings": [
+      {
+        "citation": "16 U.S.C. 6542(d)(1)",
+        "verdict": "wrong-section",
+        "confidence": "high",
+        "issues": [
+          "The cited subsection (d)(1) does not exist in the actual USC text. Definitions for \u00a7 6542 are located in subsection (a)(1), not (d)(1)."
+        ]
+      },
+      {
+        "citation": "16 U.S.C. 6543(a)(3)",
+        "verdict": "intent-mismatch",
+        "confidence": "high",
+        "issues": [
+          "The cited section (16 U.S.C. 6543) defines a 'Watershed Condition Framework' and does not contain definitions relevant to the bill's context.",
+          "The subsection (a)(3) is not present in the provided USC text excerpt, which only shows (a)(1) through (a)(7)."
+        ]
+      },
+      {
+        "citation": "16 U.S.C. 7125",
+        "verdict": "intent-mismatch",
+        "confidence": "high",
+        "issues": [
+          "Bill claims the section provides 'definitions' but the actual USC text defines 'Resource advisory committees' and their operational framework, not general definitions"
+        ]
+      },
+      {
+        "citation": "16 U.S.C. 7303",
+        "verdict": "intent-mismatch",
+        "confidence": "high",
+        "issues": [
+          "The bill claims the citation is for 'definitions', but the actual USC section (\u00a7 7303) establishes a program (Collaborative Forest Landscape Restoration Program) and does not contain definitional content."
+        ]
+      },
+      {
+        "citation": "36 U.S.C. 1603",
+        "verdict": "wrong-section",
+        "confidence": "medium",
+        "issues": [
+          "Section 1603 of Title 36 (Patriotic and National Observances) is unrelated to the Indian Health Care Improvement Act, which is codified in Title 42 U.S.C. 254b (section 4).",
+          "Empty USC text excerpt prevents direct verification of content."
+        ]
+      },
+      {
+        "citation": "36 U.S.C. 3319k",
+        "verdict": "wrong-section",
+        "confidence": "medium",
+        "issues": [
+          "Cited section (36 U.S.C. 3319k) appears to be non-existent or unindexed in the provided USC data",
+          "Bill claims 'definitions' relevance, but no text exists in the cited section to verify this intent"
+        ]
+      },
+      {
+        "citation": "36 U.S.C. 3222a",
+        "verdict": "wrong-section",
+        "confidence": "low",
+        "issues": [
+          "Cited section 36 U.S.C. 3222a has no content in the LMDB index",
+          "Bill references a definition from the National Agricultural Research Act of 1977 (a separate statute), not the U.S. Code"
+        ]
+      },
+      {
+        "citation": "36 U.S.C. 301",
+        "verdict": "wrong-section",
+        "confidence": "high",
+        "issues": [
+          "Cited section (36 U.S.C. 301) defines the national anthem, not a definition from the First Morrill Act",
+          "Bill claims relevance to 'definitions' but cited section contains no definitions related to the Morrill Act"
+        ]
+      }
+    ]
+  },
+  "pork_finder": {},
+  "conflict_spotter": {},
+  "fiscal_impact_estimator": {
+    "total_items": 22,
+    "grand_total_usd": 30800000000.0,
+    "totals_by_domain": {
+      "agriculture-conservation-energy": {
+        "total_usd": 30800000000.0,
+        "item_count": 22
+      }
+    },
+    "top_5_items": [
+      {
+        "amount_usd": 10000000000.0,
+        "purpose": "Hazardous fuels reduction projects within the wildland-urban interface.",
+        "recipient_class": "Forest Service program",
+        "fiscal_years": [
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "domain": "agriculture-conservation-energy",
+        "bill_section": "SEC. 11001",
+        "source_page": 5,
+        "table_formatted": false
+      },
+      {
+        "amount_usd": 9000000000.0,
+        "purpose": "To award grants to a Tribal, State, or local government, a regional organization, a special district, or a nonprofit organization to support, on non-Federal land, forest restoration and resilience projects, including projects to reduce the risk of wildfires and establish defensible space around structures within at-risk communities.",
+        "recipient_class": "Non-Federal land program",
+        "fiscal_years": [
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "domain": "agriculture-conservation-energy",
+        "bill_section": "SEC. 11002",
+        "source_page": 14,
+        "table_formatted": false
+      },
+      {
+        "amount_usd": 4000000000.0,
+        "purpose": "Hazardous fuels reduction projects outside the wildland-urban interface that are noncommercial in nature, except on a determination by the Secretary, in accordance with the best available science, that the harvest of merchantable materials is ecologically necessary for restoration and to enhance ecological integrity, subject to the requirement that the sale of merchantable materials shall be limited to small diameter trees or biomass that are a byproduct of projects under this paragraph.",
+        "recipient_class": "Forest Service program",
+        "fiscal_years": [
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "domain": "agriculture-conservation-energy",
+        "bill_section": "SEC. 11001",
+        "source_page": 5,
+        "table_formatted": false
+      },
+      {
+        "amount_usd": 2250000000.0,
+        "purpose": "To be used for staffing, salaries, and other workforce needs to support the development of a Civilian Climate Corps for the purposes of managing National Forest System land, subject to the conditions that the amounts made available under this paragraph shall be in addition to any amounts required for salaries and expenses needed to carry out projects under this subsection, and members of the Civilian Climate Corps shall be compensated at not less than 200 percent of the annual Federal poverty line.",
+        "recipient_class": "Forest Service program",
+        "fiscal_years": [
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "domain": "agriculture-conservation-energy",
+        "bill_section": "SEC. 11001",
+        "source_page": 5,
+        "table_formatted": false
+      },
+      {
+        "amount_usd": 1000000000.0,
+        "purpose": "Vegetation management projects carried out solely on National Forest System land that the Secretary shall select following the receipt of proposals submitted in accordance with subsections (a), (b), and (c) of section 4003 of the Omnibus Public Land Management Act of 2009 (16 U.S.C. 7303).",
+        "recipient_class": "Forest Service program",
+        "fiscal_years": [
+          2022,
+          2023,
+          2024,
+          2025,
+          2026
+        ],
+        "domain": "agriculture-conservation-energy",
+        "bill_section": "SEC. 11001",
+        "source_page": 5,
+        "table_formatted": false
+      }
+    ],
+    "vision_pages_suggested": [],
+    "truncation_recovered": true
+  },
+  "headline": {
+    "total_appropriations": 30800000000.0,
+    "total_appropriations_human": "$30.8B",
+    "citations_identified": 140,
+    "citations_audited": 15,
+    "audit_findings": 8,
+    "pork_items": 0,
+    "conflicts": 0
+  }
+}
