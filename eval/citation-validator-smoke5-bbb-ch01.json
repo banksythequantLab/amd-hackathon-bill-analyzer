@@ -1,0 +1,61 @@
+{
+  "source_xref_file": "/root/agent-smoke/usc_cross_reference-bbb-ch01-day3.json",
+  "citations_audited": 5,
+  "elapsed_s": 175.4,
+  "summary": {
+    "valid": 0,
+    "format-error": 0,
+    "wrong-section": 1,
+    "intent-mismatch": 0,
+    "unverifiable": 4,
+    "errored": 0
+  },
+  "results": [
+    {
+      "citation": "16 U.S.C. 6511",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "USC text excerpt is empty, making verification impossible"
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "16 U.S.C. 6542(d)(1)",
+      "verdict": "wrong-section",
+      "confidence": "low",
+      "issues": [
+        "The referenced USC section (16 U.S.C. 6542(d)(1)) has no content in the provided LMDB data, suggesting it may not exist or is incomplete. The bill claims it defines a term, but no text is available to verify this intent."
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "16 U.S.C. 6543(a)(3)",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "USC text excerpt is empty, making verification impossible",
+        "Bill cites a codified provision (16 U.S.C. 6543) but references a public law (Healthy Forests Restoration Act of 2003) which may not have been codified into the USC at this location"
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "16 U.S.C. 7125",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "USC section text is empty/missing in LMDB index"
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "16 U.S.C. 7303",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "USC section text is empty in LMDB index - cannot verify content or alignment with bill's 'definitions' claim"
+      ],
+      "suggested_fix": "Verify 16 U.S.C. 7303 existence and content in the most current official USC database"
+    }
+  ]
+}
