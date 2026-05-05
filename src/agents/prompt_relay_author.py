@@ -82,6 +82,42 @@ class RelayAuthoringOutput(BaseModel):
     model_config = {"extra": "allow"}
 
 
+def _ensure_line_coverage(parsed: dict, total_lines: int) -> dict:
+    """Deterministic post-fix: if the LLM stopped before covering all lines,
+    append continuation two-shot scenes (2 lines each) until all lines are covered.
+    Pulls reference_image_prompt + smart_prompt from the LAST scene as a template."""
+    scenes = parsed.get("scenes", []) or []
+    covered = set()
+    for s in scenes:
+        for i in (s.get("line_indices") or []):
+            covered.add(int(i))
+    expected = set(range(total_lines))
+    missing = sorted(expected - covered)
+    if not missing:
+        return parsed
+    # template = the last scene's prompts (already valid, already two-shot)
+    template = scenes[-1] if scenes else None
+    if template is None:
+        return parsed  # nothing to template from
+    last_n = len(scenes)
+    # Group the missing line indices into 2-line chunks (or 1 if odd tail)
+    i = 0
+    while i < len(missing):
+        chunk = missing[i:i+2]
+        last_n += 1
+        new_scene = {
+            "scene_id": f"scene-{last_n:02d}",
+            "line_indices": chunk,
+            "reference_image_prompt": template["reference_image_prompt"],
+            "smart_prompt": template["smart_prompt"],
+            "notes": "Auto-appended for full line coverage",
+        }
+        scenes.append(new_scene)
+        i += 2
+    parsed["scenes"] = scenes
+    return parsed
+
+
 class PromptRelayAuthor(AgentBase):
     """Authors PromptRelayEncode smart_prompts from a podcast script."""
     name = "prompt_relay_author"
@@ -90,6 +126,33 @@ class PromptRelayAuthor(AgentBase):
     temperature = 0.4   # creative writing, like the podcast generator
     max_tokens = 6000   # ~13 scenes * ~150 tokens each = ~2K tokens; 6K is generous
     output_schema = RelayAuthoringOutput
+
+    def run(self, chunk_text: str, chunk_id: str, **kwargs):
+        """Wrap parent run() with deterministic line-coverage post-fix.
+        The LLM has shown a strong tendency to anchor at 16 scenes regardless of
+        how the prompt asks for full coverage. Rather than fight it forever, we
+        accept the LLM-authored scenes and append continuation two-shot scenes
+        for any uncovered lines using the LAST scene as a template."""
+        result = super().run(chunk_text, chunk_id, **kwargs)
+        if not result.output or not isinstance(result.output, dict):
+            return result
+        # Determine line count from the input chunk text
+        try:
+            import json as _json
+            podcast = _json.loads(chunk_text)
+            total_lines = len(podcast.get("lines") or [])
+        except Exception:
+            total_lines = 0
+        if total_lines <= 0:
+            return result
+        patched = _ensure_line_coverage(result.output, total_lines)
+        # Re-validate against schema in case patching changed shape
+        try:
+            validated = self.output_schema(**patched)
+            result.output = validated.model_dump()
+        except Exception:
+            pass
+        return result
 
     def system_prompt(self) -> str:
         return (
