@@ -167,11 +167,14 @@ class AgentBase:
         if not stack:
             return None
 
-        # We're truncated. Truncate `s` to the last "safe" array comma,
-        # then close all open arrays/objects.
+        # We're truncated. Truncate `s` to the last "safe" array comma at
+        # the SHALLOWEST array depth (the outermost list, e.g. items[] or
+        # citations[]). Inner arrays like "fiscal_years": [2024, 2025] have
+        # commas too, but cutting there would split a single item in half.
+        # The outermost-list comma reliably sits between sibling records.
         if last_array_comma_at_depth:
-            deepest_array_depth = max(last_array_comma_at_depth.keys())
-            cut = last_array_comma_at_depth[deepest_array_depth]
+            shallowest_array_depth = min(last_array_comma_at_depth.keys())
+            cut = last_array_comma_at_depth[shallowest_array_depth]
             # Cut just before the comma (drop the partial element after it)
             s = s[:cut]
             # Recompute stack state for the truncated string
