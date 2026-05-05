@@ -165,36 +165,6 @@
       "reference_image_prompt": "Medium two-shot of Alex on the left (30s male, light brown hair, navy button-down) and Jordan on the right (30s woman, dark hair pulled back, charcoal blazer over white shirt), both seated at a wooden podcast desk and facing the camera. Warm key light from above. Two condenser microphones in the foreground.",
       "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex gestures toward the camera, emphasizing transparency. Jordan points to her screen, showing data. | Reaction 20: Slight pull-back to frame both hosts as Jordan concludes.",
       "notes": null
-    },
-    {
-      "scene_id": "scene-17",
-      "line_indices": [
-        32,
-        33
-      ],
-      "reference_image_prompt": "Medium two-shot of Alex on the left (30s male, light brown hair, navy button-down) and Jordan on the right (30s woman, dark hair pulled back, charcoal blazer over white shirt), both seated at a wooden podcast desk and facing the camera. Warm key light from above. Two condenser microphones in the foreground.",
-      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex gestures toward the camera, emphasizing transparency. Jordan points to her screen, showing data. | Reaction 20: Slight pull-back to frame both hosts as Jordan concludes.",
-      "notes": "Auto-appended for full line coverage"
-    },
-    {
-      "scene_id": "scene-18",
-      "line_indices": [
-        34,
-        35
-      ],
-      "reference_image_prompt": "Medium two-shot of Alex on the left (30s male, light brown hair, navy button-down) and Jordan on the right (30s woman, dark hair pulled back, charcoal blazer over white shirt), both seated at a wooden podcast desk and facing the camera. Warm key light from above. Two condenser microphones in the foreground.",
-      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex gestures toward the camera, emphasizing transparency. Jordan points to her screen, showing data. | Reaction 20: Slight pull-back to frame both hosts as Jordan concludes.",
-      "notes": "Auto-appended for full line coverage"
-    },
-    {
-      "scene_id": "scene-19",
-      "line_indices": [
-        36,
-        37
-      ],
-      "reference_image_prompt": "Medium two-shot of Alex on the left (30s male, light brown hair, navy button-down) and Jordan on the right (30s woman, dark hair pulled back, charcoal blazer over white shirt), both seated at a wooden podcast desk and facing the camera. Warm key light from above. Two condenser microphones in the foreground.",
-      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex gestures toward the camera, emphasizing transparency. Jordan points to her screen, showing data. | Reaction 20: Slight pull-back to frame both hosts as Jordan concludes.",
-      "notes": "Auto-appended for full line coverage"
     }
   ],
   "note": null

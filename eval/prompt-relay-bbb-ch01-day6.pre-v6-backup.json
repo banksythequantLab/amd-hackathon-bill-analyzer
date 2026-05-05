@@ -1,0 +1,201 @@
+{
+  "bill": "bbb",
+  "chunk_id": "ch01",
+  "podcast_title": "Wildfire Prevention in the Build Back Better Act",
+  "character_alex": "30s male, light brown hair, navy button-down, friendly demeanor",
+  "character_jordan": "30s woman, dark hair pulled back, charcoal blazer over white shirt, focused gaze",
+  "studio": "Modern podcast studio: wooden desk, two condenser mics, warm key lighting, soft blue backdrop",
+  "scenes": [
+    {
+      "scene_id": "scene-01",
+      "line_indices": [
+        0,
+        1
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) seated at a wooden podcast desk. Warm key light from above. Two condenser microphones in the foreground.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts smiling, ready to start. | Action 50: Alex leans into his mic and begins to speak. Jordan turns toward him attentively. | Reaction 20: Slow push-in to Jordan's face as she nods.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-02",
+      "line_indices": [
+        2,
+        3
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the wooden desk. Warm key light. Two mics in foreground. Alex looks puzzled, Jordan focused.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts engaged in conversation. | Action 50: Alex raises an eyebrow, gesturing slightly with his hand. Jordan leans forward, eyes steady. | Reaction 20: Close-up on Jordan\u2019s face as she begins to explain.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-03",
+      "line_indices": [
+        4,
+        5
+      ],
+      "reference_image_prompt": "Wide shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the wooden desk. Warm lighting. Two mics in foreground. Alex looks curious, Jordan poised.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts focused on the topic. | Action 50: Alex points at the air as he asks a question. Jordan tilts her head slightly, preparing to respond. | Reaction 20: Slow zoom on Jordan\u2019s face as she begins to speak.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-04",
+      "line_indices": [
+        6,
+        7
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. Alex looks surprised, Jordan attentive.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts engaged. | Action 50: Alex leans forward, eyes wide. Jordan nods slowly, hand resting on the desk. | Reaction 20: Close-up on Alex\u2019s face as he processes the number.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-05",
+      "line_indices": [
+        8,
+        9
+      ],
+      "reference_image_prompt": "Over-the-shoulder shot from behind Alex (30s male, light brown hair, navy button-down) looking at Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt). Warm lighting. Two mics in foreground. Jordan speaks with clarity.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts focused. | Action 50: Jordan gestures with her hand, explaining the wildland-urban interface. Alex listens intently. | Reaction 20: Slow push-in to Jordan\u2019s face as she emphasizes the term.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-06",
+      "line_indices": [
+        10,
+        11
+      ],
+      "reference_image_prompt": "Close-up of Alex (30s male, light brown hair, navy button-down) at the desk. Warm lighting. Two mics in foreground. He looks thoughtful.",
+      "smart_prompt": "Establish 30: Alex seated at the wooden desk. Warm key light. Two mics in foreground. Alex focused. | Action 50: Alex nods slowly, then raises a hand to clarify. Jordan watches him. | Reaction 20: Cut to Jordan\u2019s face as she prepares to respond.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-07",
+      "line_indices": [
+        12,
+        13
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. Jordan speaks with confidence.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts engaged. | Action 50: Jordan gestures with her hand, explaining defensible space. Alex leans in. | Reaction 20: Slow zoom on Alex\u2019s face as he absorbs the idea.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-08",
+      "line_indices": [
+        14,
+        15
+      ],
+      "reference_image_prompt": "Close-up of Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. She speaks with precision.",
+      "smart_prompt": "Establish 30: Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Jordan focused. | Action 50: Jordan points at the air, emphasizing the $9 billion. Alex listens closely. | Reaction 20: Cut to Alex\u2019s face as he processes the allocation.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-09",
+      "line_indices": [
+        16,
+        17
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. Alex looks intrigued.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts engaged. | Action 50: Alex tilts his head, asking a follow-up. Jordan smiles slightly. | Reaction 20: Close-up on Jordan\u2019s face as she begins to explain the long-term vision.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-10",
+      "line_indices": [
+        18,
+        19
+      ],
+      "reference_image_prompt": "Over-the-shoulder shot from behind Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) looking at Alex (30s male, light brown hair, navy button-down). Warm lighting. Two mics in foreground. Alex listens.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts focused. | Action 50: Jordan gestures with her hand, explaining controlled burns. Alex nods. | Reaction 20: Slow push-in to Alex\u2019s face as he absorbs the concept.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-11",
+      "line_indices": [
+        20,
+        21
+      ],
+      "reference_image_prompt": "Close-up of Alex (30s male, light brown hair, navy button-down) at the desk. Warm lighting. Two mics in foreground. He looks curious.",
+      "smart_prompt": "Establish 30: Alex seated at the wooden desk. Warm key light. Two mics in foreground. Alex focused. | Action 50: Alex raises a finger, asking a question. Jordan turns slightly toward him. | Reaction 20: Cut to Jordan\u2019s face as she prepares to respond.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-12",
+      "line_indices": [
+        22,
+        23
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. Jordan speaks with authority.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts engaged. | Action 50: Jordan gestures with her hand, explaining the rules on biomass. Alex listens intently. | Reaction 20: Close-up on Alex\u2019s face as he processes the restriction.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-13",
+      "line_indices": [
+        24,
+        25
+      ],
+      "reference_image_prompt": "Close-up of Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. She speaks with clarity.",
+      "smart_prompt": "Establish 30: Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Jordan focused. | Action 50: Jordan nods, emphasizing the new Civilian Climate Corps. Alex looks impressed. | Reaction 20: Slow zoom on Alex\u2019s face as he absorbs the job creation angle.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-14",
+      "line_indices": [
+        26,
+        27
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. Alex looks reflective.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts engaged. | Action 50: Alex leans back slightly, thinking. Jordan watches him. | Reaction 20: Close-up on Jordan\u2019s face as she prepares to confirm the mission.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-15",
+      "line_indices": [
+        28,
+        29
+      ],
+      "reference_image_prompt": "Over-the-shoulder shot from behind Alex (30s male, light brown hair, navy button-down) looking at Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt). Warm lighting. Two mics in foreground. Jordan speaks with confidence.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts focused. | Action 50: Jordan gestures with her hand, explaining the $1 billion. Alex listens intently. | Reaction 20: Slow push-in to Alex\u2019s face as he processes the allocation.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-16",
+      "line_indices": [
+        30,
+        31
+      ],
+      "reference_image_prompt": "Close-up of Alex (30s male, light brown hair, navy button-down) at the desk. Warm lighting. Two mics in foreground. He looks skeptical.",
+      "smart_prompt": "Establish 30: Alex seated at the wooden desk. Warm key light. Two mics in foreground. Alex focused. | Action 50: Alex raises an eyebrow, asking a critical question. Jordan leans forward. | Reaction 20: Close-up on Jordan\u2019s face as she prepares to respond with evidence.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-17",
+      "line_indices": [
+        32,
+        33
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. Jordan speaks with precision.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts engaged. | Action 50: Jordan points at the air, explaining the citation error. Alex listens closely. | Reaction 20: Slow zoom on Alex\u2019s face as he processes the mistake.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-18",
+      "line_indices": [
+        34,
+        35
+      ],
+      "reference_image_prompt": "Close-up of Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. She speaks with clarity.",
+      "smart_prompt": "Establish 30: Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Jordan focused. | Action 50: Jordan gestures with her hand, emphasizing the legal mismatch. Alex nods slowly. | Reaction 20: Cut to Alex\u2019s face as he absorbs the implication.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-19",
+      "line_indices": [
+        36,
+        37
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex (30s male, light brown hair, navy button-down) and Jordan (30s woman, dark hair pulled back, charcoal blazer over white shirt) at the desk. Warm lighting. Two mics in foreground. Both look satisfied.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light. Two mics in foreground. Both hosts engaged. | Action 50: Alex smiles slightly. Jordan nods, hands folded. | Reaction 20: Slow pull-back to wide shot as they conclude.",
+      "notes": null
+    }
+  ],
+  "note": null
+}

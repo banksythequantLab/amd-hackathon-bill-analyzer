@@ -1,0 +1,341 @@
+{
+  "agent": "scene_critic",
+  "master_image": "master-seed256.png",
+  "elapsed_s": 333.46,
+  "summary": {
+    "keep": 15,
+    "caveat": 1,
+    "reroll": 0
+  },
+  "results": [
+    {
+      "scene_id": "scene-01",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Medium two-shot of Alex (left) and Jordan (right) seated at wooden podcast desk with two condenser microphones under warm key light",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-02",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Medium two-shot of both hosts at the desk, Alex on left (navy shirt) looking puzzled, Jordan on right (charcoal blazer) looking down",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-03",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Wide shot of both hosts at the wooden desk with two mics in foreground; Alex (left) and Jordan (right) visible, faces showing, matching master's positioning and attire",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-04",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Medium two-shot of both hosts at the desk with Alex (left) showing surprised expression and Jordan (right) appearing attentive, warm lighting, two mics in foreground",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-05",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Over-the-shoulder shot from behind Alex (left) looking at Jordan (right), both hosts visible with Alex's back to camera and Jordan facing camera",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-06",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Close-up of Alex (30s male, light brown hair, navy button-down) at the desk with two mics in foreground; he looks thoughtful",
+      "both_hosts_visible": false,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-07",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Medium two-shot of Alex (left) and Jordan (right) at the desk, both facing forward, warm lighting, two mics in foreground",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-08",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Close-up of Jordan at the desk with two mics in foreground, warm lighting",
+      "both_hosts_visible": false,
+      "seating_matches_master": false,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-09",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Medium two-shot of both hosts at the desk with Alex (left) looking towards Jordan and Jordan (right) facing forward",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-11",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Close-up of Alex at the desk with two microphones in foreground, warm lighting",
+      "both_hosts_visible": false,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-12",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Medium two-shot with both hosts at the desk, two mics in foreground, Jordan speaking with mouth open",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-15",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Over-the-shoulder shot from behind Alex (left), showing Alex's back and Jordan's face; both hosts visible, Jordan speaking",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-16",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Close-up of Alex (30s male, light brown hair, navy button-down) at the desk with two mics in foreground; he looks skeptical",
+      "both_hosts_visible": false,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-17",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Medium two-shot of Alex (left) and Jordan (right) at the desk with microphones in foreground, both facing forward",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-18",
+      "verdict": "caveat",
+      "confidence": "medium",
+      "framing_observed": "Two-shot of both hosts (Alex left, Jordan right) at the desk with microphones",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": false,
+      "issues": [
+        "Framing is a two-shot instead of a close-up of Jordan"
+      ],
+      "suggested_fix": "Crop to a close-up of Jordan, focusing on her face and upper body with the microphone in foreground"
+    },
+    {
+      "scene_id": "scene-19",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Medium two-shot of Alex (left) and Jordan (right) at desk with both faces visible, matching master's seating and attire",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "back_to_camera": false,
+      "director_intent_followed": true,
+      "issues": [],
+      "suggested_fix": null
+    }
+  ],
+  "metrics": [
+    {
+      "scene_id": "scene-01",
+      "elapsed_s": 9.38,
+      "prompt_tokens": 2907,
+      "completion_tokens": 740,
+      "raw_response_chars": 2955
+    },
+    {
+      "scene_id": "scene-02",
+      "elapsed_s": 15.63,
+      "prompt_tokens": 2907,
+      "completion_tokens": 1280,
+      "raw_response_chars": 5369
+    },
+    {
+      "scene_id": "scene-03",
+      "elapsed_s": 13.18,
+      "prompt_tokens": 2905,
+      "completion_tokens": 1082,
+      "raw_response_chars": 4484
+    },
+    {
+      "scene_id": "scene-04",
+      "elapsed_s": 8.47,
+      "prompt_tokens": 2905,
+      "completion_tokens": 673,
+      "raw_response_chars": 2828
+    },
+    {
+      "scene_id": "scene-05",
+      "elapsed_s": 11.26,
+      "prompt_tokens": 2904,
+      "completion_tokens": 919,
+      "raw_response_chars": 3830
+    },
+    {
+      "scene_id": "scene-06",
+      "elapsed_s": 13.88,
+      "prompt_tokens": 2881,
+      "completion_tokens": 1151,
+      "raw_response_chars": 4740
+    },
+    {
+      "scene_id": "scene-07",
+      "elapsed_s": 16.08,
+      "prompt_tokens": 2903,
+      "completion_tokens": 1327,
+      "raw_response_chars": 5435
+    },
+    {
+      "scene_id": "scene-08",
+      "elapsed_s": 8.64,
+      "prompt_tokens": 2886,
+      "completion_tokens": 696,
+      "raw_response_chars": 2910
+    },
+    {
+      "scene_id": "scene-09",
+      "elapsed_s": 9.62,
+      "prompt_tokens": 2902,
+      "completion_tokens": 768,
+      "raw_response_chars": 3209
+    },
+    {
+      "scene_id": "scene-11",
+      "elapsed_s": 15.18,
+      "prompt_tokens": 2881,
+      "completion_tokens": 1261,
+      "raw_response_chars": 5204
+    },
+    {
+      "scene_id": "scene-12",
+      "elapsed_s": 15.11,
+      "prompt_tokens": 2903,
+      "completion_tokens": 1240,
+      "raw_response_chars": 5251
+    },
+    {
+      "scene_id": "scene-15",
+      "elapsed_s": 13.79,
+      "prompt_tokens": 2904,
+      "completion_tokens": 1127,
+      "raw_response_chars": 4710
+    },
+    {
+      "scene_id": "scene-16",
+      "elapsed_s": 16.64,
+      "prompt_tokens": 2881,
+      "completion_tokens": 1382,
+      "raw_response_chars": 5824
+    },
+    {
+      "scene_id": "scene-17",
+      "elapsed_s": 17.36,
+      "prompt_tokens": 2903,
+      "completion_tokens": 1437,
+      "raw_response_chars": 6246
+    },
+    {
+      "scene_id": "scene-18",
+      "elapsed_s": 33.08,
+      "prompt_tokens": 2886,
+      "completion_tokens": 2783,
+      "raw_response_chars": 11576
+    },
+    {
+      "scene_id": "scene-19",
+      "elapsed_s": 8.78,
+      "prompt_tokens": 2902,
+      "completion_tokens": 702,
+      "raw_response_chars": 2882
+    }
+  ],
+  "failures": [
+    "scene-10",
+    "scene-13",
+    "scene-14"
+  ]
+}

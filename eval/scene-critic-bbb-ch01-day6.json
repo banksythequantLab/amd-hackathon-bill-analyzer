@@ -1,0 +1,328 @@
+{
+  "agent": "scene_critic",
+  "master_image": "master-seed256.png",
+  "elapsed_s": 162.11,
+  "summary": {
+    "keep": 15,
+    "caveat": 0,
+    "reroll": 2
+  },
+  "results": [
+    {
+      "scene_id": "scene-01",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium two-shot matching master",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-02",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium two-shot",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-03",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "wide shot matching master's composition",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-04",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium two-shot with consistent desk positioning and lighting",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-05",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "over-the-shoulder shot from behind Alex, showing Alex's back and Jordan facing camera",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-06",
+      "verdict": "reroll",
+      "confidence": "high",
+      "framing_observed": "close-up of Alex only",
+      "both_hosts_visible": false,
+      "seating_matches_master": false,
+      "identity_consistent": true,
+      "issues": [
+        "Jordan is missing from the frame"
+      ],
+      "suggested_fix": "Add Jordan to the frame on the right side of the desk as per master reference"
+    },
+    {
+      "scene_id": "scene-07",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium two-shot with slight gesture variation (Jordan's hands clasped vs. holding mic)",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-09",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium two-shot with slight angle variation",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-10",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium shot with slight angle, both hosts visible and facing each other",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-12",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium two-shot with similar composition to master",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-13",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Close-up of Jordan with slightly tighter framing than master",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-14",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium two-shot with consistent host positioning and background",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-15",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Over-the-shoulder shot from behind Alex, showing Jordan speaking",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-16",
+      "verdict": "reroll",
+      "confidence": "high",
+      "framing_observed": "Close-up of Alex only, Jordan missing",
+      "both_hosts_visible": false,
+      "seating_matches_master": false,
+      "identity_consistent": true,
+      "issues": [
+        "Jordan is missing from the frame"
+      ],
+      "suggested_fix": "Add Jordan to the frame in her correct position (right side of desk) matching master reference"
+    },
+    {
+      "scene_id": "scene-17",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium two-shot with consistent seating and studio elements",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-18",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "Close-up framing focusing on Jordan with mics in foreground",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "scene_id": "scene-19",
+      "verdict": "keep",
+      "confidence": "high",
+      "framing_observed": "medium two-shot with consistent desk setup and lighting",
+      "both_hosts_visible": true,
+      "seating_matches_master": true,
+      "identity_consistent": true,
+      "issues": [],
+      "suggested_fix": null
+    }
+  ],
+  "metrics": [
+    {
+      "scene_id": "scene-01",
+      "elapsed_s": 12.82,
+      "prompt_tokens": 2604,
+      "completion_tokens": 1035,
+      "raw_response_chars": 4575
+    },
+    {
+      "scene_id": "scene-02",
+      "elapsed_s": 3.65,
+      "prompt_tokens": 2604,
+      "completion_tokens": 270,
+      "raw_response_chars": 1103
+    },
+    {
+      "scene_id": "scene-03",
+      "elapsed_s": 4.93,
+      "prompt_tokens": 2602,
+      "completion_tokens": 362,
+      "raw_response_chars": 1500
+    },
+    {
+      "scene_id": "scene-04",
+      "elapsed_s": 8.35,
+      "prompt_tokens": 2602,
+      "completion_tokens": 660,
+      "raw_response_chars": 2755
+    },
+    {
+      "scene_id": "scene-05",
+      "elapsed_s": 15.75,
+      "prompt_tokens": 2601,
+      "completion_tokens": 1303,
+      "raw_response_chars": 5257
+    },
+    {
+      "scene_id": "scene-06",
+      "elapsed_s": 5.2,
+      "prompt_tokens": 2578,
+      "completion_tokens": 394,
+      "raw_response_chars": 1608
+    },
+    {
+      "scene_id": "scene-07",
+      "elapsed_s": 6.04,
+      "prompt_tokens": 2600,
+      "completion_tokens": 464,
+      "raw_response_chars": 1963
+    },
+    {
+      "scene_id": "scene-09",
+      "elapsed_s": 5.16,
+      "prompt_tokens": 2599,
+      "completion_tokens": 382,
+      "raw_response_chars": 1537
+    },
+    {
+      "scene_id": "scene-10",
+      "elapsed_s": 10.86,
+      "prompt_tokens": 2599,
+      "completion_tokens": 887,
+      "raw_response_chars": 3783
+    },
+    {
+      "scene_id": "scene-12",
+      "elapsed_s": 5.42,
+      "prompt_tokens": 2600,
+      "completion_tokens": 405,
+      "raw_response_chars": 1693
+    },
+    {
+      "scene_id": "scene-13",
+      "elapsed_s": 8.23,
+      "prompt_tokens": 2583,
+      "completion_tokens": 649,
+      "raw_response_chars": 2764
+    },
+    {
+      "scene_id": "scene-14",
+      "elapsed_s": 4.94,
+      "prompt_tokens": 2599,
+      "completion_tokens": 369,
+      "raw_response_chars": 1561
+    },
+    {
+      "scene_id": "scene-15",
+      "elapsed_s": 7.01,
+      "prompt_tokens": 2601,
+      "completion_tokens": 548,
+      "raw_response_chars": 2209
+    },
+    {
+      "scene_id": "scene-16",
+      "elapsed_s": 5.01,
+      "prompt_tokens": 2578,
+      "completion_tokens": 370,
+      "raw_response_chars": 1541
+    },
+    {
+      "scene_id": "scene-17",
+      "elapsed_s": 3.84,
+      "prompt_tokens": 2600,
+      "completion_tokens": 263,
+      "raw_response_chars": 1064
+    },
+    {
+      "scene_id": "scene-18",
+      "elapsed_s": 13.52,
+      "prompt_tokens": 2583,
+      "completion_tokens": 1110,
+      "raw_response_chars": 4674
+    },
+    {
+      "scene_id": "scene-19",
+      "elapsed_s": 4.79,
+      "prompt_tokens": 2599,
+      "completion_tokens": 348,
+      "raw_response_chars": 1472
+    }
+  ],
+  "failures": [
+    "scene-08",
+    "scene-11"
+  ]
+}
