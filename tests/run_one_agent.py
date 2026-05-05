@@ -55,6 +55,7 @@ AGENT_MAP = {
     "conflict":    ("src.agents.conflict_spotter", "ConflictSpotter"),
     "fiscal":      ("src.agents.fiscal_impact_estimator", "FiscalImpactEstimator"),
     "stakeholder": ("src.agents.stakeholder_tracer", "StakeholderTracer"),
+    "podcast":     ("src.agents.podcast_generator", "PodcastGenerator"),
 }
 
 DEFAULT_CHUNKS_DIR = Path(os.environ.get("BILL_ANALYZER_CHUNKS_DIR", r"B:\hackathon-build"))
@@ -93,6 +94,8 @@ def main():
     ap.add_argument("--bill", default="bbb", choices=list(CHUNK_FILE_NAMES))
     ap.add_argument("--chunk-id", default="ch01")
     ap.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    ap.add_argument("--report-file", type=Path, default=None,
+                    help="For podcast agent: path to a report JSON to use as input instead of a bill chunk.")
     args = ap.parse_args()
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -102,6 +105,38 @@ def main():
     AgentClass = getattr(mod, cls_name)
     re_target_agent_to_endpoint(AgentClass)
 
+    # Podcast agent uses a report JSON as input, not a bill chunk.
+    if args.agent == "podcast":
+        if args.report_file is None:
+            print("[run] ERROR: --report-file required for the podcast agent", flush=True)
+            return 1
+        if not args.report_file.exists():
+            print(f"[run] ERROR: report file not found: {args.report_file}", flush=True)
+            return 1
+        report_text = args.report_file.read_text(encoding="utf-8")
+        chunk_text = report_text
+        title_marker = f"report:{args.report_file.name}"
+        print(f"[run] agent={args.agent} bill={args.bill} chunk={args.chunk_id} report_chars={len(report_text):,}", flush=True)
+        print(f"[run] endpoint={AgentClass.target_endpoint}", flush=True)
+        agent = AgentClass()
+        t0 = time.perf_counter()
+        result = agent.run(chunk_text, args.chunk_id, title_marker=title_marker, bill=args.bill)
+        elapsed = time.perf_counter() - t0
+        print(f"[run] elapsed={elapsed:.1f}s prompt_toks={result.prompt_tokens:,} completion_toks={result.completion_tokens:,}", flush=True)
+        if result.errors:
+            print(f"[run] ERRORS: {result.errors}", flush=True)
+            (args.out_dir / f"{agent.name}-raw-{args.chunk_id}.txt").write_text(result.raw_response or "", encoding="utf-8")
+        out_file = args.out_dir / f"{agent.name}-{args.chunk_id}.json"
+        out_file.write_text(json.dumps(result.output if result.output else {"errors": result.errors}, indent=2), encoding="utf-8")
+        metric = {
+            "agent": agent.name, "bill": args.bill, "chunk_id": args.chunk_id,
+            "elapsed_s": round(elapsed, 2),
+            "prompt_tokens": result.prompt_tokens, "completion_tokens": result.completion_tokens,
+            "ok": not bool(result.errors),
+        }
+        (args.out_dir / f"{agent.name}-metric-{args.chunk_id}.json").write_text(json.dumps(metric, indent=2), encoding="utf-8")
+        print(f"[run] wrote {out_file.name} + metric. ok={metric['ok']}", flush=True)
+        return 0 if metric["ok"] else 2
     chunks_file = chunks_path(args.bill)
     if not chunks_file.exists():
         print(f"[run] ERROR: chunks file not found: {chunks_file}", flush=True)

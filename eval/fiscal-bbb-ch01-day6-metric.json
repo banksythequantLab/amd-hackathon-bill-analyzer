@@ -1,0 +1,9 @@
+{
+  "agent": "fiscal_impact_estimator",
+  "bill": "bbb",
+  "chunk_id": "ch01",
+  "elapsed_s": 165.12,
+  "prompt_tokens": 233302,
+  "completion_tokens": 4000,
+  "ok": true
+}

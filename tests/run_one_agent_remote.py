@@ -62,7 +62,7 @@ CHUNK_FILE_NAMES = {
     "ndaa": "chunks-ndaa-full.json",
 }
 
-AGENT_VALID = {"summarizer", "xref", "pork", "conflict", "fiscal", "stakeholder"}
+AGENT_VALID = {"summarizer", "xref", "pork", "conflict", "fiscal", "stakeholder", "podcast"}
 
 # Use Git's bundled SSH on Windows (Windows OpenSSH stderr is broken under subprocess)
 GIT_SSH = r"C:\Program Files\Git\usr\bin\ssh.exe"
@@ -170,6 +170,8 @@ def main() -> int:
     ap.add_argument("--agent", required=True, choices=sorted(AGENT_VALID))
     ap.add_argument("--bill", default="bbb", choices=list(CHUNK_FILE_NAMES))
     ap.add_argument("--chunk-id", default="ch01")
+    ap.add_argument("--report-file", type=str, default=None,
+                    help="For podcast agent: path to a LOCAL report JSON; will be uploaded to instance.")
     ap.add_argument("--no-fetch", action="store_true",
                     help="Don't pull result files back to local")
     ap.add_argument("--git-pull", action="store_true",
@@ -209,6 +211,27 @@ def main() -> int:
         f"--bill {shlex.quote(args.bill)} "
         f"--chunk-id {shlex.quote(args.chunk_id)}"
     )
+
+    # If podcast agent, upload the report file first
+    remote_report_path = ""
+    if args.agent == "podcast":
+        if not args.report_file:
+            print("[remote] ERROR: --report-file required for podcast agent", flush=True)
+            return 1
+        from pathlib import Path as _Path
+        local_rf = _Path(args.report_file)
+        if not local_rf.exists():
+            print(f"[remote] ERROR: local report file not found: {local_rf}", flush=True)
+            return 1
+        remote_report_path = f"/root/agent-smoke/{local_rf.name}"
+        print(f"[remote] uploading {local_rf} -> {remote_report_path}", flush=True)
+        scp_cmd = ["scp", "-i", str(SSH_KEY), "-o", "StrictHostKeyChecking=accept-new", str(local_rf), f"{SSH_USER}@{INSTANCE_HOST}:{remote_report_path}"]
+        scp_rc = subprocess.run(scp_cmd, capture_output=True, text=True, timeout=120)
+        if scp_rc.returncode != 0:
+            print(f"[remote] scp failed: {scp_rc.stderr}", flush=True)
+            return 1
+        # Append --report-file to the remote command
+        remote_cmd += f" --report-file {shlex.quote(remote_report_path)}"
 
     print(f"[remote] running agent (cold prefill ~5min, APC-warm ~30-90s)...", flush=True)
     t0 = time.perf_counter()

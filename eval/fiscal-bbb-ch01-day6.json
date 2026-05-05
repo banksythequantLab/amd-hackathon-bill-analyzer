@@ -1,0 +1,367 @@
+{
+  "chunk_id": "ch01",
+  "items": [
+    {
+      "amount_usd": 10000000000.0,
+      "purpose": "Hazardous fuels reduction projects within the wildland-urban interface.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 4000000000.0,
+      "purpose": "Hazardous fuels reduction projects outside the wildland-urban interface that are noncommercial in nature, except on a determination by the Secretary, in accordance with the best available science, that the harvest of merchantable materials is ecologically necessary for restoration and to enhance ecological integrity, subject to the requirement that the sale of merchantable materials shall be limited to small diameter trees or biomass that are a byproduct of projects under this paragraph.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 1000000000.0,
+      "purpose": "Vegetation management projects carried out solely on National Forest System land that the Secretary shall select following the receipt of proposals submitted in accordance with subsections (a), (b), and (c) of section 4003 of the Omnibus Public Land Management Act of 2009 (16 U.S.C. 7303).",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 500000000.0,
+      "purpose": "Vegetation management projects carried out in accordance with a water source management plan or a watershed protection and restoration action plan.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 500000000.0,
+      "purpose": "Vegetation management projects that maintain, or contribute toward the restoration of, old growth characteristics, including structure, composition, function, and connectivity, according to the reference old growth conditions characteristic of the forest type, taking into account the contribution of the project to landscape fire adaptation and the ecological integrity of watershed and ecosystem health.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 450000000.0,
+      "purpose": "The Legacy Roads and Trails program of the Forest Service.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 350000000.0,
+      "purpose": "National Forest System land management planning and monitoring, with a focus on the assessment of watershed, ecological, and carbon conditions on National Forest System land, and the revision and amendment of older land management plans that present opportunities to protect, maintain, restore, and monitor ecological integrity, ecological conditions for at-risk species, and carbon storage.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 100000000.0,
+      "purpose": "Maintenance of trails on National Forest System land, with a focus on trails that provide to underserved communities access to National Forest System land.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 100000000.0,
+      "purpose": "Capital maintenance and improvements on National Forest System land, with a focus on maintenance level 3, 4, and 5 roads and improvements that restore ecological integrity and conditions for at-risk species.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 100000000.0,
+      "purpose": "To provide for more efficient and more effective environmental reviews by the Chief of the Forest Service in satisfying the obligations of the Chief of the Forest Service under the National Environmental Policy Act of 1969 (42 U.S.C. 4321 et seq.) through the hiring and training of additional personnel, the development of programmatic assessments or templates, the procurement of technical or scientific services, the development of data or technology systems, stakeholder and community engagement, and the purchase of new equipment.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 50000000.0,
+      "purpose": "To develop and carry out activities and tactics for the protection of older and mature forests on National Forest System land, including completing an inventory of older and mature forests within the National Forest System.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 50000000.0,
+      "purpose": "To develop and carry out activities and tactics for the maintenance and restoration of habitat conditions necessary for the protection and recovery of at-risk species on National Forest System land in implementing Forest Service hazardous fuels reduction and other vegetation management programs and projects based on a science-based analysis carried out by the Secretary.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 50000000.0,
+      "purpose": "To carry out post-fire recovery plans that emphasize the use of locally adapted native plant materials to restore the ecological integrity of disturbed areas, and do not include salvage logging.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 50000000.0,
+      "purpose": "To develop and carry out non-lethal activities and tactics to reduce human-wildlife conflicts on National Forest System land.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 2250000000.0,
+      "purpose": "To be used for staffing, salaries, and other workforce needs to support the development of a Civilian Climate Corps for the purposes of managing National Forest System land, subject to the conditions that the amounts made available under this paragraph shall be in addition to any amounts required for salaries and expenses needed to carry out projects under this subsection, and members of the Civilian Climate Corps shall be compensated at not less than 200 percent of the annual Federal poverty line.",
+      "recipient_class": "Forest Service program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11001",
+      "source_page": 5,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 9000000000.0,
+      "purpose": "To award grants to a Tribal, State, or local government, a regional organization, a special district, or a nonprofit organization to support, on non-Federal land, forest restoration and resilience projects, including projects to reduce the risk of wildfires and establish defensible space around structures within at-risk communities.",
+      "recipient_class": "Non-Federal land program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11002",
+      "source_page": 14,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 1000000000.0,
+      "purpose": "To award grants to a Tribal, State, or local government, a regional organization, a special district, or a nonprofit organization to implement community wildfire protection plans (as defined in section 101 of the Healthy Forests Restoration Act of 2003 (16 U.S.C. 6511)), purchase firefighting equipment, provide firefighter training, and increase the capacity for planning, coordinating, and monitoring projects on non-Federal land to protect at-risk communities (as defined in section 101 of the Healthy Forests Restoration Act of 2003 (16 U.S.C. 6511)).",
+      "recipient_class": "Non-Federal land program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11002",
+      "source_page": 14,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 250000000.0,
+      "purpose": "To award grants to a Tribal, State, or local government, a regional organization, a special district, or a nonprofit organization for projects on non-Federal land to aid in the recovery and rehabilitation of burned areas, including reforestation.",
+      "recipient_class": "Non-Federal land program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11002",
+      "source_page": 14,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 250000000.0,
+      "purpose": "To award grants to a Tribal, State, or local government, a regional organization, a special district, or a nonprofit organization for projects on non-Federal land to expand equitable outdoor access and promote tourism on non-Federal forested land for members of underserved groups.",
+      "recipient_class": "Non-Federal land program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11002",
+      "source_page": 14,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 250000000.0,
+      "purpose": "For the State Fire Assistance and Volunteer Fire Assistance programs established under the Cooperative Forestry Assistance Act of 1978 (16 U.S.C. 2101 et seq.), to be distributed at the discretion of the Secretary.",
+      "recipient_class": "Non-Federal land program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11002",
+      "source_page": 14,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 250000000.0,
+      "purpose": "For the implementation of State-wide forest resource strategies under section 2A of the Cooperative Forestry Assistance Act of 1978 (16 U.S.C. 2101a).",
+      "recipient_class": "Non-Federal land program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11002",
+      "source_page": 14,
+      "table_formatted": false
+    },
+    {
+      "amount_usd": 250000000.0,
+      "purpose": "For the competitive grant program under section 13A of the Cooperative Forestry Assistance Act of 1978 (16 U.S.C. 2109a) for providing through that program a cost share to carry out climate mitigation or forest resilience practices in the case of underserved forest landowners, subject to the condition that subsection (h) of that section shall not apply.",
+      "recipient_class": "Non-Federal land program",
+      "fiscal_years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "domain": "agriculture-conservation-energy",
+      "bill_section": "SEC. 11002",
+      "source_page": 14,
+      "table_formatted": false
+    }
+  ],
+  "vision_pages_suggested": [],
+  "note": null,
+  "totals_by_domain": {
+    "agriculture-conservation-energy": {
+      "total_usd": 30800000000.0,
+      "item_count": 22
+    }
+  },
+  "grand_total_usd": 30800000000.0,
+  "_truncated_recovered": true
+}
