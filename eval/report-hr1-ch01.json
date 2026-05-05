@@ -1,0 +1,74 @@
+{
+  "bill": "hr1",
+  "bill_full_name": "One Big Beautiful Bill Act 2025 (HR 1)",
+  "chunk_id": "ch01",
+  "title_marker": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+  "chunk_tokens_cl100k": 206299,
+  "chunk_pages": [
+    1,
+    293
+  ],
+  "agents": {
+    "summarizer": {
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+        "one_sentence_summary": "This section reauthorizes and modifies key agricultural, nutrition, and forestry programs, including changes to SNAP benefits, farm commodity support, crop insurance, disaster assistance, and conservation funding.",
+        "bullets": [
+          "Revises the Thrifty Food Plan to base SNAP allotments on updated food cost data and household size, with a new re-evaluation of market baskets starting in 2027.",
+          "Modifies SNAP work requirements for able-bodied adults, including exemptions for non-contiguous states and expanded exceptions for medical, parental, and tribal status.",
+          "Expands eligibility for standard utility allowances to include households with elderly or disabled members and restricts internet service fees from being counted in shelter cost calculations.",
+          "Introduces a new payment error rate-based matching funds system for SNAP, where states with lower error rates receive higher federal funding shares.",
+          "Establishes a new administrative cost-sharing structure for SNAP, reducing state cost shares from 50% to 25% starting in 2027.",
+          "Authorizes new grants for national nutrition education and obesity prevention programs through 2025.",
+          "Restricts SNAP eligibility to specific categories of lawful residents, excluding most temporary visitors and non-resident aliens.",
+          "Rescinds unobligated funds for forestry programs and establishes new reference prices and base acres for farm commodity programs, with expanded support for beginning farmers and rural America."
+        ],
+        "affected_groups": [
+          "SNAP recipients",
+          "Small and beginning farmers",
+          "Rural communities",
+          "Farmers and ranchers",
+          "Conservation organizations",
+          "Forestry and land management agencies"
+        ]
+      },
+      "elapsed_s": 168.2,
+      "prompt_tokens": 220657,
+      "completion_tokens": 390,
+      "ok": true,
+      "note": "Cold prefill on HR1 chunk text. APC was warm from earlier in day for the spine prefix template, but HR1 chunk content itself was new to the cache hence the longer time vs BBB warm rerun (21.4s)."
+    },
+    "usc_cross_reference": {
+      "output": null,
+      "elapsed_s": null,
+      "ok": false,
+      "status": "completed_serverside_python_client_hung",
+      "note": "Spine logs show two POST /v1/chat/completions returning 200 OK at 23:46:13 and 23:57:23 with prefix cache hit rate 60.9-61.6%. The Python client on Windows hung reading the response body twice in a row despite the Connection: close + r.read() patches. Two zombie python processes were eventually killed. Day 3 fix: move test runs to the cloud instance itself (Linux subprocess) to eliminate the Windows httpx response-body issue entirely."
+    },
+    "pork_finder": {
+      "ok": false,
+      "status": "not_run",
+      "note": "Skipped to avoid burning more cloud time on the recurring Windows-side hang. BBB-2021 ch01 already has a validated pork_finder run (27 line items extracted) in eval/report-bbb-ch01.json."
+    },
+    "conflict_spotter": {
+      "ok": false,
+      "status": "not_run",
+      "note": "Same reason. BBB-2021 ch01 conflict_spotter run is in eval/report-bbb-ch01.json (returned [] correctly)."
+    }
+  },
+  "totals": {
+    "agents_attempted": 2,
+    "agents_succeeded": 1,
+    "wall_clock_s_succeeded": 168.2,
+    "prompt_tokens_succeeded": 220657,
+    "completion_tokens_succeeded": 390
+  },
+  "infra_proof": {
+    "all_three_qwen_containers_uptime": "8 hours",
+    "vram_used": "192.7 GB / 192 GB",
+    "spine_prefix_cache_hit_rate_observed": "60.9-61.6%",
+    "spine_concurrent_requests_observed": "Running: 2 reqs (zombie xref + new xref)"
+  },
+  "day3_action_item": "Move agent test runs to Linux subprocess on the cloud instance itself. Eliminates the Windows + httpx + response-body hang that ate ~2 hours tonight. Repo already has SSH access set up; tests/run_one_agent.py just needs its argparse + paths adjusted for Linux."
+}
