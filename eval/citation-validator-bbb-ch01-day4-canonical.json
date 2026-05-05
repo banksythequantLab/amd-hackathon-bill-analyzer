@@ -1,0 +1,158 @@
+{
+  "source_xref_file": "/root/agent-smoke/usc_cross_reference-ch01.json",
+  "citations_audited": 15,
+  "elapsed_s": 317.21,
+  "summary": {
+    "valid": 1,
+    "format-error": 0,
+    "wrong-section": 5,
+    "intent-mismatch": 3,
+    "unverifiable": 6,
+    "errored": 0
+  },
+  "results": [
+    {
+      "citation": "16 U.S.C. 6511",
+      "verdict": "valid",
+      "confidence": "high",
+      "issues": [],
+      "suggested_fix": null
+    },
+    {
+      "citation": "16 U.S.C. 6542(d)(1)",
+      "verdict": "wrong-section",
+      "confidence": "high",
+      "issues": [
+        "The cited subsection (d)(1) does not exist in the actual USC text. Definitions for \u00a7 6542 are located in subsection (a)(1), not (d)(1)."
+      ],
+      "suggested_fix": "16 U.S.C. 6542(a)(1)"
+    },
+    {
+      "citation": "16 U.S.C. 6543(a)(3)",
+      "verdict": "intent-mismatch",
+      "confidence": "high",
+      "issues": [
+        "The cited section (16 U.S.C. 6543) defines a 'Watershed Condition Framework' and does not contain definitions relevant to the bill's context.",
+        "The subsection (a)(3) is not present in the provided USC text excerpt, which only shows (a)(1) through (a)(7)."
+      ],
+      "suggested_fix": "16 U.S.C. 6543(a)"
+    },
+    {
+      "citation": "16 U.S.C. 7125",
+      "verdict": "intent-mismatch",
+      "confidence": "high",
+      "issues": [
+        "Bill claims the section provides 'definitions' but the actual USC text defines 'Resource advisory committees' and their operational framework, not general definitions"
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "16 U.S.C. 7303",
+      "verdict": "intent-mismatch",
+      "confidence": "high",
+      "issues": [
+        "The bill claims the citation is for 'definitions', but the actual USC section (\u00a7 7303) establishes a program (Collaborative Forest Landscape Restoration Program) and does not contain definitional content."
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "36 U.S.C. 1603",
+      "verdict": "wrong-section",
+      "confidence": "medium",
+      "issues": [
+        "Section 1603 of Title 36 (Patriotic and National Observances) is unrelated to the Indian Health Care Improvement Act, which is codified in Title 42 U.S.C. 254b (section 4).",
+        "Empty USC text excerpt prevents direct verification of content."
+      ],
+      "suggested_fix": "42 U.S.C. 254b"
+    },
+    {
+      "citation": "36 U.S.C. 3103",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "USC section text is empty/missing in provided data",
+        "Unable to verify if section 3103 contains definitions as claimed"
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "36 U.S.C. 3361",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "USC section text and heading are empty/missing",
+        "Bill references definition in a different statute (1977 Act \u00a71489) but cites 36 U.S.C. 3361"
+      ],
+      "suggested_fix": "Verify existence of 36 U.S.C. 3361 in official U.S. Code and cross-check with 7 U.S.C. (Agriculture title) for 1977 Act definitions"
+    },
+    {
+      "citation": "36 U.S.C. 3319k",
+      "verdict": "wrong-section",
+      "confidence": "medium",
+      "issues": [
+        "Cited section (36 U.S.C. 3319k) appears to be non-existent or unindexed in the provided USC data",
+        "Bill claims 'definitions' relevance, but no text exists in the cited section to verify this intent"
+      ],
+      "suggested_fix": "Verify existence of 36 U.S.C. 3319k in official USC database or confirm correct cross-reference to the National Agricultural Research Act"
+    },
+    {
+      "citation": "36 U.S.C. 3310a",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "USC section text and heading are missing from the provided LMDB data",
+        "Unable to verify if the cited section contains the claimed definition from the 1977 Act"
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "36 U.S.C. 3221",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "USC text excerpt is empty/missing",
+        "Unable to verify definition claim without section content"
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "36 U.S.C. 3222a",
+      "verdict": "wrong-section",
+      "confidence": "low",
+      "issues": [
+        "Cited section 36 U.S.C. 3222a has no content in the LMDB index",
+        "Bill references a definition from the National Agricultural Research Act of 1977 (a separate statute), not the U.S. Code"
+      ],
+      "suggested_fix": "Cite the original statute (e.g., 'National Agricultural Research, Extension, and Teaching Policy Act of 1977, sec. 1446') instead of the U.S. Code"
+    },
+    {
+      "citation": "36 U.S.C. 3156",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "Empty USC section text provided in LMDB index; cannot verify existence or content of 36 U.S.C. \u00a73156"
+      ],
+      "suggested_fix": null
+    },
+    {
+      "citation": "36 U.S.C. 3152",
+      "verdict": "unverifiable",
+      "confidence": "low",
+      "issues": [
+        "USC text excerpt is empty (no content available for verification)",
+        "Title 36 (Patriotic and National Observances) is unlikely to contain agricultural research definitions"
+      ],
+      "suggested_fix": "Verify if the correct title/section was cited (e.g., check if definitions exist in 7 U.S.C. or another relevant title)"
+    },
+    {
+      "citation": "36 U.S.C. 301",
+      "verdict": "wrong-section",
+      "confidence": "high",
+      "issues": [
+        "Cited section (36 U.S.C. 301) defines the national anthem, not a definition from the First Morrill Act",
+        "Bill claims relevance to 'definitions' but cited section contains no definitions related to the Morrill Act"
+      ],
+      "suggested_fix": "7 U.S.C. 301 or other appropriate title/section containing Morrill Act definitions"
+    }
+  ]
+}

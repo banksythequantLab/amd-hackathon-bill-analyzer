@@ -1,0 +1,9 @@
+{
+  "agent": "usc_cross_reference",
+  "bill": "bbb",
+  "chunk_id": "ch01",
+  "elapsed_s": 598.38,
+  "prompt_tokens": 232997,
+  "completion_tokens": 8000,
+  "ok": true
+}
