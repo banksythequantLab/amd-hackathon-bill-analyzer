@@ -191,10 +191,15 @@ def main() -> int:
     # The remote run_one_agent.py needs path overrides to point at /root/usc and /root/bills
     # rather than the Windows defaults baked into the file. We pass the overrides via
     # environment variables so we don't have to fork the script.
+    # Endpoint env vars route the cloud-side run to localhost (no NAT, no public network hop).
+    # Path env vars override the Windows defaults baked into run_one_agent.py.
     env_vars = (
         f"BILL_ANALYZER_USC_LMDB={REMOTE_USC_LMDB} "
         f"BILL_ANALYZER_CHUNKS_DIR={REMOTE_BILLS_DIR} "
-        f"BILL_ANALYZER_OUT_DIR={REMOTE_OUT_DIR}"
+        f"BILL_ANALYZER_OUT_DIR={REMOTE_OUT_DIR} "
+        f"BILL_ANALYZER_SPINE_URL=http://localhost:8001/v1 "
+        f"BILL_ANALYZER_REASONER_URL=http://localhost:8003/v1 "
+        f"BILL_ANALYZER_VISION_URL=http://localhost:8002/v1"
     )
     remote_cmd = (
         f"mkdir -p {REMOTE_OUT_DIR} && "
