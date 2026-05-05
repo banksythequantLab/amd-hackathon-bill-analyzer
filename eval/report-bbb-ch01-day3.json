@@ -1,0 +1,824 @@
+{
+  "bill": "bbb",
+  "bill_full_name": "Build Back Better Act 2021 (HR 5376)",
+  "chunk_id": "ch01",
+  "title_marker": "TITLE I\u2014AGRICULTURE",
+  "chunk_tokens_cl100k": 199381,
+  "chunk_pages": [
+    3,
+    542
+  ],
+  "run_session": "day3 (2026-05-05, fresh containers, post pork-prompt-rewrite)",
+  "agents": {
+    "summarizer": {
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "TITLE I\u2014AGRICULTURE",
+        "one_sentence_summary": "This section allocates over $100 billion to fund forest restoration, rural development, and climate resilience projects across the U.S., with a focus on wildfire prevention, clean energy, and equitable access to resources.",
+        "bullets": [
+          "Allocates $10 billion for hazardous fuels reduction projects in the wildland-urban interface to protect communities from wildfires.",
+          "Provides $4.5 billion for vegetation management and forest restoration on National Forest System land, prioritizing ecological integrity and climate adaptation.",
+          "Authorizes $9 billion in grants to states, tribes, and nonprofits for non-Federal forest restoration and wildfire risk reduction projects.",
+          "Establishes a $2.25 billion Civilian Climate Corps workforce program to support both federal and non-federal forest restoration efforts.",
+          "Funds $1.25 billion for the Forest Legacy Program to acquire land with high carbon sequestration potential and support community resilience.",
+          "Allocates $3 billion for urban and community forestry programs to increase tree canopy and address environmental justice in underserved areas.",
+          "Provides $430 million for rural water and wastewater programs in persistent poverty counties and insular areas.",
+          "Authorizes $960 million for grants to upgrade fuel dispensers and infrastructure to support ethanol and biodiesel blends above 10% and 20% respectively."
+        ],
+        "affected_groups": [
+          "National Forest System land managers",
+          "Tribal, state, and local governments",
+          "Nonprofit organizations",
+          "Rural communities",
+          "Underserved populations",
+          "Forest and conservation workers",
+          "Low-income households in rural areas"
+        ]
+      },
+      "elapsed_s": 282.77,
+      "prompt_tokens": 232853,
+      "completion_tokens": 375,
+      "ok": true
+    },
+    "usc_cross_ref": {
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [
+          {
+            "citation": "16 U.S.C. 6511",
+            "bill_context": "Defined in section 101 of the Healthy Forests Restoration Act of 2003.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 6542(d)(1)",
+            "bill_context": "Defined in section 303(d)(1) of the Healthy Forests Restoration Act of 2003.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 6543(a)(3)",
+            "bill_context": "Defined in section 304(a)(3) of the Healthy Forests Restoration Act of 2003.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7125",
+            "bill_context": "Defined in section 205 of the Secure Rural Schools and Community Self-Determination Act of 2000.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7303",
+            "bill_context": "Defined in section 4003 of the Omnibus Public Land Management Act of 2009.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          },
+          {
+            "citation": "16 U.S.C. 7655d",
+            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
+            "relevance": "definitions"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true
+      },
+      "elapsed_s": 597.03,
+      "prompt_tokens": 232997,
+      "completion_tokens": 8000,
+      "ok": true
+    },
+    "pork_finder": {
+      "output": {
+        "chunk_id": "ch01",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 2.49,
+      "prompt_tokens": 233610,
+      "completion_tokens": 34,
+      "ok": true
+    },
+    "conflict_spotter": {
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 269.1,
+      "prompt_tokens": 233019,
+      "completion_tokens": 25,
+      "ok": true
+    }
+  },
+  "timings_s": {
+    "summarizer": 282.77,
+    "usc_cross_ref": 597.03,
+    "pork_finder": 2.49,
+    "conflict_spotter": 269.1
+  },
+  "totals": {
+    "wall_clock_s": 1151.39,
+    "prompt_tokens_total": 932479,
+    "completion_tokens_total": 8434,
+    "agents_run": 4
+  },
+  "day2_vs_day3": {
+    "summarizer": {
+      "day2_warm": "21.4s (APC-warm rerun on already-cached chunk)",
+      "day3_cold": "282.77s (cold prefill on freshly-rebooted containers)",
+      "note": "Day 2 number was a warm-cache rerun; Day 3 is the cold-prefill baseline. Cold-vs-warm is the measurement that matters."
+    },
+    "usc_cross_ref": {
+      "day2_citations": 116,
+      "day3_citations": 142
+    },
+    "pork_finder": {
+      "day2_items": 27,
+      "day2_classification": "all 27 tagged named-recipient with recipient=null (over-classification bug)",
+      "day3_items": 0,
+      "day3_note": "no pork-signature line items found in this chunk",
+      "fix_commit": "d00fa13 (Pork Finder: prompt rewrite + schema cross-validation)"
+    },
+    "conflict_spotter": {
+      "day2_conflicts": 0,
+      "day3_conflicts": 0,
+      "note": "Both days correctly returned []. The model declines to invent conflicts where none exist."
+    }
+  }
+}
