@@ -116,8 +116,15 @@ class CitationValidator(AgentBase):
             "Return JSON only. No commentary."
         )
 
-    def user_prompt(self, citation: str, bill_context: str = "", relevance: str = "",
-                    usc_heading: str = "", usc_text: str = "", **context):
+    def user_prompt(self, chunk_text: str = "", chunk_id: str = "", **context):
+        # citation_validator runs at citation level not chunk level. Conform to
+        # AgentBase.user_prompt(chunk_text, chunk_id, **context) signature so
+        # base.run() can call us positionally; pull our actual fields from kwargs.
+        citation = context.get("citation", chunk_id or "")
+        bill_context = context.get("bill_context", "")
+        relevance = context.get("relevance", "")
+        usc_heading = context.get("usc_heading", "")
+        usc_text = context.get("usc_text", "")
         return f"""Audit this USC citation from a federal bill.
 
 CITATION FROM BILL:
