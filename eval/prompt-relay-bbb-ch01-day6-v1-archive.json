@@ -1,0 +1,231 @@
+{
+  "bill": "bbb",
+  "chunk_id": "ch01",
+  "podcast_title": "Wildfire Prevention in the Build Back Better Act",
+  "character_alex": "30s male, light brown hair, navy button-down, friendly demeanor",
+  "character_jordan": "30s woman, dark hair pulled back, charcoal blazer over white shirt, focused gaze",
+  "studio": "Modern podcast studio: wooden desk, two condenser mics, warm key lighting, soft blue backdrop",
+  "scenes": [
+    {
+      "scene_id": "scene-01",
+      "line_indices": [
+        0,
+        1
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts smiling, ready to start. | Action 50: Alex leans into his mic and begins to speak. Jordan turns toward him attentively. | Reaction 20: Slow push-in to Jordan's face as she nods.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-02",
+      "line_indices": [
+        2,
+        3
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts focused on the conversation. | Action 50: Alex raises an eyebrow, gestures slightly while speaking. Jordan listens with a thoughtful expression. | Reaction 20: Close-up on Jordan\u2019s face as she begins to respond.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-03",
+      "line_indices": [
+        4,
+        5
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts engaged. | Action 50: Alex points at his temple, then gestures toward Jordan. Jordan leans forward slightly, eyes widening. | Reaction 20: Slow zoom on Jordan\u2019s face as she prepares to explain.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-04",
+      "line_indices": [
+        6,
+        7
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex leans forward, hand raised in question. Jordan nods, then begins to explain. | Reaction 20: Close-up on Jordan\u2019s face as she emphasizes the term 'wildland-urban interface'.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-05",
+      "line_indices": [
+        8,
+        9
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts focused. | Action 50: Alex gestures with hands, asking for clarification. Jordan nods and points to the concept of defensible space. | Reaction 20: Slow push-in to Jordan\u2019s face as she explains the firefighter\u2019s role.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-06",
+      "line_indices": [
+        10,
+        11
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts engaged. | Action 50: Alex tilts his head, curious. Jordan gestures to the map on the screen. | Reaction 20: Close-up on Jordan\u2019s hand pointing at the map.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-07",
+      "line_indices": [
+        12,
+        13
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex leans in, eyes wide. Jordan nods, emphasizing long-term forest health. | Reaction 20: Slow zoom on Alex\u2019s face as he processes the idea.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-08",
+      "line_indices": [
+        14,
+        15
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts focused. | Action 50: Alex gestures toward the forest. Jordan explains the controlled burn. | Reaction 20: Close-up on Jordan\u2019s face as she describes the process.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-09",
+      "line_indices": [
+        16,
+        17
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex raises a hand, asking about funding. Jordan points to the next budget line. | Reaction 20: Slow push-in to Jordan\u2019s face as she explains the noncommercial projects.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-10",
+      "line_indices": [
+        18,
+        19
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts focused. | Action 50: Alex gestures toward the forest. Jordan explains the rules on selling biomass. | Reaction 20: Close-up on Jordan\u2019s hand making a small 'no' gesture.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-11",
+      "line_indices": [
+        20,
+        21
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts engaged. | Action 50: Alex leans forward, eyes wide. Jordan nods, explaining the Civilian Climate Corps. | Reaction 20: Slow zoom on Alex\u2019s face as he absorbs the idea.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-12",
+      "line_indices": [
+        22,
+        23
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex gestures to the forest. Jordan explains the dual mission of safety and jobs. | Reaction 20: Close-up on Jordan\u2019s face as she emphasizes the purpose.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-13",
+      "line_indices": [
+        24,
+        25
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts focused. | Action 50: Alex gestures toward the forest. Jordan points to the map. | Reaction 20: Slow push-in to Jordan\u2019s face as she explains the selection process.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-14",
+      "line_indices": [
+        26,
+        27
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex raises a hand, skeptical. Jordan nods, then explains the citation review. | Reaction 20: Close-up on Jordan\u2019s face as she reveals the error rate.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-15",
+      "line_indices": [
+        28,
+        29
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts focused. | Action 50: Alex leans in, eyes narrowing. Jordan points to the legal text. | Reaction 20: Close-up on Jordan\u2019s hand highlighting the correct section.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-16",
+      "line_indices": [
+        30,
+        31
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex gestures to the screen. Jordan nods, confirming the funding is real. | Reaction 20: Slow zoom on Alex\u2019s face as he processes the distinction.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-17",
+      "line_indices": [
+        32,
+        33
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts focused. | Action 50: Alex raises a hand, asking about pork. Jordan shakes her head. | Reaction 20: Close-up on Jordan\u2019s face as she confirms no local earmarks.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-18",
+      "line_indices": [
+        34,
+        35
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex gestures toward the map. Jordan points to the broad distribution. | Reaction 20: Slow push-in to Jordan\u2019s face as she emphasizes the fairness.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-19",
+      "line_indices": [
+        36,
+        37
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts focused. | Action 50: Alex leans in, eyes scanning the screen. Jordan shakes her head, then points to the recipients. | Reaction 20: Close-up on Jordan\u2019s face as she confirms no conflicts.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-20",
+      "line_indices": [
+        38,
+        39
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex smiles, nodding. Jordan smiles back, summarizing the mission. | Reaction 20: Slow push-in to Alex\u2019s face as he reflects.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-21",
+      "line_indices": [
+        40,
+        41
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts focused. | Action 50: Alex gestures toward the future. Jordan nods, emphasizing long-term vision. | Reaction 20: Slow zoom on Jordan\u2019s face as she delivers the final thought.",
+      "notes": null
+    },
+    {
+      "scene_id": "scene-22",
+      "line_indices": [
+        42,
+        43
+      ],
+      "reference_image_prompt": "Medium two-shot of Alex and Jordan seated at the studio desk. <Alex desc>. <Jordan desc>. Warm key light from above. Two condenser microphones in the foreground. Soft blue backdrop visible behind them.",
+      "smart_prompt": "Establish 30: Alex and Jordan seated at the wooden desk. Warm key light from above. Two mics in foreground. Both hosts attentive. | Action 50: Alex gestures to the laptop. Jordan points to the report. | Reaction 20: Close-up on the laptop screen as the final line is spoken.",
+      "notes": null
+    }
+  ],
+  "note": null
+}
