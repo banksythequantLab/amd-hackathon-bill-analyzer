@@ -65,6 +65,8 @@ def main():
         usc_text = (usc.get("text_excerpt") or "")[:600]  # cap to keep prompt small
         try:
             result = agent.run(
+                "",  # chunk_text - unused by citation_validator.user_prompt
+                c.get("citation", ""),  # chunk_id - tied to AgentResult.chunk_id
                 citation=c.get("citation", ""),
                 bill_context=c.get("bill_context", ""),
                 relevance=c.get("relevance", ""),
