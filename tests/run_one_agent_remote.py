@@ -62,7 +62,7 @@ CHUNK_FILE_NAMES = {
     "ndaa": "chunks-ndaa-full.json",
 }
 
-AGENT_VALID = {"summarizer", "xref", "pork", "conflict"}
+AGENT_VALID = {"summarizer", "xref", "pork", "conflict", "fiscal"}
 
 # Use Git's bundled SSH on Windows (Windows OpenSSH stderr is broken under subprocess)
 GIT_SSH = r"C:\Program Files\Git\usr\bin\ssh.exe"

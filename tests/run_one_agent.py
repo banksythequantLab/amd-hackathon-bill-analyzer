@@ -53,6 +53,7 @@ AGENT_MAP = {
     "xref":        ("src.agents.usc_xref",         "UscCrossReference"),
     "pork":        ("src.agents.pork_finder",      "PorkFinder"),
     "conflict":    ("src.agents.conflict_spotter", "ConflictSpotter"),
+    "fiscal":      ("src.agents.fiscal_impact_estimator", "FiscalImpactEstimator"),
 }
 
 DEFAULT_CHUNKS_DIR = Path(os.environ.get("BILL_ANALYZER_CHUNKS_DIR", r"B:\hackathon-build"))
