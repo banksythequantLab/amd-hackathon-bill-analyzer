@@ -1,7 +1,7 @@
 ﻿# BiP #2 Post (FINAL) — Day 2, May 4, 2026
 
 URL placeholder filled in with the actual live GitHub Pages URL:
-https://banksythequantlab.github.io/amd-hackathon-bill-analyzer/
+https://bills.nota.lawyer/
 
 Repo: https://github.com/banksythequantLab/amd-hackathon-bill-analyzer
 Combined report (raw JSON): https://raw.githubusercontent.com/banksythequantLab/amd-hackathon-bill-analyzer/main/eval/report-bbb-ch01.json
@@ -33,7 +33,7 @@ The numbers:
 
 The point: 4 agents x ~232K-token chunk = 932K total prompt tokens, but only the first agent paid the full prefill cost. The other three rode the cache. On a 32GB consumer GPU each agent would re-pay that prefill or spill to CPU. On a 192GB MI300X they share.
 
-Live demo + numbers: https://banksythequantlab.github.io/amd-hackathon-bill-analyzer/
+Live demo + numbers: https://bills.nota.lawyer/
 Repo (MIT): https://github.com/banksythequantLab/amd-hackathon-bill-analyzer
 
 #AMDDevHackathon @AMDDeveloper @lablabai
@@ -45,7 +45,7 @@ Repo (MIT): https://github.com/banksythequantLab/amd-hackathon-bill-analyzer
 - Best time to post: 9-11am ET tomorrow (Tue 5/5) for max LinkedIn reach
 - Visual to attach: screenshot of the landing-page hero (the four hero tiles
   with 14.8x, 116, 27, 0 numbers) — the page renders well at desktop size.
-  Open https://banksythequantlab.github.io/amd-hackathon-bill-analyzer/ and
+  Open https://bills.nota.lawyer/ and
   screenshot the top fold.
 - After posting on LinkedIn, repost to X with the X-thread version from
   bip-post-2-DRAFT.md (5 tweets) for cross-platform reach.
