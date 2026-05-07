@@ -43,6 +43,38 @@ tests/fixtures/*.pdf
 # Eval outputs
 eval/result_*.json
 eval/golden_findings.json
+
+# Canonical reports (the JSON snapshots that drive the Bills Lookup gallery)
+# are committed — these are small (<2 MB total) and required for the demo to
+# light up without re-running the full agent pipeline.
+!eval/canonical/
+!eval/canonical/*.json
+
+# Generated cloud-podcast assets (slides, wan clips, tts, master mp4) are
+# regenerable from the canonical reports + scripts/make_podcast_cloud.py and
+# would otherwise add ~30+ MB per bill to the repo.
+eval/*-cloud/
+eval/*-cloud-custom-*/
+
+# Historical experiment outputs (Day 6 / Day 7 R&D scratch runs)
+eval/day6-*/
+eval/day7-*/
+eval/day7-*.json
+eval/day7-*.mp4
+eval/podcast-*-tmp/
+eval/podcast-*.mp3
+eval/podcast-*.mp4
+
+# Block all binary media from accidental commits anywhere under eval/
+eval/**/*.mp4
+eval/**/*.mp3
+eval/**/*.wav
+eval/**/*.flac
+eval/**/*.png
+eval/**/*.jpg
+eval/**/*.jpeg
+eval/**/*.webp
+
 !eval/.gitkeep
 
 # --- IDE / OS ---

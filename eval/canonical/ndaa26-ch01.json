@@ -1,0 +1,386 @@
+{
+  "bill_short": "ndaa26",
+  "bill_label": "FY26 NDAA (House)",
+  "bill_note": "FY2026 NDAA House version",
+  "chunk_id": "ch01",
+  "title_marker": "(unstructured bill)",
+  "tokens": 4507,
+  "pages": [
+    1,
+    13
+  ],
+  "n_chunks": 1,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "one_sentence_summary": "This bill creates federal grant programs to fund suicide prevention efforts in health care and schools, focusing on youth under 26, with training for providers, safe firearm storage initiatives, curriculum development, and public information resources.",
+        "bullets": [
+          "Authorizes $20 million in grants to health care entities to train providers in evidence-based suicide prevention practices for youth under 26.",
+          "Requires grant recipients to implement training on suicide risk screening, lethal means safety (including firearm storage), and culturally appropriate communication strategies.",
+          "Allows up to 15% of grant funds to be used for providing free or low-cost secure gun storage devices and safety education to homes with at-risk youth.",
+          "Establishes $10 million in grants for accredited health education schools to develop and integrate suicide prevention curricula into training programs.",
+          "Mandates the creation of a public website by the Secretary of Health and Human Services to share best practices on suicide prevention and firearm safety.",
+          "Requires annual reporting from grantees and a final evaluation report to Congress by 2029 to assess program effectiveness and inform future policy.",
+          "Defines 'covered individual' as anyone under 26 and identifies key risk factors such as mental health conditions, substance use, abuse history, and LGBTQ+ status."
+        ],
+        "affected_groups": [
+          "youth under 26",
+          "health care providers",
+          "schools and medical training institutions",
+          "families of at-risk youth",
+          "gun-owning households with minors"
+        ]
+      },
+      "elapsed_s": 3.57,
+      "prompt_tokens": 5407,
+      "completion_tokens": 346,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [
+          {
+            "citation": "20 U.S.C. 1001",
+            "bill_context": "Definition of 'institution of higher education' references section 101 of the Higher Education Act of 1965.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "20",
+              "section": "1001",
+              "heading": "General definition of institution of higher education",
+              "text_excerpt": "\u00a7 1001. General definition of institution of higher education (a) Institution of higher education For purposes of this chapter, other than subchapter IV, the term \u201cinstitution of higher education\u201d means an educational institution in any State that\u2014 (1) admits as regular students only persons having a certificate of graduation from a school providing secondary education, or the recognized equivalent of such a certificate, or persons who meet the requirements of section 1091(d) of this title ; (2) is legally authorized within such State to provide a program of education beyond secondary educatio...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title20-section1001&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "18 U.S.C. \u00a7 921(a)(34)",
+            "bill_context": "Definition of 'secure gun storage or safety device' cites subsection (A) and (B) of section 921(a)(34) of title 18, United States Code.",
+            "relevance": "definitions",
+            "resolved_to": "18 U.S.C. \u00a7 921",
+            "usc_data": {
+              "title": "18",
+              "section": "921",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 921. Definitions (a) As used in this chapter\u2014 (1) The term \u201cperson\u201d and the term \u201cwhoever\u201d include any individual, corporation, company, association, firm, partnership, society, or joint stock company. (2) The term \u201cinterstate or foreign commerce\u201d includes commerce between any place in a State and any place outside of that State, or within any possession of the United States (not including the Canal Zone) or the District of Columbia, but such term does not include commerce between places within the same State but through any place outside of that State. The term \u201cState\u201d includes the District...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section921&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "25 U.S.C. 5304",
+            "bill_context": "Definition of 'Indian tribes and tribal organizations' references section 4 of the Indian Self-Determination and Education Assistance Act.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "25",
+              "section": "5304",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 5304. Definitions For purposes of this chapter, the term\u2014 (a) \u201cconstruction programs\u201d means programs for the planning, design, construction, repair, improvement, and expansion of buildings or facilities, including, but not limited to, housing, law enforcement and detention facilities, sanitation and water systems, roads, schools, administration and health facilities, irrigation and agricultural work, and water conservation, flood control, or port facilities; (b) \u201ccontract funding base\u201d means the base level from which contract funding needs are determined, including all contract costs; (c) \u201cd...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title25-section5304&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "25 U.S.C. 1603",
+            "bill_context": "Definition of 'Urban Indian organizations' references section 4 of the Indian Health Care Improvement Act.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "25",
+              "section": "1603",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 1603. Definitions In this chapter: (1) Area office The term \u201cArea office\u201d means an administrative entity including a program office, within the Indian Health Service through which services and funds are provided to the service units within a defined geographic area. (2) Behavioral health (A) In general The term \u201cbehavioral health\u201d means the blending of substance (alcohol, drugs, inhalants, and tobacco) abuse and mental health disorders prevention and treatment for the purpose of providing comprehensive services. (B) Inclusions The term \u201cbehavioral health\u201d includes the joint development of su...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title25-section1603&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          }
+        ],
+        "note": null
+      },
+      "elapsed_s": 3.04,
+      "prompt_tokens": 5555,
+      "completion_tokens": 280,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 363.44,
+        "lmdb_stats": {
+          "hits": 4,
+          "misses": 1,
+          "calls": 5,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch01",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 0.87,
+      "prompt_tokens": 6168,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 0.76,
+      "prompt_tokens": 5577,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "headlines": [
+          {
+            "headline": "Youth Suicide Grants: $20M to Providers",
+            "angle": "fiscal",
+            "hook": "A new federal funding stream of $20 million is set to train health care providers in suicide prevention for youth under 26.",
+            "target_audience": "Policy wonks, public health professionals, federal budget analysts",
+            "evidence_provisions": [
+              "Authorizes $20 million in grants to health care entities to train providers in evidence-based suicide prevention practices for youth under 26."
+            ]
+          },
+          {
+            "headline": "Gun Storage Grants: $3M for Safe Homes",
+            "angle": "controversy",
+            "hook": "The bill quietly allocates up to $3 million to distribute secure gun storage devices to homes with at-risk youth\u2014stirring debate over federal gun policy.",
+            "target_audience": "Gun safety advocates, conservative commentators, firearms policy critics",
+            "evidence_provisions": [
+              "Allows up to 15% of grant funds to be used for providing free or low-cost secure gun storage devices and safety education to homes with at-risk youth."
+            ]
+          },
+          {
+            "headline": "LGBTQ+ Youth Get Suicide Prevention Training",
+            "angle": "human-impact",
+            "hook": "Mental health providers will now be required to train on culturally appropriate care for LGBTQ+ youth\u2014a lifeline for a high-risk group.",
+            "target_audience": "LGBTQ+ communities, youth mental health advocates, educators",
+            "evidence_provisions": [
+              "Defines 'covered individual' as anyone under 26 and identifies key risk factors such as mental health conditions, substance use, abuse history, and LGBTQ+ status."
+            ]
+          },
+          {
+            "headline": "Schools Get $10M to Teach Suicide Prevention",
+            "angle": "political",
+            "hook": "A bipartisan push to embed suicide prevention into medical training\u2014fueled by rising youth mental health crises.",
+            "target_audience": "Congressional staff, education policy influencers, legislative strategists",
+            "evidence_provisions": [
+              "Establishes $10 million in grants for accredited health education schools to develop and integrate suicide prevention curricula into training programs."
+            ]
+          },
+          {
+            "headline": "HHS Must Launch Suicide Prevention Website",
+            "angle": "drama",
+            "hook": "The Secretary of Health and Human Services now faces a hard deadline to launch a public-facing suicide prevention hub.",
+            "target_audience": "Federal agency watchers, tech policy analysts, digital governance experts",
+            "evidence_provisions": [
+              "Mandates the creation of a public website by the Secretary of Health and Human Services to share best practices on suicide prevention and firearm safety."
+            ]
+          },
+          {
+            "headline": "15% of Grants Can Buy Gun Locks",
+            "angle": "hidden-provision",
+            "hook": "A little-noticed clause lets grant recipients spend up to 15% of funds on firearm safety devices\u2014potentially reshaping gun safety outreach.",
+            "target_audience": "Policy sleuths, investigative journalists, regulatory analysts",
+            "evidence_provisions": [
+              "Allows up to 15% of grant funds to be used for providing free or low-cost secure gun storage devices and safety education to homes with at-risk youth."
+            ]
+          },
+          {
+            "headline": "Providers Must Screen for Suicide Risk",
+            "angle": "regulatory",
+            "hook": "New federal rules force health care providers to adopt standardized suicide risk screening protocols for youth.",
+            "target_audience": "Clinicians, medical compliance officers, health IT developers",
+            "evidence_provisions": [
+              "Requires grant recipients to implement training on suicide risk screening, lethal means safety (including firearm storage), and culturally appropriate communication strategies."
+            ]
+          },
+          {
+            "headline": "Indian Tribes Can Access Suicide Grants",
+            "angle": "geopolitical",
+            "hook": "Federal suicide prevention funding now explicitly includes tribal organizations under 25 U.S.C. 5304 definitions.",
+            "target_audience": "Native American advocates, tribal leaders, federal-tribal relations experts",
+            "evidence_provisions": [
+              "Definition of 'Indian tribes and tribal organizations' references section 4 of the Indian Self-Determination and Education Assistance Act."
+            ]
+          },
+          {
+            "headline": "Urban Indian Groups Get Suicide Funding Access",
+            "angle": "watchdog",
+            "hook": "Urban Indian organizations are now eligible for suicide prevention grants\u2014opening a new accountability frontier.",
+            "target_audience": "Tribal oversight groups, federal grant compliance monitors, equity-focused nonprofits",
+            "evidence_provisions": [
+              "Definition of 'Urban Indian organizations' references section 4 of the Indian Health Care Improvement Act."
+            ]
+          },
+          {
+            "headline": "Grantees Must Report to Congress by 2029",
+            "angle": "scoop",
+            "hook": "A sweeping evaluation mandate requires grantees to submit a final report to Congress\u2014setting up a major policy review in 2029.",
+            "target_audience": "Long-term policy researchers, congressional investigators, future policy analysts",
+            "evidence_provisions": [
+              "Requires annual reporting from grantees and a final evaluation report to Congress by 2029 to assess program effectiveness and inform future policy."
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 11.47,
+      "prompt_tokens": 2209,
+      "completion_tokens": 1200,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "15% of Grants Can Buy Gun Locks",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 10,
+            "specificity_score": 10,
+            "appeal_score": 9,
+            "composite_score": 29,
+            "rationale": "This headline exposes a highly specific, under-the-radar provision allowing up to 15% of federal suicide prevention grant funds to be spent on firearm safety devices\u2014a direct, actionable policy crossover between mental health and gun safety. The hidden nature of this clause makes it newsworthy, while the exact percentage and clear funding mechanism boost specificity. The tension between public health and gun rights creates strong listener appeal."
+          },
+          {
+            "rank": 2,
+            "headline": "Youth Suicide Grants: $20M to Providers",
+            "angle": "fiscal",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The $20 million figure is concrete and significant, and the focus on training providers for youth under 26 adds real-world impact. While not as surprising as the gun lock clause, the fiscal specificity and clear target group make this a strong, credible hook for policy and public health audiences."
+          },
+          {
+            "rank": 3,
+            "headline": "Gun Storage Grants: $3M for Safe Homes",
+            "angle": "controversy",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 24,
+            "rationale": "The $3 million allocation for gun storage devices in homes with at-risk youth introduces a politically charged angle. The specificity of the target group and funding amount gives it weight, while the controversy around federal gun policy ensures high listener engagement, especially among polarized audiences."
+          },
+          {
+            "rank": 4,
+            "headline": "Providers Must Screen for Suicide Risk",
+            "angle": "regulatory",
+            "newsworthiness_score": 7,
+            "specificity_score": 9,
+            "appeal_score": 7,
+            "composite_score": 23,
+            "rationale": "The mandate for standardized suicide risk screening is a concrete regulatory shift with clear implications for clinicians. The specificity of the requirement and its inclusion in grant conditions make it notable, though the regulatory nature limits broad appeal compared to more dramatic or hidden provisions."
+          },
+          {
+            "rank": 5,
+            "headline": "LGBTQ+ Youth Get Suicide Prevention Training",
+            "angle": "human-impact",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "Highlighting culturally competent care for LGBTQ+ youth addresses a high-need population with real human stakes. The specificity of the risk factor inclusion (LGBTQ+ status) adds credibility, and the emotional resonance boosts appeal, though the angle is less surprising than hidden provisions."
+          },
+          {
+            "rank": 6,
+            "headline": "HHS Must Launch Suicide Prevention Website",
+            "angle": "drama",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 20,
+            "rationale": "The hard deadline for a public website adds a layer of bureaucratic drama and accountability. While the mandate is specific and timely, the lack of financial or human impact details limits newsworthiness. Still, the digital governance angle gives it niche appeal."
+          },
+          {
+            "rank": 7,
+            "headline": "Schools Get $10M to Teach Suicide Prevention",
+            "angle": "political",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 20,
+            "rationale": "The $10 million for schools is specific and politically relevant, especially in the context of youth mental health. However, the political angle is generic, and the focus on education rather than direct care limits its novelty and emotional pull compared to more targeted provisions."
+          },
+          {
+            "rank": 8,
+            "headline": "Indian Tribes Can Access Suicide Grants",
+            "angle": "geopolitical",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 19,
+            "rationale": "The reference to 25 U.S.C. 5304 adds legal specificity and highlights federal recognition of tribal sovereignty. However, the geopolitical angle is narrow and may not resonate with a broad audience, limiting appeal despite strong specificity."
+          },
+          {
+            "rank": 9,
+            "headline": "Urban Indian Groups Get Suicide Funding Access",
+            "angle": "watchdog",
+            "newsworthiness_score": 5,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 18,
+            "rationale": "The inclusion of urban Indian organizations via a specific statutory reference (Indian Health Care Improvement Act) is precise and important for equity-focused audiences. However, the watchdog angle is underdeveloped, and the audience is highly specialized, reducing overall appeal."
+          },
+          {
+            "rank": 10,
+            "headline": "Grantees Must Report to Congress by 2029",
+            "angle": "scoop",
+            "newsworthiness_score": 5,
+            "specificity_score": 7,
+            "appeal_score": 5,
+            "composite_score": 17,
+            "rationale": "The 2029 reporting deadline is a concrete detail, but the long timeline and lack of immediate impact reduce newsworthiness. The 'scoop' angle is weak because the requirement is standard for federal programs, and the audience is limited to long-term researchers, making it the least compelling hook."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "15% of Grants Can Buy Gun Locks",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 10,
+          "specificity_score": 10,
+          "appeal_score": 9,
+          "composite_score": 29,
+          "rationale": "This headline exposes a highly specific, under-the-radar provision allowing up to 15% of federal suicide prevention grant funds to be spent on firearm safety devices\u2014a direct, actionable policy crossover between mental health and gun safety. The hidden nature of this clause makes it newsworthy, while the exact percentage and clear funding mechanism boost specificity. The tension between public health and gun rights creates strong listener appeal."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it reveals a hidden, consequential provision that bridges two high-stakes policy areas\u2014youth suicide prevention and gun safety\u2014using a precise, measurable mechanism (15% of funds). The specificity of the dollar allocation and the controversial implications make it both newsworthy and highly engaging, outperforming all others in all three criteria, especially newsworthiness and specificity."
+      },
+      "elapsed_s": 14.2,
+      "prompt_tokens": 1735,
+      "completion_tokens": 1611,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 3.57,
+    "usc_cross_ref": 3.04,
+    "pork_finder": 0.87,
+    "conflict_spotter": 0.76,
+    "podcast_headlines": 11.47,
+    "headline_ranker": 14.2
+  },
+  "totals": {
+    "wall_clock_s": 34.74,
+    "prompt_tokens_total": 26651,
+    "completion_tokens_total": 3496
+  }
+}

@@ -1,0 +1,618 @@
+{
+  "bill_short": "border25",
+  "bill_label": "Secure the Border Act 2023",
+  "bill_note": "Border security package",
+  "chunk_id": "ch01",
+  "title_marker": "DIVISION A\u2014BORDER SECURITY",
+  "tokens": 59735,
+  "pages": [
+    2,
+    214
+  ],
+  "n_chunks": 1,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "DIVISION A\u2014BORDER SECURITY",
+        "one_sentence_summary": "This division authorizes the immediate resumption of border wall construction, mandates the deployment of advanced surveillance technology and physical barriers along the southern border, and strengthens staffing, technology, and operational capabilities for U.S. Customs and Border Protection.",
+        "bullets": [
+          "Resumes construction of the border wall using unexpired funds and unused materials from prior projects, with a plan to complete 200 miles annually.",
+          "Requires deployment of reinforced physical barriers, tactical infrastructure (like checkpoints and roads), and advanced surveillance technology to achieve operational control and situational awareness.",
+          "Establishes a 5-year strategic technology investment plan for border and port security, including private sector collaboration and acquisition process reforms.",
+          "Strengthens CBP personnel by authorizing retention bonuses, hiring 22,000 full-time Border Patrol agents, and implementing workload staffing models.",
+          "Authorizes $33 million for upgrading border surveillance systems and $125 million for modernizing license plate readers at ports of entry.",
+          "Requires real-time criminal background checks on all aliens encountered at the border and mandates collection of DNA and biometric data.",
+          "Prohibits the use of CBP One for non-perishable cargo and restricts the use of Air and Marine Operations for transporting non-detained aliens.",
+          "Directs the Secretary to publish monthly operational statistics on border encounters, drug seizures, and other key metrics for public transparency."
+        ],
+        "affected_groups": [
+          "U.S. Customs and Border Protection (CBP) personnel",
+          "Border Patrol agents",
+          "Private contractors for border wall and technology projects",
+          "States bordering Mexico",
+          "Aliens apprehended at the border"
+        ]
+      },
+      "elapsed_s": 28.99,
+      "prompt_tokens": 65031,
+      "completion_tokens": 382,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [
+          {
+            "citation": "8 U.S.C. 1103 note",
+            "bill_context": "Section 102 of the Illegal Immigration Reform and Immigrant Responsibility Act of 1996 is amended to strengthen barrier requirements.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "8",
+              "section": "1103",
+              "heading": "Powers and duties of the Secretary, the Under Secretary, and the Attorney General",
+              "text_excerpt": "\u00a7 1103. Powers and duties of the Secretary, the Under Secretary, and the Attorney General (a) Secretary of Homeland Security (1) The Secretary of Homeland Security shall be charged with the administration and enforcement of this chapter and all other laws relating to the immigration and naturalization of aliens, except insofar as this chapter or such laws relate to the powers, functions, and duties conferred upon the President, Attorney General, the Secretary of State, the officers of the Department of State, or diplomatic or consular officers: Provided, however , That determination and ruling...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1103&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "6 U.S.C. 223(a)(7)",
+            "bill_context": "Definition of 'situational awareness' in Division A, Section 101, references the National Defense Authorization Act for Fiscal Year 2017.",
+            "relevance": "definitions",
+            "resolved_to": "6 U.S.C. 223",
+            "usc_data": {
+              "title": "6",
+              "section": "223",
+              "heading": "Border security metrics",
+              "text_excerpt": "\u00a7 223. Border security metrics (a) Definitions In this section: (1) Appropriate congressional committees The term \u201cappropriate congressional committees\u201d means\u2014 (A) the Committee on Homeland Security and Governmental Affairs of the Senate; and (B) the Committee on Homeland Security of the House of Representatives. (2) Consequence Delivery System The term \u201cConsequence Delivery System\u201d means the series of consequences applied by U.S. Border Patrol in collaboration with other Federal agencies to persons unlawfully entering the United States, in order to prevent unlawful border crossing recidivism....",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title6-section223&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "49 U.S.C. 44801",
+            "bill_context": "Definition of 'unmanned aircraft system' in Division A, Section 101, cites title 49, United States Code.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "49",
+              "section": "44801",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 44801. Definitions In this chapter, the following definitions apply: (1) Actively tethered unmanned aircraft system .\u2014 The term \u201cactively tethered unmanned aircraft system\u201d means an unmanned aircraft system in which the unmanned aircraft component\u2014 (A) weighs 55 pounds or less, including payload but not including the tether; (B) is physically attached to a ground station with a taut, appropriately load-rated tether that provides continuous power to the unmanned aircraft and is unlikely to be separated from the unmanned aircraft; (C) is controlled and retrieved by such ground station through ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title49-section44801&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1701 note",
+            "bill_context": "Definition of 'operational control' in Division A, Section 101, references the Secure Fence Act of 2006.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "8",
+              "section": "1701",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 1701. Definitions In this chapter: (1) Alien The term \u201calien\u201d has the meaning given the term in section 1101(a)(3) of this title . (2) Appropriate committees of Congress The term \u201cappropriate committees of Congress\u201d means the following: (A) The Committee on the Judiciary, the Select Committee on Intelligence, and the Committee on Foreign Relations of the Senate. (B) The Committee on the Judiciary, the Permanent Select Committee on Intelligence, and the Committee on International Relations of the House of Representatives. (3) Chimera system The term \u201cChimera system\u201d means the interoperable el...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1701&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "6 U.S.C. 223(a)(3)",
+            "bill_context": "Definition of 'got away' in Division A, Section 111, cites the National Defense Authorization Act for Fiscal Year 2017.",
+            "relevance": "definitions",
+            "resolved_to": "6 U.S.C. 223",
+            "usc_data": {
+              "title": "6",
+              "section": "223",
+              "heading": "Border security metrics",
+              "text_excerpt": "\u00a7 223. Border security metrics (a) Definitions In this section: (1) Appropriate congressional committees The term \u201cappropriate congressional committees\u201d means\u2014 (A) the Committee on Homeland Security and Governmental Affairs of the Senate; and (B) the Committee on Homeland Security of the House of Representatives. (2) Consequence Delivery System The term \u201cConsequence Delivery System\u201d means the series of consequences applied by U.S. Border Patrol in collaboration with other Federal agencies to persons unlawfully entering the United States, in order to prevent unlawful border crossing recidivism....",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title6-section223&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "6 U.S.C. 223(a)(8)",
+            "bill_context": "Definition of 'transit zone' in Division A, Section 111, cites the National Defense Authorization Act for Fiscal Year 2017.",
+            "relevance": "definitions",
+            "resolved_to": "6 U.S.C. 223",
+            "usc_data": {
+              "title": "6",
+              "section": "223",
+              "heading": "Border security metrics",
+              "text_excerpt": "\u00a7 223. Border security metrics (a) Definitions In this section: (1) Appropriate congressional committees The term \u201cappropriate congressional committees\u201d means\u2014 (A) the Committee on Homeland Security and Governmental Affairs of the Senate; and (B) the Committee on Homeland Security of the House of Representatives. (2) Consequence Delivery System The term \u201cConsequence Delivery System\u201d means the series of consequences applied by U.S. Border Patrol in collaboration with other Federal agencies to persons unlawfully entering the United States, in order to prevent unlawful border crossing recidivism....",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title6-section223&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "8 U.S.C. 1182(a)(9)(B)(ii)",
+            "bill_context": "Definition of 'unlawfully present' in Division A, Section 104, references the Immigration and Nationality Act.",
+            "relevance": "definitions",
+            "resolved_to": "8 U.S.C. 1182",
+            "usc_data": {
+              "title": "8",
+              "section": "1182",
+              "heading": "Inadmissible aliens",
+              "text_excerpt": "\u00a7 1182. Inadmissible aliens (a) Classes of aliens ineligible for visas or admission Except as otherwise provided in this chapter, aliens who are inadmissible under the following paragraphs are ineligible to receive visas and ineligible to be admitted to the United States: (1) Health-related grounds (A) In general Any alien\u2014 (i) who is determined (in accordance with regulations prescribed by the Secretary of Health and Human Services) to have a communicable disease of public health significance; 1 1 So in original. The semicolon probably should be a comma. (ii) except as provided in subparagrap...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1182&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "6 U.S.C. 621",
+            "bill_context": "Definition of 'terrorist screening database' in Division A, Section 118, cites the Homeland Security Act of 2002.",
+            "relevance": "definitions",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "6 U.S.C. 279(g)",
+            "bill_context": "Definition of 'unaccompanied alien child' in Division A, Section 118, cites the Homeland Security Act of 2002.",
+            "relevance": "definitions",
+            "resolved_to": "6 U.S.C. 279",
+            "usc_data": {
+              "title": "6",
+              "section": "279",
+              "heading": "Children\u2019s affairs",
+              "text_excerpt": "\u00a7 279. Children\u2019s affairs (a) Transfer of functions There are transferred to the Director of the Office of Refugee Resettlement of the Department of Health and Human Services functions under the immigration laws of the United States with respect to the care of unaccompanied alien children that were vested by statute in, or performed by, the Commissioner of Immigration and Naturalization (or any officer, employee, or component of the Immigration and Naturalization Service) immediately before the effective date specified in subsection (d). (b) Functions (1) In general Pursuant to the transfer ma...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title6-section279&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "8 U.S.C. 1101",
+            "bill_context": "Definition of 'alien' in Division B, Section 303, references the Immigration and Nationality Act.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "8",
+              "section": "1101",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 1101. Definitions (a) As used in this chapter\u2014 (1) The term \u201cadministrator\u201d means the official designated by the Secretary of State pursuant to section 1104(b) of this title . (2) The term \u201cadvocates\u201d includes, but is not limited to, advises, recommends, furthers by overt act, and admits belief in. (3) The term \u201calien\u201d means any person not a citizen or national of the United States. (4) The term \u201capplication for admission\u201d has reference to the application for admission into the United States and not to the application for the issuance of an immigrant or nonimmigrant visa. (5) The term \u201cAttor...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1101&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1189",
+            "bill_context": "Definition of 'foreign terrorist organization' in Division B, Section 127, cites the Immigration and Nationality Act.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "8",
+              "section": "1189",
+              "heading": "Designation of foreign terrorist organizations",
+              "text_excerpt": "\u00a7 1189. Designation of foreign terrorist organizations (a) Designation (1) In general The Secretary is authorized to designate an organization as a foreign terrorist organization in accordance with this subsection if the Secretary finds that\u2014 (A) the organization is a foreign organization; (B) the organization engages in terrorist activity (as defined in section 1182(a)(3)(B) of this title or terrorism (as defined in section 2656f(d)(2) of title 22 ), or retains the capability and intent to engage in terrorist activity or terrorism) 1 1 So in original. The closing parenthesis probably should f...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1189&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1158",
+            "bill_context": "Amendments to section 208 of the Immigration and Nationality Act in Division B, Title I, address asylum eligibility.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "8",
+              "section": "1158",
+              "heading": "Asylum",
+              "text_excerpt": "\u00a7 1158. Asylum (a) Authority to apply for asylum (1) In general Any alien who is physically present in the United States or who arrives in the United States (whether or not at a designated port of arrival and including an alien who is brought to the United States after having been interdicted in international or United States waters), irrespective of such alien\u2019s status, may apply for asylum in accordance with this section or, where applicable, section 1225(b) of this title . (2) Exceptions (A) Safe third country Paragraph (1) shall not apply to an alien if the Attorney General determines that...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1158&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1225",
+            "bill_context": "Amendments to section 235 of the Immigration and Nationality Act in Division B, Title II, address inspection of applicants for admission.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "8",
+              "section": "1225",
+              "heading": "Inspection by immigration officers; expedited removal of inadmissible arriving aliens; referral for hearing",
+              "text_excerpt": "\u00a7 1225. Inspection by immigration officers; expedited removal of inadmissible arriving aliens; referral for hearing (a) Inspection (1) Aliens treated as applicants for admission An alien present in the United States who has not been admitted or who arrives in the United States (whether or not at a designated port of arrival and including an alien who is brought to the United States after having been interdicted in international or United States waters) shall be deemed for purposes of this chapter an applicant for admission. (2) Stowaways An arriving alien who is a stowaway is not eligible to a...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1225&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1325",
+            "bill_context": "Amendments to section 275 of the Immigration and Nationality Act in Division B, Title VI, expand penalties for illegal presence.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "8",
+              "section": "1325",
+              "heading": "Improper entry by alien",
+              "text_excerpt": "\u00a7 1325. Improper entry by alien (a) Improper time or place; avoidance of examination or inspection; misrepresentation and concealment of facts Any alien who (1) enters or attempts to enter the United States at any time or place other than as designated by immigration officers, or (2) eludes examination or inspection by immigration officers, or (3) attempts to enter or obtains entry to the United States by a willfully false or misleading representation or the willful concealment of a material fact, shall, for the first commission of any such offense, be fined under title 18 or imprisoned not mo...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1325&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1182(d)(5)",
+            "bill_context": "Amendments to section 212(d)(5) of the Immigration and Nationality Act in Division B, Title VII, reform immigration parole.",
+            "relevance": "amend",
+            "resolved_to": "8 U.S.C. 1182",
+            "usc_data": {
+              "title": "8",
+              "section": "1182",
+              "heading": "Inadmissible aliens",
+              "text_excerpt": "\u00a7 1182. Inadmissible aliens (a) Classes of aliens ineligible for visas or admission Except as otherwise provided in this chapter, aliens who are inadmissible under the following paragraphs are ineligible to receive visas and ineligible to be admitted to the United States: (1) Health-related grounds (A) In general Any alien\u2014 (i) who is determined (in accordance with regulations prescribed by the Secretary of Health and Human Services) to have a communicable disease of public health significance; 1 1 So in original. The semicolon probably should be a comma. (ii) except as provided in subparagrap...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1182&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "8 U.S.C. 1324a",
+            "bill_context": "Amendments to section 274A of the Immigration and Nationality Act in Division B, Title VIII, reform employment eligibility verification.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "8",
+              "section": "1324a",
+              "heading": "Unlawful employment of aliens",
+              "text_excerpt": "\u00a7 1324a. Unlawful employment of aliens (a) Making employment of unauthorized aliens unlawful (1) In general It is unlawful for a person or other entity\u2014 (A) to hire, or to recruit or refer for a fee, for employment in the United States an alien knowing the alien is an unauthorized alien (as defined in subsection (h)(3)) with respect to such employment, or (B) (i) to hire for employment in the United States an individual without complying with the requirements of subsection (b) or (ii) if the person or entity is an agricultural association, agricultural employer, or farm labor contractor (as de...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1324a&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "18 U.S.C. 1546",
+            "bill_context": "Amendments to section 1546(b) of title 18, United States Code, address fraud and misuse of documents.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "18",
+              "section": "1546",
+              "heading": "Fraud and misuse of visas, permits, and other documents",
+              "text_excerpt": "\u00a7 1546. Fraud and misuse of visas, permits, and other documents (a) Whoever knowingly forges, counterfeits, alters, or falsely makes any immigrant or nonimmigrant visa, permit, border crossing card, alien registration receipt card, or other document prescribed by statute or regulation for entry into or as evidence of authorized stay or employment in the United States, or utters, uses, attempts to use, possesses, obtains, accepts, or receives any such visa, permit, border crossing card, alien registration receipt card, or other document prescribed by statute or regulation for entry into or as e...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section1546&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "18 U.S.C. 1182",
+            "bill_context": "Amendments to section 212(d)(5) of the Immigration and Nationality Act reference title 18, United States Code.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 1325",
+            "bill_context": "Amendments to section 275 of the Immigration and Nationality Act reference title 18, United States Code.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 1324a",
+            "bill_context": "Amendments to section 274A of the Immigration and Nationality Act reference title 18, United States Code.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 1324a note",
+            "bill_context": "Amendments to section 274A of the Immigration and Nationality Act reference the Illegal Immigration Reform and Immigrant Responsibility Act of 1996.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true,
+        "_pipeline_notes": [
+          "deduped 112 -> 21 citations (truncation-recovery artifacts)"
+        ]
+      },
+      "elapsed_s": 164.63,
+      "prompt_tokens": 65175,
+      "completion_tokens": 8000,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 1907.94,
+        "lmdb_stats": {
+          "hits": 16,
+          "misses": 11,
+          "calls": 27,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch01",
+        "items": [
+          {
+            "line_item": "Authorization of $110,000,000 for Operation Stonegarden grants to eligible law enforcement agencies.",
+            "amount_usd": 110000000.0,
+            "recipient": null,
+            "pattern": "geo-specific",
+            "confidence": "high",
+            "bill_section": "SEC. 110",
+            "why_flagged": "Funds tied to specific geographic region (southwest border)"
+          },
+          {
+            "line_item": "Authorization of $7,000,000 for eradication of carrizo cane and salt cedar along the Rio Grande River.",
+            "amount_usd": 7000000.0,
+            "recipient": null,
+            "pattern": "geo-specific",
+            "confidence": "high",
+            "bill_section": "SEC. 112",
+            "why_flagged": "Funds tied to specific geographic location (Rio Grande River)"
+          }
+        ],
+        "note": null
+      },
+      "elapsed_s": 27.27,
+      "prompt_tokens": 65788,
+      "completion_tokens": 238,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 23.18,
+      "prompt_tokens": 65197,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "DIVISION A\u2014BORDER SECURITY",
+        "headlines": [
+          {
+            "headline": "200 Miles of Wall Annually, Now",
+            "angle": "fiscal",
+            "hook": "This bill authorizes the immediate construction of 200 miles of border wall each year using unexpired funds and leftover materials.",
+            "target_audience": "Budget-watchers and fiscal conservatives",
+            "evidence_provisions": [
+              "Resumes construction of the border wall using unexpired funds and unused materials from prior projects, with a plan to complete 200 miles annually."
+            ]
+          },
+          {
+            "headline": "CBP Gets 22,000 New Agents",
+            "angle": "controversy",
+            "hook": "The bill mandates hiring 22,000 full-time Border Patrol agents, sparking debate over staffing levels and enforcement priorities.",
+            "target_audience": "Immigration policy critics and civil rights advocates",
+            "evidence_provisions": [
+              "Strengthens CBP personnel by authorizing retention bonuses, hiring 22,000 full-time Border Patrol agents, and implementing workload staffing models."
+            ]
+          },
+          {
+            "headline": "DNA Collected from Every Alien",
+            "angle": "human-impact",
+            "hook": "Under new rules, every alien encountered at the border must have their DNA and biometric data collected\u2014raising privacy and dignity concerns.",
+            "target_audience": "Immigrant rights groups and legal advocates",
+            "evidence_provisions": [
+              "Requires real-time criminal background checks on all aliens encountered at the border and mandates collection of DNA and biometric data."
+            ]
+          },
+          {
+            "headline": "Air and Marine Ops Can\u2019t Transport Aliens",
+            "angle": "political",
+            "hook": "A rare restriction bars Air and Marine Operations from transporting non-detained aliens\u2014highlighting growing scrutiny of CBP\u2019s operational choices.",
+            "target_audience": "National security policy experts",
+            "evidence_provisions": [
+              "Prohibits the use of CBP One for non-perishable cargo and restricts the use of Air and Marine Operations for transporting non-detained aliens."
+            ]
+          },
+          {
+            "headline": "Surveillance Upgrades Get $33M",
+            "angle": "drama",
+            "hook": "A $33 million boost for border surveillance systems fuels a high-stakes tech race along the southern frontier.",
+            "target_audience": "Tech and defense industry insiders",
+            "evidence_provisions": [
+              "Authorizes $33 million for upgrading border surveillance systems and $125 million for modernizing license plate readers at ports of entry."
+            ]
+          },
+          {
+            "headline": "Unmanned Drones Get New Tether Rules",
+            "angle": "hidden-provision",
+            "hook": "The bill defines 'actively tethered unmanned aircraft systems'\u2014a niche but critical detail for drone deployment at the border.",
+            "target_audience": "Defense tech analysts and drone operators",
+            "evidence_provisions": [
+              "Definition of 'unmanned aircraft system' in Division A, Section 101, cites title 49, United States Code."
+            ]
+          },
+          {
+            "headline": "Monthly Border Stats Must Be Public",
+            "angle": "regulatory",
+            "hook": "The Secretary must publish monthly operational stats on encounters, seizures, and other metrics\u2014boosting transparency for the first time.",
+            "target_audience": "Government accountability researchers",
+            "evidence_provisions": [
+              "Directs the Secretary to publish monthly operational statistics on border encounters, drug seizures, and other key metrics for public transparency."
+            ]
+          },
+          {
+            "headline": "Wall Funding Tied to Southwest States",
+            "angle": "geopolitical",
+            "hook": "Operation Stonegarden grants totaling $110 million are explicitly tied to southwest border states\u2014reshaping regional security dynamics.",
+            "target_audience": "Regional policymakers and border state officials",
+            "evidence_provisions": [
+              "Authorization of $110,000,000 for Operation Stonegarden grants to eligible law enforcement agencies."
+            ]
+          },
+          {
+            "headline": "Rio Grande Invasive Plants Get $7M",
+            "angle": "watchdog",
+            "hook": "A $7 million line item for eradicating carrizo cane and salt cedar along the Rio Grande reveals how environmental work fuels border infrastructure.",
+            "target_audience": "Environmental watchdogs and land management experts",
+            "evidence_provisions": [
+              "Authorization of $7,000,000 for eradication of carrizo cane and salt cedar along the Rio Grande River."
+            ]
+          },
+          {
+            "headline": "Wall Construction Now Uses Old Materials",
+            "angle": "scoop",
+            "hook": "The bill allows the reuse of unused materials from prior wall projects\u2014revealing a cost-cutting strategy previously unreported.",
+            "target_audience": "Investigative journalists and infrastructure reporters",
+            "evidence_provisions": [
+              "Resumes construction of the border wall using unexpired funds and unused materials from prior projects, with a plan to complete 200 miles annually."
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 11.44,
+      "prompt_tokens": 6732,
+      "completion_tokens": 1153,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "DIVISION A\u2014BORDER SECURITY",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "DNA Collected from Every Alien",
+            "angle": "human-impact",
+            "newsworthiness_score": 10,
+            "specificity_score": 9,
+            "appeal_score": 9,
+            "composite_score": 28,
+            "rationale": "This headline reveals a sweeping, previously underreported mandate requiring DNA collection from every alien encountered at the border\u2014a significant expansion of biometric surveillance with profound privacy and dignity implications. The specificity of 'every alien' and the inclusion of DNA, not just fingerprints, makes this a high-impact, human-centered story that will resonate with civil rights advocates and the general public."
+          },
+          {
+            "rank": 2,
+            "headline": "Wall Construction Now Uses Old Materials",
+            "angle": "scoop",
+            "newsworthiness_score": 9,
+            "specificity_score": 10,
+            "appeal_score": 8,
+            "composite_score": 27,
+            "rationale": "The revelation that the bill allows reuse of unused materials from prior wall projects is a major fiscal and logistical scoop. It exposes a cost-saving strategy not widely reported, with concrete specificity (unused materials, prior projects), making it a compelling investigative hook for infrastructure and government efficiency audiences."
+          },
+          {
+            "rank": 3,
+            "headline": "200 Miles of Wall Annually, Now",
+            "angle": "fiscal",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The headline highlights a concrete, ambitious construction target\u2014200 miles per year\u2014backed by unexpired funds and leftover materials. The specificity of the number and the fiscal mechanism (using unexpired funds) make this a strong fiscal policy story with clear implications for spending and project continuity."
+          },
+          {
+            "rank": 4,
+            "headline": "CBP Gets 22,000 New Agents",
+            "angle": "controversy",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 23,
+            "rationale": "The hiring of 22,000 new agents is a major staffing shift with clear political and operational consequences. While the number is specific, the controversy angle is somewhat generic. Still, the scale and the mention of retention bonuses and workload models add depth, making it a solid contender for policy and civil rights audiences."
+          },
+          {
+            "rank": 5,
+            "headline": "Air and Marine Ops Can\u2019t Transport Aliens",
+            "angle": "political",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "The restriction on Air and Marine Operations transporting non-detained aliens is a rare, specific operational limitation that signals internal scrutiny of CBP practices. The specificity of the restriction and its implication for enforcement ethics give it political weight, though the audience is narrower and the drama less immediate."
+          },
+          {
+            "rank": 6,
+            "headline": "Surveillance Upgrades Get $33M",
+            "angle": "drama",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 21,
+            "rationale": "The $33 million for surveillance upgrades is a concrete figure with tech-sector appeal, but the headline lacks narrative tension. The 'high-stakes tech race' angle is overused and vague. While specific, the story feels more like a budget line than a compelling human or political drama."
+          },
+          {
+            "rank": 7,
+            "headline": "Monthly Border Stats Must Be Public",
+            "angle": "regulatory",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 20,
+            "rationale": "Mandating monthly public reporting is a meaningful transparency win, and the specificity of 'monthly' and 'key metrics' adds value. However, the regulatory nature of the provision limits its appeal to a niche audience of accountability researchers, reducing its broader listener engagement potential."
+          },
+          {
+            "rank": 8,
+            "headline": "Unmanned Drones Get New Tether Rules",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 6,
+            "specificity_score": 9,
+            "appeal_score": 5,
+            "composite_score": 20,
+            "rationale": "The definition of 'actively tethered unmanned aircraft systems' is highly specific and technically precise, referencing Title 49 USC. While this is a hidden provision with niche relevance for defense tech analysts, the lack of broader human or political stakes limits its appeal to a very small audience."
+          },
+          {
+            "rank": 9,
+            "headline": "Wall Funding Tied to Southwest States",
+            "angle": "geopolitical",
+            "newsworthiness_score": 5,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 18,
+            "rationale": "The $110 million in Operation Stonegarden grants tied to southwest border states is specific and regionally significant, but the geopolitical angle is underdeveloped. The headline lacks drama or controversy, and the impact is limited to a small group of state officials, reducing its broader appeal."
+          },
+          {
+            "rank": 10,
+            "headline": "Rio Grande Invasive Plants Get $7M",
+            "angle": "watchdog",
+            "newsworthiness_score": 4,
+            "specificity_score": 9,
+            "appeal_score": 4,
+            "composite_score": 17,
+            "rationale": "The $7 million for eradicating carrizo cane and salt cedar is highly specific and reveals an unusual intersection of environmental work and border infrastructure. However, the topic is too narrow and technical for general political listeners, and the human or policy stakes are minimal, making it the weakest hook despite its precision."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "DNA Collected from Every Alien",
+          "angle": "human-impact",
+          "newsworthiness_score": 10,
+          "specificity_score": 9,
+          "appeal_score": 9,
+          "composite_score": 28,
+          "rationale": "This headline reveals a sweeping, previously underreported mandate requiring DNA collection from every alien encountered at the border\u2014a significant expansion of biometric surveillance with profound privacy and dignity implications. The specificity of 'every alien' and the inclusion of DNA, not just fingerprints, makes this a high-impact, human-centered story that will resonate with civil rights advocates and the general public."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it combines maximum newsworthiness\u2014revealing a sweeping, underreported biometric mandate\u2014with high specificity (DNA collection from every alien) and strong listener appeal due to the profound human rights and privacy stakes. It transforms a technical provision into a compelling, emotionally resonant story that will drive clicks and engagement."
+      },
+      "elapsed_s": 13.95,
+      "prompt_tokens": 1708,
+      "completion_tokens": 1624,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 28.99,
+    "usc_cross_ref": 164.63,
+    "pork_finder": 27.27,
+    "conflict_spotter": 23.18,
+    "podcast_headlines": 11.44,
+    "headline_ranker": 13.95
+  },
+  "totals": {
+    "wall_clock_s": 277.05,
+    "prompt_tokens_total": 269631,
+    "completion_tokens_total": 11422
+  }
+}

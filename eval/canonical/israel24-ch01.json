@@ -1,0 +1,811 @@
+{
+  "bill_short": "israel24",
+  "bill_label": "Israel Security Supplemental Approps",
+  "bill_note": "Apr 2024 Israel/Ukraine/Taiwan supplemental",
+  "chunk_id": "ch01",
+  "title_marker": "DIVISION A\u2014ISRAEL SECURITY SUP-",
+  "tokens": 69579,
+  "pages": [
+    2,
+    110
+  ],
+  "n_chunks": 1,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "DIVISION A\u2014ISRAEL SECURITY SUP-",
+        "one_sentence_summary": "This division provides $15.5 billion in emergency funding to strengthen Israel's defense capabilities, support military operations, and enhance security through equipment, training, and financial assistance.",
+        "bullets": [
+          "Allocates $4.4 billion for Defense-Wide Operation and Maintenance to replace or repair military equipment and reimburse services provided to Israel or allied nations.",
+          "Provides $5.2 billion for Defense-Wide Procurement, including $4 billion for Iron Dome and David\u2019s Sling missile defense systems and $1.2 billion for the Iron Beam system.",
+          "Authorizes $801.4 million for Army ammunition procurement and $198.6 million for Defense Production Act purchases to boost defense manufacturing capacity.",
+          "Establishes transfer authorities allowing funds to be moved across defense accounts, with strict notification and oversight requirements to Congress.",
+          "Requires the Secretary of Defense to submit a detailed execution plan before any funds are spent and mandates 15-day advance notice for transfers.",
+          "Imposes strict oversight and accountability measures, including third-party monitoring and regular reporting, to prevent misuse of funds intended for Israel.",
+          "Designates all funds as emergency requirements under the Balanced Budget Act, requiring presidential designation for availability."
+        ],
+        "affected_groups": [
+          "U.S. Department of Defense",
+          "Government of Israel",
+          "Military contractors and defense manufacturers",
+          "U.S. Congress (via notification and oversight requirements)"
+        ]
+      },
+      "elapsed_s": 34.43,
+      "prompt_tokens": 73260,
+      "completion_tokens": 333,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [
+          {
+            "citation": "22 U.S.C. 2318(a)(1)",
+            "bill_context": "Section 302 substitutes $7.8 billion for $100 million in the Foreign Assistance Act of 1961.",
+            "relevance": "amend",
+            "resolved_to": "22 U.S.C. 2318",
+            "usc_data": {
+              "title": "22",
+              "section": "2318",
+              "heading": "Special authority",
+              "text_excerpt": "\u00a7 2318. Special authority (a) Unforeseen emergency; national interest; determinations and reports to Congress; limitation of defense articles, defense services, and military education and training furnished (1) If the President determines and reports to the Congress in accordance with section 2411 of this title that\u2014 (A) an unforeseen emergency exists which requires immediate military assistance to a foreign country or international organization; and (B) the emergency requirement cannot be met under the authority of the Arms Export Control Act [ 22 U.S.C. 2751 et seq.] or any other law except ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2318&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "22 U.S.C. 2318(a)(2)(B)",
+            "bill_context": "Section 303 substitutes $400 million and $150 million for $200 million and $75 million in the Foreign Assistance Act of 1961.",
+            "relevance": "amend",
+            "resolved_to": "22 U.S.C. 2318",
+            "usc_data": {
+              "title": "22",
+              "section": "2318",
+              "heading": "Special authority",
+              "text_excerpt": "\u00a7 2318. Special authority (a) Unforeseen emergency; national interest; determinations and reports to Congress; limitation of defense articles, defense services, and military education and training furnished (1) If the President determines and reports to the Congress in accordance with section 2411 of this title that\u2014 (A) an unforeseen emergency exists which requires immediate military assistance to a foreign country or international organization; and (B) the emergency requirement cannot be met under the authority of the Arms Export Control Act [ 22 U.S.C. 2751 et seq.] or any other law except ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2318&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "22 U.S.C. 2348a(c)(2)",
+            "bill_context": "Section 304 substitutes $50 million for $25 million in the Foreign Assistance Act of 1961.",
+            "relevance": "amend",
+            "resolved_to": "22 U.S.C. 2348a",
+            "usc_data": {
+              "title": "22",
+              "section": "2348a",
+              "heading": "Authorization of appropriations",
+              "text_excerpt": "\u00a7 2348a. Authorization of appropriations (a) Fiscal years 1986 and 1987 There are authorized to be appropriated to the President to carry out the purposes of this part, in addition to amounts otherwise available for such purposes, $37,000,000 for fiscal year 1986 and $37,000,000 for fiscal year 1987. (b) Availability of funds Amounts appropriated under this section are authorized to remain available until expended. (c) Emergency transfer of funds If the President determines that, as the result of an unforeseen emergency, the provision of assistance under this part in amounts in excess of funds...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2348a&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "50 U.S.C. 4518",
+            "bill_context": "Funds for Defense Production Act purchases are authorized under sections 108, 301, 302, and 303 of the Defense Production Act of 1950.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "50",
+              "section": "4518",
+              "heading": "Modernization of small business suppliers",
+              "text_excerpt": "\u00a7 4518. Modernization of small business suppliers (a) In general In providing any assistance under this chapter, the President shall accord a strong preference for small business concerns which are subcontractors or suppliers, and, to the maximum extent practicable, to such small business concerns located in areas of high unemployment or areas that have demonstrated a continuing pattern of economic decline, as identified by the Secretary of Labor. (b) Modernization of equipment (1) In general Funds authorized under subchapter II may be used to guarantee the purchase or lease of advance manufac...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section4518&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "50 U.S.C. 4531",
+            "bill_context": "Funds for Defense Production Act purchases are authorized under sections 108, 301, 302, and 303 of the Defense Production Act of 1950.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "50",
+              "section": "4531",
+              "heading": "Presidential authorization for the national defense",
+              "text_excerpt": "\u00a7 4531. Presidential authorization for the national defense (a) Expediting production and deliveries or services (1) Authorized activities To reduce current or projected shortfalls of industrial resources, critical technology items, or essential materials needed for national defense purposes, subject to such regulations as the President may prescribe, the President may authorize a guaranteeing agency to provide guarantees of loans by private institutions for the purpose of financing any contractor, subcontractor, provider of critical infrastructure, or other person in support of production cap...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section4531&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "50 U.S.C. 4532",
+            "bill_context": "Funds for Defense Production Act purchases are authorized under sections 108, 301, 302, and 303 of the Defense Production Act of 1950.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "50",
+              "section": "4532",
+              "heading": "Loans to private business enterprises",
+              "text_excerpt": "\u00a7 4532. Loans to private business enterprises (a) Loan authority To reduce current or projected shortfalls of industrial resources, critical technology items, or materials essential for the national defense, the President may make provision for loans to private business enterprises (including nonprofit research corporations and providers of critical infrastructure) for the creation, maintenance, expansion, protection, or restoration of capacity, the development of technological processes, or the production of essential materials, including the exploration, development, and mining of strategic ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section4532&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "50 U.S.C. 4533",
+            "bill_context": "Funds for Defense Production Act purchases are authorized under sections 108, 301, 302, and 303 of the Defense Production Act of 1950.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "50",
+              "section": "4533",
+              "heading": "Other presidential action authorized",
+              "text_excerpt": "\u00a7 4533. Other presidential action authorized (a) In general (1) In general To create, maintain, protect, expand, or restore domestic industrial base capabilities essential for the national defense, the President may make provision\u2014 (A) for purchases of or commitments to purchase an industrial resource or a critical technology item, for Government use or resale; (B) for the encouragement of exploration, development, and mining of critical and strategic materials, and other materials; (C) for the development of production capabilities; and (D) for the increased use of emerging technologies in se...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title50-section4533&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "6 U.S.C. 609a",
+            "bill_context": "Funds for the Nonprofit Security Grant Program are authorized under section 2009 of the Homeland Security Act of 2002.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "6",
+              "section": "609a",
+              "heading": "Nonprofit Security Grant Program",
+              "text_excerpt": "\u00a7 609a. Nonprofit Security Grant Program (a) Establishment There is established in the Department a program to be known as the \u201cNonprofit Security Grant Program\u201d (in this section referred to as the \u201cProgram\u201d). Under the Program, the Secretary, acting through the Administrator, shall make grants to eligible nonprofit organizations described in subsection (b), through the State in which such organizations are located, for target hardening and other security enhancements to protect against terrorist attacks or other threats. (b) Eligible recipients Eligible nonprofit organizations described in th...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title6-section609a&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "21 U.S.C. 2302(8)",
+            "bill_context": "The term 'opioid trafficking' in the Fentanyl Sanctions Act is defined in section 7203(8).",
+            "relevance": "definitions",
+            "resolved_to": "21 U.S.C. 2302",
+            "usc_data": {
+              "title": "21",
+              "section": "2302",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 2302. Definitions In this chapter: (1) Alien; national; national of the United States The terms \u201calien\u201d, \u201cnational\u201d, and \u201cnational of the United States\u201d have the meanings given those terms in section 1101 of title 8 . (2) Appropriate congressional committees and leadership The term \u201cappropriate congressional committees and leadership\u201d means\u2014 (A) the Committee on Appropriations, the Committee on Armed Services, the Committee on Banking, Housing, and Urban Affairs, the Committee on Foreign Relations, the Committee on Homeland Security and Governmental Affairs, the Committee on the Judiciary, t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title21-section2302&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "21 U.S.C. 2311",
+            "bill_context": "Subtitle A of the Fentanyl Sanctions Act is amended to include new provisions on money laundering concerns.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "21",
+              "section": "2311",
+              "heading": "Identification of foreign opioid traffickers",
+              "text_excerpt": "\u00a7 2311. Identification of foreign opioid traffickers (a) Public report (1) In general The President shall submit to the appropriate congressional committees and leadership, in accordance with subsection (c), a report\u2014 (A) identifying the foreign persons that the President determines are foreign opioid traffickers; (B) detailing progress the President has made in implementing this subchapter; and (C) providing an update on cooperative efforts with the governments of Mexico, the People\u2019s Republic of China, and other countries of concern with respect to combating foreign opioid traffickers. (2) I...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title21-section2311&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "21 U.S.C. 2318",
+            "bill_context": "Section 506(a)(1) of the Foreign Assistance Act of 1961 is amended to increase funding limits.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "21 U.S.C. 2321h(b)",
+            "bill_context": "Section 514(b) of the Foreign Assistance Act of 1961 is modified to exclude certain defense articles from reserve stock rules.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "21 U.S.C. 2348a(c)(2)",
+            "bill_context": "Section 552(c)(2) of the Foreign Assistance Act of 1961 is amended to increase funding limits.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 2318(a)(1)",
+            "bill_context": "Section 302 of the bill amends the Foreign Assistance Act of 1961 to increase funding limits.",
+            "relevance": "amend",
+            "resolved_to": "22 U.S.C. 2318",
+            "usc_data": {
+              "title": "22",
+              "section": "2318",
+              "heading": "Special authority",
+              "text_excerpt": "\u00a7 2318. Special authority (a) Unforeseen emergency; national interest; determinations and reports to Congress; limitation of defense articles, defense services, and military education and training furnished (1) If the President determines and reports to the Congress in accordance with section 2411 of this title that\u2014 (A) an unforeseen emergency exists which requires immediate military assistance to a foreign country or international organization; and (B) the emergency requirement cannot be met under the authority of the Arms Export Control Act [ 22 U.S.C. 2751 et seq.] or any other law except ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2318&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "22 U.S.C. 2318(a)(2)(B)",
+            "bill_context": "Section 303 of the bill amends the Foreign Assistance Act of 1961 to increase funding limits.",
+            "relevance": "amend",
+            "resolved_to": "22 U.S.C. 2318",
+            "usc_data": {
+              "title": "22",
+              "section": "2318",
+              "heading": "Special authority",
+              "text_excerpt": "\u00a7 2318. Special authority (a) Unforeseen emergency; national interest; determinations and reports to Congress; limitation of defense articles, defense services, and military education and training furnished (1) If the President determines and reports to the Congress in accordance with section 2411 of this title that\u2014 (A) an unforeseen emergency exists which requires immediate military assistance to a foreign country or international organization; and (B) the emergency requirement cannot be met under the authority of the Arms Export Control Act [ 22 U.S.C. 2751 et seq.] or any other law except ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2318&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "22 U.S.C. 2348a(c)(2)",
+            "bill_context": "Section 304 of the bill amends the Foreign Assistance Act of 1961 to increase funding limits.",
+            "relevance": "amend",
+            "resolved_to": "22 U.S.C. 2348a",
+            "usc_data": {
+              "title": "22",
+              "section": "2348a",
+              "heading": "Authorization of appropriations",
+              "text_excerpt": "\u00a7 2348a. Authorization of appropriations (a) Fiscal years 1986 and 1987 There are authorized to be appropriated to the President to carry out the purposes of this part, in addition to amounts otherwise available for such purposes, $37,000,000 for fiscal year 1986 and $37,000,000 for fiscal year 1987. (b) Availability of funds Amounts appropriated under this section are authorized to remain available until expended. (c) Emergency transfer of funds If the President determines that, as the result of an unforeseen emergency, the provision of assistance under this part in amounts in excess of funds...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2348a&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "22 U.S.C. 2412",
+            "bill_context": "Funds for foreign assistance are deemed authorized under section 10 of Public Law 91\u2013672.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "2412",
+              "heading": "Limitation on foreign assistance appropriations",
+              "text_excerpt": "\u00a7 2412. Limitation on foreign assistance appropriations (a) Restrictions on appropriations in absence of or in excess of prior authorizations Notwithstanding any provision of law enacted before January 12, 1971 , no money appropriated for foreign assistance (including foreign military sales) shall be available for obligation or expenditure\u2014 (1) unless the appropriation thereof has been previously authorized by law; or (2) in excess of an amount previously prescribed by law. (b) Exception To the extent that legislation enacted after the making of an appropriation for foreign assistance (includi...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2412&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 2680",
+            "bill_context": "Funds for foreign assistance are deemed authorized under section 15 of the State Department Basic Authorities Act of 1956.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "2680",
+              "heading": "Appropriations for State Department; information to congressional committees",
+              "text_excerpt": "\u00a7 2680. Appropriations for State Department; information to congressional committees (a) (1) Notwithstanding any provision of law enacted before October 26, 1974 , no money appropriated to the Department of State under any law shall be available for obligation or expenditure with respect to any fiscal year commencing on or after July 1, 1972 \u2014 (A) unless the appropriation thereof has been authorized by law enacted on or after February 7, 1972 ; or (B) in excess of an amount prescribed by law enacted on or after such date. (2) To the extent that legislation enacted after the making of an approp...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2680&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 5402(c)",
+            "bill_context": "Funds for assistance in Europe, Eurasia, and Central Asia are authorized under section 3(c) of the SEED Act of 1989.",
+            "relevance": "cross-reference",
+            "resolved_to": "22 U.S.C. 5402",
+            "usc_data": {
+              "title": "22",
+              "section": "5402",
+              "heading": "Scope of authority",
+              "text_excerpt": "\u00a7 5402. Scope of authority (a) General authorization The President is authorized to conduct activities for any East European country that are similar to any activity authorized by this chapter to be conducted in Poland or Hungary (excluding those authorized by section 5412 of this title or the amendments made by sections 301 and 304) if such similar activities would effectively promote a transition to market-oriented democracy. (b) Administration of justice programs In order to strengthen the administration of justice in East European countries, the President may exercise the same authorities ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section5402&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "22 U.S.C. 5801",
+            "bill_context": "Funds for assistance in Europe, Eurasia, and Central Asia are authorized under section 3 of the FREEDOM Support Act.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "5801",
+              "heading": "Definition of independent states",
+              "text_excerpt": "For purposes of this Act, the terms \u201cindependent states of the former Soviet Union\u201d and \u201cindependent states\u201d mean the following: Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Russia, Tajikistan, Turkmenistan, Ukraine, and Uzbekistan.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section5801&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 609a",
+            "bill_context": "Funds for the Nonprofit Security Grant Program are authorized under section 2009 of the Homeland Security Act of 2002.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 6212",
+            "bill_context": "Funds for foreign assistance are deemed authorized under section 313 of the Foreign Relations Authorization Act, Fiscal Years 1994 and 1995.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "6212",
+              "heading": "Requirement for authorization of appropriations",
+              "text_excerpt": "\u00a7 6212. Requirement for authorization of appropriations (a) Limitation on obligation and expenditure of funds Notwithstanding any other provision of law, for the fiscal year 1994 and for each subsequent fiscal year, any funds appropriated for the purposes of broadcasting subject to supervision of the Agency shall not be available for obligation or expenditure\u2014 (1) unless such funds are appropriated pursuant to an authorization of appropriations; or (2) in excess of the authorized level of appropriations. (b) Subsequent authorization The limitation under subsection (a) shall not apply to the ex...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section6212&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 2371",
+            "bill_context": "Sanctions under the FEND Off Fentanyl Act are tied to the criteria in section 620A of the Foreign Assistance Act of 1961.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "2371",
+              "heading": "Prohibition on assistance to governments supporting international terrorism",
+              "text_excerpt": "\u00a7 2371. Prohibition on assistance to governments supporting international terrorism (a) Prohibition The United States shall not provide any assistance under this chapter, the Food for Peace Act [ 7 U.S.C. 1691 et seq.], the Peace Corps Act [ 22 U.S.C. 2501 et seq.], or the Export-Import Bank Act of 1945 [ 12 U.S.C. 635 et seq.] to any country if the Secretary of State determines that the government of that country has repeatedly provided support for acts of international terrorism. (b) Publication of determinations Each determination of the Secretary of State under subsection (a), including ea...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2371&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 2378b note",
+            "bill_context": "Section 6 of the Hamas and Other Palestinian Terrorist Groups International Financing Prevention Act references criteria in the Palestinian Anti-Terrorism Act of 2006.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "2378b",
+              "heading": "Limitation on assistance to the Palestinian Authority",
+              "text_excerpt": "\u00a7 2378b. Limitation on assistance to the Palestinian Authority (a) Limitation Assistance may be provided under this chapter to the Hamas-controlled Palestinian Authority only during a period for which a certification described in subsection (b) is in effect. (b) Certification A certification described in subsection (a) is a certification transmitted by the President to Congress that contains a determination of the President that\u2014 (1) no ministry, agency, or instrumentality of the Palestinian Authority is effectively controlled by Hamas, unless the Hamas-controlled Palestinian Authority has\u2014 (A...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2378b&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 2780",
+            "bill_context": "Sanctions under the FIGHT CRIME Act are tied to the criteria in section 40 of the Arms Export Control Act.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "2780",
+              "heading": "Transactions with countries supporting acts of international terrorism",
+              "text_excerpt": "\u00a7 2780. Transactions with countries supporting acts of international terrorism (a) Prohibited transactions by United States Government The following transactions by the United States Government are prohibited: (1) Exporting or otherwise providing (by sale, lease or loan, grant, or other means), directly or indirectly, any munitions item to a country described in subsection (d) under the authority of this chapter, the Foreign Assistance Act of 1961 [ 22 U.S.C. 2151 et seq.], or any other law (except as provided in subsection (h)). In implementing this paragraph, the United States Government\u2014 (A...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2780&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 8513a(d)",
+            "bill_context": "Section 2 of the Iran-China Energy Sanctions Act of 2023 amends section 1245(d) of the National Defense Authorization Act for Fiscal Year 2012.",
+            "relevance": "amend",
+            "resolved_to": "22 U.S.C. 8513a",
+            "usc_data": {
+              "title": "22",
+              "section": "8513a",
+              "heading": "Imposition of sanctions with respect to the financial sector of Iran",
+              "text_excerpt": "\u00a7 8513a. Imposition of sanctions with respect to the financial sector of Iran (a) Findings Congress makes the following findings: (1) On November 21, 2011 , the Secretary of the Treasury issued a finding under section 5318A of title 31 that identified Iran as a jurisdiction of primary money laundering concern. (2) In that finding, the Financial Crimes Enforcement Network of the Department of the Treasury wrote, \u201cThe Central Bank of Iran, which regulates Iranian banks, has assisted designated Iranian banks by transferring billions of dollars to these banks in 2011. In mid-2011, the CBI transfer...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section8513a&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "22 U.S.C. 8514(c)",
+            "bill_context": "Sanctions under the MAHSA Act are tied to the criteria in section 105(c) of the Comprehensive Iran Sanctions, Accountability, and Divestment Act of 2010.",
+            "relevance": "cross-reference",
+            "resolved_to": "22 U.S.C. 8514",
+            "usc_data": {
+              "title": "22",
+              "section": "8514",
+              "heading": "Imposition of sanctions on certain persons who are responsible for or complicit in human rights abuses committed against citizens of Iran or their family members after the June 12, 2009 , elections in Iran",
+              "text_excerpt": "\u00a7 8514. Imposition of sanctions on certain persons who are responsible for or complicit in human rights abuses committed against citizens of Iran or their family members after the June 12, 2009 , elections in Iran (a) In general The President shall impose sanctions described in subsection (c) with respect to each person on the list required by subsection (b). (b) List of persons who are responsible for or complicit in certain human rights abuses (1) In general Not later than 90 days after July 1, 2010 , the President shall submit to the appropriate congressional committees a list of persons wh...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section8514&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "22 U.S.C. 10101",
+            "bill_context": "Sanctions under the FEND Off Fentanyl Act are tied to the Global Magnitsky Human Rights Accountability Act of 2016.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "10101",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 10101. Definitions In this chapter: (1) Foreign person The term \u201cforeign person\u201d has the meaning given that term in section 595.304 of title 31, Code of Federal Regulations (as in effect on the day before December 23, 2016 ). (2) Gross violations of internationally recognized human rights The term \u201cgross violations of internationally recognized human rights\u201d has the meaning given that term in section 2304(d)(1) of this title . (3) Person The term \u201cperson\u201d has the meaning given that term in section 591.308 of title 31, Code of Federal Regulations (as in effect on the day before December 23, 2...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section10101&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 1189",
+            "bill_context": "The MAHSA Act requires designation of Iranian persons as foreign terrorist organizations under section 219 of the Immigration and Nationality Act.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 1101",
+            "bill_context": "The FIGHT CRIME Act references the Immigration and Nationality Act for visa ineligibility provisions.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "1101",
+              "heading": "Repealed. Pub. L. 96\u2013465, title II, \u00a7 2205(1) , Oct. 17, 1980 , 94 Stat. 2159",
+              "text_excerpt": "\u00a7 1101. Repealed. Pub. L. 96\u2013465, title II, \u00a7 2205(1) , Oct. 17, 1980 , 94 Stat. 2159 Section, act Aug. 13, 1946, ch. 957, title VIII, \u00a7 861 , 60 Stat. 1024 , related to estimation of needed appropriations by Secretary of Treasury. Statutory Notes and Related Subsidiaries Effective Date of Repeal Repeal effective Feb. 15, 1981 , except as otherwise provided, see section 2403 of Pub. L. 96\u2013465 , set out as an Effective Date note under section 3901 of this title .",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section1101&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 1201(i)",
+            "bill_context": "The FIGHT CRIME Act references section 221(i) of the Immigration and Nationality Act for visa revocation procedures.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 1701",
+            "bill_context": "The FIGHT CRIME Act references the International Emergency Economic Powers Act for sanction authority.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 1701 note",
+            "bill_context": "The FIGHT CRIME Act references Executive Order 13876 and other executive orders under the International Emergency Economic Powers Act.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 1702",
+            "bill_context": "The FIGHT CRIME Act references section 203 of the International Emergency Economic Powers Act for sanction authority.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 1704",
+            "bill_context": "The FIGHT CRIME Act references section 205 of the International Emergency Economic Powers Act for sanction authority.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 2371",
+            "bill_context": "The FIGHT CRIME Act references section 620A of the Foreign Assistance Act of 1961 for sanctions criteria.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "2371",
+              "heading": "Prohibition on assistance to governments supporting international terrorism",
+              "text_excerpt": "\u00a7 2371. Prohibition on assistance to governments supporting international terrorism (a) Prohibition The United States shall not provide any assistance under this chapter, the Food for Peace Act [ 7 U.S.C. 1691 et seq.], the Peace Corps Act [ 22 U.S.C. 2501 et seq.], or the Export-Import Bank Act of 1945 [ 12 U.S.C. 635 et seq.] to any country if the Secretary of State determines that the government of that country has repeatedly provided support for acts of international terrorism. (b) Publication of determinations Each determination of the Secretary of State under subsection (a), including ea...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2371&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "22 U.S.C. 3091",
+            "bill_context": "The FEND Off Fentanyl Act references title V of the National Security Act of 1947 for intelligence activities.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 3094(a)(1)",
+            "bill_context": "Funds for foreign assistance are deemed authorized under section 504(a)(1) of the National Security Act of 1947.",
+            "relevance": "cross-reference",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "22 U.S.C. 2371",
+            "bill_context": "Sanctions under the FIGHT CRIME Act are tied to the criteria in section 620A of the Foreign Assistance Act of 1961.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "22",
+              "section": "2371",
+              "heading": "Prohibition on assistance to governments supporting international terrorism",
+              "text_excerpt": "\u00a7 2371. Prohibition on assistance to governments supporting international terrorism (a) Prohibition The United States shall not provide any assistance under this chapter, the Food for Peace Act [ 7 U.S.C. 1691 et seq.], the Peace Corps Act [ 22 U.S.C. 2501 et seq.], or the Export-Import Bank Act of 1945 [ 12 U.S.C. 635 et seq.] to any country if the Secretary of State determines that the government of that country has repeatedly provided support for acts of international terrorism. (b) Publication of determinations Each determination of the Secretary of State under subsection (a), including ea...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title22-section2371&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true,
+        "_pipeline_notes": [
+          "deduped 121 -> 39 citations (truncation-recovery artifacts)"
+        ]
+      },
+      "elapsed_s": 179.8,
+      "prompt_tokens": 73401,
+      "completion_tokens": 8000,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 3722.8,
+        "lmdb_stats": {
+          "hits": 27,
+          "misses": 26,
+          "calls": 53,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch01",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 29.68,
+      "prompt_tokens": 74014,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 28.88,
+      "prompt_tokens": 73423,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "DIVISION A\u2014ISRAEL SECURITY SUP-",
+        "headlines": [
+          {
+            "headline": "Iron Dome Gets $4B Boost",
+            "angle": "fiscal",
+            "hook": "A massive $4 billion allocation to Iron Dome and David's Sling systems underscores a strategic pivot in U.S. defense spending.",
+            "target_audience": "Defense budget watchers, fiscal conservatives",
+            "evidence_provisions": [
+              "22 U.S.C. 2318(a)(1)",
+              "22 U.S.C. 2318(a)(2)(B)",
+              "22 U.S.C. 2348a(c)(2)"
+            ]
+          },
+          {
+            "headline": "Congress Gets 15-Day Warning on Funds",
+            "angle": "controversy",
+            "hook": "New transfer rules force the Pentagon to notify Congress 15 days before moving Israel aid across defense accounts\u2014sparking debate over executive power.",
+            "target_audience": "Policy wonks, congressional staffers",
+            "evidence_provisions": [
+              "Section 302 substitutes $7.8 billion for $100 million in the Foreign Assistance Act of 1961.",
+              "Requires the Secretary of Defense to submit a detailed execution plan before any funds are spent"
+            ]
+          },
+          {
+            "headline": "U.S. Troops in Israel? Not Here Yet",
+            "angle": "human-impact",
+            "hook": "Despite $15.5 billion in aid, American combat forces won\u2019t be deployed\u2014this funding is purely for equipment and support.",
+            "target_audience": "Veterans, public interest in military deployment",
+            "evidence_provisions": [
+              "Allocates $4.4 billion for Defense-Wide Operation and Maintenance to replace or repair military equipment and reimburse services provided to Israel or allied nations.",
+              "Provides $5.2 billion for Defense-Wide Procurement"
+            ]
+          },
+          {
+            "headline": "Iron Beam: The Laser Shield Is Coming",
+            "angle": "hidden-provision",
+            "hook": "A little-known $1.2 billion for the Iron Beam laser defense system could redefine missile interception in the next decade.",
+            "target_audience": "Tech and defense innovation enthusiasts",
+            "evidence_provisions": [
+              "Provides $5.2 billion for Defense-Wide Procurement, including $4 billion for Iron Dome and David\u2019s Sling missile defense systems and $1.2 billion for the Iron Beam system."
+            ]
+          },
+          {
+            "headline": "Defense Contractors Get a Windfall",
+            "angle": "political",
+            "hook": "The bill\u2019s $198.6 million for Defense Production Act purchases is a direct boon to defense manufacturers with ties to the Pentagon.",
+            "target_audience": "Defense industry analysts, lobbyists",
+            "evidence_provisions": [
+              "$198.6 million for Defense Production Act purchases to boost defense manufacturing capacity.",
+              "50 U.S.C. 4532"
+            ]
+          },
+          {
+            "headline": "The $15.5B Emergency Loophole",
+            "angle": "drama",
+            "hook": "By classifying all funds as emergency requirements, the bill sidesteps normal budget scrutiny\u2014raising questions about transparency.",
+            "target_audience": "Government accountability advocates",
+            "evidence_provisions": [
+              "Designates all funds as emergency requirements under the Balanced Budget Act, requiring presidential designation for availability."
+            ]
+          },
+          {
+            "headline": "Third-Party Audits for Every Dollar",
+            "angle": "regulatory",
+            "hook": "Strict oversight mandates include third-party monitoring\u2014making this one of the most scrutinized defense aid packages ever.",
+            "target_audience": "Compliance officers, watchdog groups",
+            "evidence_provisions": [
+              "Imposes strict oversight and accountability measures, including third-party monitoring and regular reporting, to prevent misuse of funds intended for Israel."
+            ]
+          },
+          {
+            "headline": "Israel\u2019s Missile Defense Gets a Makeover",
+            "angle": "geopolitical",
+            "hook": "With $5.2 billion in procurement, the U.S. is accelerating Israel\u2019s shift from reactive to preemptive missile defense.",
+            "target_audience": "Middle East policy experts, foreign affairs journalists",
+            "evidence_provisions": [
+              "Provides $5.2 billion for Defense-Wide Procurement, including $4 billion for Iron Dome and David\u2019s Sling missile defense systems and $1.2 billion for the Iron Beam system."
+            ]
+          },
+          {
+            "headline": "Pentagon\u2019s New Transfer Power",
+            "angle": "watchdog",
+            "hook": "The bill grants the Pentagon broad authority to shift funds across accounts\u2014but with strict reporting rules.",
+            "target_audience": "Government transparency advocates, investigative reporters",
+            "evidence_provisions": [
+              "Establishes transfer authorities allowing funds to be moved across defense accounts, with strict notification and oversight requirements to Congress."
+            ]
+          },
+          {
+            "headline": "U.S. Law Justifies Israel Aid in Crisis",
+            "angle": "scoop",
+            "hook": "Newly cited provisions in 22 U.S.C. 2318(a)(1) now legally empower the President to bypass standard arms export rules.",
+            "target_audience": "Legal scholars, foreign policy journalists",
+            "evidence_provisions": [
+              "22 U.S.C. 2318(a)(1)",
+              "22 U.S.C. 2318(a)(2)(B)",
+              "22 U.S.C. 2348a(c)(2)"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 12.77,
+      "prompt_tokens": 8079,
+      "completion_tokens": 1253,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "DIVISION A\u2014ISRAEL SECURITY SUP-",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "Iron Beam: The Laser Shield Is Coming",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 26,
+            "rationale": "This headline reveals a little-known $1.2 billion investment in the Iron Beam laser defense system, a cutting-edge technology with transformative potential. The specificity of the dollar amount and system name, combined with the novelty of laser-based missile defense, offers a fresh, high-impact angle that most listeners wouldn\u2019t know. It combines tech intrigue with strategic defense shifts, making it both surprising and compelling."
+          },
+          {
+            "rank": 2,
+            "headline": "The $15.5B Emergency Loophole",
+            "angle": "drama",
+            "newsworthiness_score": 9,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The claim that $15.5 billion in aid is classified as emergency requirements\u2014bypassing normal budget scrutiny\u2014exposes a major procedural loophole with real democratic implications. The specificity of the dollar figure and the legal mechanism (Balanced Budget Act) adds weight, while the drama of circumventing oversight appeals to accountability-focused listeners. This is a rare, systemic issue that few would suspect from a routine aid bill."
+          },
+          {
+            "rank": 3,
+            "headline": "Congress Gets 15-Day Warning on Funds",
+            "angle": "controversy",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The 15-day notification rule for Pentagon fund transfers is a concrete, enforceable check on executive power, directly impacting congressional oversight. The specificity of the timeline and the legal basis (Section 302 substitution) make this a standout. It frames a procedural change as a political battleground, appealing to policy wonks and those concerned with checks and balances."
+          },
+          {
+            "rank": 4,
+            "headline": "U.S. Law Justifies Israel Aid in Crisis",
+            "angle": "scoop",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 7,
+            "composite_score": 24,
+            "rationale": "The headline exposes a legal mechanism\u2014citing 22 U.S.C. 2318(a)(1)\u2014that allows the President to bypass standard arms export rules during crises. This is a significant, underreported legal shift with real-world consequences. The specificity of the statute and the implication of executive overreach make this a strong scoop, though the appeal is slightly lower due to its wonky legal framing."
+          },
+          {
+            "rank": 5,
+            "headline": "Pentagon\u2019s New Transfer Power",
+            "angle": "watchdog",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "The bill grants the Pentagon broad authority to shift funds across accounts, a powerful administrative tool. The specificity of the transfer authority and the inclusion of reporting requirements add credibility. While important, the angle is more procedural than dramatic, limiting its appeal to general political listeners despite its watchdog relevance."
+          },
+          {
+            "rank": 6,
+            "headline": "Third-Party Audits for Every Dollar",
+            "angle": "regulatory",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 20,
+            "rationale": "The mandate for third-party monitoring is a strong accountability measure, but it\u2019s a standard oversight tool rather than a novel provision. The specificity of the requirement is high, but the angle lacks drama or surprise. It appeals mainly to compliance professionals, limiting broader listener interest despite its importance."
+          },
+          {
+            "rank": 7,
+            "headline": "Defense Contractors Get a Windfall",
+            "angle": "political",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 6,
+            "composite_score": 19,
+            "rationale": "The $198.6 million for Defense Production Act purchases directly benefits defense manufacturers, but this is a relatively small, routine allocation. The political angle is valid but generic\u2014no specific companies or contracts named. The headline lacks novelty and feels like a standard industry perk, reducing its newsworthiness and appeal."
+          },
+          {
+            "rank": 8,
+            "headline": "Israel\u2019s Missile Defense Gets a Makeover",
+            "angle": "geopolitical",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 19,
+            "rationale": "The $5.2 billion procurement for missile systems is significant, but the headline frames it as a general 'makeover' without highlighting what\u2019s new or different. The specificity of the funding breakdown is strong, but the geopolitical angle is overused and lacks a unique insight. It\u2019s informative but not compelling enough to stand out."
+          },
+          {
+            "rank": 9,
+            "headline": "Iron Dome Gets $4B Boost",
+            "angle": "fiscal",
+            "newsworthiness_score": 5,
+            "specificity_score": 9,
+            "appeal_score": 5,
+            "composite_score": 19,
+            "rationale": "The $4 billion for Iron Dome is a well-known allocation, and the headline offers no new insight. While the specificity of the dollar amount and statute references is high, the angle is generic and expected. It\u2019s a solid fiscal update but lacks surprise or human stakes, making it less engaging for a general audience."
+          },
+          {
+            "rank": 10,
+            "headline": "U.S. Troops in Israel? Not Here Yet",
+            "angle": "human-impact",
+            "newsworthiness_score": 4,
+            "specificity_score": 7,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "The headline clarifies a common misconception about troop deployment, but the information is widely known and not new. The specificity of the $4.4B and $5.2B allocations is useful, but the human impact angle is underdeveloped. It\u2019s a safe, factual correction rather than a compelling narrative hook."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "Iron Beam: The Laser Shield Is Coming",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 9,
+          "specificity_score": 9,
+          "appeal_score": 8,
+          "composite_score": 26,
+          "rationale": "This headline reveals a little-known $1.2 billion investment in the Iron Beam laser defense system, a cutting-edge technology with transformative potential. The specificity of the dollar amount and system name, combined with the novelty of laser-based missile defense, offers a fresh, high-impact angle that most listeners wouldn\u2019t know. It combines tech intrigue with strategic defense shifts, making it both surprising and compelling."
+        },
+        "winner_explanation": "The 'Iron Beam: The Laser Shield Is Coming' headline is the strongest podcast hook because it uncovers a hidden, high-tech provision with long-term strategic implications. It combines rare newsworthiness (a novel defense innovation), high specificity (exact dollar amount and system name), and strong listener appeal (sci-fi meets real-world security). Unlike generic funding announcements, this reveals a future-shaping capability that most audiences wouldn\u2019t anticipate, making it the most compelling entry in the list."
+      },
+      "elapsed_s": 15.25,
+      "prompt_tokens": 1835,
+      "completion_tokens": 1770,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 34.43,
+    "usc_cross_ref": 179.8,
+    "pork_finder": 29.68,
+    "conflict_spotter": 28.88,
+    "podcast_headlines": 12.77,
+    "headline_ranker": 15.25
+  },
+  "totals": {
+    "wall_clock_s": 310.68,
+    "prompt_tokens_total": 304012,
+    "completion_tokens_total": 11415
+  }
+}

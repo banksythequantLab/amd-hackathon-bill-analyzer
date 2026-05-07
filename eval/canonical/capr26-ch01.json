@@ -1,0 +1,579 @@
+{
+  "bill_short": "capr26",
+  "bill_label": "Continuing Appropriations 2026",
+  "bill_note": "FY2026 continuing resolution / appropriations",
+  "chunk_id": "ch01",
+  "title_marker": "DIVISION A\u2014CONTINUING APPROPRIATONS ACT, 2026",
+  "tokens": 114441,
+  "pages": [
+    1,
+    161
+  ],
+  "n_chunks": 1,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "DIVISION A\u2014CONTINUING APPROPRIATONS ACT, 2026",
+        "one_sentence_summary": "Division A extends funding for federal operations through January 30, 2026, allowing agencies to continue essential services without new appropriations, while imposing strict limits on new spending and protecting key programs.",
+        "bullets": [
+          "Continues funding for federal operations at 2025 levels for projects and activities not otherwise funded, ensuring government functions continue without interruption.",
+          "Prohibits the use of funds for new production, increased production rates, or new projects unless specifically authorized, preventing unapproved spending by the Department of Defense.",
+          "Allows funds to be used for essential operations, including personnel pay and benefits, to avoid furloughs, and for critical programs like SNAP and food assistance.",
+          "Establishes a January 30, 2026, deadline for funding to expire, unless replaced by a new appropriations act, and allows for the ratification of obligations made during the lapse.",
+          "Protects entitlement programs like SNAP and WIC by maintaining funding levels at current law rates, ensuring uninterrupted benefits for recipients.",
+          "Authorizes limited funding actions to maintain essential services and allows for the reimbursement of states and grantees that used their own funds during a funding gap.",
+          "Prohibits reductions in force (RIFs) across federal agencies during the funding period, ensuring job stability and requiring reinstatement of employees affected by prior RIF notices.",
+          "Extends the availability of funds for specific programs like the E-7 Wedgetail aircraft program and shipbuilding projects, ensuring continuity in defense initiatives."
+        ],
+        "affected_groups": [
+          "Federal employees",
+          "SNAP recipients",
+          "WIC participants",
+          "State and local governments",
+          "Defense contractors",
+          "Veterans",
+          "Rural communities"
+        ]
+      },
+      "elapsed_s": 90.07,
+      "prompt_tokens": 125259,
+      "completion_tokens": 411,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [
+          {
+            "citation": "26 USC 401(k)",
+            "bill_context": "Section 121 of the Continuing Appropriations Act, 2026, amends the Agricultural Act of 2014 to substitute a date for 'October 1, 2023'.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 401",
+            "usc_data": {
+              "title": "26",
+              "section": "401",
+              "heading": "Qualified pension, profit-sharing, and stock bonus plans",
+              "text_excerpt": "\u00a7 401. Qualified pension, profit-sharing, and stock bonus plans (a) Requirements for qualification A trust created or organized in the United States and forming part of a stock bonus, pension, or profit-sharing plan of an employer for the exclusive benefit of his employees or their beneficiaries shall constitute a qualified trust under this section\u2014 (1) if contributions are made to the trust by such employer, or employees, or both, or by another employer who is entitled to deduct his contributions under section 404(a)(3)(B) (relating to deduction for contributions to profit-sharing and stock b...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section401&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "18 U.S.C. 3551 note",
+            "bill_context": "Section 123 of the Continuing Appropriations Act, 2026, extends the expiration date of a provision related to the Sentencing Reform Act of 1984.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "18",
+              "section": "3551",
+              "heading": "Authorized sentences",
+              "text_excerpt": "\u00a7 3551. Authorized sentences (a) In General .\u2014 Except as otherwise specifically provided, a defendant who has been found guilty of an offense described in any Federal statute, including sections 13 and 1153 of this title, other than an Act of Congress applicable exclu\u00adsively in the District of Columbia or the Uniform Code of Military Justice, shall be sentenced in accordance with the provisions of this chapter so as to achieve the purposes set forth in subparagraphs (A) through (D) of section 3553(a)(2) to the extent that they are applicable in light of all the circumstances of the case. (b) I...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section3551&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "18 U.S.C. 3595",
+            "bill_context": "Section 123 of the Continuing Appropriations Act, 2026, extends the expiration date of a provision related to the Sentencing Reform Act of 1984.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "18",
+              "section": "3595",
+              "heading": "Review of a sentence of death",
+              "text_excerpt": "\u00a7 3595. Review of a sentence of death (a) Appeal .\u2014 In a case in which a sentence of death is imposed, the sentence shall be subject to review by the court of appeals upon appeal by the defendant. Notice of appeal must be filed within the time specified for the filing of a notice of appeal. An appeal under this section may be consolidated with an appeal of the judgment of conviction and shall have priority over all other cases. (b) Review .\u2014 The court of appeals shall review the entire record in the case, including\u2014 (1) the evidence submitted during the trial; (2) the information submitted dur...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title18-section3595&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "18 U.S.C. 379j",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201312",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201321",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201342",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201352",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 387s",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 381",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 360n",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 360ff",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201331",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201362",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 353(e)(3)",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 360eee\u20133(c)(1)",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 384d(c)(8)",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 360bbb\u20134a",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201372",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201371",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201373",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201371(9)(A)",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201372(a)(1)",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201372(b)",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201372(c)",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "18 U.S.C. 379j\u201372(f)",
+            "bill_context": "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true,
+        "_pipeline_notes": [
+          "deduped 101 -> 26 citations (truncation-recovery artifacts)"
+        ]
+      },
+      "elapsed_s": 289.23,
+      "prompt_tokens": 125391,
+      "completion_tokens": 8000,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 2411.77,
+        "lmdb_stats": {
+          "hits": 3,
+          "misses": 32,
+          "calls": 35,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch01",
+        "items": [
+          {
+            "line_item": "Payment to Ashley Paige Turner, heir of Sylvester Turner, late a Representative from Texas, $174,000.",
+            "amount_usd": 174000.0,
+            "recipient": "Ashley Paige Turner",
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 156",
+            "why_flagged": "Specific individual named as recipient"
+          },
+          {
+            "line_item": "Payment to Ramona Grijalva, widow of Raul M. Grijalva, late a Representative from Arizona, $174,000.",
+            "amount_usd": 174000.0,
+            "recipient": "Ramona Grijalva",
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 156",
+            "why_flagged": "Specific individual named as recipient"
+          },
+          {
+            "line_item": "Payment to Catherine M. Smith, widow of Gerald E. Connolly, late a Representative from Virginia, $174,000.",
+            "amount_usd": 174000.0,
+            "recipient": "Catherine M. Smith",
+            "pattern": "named-recipient",
+            "confidence": "high",
+            "bill_section": "SEC. 156",
+            "why_flagged": "Specific individual named as recipient"
+          }
+        ],
+        "note": null
+      },
+      "elapsed_s": 89.83,
+      "prompt_tokens": 126004,
+      "completion_tokens": 349,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 80.51,
+      "prompt_tokens": 125413,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "DIVISION A\u2014CONTINUING APPROPRIATONS ACT, 2026",
+        "headlines": [
+          {
+            "headline": "No New Spending Without Approval",
+            "angle": "fiscal",
+            "hook": "Section 121 bars the Pentagon from launching new defense projects\u2014even if they\u2019re already planned\u2014unless explicitly authorized.",
+            "target_audience": "Defense policy watchers and fiscal conservatives",
+            "evidence_provisions": [
+              "Section 121 of the Continuing Appropriations Act, 2026",
+              "Prohibits the use of funds for new production, increased production rates, or new projects unless specifically authorized"
+            ]
+          },
+          {
+            "headline": "SNAP and WIC Protected Through 2026",
+            "angle": "human-impact",
+            "hook": "Millions of low-income families won\u2019t face benefit cuts\u2014this bill locks in SNAP and WIC funding at current levels.",
+            "target_audience": "Social safety net advocates and food insecurity researchers",
+            "evidence_provisions": [
+              "Protects entitlement programs like SNAP and WIC by maintaining funding levels at current law rates",
+              "Allows funds to be used for essential operations, including personnel pay and benefits, to avoid furloughs"
+            ]
+          },
+          {
+            "headline": "Furloughs Blocked for Federal Workers",
+            "angle": "political",
+            "hook": "Even in a funding gap, federal employees can\u2019t be laid off\u2014this law mandates job protection across agencies.",
+            "target_audience": "Public sector unions and federal workforce advocates",
+            "evidence_provisions": [
+              "Prohibits reductions in force (RIFs) across federal agencies during the funding period",
+              "Requires reinstatement of employees affected by prior RIF notices"
+            ]
+          },
+          {
+            "headline": "Death Penalty Appeals Get Priority",
+            "angle": "regulatory",
+            "hook": "Section 123 extends a key sentencing provision\u2014ensuring death row appeals are fast-tracked in federal courts.",
+            "target_audience": "Criminal justice reformers and legal scholars",
+            "evidence_provisions": [
+              "Section 123 of the Continuing Appropriations Act, 2026, extends the expiration date of a provision related to the Sentencing Reform Act of 1984",
+              "18 U.S.C. 3595 (Review of a sentence of death)"
+            ]
+          },
+          {
+            "headline": "Defense Projects Get Lifeline",
+            "angle": "drama",
+            "hook": "The E-7 Wedgetail program and shipbuilding projects survive\u2014thanks to a last-minute funding extension.",
+            "target_audience": "Defense contractors and military industrial complex insiders",
+            "evidence_provisions": [
+              "Extends the availability of funds for specific programs like the E-7 Wedgetail aircraft program and shipbuilding projects",
+              "Section 121 of the Continuing Appropriations Act, 2026"
+            ]
+          },
+          {
+            "headline": "174K Payments to Late Lawmakers' Widows",
+            "angle": "scoop",
+            "hook": "A hidden provision in SEC. 156 funnels $174,000 each to widows of deceased House members\u2014no public debate.",
+            "target_audience": "Transparency advocates and investigative journalists",
+            "evidence_provisions": [
+              "SEC. 156: Payment to Ashley Paige Turner, heir of Sylvester Turner, late a Representative from Texas, $174,000",
+              "Payment to Ramona Grijalva, widow of Raul M. Grijalva, late a Representative from Arizona, $174,000",
+              "Payment to Catherine M. Smith, widow of Gerald E. Connolly, late a Representative from Virginia, $174,000"
+            ]
+          },
+          {
+            "headline": "States Reimbursed for Funding Gaps",
+            "angle": "watchdog",
+            "hook": "If a state used its own money during a federal shutdown, this bill lets them get it back\u2014no questions asked.",
+            "target_audience": "State budget officials and fiscal accountability groups",
+            "evidence_provisions": [
+              "Allows for the reimbursement of states and grantees that used their own funds during a funding gap",
+              "Section 121 of the Continuing Appropriations Act, 2026"
+            ]
+          },
+          {
+            "headline": "26 USC 401(k) Date Changed",
+            "angle": "hidden-provision",
+            "hook": "A minor tweak to retirement law\u2014Section 121 amends the Agricultural Act of 2014 to update a key date.",
+            "target_audience": "Tax attorneys and retirement plan administrators",
+            "evidence_provisions": [
+              "Section 121 of the Continuing Appropriations Act, 2026, amends the Agricultural Act of 2014 to substitute a date for 'October 1, 2023'",
+              "26 USC 401(k)"
+            ]
+          },
+          {
+            "headline": "FDA Rules Get 18-Month Extension",
+            "angle": "geopolitical",
+            "hook": "Food and drug oversight stays on track\u2014FDA\u2019s critical regulations get a major extension under Section 140.",
+            "target_audience": "Pharma executives and global health policy analysts",
+            "evidence_provisions": [
+              "Section 140 of the Continuing Appropriations Act, 2026, amends the Food, Drug, and Cosmetic Act to extend the application of a provision through a specified date",
+              "18 U.S.C. 379j\u201372(a)(1)"
+            ]
+          },
+          {
+            "headline": "Deadline: January 30, 2026",
+            "angle": "controversy",
+            "hook": "The clock is ticking\u2014funding expires unless Congress acts, risking another government shutdown.",
+            "target_audience": "Congressional staffers and political strategists",
+            "evidence_provisions": [
+              "Establishes a January 30, 2026, deadline for funding to expire, unless replaced by a new appropriations act",
+              "Allows for the ratification of obligations made during the lapse"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 13.27,
+      "prompt_tokens": 4618,
+      "completion_tokens": 1412,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "DIVISION A\u2014CONTINUING APPROPRIATONS ACT, 2026",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "174K Payments to Late Lawmakers' Widows",
+            "angle": "scoop",
+            "newsworthiness_score": 10,
+            "specificity_score": 10,
+            "appeal_score": 9,
+            "composite_score": 29,
+            "rationale": "This headline exposes a highly unusual, unpublicized provision that allocates $174,000 to widows of deceased House members\u2014no debate, no transparency. The specificity of named individuals and exact amounts makes it a rare investigative gem. The human and ethical stakes, combined with the secrecy, create strong listener curiosity and outrage potential."
+          },
+          {
+            "rank": 2,
+            "headline": "No New Spending Without Approval",
+            "angle": "fiscal",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 26,
+            "rationale": "Section 121\u2019s restriction on new defense projects\u2014even planned ones\u2014reveals a powerful fiscal check on Pentagon overreach. The specificity of the provision and its real-world impact on military programs make it a standout. It\u2019s a rare example of Congress directly constraining executive spending power, which resonates with fiscal conservatives and defense policy watchers alike."
+          },
+          {
+            "rank": 3,
+            "headline": "Death Penalty Appeals Get Priority",
+            "angle": "regulatory",
+            "newsworthiness_score": 9,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "Extending the fast-track review of death penalty appeals via Section 123 and 18 U.S.C. 3595 is a significant legal procedural change with profound human consequences. The specificity of the statute and the life-or-death stakes elevate this beyond routine regulatory updates, appealing to criminal justice reformers and legal audiences."
+          },
+          {
+            "rank": 4,
+            "headline": "SNAP and WIC Protected Through 2026",
+            "angle": "human-impact",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 24,
+            "rationale": "Locking in SNAP and WIC funding prevents a major crisis for millions. The specificity of the programs and the clear human impact\u2014avoiding benefit cuts\u2014make this a compelling story for social safety net advocates. It\u2019s a rare win for vulnerable populations in a politically fraught environment."
+          },
+          {
+            "rank": 5,
+            "headline": "Furloughs Blocked for Federal Workers",
+            "angle": "political",
+            "newsworthiness_score": 8,
+            "specificity_score": 7,
+            "appeal_score": 8,
+            "composite_score": 23,
+            "rationale": "Prohibiting furloughs during a funding gap is a major win for federal employees. The specificity of the RIF ban and reinstatement requirement adds weight. The political drama of protecting jobs in a shutdown scenario gives this strong appeal to public sector unions and federal workforce advocates."
+          },
+          {
+            "rank": 6,
+            "headline": "States Reimbursed for Funding Gaps",
+            "angle": "watchdog",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "Allowing states to be reimbursed for using their own funds during a federal lapse is a practical but under-the-radar provision. The specificity of Section 121 and the fiscal accountability angle make it valuable for state budget officials, though it lacks the emotional or political drama of higher-ranked entries."
+          },
+          {
+            "rank": 7,
+            "headline": "Defense Projects Get Lifeline",
+            "angle": "drama",
+            "newsworthiness_score": 7,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 21,
+            "rationale": "While it highlights survival of key programs like the E-7 Wedgetail, the headline lacks depth\u2014it\u2019s more of a headline than a revelation. The drama is real, but the provision is already implied by Section 121, making it less newsworthy than the 'no new spending' angle."
+          },
+          {
+            "rank": 8,
+            "headline": "FDA Rules Get 18-Month Extension",
+            "angle": "geopolitical",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 6,
+            "composite_score": 19,
+            "rationale": "The extension of FDA regulatory deadlines is important but highly technical. The mention of 18 U.S.C. 379j\u201372(a)(1) adds specificity, but the audience is narrow (pharma and health policy insiders). The geopolitical angle is overstated\u2014this is a procedural delay, not a strategic shift."
+          },
+          {
+            "rank": 9,
+            "headline": "26 USC 401(k) Date Changed",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 5,
+            "specificity_score": 9,
+            "appeal_score": 5,
+            "composite_score": 19,
+            "rationale": "The amendment to a date in 26 USC 401(k) is technically specific but functionally trivial\u2014changing a single date in a decades-old law. The impact is negligible for most taxpayers, and the audience is limited to tax attorneys. The 'hidden provision' angle is misleading; this is a routine administrative fix."
+          },
+          {
+            "rank": 10,
+            "headline": "Deadline: January 30, 2026",
+            "angle": "controversy",
+            "newsworthiness_score": 5,
+            "specificity_score": 6,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "The January 30, 2026, deadline is a standard feature of continuing resolutions\u2014no new information. It\u2019s a generic warning that Congress must act, with no unique provisions or stakes. The lack of specificity beyond the date and the absence of a real conflict or hidden angle make this the weakest hook."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "174K Payments to Late Lawmakers' Widows",
+          "angle": "scoop",
+          "newsworthiness_score": 10,
+          "specificity_score": 10,
+          "appeal_score": 9,
+          "composite_score": 29,
+          "rationale": "This headline exposes a highly unusual, unpublicized provision that allocates $174,000 to widows of deceased House members\u2014no debate, no transparency. The specificity of named individuals and exact amounts makes it a rare investigative gem. The human and ethical stakes, combined with the secrecy, create strong listener curiosity and outrage potential."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it reveals a hidden, unaccountable $174,000 payment to widows of deceased lawmakers\u2014named individuals, exact amounts, no public debate. It combines high newsworthiness (a shocking, unreported provision), maximum specificity (names, amounts, section numbers), and strong listener appeal (ethical outrage, transparency concerns). It\u2019s a rare scoop that turns a dry appropriations bill into a story about power, secrecy, and legacy."
+      },
+      "elapsed_s": 14.98,
+      "prompt_tokens": 2026,
+      "completion_tokens": 1727,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 90.07,
+    "usc_cross_ref": 289.23,
+    "pork_finder": 89.83,
+    "conflict_spotter": 80.51,
+    "podcast_headlines": 13.27,
+    "headline_ranker": 14.98
+  },
+  "totals": {
+    "wall_clock_s": 589.59,
+    "prompt_tokens_total": 508711,
+    "completion_tokens_total": 11924
+  }
+}

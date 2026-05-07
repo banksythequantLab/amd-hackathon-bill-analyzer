@@ -1,0 +1,338 @@
+{
+  "chunk_id": "ch01",
+  "title_marker": "(unstructured bill)",
+  "tokens": 1561,
+  "pages": [
+    1,
+    5
+  ],
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "one_sentence_summary": "This bill directs the Federal Trade Commission to study the effects of public grocery stores on competition, consumers, farmers, food banks, and the broader food system, and to report its findings and recommendations to Congress annually.",
+        "bullets": [
+          "Requires the FTC to study how public grocery stores affect competition with private grocery stores of all sizes.",
+          "Directs the FTC to analyze impacts on farmers, food banks, and charitable food organizations.",
+          "Instructs the FTC to examine how public grocery stores influence food prices, supply chains, and access in food deserts.",
+          "Requires the FTC to assess whether public grocery stores receive unfair advantages like subsidies or tax breaks that distort competition.",
+          "Directs the FTC to evaluate long-term effects on market entry and exit for private grocery businesses.",
+          "Mandates the FTC to use existing federal, state, and local data sources to conduct the study.",
+          "Requires the FTC to submit a report to Congress within one year of completing the study, with annual updates thereafter.",
+          "Defines key terms like public grocery store, private grocery store, food bank, and food desert to ensure consistent interpretation."
+        ],
+        "affected_groups": [
+          "private grocery stores",
+          "farmers",
+          "food banks",
+          "consumers in food deserts",
+          "local and regional food distributors"
+        ]
+      },
+      "elapsed_s": 2.84,
+      "prompt_tokens": 2064,
+      "completion_tokens": 305,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [],
+        "note": null
+      },
+      "elapsed_s": 0.57,
+      "prompt_tokens": 2212,
+      "completion_tokens": 25,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 0.01,
+        "lmdb_stats": {
+          "hits": 0,
+          "misses": 0,
+          "calls": 0,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch01",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 0.62,
+      "prompt_tokens": 2825,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 0.49,
+      "prompt_tokens": 2234,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "headlines": [
+          {
+            "headline": "FTC to Probe Public Grocery Fairness",
+            "angle": "regulatory",
+            "hook": "The FTC is being tasked with a sweeping review of whether publicly run grocery stores are unfairly distorting the market.",
+            "target_audience": "Regulatory policy watchers and antitrust experts",
+            "evidence_provisions": [
+              "Requires the FTC to assess whether public grocery stores receive unfair advantages like subsidies or tax breaks that distort competition.",
+              "Defines key terms like public grocery store, private grocery store, food bank, and food desert to ensure consistent interpretation."
+            ]
+          },
+          {
+            "headline": "Food Deserts Get Federal Scrutiny",
+            "angle": "human-impact",
+            "hook": "For the first time, the federal government will systematically study how public grocery stores affect access to food in underserved communities.",
+            "target_audience": "Advocates for food justice and urban planners",
+            "evidence_provisions": [
+              "Instructs the FTC to examine how public grocery stores influence food prices, supply chains, and access in food deserts.",
+              "Directs the FTC to analyze impacts on farmers, food banks, and charitable food organizations."
+            ]
+          },
+          {
+            "headline": "Private Grocers Fear FTC Watchdog",
+            "angle": "drama",
+            "hook": "Private grocery chains are bracing for a federal investigation that could reshape the competitive landscape of American retail.",
+            "target_audience": "Small business owners and retail industry insiders",
+            "evidence_provisions": [
+              "Requires the FTC to study how public grocery stores affect competition with private grocery stores of all sizes.",
+              "Directs the FTC to evaluate long-term effects on market entry and exit for private grocery businesses."
+            ]
+          },
+          {
+            "headline": "Farmers Face New FTC Study",
+            "angle": "political",
+            "hook": "A new federal mandate could shift the balance of power between farmers and public grocery supply chains.",
+            "target_audience": "Agricultural policymakers and farm cooperatives",
+            "evidence_provisions": [
+              "Directs the FTC to analyze impacts on farmers, food banks, and charitable food organizations.",
+              "Instructs the FTC to examine how public grocery stores influence food prices, supply chains, and access in food deserts."
+            ]
+          },
+          {
+            "headline": "Food Banks in the Crosshairs",
+            "angle": "watchdog",
+            "hook": "The FTC\u2019s new mandate puts food banks under federal scrutiny for their role in the grocery ecosystem.",
+            "target_audience": "Nonprofit leaders and food security researchers",
+            "evidence_provisions": [
+              "Directs the FTC to analyze impacts on farmers, food banks, and charitable food organizations.",
+              "Defines key terms like public grocery store, private grocery store, food bank, and food desert to ensure consistent interpretation."
+            ]
+          },
+          {
+            "headline": "FTC\u2019s Yearly Report on Grocery Markets",
+            "angle": "fiscal",
+            "hook": "Congress will now receive annual data on public grocery stores, with implications for future food policy spending.",
+            "target_audience": "Budget analysts and congressional staff",
+            "evidence_provisions": [
+              "Requires the FTC to submit a report to Congress within one year of completing the study, with annual updates thereafter.",
+              "Mandates the FTC to use existing federal, state, and local data sources to conduct the study."
+            ]
+          },
+          {
+            "headline": "Public Grocers Get Federal Audit",
+            "angle": "controversy",
+            "hook": "The bill\u2019s mandate sparks debate over whether public grocery stores are public good or corporate overreach.",
+            "target_audience": "Political commentators and public finance skeptics",
+            "evidence_provisions": [
+              "Requires the FTC to study how public grocery stores affect competition with private grocery stores of all sizes.",
+              "Directs the FTC to assess whether public grocery stores receive unfair advantages like subsidies or tax breaks that distort competition."
+            ]
+          },
+          {
+            "headline": "Hidden Clause: FTC to Track Food Deserts",
+            "angle": "hidden-provision",
+            "hook": "Beneath the surface, a quiet provision forces the FTC to monitor food deserts with unprecedented detail.",
+            "target_audience": "Policy sleuths and investigative journalists",
+            "evidence_provisions": [
+              "Instructs the FTC to examine how public grocery stores influence food prices, supply chains, and access in food deserts.",
+              "Mandates the FTC to use existing federal, state, and local data sources to conduct the study."
+            ]
+          },
+          {
+            "headline": "Supply Chain Secrets Unlocked",
+            "angle": "scoop",
+            "hook": "New data from the FTC study could expose how public grocery stores are reshaping food distribution networks.",
+            "target_audience": "Supply chain experts and logistics analysts",
+            "evidence_provisions": [
+              "Instructs the FTC to examine how public grocery stores influence food prices, supply chains, and access in food deserts.",
+              "Mandates the FTC to use existing federal, state, and local data sources to conduct the study."
+            ]
+          },
+          {
+            "headline": "Private Stores vs. Public Play",
+            "angle": "geopolitical",
+            "hook": "This bill could redefine the role of public infrastructure in food systems, echoing global debates on state-run markets.",
+            "target_audience": "International development researchers and comparative policy scholars",
+            "evidence_provisions": [
+              "Requires the FTC to study how public grocery stores affect competition with private grocery stores of all sizes.",
+              "Directs the FTC to evaluate long-term effects on market entry and exit for private grocery businesses."
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 11.22,
+      "prompt_tokens": 850,
+      "completion_tokens": 1261,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "Hidden Clause: FTC to Track Food Deserts",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 10,
+            "specificity_score": 9,
+            "appeal_score": 9,
+            "composite_score": 28,
+            "rationale": "This headline surfaces a buried but consequential provision that mandates detailed, data-driven monitoring of food deserts\u2014a rarely scrutinized mechanism with real policy implications. The specificity of 'tracking food deserts' and the use of 'existing federal, state, and local data sources' adds concrete weight. The 'hidden' framing creates intrigue, appealing to listeners who value investigative depth and policy sleuthing."
+          },
+          {
+            "rank": 2,
+            "headline": "Food Deserts Get Federal Scrutiny",
+            "angle": "human-impact",
+            "newsworthiness_score": 9,
+            "specificity_score": 8,
+            "appeal_score": 9,
+            "composite_score": 26,
+            "rationale": "This headline highlights a first-of-its-kind federal study on food deserts, directly tying the bill to tangible human outcomes. The specificity of 'systematically study' and the inclusion of impacts on farmers and food banks grounds the story in real-world stakes. The human-impact angle resonates strongly with engaged listeners concerned about equity and access."
+          },
+          {
+            "rank": 3,
+            "headline": "FTC to Probe Public Grocery Fairness",
+            "angle": "regulatory",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The headline names a concrete regulatory action\u2014FTC probing fairness\u2014and specifies the mechanism: assessing subsidies and tax breaks. The inclusion of defined terms like 'public grocery store' adds legal precision. While slightly wonky, the regulatory angle appeals to policy insiders and those interested in antitrust dynamics."
+          },
+          {
+            "rank": 4,
+            "headline": "Private Grocers Fear FTC Watchdog",
+            "angle": "drama",
+            "newsworthiness_score": 8,
+            "specificity_score": 7,
+            "appeal_score": 9,
+            "composite_score": 24,
+            "rationale": "The drama angle leverages fear and competition, making it highly clickable. The mention of 'private grocery chains bracing' adds narrative tension. While less specific than others, the human stakes and emotional resonance give it strong appeal, especially for small business audiences."
+          },
+          {
+            "rank": 5,
+            "headline": "Supply Chain Secrets Unlocked",
+            "angle": "scoop",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 23,
+            "rationale": "The 'scoop' framing promises insider knowledge about supply chain shifts, appealing to logistics and data-minded listeners. The specificity of 'reshaping food distribution networks' and the use of existing data sources adds credibility. However, the angle is more speculative than the top entries, slightly reducing newsworthiness."
+          },
+          {
+            "rank": 6,
+            "headline": "Public Grocers Get Federal Audit",
+            "angle": "controversy",
+            "newsworthiness_score": 7,
+            "specificity_score": 7,
+            "appeal_score": 8,
+            "composite_score": 22,
+            "rationale": "The 'audit' framing introduces controversy and tension, appealing to skeptics of public enterprise. The headline is specific about the FTC\u2019s role and the nature of the scrutiny. However, 'controversy' is a generic label, and the angle lacks the depth of the top-tier hooks."
+          },
+          {
+            "rank": 7,
+            "headline": "Farmers Face New FTC Study",
+            "angle": "political",
+            "newsworthiness_score": 7,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 21,
+            "rationale": "This headline identifies a key stakeholder group\u2014farmers\u2014and links them to a new federal mandate. The political angle is relevant but underdeveloped. The provision is repeated in other headlines, reducing novelty. The specificity is moderate, but the angle lacks a unique hook."
+          },
+          {
+            "rank": 8,
+            "headline": "Food Banks in the Crosshairs",
+            "angle": "watchdog",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 20,
+            "rationale": "The 'crosshairs' framing is dramatic but potentially misleading, as the bill doesn\u2019t target food banks for punishment. The specificity of including food banks in the FTC\u2019s analysis is strong, but the angle risks sensationalism without clear evidence of harm. Appeal is limited to niche audiences."
+          },
+          {
+            "rank": 9,
+            "headline": "FTC\u2019s Yearly Report on Grocery Markets",
+            "angle": "fiscal",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 19,
+            "rationale": "The headline names a concrete output\u2014annual reports to Congress\u2014and includes a timeline (one year, then annually). The fiscal angle is specific but dry. The audience is narrow (budget analysts), and the headline lacks narrative or emotional pull, reducing appeal despite strong specificity."
+          },
+          {
+            "rank": 10,
+            "headline": "Private Stores vs. Public Play",
+            "angle": "geopolitical",
+            "newsworthiness_score": 5,
+            "specificity_score": 6,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "The geopolitical framing is overreaching\u2014this is a domestic policy issue, not a global one. The angle lacks grounding in actual international comparisons. While it mentions market entry and exit, the connection to global debates is tenuous. The headline feels speculative and less relevant to most listeners."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "Hidden Clause: FTC to Track Food Deserts",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 10,
+          "specificity_score": 9,
+          "appeal_score": 9,
+          "composite_score": 28,
+          "rationale": "This headline surfaces a buried but consequential provision that mandates detailed, data-driven monitoring of food deserts\u2014a rarely scrutinized mechanism with real policy implications. The specificity of 'tracking food deserts' and the use of 'existing federal, state, and local data sources' adds concrete weight. The 'hidden' framing creates intrigue, appealing to listeners who value investigative depth and policy sleuthing."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it combines high newsworthiness\u2014revealing a concealed, impactful provision\u2014with strong specificity (data sources, defined scope) and high listener appeal through the 'hidden clause' narrative. It offers a genuine scoop that the average listener wouldn\u2019t know, making it uniquely compelling."
+      },
+      "elapsed_s": 13.85,
+      "prompt_tokens": 1786,
+      "completion_tokens": 1609,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 2.84,
+    "usc_cross_ref": 0.57,
+    "pork_finder": 0.62,
+    "conflict_spotter": 0.49,
+    "podcast_headlines": 11.22,
+    "headline_ranker": 13.85
+  },
+  "totals": {
+    "wall_clock_s": 29.78,
+    "prompt_tokens_total": 11971,
+    "completion_tokens_total": 3259
+  },
+  "bill_short": "mandami-bills-119hr4692ih",
+  "bill_label": "mandami BILLS-119hr4692ih",
+  "bill_note": "Analyzed 1/1 chunks via Gradio upload"
+}

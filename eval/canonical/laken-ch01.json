@@ -1,0 +1,442 @@
+{
+  "bill_short": "laken",
+  "bill_label": "Laken Riley Act (S.5, P.L. 119-1)",
+  "bill_note": "Immigration enforcement bill, signed Jan 2025",
+  "chunk_id": "ch01",
+  "title_marker": "(unstructured bill)",
+  "tokens": 1978,
+  "pages": [
+    1,
+    4
+  ],
+  "n_chunks": 1,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "one_sentence_summary": "This bill expands mandatory detention for non-citizens charged with theft-related crimes, grants states legal standing to sue federal officials over immigration enforcement, and accelerates court proceedings in such cases.",
+        "bullets": [
+          "Mandates federal custody for non-citizens charged with theft, burglary, larceny, shoplifting, assault on law enforcement, or crimes causing death or serious injury.",
+          "Expands the definition of covered crimes to include any offense that meets the essential elements of specified theft or violent crimes, as defined by the jurisdiction where the act occurred.",
+          "Requires the Secretary of Homeland Security to issue detainers and take custody of eligible aliens if not already detained by federal, state, or local authorities.",
+          "Grants state attorneys general or authorized state officers standing to sue federal immigration officials in federal court if they believe enforcement failures harm the state or its residents.",
+          "Allows states to seek injunctive relief for violations related to detention, release, bond, parole, visa issuance, or parole policies, with courts required to expedite such cases.",
+          "Sets a $100 threshold for financial harm to qualify as sufficient injury for a state to bring a lawsuit under the new provisions.",
+          "Exempts certain state enforcement actions from standard legal limitations on injunctive relief, ensuring faster judicial review of immigration-related claims."
+        ],
+        "affected_groups": [
+          "Non-citizens charged with theft or related crimes",
+          "State attorneys general",
+          "State governments",
+          "Federal immigration officials",
+          "Immigration advocates"
+        ]
+      },
+      "elapsed_s": 4.42,
+      "prompt_tokens": 2328,
+      "completion_tokens": 350,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [
+          {
+            "citation": "8 U.S.C. 1226(c)",
+            "bill_context": "Section 236(c) of the Immigration and Nationality Act is amended to expand detention criteria for aliens charged with theft-related offenses.",
+            "relevance": "amend",
+            "resolved_to": "8 U.S.C. 1226",
+            "usc_data": {
+              "title": "8",
+              "section": "1226",
+              "heading": "Apprehension and detention of aliens",
+              "text_excerpt": "\u00a7 1226. Apprehension and detention of aliens (a) Arrest, detention, and release On a warrant issued by the Attorney General, an alien may be arrested and detained pending a decision on whether the alien is to be removed from the United States. Except as provided in subsection (c) and pending such decision, the Attorney General\u2014 (1) may continue to detain the arrested alien; and (2) may release the alien on\u2014 (A) bond of at least $1,500 with security approved by, and containing conditions prescribed by, the Attorney General; or (B) conditional parole; but (3) may not provide the alien with work ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1226&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "8 U.S.C. 1225(b)",
+            "bill_context": "Section 235(b) is amended to grant state attorneys general standing to sue over enforcement failures.",
+            "relevance": "amend",
+            "resolved_to": "8 U.S.C. 1225",
+            "usc_data": {
+              "title": "8",
+              "section": "1225",
+              "heading": "Inspection by immigration officers; expedited removal of inadmissible arriving aliens; referral for hearing",
+              "text_excerpt": "\u00a7 1225. Inspection by immigration officers; expedited removal of inadmissible arriving aliens; referral for hearing (a) Inspection (1) Aliens treated as applicants for admission An alien present in the United States who has not been admitted or who arrives in the United States (whether or not at a designated port of arrival and including an alien who is brought to the United States after having been interdicted in international or United States waters) shall be deemed for purposes of this chapter an applicant for admission. (2) Stowaways An arriving alien who is a stowaway is not eligible to a...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1225&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "8 U.S.C. 1226",
+            "bill_context": "Section 236 is further amended to modify apprehension and detention procedures and add new enforcement provisions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "8",
+              "section": "1226",
+              "heading": "Apprehension and detention of aliens",
+              "text_excerpt": "\u00a7 1226. Apprehension and detention of aliens (a) Arrest, detention, and release On a warrant issued by the Attorney General, an alien may be arrested and detained pending a decision on whether the alien is to be removed from the United States. Except as provided in subsection (c) and pending such decision, the Attorney General\u2014 (1) may continue to detain the arrested alien; and (2) may release the alien on\u2014 (A) bond of at least $1,500 with security approved by, and containing conditions prescribed by, the Attorney General; or (B) conditional parole; but (3) may not provide the alien with work ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1226&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1253",
+            "bill_context": "Section 243 is amended to allow state attorneys general to bring actions over visa-related violations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "8",
+              "section": "1253",
+              "heading": "Penalties related to removal",
+              "text_excerpt": "\u00a7 1253. Penalties related to removal (a) Penalty for failure to depart (1) In general Any alien against whom a final order of removal is outstanding by reason of being a member of any of the classes described in section 1227(a) of this title , who\u2014 (A) willfully fails or refuses to depart from the United States within a period of 90 days from the date of the final order of removal under administrative processes, or if judicial review is had, then from the date of the final order of the court, (B) willfully fails or refuses to make timely application in good faith for travel or other documents ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1253&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1182(d)(5)",
+            "bill_context": "Section 212(d)(5) is amended to replace 'Attorney General' with 'Secretary of Homeland Security' and add enforcement rights.",
+            "relevance": "amend",
+            "resolved_to": "8 U.S.C. 1182",
+            "usc_data": {
+              "title": "8",
+              "section": "1182",
+              "heading": "Inadmissible aliens",
+              "text_excerpt": "\u00a7 1182. Inadmissible aliens (a) Classes of aliens ineligible for visas or admission Except as otherwise provided in this chapter, aliens who are inadmissible under the following paragraphs are ineligible to receive visas and ineligible to be admitted to the United States: (1) Health-related grounds (A) In general Any alien\u2014 (i) who is determined (in accordance with regulations prescribed by the Secretary of Health and Human Services) to have a communicable disease of public health significance; 1 1 So in original. The semicolon probably should be a comma. (ii) except as provided in subparagrap...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1182&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "8 U.S.C. 1231(a)(2)",
+            "bill_context": "Section 241(a)(2) is amended to include a new enforcement provision for state attorneys general.",
+            "relevance": "amend",
+            "resolved_to": "8 U.S.C. 1231",
+            "usc_data": {
+              "title": "8",
+              "section": "1231",
+              "heading": "Detention and removal of aliens ordered removed",
+              "text_excerpt": "\u00a7 1231. Detention and removal of aliens ordered removed (a) Detention, release, and removal of aliens ordered removed (1) Removal period (A) In general Except as otherwise provided in this section, when an alien is ordered removed, the Attorney General shall remove the alien from the United States within a period of 90 days (in this section referred to as the \u201cremoval period\u201d). (B) Beginning of period The removal period begins on the latest of the following: (i) The date the order of removal becomes administratively final. (ii) If the removal order is judicially reviewed and if a court orders ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1231&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "8 U.S.C. 1252(f)",
+            "bill_context": "Section 242(f) is amended to exclude certain state enforcement actions from injunctive relief limitations.",
+            "relevance": "amend",
+            "resolved_to": "8 U.S.C. 1252",
+            "usc_data": {
+              "title": "8",
+              "section": "1252",
+              "heading": "Judicial review of orders of removal",
+              "text_excerpt": "\u00a7 1252. Judicial review of orders of removal (a) Applicable provisions (1) General orders of removal Judicial review of a final order of removal (other than an order of removal without a hearing pursuant to section 1225(b)(1) of this title ) is governed only by chapter 158 of title 28, except as provided in subsection (b) and except that the court may not order the taking of additional evidence under section 2347(c) of such title. (2) Matters not subject to judicial review (A) Review relating to section 1225(b)(1) Notwithstanding any other provision of law (statutory or nonstatutory), includin...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1252&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          }
+        ],
+        "note": null
+      },
+      "elapsed_s": 4.08,
+      "prompt_tokens": 2476,
+      "completion_tokens": 445,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 838.84,
+        "lmdb_stats": {
+          "hits": 7,
+          "misses": 5,
+          "calls": 12,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch01",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 0.63,
+      "prompt_tokens": 3089,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 0.54,
+      "prompt_tokens": 2498,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "headlines": [
+          {
+            "headline": "Mandatory Detention for Theft Charges",
+            "angle": "fiscal",
+            "hook": "This bill could cost states millions in new detention and legal expenses by expanding mandatory custody for non-citizens charged with theft-related offenses.",
+            "target_audience": "State budget analysts, fiscal policy experts",
+            "evidence_provisions": [
+              "8 U.S.C. 1226(c)",
+              "8 U.S.C. 1226"
+            ]
+          },
+          {
+            "headline": "States Can Sue Federal Officials Over Detention",
+            "angle": "controversy",
+            "hook": "For the first time, state attorneys general can sue federal immigration officials over enforcement decisions\u2014igniting a new legal war between state and federal powers.",
+            "target_audience": "Political commentators, federalism advocates",
+            "evidence_provisions": [
+              "8 U.S.C. 1225(b)",
+              "8 U.S.C. 1252(f)"
+            ]
+          },
+          {
+            "headline": "Immigrants Face Longer Detention for Shoplifting",
+            "angle": "human-impact",
+            "hook": "A $100 theft could trigger mandatory federal detention under this bill\u2014upending lives of low-level offenders with no criminal history.",
+            "target_audience": "Immigration advocates, community organizers",
+            "evidence_provisions": [
+              "8 U.S.C. 1226(c)",
+              "8 U.S.C. 1226"
+            ]
+          },
+          {
+            "headline": "State AGs Gain Legal Power to Challenge ICE",
+            "angle": "political",
+            "hook": "With new standing to sue, state attorneys general are now frontline actors in the national immigration fight\u2014reshaping the balance of power.",
+            "target_audience": "Political strategists, state lawmakers",
+            "evidence_provisions": [
+              "8 U.S.C. 1225(b)",
+              "8 U.S.C. 1231(a)(2)"
+            ]
+          },
+          {
+            "headline": "Court Cases Must Be Expedited in Immigration Disputes",
+            "angle": "drama",
+            "hook": "When states sue federal officials over immigration enforcement, courts must now move at lightning speed\u2014no delays allowed.",
+            "target_audience": "Legal professionals, judicial observers",
+            "evidence_provisions": [
+              "8 U.S.C. 1225(b)",
+              "8 U.S.C. 1252(f)"
+            ]
+          },
+          {
+            "headline": "$100 Threshold for State Lawsuits",
+            "angle": "hidden-provision",
+            "hook": "A sneaky $100 financial harm rule could let any state with a single theft-related case sue federal immigration agencies.",
+            "target_audience": "Legal sleuths, investigative journalists",
+            "evidence_provisions": [
+              "8 U.S.C. 1225(b)",
+              "8 U.S.C. 1253"
+            ]
+          },
+          {
+            "headline": "Detainers Now Mandatory for Theft Offenses",
+            "angle": "regulatory",
+            "hook": "The Secretary of Homeland Security must now issue detainers for any non-citizen charged with theft\u2014even if already in state custody.",
+            "target_audience": "Immigration enforcement personnel, federal compliance officers",
+            "evidence_provisions": [
+              "8 U.S.C. 1226(c)",
+              "8 U.S.C. 1182(d)(5)"
+            ]
+          },
+          {
+            "headline": "States Can Sue Over Visa Issuance Delays",
+            "angle": "geopolitical",
+            "hook": "This bill opens the door for states to challenge federal visa policies\u2014potentially disrupting international travel and diplomacy.",
+            "target_audience": "Foreign policy experts, diplomatic analysts",
+            "evidence_provisions": [
+              "8 U.S.C. 1253",
+              "8 U.S.C. 1225(b)"
+            ]
+          },
+          {
+            "headline": "No Delays for State Immigration Suits",
+            "angle": "watchdog",
+            "hook": "A new exemption from standard injunctive relief rules means states can bypass legal hurdles to force federal action.",
+            "target_audience": "Government oversight groups, civil rights watchdogs",
+            "evidence_provisions": [
+              "8 U.S.C. 1252(f)",
+              "8 U.S.C. 1231(a)(2)"
+            ]
+          },
+          {
+            "headline": "Attorney General Replaced with DHS Secretary",
+            "angle": "scoop",
+            "hook": "A quiet but massive shift: the bill replaces 'Attorney General' with 'Secretary of Homeland Security' in key enforcement provisions.",
+            "target_audience": "Immigration policy insiders, legal historians",
+            "evidence_provisions": [
+              "8 U.S.C. 1182(d)(5)",
+              "8 U.S.C. 1226"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 10.55,
+      "prompt_tokens": 3193,
+      "completion_tokens": 1138,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "A sneaky $100 financial harm rule could let any state with a single theft-related case sue federal immigration agencies.",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 10,
+            "specificity_score": 9,
+            "appeal_score": 9,
+            "composite_score": 28,
+            "rationale": "This headline uncovers a deeply buried, low-threshold trigger for state litigation that most observers would miss. The $100 harm rule is a concrete, specific provision with outsized legal implications, making it both newsworthy and highly clickable for investigative audiences."
+          },
+          {
+            "rank": 2,
+            "headline": "Immigrants Face Longer Detention for Shoplifting",
+            "angle": "human-impact",
+            "newsworthiness_score": 9,
+            "specificity_score": 8,
+            "appeal_score": 9,
+            "composite_score": 26,
+            "rationale": "The headline reveals a shocking real-world consequence: a $100 theft triggering mandatory federal detention. This human-centered angle combines specificity (the $100 threshold) with emotional stakes, making it highly compelling for general political listeners and advocacy audiences."
+          },
+          {
+            "rank": 3,
+            "headline": "States Can Sue Federal Officials Over Detention",
+            "angle": "controversy",
+            "newsworthiness_score": 9,
+            "specificity_score": 7,
+            "appeal_score": 9,
+            "composite_score": 25,
+            "rationale": "The novel legal standing granted to state AGs to sue federal immigration officials is a major constitutional power shift. While slightly less specific than the top two, the dramatic implications for federalism and intergovernmental conflict make this a strong hook for political and legal audiences."
+          },
+          {
+            "rank": 4,
+            "headline": "Court Cases Must Be Expedited in Immigration Disputes",
+            "angle": "drama",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 24,
+            "rationale": "The requirement for 'lightning speed' court processing introduces urgency and tension into immigration litigation. The specificity of the procedural mandate and the inherent drama of judicial speed make this a compelling narrative for legal and policy listeners."
+          },
+          {
+            "rank": 5,
+            "headline": "States Can Sue Over Visa Issuance Delays",
+            "angle": "geopolitical",
+            "newsworthiness_score": 8,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "Expanding state standing to challenge visa policies introduces a novel geopolitical risk, potentially disrupting diplomacy. While the angle is less immediate than others, the cross-cutting impact on foreign policy adds unique value for niche but influential audiences."
+          },
+          {
+            "rank": 6,
+            "headline": "No Delays for State Immigration Suits",
+            "angle": "watchdog",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "The exemption from injunctive relief rules is a technical but powerful regulatory shift. Its specificity and watchdog appeal are strong, though the angle is more wonky than dramatic, limiting broader listener appeal despite its importance."
+          },
+          {
+            "rank": 7,
+            "headline": "Mandatory Detention for Theft Charges",
+            "angle": "fiscal",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 21,
+            "rationale": "The headline highlights a costly policy with clear fiscal implications, supported by specific statutory references. However, the focus on state budget impacts limits its emotional resonance and broader appeal compared to human or systemic drama."
+          },
+          {
+            "rank": 8,
+            "headline": "Detainers Now Mandatory for Theft Offenses",
+            "angle": "regulatory",
+            "newsworthiness_score": 6,
+            "specificity_score": 9,
+            "appeal_score": 5,
+            "composite_score": 20,
+            "rationale": "The regulatory specificity is excellent\u2014clearly defining a mandatory detainer requirement. However, the angle is highly technical and lacks narrative tension or human stakes, making it less engaging for general political listeners."
+          },
+          {
+            "rank": 9,
+            "headline": "Attorney General Replaced with DHS Secretary",
+            "angle": "scoop",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 19,
+            "rationale": "The substitution of 'Attorney General' with 'Secretary of Homeland Security' in enforcement provisions is a subtle but significant institutional shift. While specific and potentially newsworthy to insiders, the lack of broader impact or drama limits its appeal to mainstream audiences."
+          },
+          {
+            "rank": 10,
+            "headline": "State AGs Gain Legal Power to Challenge ICE",
+            "angle": "political",
+            "newsworthiness_score": 5,
+            "specificity_score": 6,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "While the headline touches on a meaningful power shift, it's vague and overlaps heavily with other entries. The lack of a concrete provision or unique angle reduces its newsworthiness and appeal, making it the weakest of the ten."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "A sneaky $100 financial harm rule could let any state with a single theft-related case sue federal immigration agencies.",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 10,
+          "specificity_score": 9,
+          "appeal_score": 9,
+          "composite_score": 28,
+          "rationale": "This headline uncovers a deeply buried, low-threshold trigger for state litigation that most observers would miss. The $100 harm rule is a concrete, specific provision with outsized legal implications, making it both newsworthy and highly clickable for investigative audiences."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it reveals a hidden, low-barrier mechanism for state litigation that could trigger a wave of legal challenges\u2014something most listeners wouldn\u2019t know. The specificity of the $100 threshold and the dramatic potential for abuse or overreach make it both newsworthy and highly engaging, combining investigative depth with real-world stakes."
+      },
+      "elapsed_s": 13.41,
+      "prompt_tokens": 1672,
+      "completion_tokens": 1502,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 4.42,
+    "usc_cross_ref": 4.08,
+    "pork_finder": 0.63,
+    "conflict_spotter": 0.54,
+    "podcast_headlines": 10.55,
+    "headline_ranker": 13.41
+  },
+  "totals": {
+    "wall_clock_s": 34.85,
+    "prompt_tokens_total": 15256,
+    "completion_tokens_total": 3494
+  }
+}

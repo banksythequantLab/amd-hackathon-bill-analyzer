@@ -229,6 +229,19 @@ def pack_chunks(text: str, boundaries: list[Boundary], page_starts: list[int],
     return chunks
 
 
+def chunk_pdf(pdf_path: Path, max_tokens: int = MAX_TOKENS_DEFAULT) -> list[dict]:
+    """Convenience function: chunk a PDF and return a list of dicts.
+    
+    Each dict has keys: chunk_id, marker, marker_label, start_page, end_page,
+    tokens, char_count, text.
+    """
+    text, page_starts = extract_text_with_pages(pdf_path)
+    enc = tiktoken.get_encoding("cl100k_base")
+    boundaries = find_boundaries(text, page_starts)
+    chunks = pack_chunks(text, boundaries, page_starts, max_tokens, enc)
+    return [asdict(c) for c in chunks]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
