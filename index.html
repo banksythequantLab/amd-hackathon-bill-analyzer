@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bill Analyzer — One MI300X analyzes a 2,400-page bill</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Multi-agent legislative-bill analysis on a single AMD MI300X. 14.8x APC speedup, three Qwen models concurrent, 116 USC citations grounded in real statute text.">
+<meta property="og:title" content="Bill Analyzer — AMD Developer Hackathon">
+<meta property="og:description" content="One MI300X. Three Qwen models. 14.8x speedup from APC. 116 USC citations from a real bill, automatically.">
+<meta property="og:type" content="website">
+
+<style>
+:root {
+  --bg: #0e1116;
+  --bg-2: #161b22;
+  --fg: #e6edf3;
+  --fg-2: #9da7b3;
+  --accent: #ff5722;       /* AMD-ish red */
+  --accent-2: #00d4aa;     /* compute green */
+  --line: #30363d;
+  --code-bg: #0a0d11;
+  --good: #00d4aa;
+  --warn: #ffb000;
+  --serif: 'Charter', 'Georgia', serif;
+  --mono: 'JetBrains Mono', 'Consolas', monospace;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+.brand {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--fg-2);
+  margin-bottom: 14px;
+  letter-spacing: 0.05em;
+}
+h1 {
+  font-family: var(--sans);
+  font-size: 38px;
+  line-height: 1.1;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+h1 .red { color: var(--accent); }
+h2 {
+  font-size: 22px;
+  margin: 56px 0 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+h3 { font-size: 17px; margin: 28px 0 8px; color: var(--fg); }
+.lede {
+  font-size: 19px;
+  color: var(--fg-2);
+  margin: 0 0 28px;
+  max-width: 700px;
+}
+
+/* Hero number tiles */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 28px 0 12px;
+}
+.tile {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 16px;
+}
+.tile .num {
+  font-family: var(--mono);
+  font-size: 30px;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+.tile .num.green { color: var(--accent-2); }
+.tile .label {
+  font-size: 13px;
+  color: var(--fg-2);
+  margin-top: 4px;
+}
+
+/* Blocks */
+pre, code { font-family: var(--mono); font-size: 13px; }
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+code:not(pre code) {
+  background: var(--bg-2);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.muted { color: var(--fg-2); }
+
+/* Run table */
+table.runs {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 14px;
+}
+table.runs th, table.runs td {
+  padding: 9px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+table.runs th {
+  font-weight: 500;
+  color: var(--fg-2);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+table.runs td.num { font-family: var(--mono); text-align: right; }
+table.runs tr.warm { background: rgba(0, 212, 170, 0.04); }
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-family: var(--mono);
+}
+.badge.warm { background: rgba(0, 212, 170, 0.15); color: var(--good); }
+.badge.cold { background: rgba(255, 87, 34, 0.15); color: var(--accent); }
+
+/* Cites grid */
+.cites {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+.cite {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+.cite .ref { font-family: var(--mono); font-size: 13px; color: var(--accent-2); }
+.cite .head { font-weight: 500; margin-top: 4px; }
+.cite .excerpt { font-size: 12px; color: var(--fg-2); margin-top: 6px; line-height: 1.4; }
+
+/* Footer */
+.footer {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--fg-2);
+}
+.footer a { color: var(--fg-2); border-bottom: 1px dotted var(--fg-2); }
+
+/* Mobile */
+@media (max-width: 600px) {
+  h1 { font-size: 28px; }
+  .tile .num { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="brand">AMD DEVELOPER HACKATHON · MAY 4&ndash;10, 2026 · DAY 2 LIVE</div>
+
+<h1>Three Qwen models on one MI300X read a <span class="red">2,468-page bill</span> and tell you what's in it.</h1>
+
+<p class="lede">
+This is a working proof-of-concept built in 48 hours on AMD MI300X (192 GB VRAM) for the
+<a href="https://lablab.ai/event/amd-developer-hackathon">lablab.ai AMD Developer Hackathon</a>.
+The story below is the whole pitch: vLLM's Automatic Prefix Caching on ROCm makes multi-agent
+legislative analysis cheap, because 14 specialist agents can share one prefill of the bill text.
+</p>
+
+<div class="tiles">
+  <div class="tile"><div class="num">94.15&times;</div><div class="label">APC TTFT speedup<br>(99,727-token prefix)</div></div>
+  <div class="tile"><div class="num">14.8&times;</div><div class="label">Wall-clock speedup<br>(232K-tok summarizer)</div></div>
+  <div class="tile"><div class="num green">68.5%</div><div class="label">Sustained APC<br>cache hit rate</div></div>
+  <div class="tile"><div class="num green">116</div><div class="label">USC citations<br>recovered, ch01</div></div>
+</div>
+
+<h2>The architecture</h2>
+
+<p>One MI300X. Three Qwen models hot at the same time, sharing 192 GB:</p>
+
+<pre><code>spine     Qwen3-30B-A3B-Instruct-2507-FP8   port 8001   ~80 GB   max_model_len=262,144
+vision    Qwen3-VL-8B-Thinking-FP8          port 8002   ~17 GB   max_model_len=16,384
+reasoner  Qwen3-32B-FP8                     port 8003   ~70 GB   max_model_len=32,768
+
+combined  176 / 192 GB VRAM (91.7%)
+backend   vllm/vllm-openai-rocm:v0.17.1 on ROCm 7.2.0</code></pre>
+
+<p>
+The <em>spine</em> holds a 250K-token bill chunk in its context. Every specialist agent
+hits the same chunk. With <code>--enable-prefix-caching</code>, the chunk is prefilled
+<strong>once</strong>; every additional agent against that chunk pays only its short
+instruction overhead. On a 32 GB GPU each agent has to spill or re-prefill — so on
+consumer hardware this whole pattern doesn't work. <strong>192 GB is the unlock.</strong>
+</p>
+
+<h2>Demo arc &mdash; three real bills</h2>
+
+<table class="runs">
+<thead><tr><th>Act</th><th>Bill</th><th>Pages</th><th class="num">Tokens</th><th class="num">Chunks</th></tr></thead>
+<tbody>
+<tr><td>I</td><td>HR 1 &mdash; OBBB Act 2025 (enacted)</td><td>330</td><td class="num">230,925</td><td class="num">1</td></tr>
+<tr><td>II</td><td>HR 5376 &mdash; Build Back Better 2021</td><td>2,468</td><td class="num">927,623</td><td class="num">5</td></tr>
+<tr><td>III</td><td>HR 2670 &mdash; FY24 NDAA</td><td>1,236</td><td class="num">541,309</td><td class="num">3</td></tr>
+</tbody></table>
+
+<p>
+Smart chunker is title-boundary aware: never splits a TITLE / Subtitle mid-section, falls back to
+Subtitle-level cuts when a single Title overflows the 220K cl100k-token budget (calibrated for
+Qwen tokenizer's ~16% inflation over cl100k_base).
+</p>
+
+<h2>Headline #1 &mdash; APC delivers 94&times; TTFT speedup</h2>
+
+<p>
+First Day-1 measurement on AMD MI300X. Same 99,727-token prefix from HR 1, two different
+follow-up questions:
+</p>
+
+<pre><code>{
+  "model": "spine",
+  "endpoint": "http://localhost:8001/v1",
+  "prefix_tokens": 99727,
+  "request_a_cold": {
+    "ttft_ms": 51046.1,
+    "question": "Summarize the first major Title of the bill in two sentences."
+  },
+  "request_b_warm": {
+    "ttft_ms": 542.2,
+    "question": "List three named entities mentioned in the bill text above."
+  },
+  "speedup_ttft": 94.15,
+  "passes_3x_floor": true,
+  "passes_5x_target": true
+}</code></pre>
+
+<p>
+That number alone is the elevator pitch. Whatever else this hackathon
+ships, that ratio is real and reproducible. Source:
+<a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/eval/apc-benchmark-hr1.json">eval/apc-benchmark-hr1.json</a>.
+</p>
+
+<h2>Headline #2 &mdash; Same effect on real agents</h2>
+
+<p>
+Cold call: Plain-English Summarizer on BBB-2021 chunk 1 (TITLE I &mdash; AGRICULTURE,
+232K Qwen tokens, ~$100 B in forest-restoration funding). 5 minutes.
+</p>
+
+<p>
+Warm rerun, identical chunk text, same agent: <strong>21.4 seconds</strong>.
+14.8&times; wall-clock speedup, no code changes &mdash; just APC reusing the KV cache from the
+first call.
+</p>
+
+<table class="runs">
+<thead><tr><th>Run</th><th>State</th><th class="num">elapsed</th><th class="num">prompt_tok</th><th class="num">completion_tok</th></tr></thead>
+<tbody>
+<tr><td>Summarizer</td><td><span class="badge cold">cold prefill</span></td><td class="num">316.4 s</td><td class="num">232,853</td><td class="num">369</td></tr>
+<tr class="warm"><td>Summarizer (rerun)</td><td><span class="badge warm">APC warm</span></td><td class="num">21.4 s</td><td class="num">232,853</td><td class="num">369</td></tr>
+<tr class="warm"><td>USC Cross-Reference</td><td><span class="badge warm">APC partial</span></td><td class="num">~95 s</td><td class="num">232,994</td><td class="num">~6,000</td></tr>
+<tr class="warm"><td>Pork Finder</td><td><span class="badge warm">APC partial</span></td><td class="num">92.4 s</td><td class="num">232,994</td><td class="num">2,216</td></tr>
+<tr class="warm"><td>Conflict Spotter</td><td><span class="badge warm">APC partial</span></td><td class="num">270.6 s</td><td class="num">233,019</td><td class="num">25</td></tr>
+</tbody></table>
+
+<p class="muted">
+Sustained <code>Prefix cache hit rate: 68.5%</code> on the spine across all four agents on
+the same chunk. This is the core hackathon thesis &mdash; 14 agents amortized across one
+prefill instead of paying for 14 prefills.
+</p>
+
+<h2>Headline #3 &mdash; The output is grounded in real statute text</h2>
+
+<p>
+The USC Cross-Reference agent identifies citations the bill makes
+(e.g. "Section 4(a) of the Food and Nutrition Act of 2008"), then a local
+LMDB lookup attaches the actual current US Code text to each citation.
+This stops the LLM from hallucinating about what cited statutes say &mdash; the
+LLM identifies <em>where</em>, the LMDB grounds <em>what</em>.
+</p>
+
+<p>Five real recovered citations from BBB-2021 chunk 1:</p>
+
+<div class="cites">
+  <div class="cite">
+    <div class="ref">7 U.S.C. 3103</div>
+    <div class="head">Definitions</div>
+    <div class="excerpt">National Agricultural Research, Extension, and Teaching Policy Act of 1977 &mdash; defines &ldquo;insular area,&rdquo; cited in BBB-2021 to scope SNAP benefits.</div>
+  </div>
+  <div class="cite">
+    <div class="ref">16 U.S.C. 7303</div>
+    <div class="head">Collaborative Forest Landscape Restoration Program</div>
+    <div class="excerpt">Existing forest-restoration grant authority that BBB-2021 augments with $4.5 B in vegetation management.</div>
+  </div>
+  <div class="cite">
+    <div class="ref">42 U.S.C. 4321</div>
+    <div class="head">Congressional declaration of purpose (NEPA)</div>
+    <div class="excerpt">National Environmental Policy Act &mdash; bill cross-references baseline review framework.</div>
+  </div>
+  <div class="cite">
+    <div class="ref">16 U.S.C. 6511</div>
+    <div class="head">Definitions (HFRA)</div>
+    <div class="excerpt">Healthy Forests Restoration Act &mdash; bill amends HFRA project authority for $10 B in hazardous fuels reduction.</div>
+  </div>
+  <div class="cite">
+    <div class="ref">16 U.S.C. 7125</div>
+    <div class="head">Resource advisory committees</div>
+    <div class="excerpt">RAC structure for Forest Service decision-making cross-referenced for new $9 B grant program governance.</div>
+  </div>
+</div>
+
+<p>
+<strong>116 citations recovered</strong> from chunk 1 alone (the truncation-recovery layer
+turned what would have been a parse failure at max_tokens into 116 valid grounded citations).
+23 of the first 30 resolved cleanly against the local USC LMDB (76.7% hit rate); the rest
+are sub-paragraph notations like <code>7 U.S.C. 3103(2)</code> that need finer canonicalization.
+</p>
+
+<h2>Headline #4 &mdash; Vision pipeline reads tax tables off bill PDFs</h2>
+
+<p>
+Qwen3-VL-8B-Thinking-FP8 (port 8002) renders a single page of BBB-2021 (page 2222 &mdash;
+a tax bracket schedule for joint filers) and emits structured JSON in <strong>11.4 seconds</strong>:
+</p>
+
+<pre><code>{
+  "type": "tax_bracket",
+  "applies_to": "MARRIED INDIVIDUALS FILING JOINT RETURNS AND SURVIVING SPOUSES",
+  "rows": [{
+    "lower_bound_usd": 400000,
+    "upper_bound_usd": 450000,
+    "tax_rate_pct": 35,
+    "notes": "plus 35% of the excess over $400,000"
+  }]
+}</code></pre>
+
+<p>
+All values verified exact against the source bill. The model can see the page,
+read the structure, and emit JSON. No OCR, no tabula post-processing.
+</p>
+
+<h2>How to read the artifacts</h2>
+
+<p>Every claim on this page links to a real file in the repo:</p>
+
+<ul>
+  <li><a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer">github.com/banksythequantLab/amd-hackathon-bill-analyzer</a> &mdash; full source, MIT-licensed</li>
+  <li><a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/eval/apc-benchmark-hr1.json">eval/apc-benchmark-hr1.json</a> &mdash; the 94.15&times; APC benchmark JSON</li>
+  <li><a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/eval/day1-proof.txt">eval/day1-proof.txt</a> &mdash; <code>docker ps</code> + <code>rocm-smi</code> showing all 3 Qwen containers up</li>
+  <li><a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/eval/day2-proof.txt">eval/day2-proof.txt</a> &mdash; sustained APC cache-hit logs</li>
+  <li><a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/src/chunking/smart_chunker.py">src/chunking/smart_chunker.py</a> &mdash; title-boundary chunker (calibrated for Qwen tokenizer)</li>
+  <li><a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/src/agents/base.py">src/agents/base.py</a> &mdash; reusable Agent base with truncation recovery</li>
+  <li><a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/tree/main/src/agents">src/agents/</a> &mdash; 4 working agents: summarizer, USC xref, pork, conflict</li>
+</ul>
+
+<h2>What's next</h2>
+
+<p>
+Roadmap through Day 7: 10 more specialist agents (Citation Validator, Effective Date Tracker,
+Stakeholder Tracer, Constitutional/Preemption Analyst, Final Synthesizer); orchestrator that
+runs them in parallel against one chunk; full-bill end-to-end on BBB-2021 in &lt;8 minutes
+target time at FP8.
+</p>
+
+<div class="footer">
+  Built by <a href="https://github.com/banksythequantLab">Derek "Banksy AI" Soltis</a>
+  &mdash; SDNY/EDNY attorney, AI infrastructure builder.
+  <br>
+  Cloud burn so far: ~$15 / $100 budget.
+  Hackathon submission deadline: Saturday, May 10, 2026.
+  Build-in-public posts: <a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/docs/bip-post-1-DRAFT.md">#1</a>
+  &middot;
+  this page is BiP #2.
+</div>
+
+</div>
+</body>
+</html>
