@@ -320,6 +320,56 @@ def stage_compose(eval_dir, bill_short, n_scenes=19, log=print):
         log(f'FINAL CONCAT FAIL: {r.stderr[-400:]}')
         return None
 
+# ---- HELPERS for the UI to predict the output path / detect cached runs ----
+def _resolve_eval_dir(bill_short: str, override_headline: str = None,
+                      creative_direction: str = None):
+    """Return (eval_dir, is_custom, auto_headline). Pure function — no I/O side
+    effects beyond reading the canonical report. Used by run_full_pipeline AND
+    by the Gradio handler to skip when a cached video already exists.
+    """
+    canonical_dir = REPO / 'eval' / 'canonical'
+    merged = canonical_dir / f'{bill_short}-merged.json'
+    ch01 = canonical_dir / f'{bill_short}-ch01.json'
+    canonical = merged if merged.exists() else ch01
+    auto_headline = '(unknown)'
+    if canonical.exists():
+        try:
+            report = json.load(open(canonical))
+            rankings = (report.get('agents', {})
+                              .get('headline_ranker', {})
+                              .get('output', {})
+                              .get('rankings') or [])
+            if rankings:
+                auto_headline = rankings[0].get('headline', '(unknown)')
+        except Exception:
+            pass
+
+    is_custom = bool(
+        (override_headline and override_headline.strip() and override_headline.strip() != auto_headline)
+        or (creative_direction and creative_direction.strip())
+    )
+    if is_custom:
+        import hashlib
+        key_src = (
+            'H::' + (override_headline or '').strip() + '||' +
+            'D::' + (creative_direction or '').strip()
+        )
+        custom_key = hashlib.sha1(key_src.encode('utf-8')).hexdigest()[:8]
+        eval_dir = REPO / 'eval' / f'{bill_short}-cloud-custom-{custom_key}'
+    else:
+        eval_dir = REPO / 'eval' / f'{bill_short}-cloud'
+    return eval_dir, is_custom, auto_headline
+
+
+def expected_final_path(bill_short: str, override_headline: str = None,
+                        creative_direction: str = None):
+    """Return the Path where run_full_pipeline would write the master mp4 for
+    this (bill, headline, direction) combo. Caller can stat() it to short-
+    circuit if the video has already been rendered."""
+    eval_dir, _is_custom, _auto = _resolve_eval_dir(bill_short, override_headline, creative_direction)
+    return eval_dir / f'final-{bill_short}-cloud-podcast.mp4'
+
+
 # ---- TOP-LEVEL PIPELINE (importable) ----
 def run_full_pipeline(bill_short: str, log=print,
                       skip_text=False, skip_slides=False, skip_wan=False, skip_tts=False,
@@ -350,29 +400,15 @@ def run_full_pipeline(bill_short: str, log=print,
     report = json.load(open(canonical))
     log(f'  loaded canonical: {canonical.name}')
 
-    # Auto-pick winner from headline_ranker
-    rankings = report['agents']['headline_ranker'].get('output', {}).get('rankings', [])
-    auto_headline = rankings[0]['headline'] if rankings else '(unknown)'
-
-    # Apply override if provided; otherwise use auto-pick
-    headline = override_headline.strip() if (override_headline and override_headline.strip()) else auto_headline
-
-    # Decide the eval_dir: canonical for default run, custom subfolder if user overrode
-    is_custom = bool(
-        (override_headline and override_headline.strip() and override_headline.strip() != auto_headline)
-        or (creative_direction and creative_direction.strip())
+    # Resolve eval_dir + auto-headline via the shared helper so the UI's
+    # short-circuit path uses the SAME folder name as the actual run.
+    eval_dir, is_custom, auto_headline = _resolve_eval_dir(
+        bill_short, override_headline, creative_direction
     )
+    headline = override_headline.strip() if (override_headline and override_headline.strip()) else auto_headline
     if is_custom:
-        import hashlib
-        key_src = (
-            'H::' + (override_headline or '').strip() + '||' +
-            'D::' + (creative_direction or '').strip()
-        )
-        custom_key = hashlib.sha1(key_src.encode('utf-8')).hexdigest()[:8]
-        eval_dir = REPO / 'eval' / f'{bill_short}-cloud-custom-{custom_key}'
         log(f'  CUSTOM RUN: eval_dir = {eval_dir.name}')
     else:
-        eval_dir = REPO / 'eval' / f'{bill_short}-cloud'
         log(f'  default eval_dir = {eval_dir.name}')
     eval_dir.mkdir(exist_ok=True, parents=True)
 

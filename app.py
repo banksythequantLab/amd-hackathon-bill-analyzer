@@ -1354,6 +1354,19 @@ def load_headlines_for_bill(bill_short: str):
 
 
 def generate_podcast_handler(bill_short, edited_headline='', creative_direction=''):
+    """Streaming generator for the Podcast Studio.
+
+    Yields (log_text, video_path_or_None) every 0.5–0.6s.
+
+    Three behaviors:
+      1. Cached fast-path: if a master mp4 already exists for this exact
+         (bill, headline, direction) combo, return it immediately with no
+         compute.
+      2. Live timer: each yield includes an "ELAPSED M:SS" header that ticks
+         every second so the user sees the clock move during long renders.
+      3. Streaming: pipeline runs in a daemon thread; new log lines are
+         flushed to the UI as they arrive.
+    """
     if not _CLOUD_PIPELINE_AVAILABLE:
         yield 'ERROR: cloud pipeline module not loaded.', None
         return
@@ -1364,10 +1377,32 @@ def generate_podcast_handler(bill_short, edited_headline='', creative_direction=
         yield f"ERROR: no canonical report for '{bill_short}'", None
         return
 
-    # Decide if this is a custom run; if user typed nothing, fall through to auto
     headline_arg = (edited_headline or '').strip() or None
     direction_arg = (creative_direction or '').strip() or None
 
+    # === FAST PATH: check for cached master mp4 ===
+    try:
+        from make_podcast_cloud import expected_final_path as _expected_final_path
+        cached = _expected_final_path(bill_short, headline_arg, direction_arg)
+    except Exception:
+        cached = None
+    if cached and cached.exists() and cached.stat().st_size > 100_000:
+        size_mb = cached.stat().st_size / 1024 / 1024
+        msg = (
+            f'⏱  ELAPSED 0:00\n\n'
+            f'✓ Already generated — playing cached version.\n'
+            f'  bill:        {bill_short}\n'
+            f'  headline:    {headline_arg or "(auto-ranked winner)"}\n'
+            f'  direction:   {direction_arg or "(none)"}\n'
+            f'  file:        {cached}\n'
+            f'  size:        {size_mb:.1f} MB\n'
+            f'\n(Skipping pipeline — no compute needed. To force regeneration, '
+            f'delete the eval folder for this combo.)'
+        )
+        yield msg, str(cached)
+        return
+
+    # === LIVE PATH: kick off pipeline in a thread, stream progress ===
     log_lines = []
     state = {'final': None, 'done': False, 'error': None}
 
@@ -1390,28 +1425,49 @@ def generate_podcast_handler(bill_short, edited_headline='', creative_direction=
 
     t = _threading.Thread(target=worker, daemon=True)
     t.start()
+    t0 = _time.time()
 
-    intro = f'Starting cloud pipeline for {bill_short}...'
+    def _fmt_elapsed(s):
+        s = int(s)
+        if s < 3600:
+            return f'{s // 60}:{s % 60:02d}'
+        return f'{s // 3600}:{(s % 3600) // 60:02d}:{s % 60:02d}'
+
+    def _render(extra_tail=''):
+        elapsed = _time.time() - t0
+        header = f'⏱  ELAPSED {_fmt_elapsed(elapsed)}\n\n'
+        return header + '\n'.join(log_lines) + extra_tail
+
+    intro = [f'Starting cloud pipeline for {bill_short}...']
     if headline_arg:
-        intro += f'\n  override headline: {headline_arg}'
+        intro.append(f'  override headline: {headline_arg}')
     if direction_arg:
-        intro += f'\n  creative direction: {direction_arg[:120]}'
-    yield intro, None
+        intro.append(f'  creative direction: {direction_arg[:120]}')
+    log_lines.extend(intro)
+    yield _render(), None
 
-    last_idx = 0
+    last_idx = len(log_lines)
+    last_yield_t = _time.time()
     while not state['done']:
-        _time.sleep(0.6)
-        if len(log_lines) > last_idx:
-            yield '\n'.join(log_lines), None
+        _time.sleep(0.5)
+        new_log = len(log_lines) > last_idx
+        # Tick the clock at least once per second even if no log lines arrive
+        # (Wan i2v renders take 25-49s with no intermediate stdout)
+        elapsed_changed = (_time.time() - last_yield_t) >= 1.0
+        if new_log or elapsed_changed:
+            yield _render(), None
             last_idx = len(log_lines)
+            last_yield_t = _time.time()
 
-    final_log = '\n'.join(log_lines)
+    # === FINAL FLUSH ===
     final_path = state['final']
+    elapsed_total = _time.time() - t0
     if final_path and _Path(str(final_path)).exists():
-        yield final_log, str(final_path)
+        log_lines.append(f'\n⏱  Total elapsed: {_fmt_elapsed(elapsed_total)}')
+        yield _render(), str(final_path)
     else:
         err_suffix = f"\n\n(Pipeline error: {state['error']})" if state['error'] else ''
-        yield final_log + err_suffix + '\n\n(no final video produced)', None
+        yield _render(extra_tail=err_suffix + '\n\n(no final video produced)'), None
 
 
 def build_ui() -> gr.Blocks:
@@ -1529,7 +1585,9 @@ def build_ui() -> gr.Blocks:
                         pork_out, conflict_out, podcast_out, raw_out, download_out, log_panel]
 
         health_btn.click(fn=check_endpoints, outputs=health_out)
-        analyze_btn.click(fn=analyze_pdf, inputs=[pdf_input], outputs=outputs_full)
+        # Capture the analyze click so we can chain a .then() refresh after
+        # the Podcast Studio widgets are defined further down.
+        _analyze_evt = analyze_btn.click(fn=analyze_pdf, inputs=[pdf_input], outputs=outputs_full)
         demo_btn.click(fn=load_demo, outputs=outputs_full)
         bill_dropdown.change(fn=load_bill_by_short, inputs=bill_dropdown, outputs=outputs_full)
 
@@ -1582,54 +1640,68 @@ def build_ui() -> gr.Blocks:
         with gr.Row():
             podcast_bill_dropdown = gr.Dropdown(
                 choices=_initial_bills,
-                label='Bill',
+                label='1) Pick a bill',
                 interactive=True,
                 value=_initial_bill,
                 scale=3,
             )
             podcast_refresh_btn = gr.Button('🔄 Refresh List', scale=1)
 
-        # --- Row 2: Headline picker (10 ranked candidates) ---
-        podcast_headline_picker = gr.Dropdown(
-            choices=_initial_choices,
-            value=_initial_headline,
-            label='Headline (pick one of the top 10 — drives the dialog topic)',
-            interactive=True,
-            info='Ranked by the headline_ranker agent. Pick a different one and the script writer will rebuild the dialog around it.',
+        # --- Row 2: 10 quick-fire headline buttons (one-click generate) ---
+        gr.Markdown(
+            "**2) Click any headline to generate** — if a video already exists "
+            "for this combo, it plays instantly. Otherwise the pipeline runs."
         )
+        MAX_HEADLINE_SLOTS = 10
+        podcast_hdl_btns: list[gr.Button] = []
+        # Render in a 2-column grid (5 rows of 2)
+        for _row_start in range(0, MAX_HEADLINE_SLOTS, 2):
+            with gr.Row():
+                for _col in range(2):
+                    _idx = _row_start + _col
+                    if _idx < len(_initial_choices):
+                        _label, _ = _initial_choices[_idx]
+                        _visible = True
+                    else:
+                        _label = '(no headline)'
+                        _visible = False
+                    _btn = gr.Button(
+                        _label,
+                        variant='secondary',
+                        size='sm',
+                        visible=_visible,
+                        elem_classes=['headline-btn'],
+                    )
+                    podcast_hdl_btns.append(_btn)
 
-        # --- Row 3: Editable headline textbox (lets user tweak the picked one) ---
-        podcast_headline_text = gr.Textbox(
-            label='Final headline used by script writer (editable)',
-            value=_initial_headline,
-            lines=2,
-            interactive=True,
-            info='This text is what gets passed to PodcastScriptWriter as the topic. Edit freely — typos and all.',
-        )
-
-        # --- Row 4: Creative direction (optional extra prompt instructions) ---
-        podcast_direction = gr.Textbox(
-            label='Additional creative direction (optional)',
-            value='',
-            lines=3,
-            interactive=True,
-            placeholder='e.g. "Focus on the surveillance angle and the 4th Amendment risks. Keep tone dry and journalistic."',
-            info='Prepended to the bill analysis context the script writer sees. Leave blank to use defaults.',
-        )
-
-        # --- Generate button (full width) ---
-        podcast_generate_btn = gr.Button(
-            '🎙️  Generate Podcast Video',
-            variant='primary',
-            size='lg',
-        )
+        # --- Row 3: advanced override panel (collapsed by default) ---
+        with gr.Accordion("Advanced: edit headline / add creative direction", open=False):
+            podcast_headline_text = gr.Textbox(
+                label='Final headline used by script writer (editable)',
+                value=_initial_headline,
+                lines=2,
+                interactive=True,
+                info='Auto-filled from the bill\'s top-ranked headline. Quick-fire buttons above overwrite this.',
+            )
+            podcast_direction = gr.Textbox(
+                label='Additional creative direction (optional)',
+                value='',
+                lines=3,
+                interactive=True,
+                placeholder='e.g. "Focus on the surveillance angle and the 4th Amendment risks. Keep tone dry and journalistic."',
+                info='Prepended to the bill analysis context the script writer sees. Leave blank to use defaults.',
+            )
+            podcast_generate_btn = gr.Button(
+                '🎙️  Generate with custom headline + direction',
+                variant='primary',
+            )
 
         # --- Output: progress + video ---
         with gr.Row():
             with gr.Column(scale=2):
                 podcast_log = gr.Textbox(
-                    label='Pipeline progress',
-                    lines=20,
+                    label='Pipeline progress (live timer)',
+                    lines=22,
                     max_lines=40,
                     interactive=False,
                     autoscroll=True,
@@ -1643,49 +1715,162 @@ def build_ui() -> gr.Blocks:
                 )
 
         # --- Wiring ---
+        # The "advanced" generate button: uses whatever the user typed in the
+        # editable headline + creative direction fields.
         podcast_generate_btn.click(
             fn=generate_podcast_handler,
             inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction],
             outputs=[podcast_log, podcast_video],
         )
 
-        def _on_bill_change(bill_short):
-            """When bill changes: refresh headline picker choices + reset edited textbox."""
-            choices, default = load_headlines_for_bill(bill_short)
-            return (
-                gr.update(choices=choices, value=default),  # picker
-                gr.update(value=default),                    # editable text
+        # Each quick-fire headline button: looks up headline #idx for the
+        # currently-picked bill, sets it into the editable textbox, then fires
+        # the generator with NO creative direction (one-click flow).
+        def _make_quickfire(idx):
+            def _quickfire(bill_short, direction_text):
+                # Look up the idx'th ranked headline for this bill.
+                choices, _default = load_headlines_for_bill(bill_short)
+                if idx >= len(choices):
+                    yield gr.update(), gr.update(value=f'No headline #{idx+1} for {bill_short}'), None
+                    return
+                _label, hdl = choices[idx]
+                # Fire the generator with this headline (and any direction the
+                # user typed in the advanced panel; empty by default).
+                first_yield = True
+                for log, video in generate_podcast_handler(bill_short, hdl, direction_text):
+                    if first_yield:
+                        # Update the editable textbox so the user sees what was picked
+                        yield gr.update(value=hdl), log, video
+                        first_yield = False
+                    else:
+                        yield gr.update(), log, video
+            return _quickfire
+
+        for _i, _btn in enumerate(podcast_hdl_btns):
+            _btn.click(
+                fn=_make_quickfire(_i),
+                inputs=[podcast_bill_dropdown, podcast_direction],
+                outputs=[podcast_headline_text, podcast_log, podcast_video],
             )
+
+        def _on_bill_change(bill_short):
+            """Bill changed: rebuild headline button labels + reset edited textbox."""
+            choices, default = load_headlines_for_bill(bill_short)
+            btn_updates = []
+            for j in range(MAX_HEADLINE_SLOTS):
+                if j < len(choices):
+                    label, _ = choices[j]
+                    btn_updates.append(gr.update(value=label, visible=True))
+                else:
+                    btn_updates.append(gr.update(visible=False))
+            return btn_updates + [gr.update(value=default)]
 
         podcast_bill_dropdown.change(
             fn=_on_bill_change,
             inputs=[podcast_bill_dropdown],
-            outputs=[podcast_headline_picker, podcast_headline_text],
-        )
-
-        def _on_headline_pick(picked_headline):
-            """When the user picks a different ranked headline, copy it into the editable text."""
-            return gr.update(value=picked_headline or '')
-
-        podcast_headline_picker.change(
-            fn=_on_headline_pick,
-            inputs=[podcast_headline_picker],
-            outputs=[podcast_headline_text],
+            outputs=podcast_hdl_btns + [podcast_headline_text],
         )
 
         def _refresh_podcast_bills():
+            """Refresh button: re-scan eval/canonical/, repopulate everything."""
             choices = list_podcastable_bills()
             new_bill = (choices or [None])[0]
             hdl_choices, hdl_default = load_headlines_for_bill(new_bill) if new_bill else ([], '')
-            return (
+            btn_updates = []
+            for j in range(MAX_HEADLINE_SLOTS):
+                if j < len(hdl_choices):
+                    label, _ = hdl_choices[j]
+                    btn_updates.append(gr.update(value=label, visible=True))
+                else:
+                    btn_updates.append(gr.update(visible=False))
+            return [
                 gr.update(choices=choices, value=new_bill),
-                gr.update(choices=hdl_choices, value=hdl_default),
+                *btn_updates,
                 gr.update(value=hdl_default),
-            )
+            ]
 
         podcast_refresh_btn.click(
             fn=_refresh_podcast_bills,
-            outputs=[podcast_bill_dropdown, podcast_headline_picker, podcast_headline_text],
+            outputs=[podcast_bill_dropdown] + podcast_hdl_btns + [podcast_headline_text],
+        )
+
+        # ====================================================================
+        # AUTO-REFRESH AFTER ANALYZE
+        # When analyze_pdf finishes, refresh every widget that depends on
+        # eval/canonical/ so the just-analyzed bill appears immediately:
+        #   - 12 bill_btns (lookup gallery)
+        #   - bill_dropdown (lookup dropdown)
+        #   - podcast_bill_dropdown (Podcast Studio)
+        #   - 10 podcast_hdl_btns (Podcast Studio headlines)
+        #   - podcast_headline_text (advanced editable headline)
+        # The newly-analyzed bill is auto-selected (most-recent file mtime).
+        # ====================================================================
+        def _post_analyze_refresh():
+            # Lookup gallery: all canonical bills
+            updated = _load_canonical_bills()
+            lookup_btn_updates = []
+            for j in range(MAX_SLOTS):
+                if j < len(updated):
+                    b = updated[j]
+                    winner = b['winner_headline'][:80] if b['winner_headline'] else "(no headline yet)"
+                    text = (
+                        f"📜 [{b['short'].upper()}]  {b['label'][:50]}\n"
+                        f"\n🏆 {winner}\n"
+                        f"\n⏱ {b['wall_clock_s']:.0f}s   📄 {b['tokens']:,} tok   "
+                        f"🔤 {b['prompt_tokens_total']:,}p+{b['completion_tokens_total']:,}c"
+                    )
+                    lookup_btn_updates.append(gr.update(value=text, visible=True))
+                else:
+                    lookup_btn_updates.append(gr.update(visible=False))
+            lookup_dropdown_update = gr.update(choices=[b["short"] for b in updated])
+
+            # Podcast Studio: pick the most-recently-modified bill (= the one
+            # the user just analyzed) so it's auto-selected.
+            pod_bills = list_podcastable_bills()
+            most_recent_bill = pod_bills[0] if pod_bills else None
+            try:
+                from pathlib import Path as _P
+                canon = _REPO_DIR / 'eval' / 'canonical'
+                if canon.exists() and pod_bills:
+                    def _mtime(short):
+                        merged = canon / f"{short}-merged.json"
+                        ch01 = canon / f"{short}-ch01.json"
+                        f = merged if merged.exists() else ch01
+                        return f.stat().st_mtime if f.exists() else 0
+                    most_recent_bill = max(pod_bills, key=_mtime)
+            except Exception:
+                pass
+
+            hdl_choices, hdl_default = (
+                load_headlines_for_bill(most_recent_bill) if most_recent_bill else ([], '')
+            )
+            pod_dropdown_update = gr.update(choices=pod_bills, value=most_recent_bill)
+            pod_btn_updates = []
+            for j in range(MAX_HEADLINE_SLOTS):
+                if j < len(hdl_choices):
+                    label, _ = hdl_choices[j]
+                    pod_btn_updates.append(gr.update(value=label, visible=True))
+                else:
+                    pod_btn_updates.append(gr.update(visible=False))
+            pod_text_update = gr.update(value=hdl_default)
+
+            return (
+                lookup_btn_updates                    # 12 lookup gallery buttons
+                + [lookup_dropdown_update]            # 1 lookup dropdown
+                + [pod_dropdown_update]               # 1 podcast bill dropdown
+                + pod_btn_updates                     # 10 headline buttons
+                + [pod_text_update]                   # 1 advanced headline textbox
+            )
+
+        _analyze_evt.then(
+            fn=_post_analyze_refresh,
+            outputs=(
+                bill_btns                              # 12
+                + [bill_dropdown]                      # 1
+                + [podcast_bill_dropdown]              # 1
+                + podcast_hdl_btns                     # 10
+                + [podcast_headline_text]              # 1
+            ),
         )
 
 
