@@ -3,7 +3,7 @@
 Run this once after dropping client_secret.json into secrets/. It will:
   1. Open your browser to Google's OAuth consent page
   2. Ask you to log in as your YouTube channel's Google account
-       (for @BanksytheQuant: log in as the Google account that owns that channel)
+       (for @DeadAirBroadcasting: log in as the Google account that owns that channel)
   3. Ask you to grant the youtube.upload scope
   4. Save the resulting refresh token to secrets/youtube_token.json
 
@@ -23,7 +23,7 @@ PREREQUISITES (one-time setup in Google Cloud Console):
          - User support email: your email
          - Developer contact: your email
          - Scopes: add ".../auth/youtube.upload"
-         - Test users: add the Gmail account that owns the @BanksytheQuant channel
+         - Test users: add the Gmail account that owns the @DeadAirBroadcasting channel
     4. APIs & Services -> Credentials -> Create Credentials -> OAuth client ID:
          - Application type: Desktop app
          - Name: anything
@@ -74,7 +74,7 @@ def main():
     print(f'Loading client secrets from: {CLIENT_SECRET_PATH}')
     print(f'Requesting scopes: {SCOPES}')
     print('Opening browser for OAuth consent...')
-    print('  (Sign in as the Google account that owns the @BanksytheQuant YouTube channel)')
+    print('  (Sign in as the Google account that owns the @DeadAirBroadcasting YouTube channel)')
 
     flow = InstalledAppFlow.from_client_secrets_file(str(CLIENT_SECRET_PATH), SCOPES)
     creds = flow.run_local_server(port=0, prompt='consent', open_browser=True)
