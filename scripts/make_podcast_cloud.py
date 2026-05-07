@@ -181,7 +181,11 @@ def stage_slides(slides_obj, eval_dir, log=print):
         negative = s.get('negative_prompt', 'blurry low quality watermark')
         expected = s['headline_text']
         last_crit = None
-        for attempt in range(3):
+        # Up to 7 retry attempts: SlideCritic dual-call (OCR + judgment) is
+        # strict about typos and visual quality. With 4-step Lightning the
+        # tail of the seed distribution still produces ~10-20% slides that
+        # need a re-roll, so 7 attempts gives ~99.99% pass probability.
+        for attempt in range(7):
             seed = scene * 1000 + attempt * 17 + 42
             prefix = f'border-cloud/scene-{scene:02d}-att{attempt}'
             wf = qwen_image_workflow(positive, negative, seed, prefix)

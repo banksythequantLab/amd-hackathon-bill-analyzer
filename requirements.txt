@@ -8,3 +8,10 @@ orjson>=3.10
 tenacity>=8.2
 Pillow>=10
 psutil>=5.9
+
+# YouTube upload (optional — only needed if using the Upload to YouTube
+# feature in the Podcast Studio). Run scripts/youtube_auth.py once after
+# install to do the OAuth dance and cache a refresh token.
+google-api-python-client>=2.140
+google-auth-oauthlib>=1.2
+google-auth-httplib2>=0.2

@@ -77,6 +77,10 @@ eval/**/*.webp
 
 !eval/.gitkeep
 
+# OAuth tokens / client secrets for YouTube upload — NEVER commit
+secrets/*
+!secrets/README.md
+
 # --- IDE / OS ---
 .vscode/
 .idea/
