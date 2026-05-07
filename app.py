@@ -1252,19 +1252,21 @@ TOP_BANNER_HTML = """
 
 HERO_HTML = """
 <div id="hero">
-  <h1>📜 Multi-Agent Bill Analyzer</h1>
+  <h1>📜 10 Agent Bill Analyzer and Podcast Generator</h1>
   <div class="subtitle">
-    Upload a US legislative bill PDF. Smart-chunk on TITLE/Subtitle boundaries.
-    Run 6 specialist agents (Summarizer, USC Cross-Reference, Pork Finder, Conflict Spotter,
-    Podcast Headlines, Headline Ranker) against <b>Qwen3-30B-A3B-Instruct-2507-FP8</b>
-    on a single AMD MI300X.
+    Upload a US legislative bill PDF. Smart-chunk on TITLE/Subtitle boundaries for larger bills.
+    Run <b>10 specialist agents</b> against <b>Qwen3-30B-A3B-Instruct-2507-FP8</b> on a single AMD MI300X.
+    <br/><br/>
+    <b>6 analysis agents:</b> Summarizer · USC Cross-Reference · Pork Finder · Conflict Spotter · Podcast Headlines · Headline Ranker.
+    <br/>
+    <b>4 podcast-production agents:</b> Script Writer · Slide Prompt Generator · Wan Motion Prompt Generator · Slide Critic (dual-call OCR + judgment).
   </div>
   <div class="badges">
     <span class="badge">⚡ AMD MI300X · 192 GB VRAM</span>
     <span class="badge">🔗 vLLM ROCm v0.17.1</span>
     <span class="badge">🧠 Qwen3-30B-A3B FP8</span>
     <span class="badge">📚 60K USC sections (LMDB)</span>
-    <span class="badge">🎙️ 6 specialist agents</span>
+    <span class="badge">🎙️ 10 specialist agents (6 analysis + 4 podcast)</span>
     <span class="badge">🏛 lablab.ai AMD Hackathon · May 2026</span>
   </div>
   <div style="margin-top:14px;font-size:13px;color:#cbd5e1">
