@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <title>Bill Analyzer — One MI300X analyzes a 2,400-page bill</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Multi-agent legislative-bill analysis on a single AMD MI300X. 14.8x APC speedup, three Qwen models concurrent, 116 USC citations grounded in real statute text.">
+<meta name="description" content="10-agent legislative-bill analyzer + podcast generator on a single AMD MI300X (192 GB). All-Qwen stack: 30B reasoning spine, VL critic, image gen, video gen, TTS - all hot at the same time, no model swaps.">
 <meta property="og:title" content="Bill Analyzer — AMD Developer Hackathon">
-<meta property="og:description" content="One MI300X. Three Qwen models. 14.8x speedup from APC. 116 USC citations from a real bill, automatically.">
+<meta property="og:description" content="One MI300X. Five Qwen models concurrent in 192 GB. 14.8x APC speedup. 10 specialist agents on a single GPU - no model swaps.">
 <meta property="og:type" content="website">
 
 <style>
@@ -192,32 +192,36 @@ table.runs tr.warm { background: rgba(0, 212, 170, 0.04); }
 This is a working proof-of-concept built in 48 hours on AMD MI300X (192 GB VRAM) for the
 <a href="https://lablab.ai/event/amd-developer-hackathon">lablab.ai AMD Developer Hackathon</a>.
 The story below is the whole pitch: vLLM's Automatic Prefix Caching on ROCm makes multi-agent
-legislative analysis cheap, because 14 specialist agents can share one prefill of the bill text.
+legislative analysis cheap, because 10 specialist agents share one prefill of the bill text.
 </p>
 
 <div class="tiles">
   <div class="tile"><div class="num">94.15&times;</div><div class="label">APC TTFT speedup<br>(99,727-token prefix)</div></div>
   <div class="tile"><div class="num">14.8&times;</div><div class="label">Wall-clock speedup<br>(232K-tok summarizer)</div></div>
   <div class="tile"><div class="num green">68.5%</div><div class="label">Sustained APC<br>cache hit rate</div></div>
-  <div class="tile"><div class="num green">116</div><div class="label">USC citations<br>recovered, ch01</div></div>
+  <div class="tile"><div class="num green">5</div><div class="label">Qwen models concurrent<br>(192 GB, no model swaps)</div></div>
 </div>
 
 <h2>The architecture</h2>
 
-<p>One MI300X. Three Qwen models hot at the same time, sharing 192 GB:</p>
+<p>One MI300X. Five Qwen models hot at the same time, sharing 192 GB &mdash;
+the entire all-Qwen pipeline (analysis + slide gen + animation + narration + critic) runs
+on a single GPU with zero model swapping mid-pipeline.</p>
 
-<pre><code>spine     Qwen3-30B-A3B-Instruct-2507-FP8   port 8001   ~80 GB   max_model_len=262,144
-vision    Qwen3-VL-8B-Thinking-FP8          port 8002   ~17 GB   max_model_len=16,384
-reasoner  Qwen3-32B-FP8                     port 8003   ~70 GB   max_model_len=32,768
+<pre><code>spine     Qwen3-30B-A3B-Instruct-2507-FP8   vLLM      port 8001   ~35 GB   max_model_len=262,144
+vision    Qwen3-VL-8B-Thinking-FP8          vLLM      port 8002    ~9 GB   dual-call critic
+imagegen  Qwen-Image-2512 FP8 + Lightning   ComfyUI   port 8188   ~22 GB   1280x720 in ~5 s
+videogen  Wan 2.2 i2v 14B FP8 + LightX2V    ComfyUI   port 8188   ~30 GB   832x480 81-frame clips
+tts       Qwen3-TTS-12Hz-1.7B-CustomVoice   ComfyUI   port 8188    ~5 GB   Alex/Jordan voices
 
-combined  176 / 192 GB VRAM (91.7%)
-backend   vllm/vllm-openai-rocm:v0.17.1 on ROCm 7.2.0</code></pre>
+combined  ~150 / 192 GB VRAM (78.1%, with 40+ GB headroom for KV cache)
+backend   vllm/vllm-openai-rocm:v0.17.1 on ROCm 7.2.3 + ComfyUI on PyTorch 2.10.0</code></pre>
 
 <p>
 The <em>spine</em> holds a 250K-token bill chunk in its context. Every specialist agent
 hits the same chunk. With <code>--enable-prefix-caching</code>, the chunk is prefilled
 <strong>once</strong>; every additional agent against that chunk pays only its short
-instruction overhead. On a 32 GB GPU each agent has to spill or re-prefill — so on
+instruction overhead. On a 32-80 GB GPU you cannot even fit this stack &mdash; the spine alone needs more than a 4090. On smaller GPUs, agents have to spill, re-prefill, or model-swap — so on
 consumer hardware this whole pattern doesn't work. <strong>192 GB is the unlock.</strong>
 </p>
 
@@ -337,10 +341,11 @@ LLM identifies <em>where</em>, the LMDB grounds <em>what</em>.
 </div>
 
 <p>
-<strong>116 citations recovered</strong> from chunk 1 alone (the truncation-recovery layer
-turned what would have been a parse failure at max_tokens into 116 valid grounded citations).
-23 of the first 30 resolved cleanly against the local USC LMDB (76.7% hit rate); the rest
-are sub-paragraph notations like <code>7 U.S.C. 3103(2)</code> that need finer canonicalization.
+The USC Cross-Reference agent extracts every citation in the bill text, then enriches each
+one against a local USC LMDB built from Title 1-54 of the U.S. Code (60K+ sections, ~10 us
+per hit). Sub-paragraph notations like <code>7 U.S.C. 3103(2)</code> are canonicalized down
+to their parent section. Multi-chunk bills get their citations concatenated with a chunk
+provenance tag so the merged report can attribute every reference to the chunk it came from.
 </p>
 
 <h2>Headline #4 &mdash; Vision pipeline reads tax tables off bill PDFs</h2>
