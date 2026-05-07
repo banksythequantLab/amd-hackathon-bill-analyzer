@@ -1296,6 +1296,21 @@ def _existing_podcast_path(bill_short):
     return None
 
 
+def _pretty_bill_label(short: str) -> str:
+    """Display label for a bill_short slug.
+
+    Most slugs are compact and become clean uppercase: bbb -> BBB,
+    border25 -> BORDER25. Long multi-segment slugs like
+    'mandami-bills-119hr4692ih' become MANDAMI (just the first segment
+    uppercased) since the full title is shown elsewhere.
+    """
+    if not short:
+        return ''
+    if '-' not in short:
+        return short.upper()
+    return short.split('-')[0].upper()
+
+
 def list_podcastable_bills():
     canon_dir = _REPO_DIR / 'eval' / 'canonical'
     if not canon_dir.exists():
@@ -1573,7 +1588,7 @@ def build_ui() -> gr.Blocks:
         with gr.Row():
             bill_dropdown = gr.Dropdown(
                 label="Or select by short code",
-                choices=[b["short"] for b in startup_bills],
+                choices=[(_pretty_bill_label(b["short"]), b["short"]) for b in startup_bills],
                 value=None,
                 interactive=True,
                 scale=3,
@@ -1613,7 +1628,7 @@ def build_ui() -> gr.Blocks:
                     updates.append(gr.update(value=text, visible=True))
                 else:
                     updates.append(gr.update(visible=False))
-            updates.append(gr.update(choices=[b["short"] for b in updated]))
+            updates.append(gr.update(choices=[(_pretty_bill_label(b["short"]), b["short"]) for b in updated]))
             return updates
 
         refresh_lookup_btn.click(
@@ -1632,25 +1647,43 @@ def build_ui() -> gr.Blocks:
             'and quality-checked by a dual OCR + judgment **Qwen3-VL** critic - all on **AMD MI300X**.'
         )
 
-        # --- Row 1: Bill picker + Refresh ---
-        _initial_bills = list_podcastable_bills()
+        # --- STEP 1: Bill picker (prominent) ---
+        gr.HTML(
+            '<div style="margin: 14px 0 6px 0; padding: 10px 14px; '
+            'background: linear-gradient(90deg,#3b82f6 0%,#6366f1 100%); '
+            'border-radius: 8px; color: #fff; font-size: 18px; font-weight: 700;">'
+            '📋 Step 1 — Pick a Bill'
+            '</div>'
+        )
+        _initial_bill_pairs = [(_pretty_bill_label(b), b) for b in list_podcastable_bills()]
+        _initial_bills = [v for _l, v in _initial_bill_pairs]
         _initial_bill = (_initial_bills or [None])[0]
         _initial_choices, _initial_headline = load_headlines_for_bill(_initial_bill) if _initial_bill else ([], '')
 
         with gr.Row():
             podcast_bill_dropdown = gr.Dropdown(
-                choices=_initial_bills,
-                label='1) Pick a bill',
+                choices=_initial_bill_pairs,
+                label='Bill (uppercase = pre-processed canonical bill)',
                 interactive=True,
                 value=_initial_bill,
-                scale=3,
+                scale=4,
+                container=True,
             )
-            podcast_refresh_btn = gr.Button('🔄 Refresh List', scale=1)
+            podcast_refresh_btn = gr.Button('🔄 Refresh List', scale=1, size='lg')
 
-        # --- Row 2: 10 quick-fire headline buttons (one-click generate) ---
+        # --- STEP 2: Pick a headline (ARMS, does NOT fire pipeline) ---
+        gr.HTML(
+            '<div style="margin: 18px 0 6px 0; padding: 10px 14px; '
+            'background: linear-gradient(90deg,#0ea5e9 0%,#3b82f6 100%); '
+            'border-radius: 8px; color: #fff; font-size: 18px; font-weight: 700;">'
+            '📜 Step 2 — Pick a Headline (sets the topic — does not start the render)'
+            '</div>'
+        )
         gr.Markdown(
-            "**2) Click any headline to generate** — if a video already exists "
-            "for this combo, it plays instantly. Otherwise the pipeline runs."
+            "Clicking a headline below **arms** it. Review, then click the big "
+            "Generate button in Step 3 to start the render. If a video already "
+            "exists for this exact (bill, headline, direction) combo, it plays "
+            "instantly with no compute."
         )
         MAX_HEADLINE_SLOTS = 10
         podcast_hdl_btns: list[gr.Button] = []
@@ -1674,14 +1707,37 @@ def build_ui() -> gr.Blocks:
                     )
                     podcast_hdl_btns.append(_btn)
 
-        # --- Row 3: advanced override panel (collapsed by default) ---
+        # --- STEP 3: Generate (the only thing that actually fires the pipeline) ---
+        gr.HTML(
+            '<div style="margin: 18px 0 6px 0; padding: 10px 14px; '
+            'background: linear-gradient(90deg,#16a34a 0%,#22c55e 100%); '
+            'border-radius: 8px; color: #fff; font-size: 18px; font-weight: 700;">'
+            '🎙️ Step 3 — Generate (this is what kicks off the render)'
+            '</div>'
+        )
+        # Initial label includes the auto-armed #1 ranked headline so the user
+        # sees exactly what will fire. Updated dynamically when headline buttons
+        # are clicked or when the textbox is edited.
+        _initial_btn_label = (
+            f'🎙️ Generate Podcast Video — armed: "{_initial_headline[:80]}"'
+            if _initial_headline else
+            '🎙️ Generate Podcast Video (pick a headline above first)'
+        )
+        podcast_generate_btn = gr.Button(
+            _initial_btn_label,
+            variant='primary',
+            size='lg',
+            elem_id='podcast-generate-btn',
+        )
+
+        # --- Advanced overrides (collapsed) ---
         with gr.Accordion("Advanced: edit headline / add creative direction", open=False):
             podcast_headline_text = gr.Textbox(
                 label='Final headline used by script writer (editable)',
                 value=_initial_headline,
                 lines=2,
                 interactive=True,
-                info='Auto-filled from the bill\'s top-ranked headline. Quick-fire buttons above overwrite this.',
+                info='Auto-filled from the #1 ranked headline. Clicking a button in Step 2 overwrites this. Edit freely — typos and all.',
             )
             podcast_direction = gr.Textbox(
                 label='Additional creative direction (optional)',
@@ -1690,10 +1746,6 @@ def build_ui() -> gr.Blocks:
                 interactive=True,
                 placeholder='e.g. "Focus on the surveillance angle and the 4th Amendment risks. Keep tone dry and journalistic."',
                 info='Prepended to the bill analysis context the script writer sees. Leave blank to use defaults.',
-            )
-            podcast_generate_btn = gr.Button(
-                '🎙️  Generate with custom headline + direction',
-                variant='primary',
             )
 
         # --- Output: progress + video ---
@@ -1714,47 +1766,51 @@ def build_ui() -> gr.Blocks:
                     height=400,
                 )
 
-        # --- Wiring ---
-        # The "advanced" generate button: uses whatever the user typed in the
-        # editable headline + creative direction fields.
+        # === WIRING ===
+        # The Generate button is the ONLY thing that fires the pipeline. It uses
+        # whatever is in podcast_headline_text + podcast_direction (the textbox
+        # is auto-populated when the user clicks a Step 2 button or when the
+        # bill changes).
         podcast_generate_btn.click(
             fn=generate_podcast_handler,
             inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction],
             outputs=[podcast_log, podcast_video],
         )
 
-        # Each quick-fire headline button: looks up headline #idx for the
-        # currently-picked bill, sets it into the editable textbox, then fires
-        # the generator with NO creative direction (one-click flow).
-        def _make_quickfire(idx):
-            def _quickfire(bill_short, direction_text):
-                # Look up the idx'th ranked headline for this bill.
+        # Helper: build the Generate-button label for a given armed headline.
+        def _gen_btn_label_for(hdl):
+            if hdl and hdl.strip():
+                return f'🎙️ Generate Podcast Video — armed: "{hdl.strip()[:80]}"'
+            return '🎙️ Generate Podcast Video (pick a headline above first)'
+
+        # Step 2 buttons: click ARMS the headline (sets textbox + updates the
+        # Generate button label). Does NOT start the pipeline. The user reviews
+        # what's armed and then clicks Generate in Step 3.
+        def _make_arm(idx):
+            def _arm(bill_short):
                 choices, _default = load_headlines_for_bill(bill_short)
                 if idx >= len(choices):
-                    yield gr.update(), gr.update(value=f'No headline #{idx+1} for {bill_short}'), None
-                    return
+                    return gr.update(), gr.update()
                 _label, hdl = choices[idx]
-                # Fire the generator with this headline (and any direction the
-                # user typed in the advanced panel; empty by default).
-                first_yield = True
-                for log, video in generate_podcast_handler(bill_short, hdl, direction_text):
-                    if first_yield:
-                        # Update the editable textbox so the user sees what was picked
-                        yield gr.update(value=hdl), log, video
-                        first_yield = False
-                    else:
-                        yield gr.update(), log, video
-            return _quickfire
+                return gr.update(value=hdl), gr.update(value=_gen_btn_label_for(hdl))
+            return _arm
 
         for _i, _btn in enumerate(podcast_hdl_btns):
             _btn.click(
-                fn=_make_quickfire(_i),
-                inputs=[podcast_bill_dropdown, podcast_direction],
-                outputs=[podcast_headline_text, podcast_log, podcast_video],
+                fn=_make_arm(_i),
+                inputs=[podcast_bill_dropdown],
+                outputs=[podcast_headline_text, podcast_generate_btn],
             )
 
+        # Sync Generate button label when the user types in the editable textbox.
+        podcast_headline_text.change(
+            fn=lambda hdl: gr.update(value=_gen_btn_label_for(hdl)),
+            inputs=[podcast_headline_text],
+            outputs=[podcast_generate_btn],
+        )
+
         def _on_bill_change(bill_short):
-            """Bill changed: rebuild headline button labels + reset edited textbox."""
+            """Bill changed: rebuild headline button labels + reset textbox + Generate label."""
             choices, default = load_headlines_for_bill(bill_short)
             btn_updates = []
             for j in range(MAX_HEADLINE_SLOTS):
@@ -1763,17 +1819,21 @@ def build_ui() -> gr.Blocks:
                     btn_updates.append(gr.update(value=label, visible=True))
                 else:
                     btn_updates.append(gr.update(visible=False))
-            return btn_updates + [gr.update(value=default)]
+            return btn_updates + [
+                gr.update(value=default),
+                gr.update(value=_gen_btn_label_for(default)),
+            ]
 
         podcast_bill_dropdown.change(
             fn=_on_bill_change,
             inputs=[podcast_bill_dropdown],
-            outputs=podcast_hdl_btns + [podcast_headline_text],
+            outputs=podcast_hdl_btns + [podcast_headline_text, podcast_generate_btn],
         )
 
         def _refresh_podcast_bills():
             """Refresh button: re-scan eval/canonical/, repopulate everything."""
             choices = list_podcastable_bills()
+            choice_pairs = [(_pretty_bill_label(b), b) for b in choices]
             new_bill = (choices or [None])[0]
             hdl_choices, hdl_default = load_headlines_for_bill(new_bill) if new_bill else ([], '')
             btn_updates = []
@@ -1784,14 +1844,15 @@ def build_ui() -> gr.Blocks:
                 else:
                     btn_updates.append(gr.update(visible=False))
             return [
-                gr.update(choices=choices, value=new_bill),
+                gr.update(choices=choice_pairs, value=new_bill),
                 *btn_updates,
                 gr.update(value=hdl_default),
+                gr.update(value=_gen_btn_label_for(hdl_default)),
             ]
 
         podcast_refresh_btn.click(
             fn=_refresh_podcast_bills,
-            outputs=[podcast_bill_dropdown] + podcast_hdl_btns + [podcast_headline_text],
+            outputs=[podcast_bill_dropdown] + podcast_hdl_btns + [podcast_headline_text, podcast_generate_btn],
         )
 
         # ====================================================================
@@ -1822,7 +1883,7 @@ def build_ui() -> gr.Blocks:
                     lookup_btn_updates.append(gr.update(value=text, visible=True))
                 else:
                     lookup_btn_updates.append(gr.update(visible=False))
-            lookup_dropdown_update = gr.update(choices=[b["short"] for b in updated])
+            lookup_dropdown_update = gr.update(choices=[(_pretty_bill_label(b["short"]), b["short"]) for b in updated])
 
             # Podcast Studio: pick the most-recently-modified bill (= the one
             # the user just analyzed) so it's auto-selected.
@@ -1844,7 +1905,9 @@ def build_ui() -> gr.Blocks:
             hdl_choices, hdl_default = (
                 load_headlines_for_bill(most_recent_bill) if most_recent_bill else ([], '')
             )
-            pod_dropdown_update = gr.update(choices=pod_bills, value=most_recent_bill)
+            # Capitalized (label, value) pairs for the podcast dropdown.
+            pod_pairs = [(_pretty_bill_label(b), b) for b in pod_bills]
+            pod_dropdown_update = gr.update(choices=pod_pairs, value=most_recent_bill)
             pod_btn_updates = []
             for j in range(MAX_HEADLINE_SLOTS):
                 if j < len(hdl_choices):
@@ -1853,6 +1916,9 @@ def build_ui() -> gr.Blocks:
                 else:
                     pod_btn_updates.append(gr.update(visible=False))
             pod_text_update = gr.update(value=hdl_default)
+            # Generate button label reflects the auto-armed #1 headline of the
+            # newly-analyzed bill (or empty state if no headline available).
+            pod_gen_btn_update = gr.update(value=_gen_btn_label_for(hdl_default))
 
             return (
                 lookup_btn_updates                    # 12 lookup gallery buttons
@@ -1860,6 +1926,7 @@ def build_ui() -> gr.Blocks:
                 + [pod_dropdown_update]               # 1 podcast bill dropdown
                 + pod_btn_updates                     # 10 headline buttons
                 + [pod_text_update]                   # 1 advanced headline textbox
+                + [pod_gen_btn_update]                # 1 Generate button label
             )
 
         _analyze_evt.then(
@@ -1870,6 +1937,7 @@ def build_ui() -> gr.Blocks:
                 + [podcast_bill_dropdown]              # 1
                 + podcast_hdl_btns                     # 10
                 + [podcast_headline_text]              # 1
+                + [podcast_generate_btn]               # 1
             ),
         )
 
