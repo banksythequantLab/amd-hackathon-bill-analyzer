@@ -94,19 +94,39 @@ if DEMO_REPORT_PATH.exists():
 # Utility: health check
 # ----------------------------------------------------------------------------
 def check_endpoints() -> str:
-    """Tiny inline badge showing both endpoints' status."""
+    """Inline status badge for backend endpoints.
+
+    Spine status check was removed — its rstrip('/v1') call was mangling
+    the URL to port 800 instead of 8001, so it was always reporting
+    offline regardless of actual spine state. The spine's reachability
+    is implicit in the analysis run itself (failures surface in logs
+    with full diagnostics), so a separate badge added confusion.
+
+    What we DO check here:
+      - USC LMDB at port 8004 (used by USC Cross-Reference enrichment)
+      - ComfyUI at port 8188 (used by Qwen-Image, Wan i2v, Qwen3-TTS)
+
+    Both have stable health endpoints and respond fast (<200ms when up).
+    """
     import httpx
     badges = []
+    # ComfyUI base URL is derived from SPINE host (same droplet, port 8188).
+    try:
+        comfy_host = SPINE.split('://')[1].split(':')[0]
+        comfy_url = f"http://{comfy_host}:8188"
+    except Exception:
+        comfy_url = "http://165.245.134.1:8188"
+
     for short, url, kind in [
-        ("Spine", SPINE, "openai"),
         ("USC", USC_HTTP, "usc"),
+        ("ComfyUI", comfy_url, "comfy"),
     ]:
         try:
-            if kind == "openai":
-                r = httpx.get(f"{url.rstrip('/v1')}/v1/models", timeout=5.0)
+            if kind == "usc":
+                r = httpx.get(f"{url.rstrip('/')}/usc/lookup", params={"citation": "42 USC 1395dd"}, timeout=3.0)
                 ok = r.status_code == 200
-            else:
-                r = httpx.get(f"{url}/health", timeout=5.0)
+            else:  # comfy
+                r = httpx.get(f"{url.rstrip('/')}/system_stats", timeout=3.0)
                 ok = r.status_code == 200
         except Exception:
             ok = False
@@ -911,6 +931,25 @@ def analyze_pdf(pdf_file, progress=gr.Progress()):
 
 
 def load_demo():
+    """Load the canonical BBB demo. Uses the real merged report on disk
+    (eval/canonical/bbb-merged.json) so the demo always reflects the
+    actual current state of the analyzer, including all 6 chunks of the
+    full Build Back Better Act, all 10 agents, podcast headlines, ranker,
+    and the full Stage-5 podcast pipeline metadata.
+
+    Falls back to the legacy hardcoded ch01 fake_report only if no
+    canonical bbb report exists on disk.
+    """
+    # Preferred path: the real merged report from eval/canonical/.
+    # This automatically picks up bbb-merged.json (full 6-chunk bill)
+    # via _make_load_bill_fn, so the demo stays in sync with reality.
+    canon_merged = CANONICAL_DIR / "bbb-merged.json"
+    canon_ch01 = CANONICAL_DIR / "bbb-ch01.json"
+    if canon_merged.exists() or canon_ch01.exists():
+        return load_bill_by_short("bbb")
+
+    # Fallback: original hardcoded ch01 data (kept so the demo never
+    # breaks even if eval/canonical/ has been wiped).
     if DEMO_REPORT is None:
         empty = "<div style='padding:20px;color:#ef4444'>Demo report file not found.</div>"
         return empty, "", "", [], "", "", "", "", None, ""
@@ -1426,19 +1465,81 @@ def generate_podcast_handler(bill_short, edited_headline='', creative_direction=
     def log_cb(msg=''):
         log_lines.append(str(msg) if msg else '')
 
-    def worker():
+    def _probe_spine() -> tuple[bool, str]:
+        """Pre-flight check: is the spine reachable + responsive?
+        Returns (ok, message). A busy spine often shows as a connect timeout."""
+        import httpx as _httpx
         try:
-            state['final'] = _cloud_run_pipeline(
-                bill_short,
-                log=log_cb,
-                override_headline=headline_arg,
-                creative_direction=direction_arg,
-            )
-        except Exception as exc:
-            state['error'] = repr(exc)
-            log_lines.append(f'PIPELINE ERROR: {exc!r}')
-        finally:
-            state['done'] = True
+            _t0 = _time.time()
+            _r = _httpx.get(f"{SPINE.rstrip('/')}/models", timeout=4.0)
+            _ms = (_time.time() - _t0) * 1000
+            if _r.status_code == 200:
+                return True, f"spine reachable ({_ms:.0f}ms)"
+            return False, f"spine HTTP {_r.status_code}"
+        except _httpx.TimeoutException:
+            return False, "spine probe timed out (likely busy with another long request)"
+        except _httpx.ConnectError:
+            return False, "spine unreachable (droplet down or network issue)"
+        except Exception as _e:
+            return False, f"spine probe failed: {type(_e).__name__}"
+
+    def _diagnose_error(err_repr: str) -> tuple[str, bool, str]:
+        """Categorize an error. Returns (category, retry_recommended, human_msg)."""
+        _s = err_repr.lower()
+        if '400' in _s and ('http' in _s or 'bad request' in _s):
+            return ('BAD_REQUEST', False,
+                    "HTTP 400 from spine — likely a chunk too large for the context window. "
+                    "Retry won't help; the chunker MAX_TOKENS needs to be lowered.")
+        if any(c in _s for c in ('502', '503', '504')) and 'http' in _s:
+            return ('TRANSIENT', True, "HTTP 5xx from spine — overloaded or restarting. Will retry.")
+        if 'timeout' in _s or 'timed out' in _s:
+            return ('TIMEOUT', True, "Request timed out — spine likely busy with another long request. Will retry.")
+        if 'connect' in _s and ('error' in _s or 'refused' in _s or 'aborted' in _s):
+            return ('NETWORK', True, "Connection error — droplet/network blip. Will retry.")
+        return ('UNKNOWN', True, f"Unexpected error. Will retry once.")
+
+    MAX_RETRIES = 2
+    RETRY_BACKOFF = [10, 30]  # seconds before attempts 2 and 3
+
+    def worker():
+        attempt = 0
+        while attempt <= MAX_RETRIES:
+            attempt += 1
+            # Pre-flight probe so we don't waste setup work on a known-bad spine
+            log_cb('')
+            log_cb(f'[ATTEMPT {attempt}/{MAX_RETRIES + 1}] Pre-flight spine check...')
+            ok, probe_msg = _probe_spine()
+            log_cb(f'  {probe_msg}')
+            if not ok and attempt <= MAX_RETRIES:
+                wait = RETRY_BACKOFF[min(attempt - 1, len(RETRY_BACKOFF) - 1)]
+                log_cb(f'  spine not ready, waiting {wait}s before retry...')
+                _time.sleep(wait)
+                continue
+
+            # Run pipeline (cached scenes/clips are skipped on retry — cheap)
+            try:
+                state['final'] = _cloud_run_pipeline(
+                    bill_short,
+                    log=log_cb,
+                    override_headline=headline_arg,
+                    creative_direction=direction_arg,
+                )
+                state['done'] = True
+                return
+            except Exception as exc:
+                err_repr = repr(exc)
+                category, should_retry, diag = _diagnose_error(err_repr)
+                log_cb('')
+                log_cb(f'PIPELINE ERROR [{category}]: {diag}')
+                log_cb(f'  raw exception: {err_repr[:300]}')
+                if not should_retry or attempt > MAX_RETRIES:
+                    state['error'] = err_repr
+                    state['done'] = True
+                    return
+                wait = RETRY_BACKOFF[min(attempt - 1, len(RETRY_BACKOFF) - 1)]
+                log_cb(f'  retrying in {wait}s (attempt {attempt + 1}/{MAX_RETRIES + 1})...')
+                _time.sleep(wait)
+        state['done'] = True
 
     t = _threading.Thread(target=worker, daemon=True)
     t.start()
@@ -1513,7 +1614,7 @@ def build_ui() -> gr.Blocks:
                 )
                 analyze_btn = gr.Button("🚀 Analyze Full Bill (all chunks)", variant="primary", size="lg")
                 with gr.Row():
-                    demo_btn = gr.Button("⚡ Load Canonical Demo (BBB Title I)", variant="secondary", scale=2)
+                    demo_btn = gr.Button("⚡ Load Canonical Demo (BBB Full Bill, 6 chunks, 2,468 pp)", variant="secondary", scale=2)
                     health_btn = gr.Button("🔄 Status", variant="secondary", scale=1, size="sm")
                 health_out = gr.HTML(value="<div style='font-size:11px;color:#94a3b8;padding:4px 0'>Click 🔄 Status to verify endpoints</div>")
 
@@ -1990,9 +2091,9 @@ def build_ui() -> gr.Blocks:
                 return f'🎙️ Generate Podcast Video — armed: "{hdl.strip()[:80]}"'
             return '🎙️ Generate Podcast Video (pick a headline above first)'
 
-        # Step 2 buttons: click ARMS the headline (sets textbox + updates the
-        # Generate button label). Does NOT start the pipeline. The user reviews
-        # what's armed and then clicks Generate in Step 3.
+        # Step 2 buttons: click ARMS the headline AND immediately fires the
+        # pipeline (one-click generate). The Step 3 button still exists for
+        # users who want to edit the textbox manually before firing.
         def _make_arm(idx):
             def _arm(bill_short):
                 choices, _default = load_headlines_for_bill(bill_short)
@@ -2003,10 +2104,17 @@ def build_ui() -> gr.Blocks:
             return _arm
 
         for _i, _btn in enumerate(podcast_hdl_btns):
+            # Chain: arm the textbox/button label first, THEN fire the pipeline.
+            # The .then() guarantees the textbox is updated before generate
+            # reads it (Gradio runs .then() handlers serially in declaration order).
             _btn.click(
                 fn=_make_arm(_i),
                 inputs=[podcast_bill_dropdown],
                 outputs=[podcast_headline_text, podcast_generate_btn],
+            ).then(
+                fn=generate_podcast_handler,
+                inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction],
+                outputs=[podcast_log, podcast_video],
             )
 
         # Sync Generate button label when the user types in the editable textbox.
