@@ -1962,6 +1962,18 @@ def build_ui() -> gr.Blocks:
             elem_id='podcast-generate-btn',
         )
 
+        # Political-lean dial - intentionally OUTSIDE the Advanced accordion so
+        # it's always visible. The dial is one of the headline differentiators
+        # of the Podcast Studio and shouldn't be hidden behind a collapsible.
+        political_lean = gr.Slider(
+            minimum=-100,
+            maximum=100,
+            value=0,
+            step=10,
+            label='🎚️  Political Lean of generated script',
+            info='-100 = strongly progressive (Pod Save America voice)  •  0 = neutral journalism  •  +100 = strongly conservative (WSJ editorial voice). Augments the creative direction sent to the script writer agent.',
+        )
+
         # --- Advanced overrides (collapsed) ---
         with gr.Accordion("Advanced: edit headline / add creative direction", open=False):
             podcast_headline_text = gr.Textbox(
@@ -1978,14 +1990,6 @@ def build_ui() -> gr.Blocks:
                 interactive=True,
                 placeholder='e.g. "Focus on the surveillance angle and the 4th Amendment risks. Keep tone dry and journalistic."',
                 info='Prepended to the bill analysis context the script writer sees. Leave blank to use defaults.',
-            )
-            political_lean = gr.Slider(
-                minimum=-100,
-                maximum=100,
-                value=0,
-                step=10,
-                label='🎚️  Political Lean (script tone)',
-                info='-100 = strongly progressive framing  •  0 = neutral journalism  •  +100 = strongly conservative framing. Augments the creative direction sent to the script writer agent.',
             )
 
         # --- Output: progress + video ---
