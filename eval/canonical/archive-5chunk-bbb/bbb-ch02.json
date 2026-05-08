@@ -1,0 +1,324 @@
+{
+  "bill_short": "bbb",
+  "bill_label": "Build Back Better Act 2021 (HR 5376)",
+  "bill_note": "House version, 5 chunks, ~2,468 pages",
+  "chunk_id": "ch02",
+  "title_marker": "Subtitle G\u2014Medicaid",
+  "tokens": 217853,
+  "pages": [
+    542,
+    1114
+  ],
+  "n_chunks": 5,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch02",
+        "title_marker": "Subtitle G\u2014Medicaid",
+        "one_sentence_summary": "This section establishes a new federal Medicaid program to close the coverage gap in states that have not expanded Medicaid, providing health benefits to low-income individuals through contracts with managed care organizations and third-party administrators.",
+        "bullets": [
+          "Creates a new federal Medicaid program to provide health benefits to individuals in non-expansion states who would otherwise qualify for Medicaid, with coverage starting January 1, 2025.",
+          "Authorizes the Secretary to contract with Medicaid managed care organizations or third-party administrators to deliver benefits, with contracts based on competitive bidding and performance standards.",
+          "Sets minimum federal standards for benefits, beneficiary protections, access to care, and redeterminations, ensuring parity with state Medicaid programs.",
+          "Requires the federal program to offer benchmark or equivalent coverage, prohibit cost-sharing, and apply key Medicaid provisions like managed care and drug rebate rules.",
+          "Establishes a data-matching system to verify income and ensure eligibility, with protections for individuals whose income changes during the year.",
+          "Imposes penalties for non-compliance, including payment withholding, corrective action plans, and civil monetary penalties.",
+          "Requires states that previously expanded Medicaid but later stopped to make payments to the federal government to offset the cost of the federal program.",
+          "Provides for transitions from exchange plans to the federal program and from the federal program to state plans when states begin providing coverage."
+        ],
+        "affected_groups": [
+          "low-income individuals in non-expansion states",
+          "Medicaid managed care organizations",
+          "third-party plan administrators",
+          "state Medicaid agencies",
+          "federal contractors and grantees"
+        ]
+      },
+      "elapsed_s": 336.47,
+      "prompt_tokens": 254603,
+      "completion_tokens": 360,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {},
+      "elapsed_s": 5.29,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "errors": [
+        "attempt 2: HTTP error: Client error '400 Bad Request' for url 'http://165.245.134.1:8001/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+      ]
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch02",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 323.57,
+      "prompt_tokens": 255362,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch02",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 321.63,
+      "prompt_tokens": 254771,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch02",
+        "title_marker": "Subtitle G\u2014Medicaid",
+        "headlines": [
+          {
+            "headline": "Federal Medicaid for Non-Expansion States",
+            "angle": "fiscal",
+            "hook": "A new federal program will cover low-income residents in states that refused Medicaid expansion\u2014starting January 2025.",
+            "target_audience": "Budget watchers and fiscal policy analysts",
+            "evidence_provisions": [
+              "Creates a new federal Medicaid program to provide health benefits to individuals in non-expansion states",
+              "Coverage starting January 1, 2025"
+            ]
+          },
+          {
+            "headline": "Medicaid Expansion via Federal Backstop",
+            "angle": "controversy",
+            "hook": "The federal government steps in where states refused to expand Medicaid\u2014sparking a political showdown over federal overreach.",
+            "target_audience": "Political commentators and state policy skeptics",
+            "evidence_provisions": [
+              "Creates a new federal Medicaid program to provide health benefits to individuals in non-expansion states",
+              "Requires states that previously expanded Medicaid but later stopped to make payments to the federal government"
+            ]
+          },
+          {
+            "headline": "Low-Income Patients Get Federal Coverage",
+            "angle": "human-impact",
+            "hook": "Thousands of uninsured people in non-expansion states will finally get health coverage through a federal safety net.",
+            "target_audience": "Advocates for low-income families and healthcare access",
+            "evidence_provisions": [
+              "Provides health benefits to low-income individuals in non-expansion states who would otherwise qualify for Medicaid",
+              "Coverage starting January 1, 2025"
+            ]
+          },
+          {
+            "headline": "States That Backtracked Must Pay Up",
+            "angle": "political",
+            "hook": "States that expanded Medicaid and then reversed course now face financial penalties to fund the federal fallback program.",
+            "target_audience": "State legislators and Medicaid policy wonks",
+            "evidence_provisions": [
+              "Requires states that previously expanded Medicaid but later stopped to make payments to the federal government to offset the cost of the federal program"
+            ]
+          },
+          {
+            "headline": "Federal Contracts with Managed Care Firms",
+            "angle": "drama",
+            "hook": "A high-stakes bidding war looms as federal contractors race to win Medicaid delivery contracts in non-expansion states.",
+            "target_audience": "Healthcare industry insiders and contract bid watchers",
+            "evidence_provisions": [
+              "Authorizes the Secretary to contract with Medicaid managed care organizations or third-party administrators to deliver benefits",
+              "Contracts based on competitive bidding and performance standards"
+            ]
+          },
+          {
+            "headline": "No Cost-Sharing for Federal Medicaid Recipients",
+            "angle": "hidden-provision",
+            "hook": "A little-known rule ensures that enrollees in the federal Medicaid program pay nothing out-of-pocket\u2014no premiums, no copays.",
+            "target_audience": "Consumer advocates and health equity researchers",
+            "evidence_provisions": [
+              "Prohibit cost-sharing",
+              "Sets minimum federal standards for benefits, beneficiary protections, access to care, and redeterminations"
+            ]
+          },
+          {
+            "headline": "Data Matching to Catch Income Changes",
+            "angle": "regulatory",
+            "hook": "A new federal data-matching system will track income fluctuations to keep people enrolled when their earnings shift.",
+            "target_audience": "Administrative law experts and compliance officers",
+            "evidence_provisions": [
+              "Establishes a data-matching system to verify income and ensure eligibility",
+              "With protections for individuals whose income changes during the year"
+            ]
+          },
+          {
+            "headline": "Penalties for Failed Medicaid Delivery",
+            "angle": "watchdog",
+            "hook": "States or contractors that fail to meet federal standards risk losing payments and facing fines.",
+            "target_audience": "Government oversight groups and accountability advocates",
+            "evidence_provisions": [
+              "Imposes penalties for non-compliance, including payment withholding, corrective action plans, and civil monetary penalties"
+            ]
+          },
+          {
+            "headline": "Transition from Exchange to Federal Medicaid",
+            "angle": "scoop",
+            "hook": "A hidden pathway lets people on ACA exchanges switch to federal Medicaid without losing coverage\u2014starting in 2025.",
+            "target_audience": "Health insurance brokers and enrollment counselors",
+            "evidence_provisions": [
+              "Provides for transitions from exchange plans to the federal program"
+            ]
+          },
+          {
+            "headline": "Federal Medicaid Follows State Expansion",
+            "angle": "geopolitical",
+            "hook": "The federal program is designed to seamlessly hand over coverage to states when they finally expand Medicaid.",
+            "target_audience": "Federal-state policy coordinators and intergovernmental analysts",
+            "evidence_provisions": [
+              "Provides for transitions from the federal program to state plans when states begin providing coverage"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 9.6,
+      "prompt_tokens": 895,
+      "completion_tokens": 1088,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch02",
+        "title_marker": "Subtitle G\u2014Medicaid",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "No Cost-Sharing for Federal Medicaid Recipients",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 26,
+            "rationale": "This headline reveals a critical, under-the-radar provision: federal Medicaid enrollees pay zero out-of-pocket costs, a major equity win. The specificity of 'no premiums, no copays' and the legal basis in prohibited cost-sharing make this a standout for listeners seeking real policy impact beyond headlines."
+          },
+          {
+            "rank": 2,
+            "headline": "Federal Medicaid for Non-Expansion States",
+            "angle": "fiscal",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "It highlights a concrete, new federal program with a clear start date (Jan 2025) and targets a politically significant group: non-expansion states. The specificity of the program\u2019s scope and timeline elevates it above generic fiscal talk."
+          },
+          {
+            "rank": 3,
+            "headline": "States That Backtracked Must Pay Up",
+            "angle": "political",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 24,
+            "rationale": "This exposes a direct financial consequence for political reversals\u2014states that expanded and then rescinded must now fund the federal fallback. The concrete mechanism (payment to federal government) and political stakes make it highly relevant to state-level policy watchers."
+          },
+          {
+            "rank": 4,
+            "headline": "Medicaid Expansion via Federal Backstop",
+            "angle": "controversy",
+            "newsworthiness_score": 8,
+            "specificity_score": 7,
+            "appeal_score": 8,
+            "composite_score": 23,
+            "rationale": "It frames the federal program as a political flashpoint, emphasizing federal overreach\u2014a compelling angle for political audiences. While slightly less specific than others, the controversy angle and real conflict between federal and state authority boost its appeal."
+          },
+          {
+            "rank": 5,
+            "headline": "Low-Income Patients Get Federal Coverage",
+            "angle": "human-impact",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "Focuses on real people\u2014low-income individuals gaining coverage\u2014giving emotional weight. The specificity of 'January 1, 2025' and the target group adds credibility, though the angle is more familiar than groundbreaking."
+          },
+          {
+            "rank": 6,
+            "headline": "Federal Contracts with Managed Care Firms",
+            "angle": "drama",
+            "newsworthiness_score": 7,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 21,
+            "rationale": "The 'bidding war' framing adds narrative tension, appealing to industry insiders. The competitive bidding and performance standards are specific, but the angle leans more on drama than deep policy insight, limiting its edge."
+          },
+          {
+            "rank": 7,
+            "headline": "Transition from Exchange to Federal Medicaid",
+            "angle": "scoop",
+            "newsworthiness_score": 7,
+            "specificity_score": 7,
+            "appeal_score": 6,
+            "composite_score": 20,
+            "rationale": "The 'hidden pathway' angle suggests insider knowledge, but the provision is narrow and lacks broader implications. While novel, the impact is limited to a small group of ACA enrollees, reducing its overall newsworthiness."
+          },
+          {
+            "rank": 8,
+            "headline": "Data Matching to Catch Income Changes",
+            "angle": "regulatory",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 19,
+            "rationale": "The data-matching system is technically specific and important for administrative integrity, but the regulatory nature of the provision limits listener appeal. It\u2019s a wonky detail that only experts will care about."
+          },
+          {
+            "rank": 9,
+            "headline": "Penalties for Failed Medicaid Delivery",
+            "angle": "watchdog",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 5,
+            "composite_score": 18,
+            "rationale": "Penalties for non-compliance are important but generic\u2014similar to other federal programs. The specificity of 'payment withholding' and 'fines' is solid, but the angle lacks novelty or human stakes, making it less engaging."
+          },
+          {
+            "rank": 10,
+            "headline": "Federal Medicaid Follows State Expansion",
+            "angle": "geopolitical",
+            "newsworthiness_score": 5,
+            "specificity_score": 6,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "The seamless transition mechanism is a useful detail but lacks drama or surprise. It\u2019s a procedural footnote rather than a policy revelation, and the geopolitical framing overreaches given the limited scope of the provision."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "No Cost-Sharing for Federal Medicaid Recipients",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 9,
+          "specificity_score": 9,
+          "appeal_score": 8,
+          "composite_score": 26,
+          "rationale": "This headline reveals a critical, under-the-radar provision: federal Medicaid enrollees pay zero out-of-pocket costs, a major equity win. The specificity of 'no premiums, no copays' and the legal basis in prohibited cost-sharing make this a standout for listeners seeking real policy impact beyond headlines."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it uncovers a hidden, high-impact provision\u2014zero cost-sharing\u2014that directly benefits vulnerable populations. It combines deep policy specificity with strong human stakes and a surprising twist: federal Medicaid is more generous than state programs. This angle is both newsworthy and emotionally resonant, making it the most compelling entry in the list."
+      },
+      "elapsed_s": 12.62,
+      "prompt_tokens": 1622,
+      "completion_tokens": 1464,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 336.47,
+    "usc_cross_ref": 5.29,
+    "pork_finder": 323.57,
+    "conflict_spotter": 321.63,
+    "podcast_headlines": 9.6,
+    "headline_ranker": 12.62
+  },
+  "totals": {
+    "wall_clock_s": 1009.31,
+    "prompt_tokens_total": 767253,
+    "completion_tokens_total": 2971
+  }
+}

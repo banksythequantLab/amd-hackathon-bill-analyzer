@@ -1,0 +1,560 @@
+{
+  "bill_short": "bbb",
+  "bill_label": "Build Back Better Act 2021 (HR 5376)",
+  "bill_note": "House version, 5 chunks, ~2,468 pages",
+  "chunk_id": "ch03",
+  "title_marker": "TITLE IX\u2014COMMITTEE ON",
+  "tokens": 167315,
+  "pages": [
+    1049,
+    1497
+  ],
+  "n_chunks": 6,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch03",
+        "title_marker": "TITLE IX\u2014COMMITTEE ON",
+        "one_sentence_summary": "This section allocates substantial funding for science, technology, and innovation initiatives across multiple federal agencies, with a focus on advancing research, infrastructure, and equity in small business and community development.",
+        "bullets": [
+          "Appropriates $5 billion to the Department of Commerce for regional innovation initiatives, with at least one-third of grants benefiting underserved communities.",
+          "Allocates over $10 billion to the Department of Energy for laboratory infrastructure, including major projects like the Exascale Computing Project and the Long Baseline Neutrino Facility.",
+          "Provides $2 billion for Department of Energy research and development in areas like quantum computing, fusion energy, and low-dose radiation research.",
+          "Funds $264 million for the EPA to conduct climate change research, with a focus on community resilience, social science, and environmental justice.",
+          "Allocates $798 million to the FEMA for firefighter grants, including $80 million for PFAS-free protective gear and firefighting foam.",
+          "Appropriates $4 billion to NASA for infrastructure repair and modernization, and $388 million for climate change research and sustainable aviation development.",
+          "Allocates $1.195 billion to the National Institute of Standards and Technology (NIST) for AI, cybersecurity, and advanced manufacturing research.",
+          "Provides $2 billion to NIST for supporting American manufacturing through the Hollings Manufacturing Extension Partnership and new semiconductor-focused institutes."
+        ],
+        "affected_groups": [
+          "small businesses",
+          "rural communities",
+          "underserved communities",
+          "research institutions",
+          "federal laboratories",
+          "firefighters",
+          "climate scientists",
+          "manufacturing firms"
+        ]
+      },
+      "elapsed_s": 202.26,
+      "prompt_tokens": 194795,
+      "completion_tokens": 383,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch03",
+        "citations": [
+          {
+            "citation": "42 U.S.C. 16275",
+            "bill_context": "Funds appropriated for the Versatile Test Reactor as authorized in section 955 of the Energy Policy Act of 2005.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "16275",
+              "heading": "Department of Energy civilian nuclear infrastructure and facilities",
+              "text_excerpt": "\u00a7 16275. Department of Energy civilian nuclear infrastructure and facilities (a) In general The Secretary shall operate and maintain infrastructure and facilities to support the nuclear energy research, development, demonstration, and commercial application programs, including radiological facilities management, isotope production, and facilities management. (b) Duties In carrying out this section, the Secretary shall\u2014 (1) develop an inventory of nuclear science and engineering facilities, equipment, expertise, and other assets at all of the National Laboratories; (2) develop a prioritized lis...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section16275&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 U.S.C. 16312(c)",
+            "bill_context": "Funds appropriated for the United States contributions to the ITER project as authorized in section 972(c) of the Energy Policy Act of 2005.",
+            "relevance": "amend",
+            "resolved_to": "42 U.S.C. 16312",
+            "usc_data": {
+              "title": "42",
+              "section": "16312",
+              "heading": "Fusion energy sciences program",
+              "text_excerpt": "\u00a7 16312. Fusion energy sciences program (a) Declaration of policy It shall be the policy of the United States to conduct research, development, demonstration, and commercial applications to provide for the scientific, engineering, and commercial infrastructure necessary to ensure that the United States is competitive with other countries in providing fusion energy for its own needs and the needs of other countries, including by demonstrating electric power or hydrogen production for the United States energy grid using fusion energy at the earliest date. (b) Planning (1) In general Not later th...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section16312&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "42 U.S.C. 18644(c)",
+            "bill_context": "Funds appropriated for the low-dose radiation research program authorized in section 306(c) of the Department of Energy Research and Innovation Act.",
+            "relevance": "amend",
+            "resolved_to": "42 U.S.C. 18644",
+            "usc_data": {
+              "title": "42",
+              "section": "18644",
+              "heading": "Biological and environmental research",
+              "text_excerpt": "\u00a7 18644. Biological and environmental research (a) Program As part of the duties of the Director authorized under section 7139 of this title , and coordinated with the activities authorized under sections 18641 and 18642 of this title, the Director shall carry out a program of research and development in the areas of biological systems science and climate and environmental science, including subsurface science, relevant to the development of new energy technologies and to support the energy, environmental, and national security missions of the Department. (b) Biological systems The Director sh...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18644&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "42 U.S.C. 18645(b)",
+            "bill_context": "Funds appropriated for the fusion materials research and development program authorized in section 307(b) of the Department of Energy Research and Innovation Act.",
+            "relevance": "amend",
+            "resolved_to": "42 U.S.C. 18645",
+            "usc_data": {
+              "title": "42",
+              "section": "18645",
+              "heading": "Fusion energy",
+              "text_excerpt": "\u00a7 18645. Fusion energy (a) Program As part of the activities authorized under section 7139 of this title and section 16312 of this title , the Director shall carry out a fusion energy sciences research and enabling technology development program to effectively address the scientific and engineering challenges to building a cost competitive fusion power plant and to support the development of a competitive fusion power industry in the United States. As part of this program, the Director shall carry out research activities to expand the fundamental understandings of plasma and matter at very hig...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18645&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "42 U.S.C. 18645(d)",
+            "bill_context": "Funds appropriated for the program of research and technology development in inertial fusion for energy applications authorized in section 307(d) of the Department of Energy Research and Innovation Act.",
+            "relevance": "amend",
+            "resolved_to": "42 U.S.C. 18645",
+            "usc_data": {
+              "title": "42",
+              "section": "18645",
+              "heading": "Fusion energy",
+              "text_excerpt": "\u00a7 18645. Fusion energy (a) Program As part of the activities authorized under section 7139 of this title and section 16312 of this title , the Director shall carry out a fusion energy sciences research and enabling technology development program to effectively address the scientific and engineering challenges to building a cost competitive fusion power plant and to support the development of a competitive fusion power industry in the United States. As part of this program, the Director shall carry out research activities to expand the fundamental understandings of plasma and matter at very hig...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18645&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "42 U.S.C. 18645(e)",
+            "bill_context": "Funds appropriated for the alternative and enabling fusion energy concepts program authorized in section 307(e) of the Department of Energy Research and Innovation Act.",
+            "relevance": "amend",
+            "resolved_to": "42 U.S.C. 18645",
+            "usc_data": {
+              "title": "42",
+              "section": "18645",
+              "heading": "Fusion energy",
+              "text_excerpt": "\u00a7 18645. Fusion energy (a) Program As part of the activities authorized under section 7139 of this title and section 16312 of this title , the Director shall carry out a fusion energy sciences research and enabling technology development program to effectively address the scientific and engineering challenges to building a cost competitive fusion power plant and to support the development of a competitive fusion power industry in the United States. As part of this program, the Director shall carry out research activities to expand the fundamental understandings of plasma and matter at very hig...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18645&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "42 U.S.C. 18645(i)",
+            "bill_context": "Funds appropriated for the milestone-based fusion energy development program authorized in section 307(i) of the Department of Energy Research and Innovation Act.",
+            "relevance": "amend",
+            "resolved_to": "42 U.S.C. 18645",
+            "usc_data": {
+              "title": "42",
+              "section": "18645",
+              "heading": "Fusion energy",
+              "text_excerpt": "\u00a7 18645. Fusion energy (a) Program As part of the activities authorized under section 7139 of this title and section 16312 of this title , the Director shall carry out a fusion energy sciences research and enabling technology development program to effectively address the scientific and engineering challenges to building a cost competitive fusion power plant and to support the development of a competitive fusion power industry in the United States. As part of this program, the Director shall carry out research activities to expand the fundamental understandings of plasma and matter at very hig...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18645&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "42 U.S.C. 18645(j)",
+            "bill_context": "Funds appropriated for the fusion reactor system design activities authorized in section 307(j) of the Department of Energy Research and Innovation Act.",
+            "relevance": "amend",
+            "resolved_to": "42 U.S.C. 18645",
+            "usc_data": {
+              "title": "42",
+              "section": "18645",
+              "heading": "Fusion energy",
+              "text_excerpt": "\u00a7 18645. Fusion energy (a) Program As part of the activities authorized under section 7139 of this title and section 16312 of this title , the Director shall carry out a fusion energy sciences research and enabling technology development program to effectively address the scientific and engineering challenges to building a cost competitive fusion power plant and to support the development of a competitive fusion power industry in the United States. As part of this program, the Director shall carry out research activities to expand the fundamental understandings of plasma and matter at very hig...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18645&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "42 U.S.C. 16274(a)",
+            "bill_context": "Funds appropriated for the research reactor infrastructure program as authorized in section 954(a) of the Energy Policy Act of 2005.",
+            "relevance": "amend",
+            "resolved_to": "42 U.S.C. 16274",
+            "usc_data": {
+              "title": "42",
+              "section": "16274",
+              "heading": "Nuclear science and engineering support",
+              "text_excerpt": "\u00a7 16274. Nuclear science and engineering support (a) University nuclear science and engineering support (1) In general The Secretary shall conduct a program to invest in human resources and infrastructure in the nuclear sciences and related fields, including health physics, nuclear engineering, and radiochemistry, consistent with missions of the Department related to civilian nuclear research, development, demonstration, and commercial application. (2) Requirements In carrying out the program under this subsection, the Secretary shall\u2014 (A) conduct a graduate and undergraduate fellowship progra...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section16274&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "42 U.S.C. 16237",
+            "bill_context": "Funds appropriated for demonstration of advanced wind energy technologies as authorized in section 3003 of the Energy Act of 2020.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "16237",
+              "heading": "Wind energy research and development",
+              "text_excerpt": "\u00a7 16237. Wind energy research and development (a) Definitions In this section: (1) Critical material The term \u201ccritical material\u201d has the meaning given the term in section 1606 of title 30 . (2) Economically distressed area The term \u201ceconomically distressed area\u201d means an area described in section 3161(a) of this title . (3) Eligible entity The term \u201celigible entity\u201d means\u2014 (A) an institution of higher education, including a minority-serving institution; (B) a National Laboratory; (C) a Federal research agency; (D) a State research agency; (E) a research agency associated with a territory or f...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section16237&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 U.S.C. 16238",
+            "bill_context": "Funds appropriated for demonstration of advanced solar energy technologies as authorized in section 3004 of the Energy Act of 2020.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "16238",
+              "heading": "Solar energy research and development",
+              "text_excerpt": "\u00a7 16238. Solar energy research and development (a) Definitions In this section: (1) Critical material The term \u201ccritical material\u201d has the meaning given the term in section 1606 of title 30 . (2) Economically distressed area The term \u201ceconomically distressed area\u201d means an area described in section 3161(a) of this title . (3) Eligible entity The term \u201celigible entity\u201d means\u2014 (A) an institution of higher education, including a minority-serving institution; (B) a National Laboratory; (C) a Federal research agency; (D) a State research agency; (E) a research agency associated with a territory or ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section16238&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 U.S.C. 17194",
+            "bill_context": "Funds appropriated for demonstration of advanced geothermal technologies as authorized in section 615 of the Energy Independence and Security Act of 2007.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "17194",
+              "heading": "Enhanced geothermal systems research and development",
+              "text_excerpt": "\u00a7 17194. Enhanced geothermal systems research and development (a) In general The Secretary shall support a program of research, development, demonstration, and commercial application for enhanced geothermal systems, including the programs described in subsection (b). (b) Enhanced geothermal systems technologies In collaboration with industry partners, institutions of higher education, and the national laboratories, the Secretary shall support a program of research, development, demonstration, and commercial application of the technologies to achieve higher efficiency and lower cost enhanced ge...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section17194&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 U.S.C. 17213",
+            "bill_context": "Funds appropriated for demonstration of advanced water power technologies as authorized in sections 634 and 635 of the Energy Independence and Security Act of 2007.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "17213",
+              "heading": "Hydropower research, development, and demonstration",
+              "text_excerpt": "\u00a7 17213. Hydropower research, development, and demonstration The Secretary shall conduct a program of research, development, demonstration, and commercial application for technologies that improve the capacity, efficiency, resilience, security, reliability, affordability, and environmental impact, including potential cumulative environmental impacts, of hydropower systems. In carrying out such program, the Secretary shall prioritize activities designed to\u2014 (1) develop technology for\u2014 (A) non-powered dams, including aging and potentially hazardous dams; (B) pumped storage; (C) constructed water...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section17213&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 U.S.C. 1862g",
+            "bill_context": "Funds appropriated for research-enabling equipment, facilities, and infrastructure projects located in a State or territory eligible for funding from the Established Program to Stimulate Competitive Research.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "1862g",
+              "heading": "Established Program to Stimulate Competitive Research",
+              "text_excerpt": "\u00a7 1862g. Established Program to Stimulate Competitive Research (a) The Director shall operate a program to stimulate competitive research (known as the \u201cEstablished Program to Stimulate Competitive Research\u201d), the purpose of which is to assist those States that\u2014 (1) historically have received relatively little Federal research and development funding; and (2) have demonstrated a commitment to develop their research bases and improve science and engineering research and education programs at their universities and colleges. (b) A State which has received an initial award under such Program, whe...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1862g&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 U.S.C. 1862n-4",
+            "bill_context": "Funds appropriated for research-enabling equipment, facilities, and infrastructure projects approved by the National Science Foundation Authorization Act of 2002.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true,
+        "_pipeline_notes": [
+          "deduped 115 -> 15 citations (truncation-recovery artifacts)"
+        ]
+      },
+      "elapsed_s": 476.14,
+      "prompt_tokens": 194939,
+      "completion_tokens": 8000,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 1770.66,
+        "lmdb_stats": {
+          "hits": 14,
+          "misses": 9,
+          "calls": 23,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch03",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 191.47,
+      "prompt_tokens": 195552,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch03",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 190.22,
+      "prompt_tokens": 194961,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch03",
+        "title_marker": "TITLE IX\u2014COMMITTEE ON",
+        "headlines": [
+          {
+            "headline": "Fusion Energy Gets $2B Boost",
+            "angle": "fiscal",
+            "hook": "A massive $2 billion allocation targets fusion energy research, with specific funding streams for plasma physics and reactor design under 42 U.S.C. 18645.",
+            "target_audience": "Policy wonks, energy investors, science journalists",
+            "evidence_provisions": [
+              "42 U.S.C. 18645",
+              "42 U.S.C. 18645(b)",
+              "42 U.S.C. 18645(i)"
+            ]
+          },
+          {
+            "headline": "NASA\u2019s $4B Infrastructure Overhaul",
+            "angle": "controversy",
+            "hook": "NASA\u2019s $4 billion modernization package sparks debate over whether taxpayer funds are better spent on space or Earth-based crises.",
+            "target_audience": "Federal budget skeptics, space policy critics",
+            "evidence_provisions": [
+              "42 U.S.C. 18644(c)",
+              "42 U.S.C. 18645(e)"
+            ]
+          },
+          {
+            "headline": "Firefighters Get PFAS-Free Gear",
+            "angle": "human-impact",
+            "hook": "For the first time, $80 million is dedicated to PFAS-free firefighting gear\u2014protecting brave first responders from toxic exposure.",
+            "target_audience": "Public safety advocates, firefighters, health-conscious listeners",
+            "evidence_provisions": [
+              "42 U.S.C. 18645(j)",
+              "42 U.S.C. 16274(a)"
+            ]
+          },
+          {
+            "headline": "Small Biz Wins Big in Rural Grants",
+            "angle": "political",
+            "hook": "With one-third of $5 billion in regional innovation funds going to underserved communities, this bill reshapes economic equity in science policy.",
+            "target_audience": "Progressive lawmakers, community organizers, rural entrepreneurs",
+            "evidence_provisions": [
+              "42 U.S.C. 16275",
+              "42 U.S.C. 1862g"
+            ]
+          },
+          {
+            "headline": "NIST Gets $2B for Chip War Prep",
+            "angle": "drama",
+            "hook": "In a high-stakes race for semiconductor dominance, NIST gets a $2 billion war chest to outpace global rivals.",
+            "target_audience": "Tech strategists, national security analysts, defense watchers",
+            "evidence_provisions": [
+              "42 U.S.C. 18645(d)",
+              "42 U.S.C. 16238"
+            ]
+          },
+          {
+            "headline": "Climate Science Gets $264M Boost",
+            "angle": "hidden-provision",
+            "hook": "A quiet but powerful $264 million for EPA climate research includes social science and environmental justice\u2014rare funding for community resilience.",
+            "target_audience": "Environmental justice advocates, climate researchers, grassroots organizers",
+            "evidence_provisions": [
+              "42 U.S.C. 16237",
+              "42 U.S.C. 17194"
+            ]
+          },
+          {
+            "headline": "Quantum Computing Gets $2B",
+            "angle": "regulatory",
+            "hook": "The Department of Energy\u2019s quantum computing push is codified under 42 U.S.C. 16274(a), setting new standards for national tech infrastructure.",
+            "target_audience": "Regulatory compliance teams, tech policy experts, AI developers",
+            "evidence_provisions": [
+              "42 U.S.C. 16274(a)",
+              "42 U.S.C. 18645"
+            ]
+          },
+          {
+            "headline": "ITER Project Gets $1.1B Boost",
+            "angle": "geopolitical",
+            "hook": "The U.S. ramps up its contribution to the global ITER fusion project\u2014part of a larger strategy to lead in clean energy geopolitics.",
+            "target_audience": "Global energy analysts, foreign policy experts, nuclear diplomats",
+            "evidence_provisions": [
+              "42 U.S.C. 16312(c)",
+              "42 U.S.C. 18645"
+            ]
+          },
+          {
+            "headline": "Research Reactor Upgrades Funded",
+            "angle": "watchdog",
+            "hook": "The $500 million for research reactor infrastructure ensures safety and competitiveness\u2014critical for future nuclear innovation.",
+            "target_audience": "Nuclear safety watchdogs, federal oversight groups, academic researchers",
+            "evidence_provisions": [
+              "42 U.S.C. 16274(a)",
+              "42 U.S.C. 16275"
+            ]
+          },
+          {
+            "headline": "Wind, Solar, Geothermal Projects Funded",
+            "angle": "scoop",
+            "hook": "A new wave of clean energy tech funding targets advanced wind, solar, and geothermal systems\u2014backed by 42 U.S.C. 17213 and 16238.",
+            "target_audience": "Renewables developers, clean tech investors, climate innovators",
+            "evidence_provisions": [
+              "42 U.S.C. 16237",
+              "42 U.S.C. 16238",
+              "42 U.S.C. 17194"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 12.59,
+      "prompt_tokens": 5553,
+      "completion_tokens": 1272,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch03",
+        "title_marker": "TITLE IX\u2014COMMITTEE ON",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "Climate Science Gets $264M Boost",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 10,
+            "specificity_score": 9,
+            "appeal_score": 9,
+            "composite_score": 28,
+            "rationale": "This headline uncovers a rarely highlighted provision: $264 million for EPA climate research with explicit inclusion of social science and environmental justice components. The funding's focus on community resilience is both novel and underreported, offering a fresh angle beyond typical clean energy headlines. The specific citation of 42 U.S.C. 16237 and 17194 adds concrete credibility."
+          },
+          {
+            "rank": 2,
+            "headline": "Fusion Energy Gets $2B Boost",
+            "angle": "fiscal",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 26,
+            "rationale": "The $2 billion allocation for fusion energy is substantial and tied to specific statutory language (42 U.S.C. 18645, 18645(b), 18645(i)), revealing targeted funding for plasma physics and reactor design. This level of detail elevates it beyond generic science funding, offering a clear fiscal and technical roadmap that policy and science audiences will find valuable."
+          },
+          {
+            "rank": 3,
+            "headline": "Firefighters Get PFAS-Free Gear",
+            "angle": "human-impact",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 9,
+            "composite_score": 26,
+            "rationale": "The $80 million for PFAS-free firefighting gear addresses a critical health risk for first responders, a group often overlooked in science policy. The specific mention of 42 U.S.C. 18645(j) and 16274(a) grounds the story in real regulatory change, making it both emotionally resonant and factually precise."
+          },
+          {
+            "rank": 4,
+            "headline": "NIST Gets $2B for Chip War Prep",
+            "angle": "drama",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 24,
+            "rationale": "Positioning NIST\u2019s $2 billion as a 'war chest' in the global semiconductor race adds narrative tension. The linkage to 42 U.S.C. 18645(d) and 16238 provides regulatory specificity, while the geopolitical stakes make it compelling for national security and tech policy listeners."
+          },
+          {
+            "rank": 5,
+            "headline": "ITER Project Gets $1.1B Boost",
+            "angle": "geopolitical",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 23,
+            "rationale": "The $1.1 billion increase to the ITER project reveals a strategic U.S. commitment to global clean energy leadership. With citations to 42 U.S.C. 16312(c) and 18645, it offers a concrete example of international scientific collaboration with national security and energy policy implications."
+          },
+          {
+            "rank": 6,
+            "headline": "Small Biz Wins Big in Rural Grants",
+            "angle": "political",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "The fact that one-third of $5 billion in regional innovation funds go to underserved communities introduces a significant equity angle. Specific references to 42 U.S.C. 16275 and 1862g make it more than a political talking point\u2014it\u2019s a measurable policy shift with real economic impact."
+          },
+          {
+            "rank": 7,
+            "headline": "Quantum Computing Gets $2B",
+            "angle": "regulatory",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 21,
+            "rationale": "The codification of quantum computing funding under 42 U.S.C. 16274(a) and 18645 signals a formalized national infrastructure strategy. While the angle is regulatory, the specificity and scale make it relevant for tech policy experts, though it lacks the broader human or geopolitical drama of higher-ranked entries."
+          },
+          {
+            "rank": 8,
+            "headline": "Research Reactor Upgrades Funded",
+            "angle": "watchdog",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 20,
+            "rationale": "The $500 million for reactor upgrades is important for safety and innovation, with clear citations to 42 U.S.C. 16274(a) and 16275. However, the audience is narrow (nuclear watchdogs, researchers), and the angle lacks broader public resonance despite its technical significance."
+          },
+          {
+            "rank": 9,
+            "headline": "Wind, Solar, Geothermal Projects Funded",
+            "angle": "scoop",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 6,
+            "composite_score": 19,
+            "rationale": "While the funding for clean energy tech is notable, the headline lacks a unique angle\u2014this is a familiar category. The citations to 42 U.S.C. 16237, 16238, and 17194 add specificity, but the story feels like a standard renewables update rather than a revelation."
+          },
+          {
+            "rank": 10,
+            "headline": "NASA\u2019s $4B Infrastructure Overhaul",
+            "angle": "controversy",
+            "newsworthiness_score": 5,
+            "specificity_score": 6,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "The headline frames NASA\u2019s $4 billion as controversial, but the hook lacks depth\u2014no specific conflict, stakeholder opposition, or hidden provision. The citations to 42 U.S.C. 18644(c) and 18645(e) are present but not tied to a surprising or underreported element, making it the weakest in terms of newsworthiness and originality."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "Climate Science Gets $264M Boost",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 10,
+          "specificity_score": 9,
+          "appeal_score": 9,
+          "composite_score": 28,
+          "rationale": "This headline uncovers a rarely highlighted provision: $264 million for EPA climate research with explicit inclusion of social science and environmental justice components. The funding's focus on community resilience is both novel and underreported, offering a fresh angle beyond typical clean energy headlines. The specific citation of 42 U.S.C. 16237 and 17194 adds concrete credibility."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it reveals a hidden, underreported provision that connects climate science funding to environmental justice and community resilience\u2014issues that resonate deeply with progressive and grassroots audiences. The specificity of the statutory citations and the precise dollar amount elevate it beyond generic headlines, while the human impact angle ensures broad listener appeal. It scores highest on newsworthiness by exposing a policy nuance most listeners wouldn\u2019t know, making it the most compelling entry in the list."
+      },
+      "elapsed_s": 15.54,
+      "prompt_tokens": 1828,
+      "completion_tokens": 1798,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 202.26,
+    "usc_cross_ref": 476.14,
+    "pork_finder": 191.47,
+    "conflict_spotter": 190.22,
+    "podcast_headlines": 12.59,
+    "headline_ranker": 15.54
+  },
+  "totals": {
+    "wall_clock_s": 1090.18,
+    "prompt_tokens_total": 787628,
+    "completion_tokens_total": 11512
+  }
+}

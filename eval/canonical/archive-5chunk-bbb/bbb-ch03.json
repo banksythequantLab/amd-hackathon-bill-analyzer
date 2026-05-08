@@ -1,0 +1,678 @@
+{
+  "bill_short": "bbb",
+  "bill_label": "Build Back Better Act 2021 (HR 5376)",
+  "bill_note": "House version, 5 chunks, ~2,468 pages",
+  "chunk_id": "ch03",
+  "title_marker": "Subtitle C\u2014Encouraging Small",
+  "tokens": 218139,
+  "pages": [
+    1114,
+    1696
+  ],
+  "n_chunks": 5,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch03",
+        "title_marker": "Subtitle C\u2014Encouraging Small",
+        "one_sentence_summary": "This section establishes programs to support small businesses through grants, funding for innovation ecosystems, and expanded access to capital and investment.",
+        "bullets": [
+          "Creates a $400 million Growth Accelerator Competition to fund eligible entities that help new small businesses access capital, mentors, and business advice.",
+          "Establishes a $525 million National Innovation Support Ecosystem Network to fund projects that support training, mentorship, and business incubation for innovative startups.",
+          "Authorizes $9.5 billion for a new Venture Small Business Investment Company (SBIC) Facility to increase equity investment in underserved communities, infrastructure, and small businesses owned by veterans, individuals with disabilities, and members of underrepresented communities.",
+          "Creates a $20 million Emerging Managers Program to help new managers start small business investment companies with increased leverage and reduced regulatory barriers.",
+          "Establishes a $40 million Microcap SBIC License program to allow applicants with less investment experience to obtain licenses, with a focus on underserved communities and minority-serving institutions.",
+          "Provides $2.5 million for outreach and education to help potential applicants understand the SBIC licensing process.",
+          "Creates a $2 million SBIC Working Group to develop recommendations for increasing the number of SBICs in underfinanced and underlicensed states and improving access to capital for minority- and women-owned businesses."
+        ],
+        "affected_groups": [
+          "new small business concerns",
+          "growth accelerators",
+          "business incubators",
+          "underserved communities",
+          "veterans",
+          "individuals with disabilities",
+          "members of underrepresented communities"
+        ]
+      },
+      "elapsed_s": 332.3,
+      "prompt_tokens": 252460,
+      "completion_tokens": 368,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch03",
+        "citations": [
+          {
+            "citation": "26 USC 401(k)",
+            "bill_context": "Section 131102(a) adds a new paragraph (16) to section 401(k) to create a deferral-only arrangement.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 401",
+            "usc_data": {
+              "title": "26",
+              "section": "401",
+              "heading": "Qualified pension, profit-sharing, and stock bonus plans",
+              "text_excerpt": "\u00a7 401. Qualified pension, profit-sharing, and stock bonus plans (a) Requirements for qualification A trust created or organized in the United States and forming part of a stock bonus, pension, or profit-sharing plan of an employer for the exclusive benefit of his employees or their beneficiaries shall constitute a qualified trust under this section\u2014 (1) if contributions are made to the trust by such employer, or employees, or both, or by another employer who is entitled to deduct his contributions under section 404(a)(3)(B) (relating to deduction for contributions to profit-sharing and stock b...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section401&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 414",
+            "bill_context": "Section 131101(a)(1) adds a new paragraph (aa) to section 414 to define 'automatic contribution plan or arrangement'.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "414",
+              "heading": "Definitions and special rules",
+              "text_excerpt": "\u00a7 414. Definitions and special rules (a) Service for predecessor employer For purposes of this part\u2014 (1) in any case in which the employer maintains a plan of a predecessor employer, service for such predecessor shall be treated as service for the employer, and (2) in any case in which the employer maintains a plan which is not the plan maintained by a predecessor employer, service for such predecessor shall, to the extent provided in regulations prescribed by the Secretary, be treated as service for the employer. (b) Employees of controlled group of corporations (1) In general For purposes of...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section414&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45E",
+            "bill_context": "Section 131103(c) adds a new subsection (f) to section 45E to terminate the credit for non-automatic contribution plans after 2022.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45E",
+              "heading": "Small employer pension plan startup costs",
+              "text_excerpt": "\u00a7 45E. Small employer pension plan startup costs (a) General rule For purposes of section 38, in the case of an eligible employer, the small employer pension plan startup cost credit determined under this section for any taxable year is an amount equal to 50 percent of the qualified startup costs paid or incurred by the taxpayer during the taxable year. (b) Dollar limitation The amount of the credit determined under this section for any taxable year shall not exceed\u2014 (1) for the first credit year and each of the 2 taxable years immediately following the first credit year, the greater of\u2014 (A) $...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45E&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45U",
+            "bill_context": "Section 131104(a) adds a new section 45U to provide a credit for certain small employer automatic retirement arrangements.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45U",
+              "heading": "Zero-emission nuclear power production credit",
+              "text_excerpt": "\u00a7 45U. Zero-emission nuclear power production credit (a) Amount of credit For purposes of section 38, the zero-emission nuclear power production credit for any taxable year is an amount equal to the amount by which\u2014 (1) the product of\u2014 (A) 0.3 cents, multiplied by (B) the kilowatt hours of electricity\u2014 (i) produced by the taxpayer at a qualified nuclear power facility, and (ii) sold by the taxpayer to an unrelated person during the taxable year, exceeds (2) the reduction amount for such taxable year. (b) Definitions (1) Qualified nuclear power facility For purposes of this section, the term \u201cq...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45U&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6433",
+            "bill_context": "Section 131201(a) adds a new section 6433 to provide matching payments for elective deferral and IRA contributions by certain individuals.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6433",
+              "heading": "Saver\u2019s Match",
+              "text_excerpt": "\u00a7 6433. Saver\u2019s Match (a) In general (1) Allowance of match Any eligible individual who makes qualified retirement savings contributions for the taxable year shall be allowed a matching contribution for such taxable year in an amount equal to the applicable percentage of so much of the qualified retirement savings contributions made by such eligible individual for the taxable year as does not exceed $2,000. (2) Payment of match (A) In general Except as provided in subparagraph (B), the matching contribution under this section shall be allowed as a credit which shall be payable by the Secretary...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6433&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 219",
+            "bill_context": "Section 131202(a) amends section 219(f)(3) to allow tax refunds to be directly deposited into an IRA.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "219",
+              "heading": "Retirement savings",
+              "text_excerpt": "\u00a7 219. Retirement savings (a) Allowance of deduction In the case of an individual, there shall be allowed as a deduction an amount equal to the qualified retirement contributions of the individual for the taxable year. (b) Maximum amount of deduction (1) In general The amount allowable as a deduction under subsection (a) to any individual for any taxable year shall not exceed the lesser of\u2014 (A) the deductible amount, or (B) an amount equal to the compensation includible in the individual\u2019s gross income for such taxable year. (2) Special rule for employer contributions under simplified employee...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section219&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 418A",
+            "bill_context": "Section 132001 adds a new section 418A to establish State Child Care Information Networks.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 418B",
+            "bill_context": "Section 132002 adds a new section 418B to provide infrastructure grants to improve child care safety.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 418C",
+            "bill_context": "Section 132003 adds a new section 418C to provide technical assistance for child care programs.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 418D",
+            "bill_context": "Section 132004 adds a new section 418D to support tribal child care access and growth.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 418E",
+            "bill_context": "Section 132005 adds a new section 418E to establish child care wage grants for small businesses.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "418E",
+              "heading": "Insolvent plans",
+              "text_excerpt": "\u00a7 418E. Insolvent plans (a) Suspension of certain benefit payments Notwithstanding section 411, in any case in which benefit payments under an insolvent multiemployer plan exceed the resource benefit level, any such payments of benefits which are not basic benefits shall be suspended, in accordance with this section, to the extent necessary to reduce the sum of such payments and the payments of such basic benefits to the greater of the resource benefit level or the level of basic benefits, unless an alternative procedure is prescribed by the Pension Benefit Guaranty Corporation under section 4...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section418E&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2202",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2202 on paid family and medical leave eligibility.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2202",
+              "heading": "Repealed. Pub. L. 94\u2013455, title XIX, \u00a7 1902(a)(8) , Oct. 4, 1976 , 90 Stat. 1805 ]",
+              "text_excerpt": "[\u00a7 2202. Repealed. Pub. L. 94\u2013455, title XIX, \u00a7 1902(a)(8) , Oct. 4, 1976 , 90 Stat. 1805 ] Section, acts Aug. 16, 1954, ch. 736 , 68A Stat. 401 ; June 25, 1959 , Pub. L. 86\u201370, \u00a7 22(a) , 73 Stat. 146 ; July 12, 1960 , Pub. L. 86\u2013624, \u00a7 18(b) , 74 Stat. 416 , related to the presumption that missionaries duly commissioned and serving under boards of foreign missions are residents of the State or the District of Columbia wherein they resided at the time of their commission and departure for service. Statutory Notes and Related Subsidiaries Effective Date of Repeal Repeal applicable to estates of...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2202&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2203",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2203 on benefit amount determination.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2203",
+              "heading": "Definition of executor",
+              "text_excerpt": "The term \u201cexecutor\u201d wherever it is used in this title in connection with the estate tax imposed by this chapter means the executor or administrator of the decedent, or, if there is no executor or administrator appointed, qualified, and acting within the United States, then any person in actual or constructive possession of any property of the decedent.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2203&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2204",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2204 on benefit determination and payment.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2204",
+              "heading": "Discharge of fiduciary from personal liability",
+              "text_excerpt": "\u00a7 2204. Discharge of fiduciary from personal liability (a) General rule If the executor makes written application to the Secretary for determination of the amount of the tax and discharge from personal liability therefor, the Secretary (as soon as possible, and in any event within 9 months after the making of such application, or, if the application is made before the return is filed, then within 9 months after the return is filed, but not after the expiration of the period prescribed for the assessment of the tax in section 6501) shall notify the executor of the amount of the tax. The executo...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2204&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2205",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2205 on appeals procedures.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2205",
+              "heading": "Reimbursement out of estate",
+              "text_excerpt": "If the tax or any part thereof is paid by, or collected out of, that part of the estate passing to or in the possession of any person other than the executor in his capacity as such, such person shall be entitled to reimbursement out of any part of the estate still undistributed or by a just and equitable contribution by the persons whose interest in the estate of the decedent would have been reduced if the tax had been paid before the distribution of the estate or whose interest is subject to equal or prior liability for the payment of taxes, debts, or other charges against the estate, it bei...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2205&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2206",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2206 on stewardship and equity promotion.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2206",
+              "heading": "Liability of life insurance beneficiaries",
+              "text_excerpt": "Unless the decedent directs otherwise in his will, if any part of the gross estate on which tax has been paid consists of proceeds of policies of insurance on the life of the decedent receivable by a beneficiary other than the executor, the executor shall be entitled to recover from such beneficiary such portion of the total tax paid as the proceeds of such policies bear to the taxable estate. If there is more than one such beneficiary, the executor shall be entitled to recover from such beneficiaries in the same ratio. In the case of such proceeds receivable by the surviving spouse of the dec...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2206&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2207",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2207 on funding for benefit payments and program administration.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2207",
+              "heading": "Liability of recipient of property over which decedent had power of appointment",
+              "text_excerpt": "Unless the decedent directs otherwise in his will, if any part of the gross estate on which the tax has been paid consists of the value of property included in the gross estate under section 2041, the executor shall be entitled to recover from the person receiving such property by reason of the exercise, nonexercise, or release of a power of appointment such portion of the total tax paid as the value of such property bears to the taxable estate. If there is more than one such person, the executor shall be entitled to recover from such persons in the same ratio. In the case of such property rec...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2207&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2208",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2208 on funding for outreach, public education, and research.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2208",
+              "heading": "Certain residents of possessions considered citizens of the United States",
+              "text_excerpt": "A decedent who was a citizen of the United States and a resident of a possession thereof at the time of his death shall, for purposes of the tax imposed by this chapter, be considered a \u201ccitizen\u201d of the United States within the meaning of that term wherever used in this title unless he acquired his United States citizenship solely by reason of (1) his being a citizen of such possession of the United States, or (2) his birth or residence within such possession of the United States.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2208&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2209",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2209 on funding for state administration of legacy programs.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2209",
+              "heading": "Certain residents of possessions considered nonresidents not citizens of the United States",
+              "text_excerpt": "A decedent who was a citizen of the United States and a resident of a possession thereof at the time of his death shall, for purposes of the tax imposed by this chapter, be considered a \u201cnonresident not a citizen of the United States\u201d within the meaning of that term wherever used in this title, but only if such person acquired his United States citizenship solely by reason of (1) his being a citizen of such possession of the United States, or (2) his birth or residence within such possession of the United States.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2209&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2210",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2210 on reimbursement for employer-sponsored paid leave benefits.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2210",
+              "heading": "Repealed. Pub. L. 111\u2013312, title III, \u00a7 301(a) , Dec. 17, 2010 , 124 Stat. 3300 ]",
+              "text_excerpt": "[\u00a7 2210. Repealed. Pub. L. 111\u2013312, title III, \u00a7 301(a) , Dec. 17, 2010 , 124 Stat. 3300 ] Section, added Pub. L. 107\u201316, title V, \u00a7 501(a) , June 7, 2001 , 115 Stat. 69 , related to termination of applicability of chapter to estates of decedents dying after Dec. 31, 2009 . A prior section 2210, added Pub. L. 98\u2013369, div. A, title V, \u00a7 544(a) , July 18, 1984 , 98 Stat. 892 ; amended Pub. L. 99\u2013514, title XVIII , \u00a7\u00a7 1854(d)(1)(A), (2)\u2013(6), 1899A(37), Oct. 22, 1986 , 100 Stat. 2879 , 2880, 2960, related to liability for payment in case of transfer of employer securities to an employee stock owne...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2210&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2211",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2211 on funding for small business assistance.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 2212",
+            "bill_context": "Section 130001 adds a new title XXII to the Social Security Act, including section 2212 on definitions for the paid leave program.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 453(j)",
+            "bill_context": "Section 130002(a) amends section 453(j) of the Social Security Act to allow the National Directory of New Hires to provide wage information for paid leave administration.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 453",
+            "usc_data": {
+              "title": "26",
+              "section": "453",
+              "heading": "Installment method",
+              "text_excerpt": "\u00a7 453. Installment method (a) General rule Except as otherwise provided in this section, income from an installment sale shall be taken into account for purposes of this title under the installment method. (b) Installment sale defined For purposes of this section\u2014 (1) In general The term \u201cinstallment sale\u201d means a disposition of property where at least 1 payment is to be received after the close of the taxable year in which the disposition occurs. (2) Exceptions The term \u201cinstallment sale\u201d does not include\u2014 (A) Dealer dispositions Any dealer disposition (as defined in subsection ( l )). (B) In...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section453&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 4980J",
+            "bill_context": "Section 131101(b)(1) adds a new section 4980J to impose an excise tax for failure to maintain or facilitate automatic contribution plans.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 414(v)",
+            "bill_context": "Section 131102(b)(1) amends section 414(v)(2)(B)(i) to include the new deferral-only arrangement in catch-up contribution rules.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 414",
+            "usc_data": {
+              "title": "26",
+              "section": "414",
+              "heading": "Definitions and special rules",
+              "text_excerpt": "\u00a7 414. Definitions and special rules (a) Service for predecessor employer For purposes of this part\u2014 (1) in any case in which the employer maintains a plan of a predecessor employer, service for such predecessor shall be treated as service for the employer, and (2) in any case in which the employer maintains a plan which is not the plan maintained by a predecessor employer, service for such predecessor shall, to the extent provided in regulations prescribed by the Secretary, be treated as service for the employer. (b) Employees of controlled group of corporations (1) In general For purposes of...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section414&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 416(g)",
+            "bill_context": "Section 131103(c) adds a new subsection (f) to section 416(g) to terminate the credit for non-automatic contribution plans after 2022.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 416",
+            "usc_data": {
+              "title": "26",
+              "section": "416",
+              "heading": "Special rules for top-heavy plans",
+              "text_excerpt": "\u00a7 416. Special rules for top-heavy plans (a) General rule A trust shall not constitute a qualified trust under section 401(a) for any plan year if the plan of which it is a part is a top-heavy plan for such plan year unless such plan meets\u2014 (1) the vesting requirements of subsection (b), and (2) the minimum benefit requirements of subsection (c). (b) Vesting requirements (1) In general A plan satisfies the requirements of this subsection if it satisfies the requirements of either of the following subparagraphs: (A) 3-year vesting A plan satisfies the requirements of this subparagraph if an emp...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section416&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 38",
+            "bill_context": "Section 131104(b) adds section 45U to the list of credits allowed under section 38.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "38",
+              "heading": "General business credit",
+              "text_excerpt": "\u00a7 38. General business credit (a) Allowance of credit There shall be allowed as a credit against the tax imposed by this chapter for the taxable year an amount equal to the sum of\u2014 (1) the business credit carryforwards carried to such taxable year, (2) the amount of the current year business credit, plus (3) the business credit carrybacks carried to such taxable year. (b) Current year business credit For purposes of this subpart, the amount of the current year business credit is the sum of the following credits determined for the taxable year: (1) the investment credit determined under section...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section38&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true,
+        "_pipeline_notes": [
+          "deduped 120 -> 27 citations (truncation-recovery artifacts)"
+        ]
+      },
+      "elapsed_s": 666.1,
+      "prompt_tokens": 252604,
+      "completion_tokens": 8000,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 2351.61,
+        "lmdb_stats": {
+          "hits": 20,
+          "misses": 11,
+          "calls": 31,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch03",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 318.6,
+      "prompt_tokens": 253217,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch03",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 316.21,
+      "prompt_tokens": 252626,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch03",
+        "title_marker": "Subtitle C\u2014Encouraging Small",
+        "headlines": [
+          {
+            "headline": "SBICs Get $9.5B for Underserved Communities",
+            "angle": "fiscal",
+            "hook": "A massive $9.5 billion infusion into small business investment companies is designed to reshape capital access for marginalized entrepreneurs.",
+            "target_audience": "Economic policy analysts, venture capital investors, community development advocates",
+            "evidence_provisions": [
+              "Section 131102(a) adds a new paragraph (16) to section 401(k)",
+              "Authorizes $9.5 billion for a new Venture Small Business Investment Company (SBIC) Facility"
+            ]
+          },
+          {
+            "headline": "New SBIC License for First-Time Managers",
+            "angle": "controversy",
+            "hook": "A new program lets inexperienced managers launch SBICs with reduced barriers\u2014raising questions about oversight and risk in federal funding.",
+            "target_audience": "Regulatory watchdogs, financial compliance experts, small business regulators",
+            "evidence_provisions": [
+              "Creates a $20 million Emerging Managers Program",
+              "Establishes a $40 million Microcap SBIC License program"
+            ]
+          },
+          {
+            "headline": "Veterans, Disabled Entrepreneurs Get Priority Access",
+            "angle": "human-impact",
+            "hook": "For the first time, veterans and people with disabilities are explicitly prioritized in federal small business funding programs.",
+            "target_audience": "Veteran service organizations, disability advocacy groups, minority entrepreneurs",
+            "evidence_provisions": [
+              "Authorizes $9.5 billion for a new Venture Small Business Investment Company (SBIC) Facility",
+              "Focus on small businesses owned by veterans, individuals with disabilities, and members of underrepresented communities"
+            ]
+          },
+          {
+            "headline": "SBICs in Rural States Get Special Boost",
+            "angle": "political",
+            "hook": "A new working group aims to fix the geographic imbalance in small business capital\u2014targeting underlicensed states with no SBICs.",
+            "target_audience": "Rural policymakers, state legislators, regional economic development officers",
+            "evidence_provisions": [
+              "Creates a $2 million SBIC Working Group",
+              "To develop recommendations for increasing the number of SBICs in underfinanced and underlicensed states"
+            ]
+          },
+          {
+            "headline": "Hidden $40M Program for Minority-Serving Institutions",
+            "angle": "hidden-provision",
+            "hook": "A little-known $40 million program quietly opens SBIC licensing to minority-serving institutions with minimal experience.",
+            "target_audience": "Grant writers, minority business leaders, higher education administrators",
+            "evidence_provisions": [
+              "Establishes a $40 million Microcap SBIC License program",
+              "With a focus on underserved communities and minority-serving institutions"
+            ]
+          },
+          {
+            "headline": "New Tax Credit for Automatic Retirement Plans",
+            "angle": "regulatory",
+            "hook": "A new tax credit is being created to incentivize small employers to adopt automatic retirement contributions\u2014changing the rules for workplace savings.",
+            "target_audience": "HR professionals, small business owners, retirement plan providers",
+            "evidence_provisions": [
+              "Section 131104(a) adds a new section 45U",
+              "To provide a credit for certain small employer automatic retirement arrangements"
+            ]
+          },
+          {
+            "headline": "SBICs Can Now Fund Rural Innovation Hubs",
+            "angle": "geopolitical",
+            "hook": "Federal funds are being funneled into rural innovation ecosystems, potentially reshaping economic power beyond urban centers.",
+            "target_audience": "Rural development strategists, regional planners, innovation economists",
+            "evidence_provisions": [
+              "Establishes a $525 million National Innovation Support Ecosystem Network",
+              "To fund projects that support training, mentorship, and business incubation for innovative startups"
+            ]
+          },
+          {
+            "headline": "New $400M Competition for Startup Accelerators",
+            "angle": "drama",
+            "hook": "A high-stakes $400 million race is underway\u2014entities across the country are scrambling to win grants for helping new small businesses.",
+            "target_audience": "Startup accelerators, incubator directors, nonprofit leaders",
+            "evidence_provisions": [
+              "Creates a $400 million Growth Accelerator Competition",
+              "To fund eligible entities that help new small businesses access capital, mentors, and business advice"
+            ]
+          },
+          {
+            "headline": "Tax Refunds Can Now Go Directly to IRAs",
+            "angle": "watchdog",
+            "hook": "A new rule allows tax refunds to be deposited directly into IRAs\u2014raising concerns about unintended consequences for low-income savers.",
+            "target_audience": "Consumer finance advocates, IRS oversight groups, tax equity researchers",
+            "evidence_provisions": [
+              "Section 131202(a) amends section 219(f)(3)",
+              "To allow tax refunds to be directly deposited into an IRA"
+            ]
+          },
+          {
+            "headline": "SBIC Licensing Rules Are Being Overhauled",
+            "angle": "scoop",
+            "hook": "Behind closed doors, a new working group is crafting sweeping changes to SBIC licensing\u2014set to unlock access for thousands of new players.",
+            "target_audience": "Financial regulators, policy insiders, emerging fund managers",
+            "evidence_provisions": [
+              "Creates a $2 million SBIC Working Group",
+              "To develop recommendations for increasing the number of SBICs in underfinanced and underlicensed states"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 13.04,
+      "prompt_tokens": 8149,
+      "completion_tokens": 1270,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch03",
+        "title_marker": "Subtitle C\u2014Encouraging Small",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "Hidden $40M Program for Minority-Serving Institutions",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 10,
+            "specificity_score": 10,
+            "appeal_score": 9,
+            "composite_score": 29,
+            "rationale": "This headline uncovers a little-known $40 million program that quietly expands SBIC licensing to minority-serving institutions with minimal experience\u2014a significant policy shift with equity implications. The specificity of the dollar amount and the targeted group makes it highly newsworthy, while the 'hidden' angle creates strong listener curiosity."
+          },
+          {
+            "rank": 2,
+            "headline": "SBICs Get $9.5B for Underserved Communities",
+            "angle": "fiscal",
+            "newsworthiness_score": 9,
+            "specificity_score": 10,
+            "appeal_score": 8,
+            "composite_score": 27,
+            "rationale": "The $9.5 billion figure is a major fiscal signal, and the explicit focus on underserved communities reveals a strategic shift in federal capital allocation. The specificity of the amount and the targeted provision (Section 131102(a)) elevate its newsworthiness, while the broad economic impact ensures strong appeal."
+          },
+          {
+            "rank": 3,
+            "headline": "New SBIC License for First-Time Managers",
+            "angle": "controversy",
+            "newsworthiness_score": 9,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The creation of a $20 million program for inexperienced SBIC managers introduces a clear regulatory risk and oversight dilemma. The controversy angle, combined with concrete funding and program details, makes this a compelling hook for financial compliance and policy watchdogs."
+          },
+          {
+            "rank": 4,
+            "headline": "Veterans, Disabled Entrepreneurs Get Priority Access",
+            "angle": "human-impact",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "For the first time, veterans and people with disabilities are explicitly prioritized in federal small business funding\u2014a landmark policy shift. The human stakes are high, and the specificity of the targeted groups and funding source (SBIC Facility) gives it strong credibility and emotional resonance."
+          },
+          {
+            "rank": 5,
+            "headline": "SBICs Can Now Fund Rural Innovation Hubs",
+            "angle": "geopolitical",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 7,
+            "composite_score": 24,
+            "rationale": "The $525 million National Innovation Support Ecosystem Network is a concrete, large-scale investment in rural innovation, signaling a strategic pivot away from urban-centric economic development. The geopolitical implications of reshaping economic power are significant, though the appeal is slightly more niche."
+          },
+          {
+            "rank": 6,
+            "headline": "New $400M Competition for Startup Accelerators",
+            "angle": "drama",
+            "newsworthiness_score": 7,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 24,
+            "rationale": "The high-stakes $400 million competition creates immediate drama and urgency. The specificity of the amount and the competitive mechanism make it compelling, and the appeal to startup communities is strong, though the angle is more procedural than transformative."
+          },
+          {
+            "rank": 7,
+            "headline": "SBICs in Rural States Get Special Boost",
+            "angle": "political",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "The $2 million SBIC Working Group is a targeted effort to address geographic inequity in capital access. While the political angle is relevant, the modest funding and procedural nature of the working group limit its newsworthiness compared to larger, more direct programs."
+          },
+          {
+            "rank": 8,
+            "headline": "SBIC Licensing Rules Are Being Overhauled",
+            "angle": "scoop",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 20,
+            "rationale": "The headline suggests a behind-the-scenes overhaul, which has scoop potential, but the evidence provision is identical to another entry, reducing its uniqueness. The lack of a specific dollar amount or new rule weakens its specificity and newsworthiness."
+          },
+          {
+            "rank": 9,
+            "headline": "New Tax Credit for Automatic Retirement Plans",
+            "angle": "regulatory",
+            "newsworthiness_score": 5,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 18,
+            "rationale": "While the creation of a new tax credit under Section 45U is specific, the regulatory nature of the change limits its broader appeal. The impact is narrow, affecting only small employers and retirement plan providers, making it less engaging for general political listeners."
+          },
+          {
+            "rank": 10,
+            "headline": "Tax Refunds Can Now Go Directly to IRAs",
+            "angle": "watchdog",
+            "newsworthiness_score": 4,
+            "specificity_score": 7,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "The change to allow direct IRA deposits from tax refunds is specific and has potential equity implications, but the concern about unintended consequences for low-income savers is speculative without evidence. The angle lacks depth and the headline feels more like a procedural update than a major policy shift."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "Hidden $40M Program for Minority-Serving Institutions",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 10,
+          "specificity_score": 10,
+          "appeal_score": 9,
+          "composite_score": 29,
+          "rationale": "This headline uncovers a little-known $40 million program that quietly expands SBIC licensing to minority-serving institutions with minimal experience\u2014a significant policy shift with equity implications. The specificity of the dollar amount and the targeted group makes it highly newsworthy, while the 'hidden' angle creates strong listener curiosity."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it reveals a concealed, high-impact provision with clear equity implications\u2014$40 million in federal funding being funneled to underrepresented institutions with minimal experience. The 'hidden' angle creates intrigue, the specificity of the amount and target group is unmatched, and the newsworthiness is maximal, as this represents a structural shift in access to capital that most listeners would not know about."
+      },
+      "elapsed_s": 13.68,
+      "prompt_tokens": 1816,
+      "completion_tokens": 1590,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 332.3,
+    "usc_cross_ref": 666.1,
+    "pork_finder": 318.6,
+    "conflict_spotter": 316.21,
+    "podcast_headlines": 13.04,
+    "headline_ranker": 13.68
+  },
+  "totals": {
+    "wall_clock_s": 1662.44,
+    "prompt_tokens_total": 1020872,
+    "completion_tokens_total": 11287
+  }
+}

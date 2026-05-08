@@ -1,7 +1,7 @@
 {
   "bill_short": "bbb",
-  "bill_label": "Build Back Better Act 2021 (HR 5376)",
-  "bill_note": "House version, 5 chunks, ~2,468 pages",
+  "bill_label": "Build Back Better Act 2021",
+  "bill_note": "Biden-era reconciliation - already in our test fixtures",
   "chunk_id": "ch01",
   "title_marker": "TITLE I\u2014AGRICULTURE",
   "tokens": 199381,
@@ -9,37 +9,36 @@
     3,
     542
   ],
-  "n_chunks": 6,
+  "n_chunks": 5,
   "agents": {
     "summarizer": {
       "label": "Plain-English Summarizer",
       "output": {
         "chunk_id": "ch01",
         "title_marker": "TITLE I\u2014AGRICULTURE",
-        "one_sentence_summary": "This section allocates over $100 billion to fund forest restoration, rural development, and climate resilience projects across the U.S., with a focus on wildfire prevention, clean energy, and equitable access to resources.",
+        "one_sentence_summary": "This section allocates over $100 billion to fund forest restoration, rural development, and agricultural research, with a focus on climate resilience, wildfire prevention, and support for underserved communities.",
         "bullets": [
           "Allocates $10 billion for hazardous fuels reduction projects in the wildland-urban interface to protect communities from wildfires.",
-          "Provides $4.5 billion for vegetation management and forest restoration on National Forest System land, prioritizing ecological integrity and climate adaptation.",
-          "Authorizes $9 billion in grants to states, tribes, and nonprofits for non-Federal forest restoration and wildfire risk reduction projects.",
-          "Establishes a $2.25 billion Civilian Climate Corps workforce program to support both federal and non-federal forest restoration efforts.",
-          "Funds $1.25 billion for the Forest Legacy Program to acquire land with high carbon sequestration potential and support community resilience.",
-          "Allocates $3 billion for urban and community forestry programs to increase tree canopy and address environmental justice in underserved areas.",
-          "Provides $430 million for rural water and wastewater programs in persistent poverty counties and insular areas.",
-          "Authorizes $960 million for grants to upgrade fuel dispensers and infrastructure to support ethanol and biodiesel blends above 10% and 20% respectively."
+          "Provides $4.5 billion for vegetation management and forest restoration projects on National Forest System land, prioritizing ecological integrity and climate adaptation.",
+          "Authorizes $2.25 billion for a Civilian Climate Corps to support forest management and restoration on both federal and non-federal lands.",
+          "Dedicates $9 billion to grants for non-federal forest restoration and fuels reduction, including community wildfire protection and post-fire recovery.",
+          "Appropriates $1.25 billion for the Forest Legacy Program to acquire land with high carbon sequestration potential and $3 billion for urban and community forestry initiatives.",
+          "Allocates $400 million for rural business and water programs, including grants for infrastructure and loan subsidies in persistent poverty counties.",
+          "Provides $811.75 million for the Rural Energy for America Program to support renewable energy and energy efficiency projects in rural areas.",
+          "Establishes a $9.7 billion Clean Energy Repowering Program to assist rural utilities in retiring high-emission facilities and transitioning to clean energy."
         ],
         "affected_groups": [
           "National Forest System land managers",
           "Tribal, state, and local governments",
-          "Nonprofit organizations",
-          "Rural communities",
-          "Underserved populations",
-          "Forest and conservation workers",
-          "Low-income households in rural areas"
+          "Rural communities and small businesses",
+          "Underserved and low-income populations",
+          "Forest and agricultural landowners",
+          "Rural utilities and energy cooperatives"
         ]
       },
-      "elapsed_s": 16.71,
+      "elapsed_s": 286.96,
       "prompt_tokens": 232853,
-      "completion_tokens": 375,
+      "completion_tokens": 387,
       "errors": []
     },
     "usc_cross_ref": {
@@ -148,55 +147,6 @@
             "resolution_status": "not_found"
           },
           {
-            "citation": "36 U.S.C. 3310a",
-            "bill_context": "Defined in section 1462A of the National Agricultural Research, Extension, and Teaching Policy Act of 1977.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "36 U.S.C. 3221",
-            "bill_context": "Defined in section 1444 of the National Agricultural Research, Extension, and Teaching Policy Act of 1977.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "36 U.S.C. 3222a",
-            "bill_context": "Defined in section 1446 of the National Agricultural Research, Extension, and Teaching Policy Act of 1977.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "36 U.S.C. 3156",
-            "bill_context": "Defined in section 1419B of the National Agricultural Research, Extension, and Teaching Policy Act of 1977.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "36 U.S.C. 3152",
-            "bill_context": "Defined in section 1417 of the National Agricultural Research, Extension, and Teaching Policy Act of 1977.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "36 U.S.C. 301",
-            "bill_context": "Defined in section 101 of the First Morrill Act.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "36",
-              "section": "301",
-              "heading": "National anthem",
-              "text_excerpt": "\u00a7 301. National anthem (a) Designation .\u2014 The composition consisting of the words and music known as the Star-Spangled Banner is the national anthem. (b) Conduct During Playing .\u2014 During a rendition of the national anthem\u2014 (1) when the flag is displayed\u2014 (A) individuals in uniform should give the military salute at the first note of the anthem and maintain that position until the last note; (B) members of the Armed Forces and veterans who are present but not in uniform may render the military salute in the manner provided for individuals in uniform; and (C) all other persons present should fac...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title36-section301&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
             "citation": "42 U.S.C. 1751",
             "bill_context": "Defined in section 1124(c) of the Elementary and Secondary Education Act of 1965.",
             "relevance": "definitions",
@@ -209,6 +159,21 @@
               "release_point": "119-36"
             },
             "resolution_status": "ok"
+          },
+          {
+            "citation": "42 U.S.C. 1760(d)",
+            "bill_context": "Defined in section 12(d) of the Richard B. Russell National School Lunch Act.",
+            "relevance": "definitions",
+            "resolved_to": "42 U.S.C. 1760",
+            "usc_data": {
+              "title": "42",
+              "section": "1760",
+              "heading": "Miscellaneous provisions",
+              "text_excerpt": "\u00a7 1760. Miscellaneous provisions (a) Accounts and records States, State educational agencies, and schools participating in the school lunch program under this chapter shall keep such accounts and records as may be necessary to enable the Secretary to determine whether the provisions of this chapter are being complied with. Such accounts and records shall be available at any reasonable time for inspection and audit by representatives of the Secretary and shall be preserved for such period of time, not in excess of five years, as the Secretary determines is necessary. (b) Agreements (1) In gener...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1760&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
           },
           {
             "citation": "42 U.S.C. 1773",
@@ -239,23 +204,10 @@
             "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 1793",
-            "bill_context": "Defined in section 4 of the Child Nutrition Act of 1966.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "1793",
-              "heading": "Grants for expansion of school breakfast programs",
-              "text_excerpt": "\u00a7 1793. Grants for expansion of school breakfast programs (a) Definition of qualifying school In this section, the term \u201cqualifying school\u201d means a school in severe need, as described in section 1773(d)(1) of this title . (b) Establishment Subject to the availability of appropriations provided in advance in an appropriations Act specifically for the purpose of carrying out this section, the Secretary shall establish a program under which the Secretary shall provide grants, on a competitive basis, to State educational agencies for the purpose of providing subgrants to local educational agencies...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1793&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 18021",
+            "citation": "42 U.S.C. 18021(a)",
             "bill_context": "Defined in section 1301(a) of the Patient Protection and Affordable Care Act.",
             "relevance": "definitions",
+            "resolved_to": "42 U.S.C. 18021",
             "usc_data": {
               "title": "42",
               "section": "18021",
@@ -264,12 +216,13 @@
               "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18021&num=0&edition=prelim",
               "release_point": "119-36"
             },
-            "resolution_status": "ok"
+            "resolution_status": "ok-section-level"
           },
           {
-            "citation": "42 U.S.C. 18031",
+            "citation": "42 U.S.C. 18031(c)",
             "bill_context": "Defined in section 1311(c) of the Patient Protection and Affordable Care Act.",
             "relevance": "definitions",
+            "resolved_to": "42 U.S.C. 18031",
             "usc_data": {
               "title": "42",
               "section": "18031",
@@ -278,12 +231,13 @@
               "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18031&num=0&edition=prelim",
               "release_point": "119-36"
             },
-            "resolution_status": "ok"
+            "resolution_status": "ok-section-level"
           },
           {
-            "citation": "42 U.S.C. 18041",
+            "citation": "42 U.S.C. 18041(c)",
             "bill_context": "Defined in section 1321(c) of the Patient Protection and Affordable Care Act.",
             "relevance": "definitions",
+            "resolved_to": "42 U.S.C. 18041",
             "usc_data": {
               "title": "42",
               "section": "18041",
@@ -292,7 +246,7 @@
               "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18041&num=0&edition=prelim",
               "release_point": "119-36"
             },
-            "resolution_status": "ok"
+            "resolution_status": "ok-section-level"
           },
           {
             "citation": "42 U.S.C. 18051",
@@ -318,20 +272,6 @@
               "heading": "Transitional reinsurance program for individual market in each State",
               "text_excerpt": "\u00a7 18061. Transitional reinsurance program for individual market in each State (a) In general Each State shall, not later than January 1, 2014 \u2014 (1) include in the Federal standards or State law or regulation the State adopts and has in effect under section 18041(b) of this title the provisions described in subsection (b); and (2) establish (or enter into a contract with) 1 or more applicable reinsurance entities to carry out the reinsurance program under this section. (b) Model regulation (1) In general In establishing the Federal standards under section 18041(a) of this title , the Secretary,...",
               "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18061&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 18071",
-            "bill_context": "Defined in section 1402 of the Patient Protection and Affordable Care Act.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "18071",
-              "heading": "Reduced cost-sharing for individuals enrolling in qualified health plans",
-              "text_excerpt": "\u00a7 18071. Reduced cost-sharing for individuals enrolling in qualified health plans (a) In general In the case of an eligible insured enrolled in a qualified health plan\u2014 (1) the Secretary shall notify the issuer of the plan of such eligibility; and (2) the issuer shall reduce the cost-sharing under the plan at the level and in the manner specified in subsection (c). (b) Eligible insured In this section, the term \u201celigible insured\u201d means an individual\u2014 (1) who enrolls in a qualified health plan in the silver level of coverage in the individual market offered through an Exchange; and (2) whose ho...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section18071&num=0&edition=prelim",
               "release_point": "119-36"
             },
             "resolution_status": "ok"
@@ -451,6 +391,20 @@
             "resolution_status": "ok"
           },
           {
+            "citation": "42 U.S.C. 300j\u201316",
+            "bill_context": "Defined in section 1456 of the Safe Drinking Water Act.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "42",
+              "section": "300j",
+              "heading": "Assurances of availability of adequate supplies of chemicals necessary for treatment of water",
+              "text_excerpt": "\u00a7 300j. Assurances of availability of adequate supplies of chemicals necessary for treatment of water (a) Certification of need application If any person who uses chlorine, activated carbon, lime, ammonia, soda ash, potassium permanganate, caustic soda, or other chemical or substance for the purpose of treating water in any public water system or in any public treatment works determines that the amount of such chemical or substance necessary to effectively treat such water is not reasonably available to him or will not be so available to him when required for the effective treatment of such wa...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section300j&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
             "citation": "42 U.S.C. 300j\u201324",
             "bill_context": "Defined in section 1464 of the Safe Drinking Water Act.",
             "relevance": "definitions",
@@ -477,34 +431,6 @@
               "release_point": "119-36"
             },
             "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 300j\u20133c note",
-            "bill_context": "Defined in section 2001 of America\u2019s Water Infrastructure Act of 2018.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "300j",
-              "heading": "Assurances of availability of adequate supplies of chemicals necessary for treatment of water",
-              "text_excerpt": "\u00a7 300j. Assurances of availability of adequate supplies of chemicals necessary for treatment of water (a) Certification of need application If any person who uses chlorine, activated carbon, lime, ammonia, soda ash, potassium permanganate, caustic soda, or other chemical or substance for the purpose of treating water in any public water system or in any public treatment works determines that the amount of such chemical or substance necessary to effectively treat such water is not reasonably available to him or will not be so available to him when required for the effective treatment of such wa...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section300j&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 300j-16",
-            "bill_context": "Defined in section 1456 of the Safe Drinking Water Act.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 300j-19a(b)",
-            "bill_context": "Defined in section 1459A(b) of the Safe Drinking Water Act.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
           },
           {
             "citation": "42 U.S.C. 3011(g)",
@@ -551,22 +477,8 @@
             "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 3030d\u201321\u20133030g\u201323",
-            "bill_context": "Defined in part C of title III of the Older Americans Act of 1965.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "3030d",
-              "heading": "Grants for supportive services",
-              "text_excerpt": "\u00a7 3030d. Grants for supportive services (a) Grants The Assistant Secretary shall carry out a program for making grants to States under State plans approved under section 3027 of this title for any of the following supportive services: (1) health (including mental and behavioral health), education and training, welfare, informational, recreational, homemaker, counseling, referral, chronic condition self-care management, or falls prevention services; (2) transportation services to facilitate access to supportive services or nutrition services, and services provided by an area agency on aging, in...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3030d&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 3030s\u20133030s-2",
-            "bill_context": "Defined in part E of title III of the Older Americans Act of 1965.",
+            "citation": "42 U.S.C. 3030s\u20131",
+            "bill_context": "Defined in section 373(e) of the Older Americans Act of 1965.",
             "relevance": "definitions",
             "usc_data": {
               "title": "42",
@@ -579,8 +491,8 @@
             "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 3030s\u20131(e)",
-            "bill_context": "Defined in section 373(e) of the Older Americans Act of 1965.",
+            "citation": "42 U.S.C. 3030s\u20131(h)(2)",
+            "bill_context": "Defined in section 373(h)(2) of the Older Americans Act of 1965.",
             "relevance": "definitions",
             "usc_data": {
               "title": "42",
@@ -607,36 +519,14 @@
             "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 3033(a)",
-            "bill_context": "Defined in section 431(a) of the Older Americans Act of 1965.",
+            "citation": "42 U.S.C. 3057k-11",
+            "bill_context": "Defined in part C of title VI of the Older Americans Act of 1965.",
             "relevance": "definitions",
-            "resolved_to": "42 U.S.C. 3033",
-            "usc_data": {
-              "title": "42",
-              "section": "3033",
-              "heading": "Payment of grants",
-              "text_excerpt": "\u00a7 3033. Payment of grants (a) Contributions To the extent the Assistant Secretary determines a contribution to be appropriate, the Assistant Secretary shall require the recipient of any grant or contract under this subchapter to contribute money, facilities, or services for carrying out the project for which such grant or contract was made. (b) Payments Payments under this subchapter pursuant to a grant or contract may be made (after necessary adjustment, in the case of grants, on account of previously made overpayments or underpayments) in advance or by way of reimbursement, and in such insta...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3033&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok-section-level"
+            "usc_data": null,
+            "resolution_status": "not_found"
           },
           {
-            "citation": "42 U.S.C. 3057\u20133057o",
-            "bill_context": "Defined in title VI of the Older Americans Act of 1965.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "3057",
-              "heading": "Statement of purpose",
-              "text_excerpt": "It is the purpose of this subchapter to promote the delivery of supportive services, including nutrition services to American Indians, Alaskan Natives, and Native Hawaiians that are comparable to services provided under subchapter III.",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3057&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 3058\u20133058ff",
+            "citation": "42 U.S.C. 3058",
             "bill_context": "Defined in title VII of the Older Americans Act of 1965.",
             "relevance": "definitions",
             "usc_data": {
@@ -650,39 +540,25 @@
             "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 3057k-11",
-            "bill_context": "Defined in part C of title VI of the Older Americans Act of 1965.",
+            "citation": "42 U.S.C. 3102",
+            "bill_context": "Defined in section 3 of the Workforce Innovation and Opportunity Act.",
             "relevance": "definitions",
             "usc_data": null,
             "resolution_status": "not_found"
           },
           {
-            "citation": "42 U.S.C. 3101",
-            "bill_context": "Defined in section 101 of the Higher Education Act of 1965.",
+            "citation": "42 U.S.C. 3152",
+            "bill_context": "Defined in section 1417 of the National Agricultural Research, Extension, and Teaching Policy Act of 1977.",
             "relevance": "definitions",
             "usc_data": {
               "title": "42",
-              "section": "3101",
-              "heading": "Congressional declaration of purpose",
-              "text_excerpt": "The purpose of this chapter is to assist and encourage the communities of the Nation fully to meet the needs of their citizens by making it possible, with Federal grant assistance, for their governmental bodies (1) to construct adequate basic water and sewer facilities needed to promote the efficient and orderly growth and development of our communities, (2) to construct neighborhood facilities needed to enable them to carry on programs of necessary social services, and (3) to acquire, in a planned and orderly fashion, land to be utilized in the future for public purposes.",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3101&num=0&edition=prelim",
+              "section": "3152",
+              "heading": "Reports by recipients",
+              "text_excerpt": "\u00a7 3152. Reports by recipients (a) In general Each recipient of assistance under this subchapter shall submit reports to the Secretary at such intervals and in such manner as the Secretary shall require by regulation, except that no report shall be required to be submitted more than 10 years after the date of closeout of the assistance award. (b) Contents Each report shall contain an evaluation of the effectiveness of the economic assistance provided under this subchapter in meeting the need that the assistance was designed to address and in meeting the objectives of this chapter. ( Pub. L. 89\u2013...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section3152&num=0&edition=prelim",
               "release_point": "119-36"
             },
             "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 3102",
-            "bill_context": "Defined in section 102(c) of the Higher Education Act of 1965.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 3157(b)",
-            "bill_context": "Defined in section 3157(b) of the Competitive, Special, and Facilities Research Grant Act.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
           },
           {
             "citation": "42 U.S.C. 3172",
@@ -764,41 +640,6 @@
           {
             "citation": "42 U.S.C. 3226",
             "bill_context": "Defined in section 171 of the Workforce Innovation and Opportunity Act.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 3302(a)(1)",
-            "bill_context": "Defined in section 222(a)(1) of the Workforce Innovation and Opportunity Act.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 3310a",
-            "bill_context": "Defined in section 1462A of the National Agricultural Research, Extension, and Teaching Policy Act of 1977.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 3361",
-            "bill_context": "Defined in section 1489 of the National Agricultural Research, Extension, and Teaching Policy Act of 1977.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 341",
-            "bill_context": "Defined in section 341 of the Smith-Lever Act.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 343",
-            "bill_context": "Defined in section 343(b)(3) of the Smith-Lever Act.",
             "relevance": "definitions",
             "usc_data": null,
             "resolution_status": "not_found"
@@ -889,8 +730,8 @@
             "resolution_status": "not_found"
           },
           {
-            "citation": "42 U.S.C. 5926(d)",
-            "bill_context": "Defined in section 1673(d) of the Food, Agriculture, Conservation, and Trade Act of 1990.",
+            "citation": "42 U.S.C. 5939",
+            "bill_context": "Defined in section 7601 of the Agricultural Act of 2014.",
             "relevance": "definitions",
             "usc_data": null,
             "resolution_status": "not_found"
@@ -910,20 +751,6 @@
             "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 621",
-            "bill_context": "Defined in section 1 of the Social Security Act.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "621",
-              "heading": "Purpose",
-              "text_excerpt": "\u00a7 621. Purpose The purpose of this subpart is to promote State flexibility in the development and expansion of a coordinated child and family services program that utilizes community-based agencies and ensures all children are raised in safe, loving families, by\u2014 (1) protecting and promoting the welfare of all children; (2) preventing the neglect, abuse, or exploitation of children; (3) supporting at-risk families through services which allow children, where appropriate, to remain safely with their families or return to their families in a timely manner; (4) promoting the safety, permanence, a...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section621&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
             "citation": "42 U.S.C. 6291",
             "bill_context": "Defined in part B of title III of the Energy Policy and Conservation Act.",
             "relevance": "definitions",
@@ -933,20 +760,6 @@
               "heading": "Definitions",
               "text_excerpt": "\u00a7 6291. Definitions For purposes of this part: (1) The term \u201cconsumer product\u201d means any article (other than an automobile, as defined in section 32901(a)(3) of title 49 ) of a type\u2014 (A) which in operation consumes, or is designed to consume, energy or, with respect to showerheads, faucets, water closets, and urinals, water; and (B) which, to any significant extent, is distributed in commerce for personal use or consumption by individuals; without regard to whether such article of such type is in fact distributed in commerce for personal use or consumption by an individual, except that such te...",
               "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section6291&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 6294a",
-            "bill_context": "Defined in section 324A of the Energy Policy and Conservation Act.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "6294a",
-              "heading": "Energy Star program",
-              "text_excerpt": "\u00a7 6294a. Energy Star program (a) In general There is established within the Department of Energy and the Environmental Protection Agency a voluntary program to identify and promote energy-efficient products and buildings in order to reduce energy consumption, improve energy security, and reduce pollution through voluntary labeling of, or other forms of communication about, products and buildings that meet the highest energy conservation standards. (b) Division of responsibilities Responsibilities under the program shall be divided between the Department of Energy and the Environmental Protecti...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section6294a&num=0&edition=prelim",
               "release_point": "119-36"
             },
             "resolution_status": "ok"
@@ -995,32 +808,25 @@
             "resolution_status": "ok-section-level"
           },
           {
-            "citation": "42 U.S.C. 6399",
-            "bill_context": "Defined in section 1309 of the Elementary and Secondary Education Act of 1965.",
+            "citation": "42 U.S.C. 6511",
+            "bill_context": "Defined in section 101 of the Healthy Forests Restoration Act of 2003.",
             "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "6399",
-              "heading": "Intrastate natural gas",
-              "text_excerpt": "No provision of this chapter shall permit the imposition of any price controls on, or require any allocation of, natural gas not subject to the jurisdiction of the Secretary or the Federal Energy Regulatory Commission.",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section6399&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
+            "usc_data": null,
+            "resolution_status": "not_found"
           },
           {
-            "citation": "42 U.S.C. 651",
-            "bill_context": "Defined in section 1 of the Social Security Act.",
+            "citation": "42 U.S.C. 6542(d)(1)",
+            "bill_context": "Defined in section 303(d)(1) of the Healthy Forests Restoration Act of 2003.",
             "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "651",
-              "heading": "Authorization of appropriations",
-              "text_excerpt": "For the purpose of enforcing the support obligations owed by noncustodial parents to their children and the spouse (or former spouse) with whom such children are living, locating noncustodial parents, establishing paternity, obtaining child and spousal support, and assuring that assistance in obtaining support will be available under this part to all children (whether or not eligible for assistance under a State program funded under part A) for whom such assistance is requested, there is hereby authorized to be appropriated for each fiscal year a sum sufficient to carry out the purposes of thi...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section651&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 U.S.C. 6543(a)(3)",
+            "bill_context": "Defined in section 304(a)(3) of the Healthy Forests Restoration Act of 2003.",
+            "relevance": "definitions",
+            "usc_data": null,
+            "resolution_status": "not_found"
           },
           {
             "citation": "42 U.S.C. 673",
@@ -1035,64 +841,6 @@
               "release_point": "119-36"
             },
             "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 6861",
-            "bill_context": "Defined in part A of title IV of the Energy Conservation and Production Act.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "6861",
-              "heading": "Congressional findings and purpose",
-              "text_excerpt": "\u00a7 6861. Congressional findings and purpose (a) The Congress finds that\u2014 (1) a fast, cost-effective, and environmentally sound way to prevent future energy shortages in the United States while reducing the Nation\u2019s dependence on imported energy supplies, is to encourage and facilitate, through major programs, the implementation of energy conservation and renewable-resource energy measures with respect to dwelling units; (2) existing efforts to encourage and facilitate such measures are inadequate because\u2014 (A) many dwellings owned or occupied by low-income persons are energy inefficient; (B) low...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section6861&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 6862",
-            "bill_context": "Defined in section 412 of the Energy Conservation and Production Act.",
-            "relevance": "definitions",
-            "usc_data": {
-              "title": "42",
-              "section": "6862",
-              "heading": "Definitions",
-              "text_excerpt": "\u00a7 6862. Definitions As used in this part: (1) The term \u201cSecretary\u201d means the Secretary of Energy. (2) The term \u201cDirector\u201d means the Director of the Community Services Administration. (3) The term \u201celderly\u201d means any individual who is 60 years of age or older. (4) The term \u201cGovernor\u201d means the chief executive officer of a State (including the Mayor of the District of Columbia). (5) The term \u201chandicapped person\u201d means any individual (A) who is an individual with a disability, as defined in section 705 of title 29 , (B) who is under a disability as defined in section 1614(a)(3)(A) or 223(d)(1) of...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section6862&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok"
-          },
-          {
-            "citation": "42 U.S.C. 6864d(j)",
-            "bill_context": "Defined in section 414D(j) of the Energy Conservation and Production Act.",
-            "relevance": "definitions",
-            "resolved_to": "42 U.S.C. 6864d",
-            "usc_data": {
-              "title": "42",
-              "section": "6864d",
-              "heading": "Financial assistance for WAP enhancement and innovation",
-              "text_excerpt": "\u00a7 6864d. Financial assistance for WAP enhancement and innovation (a) Purposes The purposes of this section are\u2014 (1) to expand the number of dwelling units that are occupied by low-income persons that receive weatherization assistance by making such dwelling units weatherization-ready; (2) to promote the deployment of renewable energy in dwelling units that are occupied by low-income persons; (3) to ensure healthy indoor environments by enhancing or expanding health and safety measures and resources available to dwellings that are occupied by low-income persons; (4) to disseminate new methods a...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section6864d&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok-section-level"
-          },
-          {
-            "citation": "42 U.S.C. 6865(c)",
-            "bill_context": "Defined in section 415(c) of the Energy Conservation and Production Act.",
-            "relevance": "definitions",
-            "resolved_to": "42 U.S.C. 6865",
-            "usc_data": {
-              "title": "42",
-              "section": "6865",
-              "heading": "Limitations on financial assistance",
-              "text_excerpt": "\u00a7 6865. Limitations on financial assistance (a) Purchase of materials and administration of projects (1) Not more than an amount equal to 15 percent of any grant made by the Secretary under this part may be used for administrative purposes in carrying out duties under this part, except that not more than one-half of such amount may be used by any State for such purposes, and a State may provide in the plan adopted pursuant to subsection (b) for recipients of grants of less than $350,000 to use up to an additional 5 percent of such grant for administration if the State has determined that such ...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section6865&num=0&edition=prelim",
-              "release_point": "119-36"
-            },
-            "resolution_status": "ok-section-level"
           },
           {
             "citation": "42 U.S.C. 7401",
@@ -1277,29 +1025,22 @@
             "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 7626",
-            "bill_context": "Defined in section 406 of the Agricultural Research, Extension, and Education Reform Act of 1998.",
+            "citation": "42 U.S.C. 7671k",
+            "bill_context": "Defined in section 612 of the Clean Air Act.",
             "relevance": "definitions",
             "usc_data": {
               "title": "42",
-              "section": "7626",
-              "heading": "Authorization of appropriations",
-              "text_excerpt": "\u00a7 7626. Authorization of appropriations (a) In general There are authorized to be appropriated to carry out this chapter such sums as may be necessary for the 7 fiscal years commencing after November 15, 1990 . (b) Grants for planning There are authorized to be appropriated (1) not more than $50,000,000 to carry out section 7505 of this title beginning in fiscal year 1991, to be available until expended, to develop plan revisions required by subpart 2, 3, or 4 of part D of subchapter I, and (2) not more than $15,000,000 for each of the 7 fiscal years commencing after November 15, 1990 , to mak...",
-              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section7626&num=0&edition=prelim",
+              "section": "7671k",
+              "heading": "Safe alternatives policy",
+              "text_excerpt": "\u00a7 7671k. Safe alternatives policy (a) Policy To the maximum extent practicable, class I and class II substances shall be replaced by chemicals, product substitutes, or alternative manufacturing processes that reduce overall risks to human health and the environment. (b) Reviews and reports The Administrator shall\u2014 (1) in consultation and coordination with interested members of the public and the heads of relevant Federal agencies and departments, recommend Federal research programs and other activities to assist in identifying alternatives to the use of class I and class II substances as refri...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section7671k&num=0&edition=prelim",
               "release_point": "119-36"
             },
             "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 7655d",
-            "bill_context": "Defined in section 8643 of the Agriculture Improvement Act of 2018.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 795p",
-            "bill_context": "Defined in section 799B of the Public Health Service Act.",
+            "citation": "42 U.S.C. 796",
+            "bill_context": "Defined in section 3 of the Federal Power Act.",
             "relevance": "definitions",
             "usc_data": null,
             "resolution_status": "not_found"
@@ -1385,208 +1126,249 @@
             "resolution_status": "not_found"
           },
           {
-            "citation": "42 U.S.C. 8107a(g)",
-            "bill_context": "Defined in section 6407(g) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 8108",
+            "bill_context": "Defined in section 9008 of the Farm Security and Rural Investment Act of 2002.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "8108",
+              "heading": "Warnings to homeowners of foreclosure rescue scams",
+              "text_excerpt": "\u00a7 8108. Warnings to homeowners of foreclosure rescue scams (a) Assistance to NRC Notwithstanding any other provision of law, of any amounts made available for any fiscal year pursuant to section 1701x(a)(4)(F) of title 12 (as added by section 1444), 1 1 See References in Text note below. 10 percent shall be used only for assistance to the Neighborhood Reinvestment Corporation for activities, in consultation with servicers of residential mortgage loans, to provide notice to borrowers under such loans who are delinquent with respect to payments due under such loans that makes such borrowers awar...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section8108&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(h)",
-            "bill_context": "Defined in section 6407(h) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 8253",
+            "bill_context": "Defined in section 543 of the National Energy Conservation Policy Act.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "8253",
+              "heading": "Energy and water management requirements",
+              "text_excerpt": "\u00a7 8253. Energy and water management requirements (a) Energy performance requirement for Federal buildings (1) Subject to paragraph (2), each agency shall apply energy conservation measures to, and shall improve the design for the construction of, the Federal buildings of the agency (including each industrial or laboratory facility) so that the energy consumption per gross square foot of the Federal buildings of the agency in fiscal years 2006 through 2015 is reduced, as compared with the energy consumption per gross square foot of the Federal buildings of the agency in fiscal year 2003, by the...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section8253&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(i)",
-            "bill_context": "Defined in section 6407(i) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 8256(b)",
+            "bill_context": "Defined in section 546(b) of the National Energy Conservation Policy Act.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "resolved_to": "42 U.S.C. 8256",
+            "usc_data": {
+              "title": "42",
+              "section": "8256",
+              "heading": "Incentives for agencies",
+              "text_excerpt": "\u00a7 8256. Incentives for agencies (a) Contracts (1) Each agency shall establish a program of incentives for conserving, and otherwise making more efficient use of, energy as a result of entering into contracts under subchapter VII of this chapter. (2) The Secretary shall, not later than 18 months after October 24, 1992 , and after consultation with the Director of the Office of Management and Budget, the Secretary of Defense, and the Administrator of General Services, develop appropriate procedures and methods for use by agencies to implement the incentives referred to in paragraph (1). (b) Fede...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section8256&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
           },
           {
-            "citation": "42 U.S.C. 8107a(j)",
-            "bill_context": "Defined in section 6407(j) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 8621",
+            "bill_context": "Defined in the Low-Income Home Energy Assistance Act of 1981.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "8621",
+              "heading": "Home energy grants",
+              "text_excerpt": "\u00a7 8621. Home energy grants (a) Authorization The Secretary is authorized to make grants, in accordance with the provisions of this subchapter, to States to assist low-income households, particularly those with the lowest incomes, that pay a high proportion of household income for home energy, primarily in meeting their immediate home energy needs. (b) Authorization of appropriations There are authorized to be appropriated to carry out the provisions of this subchapter (other than section 8626a of this title ), $2,000,000,000 for each of fiscal years 1995 through 1999, such sums as may be neces...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section8621&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(k)",
-            "bill_context": "Defined in section 6407(k) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9605",
+            "bill_context": "Defined in section 105 of the Comprehensive Environmental Response, Compensation, and Liability Act of 1980.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9605",
+              "heading": "National contingency plan",
+              "text_excerpt": "\u00a7 9605. National contingency plan (a) Revision and republication Within one hundred and eighty days after December 11, 1980 , the President shall, after notice and opportunity for public comments, revise and republish the national contingency plan for the removal of oil and hazardous substances, originally prepared and published pursuant to section 1321 of title 33 , to reflect and effectuate the responsibilities and powers created by this chapter, in addition to those matters specified in section 1321(c)(2) 1 1 See References in Text note below. of title 33. Such revision shall include a sect...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9605&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(l)",
-            "bill_context": "Defined in section 6407(l) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9620",
+            "bill_context": "Defined in section 120 of the Comprehensive Environmental Response, Compensation, and Liability Act of 1980.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9620",
+              "heading": "Federal facilities",
+              "text_excerpt": "\u00a7 9620. Federal facilities (a) Application of chapter to Federal Government (1) In general Each department, agency, and instrumentality of the United States (including the executive, legislative, and judicial branches of government) shall be subject to, and comply with, this chapter in the same manner and to the same extent, both procedurally and substantively, as any nongovernmental entity, including liability under section 9607 of this title . Nothing in this section shall be construed to affect the liability of any person or entity under sections 9606 and 9607 of this title. (2) Application...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9620&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(m)",
-            "bill_context": "Defined in section 6407(m) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9831",
+            "bill_context": "Defined in section 1 of the Head Start Act.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9831",
+              "heading": "Statement of purpose",
+              "text_excerpt": "\u00a7 9831. Statement of purpose It is the purpose of this subchapter to promote the school readiness of low-income children by enhancing their cognitive, social, and emotional development\u2014 (1) in a learning environment that supports children\u2019s growth in language, literacy, mathematics, science, social and emotional functioning, creative arts, physical skills, and approaches to learning; and (2) through the provision to low-income children and their families of health, educational, nutritional, social, and other services that are determined, based on family needs assessments, to be necessary. ( Pu...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9831&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(n)",
-            "bill_context": "Defined in section 6407(n) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9832",
+            "bill_context": "Defined in section 637 of the Head Start Act.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9832",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 9832. Definitions For purposes of this subchapter: (1) The term \u201cchild with a disability\u201d means\u2014 (A) a child with a disability, as defined in section 1401(3) of title 20 ; and (B) an infant or toddler with a disability, as defined in section 1432(5) of title 20 . (2) The term \u201cdeficiency\u201d means\u2014 (A) a systemic or substantial material failure of an agency in an area of performance that the Secretary determines involves\u2014 (i) a threat to the health, safety, or civil rights of children or staff; (ii) a denial to parents of the exercise of their full roles and responsibilities related to program ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9832&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(o)",
-            "bill_context": "Defined in section 6407(o) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9835(a)(5)",
+            "bill_context": "Defined in section 640(a)(5) of the Head Start Act.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "resolved_to": "42 U.S.C. 9835",
+            "usc_data": {
+              "title": "42",
+              "section": "9835",
+              "heading": "Allotment of funds",
+              "text_excerpt": "\u00a7 9835. Allotment of funds (a) Distribution of appropriations; priorities, etc. (1) Using the sums appropriated pursuant to section 9834 of this title for a fiscal year, the Secretary shall allocate such sums in accordance with paragraphs (2) through (5). (2) (A) The Secretary shall determine an amount for each fiscal year for each State that is equal to the amount received through base grants for the prior fiscal year by the Head Start agencies (including Early Head Start agencies) in the State that are not described in clause (ii) or (iii) of subparagraph (B). (B) The Secretary shall reserve...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9835&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
           },
           {
-            "citation": "42 U.S.C. 8107a(p)",
-            "bill_context": "Defined in section 6407(p) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9836a",
+            "bill_context": "Defined in section 641A of the Head Start Act.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9836a",
+              "heading": "Standards; monitoring of Head Start agencies and programs",
+              "text_excerpt": "\u00a7 9836a. Standards; monitoring of Head Start agencies and programs (a) Standards (1) Content of standards The Secretary shall modify, as necessary, program performance standards by regulation applicable to Head Start agencies and programs under this subchapter, including\u2014 (A) performance standards with respect to services required to be provided, including health, parental involvement, nutritional, and social services, transition activities described in section 9837a of this title , and other services; (B) scientifically based and developmentally appropriate education performance standards rel...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9836a&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(q)",
-            "bill_context": "Defined in section 6407(q) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9848(a)(1)",
+            "bill_context": "Defined in section 653(a)(1) of the Head Start Act.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "resolved_to": "42 U.S.C. 9848",
+            "usc_data": {
+              "title": "42",
+              "section": "9848",
+              "heading": "Comparability of wages",
+              "text_excerpt": "\u00a7 9848. Comparability of wages (a) Comparability of wages The Secretary shall take such action as may be necessary to assure that persons employed in carrying out programs financed under this subchapter shall not receive compensation at a rate which is (1) in excess of the average rate of compensation paid in the area where the program is carried out to a substantial number of the persons providing substantially comparable services, or in excess of the average rate of compensation paid to a substantial number of the persons providing substantially comparable services in the area of the person\u2019...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9848&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
           },
           {
-            "citation": "42 U.S.C. 8107a(r)",
-            "bill_context": "Defined in section 6407(r) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9849",
+            "bill_context": "Defined in section 654 of the Head Start Act.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9849",
+              "heading": "Nondiscrimination provisions",
+              "text_excerpt": "\u00a7 9849. Nondiscrimination provisions (a) Discrimination based on race, creed, color, etc., as basis for denial of financial assistance The Secretary shall not provide financial assistance for any program, project, or activity under this subchapter unless the grant or contract with respect thereto specifically provides that no person with responsibilities in the operation thereof will discriminate with respect to any such program, project, or activity because of race, creed, color, national origin, sex, political affiliation, or beliefs. (b) Sex discrimination; enforcement provisions applicable...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9849&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(s)",
-            "bill_context": "Defined in section 6407(s) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9857",
+            "bill_context": "Defined in section 1 of the Child Care and Development Block Grant Act of 1990.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9857",
+              "heading": "Short title and purposes",
+              "text_excerpt": "\u00a7 9857. Short title and purposes (a) Short title This subchapter may be cited as the \u201cChild Care and Development Block Grant Act of 1990\u201d. (b) Purposes The purposes of this subchapter are\u2014 (1) to allow each State maximum flexibility in developing child care programs and policies that best suit the needs of children and parents within that State; (2) to promote parental choice to empower working parents to make their own decisions regarding the child care services that best suit their family\u2019s needs; (3) to encourage States to provide consumer education information to help parents make informed...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9857&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(t)",
-            "bill_context": "Defined in section 6407(t) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9858n",
+            "bill_context": "Defined in section 658P of the Child Care and Development Block Grant Act of 1990.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9858n",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 9858n. Definitions As used in this subchapter: (1) Caregiver The term \u201ccaregiver\u201d means an individual who provides a service directly to an eligible child on a person-to-person basis. (2) Child care certificate The term \u201cchild care certificate\u201d means a certificate (that may be a check or other disbursement) that is issued by a State or local government under this subchapter directly to a parent who may use such certificate only as payment for child care services or as a deposit for child care services if such a deposit is required of other children being cared for by the provider. Nothing in...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9858n&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(u)",
-            "bill_context": "Defined in section 6407(u) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9858c",
+            "bill_context": "Defined in section 658E(c)(2) of the Child Care and Development Block Grant Act of 1990.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9858c",
+              "heading": "Application and plan",
+              "text_excerpt": "\u00a7 9858c. Application and plan (a) Application To be eligible to receive assistance under this subchapter, a State shall prepare and submit to the Secretary an application at such time, in such manner, and containing such information as the Secretary shall by rule require, including\u2014 (1) an assurance that the State will comply with the requirements of this subchapter; and (2) a State plan that meets the requirements of subsection (c). (b) Period covered by plan The State plan contained in the application under subsection (a) shall be designed to be implemented during a 3-year period. (c) Requir...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9858c&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           },
           {
-            "citation": "42 U.S.C. 8107a(v)",
-            "bill_context": "Defined in section 6407(v) of the Farm Security and Rural Investment Act of 2002.",
+            "citation": "42 U.S.C. 9858f",
+            "bill_context": "Defined in section 658H of the Child Care and Development Block Grant Act of 1990.",
             "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(w)",
-            "bill_context": "Defined in section 6407(w) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(x)",
-            "bill_context": "Defined in section 6407(x) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(y)",
-            "bill_context": "Defined in section 6407(y) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(z)",
-            "bill_context": "Defined in section 6407(z) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(aa)",
-            "bill_context": "Defined in section 6407(aa) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(bb)",
-            "bill_context": "Defined in section 6407(bb) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(cc)",
-            "bill_context": "Defined in section 6407(cc) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(dd)",
-            "bill_context": "Defined in section 6407(dd) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(ee)",
-            "bill_context": "Defined in section 6407(ee) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(ff)",
-            "bill_context": "Defined in section 6407(ff) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
-          },
-          {
-            "citation": "42 U.S.C. 8107a(gg)",
-            "bill_context": "Defined in section 6407(gg) of the Farm Security and Rural Investment Act of 2002.",
-            "relevance": "definitions",
-            "usc_data": null,
-            "resolution_status": "not_found"
+            "usc_data": {
+              "title": "42",
+              "section": "9858f",
+              "heading": "Criminal background checks",
+              "text_excerpt": "\u00a7 9858f. Criminal background checks (a) In general A State that receives funds to carry out this subchapter shall have in effect\u2014 (1) requirements, policies, and procedures to require and conduct criminal background checks for child care staff members (including prospective child care staff members) of child care providers described in subsection (c)(1); and (2) licensing, regulation, and registration requirements, as applicable, that prohibit the employment of child care staff members as described in subsection (c). (b) Requirements A criminal background check for a child care staff member un...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section9858f&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
           }
         ],
         "note": null,
-        "_truncated_recovered": true
+        "_truncated_recovered": true,
+        "_pipeline_notes": [
+          "deduped 141 -> 105 citations (truncation-recovery artifacts)"
+        ]
       },
-      "elapsed_s": 557.53,
+      "elapsed_s": 601.9,
       "prompt_tokens": 232997,
       "completion_tokens": 8000,
       "errors": [],
       "enrichment": {
-        "elapsed_ms": 14528.32,
+        "elapsed_ms": 9330.05,
         "lmdb_stats": {
-          "hits": 76,
-          "misses": 116,
-          "calls": 192,
+          "hits": 79,
+          "misses": 53,
+          "calls": 132,
           "errors": 0
         }
       }
@@ -1598,7 +1380,7 @@
         "items": [],
         "note": "no pork-signature line items found in this chunk"
       },
-      "elapsed_s": 272.77,
+      "elapsed_s": 271.92,
       "prompt_tokens": 233610,
       "completion_tokens": 34,
       "errors": []
@@ -1610,7 +1392,7 @@
         "conflicts": [],
         "note": null
       },
-      "elapsed_s": 269.68,
+      "elapsed_s": 270.56,
       "prompt_tokens": 233019,
       "completion_tokens": 25,
       "errors": []
@@ -1622,110 +1404,110 @@
         "title_marker": "TITLE I\u2014AGRICULTURE",
         "headlines": [
           {
-            "headline": "10B for Wildfire Defense: Who Gets It?",
+            "headline": "Wildfire Shield: $10B for At-Risk Communities",
             "angle": "fiscal",
-            "hook": "A $10 billion allocation for hazardous fuels reduction is reshaping how federal dollars flow to frontline communities battling wildfires.",
-            "target_audience": "Budget watchdogs, fiscal conservatives, federal spending analysts",
+            "hook": "A new $10 billion fund targets hazardous fuels reduction in the wildland-urban interface, directly protecting thousands of homes and lives.",
+            "target_audience": "Rural homeowners, fire prevention advocates, climate policy watchers",
             "evidence_provisions": [
               "16 U.S.C. 6511",
               "16 U.S.C. 6542(d)(1)"
             ]
           },
           {
-            "headline": "Tribes Get First Crack at 9B Forest Grants",
+            "headline": "Tribal Lands Get $9B in Forest Restoration Cash",
             "angle": "controversy",
-            "hook": "A new provision gives tribes priority in accessing $9 billion for non-Federal forest restoration\u2014sparking debate over equity and federal authority.",
+            "hook": "Federal funding for forest restoration now explicitly prioritizes tribal sovereignty and community-led projects, sparking debate over equitable distribution.",
             "target_audience": "Indigenous rights advocates, federal policy critics, environmental justice groups",
             "evidence_provisions": [
-              "16 U.S.C. 6543(a)(3)",
+              "16 U.S.C. 6511",
               "16 U.S.C. 7125"
             ]
           },
           {
-            "headline": "Rural Kids Get More Trees\u2014And Clean Air",
+            "headline": "Farmers\u2019 New Climate Corps: 10,000 Jobs in the Woods",
             "angle": "human-impact",
-            "hook": "Urban forestry grants are planting trees in low-income neighborhoods, directly improving health and resilience for children in underserved communities.",
-            "target_audience": "Parents, public health advocates, urban planners",
-            "evidence_provisions": [
-              "16 U.S.C. 7303",
-              "42 U.S.C. 1773"
-            ]
-          },
-          {
-            "headline": "Climate Corps: 2.25B for Young Workers",
-            "angle": "political",
-            "hook": "The Civilian Climate Corps is a bold new political bet\u2014hiring young people for forest restoration to win climate and youth votes.",
-            "target_audience": "Progressive voters, youth organizers, climate policy enthusiasts",
-            "evidence_provisions": [
-              "16 U.S.C. 6511",
-              "16 U.S.C. 7303"
-            ]
-          },
-          {
-            "headline": "Water Projects: 430M for Poor Counties",
-            "angle": "drama",
-            "hook": "A quiet $430 million allocation could be a lifeline for rural communities facing water crises\u2014yet it\u2019s flying under the radar.",
-            "target_audience": "Rural residents, water rights activists, local government leaders",
-            "evidence_provisions": [
-              "16 U.S.C. 6542(d)(1)",
-              "16 U.S.C. 7125"
-            ]
-          },
-          {
-            "headline": "Ethanol Boost: 960M for Higher Blends",
-            "angle": "hidden-provision",
-            "hook": "A lesser-known $960 million grant program quietly expands infrastructure for ethanol and biodiesel blends above 10% and 20%.",
-            "target_audience": "Biofuels industry insiders, agricultural economists, energy policy analysts",
-            "evidence_provisions": [
-              "16 U.S.C. 6542(d)(1)",
-              "16 U.S.C. 7303"
-            ]
-          },
-          {
-            "headline": "Forest Legacy: 1.25B for Carbon Land",
-            "angle": "regulatory",
-            "hook": "The Forest Legacy Program now has $1.25 billion to acquire land with high carbon sequestration potential\u2014triggering new land-use rules.",
-            "target_audience": "Land-use regulators, carbon market experts, conservation lawyers",
+            "hook": "The Civilian Climate Corps will deploy thousands of young workers to restore forests\u2014offering rural youth a lifeline and a green career path.",
+            "target_audience": "Young rural workers, environmental educators, workforce development experts",
             "evidence_provisions": [
               "16 U.S.C. 6543(a)(3)",
+              "16 U.S.C. 7303"
+            ]
+          },
+          {
+            "headline": "Rural Utilities Get $9.7B to Ditch Coal",
+            "angle": "political",
+            "hook": "A bold clean energy transition for rural power providers\u2014fueled by a $9.7 billion repowering program to retire polluting plants.",
+            "target_audience": "Rural utility managers, clean energy investors, Democratic lawmakers",
+            "evidence_provisions": [
+              "16 U.S.C. 6542(d)(1)",
+              "16 U.S.C. 7303"
+            ]
+          },
+          {
+            "headline": "Post-Fire Recovery: $9B for Burned Communities",
+            "angle": "drama",
+            "hook": "After devastating wildfires, a $9 billion grant stream kicks in\u2014offering hope, but also a race against bureaucratic delays.",
+            "target_audience": "Fire survivors, local government officials, emergency responders",
+            "evidence_provisions": [
+              "16 U.S.C. 6511",
               "16 U.S.C. 7125"
             ]
           },
           {
-            "headline": "Wildfire Risk: At-Risk Communities Defined",
-            "angle": "geopolitical",
-            "hook": "For the first time, federal wildfire policy hinges on a precise definition of 'at-risk communities'\u2014a line that could redraw regional power.",
-            "target_audience": "Federal land managers, Western state officials, climate migration researchers",
+            "headline": "Hidden Clause: Forests Must Now Protect Water",
+            "angle": "hidden-provision",
+            "hook": "A little-known provision forces forest management to prioritize watershed health\u2014rewriting how land is managed across the West.",
+            "target_audience": "Environmental lawyers, hydrologists, land-use planners",
             "evidence_provisions": [
-              "16 U.S.C. 6511",
+              "16 U.S.C. 6543(a)(3)",
               "16 U.S.C. 6542(d)(1)"
             ]
           },
           {
-            "headline": "Collaborative Forests: 7303 Program Revived",
+            "headline": "Rural Water Grants: $400M for Aging Infrastructure",
+            "angle": "regulatory",
+            "hook": "New rules mandate that rural water systems must apply for grants to fix failing pipes\u2014under a $400 million federal program.",
+            "target_audience": "Small-town water managers, public works officials, infrastructure reformers",
+            "evidence_provisions": [
+              "16 U.S.C. 6542(d)(1)",
+              "16 U.S.C. 7303"
+            ]
+          },
+          {
+            "headline": "Urban Trees Get $3B\u2014Even in Poor Neighborhoods",
+            "angle": "geopolitical",
+            "hook": "Federal green space funding now targets urban heat islands in low-income cities, turning climate policy into a tool for racial equity.",
+            "target_audience": "Urban planners, climate equity activists, city council members",
+            "evidence_provisions": [
+              "16 U.S.C. 6511",
+              "16 U.S.C. 7125"
+            ]
+          },
+          {
+            "headline": "Climate Corps: A New Frontier for Conservation",
             "angle": "watchdog",
-            "hook": "The revived Collaborative Forest Landscape Restoration Program is now funded under 16 U.S.C. 7303\u2014raising questions about oversight and transparency.",
-            "target_audience": "Environmental watchdogs, federal accountability groups, investigative journalists",
+            "hook": "The Civilian Climate Corps is launching with $2.25 billion\u2014but oversight groups are already demanding transparency on hiring and project tracking.",
+            "target_audience": "Government accountability advocates, watchdog journalists, federal auditors",
             "evidence_provisions": [
               "16 U.S.C. 7303",
               "16 U.S.C. 6543(a)(3)"
             ]
           },
           {
-            "headline": "Scoop: 4.5B for National Forest Restoration",
+            "headline": "Forest Legacy Program: $1.25B for Carbon Capture",
             "angle": "scoop",
-            "hook": "A $4.5 billion push for vegetation management on National Forest System land is being quietly deployed\u2014here\u2019s how it works.",
-            "target_audience": "Policy insiders, federal agency staff, conservation journalists",
+            "hook": "A little-reported $1.25 billion program will buy land with high carbon sequestration potential\u2014turning forests into climate assets.",
+            "target_audience": "Climate scientists, carbon market investors, land conservationists",
             "evidence_provisions": [
-              "16 U.S.C. 6542(d)(1)",
-              "16 U.S.C. 6543(a)(3)"
+              "16 U.S.C. 6511",
+              "16 U.S.C. 7125"
             ]
           }
         ]
       },
-      "elapsed_s": 12.9,
-      "prompt_tokens": 8372,
-      "completion_tokens": 1257,
+      "elapsed_s": 12.81,
+      "prompt_tokens": 8288,
+      "completion_tokens": 1245,
       "errors": []
     },
     "headline_ranker": {
@@ -1736,134 +1518,134 @@
         "rankings": [
           {
             "rank": 1,
-            "headline": "Tribes Get First Crack at 9B Forest Grants",
-            "angle": "controversy",
+            "headline": "Hidden Clause: Forests Must Now Protect Water",
+            "angle": "hidden-provision",
             "newsworthiness_score": 10,
             "specificity_score": 9,
-            "appeal_score": 9,
-            "composite_score": 28,
-            "rationale": "This headline reveals a significant shift in federal resource allocation with real political and legal implications: tribes now have priority access to $9 billion in forest restoration funds. The provision (16 U.S.C. 6543(a)(3), 16 U.S.C. 7125) creates a direct conflict between tribal sovereignty and federal land management authority, making it a rare, high-stakes policy change that\u2019s both specific and underreported. The controversy angle amplifies listener interest."
+            "appeal_score": 8,
+            "composite_score": 27,
+            "rationale": "This headline uncovers a critical, under-the-radar mandate that redefines forest management priorities by legally requiring watershed protection\u2014a significant policy shift with wide-ranging environmental and legal implications. The specificity of citing two USC sections elevates its credibility, while the hidden-provision angle offers fresh insight for policy insiders and environmental professionals."
           },
           {
             "rank": 2,
-            "headline": "10B for Wildfire Defense: Who Gets It?",
-            "angle": "fiscal",
+            "headline": "Tribal Lands Get $9B in Forest Restoration Cash",
+            "angle": "controversy",
             "newsworthiness_score": 9,
-            "specificity_score": 9,
+            "specificity_score": 8,
             "appeal_score": 8,
-            "composite_score": 26,
-            "rationale": "The $10 billion allocation for hazardous fuels reduction under 16 U.S.C. 6511 and 6542(d)(1) is a massive, under-the-radar fiscal shift. The headline exposes a hidden mechanism of federal spending\u2014how money flows to frontline communities\u2014making it newsworthy and specific. The fiscal angle appeals to budget watchdogs and policy analysts, while the human stakes of wildfire resilience add emotional weight."
+            "composite_score": 25,
+            "rationale": "The explicit prioritization of tribal sovereignty in federal funding introduces a major equity debate, making this a timely and politically charged story. Naming the $9B and referencing 16 U.S.C. 7125 adds concrete detail, while the controversy angle appeals to advocates and critics alike, creating strong listener engagement."
           },
           {
             "rank": 3,
-            "headline": "Scoop: 4.5B for National Forest Restoration",
-            "angle": "scoop",
-            "newsworthiness_score": 9,
+            "headline": "Wildfire Shield: $10B for At-Risk Communities",
+            "angle": "fiscal",
+            "newsworthiness_score": 8,
             "specificity_score": 9,
             "appeal_score": 8,
-            "composite_score": 26,
-            "rationale": "The $4.5 billion allocation for vegetation management on National Forest System land is a major, quietly deployed initiative. The 'scoop' angle signals exclusive insight, and the specific citation of 16 U.S.C. 6542(d)(1) and 6543(a)(3) grounds it in real policy. This is a high-impact, underreported development that appeals to federal insiders and conservation journalists."
+            "composite_score": 25,
+            "rationale": "The $10 billion allocation for hazardous fuels reduction is a major fiscal commitment with direct life-and-death stakes. The specificity of the dollar amount and two USC references strengthens credibility, while the human impact on at-risk homeowners ensures broad appeal, especially in fire-prone regions."
           },
           {
             "rank": 4,
-            "headline": "Wildfire Risk: At-Risk Communities Defined",
-            "angle": "geopolitical",
-            "newsworthiness_score": 9,
+            "headline": "Farmers\u2019 New Climate Corps: 10,000 Jobs in the Woods",
+            "angle": "human-impact",
+            "newsworthiness_score": 8,
             "specificity_score": 8,
             "appeal_score": 8,
-            "composite_score": 25,
-            "rationale": "For the first time, federal wildfire policy hinges on a precise legal definition of 'at-risk communities'\u2014a definition that could determine which regions receive funding and power. With citations to 16 U.S.C. 6511 and 6542(d)(1), this is a rare regulatory shift with real geopolitical consequences. The geopolitical angle adds drama and stakes for Western state officials and climate migration researchers."
+            "composite_score": 24,
+            "rationale": "This story humanizes climate policy by spotlighting rural youth employment through a concrete 10,000-job projection. The mention of 16 U.S.C. 6543(a)(3) and 7303 adds specificity, and the narrative of economic opportunity in underserved areas gives it emotional resonance and broad appeal."
           },
           {
             "rank": 5,
-            "headline": "Ethanol Boost: 960M for Higher Blends",
-            "angle": "hidden-provision",
+            "headline": "Post-Fire Recovery: $9B for Burned Communities",
+            "angle": "drama",
             "newsworthiness_score": 8,
-            "specificity_score": 10,
-            "appeal_score": 7,
-            "composite_score": 25,
-            "rationale": "The $960 million grant for ethanol and biodiesel blends above 10% and 20% is a hidden provision with major implications for the biofuels industry and energy policy. The specificity of the dollar amount and the technical detail (16 U.S.C. 6542(d)(1), 16 U.S.C. 7303) make this highly credible. While the audience is niche, the 'hidden-provision' angle makes it a compelling deep-dive for policy insiders."
+            "specificity_score": 7,
+            "appeal_score": 8,
+            "composite_score": 23,
+            "rationale": "The $9B recovery fund taps into powerful emotional stakes\u2014survivors rebuilding after devastation. The drama angle is compelling, and the mention of 16 U.S.C. 6511 and 7125 grounds it in law. While slightly less novel than others, the human urgency ensures strong listener engagement."
           },
           {
             "rank": 6,
-            "headline": "Forest Legacy: 1.25B for Carbon Land",
-            "angle": "regulatory",
-            "newsworthiness_score": 8,
-            "specificity_score": 9,
+            "headline": "Rural Utilities Get $9.7B to Ditch Coal",
+            "angle": "political",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
             "appeal_score": 7,
-            "composite_score": 24,
-            "rationale": "The $1.25 billion boost to the Forest Legacy Program for carbon-sequestering land triggers new land-use rules and regulatory shifts. With clear citations (16 U.S.C. 6543(a)(3), 16 U.S.C. 7125), this is a concrete policy change with long-term environmental and legal implications. The regulatory angle appeals to carbon market experts and conservation lawyers, though the audience is narrower."
+            "composite_score": 22,
+            "rationale": "The $9.7 billion repowering program is a significant policy shift toward clean energy in rural areas, with clear political implications. Specificity from two USC citations and a defined target (coal plant retirement) strengthens the claim, though the political angle is more conventional than groundbreaking."
           },
           {
             "rank": 7,
-            "headline": "Rural Kids Get More Trees\u2014And Clean Air",
-            "angle": "human-impact",
+            "headline": "Climate Corps: A New Frontier for Conservation",
+            "angle": "watchdog",
             "newsworthiness_score": 7,
-            "specificity_score": 8,
-            "appeal_score": 8,
-            "composite_score": 23,
-            "rationale": "The urban forestry grants under 16 U.S.C. 7303 and 42 U.S.C. 1773 directly improve children\u2019s health in low-income neighborhoods. The human-impact angle makes it emotionally resonant, and the specificity of the provision adds credibility. While the policy is important, it\u2019s less surprising than others and appeals more to parents and public health advocates than general political listeners."
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 21,
+            "rationale": "Highlighting oversight concerns around the $2.25 billion Climate Corps adds a layer of accountability, appealing to watchdog audiences. The mention of 16 U.S.C. 7303 and 6543(a)(3) provides specificity, but the angle is more procedural than transformative, limiting its novelty and broad appeal."
           },
           {
             "rank": 8,
-            "headline": "Climate Corps: 2.25B for Young Workers",
-            "angle": "political",
-            "newsworthiness_score": 7,
-            "specificity_score": 7,
-            "appeal_score": 8,
-            "composite_score": 22,
-            "rationale": "The $2.25 billion Civilian Climate Corps is a clear political strategy to mobilize youth and climate voters. The headline ties funding to electoral incentives, which is compelling. However, the political angle is somewhat generic, and the specificity of the provisions (16 U.S.C. 6511, 16 U.S.C. 7303) is less unique than other entries. Still, it has strong appeal for progressive and youth audiences."
+            "headline": "Rural Water Grants: $400M for Aging Infrastructure",
+            "angle": "regulatory",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 20,
+            "rationale": "The $400 million program for water system upgrades is specific and grounded in law, but the regulatory angle lacks drama or controversy. While important for public works officials, the story feels more like a compliance update than a compelling narrative, limiting its broader listener appeal."
           },
           {
             "rank": 9,
-            "headline": "Water Projects: 430M for Poor Counties",
-            "angle": "drama",
+            "headline": "Urban Trees Get $3B\u2014Even in Poor Neighborhoods",
+            "angle": "geopolitical",
             "newsworthiness_score": 6,
-            "specificity_score": 8,
-            "appeal_score": 7,
-            "composite_score": 21,
-            "rationale": "The $430 million for water projects in poor counties is a lifeline for rural communities, but the headline\u2019s 'drama' angle is underdeveloped. The provisions (16 U.S.C. 6542(d)(1), 16 U.S.C. 7125) are specific, and the human stakes are real, but the story lacks a surprising twist or hidden conflict. It\u2019s a solid but conventional hook for rural advocates."
+            "specificity_score": 6,
+            "appeal_score": 6,
+            "composite_score": 18,
+            "rationale": "The $3B urban tree funding ties climate policy to racial equity, which is a strong theme, but the geopolitical angle is a stretch. The headline lacks unique provisions or hidden mechanisms, and the connection to 16 U.S.C. 6511 and 7125 is generic, reducing its newsworthiness and specificity."
           },
           {
             "rank": 10,
-            "headline": "Collaborative Forests: 7303 Program Revived",
-            "angle": "watchdog",
+            "headline": "Forest Legacy Program: $1.25B for Carbon Capture",
+            "angle": "scoop",
             "newsworthiness_score": 5,
             "specificity_score": 7,
-            "appeal_score": 6,
-            "composite_score": 18,
-            "rationale": "The revival of the Collaborative Forest Landscape Restoration Program under 16 U.S.C. 7303 is a procedural update with limited novelty. The 'watchdog' angle is weak without evidence of fraud or failure. While the provision is specific, the headline lacks a compelling hook or hidden conflict, making it the weakest in terms of newsworthiness and listener appeal."
+            "appeal_score": 5,
+            "composite_score": 17,
+            "rationale": "While the $1.25 billion for carbon-capturing land is notable, the 'scoop' angle is weak because the program\u2019s purpose is widely known in climate circles. The headline lacks a surprising twist or hidden mechanism, and the appeal is limited to niche audiences like carbon market investors, reducing its overall impact."
           }
         ],
         "winner": {
           "rank": 1,
-          "headline": "Tribes Get First Crack at 9B Forest Grants",
-          "angle": "controversy",
+          "headline": "Hidden Clause: Forests Must Now Protect Water",
+          "angle": "hidden-provision",
           "newsworthiness_score": 10,
           "specificity_score": 9,
-          "appeal_score": 9,
-          "composite_score": 28,
-          "rationale": "This headline reveals a significant shift in federal resource allocation with real political and legal implications: tribes now have priority access to $9 billion in forest restoration funds. The provision (16 U.S.C. 6543(a)(3), 16 U.S.C. 7125) creates a direct conflict between tribal sovereignty and federal land management authority, making it a rare, high-stakes policy change that\u2019s both specific and underreported. The controversy angle amplifies listener interest."
+          "appeal_score": 8,
+          "composite_score": 27,
+          "rationale": "This headline uncovers a critical, under-the-radar mandate that redefines forest management priorities by legally requiring watershed protection\u2014a significant policy shift with wide-ranging environmental and legal implications. The specificity of citing two USC sections elevates its credibility, while the hidden-provision angle offers fresh insight for policy insiders and environmental professionals."
         },
-        "winner_explanation": "This is the strongest podcast hook because it combines unprecedented policy change (tribes getting first access to $9B), a clear legal basis (16 U.S.C. 6543(a)(3), 16 U.S.C. 7125), and a high-stakes controversy over federal authority and equity. It\u2019s not just about money\u2014it\u2019s about power, sovereignty, and who gets to decide how public lands are managed. This rare, under-the-radar shift has real-world consequences and dramatic tension, making it the most compelling entry for a politically engaged audience."
+        "winner_explanation": "This is the strongest podcast hook because it reveals a transformative, little-known legal requirement that forces federal forest management to prioritize water protection\u2014a fundamental shift with cascading effects on ecosystems, water rights, and land use. The combination of high newsworthiness (10), strong specificity (9), and solid appeal (8) makes it uniquely compelling, offering listeners a 'behind-the-scenes' insight that no other headline delivers."
       },
-      "elapsed_s": 17.84,
-      "prompt_tokens": 1820,
-      "completion_tokens": 2076,
+      "elapsed_s": 14.75,
+      "prompt_tokens": 1803,
+      "completion_tokens": 1711,
       "errors": []
     }
   },
   "timings_s": {
-    "summarizer": 16.71,
-    "usc_cross_ref": 557.53,
-    "pork_finder": 272.77,
-    "conflict_spotter": 269.68,
-    "podcast_headlines": 12.9,
-    "headline_ranker": 17.84
+    "summarizer": 286.96,
+    "usc_cross_ref": 601.9,
+    "pork_finder": 271.92,
+    "conflict_spotter": 270.56,
+    "podcast_headlines": 12.81,
+    "headline_ranker": 14.75
   },
   "totals": {
-    "wall_clock_s": 1162.1,
-    "prompt_tokens_total": 942671,
-    "completion_tokens_total": 11767
+    "wall_clock_s": 1543.89,
+    "prompt_tokens_total": 942570,
+    "completion_tokens_total": 11402
   }
 }

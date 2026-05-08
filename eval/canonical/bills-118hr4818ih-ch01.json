@@ -1,0 +1,403 @@
+{
+  "chunk_id": "ch01",
+  "title_marker": "(unstructured bill)",
+  "tokens": 2198,
+  "pages": [
+    1,
+    6
+  ],
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "one_sentence_summary": "This bill expands Medicare coverage to include intensive behavioral therapy for obesity provided by a broader range of qualified health professionals and approves coverage for obesity medications under Medicare Part D, while requiring regular reports on implementation and coordination efforts.",
+        "bullets": [
+          "Expands Medicare coverage to include intensive behavioral therapy for obesity provided by non-primary care physicians, physician assistants, nurse practitioners, clinical psychologists, registered dietitians, and approved community-based programs.",
+          "Requires that intensive behavioral therapy be delivered under a referral and coordination system with a primary care provider or physician, ensuring continuity of care.",
+          "Allows therapy to be delivered in office settings, hospital outpatient departments, or other approved community-based sites with privacy protections.",
+          "Amends Medicare Part D to cover FDA-approved obesity medications and weight-loss drugs for individuals who are overweight with related health conditions, removing prior restrictions.",
+          "Requires the Secretary of Health and Human Services to submit annual reports to Congress on implementation progress and recommendations for improving coordination across federal health programs related to obesity prevention and treatment.",
+          "Establishes a framework for better integration of clinical care, research, and public health initiatives across federal agencies to combat the obesity epidemic."
+        ],
+        "affected_groups": [
+          "Medicare beneficiaries",
+          "Primary care providers",
+          "Non-primary care health professionals (e.g., dietitians, psychologists)",
+          "Community-based health programs",
+          "Obesity medication manufacturers",
+          "Federal health agencies (e.g., HHS, NIH)"
+        ]
+      },
+      "elapsed_s": 3.06,
+      "prompt_tokens": 2816,
+      "completion_tokens": 332,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [
+          {
+            "citation": "42 USC 1395x(ddd)",
+            "bill_context": "Amends section 1861(ddd) of the Social Security Act to expand qualified providers for intensive behavioral therapy.",
+            "relevance": "amend",
+            "resolved_to": "42 USC 1395x",
+            "usc_data": {
+              "title": "42",
+              "section": "1395x",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 1395x. Definitions For purposes of this subchapter\u2014 (a) Spell of illness The term \u201cspell of illness\u201d with respect to any individual means a period of consecutive days\u2014 (1) beginning with the first day (not included in a previous spell of illness) (A) on which such individual is furnished inpatient hospital services, inpatient critical access hospital services or extended care services, and (B) which occurs in a month for which he is entitled to benefits under part A, and (2) ending with the close of the first period of 60 consecutive days thereafter on each of which he is neither an inpatien...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1395x&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "42 USC 1395w\u2013102(e)(2)(A)",
+            "bill_context": "Amends Medicare Part D coverage rules to include obesity medications under specific conditions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "1395w",
+              "heading": "Appropriations to cover Government contributions and contingency reserve",
+              "text_excerpt": "\u00a7 1395w. Appropriations to cover Government contributions and contingency reserve (a) In general There are authorized to be appropriated from time to time, out of any moneys in the Treasury not otherwise appropriated, to the Federal Supplementary Medical Insurance Trust Fund\u2014 (1) (A) a Government contribution equal to the aggregate premiums payable for a month for enrollees age 65 and over under this part and deposited in the Trust Fund, multiplied by the ratio of\u2014 (i) twice the dollar amount of the actuarially adequate rate per enrollee age 65 and over as determined under section 1395r(a)(1) ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1395w&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 USC 1395w\u2013102",
+            "bill_context": "References Part D provisions to clarify coverage of obesity-related medications.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "42",
+              "section": "1395w",
+              "heading": "Appropriations to cover Government contributions and contingency reserve",
+              "text_excerpt": "\u00a7 1395w. Appropriations to cover Government contributions and contingency reserve (a) In general There are authorized to be appropriated from time to time, out of any moneys in the Treasury not otherwise appropriated, to the Federal Supplementary Medical Insurance Trust Fund\u2014 (1) (A) a Government contribution equal to the aggregate premiums payable for a month for enrollees age 65 and over under this part and deposited in the Trust Fund, multiplied by the ratio of\u2014 (i) twice the dollar amount of the actuarially adequate rate per enrollee age 65 and over as determined under section 1395r(a)(1) ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1395w&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 USC 1395w\u2013102(e)(2)(A)",
+            "bill_context": "Amends Part D coverage to include obesity treatment drugs with specified criteria.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "1395w",
+              "heading": "Appropriations to cover Government contributions and contingency reserve",
+              "text_excerpt": "\u00a7 1395w. Appropriations to cover Government contributions and contingency reserve (a) In general There are authorized to be appropriated from time to time, out of any moneys in the Treasury not otherwise appropriated, to the Federal Supplementary Medical Insurance Trust Fund\u2014 (1) (A) a Government contribution equal to the aggregate premiums payable for a month for enrollees age 65 and over under this part and deposited in the Trust Fund, multiplied by the ratio of\u2014 (i) twice the dollar amount of the actuarially adequate rate per enrollee age 65 and over as determined under section 1395r(a)(1) ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1395w&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 USC 1395x",
+            "bill_context": "Cites the broader Social Security Act section governing definitions and services.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "42",
+              "section": "1395x",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 1395x. Definitions For purposes of this subchapter\u2014 (a) Spell of illness The term \u201cspell of illness\u201d with respect to any individual means a period of consecutive days\u2014 (1) beginning with the first day (not included in a previous spell of illness) (A) on which such individual is furnished inpatient hospital services, inpatient critical access hospital services or extended care services, and (B) which occurs in a month for which he is entitled to benefits under part A, and (2) ending with the close of the first period of 60 consecutive days thereafter on each of which he is neither an inpatien...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1395x&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          }
+        ],
+        "note": null,
+        "_pipeline_notes": [
+          "deduped 10 -> 5 citations (truncation-recovery artifacts)"
+        ]
+      },
+      "elapsed_s": 5.1,
+      "prompt_tokens": 2964,
+      "completion_tokens": 565,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 544.13,
+        "lmdb_stats": {
+          "hits": 5,
+          "misses": 1,
+          "calls": 6,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch01",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 0.57,
+      "prompt_tokens": 3577,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 0.47,
+      "prompt_tokens": 2986,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "headlines": [
+          {
+            "headline": "Medicare Now Covers Obesity Drugs",
+            "angle": "fiscal",
+            "hook": "For the first time, Medicare will pay for FDA-approved weight-loss drugs\u2014potentially reshaping drug spending across the nation's largest health program.",
+            "target_audience": "Health policy analysts, budget watchers, Medicare beneficiaries",
+            "evidence_provisions": [
+              "42 USC 1395w-102(e)(2)(A)",
+              "42 USC 1395w-102"
+            ]
+          },
+          {
+            "headline": "Psychologists Get Medicare Access",
+            "angle": "controversy",
+            "hook": "A quiet shift in Medicare law now lets clinical psychologists deliver covered obesity therapy\u2014sparking debate over scope creep in federal health coverage.",
+            "target_audience": "Medical ethics advocates, mental health professionals, healthcare reformers",
+            "evidence_provisions": [
+              "42 USC 1395x(ddd)"
+            ]
+          },
+          {
+            "headline": "Dietitians Can Now Treat Medicare Patients",
+            "angle": "human-impact",
+            "hook": "A grandmother in Ohio now gets weekly therapy from a registered dietitian\u2014thanks to a new Medicare rule expanding access to non-doctor providers.",
+            "target_audience": "Seniors, chronic illness patients, public health advocates",
+            "evidence_provisions": [
+              "42 USC 1395x(ddd)"
+            ]
+          },
+          {
+            "headline": "Obesity Therapy Requires a Referral",
+            "angle": "political",
+            "hook": "Despite broad access, the bill forces patients to get referrals\u2014raising concerns about bureaucratic barriers in a law meant to expand care.",
+            "target_audience": "Healthcare access advocates, policymakers, primary care providers",
+            "evidence_provisions": [
+              "42 USC 1395x(ddd)"
+            ]
+          },
+          {
+            "headline": "Hidden Report Mandate for HHS",
+            "angle": "hidden-provision",
+            "hook": "The bill quietly forces the Secretary of HHS to file annual reports on obesity care coordination\u2014likely exposing gaps in federal health planning.",
+            "target_audience": "Congressional staff, federal agency insiders, transparency watchdogs",
+            "evidence_provisions": [
+              "42 USC 1395w-102(e)(2)(A)"
+            ]
+          },
+          {
+            "headline": "Community Programs Get Medicare Footing",
+            "angle": "regulatory",
+            "hook": "For the first time, community-based health programs can deliver Medicare-covered obesity therapy\u2014subject to strict privacy and site rules.",
+            "target_audience": "Public health administrators, nonprofit health leaders, local clinic operators",
+            "evidence_provisions": [
+              "42 USC 1395x(ddd)"
+            ]
+          },
+          {
+            "headline": "Drug Makers Win Big on Medicare",
+            "angle": "geopolitical",
+            "hook": "With Medicare now covering obesity drugs, global pharmaceutical firms are lobbying for faster approvals\u2014shifting the balance of power in drug pricing.",
+            "target_audience": "Global health investors, pharma analysts, international policy experts",
+            "evidence_provisions": [
+              "42 USC 1395w-102(e)(2)(A)"
+            ]
+          },
+          {
+            "headline": "HHS Must Coordinate Obesity Efforts",
+            "angle": "watchdog",
+            "hook": "The bill forces federal agencies to share data and align strategies\u2014putting the entire public health bureaucracy under new scrutiny.",
+            "target_audience": "Government accountability groups, federal oversight committees",
+            "evidence_provisions": [
+              "42 USC 1395w-102(e)(2)(A)"
+            ]
+          },
+          {
+            "headline": "Medicare Therapy Now in Clinics",
+            "angle": "scoop",
+            "hook": "New data shows Medicare will cover intensive behavioral therapy in non-hospital outpatient clinics\u2014opening doors for rural and underserved areas.",
+            "target_audience": "Rural healthcare providers, telehealth innovators, community health leaders",
+            "evidence_provisions": [
+              "42 USC 1395x(ddd)"
+            ]
+          },
+          {
+            "headline": "Obesity Care Gets Federal Integration",
+            "angle": "drama",
+            "hook": "A long-standing disconnect between clinical care, research, and public health is finally being bridged\u2014after years of bureaucratic friction.",
+            "target_audience": "Federal health officials, interagency collaborators, policy reformers",
+            "evidence_provisions": [
+              "42 USC 1395w-102(e)(2)(A)"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 9.67,
+      "prompt_tokens": 2524,
+      "completion_tokens": 1073,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "Hidden Report Mandate for HHS",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 10,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 27,
+            "rationale": "This headline uncovers a rarely visible but consequential provision: an annual reporting requirement on obesity care coordination. It reveals a hidden layer of federal oversight that most listeners wouldn\u2019t know exists, with concrete evidence in 42 USC 1395w-102(e)(2)(A). The angle of bureaucratic transparency adds investigative intrigue and stakes for accountability watchers."
+          },
+          {
+            "rank": 2,
+            "headline": "Medicare Now Covers Obesity Drugs",
+            "angle": "fiscal",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 26,
+            "rationale": "This is a landmark policy shift with massive fiscal implications. Naming the specific statute (42 USC 1395w-102) and highlighting the first-time coverage of FDA-approved drugs gives it strong specificity. The news value lies in the scale of Medicare\u2019s new spending, which reshapes national health economics and drug access\u2014making it a must-listen for budget and health policy audiences."
+          },
+          {
+            "rank": 3,
+            "headline": "HHS Must Coordinate Obesity Efforts",
+            "angle": "watchdog",
+            "newsworthiness_score": 9,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The requirement for federal agencies to share data and align strategies is a structural shift with real oversight potential. It exposes long-standing interagency friction and creates a new accountability mechanism. The specificity of 42 USC 1395w-102(e)(2)(A) grounds it in law, while the drama of bureaucratic integration appeals to reform-minded listeners."
+          },
+          {
+            "rank": 4,
+            "headline": "Obesity Care Gets Federal Integration",
+            "angle": "drama",
+            "newsworthiness_score": 8,
+            "specificity_score": 7,
+            "appeal_score": 9,
+            "composite_score": 24,
+            "rationale": "This headline frames a complex policy change as a narrative of systemic transformation\u2014bridging clinical, research, and public health silos. The human and institutional drama of years of friction finally being resolved gives it high emotional appeal. While slightly less specific than others, the story arc is compelling and resonates with reformers and federal workers alike."
+          },
+          {
+            "rank": 5,
+            "headline": "Psychologists Get Medicare Access",
+            "angle": "controversy",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 23,
+            "rationale": "The expansion of Medicare coverage to clinical psychologists for obesity therapy introduces a legitimate debate about scope creep and provider authority. The specific citation (42 USC 1395x(ddd)) adds credibility, and the controversy angle draws in ethics and healthcare reform audiences. It\u2019s a timely, policy-relevant tension with real-world implications."
+          },
+          {
+            "rank": 6,
+            "headline": "Dietitians Can Now Treat Medicare Patients",
+            "angle": "human-impact",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "The personal story of a grandmother receiving care from a dietitian adds emotional weight and makes the policy tangible. The specificity of 42 USC 1395x(ddd) anchors it in law, and the human stakes elevate it above dry regulatory updates. While the news angle is modest, the emotional resonance gives it strong listener appeal."
+          },
+          {
+            "rank": 7,
+            "headline": "Community Programs Get Medicare Footing",
+            "angle": "regulatory",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 21,
+            "rationale": "This provision opens Medicare coverage to community-based programs, a significant shift for local health delivery. The specificity of 42 USC 1395x(ddd) and the focus on site rules and privacy add regulatory depth. However, the audience is narrow (public health admins), and the angle lacks broader drama or controversy, limiting appeal."
+          },
+          {
+            "rank": 8,
+            "headline": "Medicare Therapy Now in Clinics",
+            "angle": "scoop",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 20,
+            "rationale": "The revelation that outpatient clinics\u2014especially rural ones\u2014can now deliver Medicare-covered therapy is a meaningful access improvement. The 'scoop' angle suggests new data, but the headline lacks a clear hook beyond location. While specific and impactful, it\u2019s less surprising than others and appeals mainly to providers and telehealth innovators."
+          },
+          {
+            "rank": 9,
+            "headline": "Obesity Therapy Requires a Referral",
+            "angle": "political",
+            "newsworthiness_score": 6,
+            "specificity_score": 6,
+            "appeal_score": 6,
+            "composite_score": 18,
+            "rationale": "The referral requirement introduces a bureaucratic barrier that undermines the law\u2019s expansion goals. It\u2019s a valid political critique, but the angle is common and less surprising. The specificity is moderate (42 USC 1395x(ddd)), but the headline lacks a strong narrative or hidden insight, making it feel like a standard policy critique."
+          },
+          {
+            "rank": 10,
+            "headline": "Drug Makers Win Big on Medicare",
+            "angle": "geopolitical",
+            "newsworthiness_score": 5,
+            "specificity_score": 6,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "While pharma lobbying is a known dynamic, this headline frames it as a geopolitical shift in drug pricing power. However, the connection to the bill\u2019s actual provisions is indirect, and the evidence (42 USC 1395w-102(e)(2)(A)) doesn\u2019t clearly support a global power shift. The angle feels speculative and less grounded than others, reducing both newsworthiness and credibility."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "Hidden Report Mandate for HHS",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 10,
+          "specificity_score": 9,
+          "appeal_score": 8,
+          "composite_score": 27,
+          "rationale": "This headline uncovers a rarely visible but consequential provision: an annual reporting requirement on obesity care coordination. It reveals a hidden layer of federal oversight that most listeners wouldn\u2019t know exists, with concrete evidence in 42 USC 1395w-102(e)(2)(A). The angle of bureaucratic transparency adds investigative intrigue and stakes for accountability watchers."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it reveals a hidden, legally binding mechanism\u2014annual HHS reporting on obesity care coordination\u2014that exposes systemic gaps in federal health planning. It\u2019s highly newsworthy (10/10) because it uncovers a secret layer of oversight most listeners wouldn\u2019t know about, specific (9/10) with a clear statutory citation, and compelling (8/10) for transparency advocates and government insiders. No other headline combines such deep policy insight with investigative intrigue."
+      },
+      "elapsed_s": 15.18,
+      "prompt_tokens": 1623,
+      "completion_tokens": 1764,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 3.06,
+    "usc_cross_ref": 5.1,
+    "pork_finder": 0.57,
+    "conflict_spotter": 0.47,
+    "podcast_headlines": 9.67,
+    "headline_ranker": 15.18
+  },
+  "totals": {
+    "wall_clock_s": 34.88,
+    "prompt_tokens_total": 16490,
+    "completion_tokens_total": 3793
+  },
+  "bill_short": "bills-118hr4818ih",
+  "bill_label": "BILLS-118hr4818ih",
+  "bill_note": "Analyzed 1/1 chunks via Gradio upload"
+}

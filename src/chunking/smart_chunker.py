@@ -48,10 +48,14 @@ BOUNDARY_PATTERNS = [
 # Default token budget per chunk. Empirically calibrated against the spine
 # (Qwen3-30B-A3B-Instruct-2507-FP8) tokenizer: legislative English inflates
 # from cl100k_base to Qwen at ~16.5% (measured on BBB-2021 chunk: 234,379
-# cl100k -> 272,946 Qwen). With a 262,144-token spine context and a 1500-
-# token output budget, the safe input ceiling is ~223,800 cl100k tokens.
-# We set 220K to leave additional safety margin for prompt-wrapper overhead.
-MAX_TOKENS_DEFAULT = 220_000
+# cl100k -> 272,946 Qwen). With a 262,144-token spine context, an 8000-token
+# output budget (USC Cross-Reference produces large citation lists), and
+# ~500 tokens of system-prompt overhead, the safe input ceiling is:
+#   (262,144 - 8,000 - 500) / 1.165 = ~217,200 cl100k tokens
+# We set 200K to leave ~17K cl100k tokens (~20K Qwen tokens) of safety margin
+# for prompt-wrapper variance and tool-use overhead. (Previous setting of
+# 220K caused USC Cross-Reference HTTP 400 failures on 218K-token BBB chunks.)
+MAX_TOKENS_DEFAULT = 200_000
 
 
 @dataclass

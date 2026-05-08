@@ -1,0 +1,2363 @@
+{
+  "bill_short": "bbb",
+  "bill_label": "Build Back Better Act 2021 (HR 5376)",
+  "bill_note": "House version, 5 chunks, ~2,468 pages",
+  "chunk_id": "ch05",
+  "title_marker": "Subtitle H\u2014Social Safety Net",
+  "tokens": 152884,
+  "pages": [
+    1943,
+    2344
+  ],
+  "n_chunks": 6,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch05",
+        "title_marker": "Subtitle H\u2014Social Safety Net",
+        "one_sentence_summary": "This section expands and modernizes key tax credits and benefits to support low- and middle-income families, caregivers, and individuals with disabilities, while also enhancing tax enforcement and funding for the IRS.",
+        "bullets": [
+          "Establishes a monthly child tax credit of $300 per child under age 6 and $250 per child aged 6 to 17, with income-based phaseouts and inflation adjustments.",
+          "Creates a new refundable credit for caregivers of individuals with long-term care needs, covering expenses like respite care, assistive devices, and counseling.",
+          "Expands the Earned Income Tax Credit (EITC) by lowering the minimum age requirement, increasing credit amounts, and allowing taxpayers to use prior-year income to qualify.",
+          "Permanently extends and enhances the Child and Dependent Care Tax Credit, increasing the dollar limit and refundability for qualifying expenses.",
+          "Introduces a new payroll tax credit for child care workers, providing up to 50% of qualified wages to help stabilize the child care workforce.",
+          "Extends and expands health insurance affordability programs, including premium tax credits and cost-sharing reductions, for low-income individuals and families.",
+          "Creates a new Pathway to Practice Training Program to increase the number of physicians in rural and underserved areas by providing scholarships and loan forgiveness.",
+          "Provides funding for the IRS to strengthen enforcement, modernize technology, and improve taxpayer compliance, with $78.9 billion allocated for fiscal years 2022\u20132031."
+        ],
+        "affected_groups": [
+          "low- and middle-income families",
+          "caregivers of children and individuals with disabilities",
+          "child care workers",
+          "individuals with long-term care needs",
+          "rural and underserved communities",
+          "small businesses and employers",
+          "taxpayers with complex tax situations",
+          "the Internal Revenue Service (IRS)"
+        ]
+      },
+      "elapsed_s": 169.56,
+      "prompt_tokens": 176504,
+      "completion_tokens": 432,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch05",
+        "citations": [
+          {
+            "citation": "26 USC 24",
+            "bill_context": "Section 24(i) is amended to extend the child tax credit through 2023 and modify income phaseout rules.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "24",
+              "heading": "Child tax credit",
+              "text_excerpt": "\u00a7 24. Child tax credit (a) Allowance of credit There shall be allowed as a credit against the tax imposed by this chapter for the taxable year with respect to each qualifying child of the taxpayer for which the taxpayer is allowed a deduction under section 151 an amount equal to $1,000. (b) Limitations (1) Limitation based on adjusted gross income The amount of the credit allowable under subsection (a) shall be reduced (but not below zero) by $50 for each $1,000 (or fraction thereof) by which the taxpayer\u2019s modified adjusted gross income exceeds the threshold amount. For purposes of the preced...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section24&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 24A",
+            "bill_context": "New section 24A establishes a monthly child tax credit with advance payments for 2023-2025.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 24B",
+            "bill_context": "New section 24B creates a credit for certain other dependents, with income limitations.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 7527A",
+            "bill_context": "Section 7527A is amended to extend and modify advance child tax payments through 2022.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "7527A",
+              "heading": "Advance payment of child tax credit",
+              "text_excerpt": "\u00a7 7527A. Advance payment of child tax credit (a) In general The Secretary shall establish a program for making periodic payments to taxpayers which, in the aggregate during any calendar year, equal the annual advance amount determined with respect to such taxpayer for such calendar year. Except as provided in subsection (b)(3)(B), the periodic payments made to any taxpayer for any calendar year shall be in equal amounts. (b) Annual advance amount For purposes of this section\u2014 (1) In general Except as otherwise provided in this subsection, the term \u201cannual advance amount\u201d means, with respect to...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7527A&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 7527B",
+            "bill_context": "New section 7527B establishes a program for monthly payments of the child tax credit.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 32",
+            "bill_context": "Section 32 is amended to lower the minimum age for the earned income tax credit and increase credit amounts.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "32",
+              "heading": "Earned income",
+              "text_excerpt": "\u00a7 32. Earned income (a) Allowance of credit (1) In general In the case of an eligible individual, there shall be allowed as a credit against the tax imposed by this subtitle for the taxable year an amount equal to the credit percentage of so much of the taxpayer\u2019s earned income for the taxable year as does not exceed the earned income amount. (2) Limitation The amount of the credit allowable to a taxpayer under paragraph (1) for any taxable year shall not exceed the excess (if any) of\u2014 (A) the credit percentage of the earned income amount, over (B) the phaseout percentage of so much of the adj...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section32&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 36B",
+            "bill_context": "Section 36B is amended to increase premium tax credits and expand eligibility for health insurance subsidies.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "36B",
+              "heading": "Refundable credit for coverage under a qualified health plan",
+              "text_excerpt": "\u00a7 36B. Refundable credit for coverage under a qualified health plan (a) In general In the case of an applicable taxpayer, there shall be allowed as a credit against the tax imposed by this subtitle for any taxable year an amount equal to the premium assistance credit amount of the taxpayer for the taxable year. (b) Premium assistance credit amount For purposes of this section\u2014 (1) In general The term \u201cpremium assistance credit amount\u201d means, with respect to any taxable year, the sum of the premium assistance amounts determined under paragraph (2) with respect to all coverage months of the taxp...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section36B&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 401",
+            "bill_context": "Section 401 is amended to allow for higher contributions to individual retirement plans for high-income taxpayers.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "401",
+              "heading": "Qualified pension, profit-sharing, and stock bonus plans",
+              "text_excerpt": "\u00a7 401. Qualified pension, profit-sharing, and stock bonus plans (a) Requirements for qualification A trust created or organized in the United States and forming part of a stock bonus, pension, or profit-sharing plan of an employer for the exclusive benefit of his employees or their beneficiaries shall constitute a qualified trust under this section\u2014 (1) if contributions are made to the trust by such employer, or employees, or both, or by another employer who is entitled to deduct his contributions under section 404(a)(3)(B) (relating to deduction for contributions to profit-sharing and stock b...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section401&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 408",
+            "bill_context": "Section 408 is amended to prohibit certain investments in individual retirement accounts based on account holder status.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "408",
+              "heading": "Individual retirement accounts",
+              "text_excerpt": "\u00a7 408. Individual retirement accounts (a) Individual retirement account For purposes of this section, the term \u201cindividual retirement account\u201d means a trust created or organized in the United States for the exclusive benefit of an individual or his beneficiaries, but only if the written governing instrument creating the trust meets the following requirements: (1) Except in the case of a rollover contribution described in subsection (d)(3) or in section 402(c), 403(a)(4), 403(b)(8), or 457(e)(16), no contribution will be accepted unless it is in cash, and contributions will not be accepted for ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section408&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 409B",
+            "bill_context": "New section 409B imposes a contribution limit on individual retirement plans for high-income taxpayers with large account balances.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 45C",
+            "bill_context": "Section 45C is amended to limit clinical testing credits to first use or indication for rare diseases.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45C",
+              "heading": "Clinical testing expenses for certain drugs for rare diseases or conditions",
+              "text_excerpt": "\u00a7 45C. Clinical testing expenses for certain drugs for rare diseases or conditions (a) General rule For purposes of section 38, the credit determined under this section for the taxable year is an amount equal to 25 percent of the qualified clinical testing expenses for the taxable year. (b) Qualified clinical testing expenses For purposes of this section\u2014 (1) Qualified clinical testing expenses (A) In general Except as otherwise provided in this paragraph, the term \u201cqualified clinical testing expenses\u201d means the amounts which are paid or incurred by the taxpayer during the taxable year which w...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45C&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 4973",
+            "bill_context": "Section 4973 is amended to impose an excise tax on excess annual additions to individual retirement plans.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "4973",
+              "heading": "Tax on excess contributions to certain tax-favored accounts and annuities",
+              "text_excerpt": "\u00a7 4973. Tax on excess contributions to certain tax-favored accounts and annuities (a) Tax imposed In the case of\u2014 (1) an individual retirement account (within the meaning of section 408(a)), (2) an Archer MSA (within the meaning of section 220(d)), (3) an individual retirement annuity (within the meaning of section 408(b)), a custodial account treated as an annuity contract under section 403(b)(7)(A) (relating to custodial accounts for regulated investment company stock), (4) a Coverdell education savings account (as defined in section 530), (5) a health savings account (within the meaning of ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section4973&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 4974",
+            "bill_context": "Section 4974 is amended to increase minimum required distributions for high-income taxpayers with large retirement account balances.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "4974",
+              "heading": "Excise tax on certain accumulations in qualified retirement plans",
+              "text_excerpt": "\u00a7 4974. Excise tax on certain accumulations in qualified retirement plans (a) General rule If the amount distributed during the taxable year of the payee under any qualified retirement plan or any eligible deferred compensation plan (as defined in section 457(b)) is less than the minimum required distribution for such taxable year, there is hereby imposed a tax equal to 25 percent of the amount by which such minimum required distribution exceeds the actual amount distributed during the taxable year. The tax imposed by this section shall be paid by the payee. (b) Minimum required distribution F...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section4974&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 51",
+            "bill_context": "Section 51 is amended to increase the work opportunity credit during the COVID-19 recovery period.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "51",
+              "heading": "Amount of credit",
+              "text_excerpt": "\u00a7 51. Amount of credit (a) Determination of amount For purposes of section 38, the amount of the work opportunity credit determined under this section for the taxable year shall be equal to 40 percent of the qualified first-year wages for such year. (b) Qualified wages defined For purposes of this subpart\u2014 (1) In general The term \u201cqualified wages\u201d means the wages paid or incurred by the employer during the taxable year to individuals who are members of a targeted group. (2) Qualified first-year wages The term \u201cqualified first-year wages\u201d means, with respect to any individual, qualified wages a...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section51&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 531",
+            "bill_context": "Section 531 is amended to increase the capital gains rate to 25 percent for certain high-income individuals.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "531",
+              "heading": "Imposition of accumulated earnings tax",
+              "text_excerpt": "In addition to other taxes imposed by this chapter, there is hereby imposed for each taxable year on the accumulated taxable income (as defined in section 535) of each corporation described in section 532, an accumulated earnings tax equal to 20 percent of the accumulated taxable income.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section531&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 541",
+            "bill_context": "Section 541 is amended to increase the capital gains rate to 25 percent for certain high-income individuals.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "541",
+              "heading": "Imposition of personal holding company tax",
+              "text_excerpt": "In addition to other taxes imposed by this chapter, there is hereby imposed for each taxable year on the undistributed personal holding company income (as defined in section 545) of every personal holding company (as defined in section 542) a personal holding company tax equal to 20 percent of the undistributed personal holding company income.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section541&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6433",
+            "bill_context": "New section 6433 establishes a payment to individuals who dye fuel for certain purposes.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6433",
+              "heading": "Saver\u2019s Match",
+              "text_excerpt": "\u00a7 6433. Saver\u2019s Match (a) In general (1) Allowance of match Any eligible individual who makes qualified retirement savings contributions for the taxable year shall be allowed a matching contribution for such taxable year in an amount equal to the applicable percentage of so much of the qualified retirement savings contributions made by such eligible individual for the taxable year as does not exceed $2,000. (2) Payment of match (A) In general Except as provided in subparagraph (B), the matching contribution under this section shall be allowed as a credit which shall be payable by the Secretary...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6433&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1411",
+            "bill_context": "Section 1411 is amended to apply the net investment income tax to certain high-income individuals.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1411",
+              "heading": "Imposition of tax",
+              "text_excerpt": "\u00a7 1411. Imposition of tax (a) In general Except as provided in subsection (e)\u2014 (1) Application to individuals In the case of an individual, there is hereby imposed (in addition to any other tax imposed by this subtitle) for each taxable year a tax equal to 3.8 percent of the lesser of\u2014 (A) net investment income for such taxable year, or (B) the excess (if any) of\u2014 (i) the modified adjusted gross income for such taxable year, over (ii) the threshold amount. (2) Application to estates and trusts In the case of an estate or trust, there is hereby imposed (in addition to any other tax imposed by t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1411&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 162(m)",
+            "bill_context": "Section 162(m) is amended to limit the deduction of excessive employee remuneration.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 162",
+            "usc_data": {
+              "title": "26",
+              "section": "162",
+              "heading": "Trade or business expenses",
+              "text_excerpt": "\u00a7 162. Trade or business expenses (a) In general There shall be allowed as a deduction all the ordinary and necessary expenses paid or incurred during the taxable year in carrying on any trade or business, including\u2014 (1) a reasonable allowance for salaries or other compensation for personal services actually rendered; (2) traveling expenses (including amounts expended for meals and lodging other than amounts which are lavish or extravagant under the circumstances) while away from home in the pursuit of a trade or business; and (3) rentals or other payments required to be made as a condition to...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section162&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 181",
+            "bill_context": "Section 181 is amended to allow immediate expensing for qualified sound recording productions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "181",
+              "heading": "Treatment of certain qualified productions",
+              "text_excerpt": "\u00a7 181. Treatment of certain qualified productions (a) Election to treat costs as expenses (1) In general A taxpayer may elect to treat the cost of any qualified film or television production, any qualified live theatrical production, and any qualified sound recording production as an expense which is not chargeable to capital account. Any cost so treated shall be allowed as a deduction. (2) Dollar limitation (A) In general Paragraph (1) shall not apply to so much of the aggregate cost of any qualified film or television production or any qualified live theatrical production as exceeds $15,000,...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section181&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 21",
+            "bill_context": "Section 21 is amended to increase the child and dependent care credit and phaseout thresholds.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "21",
+              "heading": "Expenses for household and dependent care services necessary for gainful employment",
+              "text_excerpt": "\u00a7 21. Expenses for household and dependent care services necessary for gainful employment (a) Allowance of credit (1) In general In the case of an individual for which there are 1 or more qualifying individuals (as defined in subsection (b)(1)) with respect to such individual, there shall be allowed as a credit against the tax imposed by this chapter for the taxable year an amount equal to the applicable percentage of the employment-related expenses (as defined in subsection (b)(2)) paid by such individual during the taxable year. (2) Applicable percentage defined For purposes of paragraph (1)...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section21&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 25A",
+            "bill_context": "Section 25A is amended to expand the American Opportunity Tax Credit and remove the felony drug conviction bar.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "25A",
+              "heading": "American Opportunity and Lifetime Learning credits",
+              "text_excerpt": "\u00a7 25A. American Opportunity and Lifetime Learning credits (a) Allowance of credit In the case of an individual, there shall be allowed as a credit against the tax imposed by this chapter for the taxable year the amount equal to the sum of\u2014 (1) the American Opportunity Tax Credit, plus (2) the Lifetime Learning Credit. (b) American Opportunity Tax Credit (1) Per student credit In the case of any eligible student for whom an election is in effect under this section for any taxable year, the American Opportunity Tax Credit is an amount equal to the sum of\u2014 (A) 100 percent of so much of the qualif...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section25A&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 25E",
+            "bill_context": "New section 25E establishes a credit for caregiver expenses with income phaseout rules.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "25E",
+              "heading": "Previously-owned clean vehicles",
+              "text_excerpt": "\u00a7 25E. Previously-owned clean vehicles (a) Allowance of credit In the case of a qualified buyer who during a taxable year places in service a previously-owned clean vehicle, there shall be allowed as a credit against the tax imposed by this chapter for the taxable year an amount equal to the lesser of\u2014 (1) $4,000, or (2) the amount equal to 30 percent of the sale price with respect to such vehicle. (b) Limitation based on modified adjusted gross income (1) In general No credit shall be allowed under subsection (a) for any taxable year if\u2014 (A) the lesser of\u2014 (i) the modified adjusted gross inco...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section25E&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 3135",
+            "bill_context": "New section 3135 creates a payroll credit for wages paid to child care workers.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 36G",
+            "bill_context": "New section 36G establishes a credit for pathway to practice medical scholarship vouchers.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 45B",
+            "bill_context": "Section 45B is amended to extend the credit for employer social security taxes on employee tips to beauty service establishments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45B",
+              "heading": "Credit for portion of employer social security taxes paid with respect to employee cash tips",
+              "text_excerpt": "\u00a7 45B. Credit for portion of employer social security taxes paid with respect to employee cash tips (a) General rule For purposes of section 38, the employer social security credit determined under this section for the taxable year is an amount equal to the excess employer social security tax paid or incurred by the taxpayer during the taxable year. (b) Excess employer social security tax For purposes of this section\u2014 (1) In general The term \u201cexcess employer social security tax\u201d means any tax paid by an employer under section 3111 with respect to tips received by an employee during any month, ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45B&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45S",
+            "bill_context": "Section 45S is amended to terminate the employer credit for paid family and medical leave.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45S",
+              "heading": "Employer credit for paid family and medical leave",
+              "text_excerpt": "\u00a7 45S. Employer credit for paid family and medical leave (a) Establishment of credit (1) In general For purposes of section 38, in the case of an eligible employer, the paid family and medical leave credit is an amount equal to either of the following (as elected by such employer): (A) The applicable percentage of the amount of wages paid to qualifying employees with respect to any period in which such employees are on family and medical leave. (B) If such employer has an insurance policy with regards to the provision of paid family and medical leave which is in force during the taxable year, ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45S&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 4968",
+            "bill_context": "Section 4968 is amended to phase out the investment income excise tax for private colleges providing sufficient grants.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "4968",
+              "heading": "Excise tax based on investment income of private colleges and universities",
+              "text_excerpt": "\u00a7 4968. Excise tax based on investment income of private colleges and universities (a) Tax imposed There is hereby imposed on each applicable educational institution for the taxable year a tax equal to the applicable percentage of the net investment income of such institution for the taxable year. (b) Applicable percentage For purposes of this section, the term \u201capplicable percentage\u201d means\u2014 (1) 1.4 percent in the case of an institution with a student adjusted endowment of at least $500,000, and not in excess of $750,000, (2) 4 percent in the case of an institution with a student adjusted endo...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section4968&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 4975",
+            "bill_context": "Section 4975 is amended to prohibit certain transactions involving individual retirement accounts.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "4975",
+              "heading": "Tax on prohibited transactions",
+              "text_excerpt": "\u00a7 4975. Tax on prohibited transactions (a) Initial taxes on disqualified person There is hereby imposed a tax on each prohibited transaction. The rate of tax shall be equal to 15 percent of the amount involved with respect to the prohibited transaction for each year (or part thereof) in the taxable period. The tax imposed by this subsection shall be paid by any disqualified person who participates in the prohibited transaction (other than a fiduciary acting only as such). (b) Additional taxes on disqualified person In any case in which an initial tax is imposed by subsection (a) on a prohibite...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section4975&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 5701",
+            "bill_context": "Section 5701 is amended to increase the tax on tobacco products and impose a new tax on nicotine.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "5701",
+              "heading": "Rate of tax",
+              "text_excerpt": "\u00a7 5701. Rate of tax (a) Cigars On cigars, manufactured in or imported into the United States, there shall be imposed the following taxes: (1) Small cigars On cigars, weighing not more than 3 pounds per thousand, $50.33 per thousand; (2) Large cigars On cigars weighing more than 3 pounds per thousand, a tax equal to 52.75 percent of the price for which sold but not more than 40.26 cents per cigar. Cigars not exempt from tax under this chapter which are removed but not intended for sale shall be taxed at the same rate as similar cigars removed for sale. (b) Cigarettes On cigarettes, manufactured...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section5701&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 5702",
+            "bill_context": "Section 5702 is amended to define taxable nicotine and related terms.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "5702",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 5702. Definitions When used in this chapter\u2014 (a) Cigar \u201cCigar\u201d means any roll of tobacco wrapped in leaf tobacco or in any substance containing tobacco (other than any roll of tobacco which is a cigarette within the meaning of subsection (b)(2)). (b) Cigarette \u201cCigarette\u201d means\u2014 (1) any roll of tobacco wrapped in paper or in any substance not containing tobacco, and (2) any roll of tobacco wrapped in any substance containing tobacco which, because of its appearance, the type of tobacco used in the filler, or its packaging and labeling, is likely to be offered to, or purchased by, consumers a...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section5702&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6050W",
+            "bill_context": "Section 6050W is amended to require reporting of third-party network transactions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6050W",
+              "heading": "Returns relating to payments made in settlement of payment card and third party network transactions",
+              "text_excerpt": "\u00a7 6050W. Returns relating to payments made in settlement of payment card and third party network transactions (a) In general Each payment settlement entity shall make a return for each calendar year setting forth\u2014 (1) the name, address, and TIN of each participating payee to whom one or more payments in settlement of reportable payment transactions are made, (2) the gross amount of the reportable payment transactions with respect to each such participating payee and 1 1 So in original. Probably should be preceded by a comma. (3) in the case of a third party settlement organization, the portion...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6050W&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6206",
+            "bill_context": "Section 6206 is amended to include new reporting requirements for fuel and other transactions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6206",
+              "heading": "Special rules applicable to excessive claims under certain sections",
+              "text_excerpt": "Any portion of a refund made under section 6416(a)(4) and any portion of a payment made under section 6420, 6421, 6427, or 6435 which constitutes an excessive amount (as defined in section 6675(b)), and any civil penalty provided by section 6675, may be assessed and collected as if it were a tax imposed by section 4081 (with respect to refunds under section 6416(a)(4) and payments under sections 6420, 6421, and 6435), or 4041 or 4081 (with respect to payments under section 6427) and as if the person who made the claim were liable for such tax. The period for assessing any such portion, and for...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6206&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6427",
+            "bill_context": "Section 6427 is amended to include new reporting requirements for fuel and other transactions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6427",
+              "heading": "Fuels not used for taxable purposes",
+              "text_excerpt": "\u00a7 6427. Fuels not used for taxable purposes (a) Nontaxable uses Except as provided in subsection (k), if tax has been imposed under paragraph (2) or (3) of section 4041(a) or section 4041(c) on the sale of any fuel and the purchaser uses such fuel other than for the use for which sold, or resells such fuel, the Secretary shall pay (without interest) to him an amount equal to\u2014 (1) the amount of tax imposed on the sale of the fuel to him, reduced by (2) if he uses the fuel, the amount of tax which would have been imposed under section 4041 on such use if no tax under section 4041 had been impose...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6427&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6430",
+            "bill_context": "Section 6430 is amended to include new reporting requirements for fuel and other transactions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6430",
+              "heading": "Treatment of tax imposed at Leaking Underground Storage Tank Trust Fund financing rate",
+              "text_excerpt": "\u00a7 6430. Treatment of tax imposed at Leaking Underground Storage Tank Trust Fund financing rate No refunds, credits, or payments shall be made under this subchapter for any tax imposed at the Leaking Underground Storage Tank Trust Fund financing rate, except in the case of fuels\u2014 (1) which are exempt from tax under section 4081(a) by reason of section 4082(f)(2), (2) which are exempt from tax under section 4041(d) by reason of the last sentence of paragraph (5) thereof, (3) with respect to which the rate increase under section 4081(a)(2)(B) is zero by reason of section 4082(e)(2), or (4) which ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6430&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6675",
+            "bill_context": "Section 6675 is amended to include civil penalties for excessive claims under new fuel provisions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6675",
+              "heading": "Excessive claims with respect to the use of certain fuels",
+              "text_excerpt": "\u00a7 6675. Excessive claims with respect to the use of certain fuels (a) Civil penalty In addition to any criminal penalty provided by law, if a claim is made under section 6416(a)(4) (relating to certain sales of gasoline), section 6420 (relating to gasoline used on farms), 6421 (relating to gasoline used for certain nonhighway purposes or by local transit systems), 6427 (relating to fuels not used for taxable purposes), or 6435 (relating to eligible indelibly dyed fuel) for an excessive amount, unless it is shown that the claim for such excessive amount is due to reasonable cause, the person ma...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6675&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 117",
+            "bill_context": "Section 117 is amended to exclude Federal Pell Grants from gross income.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "117",
+              "heading": "Qualified scholarships",
+              "text_excerpt": "\u00a7 117. Qualified scholarships (a) General rule Gross income does not include any amount received as a qualified scholarship by an individual who is a candidate for a degree at an educational organization described in section 170(b)(1)(A)(ii). (b) Qualified scholarship For purposes of this section\u2014 (1) In general The term \u201cqualified scholarship\u201d means any amount received by an individual as a scholarship or fellowship grant to the extent the individual establishes that, in accordance with the conditions of the grant, such amount was used for qualified tuition and related expenses. (2) Qualified...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section117&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 129",
+            "bill_context": "Section 129 is amended to increase the exclusion for dependent care assistance and add inflation adjustment.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "129",
+              "heading": "Dependent care assistance programs",
+              "text_excerpt": "\u00a7 129. Dependent care assistance programs (a) Exclusion (1) In general Gross income of an employee does not include amounts paid or incurred by the employer for dependent care assistance provided to such employee if the assistance is furnished pursuant to a program which is described in subsection (d). (2) Limitation of exclusion (A) In general The amount which may be excluded under paragraph (1) for dependent care assistance with respect to dependent care services provided during a taxable year shall not exceed $7,500 ($3,750 in the case of a separate return by a married individual). (B) Year...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section129&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1324",
+            "bill_context": "Section 1324 is amended to include new provisions for refundable credits and payments.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1445",
+            "bill_context": "Section 1445 is amended to increase the withholding tax rate on certain foreign payments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1445",
+              "heading": "Withholding of tax on dispositions of United States real property interests",
+              "text_excerpt": "\u00a7 1445. Withholding of tax on dispositions of United States real property interests (a) General rule Except as otherwise provided in this section, in the case of any disposition of a United States real property interest (as defined in section 897(c)) by a foreign person, the transferee shall be required to deduct and withhold a tax equal to 15 percent of the amount realized on the disposition. (b) Exemptions (1) In general No person shall be required to deduct and withhold any amount under subsection (a) with respect to a disposition if paragraph (2), (3), (4), (5), or (6) applies to the trans...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1445&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1446",
+            "bill_context": "Section 1446 is amended to include new withholding rules for foreign payments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1446",
+              "heading": "Withholding of tax on foreign partners\u2019 share of effectively connected income",
+              "text_excerpt": "\u00a7 1446. Withholding of tax on foreign partners\u2019 share of effectively connected income (a) General rule If\u2014 (1) a partnership has effectively connected taxable income for any taxable year, and (2) any portion of such income is allocable under section 704 to a foreign partner, such partnership shall pay a withholding tax under this section at such time and in such manner as the Secretary shall by regulations prescribe. (b) Amount of withholding tax (1) In general The amount of the withholding tax payable by any partnership under subsection (a) shall be equal to the applicable percentage of the e...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1446&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 152",
+            "bill_context": "Section 152 is amended to modify definitions of dependents and related terms.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "152",
+              "heading": "Dependent defined",
+              "text_excerpt": "\u00a7 152. Dependent defined (a) In general For purposes of this subtitle, the term \u201cdependent\u201d means\u2014 (1) a qualifying child, or (2) a qualifying relative. (b) Exceptions For purposes of this section\u2014 (1) Dependents ineligible If an individual is a dependent of a taxpayer for any taxable year of such taxpayer beginning in a calendar year, such individual shall be treated as having no dependents for any taxable year of such individual beginning in such calendar year. (2) Married dependents An individual shall not be treated as a dependent of a taxpayer under subsection (a) if such individual has m...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section152&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 167",
+            "bill_context": "Section 167 is amended to modify rules for depreciation and normalization methods.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "167",
+              "heading": "Depreciation",
+              "text_excerpt": "\u00a7 167. Depreciation (a) General rule There shall be allowed as a depreciation deduction a reasonable allowance for the exhaustion, wear and tear (including a reasonable allowance for obsolescence)\u2014 (1) of property used in the trade or business, or (2) of property held for the production of income. (b) Cross reference For determination of depreciation deduction in case of property to which section 168 applies, see section 168. (c) Basis for depreciation (1) In general The basis on which exhaustion, wear and tear, and obsolescence are to be allowed in respect of any property shall be the adjuste...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section167&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 168",
+            "bill_context": "Section 168 is amended to modify depreciation rules and normalization requirements.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "168",
+              "heading": "Accelerated cost recovery system",
+              "text_excerpt": "\u00a7 168. Accelerated cost recovery system (a) General rule Except as otherwise provided in this section, the depreciation deduction provided by section 167(a) for any tangible property shall be determined by using\u2014 (1) the applicable depreciation method, (2) the applicable recovery period, and (3) the applicable convention. (b) Applicable depreciation method For purposes of this section\u2014 (1) In general Except as provided in paragraphs (2) and (3), the applicable depreciation method is\u2014 (A) the 200 percent declining balance method, (B) switching to the straight line method for the 1st taxable yea...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 170",
+            "bill_context": "Section 170 is amended to limit deductions for qualified conservation contributions by pass-through entities.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "170",
+              "heading": "Charitable, etc., contributions and gifts",
+              "text_excerpt": "\u00a7 170. Charitable, etc., contributions and gifts (a) Allowance of deduction (1) General rule There shall be allowed as a deduction any charitable contribution (as defined in subsection (c)) payment of which is made within the taxable year. A charitable contribution shall be allowable as a deduction only if verified under regulations prescribed by the Secretary. (2) Corporations on accrual basis In the case of a corporation reporting its taxable income on the accrual basis, if\u2014 (A) the board of directors authorizes a charitable contribution during any taxable year, and (B) payment of such contr...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section170&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 172",
+            "bill_context": "Section 172 is amended to modify net operating loss rules and carryforward periods.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "172",
+              "heading": "Net operating loss deduction",
+              "text_excerpt": "\u00a7 172. Net operating loss deduction (a) Deduction allowed There shall be allowed as a deduction for the taxable year an amount equal to\u2014 (1) in the case of a taxable year beginning before January 1, 2021 , the aggregate of the net operating loss carryovers to such year, plus the net operating loss carrybacks to such year, and (2) in the case of a taxable year beginning after December 31, 2020 , the sum of\u2014 (A) the aggregate amount of net operating losses arising in taxable years beginning before January 1, 2018 , carried to such taxable year, plus (B) the lesser of\u2014 (i) the aggregate amount of...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section172&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2031",
+            "bill_context": "Section 2031 is amended to establish valuation rules for transfers of nonbusiness assets.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2031",
+              "heading": "Definition of gross estate",
+              "text_excerpt": "\u00a7 2031. Definition of gross estate (a) General The value of the gross estate of the decedent shall be determined by including to the extent provided for in this part, the value at the time of his death of all property, real or personal, tangible or intangible, wherever situated. (b) Valuation of unlisted stock and securities In the case of stock and securities of a corporation the value of which, by reason of their not being listed on an exchange and by reason of the absence of sales thereof, cannot be determined with reference to bid and asked prices or with reference to sales prices, the val...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2031&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2032A",
+            "bill_context": "Section 2032A is amended to increase the estate tax valuation reduction for certain real property.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2032A",
+              "heading": "Valuation of certain farm, etc., real property",
+              "text_excerpt": "\u00a7 2032A. Valuation of certain farm, etc., real property (a) Value based on use under which property qualifies (1) General rule If\u2014 (A) the decedent was (at the time of his death) a citizen or resident of the United States, and (B) the executor elects the application of this section and files the agreement referred to in subsection (d)(2), then, for purposes of this chapter, the value of qualified real property shall be its value for the use under which it qualifies, under subsection (b), as qualified real property. (2) Limitation on aggregate reduction in fair market value The aggregate decrea...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2032A&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 245A",
+            "bill_context": "Section 245A is amended to limit the deduction for foreign source dividends to controlled foreign corporations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "245A",
+              "heading": "Deduction for foreign source-portion of dividends received by domestic corporations from specified 10-percent owned foreign corporations",
+              "text_excerpt": "\u00a7 245A. Deduction for foreign source-portion of dividends received by domestic corporations from specified 10-percent owned foreign corporations (a) In general In the case of any dividend received from a specified 10-percent owned foreign corporation by a domestic corporation which is a United States shareholder with respect to such foreign corporation, there shall be allowed as a deduction an amount equal to the foreign-source portion of such dividend. (b) Specified 10-percent owned foreign corporation For purposes of this section\u2014 (1) In general The term \u201cspecified 10-percent owned foreign c...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section245A&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 246",
+            "bill_context": "Section 246 is amended to modify the deduction for dividends and other income.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "246",
+              "heading": "Rules applying to deductions for dividends received",
+              "text_excerpt": "\u00a7 246. Rules applying to deductions for dividends received (a) Deduction not allowed for dividends from certain corporations (1) In general The deductions allowed by sections 243 1 1 So in original. Probably should be followed by a comma. 245, and 245A shall not apply to any dividend from a corporation which, for the taxable year of the corporation in which the distribution is made, or for the next preceding taxable year of the corporation, is a corporation exempt from tax under section 501 (relating to certain charitable, etc., organizations) or section 521 (relating to farmers\u2019 cooperative a...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section246&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 250",
+            "bill_context": "Section 250 is amended to modify the deduction for foreign-derived intangible income and global intangible low-taxed income.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "250",
+              "heading": "Foreign-derived deduction eligible income and net CFC tested income",
+              "text_excerpt": "\u00a7 250. Foreign-derived deduction eligible income and net CFC tested income (a) Allowance of deduction (1) In general In the case of a domestic corporation for any taxable year, there shall be allowed as a deduction an amount equal to the sum of\u2014 (A) 33.34 percent of the foreign-derived deduction eligible income of such domestic corporation for such taxable year, plus (B) 40 percent of\u2014 (i) the net CFC tested income amount (if any) which is included in the gross income of such domestic corporation under section 951A for such taxable year, and (ii) the amount treated as a dividend received by su...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section250&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 267",
+            "bill_context": "Section 267 is amended to modify wash sale rules and related party transactions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "267",
+              "heading": "Losses, expenses, and interest with respect to transactions between related taxpayers",
+              "text_excerpt": "\u00a7 267. Losses, expenses, and interest with respect to transactions between related taxpayers (a) In general (1) Deduction for losses disallowed No deduction shall be allowed in respect of any loss from the sale or exchange of property, directly or indirectly, between persons specified in any of the paragraphs of subsection (b). The preceding sentence shall not apply to any loss of the distributing corporation (or the distributee) in the case of a distribution in complete liquidation. (2) Matching of deduction and payee income item in the case of expenses and interest If\u2014 (A) by reason of the m...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section267&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 318",
+            "bill_context": "Section 318 is amended to modify rules for constructive ownership and related party definitions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "318",
+              "heading": "Constructive ownership of stock",
+              "text_excerpt": "\u00a7 318. Constructive ownership of stock (a) General rule For purposes of those provisions of this subchapter to which the rules contained in this section are expressly made applicable\u2014 (1) Members of family (A) In general An individual shall be considered as owning the stock owned, directly or indirectly, by or for\u2014 (i) his spouse (other than a spouse who is legally separated from the individual under a decree of divorce or separate maintenance), and (ii) his children, grandchildren, and parents. (B) Effect of adoption For purposes of subparagraph (A)(ii), a legally adopted child of an individu...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section318&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 338",
+            "bill_context": "Section 338 is amended to modify rules for the treatment of asset dispositions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "338",
+              "heading": "Certain stock purchases treated as asset acquisitions",
+              "text_excerpt": "\u00a7 338. Certain stock purchases treated as asset acquisitions (a) General rule For purposes of this subtitle, if a purchasing corporation makes an election under this section (or is treated under subsection (e) as having made such an election), then, in the case of any qualified stock purchase, the target corporation\u2014 (1) shall be treated as having sold all of its assets at the close of the acquisition date at fair market value in a single transaction, and (2) shall be treated as a new corporation which purchased all of the assets referred to in paragraph (1) as of the beginning of the day afte...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section338&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 351",
+            "bill_context": "Section 351 is amended to modify rules for nonrecognition of gain on transfers to corporations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "351",
+              "heading": "Transfer to corporation controlled by transferor",
+              "text_excerpt": "\u00a7 351. Transfer to corporation controlled by transferor (a) General rule No gain or loss shall be recognized if property is transferred to a corporation by one or more persons solely in exchange for stock in such corporation and immediately after the exchange such person or persons are in control (as defined in section 368(c)) of the corporation. (b) Receipt of property If subsection (a) would apply to an exchange but for the fact that there is received, in addition to the stock permitted to be received under subsection (a), other property or money, then\u2014 (1) gain (if any) to such recipient sh...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section351&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 361",
+            "bill_context": "Section 361 is amended to modify rules for the basis of property in reorganizations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "361",
+              "heading": "Nonrecognition of gain or loss to corporations; treatment of distributions",
+              "text_excerpt": "\u00a7 361. Nonrecognition of gain or loss to corporations; treatment of distributions (a) General rule No gain or loss shall be recognized to a corporation if such corporation is a party to a reorganization and exchanges property, in pursuance of the plan of reorganization, solely for stock or securities in another corporation a party to the reorganization. (b) Exchanges not solely in kind (1) Gain If subsection (a) would apply to an exchange but for the fact that the property received in exchange consists not only of stock or securities permitted by subsection (a) to be received without the recog...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section361&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 381",
+            "bill_context": "Section 381 is amended to modify rules for the carryover of disallowed interest.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "381",
+              "heading": "Carryovers in certain corporate acquisitions",
+              "text_excerpt": "\u00a7 381. Carryovers in certain corporate acquisitions (a) General rule In the case of the acquisition of assets of a corporation by another corporation\u2014 (1) in a distribution to such other corporation to which section 332 (relating to liquidations of subsidiaries) applies; or (2) in a transfer to which section 361 (relating to nonrecognition of gain or loss to corporations) applies, but only if the transfer is in connection with a reorganization described in subparagraph (A), (C), (D), (F), or (G) of section 368(a)(1), the acquiring corporation shall succeed to and take into account, as of the c...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section381&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 382",
+            "bill_context": "Section 382 is amended to modify rules for the carryover of disallowed interest.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "382",
+              "heading": "Limitation on net operating loss carryforwards and certain built-in losses following ownership change",
+              "text_excerpt": "\u00a7 382. Limitation on net operating loss carryforwards and certain built-in losses following ownership change (a) General rule The amount of the taxable income of any new loss corporation for any post-change year which may be offset by pre-change losses shall not exceed the section 382 limitation for such year. (b) Section 382 limitation For purposes of this section\u2014 (1) In general Except as otherwise provided in this section, the section 382 limitation for any post-change year is an amount equal to\u2014 (A) the value of the old loss corporation, multiplied by (B) the long-term tax-exempt rate. (2)...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section382&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 402",
+            "bill_context": "Section 402 is amended to modify rules for distributions from retirement plans.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "402",
+              "heading": "Taxability of beneficiary of employees\u2019 trust",
+              "text_excerpt": "\u00a7 402. Taxability of beneficiary of employees\u2019 trust (a) Taxability of beneficiary of exempt trust Except as otherwise provided in this section, any amount actually distributed to any distributee by any employees\u2019 trust described in section 401(a) which is exempt from tax under section 501(a) shall be taxable to the distributee, in the taxable year of the distributee in which distributed, under section 72 (relating to annuities). (b) Taxability of beneficiary of nonexempt trust (1) Contributions Contributions to an employees\u2019 trust made by an employer during a taxable year of the employer whic...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section402&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 403",
+            "bill_context": "Section 403 is amended to modify rules for annuity contracts and retirement plans.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "403",
+              "heading": "Taxation of employee annuities",
+              "text_excerpt": "\u00a7 403. Taxation of employee annuities (a) Taxability of beneficiary under a qualified annuity plan (1) Distributee taxable under section 72 If an annuity contract is purchased by an employer for an employee under a plan which meets the requirements of section 404(a)(2) (whether or not the employer deducts the amounts paid for the contract under such section), the amount actually distributed to any distributee under the contract shall be taxable to the distributee (in the year in which so distributed) under section 72 (relating to annuities). (2) Special rule for health and long-term care insur...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section403&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 408",
+            "bill_context": "Section 408 is amended to modify rules for individual retirement accounts.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "408",
+              "heading": "Individual retirement accounts",
+              "text_excerpt": "\u00a7 408. Individual retirement accounts (a) Individual retirement account For purposes of this section, the term \u201cindividual retirement account\u201d means a trust created or organized in the United States for the exclusive benefit of an individual or his beneficiaries, but only if the written governing instrument creating the trust meets the following requirements: (1) Except in the case of a rollover contribution described in subsection (d)(3) or in section 402(c), 403(a)(4), 403(b)(8), or 457(e)(16), no contribution will be accepted unless it is in cash, and contributions will not be accepted for ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section408&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 409A",
+            "bill_context": "Section 409A is amended to modify rules for deferred compensation plans.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "409A",
+              "heading": "Inclusion in gross income of deferred compensation under nonqualified deferred compensation plans",
+              "text_excerpt": "\u00a7 409A. Inclusion in gross income of deferred compensation under nonqualified deferred compensation plans (a) Rules relating to constructive receipt (1) Plan failures (A) Gross income inclusion (i) In general If at any time during a taxable year a nonqualified deferred compensation plan\u2014 (I) fails to meet the requirements of paragraphs (2), (3), and (4), or (II) is not operated in accordance with such requirements, all compensation deferred under the plan for the taxable year and all preceding taxable years shall be includible in gross income for the taxable year to the extent not subject to a...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section409A&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 414",
+            "bill_context": "Section 414 is amended to modify rules for controlled groups and related entities.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "414",
+              "heading": "Definitions and special rules",
+              "text_excerpt": "\u00a7 414. Definitions and special rules (a) Service for predecessor employer For purposes of this part\u2014 (1) in any case in which the employer maintains a plan of a predecessor employer, service for such predecessor shall be treated as service for the employer, and (2) in any case in which the employer maintains a plan which is not the plan maintained by a predecessor employer, service for such predecessor shall, to the extent provided in regulations prescribed by the Secretary, be treated as service for the employer. (b) Employees of controlled group of corporations (1) In general For purposes of...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section414&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 457",
+            "bill_context": "Section 457 is amended to modify rules for eligible deferred compensation plans.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "457",
+              "heading": "Deferred compensation plans of State and local governments and tax-exempt organizations",
+              "text_excerpt": "\u00a7 457. Deferred compensation plans of State and local governments and tax-exempt organizations (a) Year of inclusion in gross income (1) In general Any amount of compensation deferred under an eligible deferred compensation plan, and any income attributable to the amounts so deferred, shall be includible in gross income only for the taxable year in which such compensation or other income\u2014 (A) is paid to the participant or other beneficiary, in the case of a plan of an eligible employer described in subsection (e)(1)(A), and (B) is paid or otherwise made available to the participant or other be...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section457&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 461",
+            "bill_context": "Section 461 is amended to modify rules for the deduction of business losses.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "461",
+              "heading": "General rule for taxable year of deduction",
+              "text_excerpt": "\u00a7 461. General rule for taxable year of deduction (a) General rule The amount of any deduction or credit allowed by this subtitle shall be taken for the taxable year which is the proper taxable year under the method of accounting used in computing taxable income. (b) Special rule in case of death In the case of the death of a taxpayer whose taxable income is computed under an accrual method of accounting, any amount accrued as a deduction or credit only by reason of the death of the taxpayer shall not be allowed in computing taxable income for the period in which falls the date of the taxpayer...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section461&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 469",
+            "bill_context": "Section 469 is amended to modify rules for passive activity loss limitations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "469",
+              "heading": "Passive activity losses and credits limited",
+              "text_excerpt": "\u00a7 469. Passive activity losses and credits limited (a) Disallowance (1) In general If for any taxable year the taxpayer is described in paragraph (2), neither\u2014 (A) the passive activity loss, nor (B) the passive activity credit, for the taxable year shall be allowed. (2) Persons described The following are described in this paragraph: (A) any individual, estate, or trust, (B) any closely held C corporation, and (C) any personal service corporation. (b) Disallowed loss or credit carried to next year Except as otherwise provided in this section, any loss or credit from an activity which is disall...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section469&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 475",
+            "bill_context": "Section 475 is amended to modify rules for the treatment of securities and commodities.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "475",
+              "heading": "Mark to market accounting method for dealers in securities",
+              "text_excerpt": "\u00a7 475. Mark to market accounting method for dealers in securities (a) General rule Notwithstanding any other provision of this subpart, the following rules shall apply to securities held by a dealer in securities: (1) Any security which is inventory in the hands of the dealer shall be included in inventory at its fair market value. (2) In the case of any security which is not inventory in the hands of the dealer and which is held at the close of any taxable year\u2014 (A) the dealer shall recognize gain or loss as if such security were sold for its fair market value on the last business day of such...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section475&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 482",
+            "bill_context": "Section 482 is amended to modify rules for transfer pricing and related party transactions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "482",
+              "heading": "Allocation of income and deductions among taxpayers",
+              "text_excerpt": "In any case of two or more organizations, trades, or businesses (whether or not incorporated, whether or not organized in the United States, and whether or not affiliated) owned or controlled directly or indirectly by the same interests, the Secretary may distribute, apportion, or allocate gross income, deductions, credits, or allowances between or among such organizations, trades, or businesses, if he determines that such distribution, apportionment, or allocation is necessary in order to prevent evasion of taxes or clearly to reflect the income of any of such organizations, trades, or busine...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section482&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 4975",
+            "bill_context": "Section 4975 is amended to modify rules for prohibited transactions in retirement plans.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "4975",
+              "heading": "Tax on prohibited transactions",
+              "text_excerpt": "\u00a7 4975. Tax on prohibited transactions (a) Initial taxes on disqualified person There is hereby imposed a tax on each prohibited transaction. The rate of tax shall be equal to 15 percent of the amount involved with respect to the prohibited transaction for each year (or part thereof) in the taxable period. The tax imposed by this subsection shall be paid by any disqualified person who participates in the prohibited transaction (other than a fiduciary acting only as such). (b) Additional taxes on disqualified person In any case in which an initial tax is imposed by subsection (a) on a prohibite...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section4975&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 5001",
+            "bill_context": "Section 5001 is amended to modify rules for the taxation of distilled spirits.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "5001",
+              "heading": "Imposition, rate, and attachment of tax",
+              "text_excerpt": "\u00a7 5001. Imposition, rate, and attachment of tax (a) Rate of tax (1) General There is hereby imposed on all distilled spirits produced in or imported into the United States a tax at the rate of $13.50 on each proof gallon and a proportionate tax at the like rate on all fractional parts of a proof gallon. (2) Products containing distilled spirits All products of distillation, by whatever name known, which contain distilled spirits, on which the tax imposed by law has not been paid, and any alcoholic ingredient added to such products, shall be considered and taxed as distilled spirits. (3) Wines ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section5001&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 5003",
+            "bill_context": "Section 5003 is amended to modify rules for the taxation of certain tobacco products.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "5003",
+              "heading": "Cross references to exemptions, etc.",
+              "text_excerpt": "\u00a7 5003. Cross references to exemptions, etc. (1) For provisions authorizing the withdrawal of distilled spirits free of tax for use by Federal or State agencies, see sections 5214(a)(2) and 5313. (2) For provisions authorizing the withdrawal of distilled spirits free of tax by nonprofit educational organizations, scientific universities or colleges of learning, laboratories, hospitals, blood banks, sanitariums, and charitable clinics, see section 5214(a)(3). (3) For provisions authorizing the withdrawal of certain imported distilled spirits from customs custody without payment of tax, see sect...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section5003&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 501",
+            "bill_context": "Section 501 is amended to modify rules for tax-exempt organizations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "501",
+              "heading": "Exemption from tax on corporations, certain trusts, etc.",
+              "text_excerpt": "\u00a7 501. Exemption from tax on corporations, certain trusts, etc. (a) Exemption from taxation An organization described in subsection (c) or (d) or section 401(a) shall be exempt from taxation under this subtitle unless such exemption is denied under section 502 or 503. (b) Tax on unrelated business income and certain other activities An organization exempt from taxation under subsection (a) shall be subject to tax to the extent provided in parts II, III, and VI of this subchapter, but (notwithstanding parts II, III, and VI of this subchapter) shall be considered an organization exempt from inco...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section501&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 511",
+            "bill_context": "Section 511 is amended to modify rules for unrelated business income tax.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "511",
+              "heading": "Imposition of tax on unrelated business income of charitable, etc., organizations",
+              "text_excerpt": "\u00a7 511. Imposition of tax on unrelated business income of charitable, etc., organizations (a) Charitable, etc., organizations taxable at corporation rates (1) Imposition of tax There is hereby imposed for each taxable year on the unrelated business taxable income (as defined in section 512) of every organization described in paragraph (2) a tax computed as provided in section 11. In making such computation for purposes of this section, the term \u201ctaxable income\u201d as used in section 11 shall be read as \u201cunrelated business taxable income\u201d. (2) Organizations subject to tax (A) Organizations describe...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section511&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 529",
+            "bill_context": "Section 529 is amended to modify rules for qualified tuition programs.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "529",
+              "heading": "Qualified tuition programs",
+              "text_excerpt": "\u00a7 529. Qualified tuition programs (a) General rule A qualified tuition program shall be exempt from taxation under this subtitle. Notwithstanding the preceding sentence, such program shall be subject to the taxes imposed by section 511 (relating to imposition of tax on unrelated business income of charitable organizations). (b) Qualified tuition program For purposes of this section\u2014 (1) In general The term \u201cqualified tuition program\u201d means a program established and maintained by a State or agency or instrumentality thereof or by 1 or more eligible educational institutions\u2014 (A) under which a pe...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section529&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 530",
+            "bill_context": "Section 530 is amended to modify rules for Coverdell education savings accounts.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "530",
+              "heading": "Coverdell education savings accounts",
+              "text_excerpt": "\u00a7 530. Coverdell education savings accounts (a) General rule A Coverdell education savings account shall be exempt from taxation under this subtitle. Notwithstanding the preceding sentence, the Coverdell education savings account shall be subject to the taxes imposed by section 511 (relating to imposition of tax on unrelated business income of charitable organizations). (b) Definitions and special rules For purposes of this section\u2014 (1) Coverdell education savings account The term \u201cCoverdell education savings account\u201d means a trust created or organized in the United States exclusively for the ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section530&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 5704",
+            "bill_context": "Section 5704 is amended to modify rules for tobacco product taxation and drawback.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "5704",
+              "heading": "Exemption from tax",
+              "text_excerpt": "\u00a7 5704. Exemption from tax (a) Tobacco products furnished for employee use or experimental purposes Tobacco products may be furnished by a manufacturer of such products, without payment of tax, for use or consumption by employees or for experimental purposes, in such quantities, and in such manner as the Secretary shall by regulation prescribed. (b) Tobacco products and cigarette papers and tubes transferred or removed in bond from domestic factories and export warehouses A manufacturer or export warehouse proprietor may transfer tobacco products and cigarette papers and tubes, without payment...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section5704&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 5706",
+            "bill_context": "Section 5706 is amended to clarify rules for tobacco product drawback.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "5706",
+              "heading": "Drawback of tax",
+              "text_excerpt": "There shall be an allowance of drawback of tax paid on tobacco products and cigarette papers and tubes, when shipped from the United States, in accordance with such regulations and upon the filing of such bond as the Secretary shall prescribe.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section5706&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6011",
+            "bill_context": "Section 6011 is amended to modify rules for information reporting requirements.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6011",
+              "heading": "General requirement of return, statement, or list",
+              "text_excerpt": "\u00a7 6011. General requirement of return, statement, or list (a) General rule When required by regulations prescribed by the Secretary any person made liable for any tax imposed by this title, or with respect to the collection thereof, shall make a return or statement according to the forms and regulations prescribed by the Secretary. Every person required to make a return or statement shall include therein the information required by such forms or regulations. (b) Identification of taxpayer The Secretary is authorized to require such information with respect to persons subject to the taxes impos...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6011&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6103",
+            "bill_context": "Section 6103 is amended to modify rules for disclosure of taxpayer information.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6103",
+              "heading": "Confidentiality and disclosure of returns and return information",
+              "text_excerpt": "\u00a7 6103. Confidentiality and disclosure of returns and return information (a) General rule Returns and return information shall be confidential, and except as authorized by this title\u2014 (1) no officer or employee of the United States, (2) no officer or employee of any State, any local law enforcement agency receiving information under subsection (i)(1)(C) or (7)(A), any tribal or local child support enforcement agency, or any local agency administering a program listed in subsection ( l )(7)(D) who has or had access to returns or return information under this section or section 6104(c), and (3) ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6103&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6201",
+            "bill_context": "Section 6201 is amended to modify rules for assessments and collections.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6201",
+              "heading": "Assessment authority",
+              "text_excerpt": "\u00a7 6201. Assessment authority (a) Authority of Secretary The Secretary is authorized and required to make the inquiries, determinations, and assessments of all taxes (including interest, additional amounts, additions to the tax, and assessable penalties) imposed by this title, or accruing under any former internal revenue law, which have not been duly paid by stamp at the time and in the manner provided by law. Such authority shall extend to and include the following: (1) Taxes shown on return The Secretary shall assess all taxes determined by the taxpayer or by the Secretary as to which return...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6201&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6211",
+            "bill_context": "Section 6211 is amended to modify rules for the assessment of taxes.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6211",
+              "heading": "Definition of a deficiency",
+              "text_excerpt": "\u00a7 6211. Definition of a deficiency (a) In general For purposes of this title in the case of income, estate, and gift taxes imposed by subtitles A and B and excise taxes imposed by chapters 41, 42, 43, and 44 the term \u201cdeficiency\u201d means the amount by which the tax imposed by subtitle A or B, or chapter 41, 42, 43, or 44 exceeds the excess of\u2014 (1) the sum of (A) the amount shown as the tax by the taxpayer upon his return, if a return was made by the taxpayer and an amount was shown as the tax by the taxpayer thereon, plus (B) the amounts previously assessed (or collected without assessment) as a...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6211&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6213",
+            "bill_context": "Section 6213 is amended to modify rules for the assessment of taxes and appeals.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6213",
+              "heading": "Restrictions applicable to deficiencies; petition to Tax Court",
+              "text_excerpt": "\u00a7 6213. Restrictions applicable to deficiencies; petition to Tax Court (a) Time for filing petition and restriction on assessment Within 90 days, or 150 days if the notice is addressed to a person outside the United States, after the notice of deficiency authorized in section 6212 is mailed (not counting Saturday, Sunday, or a legal holiday in the District of Columbia as the last day), the taxpayer may file a petition with the Tax Court for a redetermination of the deficiency. Except as otherwise provided in section 6851, 6852, or 6861 no assessment of a deficiency in respect of any tax impose...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6213&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6229",
+            "bill_context": "Section 6229 is amended to modify rules for the assessment of taxes in certain cases.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 6235",
+            "bill_context": "Section 6235 is amended to modify rules for the assessment of taxes in certain cases.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6235",
+              "heading": "Period of limitations on making adjustments",
+              "text_excerpt": "\u00a7 6235. Period of limitations on making adjustments (a) In general Except as otherwise provided in this section or section 905(c), no adjustment under this subchapter for any partnership taxable year may be made after the later of\u2014 (1) the date which is 3 years after the latest of\u2014 (A) the date on which the partnership return for such taxable year was filed, (B) the return due date for the taxable year, or (C) the date on which the partnership filed an administrative adjustment request with respect to such year under section 6227, or (2) in the case of any modification of an imputed underpayme...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6235&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6402",
+            "bill_context": "Section 6402 is amended to modify rules for the refund of overpayments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6402",
+              "heading": "Authority to make credits or refunds",
+              "text_excerpt": "\u00a7 6402. Authority to make credits or refunds (a) General rule In the case of any overpayment, the Secretary, within the applicable period of limitations, may credit the amount of such overpayment, including any interest allowed thereon, against any liability in respect of an internal revenue tax on the part of the person who made the overpayment and shall, subject to subsections (c), (d), (e), and (f), refund any balance to such person. (b) Credits against estimated tax The Secretary is authorized to prescribe regulations providing for the crediting against the estimated income tax for any tax...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6402&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6413",
+            "bill_context": "Section 6413 is amended to modify rules for the refund of overpayments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6413",
+              "heading": "Special rules applicable to certain employment taxes",
+              "text_excerpt": "\u00a7 6413. Special rules applicable to certain employment taxes (a) Adjustment of tax (1) General rule If more than the correct amount of tax imposed by section 3101, 3111, 3201, 3221, or 3402 is paid with respect to any payment of remuneration, proper adjustments, with respect to both the tax and the amount to be deducted, shall be made, without interest, in such manner and at such times as the Secretary may by regulations prescribe. (2) United States as employer For purposes of this subsection, in the case of remuneration received from the United States or a wholly-owned instrumentality thereof...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6413&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6501",
+            "bill_context": "Section 6501 is amended to modify rules for the statute of limitations on assessments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6501",
+              "heading": "Limitations on assessment and collection",
+              "text_excerpt": "\u00a7 6501. Limitations on assessment and collection (a) General rule Except as otherwise provided in this section, the amount of any tax imposed by this title shall be assessed within 3 years after the return was filed (whether or not such return was filed on or after the date prescribed) or, if the tax is payable by stamp, at any time after such tax became due and before the expiration of 3 years after the date on which any part of such tax was paid, and no proceeding in court without assessment for the collection of such tax shall be begun after the expiration of such period. For purposes of th...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6501&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6511",
+            "bill_context": "Section 6511 is amended to modify rules for the statute of limitations on claims for refunds.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6511",
+              "heading": "Limitations on credit or refund",
+              "text_excerpt": "\u00a7 6511. Limitations on credit or refund (a) Period of limitation on filing claim Claim for credit or refund of an overpayment of any tax imposed by this title in respect of which tax the taxpayer is required to file a return shall be filed by the taxpayer within 3 years from the time the return was filed or 2 years from the time the tax was paid, whichever of such periods expires the later, or if no return was filed by the taxpayer, within 2 years from the time the tax was paid. Claim for credit or refund of an overpayment of any tax imposed by this title which is required to be paid by means ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6511&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6656",
+            "bill_context": "Section 6656 is amended to modify rules for penalties for failure to deposit taxes.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6656",
+              "heading": "Failure to make deposit of taxes",
+              "text_excerpt": "\u00a7 6656. Failure to make deposit of taxes (a) Underpayment of deposits In the case of any failure by any person to deposit (as required by this title or by regulations of the Secretary under this title) on the date prescribed therefor any amount of tax imposed by this title in such government depository as is authorized under section 6302(c) to receive such deposit, unless it is shown that such failure is due to reasonable cause and not due to willful neglect, there shall be imposed upon such person a penalty equal to the applicable percentage of the amount of the underpayment. (b) Definitions ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6656&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6662",
+            "bill_context": "Section 6662 is amended to modify rules for accuracy-related penalties.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6662",
+              "heading": "Imposition of accuracy-related penalty on underpayments",
+              "text_excerpt": "\u00a7 6662. Imposition of accuracy-related penalty on underpayments (a) Imposition of penalty If this section applies to any portion of an underpayment of tax required to be shown on a return, there shall be added to the tax an amount equal to 20 percent of the portion of the underpayment to which this section applies. (b) Portion of underpayment to which section applies This section shall apply to the portion of any underpayment which is attributable to 1 or more of the following: (1) Negligence or disregard of rules or regulations. (2) Any substantial understatement of income tax. (3) Any substa...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6662&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6664",
+            "bill_context": "Section 6664 is amended to modify rules for reasonable cause exceptions to penalties.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6664",
+              "heading": "Definitions and special rules",
+              "text_excerpt": "\u00a7 6664. Definitions and special rules (a) Underpayment For purposes of this part, the term \u201cunderpayment\u201d means the amount by which any tax imposed by this title exceeds the excess of\u2014 (1) the sum of\u2014 (A) the amount shown as the tax by the taxpayer on his return, plus (B) amounts not so shown previously assessed (or collected without assessment), over (2) the amount of rebates made. For purposes of paragraph (2), the term \u201crebate\u201d means so much of an abatement, credit, refund, or other repayment, as was made on the ground that the tax imposed was less than the excess of the amount specified in...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6664&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 6751",
+            "bill_context": "Section 6751 is amended to modify rules for the approval of penalties.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "6751",
+              "heading": "Procedural requirements",
+              "text_excerpt": "\u00a7 6751. Procedural requirements (a) Computation of penalty included in notice The Secretary shall include with each notice of penalty under this title information with respect to the name of the penalty, the section of this title under which the penalty is imposed, and a computation of the penalty. (b) Approval of assessment (1) In general No penalty under this title shall be assessed unless the initial determination of such assessment is personally approved (in writing) by the immediate supervisor of the individual making such determination or such higher level official as the Secretary may d...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6751&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 7702B",
+            "bill_context": "Section 7702B is amended to modify rules for long-term care insurance.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "7702B",
+              "heading": "Treatment of qualified long-term care insurance",
+              "text_excerpt": "\u00a7 7702B. Treatment of qualified long-term care insurance (a) In general For purposes of this title\u2014 (1) a qualified long-term care insurance contract shall be treated as an accident and health insurance contract, (2) amounts (other than policyholder dividends, as defined in section 808, or premium refunds) received under a qualified long-term care insurance contract shall be treated as amounts received for personal injuries and sickness and shall be treated as reimbursement for expenses actually incurred for medical care (as defined in section 213(d)), (3) any plan of an employer providing cov...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7702B&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 78",
+            "bill_context": "Section 78 is amended to modify rules for the treatment of dividends from foreign corporations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "78",
+              "heading": "Gross up for deemed paid foreign tax credit",
+              "text_excerpt": "If a domestic corporation chooses to have the benefits of subpart A of part III of subchapter N (relating to foreign tax credit) for any taxable year, an amount equal to the taxes deemed to be paid by such corporation under subsections (a) and (d) of section 960 (determined without regard to the phrase \u201c90 percent of\u201d in subsection (d)(1) thereof) for such taxable year shall be treated for purposes of this title (other than sections 245 and 245A) as a dividend received by such domestic corporation from the foreign corporation.",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section78&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 856",
+            "bill_context": "Section 856 is amended to modify rules for real estate investment trusts.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "856",
+              "heading": "Definition of real estate investment trust",
+              "text_excerpt": "\u00a7 856. Definition of real estate investment trust (a) In general For purposes of this title, the term \u201creal estate investment trust\u201d means a corporation, trust, or association\u2014 (1) which is managed by one or more trustees or directors; (2) the beneficial ownership of which is evidenced by transferable shares, or by transferable certificates of beneficial interest; (3) which (but for the provisions of this part) would be taxable as a domestic corporation; (4) which is neither (A) a financial institution referred to in section 582(c)(2), nor (B) an insurance company to which subchapter L applies...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section856&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 871",
+            "bill_context": "Section 871 is amended to modify rules for taxation of foreign individuals.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "871",
+              "heading": "Tax on nonresident alien individuals",
+              "text_excerpt": "\u00a7 871. Tax on nonresident alien individuals (a) Income not connected with United States business\u201430 percent tax (1) Income other than capital gains Except as provided in subsection (h), there is hereby imposed for each taxable year a tax of 30 percent of the amount received from sources within the United States by a nonresident alien individual as\u2014 (A) interest (other than original issue discount as defined in section 1273), dividends, rents, salaries, wages, premiums, annuities, compensations, remunerations, emoluments, and other fixed or determinable annual or periodical gains, profits, and ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section871&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 871(h)",
+            "bill_context": "Section 871(h) is amended to modify rules for the taxation of certain obligations.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 871",
+            "usc_data": {
+              "title": "26",
+              "section": "871",
+              "heading": "Tax on nonresident alien individuals",
+              "text_excerpt": "\u00a7 871. Tax on nonresident alien individuals (a) Income not connected with United States business\u201430 percent tax (1) Income other than capital gains Except as provided in subsection (h), there is hereby imposed for each taxable year a tax of 30 percent of the amount received from sources within the United States by a nonresident alien individual as\u2014 (A) interest (other than original issue discount as defined in section 1273), dividends, rents, salaries, wages, premiums, annuities, compensations, remunerations, emoluments, and other fixed or determinable annual or periodical gains, profits, and ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section871&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 871(m)",
+            "bill_context": "Section 871(m) is amended to modify rules for the taxation of certain partnership interest derivatives.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 871",
+            "usc_data": {
+              "title": "26",
+              "section": "871",
+              "heading": "Tax on nonresident alien individuals",
+              "text_excerpt": "\u00a7 871. Tax on nonresident alien individuals (a) Income not connected with United States business\u201430 percent tax (1) Income other than capital gains Except as provided in subsection (h), there is hereby imposed for each taxable year a tax of 30 percent of the amount received from sources within the United States by a nonresident alien individual as\u2014 (A) interest (other than original issue discount as defined in section 1273), dividends, rents, salaries, wages, premiums, annuities, compensations, remunerations, emoluments, and other fixed or determinable annual or periodical gains, profits, and ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section871&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 901",
+            "bill_context": "Section 901 is amended to modify rules for the foreign tax credit.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "901",
+              "heading": "Taxes of foreign countries and of possessions of United States",
+              "text_excerpt": "\u00a7 901. Taxes of foreign countries and of possessions of United States (a) Allowance of credit If the taxpayer chooses to have the benefits of this subpart, the tax imposed by this chapter shall, subject to the limitation of section 904, be credited with the amounts provided in the applicable paragraph of subsection (b) plus, in the case of a corporation, the taxes deemed to have been paid under section 960. Such choice for any taxable year may be made or changed at any time before the expiration of the period prescribed for making a claim for credit or refund of the tax imposed by this chapter...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section901&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 904",
+            "bill_context": "Section 904 is amended to modify rules for the foreign tax credit limitation.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "904",
+              "heading": "Limitation on credit",
+              "text_excerpt": "\u00a7 904. Limitation on credit (a) Limitation The total amount of the credit taken under section 901(a) shall not exceed the same proportion of the tax against which such credit is taken which the taxpayer\u2019s taxable income from sources without the United States (but not in excess of the taxpayer\u2019s entire taxable income) bears to his entire taxable income for the same taxable year. (b) Taxable income for purpose of computing limitation (1) Personal exemptions For purposes of subsection (a), the taxable income in the case of an individual, estate, or trust shall be computed without any deduction fo...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section904&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 905",
+            "bill_context": "Section 905 is amended to modify rules for the redetermination of foreign taxes.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "905",
+              "heading": "Applicable rules",
+              "text_excerpt": "\u00a7 905. Applicable rules (a) Year in which credit taken The credits provided in this subpart may, at the option of the taxpayer and irrespective of the method of accounting employed in keeping his books, be taken in the year in which the taxes of the foreign country or the possession of the United States accrued, subject, however, to the conditions prescribed in subsection (c). If the taxpayer elects to take such credits in the year in which the taxes of the foreign country or the possession of the United States accrued, the credits for all subsequent years shall be taken on the same basis, and...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section905&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 907",
+            "bill_context": "Section 907 is amended to modify rules for the foreign oil and gas extraction income tax.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "907",
+              "heading": "Special rules in case of foreign oil and gas income",
+              "text_excerpt": "\u00a7 907. Special rules in case of foreign oil and gas income (a) Reduction in amount allowed as foreign tax under section 901 In applying section 901, the amount of any foreign oil and gas taxes paid or accrued (or deemed to have been paid) during the taxable year which would (but for this subsection) be taken into account for purposes of section 901 shall be reduced by the amount (if any) by which the amount of such taxes exceeds the product of\u2014 (1) the amount of the combined foreign oil and gas income for the taxable year, (2) multiplied by\u2014 (A) in the case of a corporation, the percentage whi...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section907&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 922",
+            "bill_context": "Section 922 is amended to modify rules for foreign sales corporations.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 951",
+            "bill_context": "Section 951 is amended to modify rules for the inclusion of foreign income in gross income.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "951",
+              "heading": "Amounts included in gross income of United States shareholders",
+              "text_excerpt": "\u00a7 951. Amounts included in gross income of United States shareholders (a) Amounts included (1) In general If a foreign corporation is a controlled foreign corporation at any time during a taxable year of the foreign corporation (in this subsection referred to as the \u201cCFC year\u201d)\u2014 (A) each United States shareholder which owns (within the meaning of section 958(a)) stock in such corporation on any day during the CFC year shall include in gross income such shareholder\u2019s pro rata share (determined under paragraph (2)) of the corporation\u2019s subpart F income for the CFC year, and (B) each United State...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section951&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 951A",
+            "bill_context": "Section 951A is amended to modify rules for the inclusion of global intangible low-taxed income.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "951A",
+              "heading": "Net CFC tested income included in gross income of United States shareholders",
+              "text_excerpt": "\u00a7 951A. Net CFC tested income included in gross income of United States shareholders (a) In general Each person who is a United States shareholder of any controlled foreign corporation for any taxable year of such United States shareholder shall include in gross income such shareholder\u2019s net CFC tested income for such taxable year. (b) Net CFC tested income For purposes of this section\u2014 (1) In general The term \u201cnet CFC tested income\u201d means, with respect to any United States shareholder for any taxable year of such United States shareholder, the excess (if any) of\u2014 (A) the aggregate of such sha...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section951A&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 954",
+            "bill_context": "Section 954 is amended to modify rules for foreign base company sales and services income.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "954",
+              "heading": "Foreign base company income",
+              "text_excerpt": "\u00a7 954. Foreign base company income (a) Foreign base company income For purposes of section 952(a)(2), the term \u201cforeign base company income\u201d means for any taxable year the sum of\u2014 (1) the foreign personal holding company income for the taxable year (determined under subsection (c) and reduced as provided in subsection (b)(5)), (2) the foreign base company sales income for the taxable year (determined under subsection (d) and reduced as provided in subsection (b)(5)), and (3) the foreign base company services income for the taxable year (determined under subsection (e) and reduced as provided i...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section954&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 957",
+            "bill_context": "Section 957 is amended to modify rules for controlled foreign corporations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "957",
+              "heading": "Controlled foreign corporations; United States persons",
+              "text_excerpt": "\u00a7 957. Controlled foreign corporations; United States persons (a) General rule For purposes of this title, the term \u201ccontrolled foreign corporation\u201d means any foreign corporation if more than 50 percent of\u2014 (1) the total combined voting power of all classes of stock of such corporation entitled to vote, or (2) the total value of the stock of such corporation, is owned (within the meaning of section 958(a)), or is considered as owned by applying the rules of ownership of section 958(b), by United States shareholders on any day during the taxable year of such foreign corporation. (b) Special rul...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section957&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 958",
+            "bill_context": "Section 958 is amended to modify rules for the attribution of ownership.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "958",
+              "heading": "Rules for determining stock ownership",
+              "text_excerpt": "\u00a7 958. Rules for determining stock ownership (a) Direct and indirect ownership (1) General rule For purposes of this subpart (other than section 960), stock owned means\u2014 (A) stock owned directly, and (B) stock owned with the application of paragraph (2). (2) Stock ownership through foreign entities For purposes of subparagraph (B) of paragraph (1), stock owned, directly or indirectly, by or for a foreign corporation, foreign partnership, or foreign trust or foreign estate (within the meaning of section 7701(a)(31)) shall be considered as being owned proportionately by its shareholders, partner...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section958&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 960",
+            "bill_context": "Section 960 is amended to modify rules for the deemed paid credit for foreign taxes.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "960",
+              "heading": "Deemed paid credit for subpart F inclusions",
+              "text_excerpt": "\u00a7 960. Deemed paid credit for subpart F inclusions (a) In general For purposes of subpart A of this part, if there is included in the gross income of a domestic corporation any item of income under section 951(a)(1) with respect to any controlled foreign corporation with respect to which such domestic corporation is a United States shareholder, such domestic corporation shall be deemed to have paid so much of such foreign corporation\u2019s foreign income taxes as are properly attributable to such item of income. (b) Special rules for distributions from previously taxed earnings and profits For pur...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section960&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 961",
+            "bill_context": "Section 961 is amended to modify rules for the application of basis adjustments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "961",
+              "heading": "Adjustments to basis of stock in controlled foreign corporations and of other property",
+              "text_excerpt": "\u00a7 961. Adjustments to basis of stock in controlled foreign corporations and of other property (a) Increase in basis Under regulations prescribed by the Secretary, the basis of a United States shareholder\u2019s stock in a controlled foreign corporation, and the basis of property of a United States shareholder by reason of which he is considered under section 958(a)(2) as owning stock of a controlled foreign corporation, shall be increased by the amount required to be included in his gross income under section 951(a) with respect to such stock or with respect to such property, as the case may be, bu...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section961&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 992",
+            "bill_context": "Section 992 is amended to modify rules for foreign sales corporations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "992",
+              "heading": "Requirements of a domestic international sales corporation",
+              "text_excerpt": "\u00a7 992. Requirements of a domestic international sales corporation (a) Definition of \u201cDISC\u201d and \u201cformer DISC\u201d (1) DISC For purposes of this title, the term \u201cDISC\u201d means, with respect to any taxable year, a corporation which is incorporated under the laws of any State and satisfies the following conditions for the taxable year: (A) 95 percent or more of the gross receipts (as defined in section 993(f)) of such corporation consist of qualified export receipts (as defined in section 993(a)), (B) the adjusted basis of the qualified export assets (as defined in section 993(b)) of the corporation at ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section992&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 101",
+            "bill_context": "Section 101 is amended to modify rules for copyright and related rights.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "101",
+              "heading": "Certain death benefits",
+              "text_excerpt": "\u00a7 101. Certain death benefits (a) Proceeds of life insurance contracts payable by reason of death (1) General rule Except as otherwise provided in paragraphs (2) and (3), subsection (d), subsection (f), and subsection (j), gross income does not include amounts received (whether in a single sum or otherwise) under a life insurance contract, if such amounts are paid by reason of the death of the insured. (2) Transfer for valuable consideration In the case of a transfer for a valuable consideration, by assignment or otherwise, of a life insurance contract or any interest therein, the amount exclu...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section101&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 103",
+            "bill_context": "Section 103 is amended to modify rules for tax-exempt interest.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "103",
+              "heading": "Interest on State and local bonds",
+              "text_excerpt": "\u00a7 103. Interest on State and local bonds (a) Exclusion Except as provided in subsection (b), gross income does not include interest on any State or local bond. (b) Exceptions Subsection (a) shall not apply to\u2014 (1) Private activity bond which is not a qualified bond Any private activity bond which is not a qualified bond (within the meaning of section 141). (2) Arbitrage bond Any arbitrage bond (within the meaning of section 148). (3) Bond not in registered form, etc. Any bond unless such bond meets the applicable requirements of section 149. (c) Definitions For purposes of this section and par...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section103&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1059",
+            "bill_context": "Section 1059 is amended to modify rules for the treatment of certain dividends from controlled foreign corporations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1059",
+              "heading": "Corporate shareholder\u2019s basis in stock reduced by nontaxed portion of extraordinary dividends",
+              "text_excerpt": "\u00a7 1059. Corporate shareholder\u2019s basis in stock reduced by nontaxed portion of extraordinary dividends (a) General rule If any corporation receives any extraordinary dividend with respect to any share of stock and such corporation has not held such stock for more than 2 years before the dividend announcement date\u2014 (1) Reduction in basis The basis of such corporation in such stock shall be reduced (but not below zero) by the nontaxed portion of such dividends. (2) Amounts in excess of basis If the nontaxed portion of such dividends exceeds such basis, such excess shall be treated as gain from th...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1059&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1061",
+            "bill_context": "Section 1061 is amended to modify rules for the treatment of partnership interest gains.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1061",
+              "heading": "Partnership interests held in connection with performance of services",
+              "text_excerpt": "\u00a7 1061. Partnership interests held in connection with performance of services (a) In general If one or more applicable partnership interests are held by a taxpayer at any time during the taxable year, the excess (if any) of\u2014 (1) the taxpayer\u2019s net long-term capital gain with respect to such interests for such taxable year, over (2) the taxpayer\u2019s net long-term capital gain with respect to such interests for such taxable year computed by applying paragraphs (3) and (4) of sections 1 1 So in original. Probably should be \u201csection\u201d. 1222 by substituting \u201c3 years\u201d for \u201c1 year\u201d, shall be treated as ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1061&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1091",
+            "bill_context": "Section 1091 is amended to modify rules for wash sales.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1091",
+              "heading": "Loss from wash sales of stock or securities",
+              "text_excerpt": "\u00a7 1091. Loss from wash sales of stock or securities (a) Disallowance of loss deduction In the case of any loss claimed to have been sustained from any sale or other disposition of shares of stock or securities where it appears that, within a period beginning 30 days before the date of such sale or disposition and ending 30 days after such date, the taxpayer has acquired (by purchase or by an exchange on which the entire amount of gain or loss was recognized by law), or has entered into a contract or option so to acquire, substantially identical stock or securities, then no deduction shall be a...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1091&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1092",
+            "bill_context": "Section 1092 is amended to modify rules for the treatment of certain assets.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1092",
+              "heading": "Straddles",
+              "text_excerpt": "\u00a7 1092. Straddles (a) Recognition of loss in case of straddles, etc. (1) Limitation on recognition of loss (A) In general Any loss with respect to 1 or more positions shall be taken into account for any taxable year only to the extent that the amount of such loss exceeds the unrecognized gain (if any) with respect to 1 or more positions which were offsetting positions with respect to 1 or more positions from which the loss arose. (B) Carryover of loss Any loss which may not be taken into account under subparagraph (A) for any taxable year shall, subject to the limitations under subparagraph (A...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1092&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 114",
+            "bill_context": "Section 114 is amended to modify rules for extraterritorial income.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "114",
+              "heading": "Repealed. Pub. L. 108\u2013357, title I, \u00a7 101(a) , Oct. 22, 2004 , 118 Stat. 1423 ]",
+              "text_excerpt": "[\u00a7 114. Repealed. Pub. L. 108\u2013357, title I, \u00a7 101(a) , Oct. 22, 2004 , 118 Stat. 1423 ] Section, added Pub. L. 106\u2013519, \u00a7 3(a) , Nov. 15, 2000 , 114 Stat. 2423 , related to exclusion of extraterritorial income from gross income. A prior section 114, act Aug. 16, 1954, ch. 736 , 68A Stat. 35 , related to sports programs conducted for American National Red Cross, prior to repeal by Pub. L. 101\u2013508, title XI, \u00a7 11801(a)(8) , Nov. 5, 1990 , 104 Stat. 1388\u2013520 . Statutory Notes and Related Subsidiaries Effective Date of Repeal Repeal applicable to transactions after Dec. 31, 2004 , see section 101(...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section114&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1221",
+            "bill_context": "Section 1221 is amended to modify rules for the definition of capital assets.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1221",
+              "heading": "Capital asset defined",
+              "text_excerpt": "\u00a7 1221. Capital asset defined (a) In general For purposes of this subtitle, the term \u201ccapital asset\u201d means property held by the taxpayer (whether or not connected with his trade or business), but does not include\u2014 (1) stock in trade of the taxpayer or other property of a kind which would properly be included in the inventory of the taxpayer if on hand at the close of the taxable year, or property held by the taxpayer primarily for sale to customers in the ordinary course of his trade or business; (2) property, used in his trade or business, of a character which is subject to the allowance for ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1221&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1248",
+            "bill_context": "Section 1248 is amended to modify rules for the treatment of foreign corporations.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1248",
+              "heading": "Gain from certain sales or exchanges of stock in certain foreign corporations",
+              "text_excerpt": "\u00a7 1248. Gain from certain sales or exchanges of stock in certain foreign corporations (a) General rule If\u2014 (1) a United States person sells or exchanges stock in a foreign corporation, and (2) such person owns, within the meaning of section 958(a), or is considered as owning by applying the rules of ownership of section 958(b), 10 percent or more of the total combined voting power of all classes of stock entitled to vote of such foreign corporation at any time during the 5-year period ending on the date of the sale or exchange when such foreign corporation was a controlled foreign corporation ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1248&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1251",
+            "bill_context": "Section 1251 is amended to modify rules for grandfathered health plans.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1251",
+              "heading": "Repealed. Pub. L. 98\u2013369, div. A, title IV, \u00a7 492(a) , July 18, 1984 , 98 Stat. 853 ]",
+              "text_excerpt": "[\u00a7 1251. Repealed. Pub. L. 98\u2013369, div. A, title IV, \u00a7 492(a) , July 18, 1984 , 98 Stat. 853 ] Section, added Pub. L. 91\u2013172, title II, \u00a7 211(a) , Dec. 30, 1969 , 83 Stat. 566 ; amended Pub. L. 92\u2013178, title III, \u00a7 305(a) , Dec. 10, 1971 , 85 Stat. 524 ; Pub. L. 94\u2013455, title II, \u00a7 206(a) , (b)(1), (2), title XIV, \u00a7 1402(b)(1)(Z), (2), title XIX, \u00a7\u00a7 1901(b)(3)(K), 1906(b)(13)(A), Oct. 4, 1976 , 90 Stat. 1535 , 1732, 1793, 1834; Pub. L. 97\u2013354, \u00a7 5(a)(36) , Oct. 19, 1982 , 96 Stat. 1695 ; Pub. L. 98\u2013369, div. A, title X, \u00a7 1001(b)(23) , (e), July 18, 1984 , 98 Stat. 1012 , related to gain from ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1251&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1259",
+            "bill_context": "Section 1259 is amended to modify rules for constructive sales of digital assets.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1259",
+              "heading": "Constructive sales treatment for appreciated financial positions",
+              "text_excerpt": "\u00a7 1259. Constructive sales treatment for appreciated financial positions (a) In general If there is a constructive sale of an appreciated financial position\u2014 (1) the taxpayer shall recognize gain as if such position were sold, assigned, or otherwise terminated at its fair market value on the date of such constructive sale (and any gain shall be taken into account for the taxable year which includes such date), and (2) for purposes of applying this title for periods after the constructive sale\u2014 (A) proper adjustment shall be made in the amount of any gain or loss subsequently realized with resp...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1259&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1293",
+            "bill_context": "Section 1293 is amended to modify rules for the treatment of certain income.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1293",
+              "heading": "Current taxation of income from qualified electing funds",
+              "text_excerpt": "\u00a7 1293. Current taxation of income from qualified electing funds (a) Inclusion (1) In general Every United States person who owns (or is treated under section 1298(a) as owning) stock of a qualified electing fund at any time during the taxable year of such fund shall include in gross income\u2014 (A) as ordinary income, such shareholder\u2019s pro rata share of the ordinary earnings of such fund for such year, and (B) as long-term capital gain, such shareholder\u2019s pro rata share of the net capital gain of such fund for such year. (2) Year of inclusion The inclusion under paragraph (1) shall be for the ta...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1293&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1296",
+            "bill_context": "Section 1296 is amended to modify rules for the treatment of certain income.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1296",
+              "heading": "Election of mark to market for marketable stock",
+              "text_excerpt": "\u00a7 1296. Election of mark to market for marketable stock (a) General rule In the case of marketable stock in a passive foreign investment company which is owned (or treated under subsection (g) as owned) by a United States person at the close of any taxable year of such person, at the election of such person\u2014 (1) If the fair market value of such stock as of the close of such taxable year exceeds its adjusted basis, such United States person shall include in gross income for such taxable year an amount equal to the amount of such excess. (2) If the adjusted basis of such stock exceeds the fair m...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1296&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1321",
+            "bill_context": "Section 1321 is amended to modify rules for the establishment of exchanges.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1321",
+              "heading": "Repealed. Pub. L. 94\u2013455, title XIX, \u00a7 1901(a)(144) , Oct. 4, 1976 , 90 Stat. 1788 ]",
+              "text_excerpt": "[\u00a7 1321. Repealed. Pub. L. 94\u2013455, title XIX, \u00a7 1901(a)(144) , Oct. 4, 1976 , 90 Stat. 1788 ] Section, act Aug. 16, 1954, ch. 736 , 68A Stat. 342 , related to involuntary liquidation of LIFO inventories. Statutory Notes and Related Subsidiaries Effective Date of Repeal Repeal effective for taxable years beginning after Dec. 31, 1976 , see section 1901(d) of Pub. L. 94\u2013455 , set out as an Effective Date of 1976 Amendment note under section 2 of this title .",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1321&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1331",
+            "bill_context": "Section 1331 is amended to modify rules for basic health programs.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1351",
+            "bill_context": "New section 1351 establishes the Improve Health Insurance Affordability Fund.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1351",
+              "heading": "Treatment of recoveries of foreign expropriation losses",
+              "text_excerpt": "\u00a7 1351. Treatment of recoveries of foreign expropriation losses (a) Election (1) In general This section shall apply only to a recovery, by a domestic corporation subject to the tax imposed by section 11 or 801, of a foreign expropriation loss sustained by such corporation and only if such corporation was subject to the tax imposed by section 11 or 801, as the case may be, for the year of the loss and elects to have the provisions of this section apply with respect to such loss. (2) Time, manner, and scope An election under paragraph (1) shall be made at such time and in such manner as the Sec...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1351&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1402",
+            "bill_context": "Section 1402 is amended to modify rules for cost-sharing reductions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1402",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 1402. Definitions (a) Net earnings from self-employment The term \u201cnet earnings from self-employment\u201d means the gross income derived by an individual from any trade or business carried on by such individual, less the deductions allowed by this subtitle which are attributable to such trade or business, plus his distributive share (whether or not distributed) of income or loss described in section 702(a)(8) from any trade or business carried on by a partnership of which he is a member; except that in computing such gross income and deductions and such distributive share of partnership ordinary ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1402&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1412",
+            "bill_context": "Section 1412 is amended to modify rules for advance payments of premium tax credits.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1441",
+            "bill_context": "Section 1441 is amended to modify rules for withholding on foreign payments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1441",
+              "heading": "Withholding of tax on nonresident aliens",
+              "text_excerpt": "\u00a7 1441. Withholding of tax on nonresident aliens (a) General rule Except as otherwise provided in subsection (c), all persons, in whatever capacity acting (including lessees or mortgagors of real or personal property, fiduciaries, employers, and all officers and employees of the United States) having the control, receipt, custody, disposal, or payment of any of the items of income specified in subsection (b) (to the extent that any of such items constitutes gross income from sources within the United States), of any nonresident alien individual or of any foreign partnership shall (except as ot...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1441&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1445",
+            "bill_context": "Section 1445 is amended to modify rules for withholding on foreign payments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1445",
+              "heading": "Withholding of tax on dispositions of United States real property interests",
+              "text_excerpt": "\u00a7 1445. Withholding of tax on dispositions of United States real property interests (a) General rule Except as otherwise provided in this section, in the case of any disposition of a United States real property interest (as defined in section 897(c)) by a foreign person, the transferee shall be required to deduct and withhold a tax equal to 15 percent of the amount realized on the disposition. (b) Exemptions (1) In general No person shall be required to deduct and withhold any amount under subsection (a) with respect to a disposition if paragraph (2), (3), (4), (5), or (6) applies to the trans...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1445&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1446",
+            "bill_context": "Section 1446 is amended to modify rules for withholding on foreign payments.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1446",
+              "heading": "Withholding of tax on foreign partners\u2019 share of effectively connected income",
+              "text_excerpt": "\u00a7 1446. Withholding of tax on foreign partners\u2019 share of effectively connected income (a) General rule If\u2014 (1) a partnership has effectively connected taxable income for any taxable year, and (2) any portion of such income is allocable under section 704 to a foreign partner, such partnership shall pay a withholding tax under this section at such time and in such manner as the Secretary shall by regulations prescribe. (b) Amount of withholding tax (1) In general The amount of the withholding tax payable by any partnership under subsection (a) shall be equal to the applicable percentage of the e...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1446&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1504",
+            "bill_context": "Section 1504 is amended to modify rules for affiliated groups.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "1504",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 1504. Definitions (a) Affiliated group defined For purposes of this subtitle\u2014 (1) In general The term \u201caffiliated group\u201d means\u2014 (A) 1 or more chains of includible corporations connected through stock ownership with a common parent corporation which is an includible corporation, but only if\u2014 (B) (i) the common parent owns directly stock meeting the requirements of paragraph (2) in at least 1 of the other includible corporations, and (ii) stock meeting the requirements of paragraph (2) in each of the includible corporations (except the common parent) is owned directly by 1 or more of the other...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section1504&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 152",
+            "bill_context": "Section 152 is amended to modify rules for dependents.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "152",
+              "heading": "Dependent defined",
+              "text_excerpt": "\u00a7 152. Dependent defined (a) In general For purposes of this subtitle, the term \u201cdependent\u201d means\u2014 (1) a qualifying child, or (2) a qualifying relative. (b) Exceptions For purposes of this section\u2014 (1) Dependents ineligible If an individual is a dependent of a taxpayer for any taxable year of such taxpayer beginning in a calendar year, such individual shall be treated as having no dependents for any taxable year of such individual beginning in such calendar year. (2) Married dependents An individual shall not be treated as a dependent of a taxpayer under subsection (a) if such individual has m...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section152&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 163",
+            "bill_context": "Section 163 is amended to modify rules for the deduction of interest.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "163",
+              "heading": "Interest",
+              "text_excerpt": "\u00a7 163. Interest (a) General rule There shall be allowed as a deduction all interest paid or accrued within the taxable year on indebtedness. (b) Installment purchases where interest charge is not separately stated (1) General rule If personal property or educational services are purchased under a contract\u2014 (A) which provides that payment of part or all of the purchase price is to be made in installments, and (B) in which carrying charges are separately stated but the interest charge cannot be ascertained, then the payments made during the taxable year under the contract shall be treated for pu...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section163&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 165",
+            "bill_context": "Section 165 is amended to modify rules for losses on worthless securities.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "165",
+              "heading": "Losses",
+              "text_excerpt": "\u00a7 165. Losses (a) General rule There shall be allowed as a deduction any loss sustained during the taxable year and not compensated for by insurance or otherwise. (b) Amount of deduction For purposes of subsection (a), the basis for determining the amount of the deduction for any loss shall be the adjusted basis provided in section 1011 for determining the loss from the sale or other disposition of property. (c) Limitation on losses of individuals In the case of an individual, the deduction under subsection (a) shall be limited to\u2014 (1) losses incurred in a trade or business; (2) losses incurre...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section165&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 170",
+            "bill_context": "Section 170 is amended to modify rules for charitable contributions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "170",
+              "heading": "Charitable, etc., contributions and gifts",
+              "text_excerpt": "\u00a7 170. Charitable, etc., contributions and gifts (a) Allowance of deduction (1) General rule There shall be allowed as a deduction any charitable contribution (as defined in subsection (c)) payment of which is made within the taxable year. A charitable contribution shall be allowable as a deduction only if verified under regulations prescribed by the Secretary. (2) Corporations on accrual basis In the case of a corporation reporting its taxable income on the accrual basis, if\u2014 (A) the board of directors authorizes a charitable contribution during any taxable year, and (B) payment of such contr...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section170&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 172",
+            "bill_context": "Section 172 is amended to modify rules for net operating losses.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "172",
+              "heading": "Net operating loss deduction",
+              "text_excerpt": "\u00a7 172. Net operating loss deduction (a) Deduction allowed There shall be allowed as a deduction for the taxable year an amount equal to\u2014 (1) in the case of a taxable year beginning before January 1, 2021 , the aggregate of the net operating loss carryovers to such year, plus the net operating loss carrybacks to such year, and (2) in the case of a taxable year beginning after December 31, 2020 , the sum of\u2014 (A) the aggregate amount of net operating losses arising in taxable years beginning before January 1, 2018 , carried to such taxable year, plus (B) the lesser of\u2014 (i) the aggregate amount of...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section172&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 181",
+            "bill_context": "Section 181 is amended to modify rules for immediate expensing of certain productions.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "181",
+              "heading": "Treatment of certain qualified productions",
+              "text_excerpt": "\u00a7 181. Treatment of certain qualified productions (a) Election to treat costs as expenses (1) In general A taxpayer may elect to treat the cost of any qualified film or television production, any qualified live theatrical production, and any qualified sound recording production as an expense which is not chargeable to capital account. Any cost so treated shall be allowed as a deduction. (2) Dollar limitation (A) In general Paragraph (1) shall not apply to so much of the aggregate cost of any qualified film or television production or any qualified live theatrical production as exceeds $15,000,...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section181&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 1886",
+            "bill_context": "Section 1886 is amended to modify rules for hospital payments.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1892",
+            "bill_context": "Section 1892 is amended to modify rules for the collection of past-due obligations.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1899C",
+            "bill_context": "New section 1899C establishes the Rural and Underserved Pathway to Practice Training Program.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1902",
+            "bill_context": "Section 1902 is amended to modify rules for Medicaid.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1905",
+            "bill_context": "Section 1905 is amended to modify rules for Medicaid services.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1915",
+            "bill_context": "Section 1915 is amended to modify rules for Medicaid services.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1932",
+            "bill_context": "Section 1932 is amended to modify rules for Medicaid.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 1948",
+            "bill_context": "Section 1948 is amended to modify rules for Medicaid.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 2010",
+            "bill_context": "Section 2010 is amended to modify rules for the unified credit.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2010",
+              "heading": "Unified credit against estate tax",
+              "text_excerpt": "\u00a7 2010. Unified credit against estate tax (a) General rule A credit of the applicable credit amount shall be allowed to the estate of every decedent against the tax imposed by section 2001. (b) Adjustment to credit for certain gifts made before 1977 The amount of the credit allowable under subsection (a) shall be reduced by an amount equal to 20 percent of the aggregate amount allowed as a specific exemption under section 2521 (as in effect before its repeal by the Tax Reform Act of 1976) with respect to gifts made by the decedent after September 8, 1976 . (c) Applicable credit amount (1) In g...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2010&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2031",
+            "bill_context": "Section 2031 is amended to modify rules for estate valuation.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2031",
+              "heading": "Definition of gross estate",
+              "text_excerpt": "\u00a7 2031. Definition of gross estate (a) General The value of the gross estate of the decedent shall be determined by including to the extent provided for in this part, the value at the time of his death of all property, real or personal, tangible or intangible, wherever situated. (b) Valuation of unlisted stock and securities In the case of stock and securities of a corporation the value of which, by reason of their not being listed on an exchange and by reason of the absence of sales thereof, cannot be determined with reference to bid and asked prices or with reference to sales prices, the val...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2031&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2032A",
+            "bill_context": "Section 2032A is amended to modify rules for estate tax valuation of certain real property.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2032A",
+              "heading": "Valuation of certain farm, etc., real property",
+              "text_excerpt": "\u00a7 2032A. Valuation of certain farm, etc., real property (a) Value based on use under which property qualifies (1) General rule If\u2014 (A) the decedent was (at the time of his death) a citizen or resident of the United States, and (B) the executor elects the application of this section and files the agreement referred to in subsection (d)(2), then, for purposes of this chapter, the value of qualified real property shall be its value for the use under which it qualifies, under subsection (b), as qualified real property. (2) Limitation on aggregate reduction in fair market value The aggregate decrea...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2032A&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2107",
+            "bill_context": "Section 2107 is amended to modify rules for the State Children's Health Insurance Program.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "2107",
+              "heading": "Expatriation to avoid tax",
+              "text_excerpt": "\u00a7 2107. Expatriation to avoid tax (a) Treatment of expatriates A tax computed in accordance with the table contained in section 2001 is hereby imposed on the transfer of the taxable estate, determined as provided in section 2106, of every decedent nonresident not a citizen of the United States if the date of death occurs during a taxable year with respect to which the decedent is subject to tax under section 877(b). (b) Gross estate For purposes of the tax imposed by subsection (a), the value of the gross estate of every decedent to whom subsection (a) applies shall be determined as provided i...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section2107&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 2121",
+            "bill_context": "Section 2121 is amended to modify rules for health professions scholarships.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 2122",
+            "bill_context": "Section 2122 is amended to modify rules for health professions scholarships.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 2123",
+            "bill_context": "Section 2123 is amended to modify rules for health professions scholarships.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 2124",
+            "bill_context": "Section 2124 is amended to modify rules for health professions scholarships.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 2125",
+            "bill_context": "Section 2125 is amended to modify rules for health professions scholarships.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "26 USC 2126",
+            "bill_context": "Section 2126 is amended to modify rules for health professions scholarships.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true
+      },
+      "elapsed_s": 422.53,
+      "prompt_tokens": 176649,
+      "completion_tokens": 8000,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 12053.64,
+        "lmdb_stats": {
+          "hits": 132,
+          "misses": 28,
+          "calls": 160,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch05",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 158.52,
+      "prompt_tokens": 177262,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch05",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 156.45,
+      "prompt_tokens": 176671,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch05",
+        "title_marker": "Subtitle H\u2014Social Safety Net",
+        "headlines": [
+          {
+            "headline": "Monthly Child Tax Credit: $300 Per Kid",
+            "angle": "fiscal",
+            "hook": "Starting in 2023, families with children under 6 will receive $300 monthly\u2014direct cash payments that could reshape child poverty rates.",
+            "target_audience": "Families with young children, fiscal policy wonks",
+            "evidence_provisions": [
+              "26 USC 24(i)",
+              "26 USC 7527A"
+            ]
+          },
+          {
+            "headline": "Caregivers Get Tax Credit for Long-Term Needs",
+            "angle": "human-impact",
+            "hook": "A new tax credit finally recognizes the financial toll of caring for a loved one with disabilities\u2014up to $5,000 a year in relief.",
+            "target_audience": "Family caregivers, disability advocates",
+            "evidence_provisions": [
+              "26 USC 25E"
+            ]
+          },
+          {
+            "headline": "IRS Gets $78.9B to Crack Down on Tax Cheats",
+            "angle": "controversy",
+            "hook": "While families get more benefits, the IRS is getting a massive enforcement boost\u2014raising questions about surveillance and fairness.",
+            "target_audience": "Taxpayers, civil liberties advocates",
+            "evidence_provisions": [
+              "26 USC 7527A",
+              "26 USC 24"
+            ]
+          },
+          {
+            "headline": "Child Care Workers Get 50% Payroll Credit",
+            "angle": "hidden-provision",
+            "hook": "A little-known payroll tax credit could stabilize the child care workforce\u2014paid directly to employers who hire caregivers.",
+            "target_audience": "Child care providers, small business owners",
+            "evidence_provisions": [
+              "26 USC 3135"
+            ]
+          },
+          {
+            "headline": "EITC Now Covers Young Parents at 18",
+            "angle": "political",
+            "hook": "The Earned Income Tax Credit drops the age floor to 18\u2014giving a lifeline to teen parents who\u2019ve long been excluded.",
+            "target_audience": "Young low-income workers, progressive policy followers",
+            "evidence_provisions": [
+              "26 USC 32"
+            ]
+          },
+          {
+            "headline": "IRS Tech Overhaul: $78.9B for Modernization",
+            "angle": "regulatory",
+            "hook": "The IRS isn\u2019t just getting more money\u2014it\u2019s getting a full digital upgrade to fix decades of outdated systems.",
+            "target_audience": "Government tech reformers, compliance officers",
+            "evidence_provisions": [
+              "26 USC 7527A",
+              "26 USC 24"
+            ]
+          },
+          {
+            "headline": "Rural Doctors: Scholarships for Training",
+            "angle": "drama",
+            "hook": "A new pathway to practice program could finally fix the doctor shortage in remote towns\u2014funded by tax credits.",
+            "target_audience": "Rural residents, medical students",
+            "evidence_provisions": [
+              "26 USC 36G"
+            ]
+          },
+          {
+            "headline": "Health Subsidies Expanded to 400% of Poverty",
+            "angle": "geopolitical",
+            "hook": "By extending premium tax credits to 400% of the poverty line, this bill could close a major coverage gap in states that didn\u2019t expand Medicaid.",
+            "target_audience": "Healthcare policymakers, uninsured families",
+            "evidence_provisions": [
+              "26 USC 36B"
+            ]
+          },
+          {
+            "headline": "Child Care Credit Now Refundable",
+            "angle": "watchdog",
+            "hook": "Families can now get back more than they paid in taxes\u2014thanks to a major shift in how the child care credit works.",
+            "target_audience": "Low-income parents, tax equity advocates",
+            "evidence_provisions": [
+              "26 USC 21"
+            ]
+          },
+          {
+            "headline": "Caregiver Credit Phased Out at $150K",
+            "angle": "scoop",
+            "hook": "A new caregiver tax credit has an income cap\u2014families earning over $150,000 will lose eligibility, a detail buried in the fine print.",
+            "target_audience": "High-income caregivers, tax attorneys",
+            "evidence_provisions": [
+              "26 USC 25E"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 10.73,
+      "prompt_tokens": 7895,
+      "completion_tokens": 1044,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch05",
+        "title_marker": "Subtitle H\u2014Social Safety Net",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "Caregiver Credit Phased Out at $150K",
+            "angle": "scoop",
+            "newsworthiness_score": 10,
+            "specificity_score": 10,
+            "appeal_score": 9,
+            "composite_score": 29,
+            "rationale": "This headline exposes a hidden income cutoff that excludes high-income caregivers from a new credit, a critical detail buried in the text. The specificity of '$150K' and '26 USC 25E' makes it uniquely actionable, while the human stakes and policy irony\u2014rewarding lower-income caregivers while penalizing wealthier ones\u2014create strong listener appeal."
+          },
+          {
+            "rank": 2,
+            "headline": "IRS Gets $78.9B to Crack Down on Tax Cheats",
+            "angle": "controversy",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 26,
+            "rationale": "The headline reveals a stark contrast: expanded safety net benefits paired with a massive IRS enforcement boost. The $78.9B figure and cross-references to 26 USC 24 and 7527A highlight a policy tension between generosity and surveillance, making it both newsworthy and provocative for a broad audience."
+          },
+          {
+            "rank": 3,
+            "headline": "Child Care Workers Get 50% Payroll Credit",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 26,
+            "rationale": "This under-the-radar payroll tax credit (26 USC 3135) directly addresses the child care workforce crisis. The specificity of '50% payroll credit' and its impact on employers makes it a fresh, actionable insight, while the human impact on caregivers and families adds emotional weight."
+          },
+          {
+            "rank": 4,
+            "headline": "Child Care Credit Now Refundable",
+            "angle": "watchdog",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The shift to a refundable credit (26 USC 21) is a major policy change that allows low-income families to receive more than their tax liability\u2014something most listeners wouldn\u2019t know. The specificity and equity implications make it a strong hook for tax justice advocates."
+          },
+          {
+            "rank": 5,
+            "headline": "Monthly Child Tax Credit: $300 Per Kid",
+            "angle": "fiscal",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 23,
+            "rationale": "While the $300 monthly credit is widely known, the headline\u2019s specificity (26 USC 24(i), 7527A) and focus on its potential to reduce child poverty add depth. The fiscal angle gives it weight, though it\u2019s less surprising than other entries."
+          },
+          {
+            "rank": 6,
+            "headline": "EITC Now Covers Young Parents at 18",
+            "angle": "political",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "Lowering the EITC age floor to 18 (26 USC 32) is a significant policy shift for teen parents, a marginalized group. The political angle and human impact are strong, but the change is somewhat incremental and less surprising than other provisions."
+          },
+          {
+            "rank": 7,
+            "headline": "Health Subsidies Expanded to 400% of Poverty",
+            "angle": "geopolitical",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 21,
+            "rationale": "Extending subsidies to 400% of poverty (26 USC 36B) is a concrete fix for coverage gaps in non-Medicaid expansion states. The specificity is strong, but the geopolitical framing is a stretch\u2014this is domestic policy, not international."
+          },
+          {
+            "rank": 8,
+            "headline": "IRS Tech Overhaul: $78.9B for Modernization",
+            "angle": "regulatory",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 20,
+            "rationale": "The $78.9B tech upgrade is specific and important, but the regulatory angle lacks drama. While the modernization is critical, it\u2019s less engaging than enforcement or human impact stories, and the overlap with the IRS enforcement headline reduces novelty."
+          },
+          {
+            "rank": 9,
+            "headline": "Caregivers Get Tax Credit for Long-Term Needs",
+            "angle": "human-impact",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 6,
+            "composite_score": 19,
+            "rationale": "The $5,000 caregiver credit (26 USC 25E) is meaningful, but the headline lacks a surprising twist. It\u2019s a positive story, but without a hidden provision or conflict, it feels more like a standard policy announcement than a deep dive."
+          },
+          {
+            "rank": 10,
+            "headline": "Rural Doctors: Scholarships for Training",
+            "angle": "drama",
+            "newsworthiness_score": 5,
+            "specificity_score": 6,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "While the scholarship program (26 USC 36G) addresses a real crisis, the headline lacks specificity beyond the general idea. The 'drama' angle is overstated, and the provision is less central than others in the safety net framework."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "Caregiver Credit Phased Out at $150K",
+          "angle": "scoop",
+          "newsworthiness_score": 10,
+          "specificity_score": 10,
+          "appeal_score": 9,
+          "composite_score": 29,
+          "rationale": "This headline exposes a hidden income cutoff that excludes high-income caregivers from a new credit, a critical detail buried in the text. The specificity of '$150K' and '26 USC 25E' makes it uniquely actionable, while the human stakes and policy irony\u2014rewarding lower-income caregivers while penalizing wealthier ones\u2014create strong listener appeal."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it combines maximum newsworthiness (a hidden, consequential restriction), maximum specificity (exact income cap and statute), and high listener appeal (a moral tension between equity and exclusion). It reveals a policy contradiction that most people wouldn\u2019t know, making it both surprising and deeply relevant."
+      },
+      "elapsed_s": 14.16,
+      "prompt_tokens": 1621,
+      "completion_tokens": 1649,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 169.56,
+    "usc_cross_ref": 422.53,
+    "pork_finder": 158.52,
+    "conflict_spotter": 156.45,
+    "podcast_headlines": 10.73,
+    "headline_ranker": 14.16
+  },
+  "totals": {
+    "wall_clock_s": 944.15,
+    "prompt_tokens_total": 716602,
+    "completion_tokens_total": 11184
+  }
+}

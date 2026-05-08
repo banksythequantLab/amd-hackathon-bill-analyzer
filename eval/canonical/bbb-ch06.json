@@ -1,0 +1,487 @@
+{
+  "bill_short": "bbb",
+  "bill_label": "Build Back Better Act 2021 (HR 5376)",
+  "bill_note": "House version, 5 chunks, ~2,468 pages",
+  "chunk_id": "ch06",
+  "title_marker": "Subtitle J\u2014Drug Pricing",
+  "tokens": 47675,
+  "pages": [
+    2344,
+    2468
+  ],
+  "n_chunks": 6,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch06",
+        "title_marker": "Subtitle J\u2014Drug Pricing",
+        "one_sentence_summary": "This section establishes a government program to negotiate lower prices for high-cost single-source drugs used by Medicare beneficiaries, with penalties for noncompliance and expanded access to discounted prices through new rebate and discount programs.",
+        "bullets": [
+          "The federal government will negotiate lower prices for high-cost single-source drugs used by Medicare beneficiaries, starting with 25 drugs in 2025 and increasing to 50 annually after that.",
+          "Drug prices will be based on the average international market price (AIM price) in countries like Canada, Japan, and the UK, with a cap of 120% of that price, or 85% of U.S. average prices if no AIM price exists.",
+          "Manufacturers must agree to provide discounted prices at the point of sale for Medicare beneficiaries and hospitals, with penalties of up to 10 times the price difference for noncompliance.",
+          "A new rebate system requires manufacturers to pay rebates when drug prices rise faster than inflation, with the amount based on the difference between actual and inflation-adjusted prices.",
+          "A new manufacturer discount program will require drug companies to offer discounted prices to Medicare beneficiaries who have met their annual out-of-pocket spending threshold, with automatic renewal of agreements unless terminated.",
+          "The program includes provisions for third-party administration, data collection, dispute resolution, and enforcement through civil penalties and audits.",
+          "The law also extends the negotiated prices to private health plans, group health plans, and retiree plans that choose to participate, with public disclosure of non-participation."
+        ],
+        "affected_groups": [
+          "Medicare beneficiaries",
+          "Medicare prescription drug plans",
+          "Hospitals and physicians",
+          "Drug manufacturers",
+          "Private health plans",
+          "Group health plans",
+          "Retiree health plans"
+        ]
+      },
+      "elapsed_s": 22.78,
+      "prompt_tokens": 55007,
+      "completion_tokens": 405,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch06",
+        "citations": [
+          {
+            "citation": "42 USC 1301",
+            "bill_context": "Amends Title XI of the Social Security Act, which governs Medicare and related programs.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "1301",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 1301. Definitions (a) When used in this chapter\u2014 (1) The term \u201cState\u201d, except where otherwise provided, includes the District of Columbia and the Commonwealth of Puerto Rico, and when used in subchapters IV, V, VII, XI, XIX, and XXI includes the Virgin Islands and Guam. Such term when used in subchapters III, IX, and XII also includes the Virgin Islands. Such term when used in subchapter V and in part B of this subchapter also includes American Samoa, the Northern Mariana Islands, and the Trust Territory of the Pacific Islands. Such term when used in subchapters XIX and XXI also includes the...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1301&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 USC 1395w-3a",
+            "bill_context": "Amends section 1847A of the Social Security Act to include new rebate requirements for Part B drugs.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-111",
+            "bill_context": "Amends section 1860D-11 to include manufacturer discounts in bid actuarial value calculations.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-102",
+            "bill_context": "Amends section 1860D-2 to redesign Medicare Part D benefit structure and cap out-of-pocket costs.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-114a",
+            "bill_context": "Amends section 1860D-14A to sunset the Medicare coverage gap discount program.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-114b",
+            "bill_context": "Adds new section 1860D-14B to require manufacturers to rebate Part D drugs with prices rising faster than inflation.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-114c",
+            "bill_context": "Adds new section 1860D-14C to establish a manufacturer discount program for Part D drugs.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-115",
+            "bill_context": "Amends section 1860D-15 to reduce reinsurance payment amounts for Medicare Part D plans.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-131",
+            "bill_context": "Amends section 1860D-21 to update the definition of a qualified retiree prescription drug plan.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-132",
+            "bill_context": "Amends section 1860D-22 to include manufacturer discounts in the value of retiree drug plans.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-151",
+            "bill_context": "Amends section 1860D-41 to require participation in the manufacturer discount program.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-153",
+            "bill_context": "Amends section 1860D-43 to update requirements for manufacturers in Medicare Part D.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1396r-8",
+            "bill_context": "Amends section 1927 to include manufacturer discounts in Medicaid rebate calculations.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395m",
+            "bill_context": "Amends section 1834 to add new rebate requirements for Part B drugs.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "1395m",
+              "heading": "Special payment rules for particular items and services",
+              "text_excerpt": "\u00a7 1395m. Special payment rules for particular items and services (a) Payment for durable medical equipment (1) General rule for payment (A) In general With respect to a covered item (as defined in paragraph (13)) for which payment is determined under this subsection, payment shall be made in the frequency specified in paragraphs (2) through (7) and in an amount equal to 80 percent of the payment basis described in subparagraph (B). (B) Payment basis Subject to subparagraph (F)(i), the payment basis described in this subparagraph is the lesser of\u2014 (i) the actual charge for the item, or (ii) the...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1395m&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 USC 1395l",
+            "bill_context": "Amends section 1833 to update cost-sharing rules for Part B drugs.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "42",
+              "section": "1395l",
+              "heading": "Payment of benefits",
+              "text_excerpt": "\u00a7 1395l. Payment of benefits (a) Amounts Except as provided in section 1395mm of this title , and subject to the succeeding provisions of this section, there shall be paid from the Federal Supplementary Medical Insurance Trust Fund, in the case of each individual who is covered under the insurance program established by this part and incurs expenses for services with respect to which benefits are payable under this part, amounts equal to\u2014 (1) in the case of services described in section 1395k(a)(1) of this title \u201480 percent of the reasonable charges for the services; except that (A) an organiz...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1395l&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 USC 1395w-3a",
+            "bill_context": "Amends section 1847A to include inflation-adjusted payment amounts for Part B drugs.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-104",
+            "bill_context": "Amends section 1860D-4 to update cost-sharing rules for Part D drugs.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 USC 1395w-114",
+            "bill_context": "Amends section 1860D-14 to update the structure of Medicare Part D rebates.",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true,
+        "_pipeline_notes": [
+          "deduped 133 -> 18 citations (truncation-recovery artifacts)"
+        ]
+      },
+      "elapsed_s": 147.49,
+      "prompt_tokens": 55153,
+      "completion_tokens": 8000,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 1344.91,
+        "lmdb_stats": {
+          "hits": 3,
+          "misses": 15,
+          "calls": 18,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch06",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 17.34,
+      "prompt_tokens": 55766,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch06",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 16.91,
+      "prompt_tokens": 55175,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch06",
+        "title_marker": "Subtitle J\u2014Drug Pricing",
+        "headlines": [
+          {
+            "headline": "Medicare to Negotiate Drug Prices",
+            "angle": "fiscal",
+            "hook": "Starting in 2025, Medicare will directly negotiate prices for 25 high-cost drugs, with that number growing to 50 annually.",
+            "target_audience": "Policy wonks, healthcare economists, budget hawks",
+            "evidence_provisions": [
+              "42 USC 1395w-114b",
+              "42 USC 1395w-114c"
+            ]
+          },
+          {
+            "headline": "Drugmakers Face 10x Penalties",
+            "angle": "controversy",
+            "hook": "Manufacturers that refuse to comply with negotiated Medicare prices could be hit with penalties up to 10 times the price difference.",
+            "target_audience": "Corporate watchdogs, pharmaceutical industry analysts",
+            "evidence_provisions": [
+              "42 USC 1395w-114b",
+              "42 USC 1395w-114c"
+            ]
+          },
+          {
+            "headline": "Patients Get Discounts After $2,000",
+            "angle": "human-impact",
+            "hook": "Medicare beneficiaries who\u2019ve spent $2,000 out of pocket will automatically receive discounted drug prices.",
+            "target_audience": "Seniors, people with chronic illnesses, patient advocates",
+            "evidence_provisions": [
+              "42 USC 1395w-114c"
+            ]
+          },
+          {
+            "headline": "Canada\u2019s Prices Set U.S. Caps",
+            "angle": "political",
+            "hook": "U.S. drug prices will be capped at 120% of average prices in Canada, Japan, and the UK\u2014putting international markets in charge.",
+            "target_audience": "Progressive voters, foreign policy observers",
+            "evidence_provisions": [
+              "42 USC 1395w-114b"
+            ]
+          },
+          {
+            "headline": "Drug Companies Can\u2019t Opt Out",
+            "angle": "drama",
+            "hook": "Even if a manufacturer doesn\u2019t want to participate, their drug prices are still subject to negotiation and penalties.",
+            "target_audience": "Media consumers, political thriller fans",
+            "evidence_provisions": [
+              "42 USC 1395w-114b",
+              "42 USC 1395w-115"
+            ]
+          },
+          {
+            "headline": "Private Plans Must Disclose Nonparticipation",
+            "angle": "hidden-provision",
+            "hook": "Health plans that skip the new discount program must publicly reveal they\u2019re not participating.",
+            "target_audience": "Transparency advocates, investigative journalists",
+            "evidence_provisions": [
+              "42 USC 1395w-114c"
+            ]
+          },
+          {
+            "headline": "Inflation Triggers Mandatory Rebates",
+            "angle": "regulatory",
+            "hook": "If drug prices rise faster than inflation, manufacturers must pay rebates based on the gap.",
+            "target_audience": "Regulatory compliance teams, healthcare lawyers",
+            "evidence_provisions": [
+              "42 USC 1395w-114b"
+            ]
+          },
+          {
+            "headline": "Retiree Plans Must Pass Discounts On",
+            "angle": "geopolitical",
+            "hook": "Retiree health plans now must include negotiated drug discounts, reshaping employer-sponsored coverage.",
+            "target_audience": "Corporate HR departments, retirees, pension experts",
+            "evidence_provisions": [
+              "42 USC 1395w-132",
+              "42 USC 1395w-151"
+            ]
+          },
+          {
+            "headline": "Medicaid Rebates Now Include New Discounts",
+            "angle": "watchdog",
+            "hook": "The new Medicare discount program will now feed into Medicaid rebate calculations\u2014linking federal programs tighter.",
+            "target_audience": "State budget officials, Medicaid advocates",
+            "evidence_provisions": [
+              "42 USC 1395w-132",
+              "42 USC 1396r-8"
+            ]
+          },
+          {
+            "headline": "Drug Price Negotiations Start in 2025",
+            "angle": "scoop",
+            "hook": "The first 25 drugs will be subject to price negotiations under this law\u2014starting next year.",
+            "target_audience": "Healthcare reporters, early adopters of policy news",
+            "evidence_provisions": [
+              "42 USC 1395w-114b"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 9.96,
+      "prompt_tokens": 3093,
+      "completion_tokens": 1086,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch06",
+        "title_marker": "Subtitle J\u2014Drug Pricing",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "Drugmakers Face 10x Penalties",
+            "angle": "controversy",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 26,
+            "rationale": "This headline reveals a rarely discussed punitive mechanism\u201410x penalties for noncompliance\u2014that transforms price negotiation from a suggestion into a binding financial threat. The specificity of the multiplier and the legal basis in 42 USC 1395w-114b/c make it a standout, while the high-stakes drama appeals to listeners who follow corporate accountability and policy enforcement."
+          },
+          {
+            "rank": 2,
+            "headline": "Canada\u2019s Prices Set U.S. Caps",
+            "angle": "political",
+            "newsworthiness_score": 9,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The idea that U.S. drug prices are capped at 120% of international averages\u2014specifically Canada, Japan, and the UK\u2014exposes a radical shift in sovereignty over pricing. This hidden geopolitical lever, backed by 42 USC 1395w-114b, is both surprising and politically charged, making it highly newsworthy and compelling for progressive and foreign policy audiences."
+          },
+          {
+            "rank": 3,
+            "headline": "Patients Get Discounts After $2,000",
+            "angle": "human-impact",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The $2,000 out-of-pocket threshold is a concrete, life-changing trigger for patients with chronic conditions. This provision, codified in 42 USC 1395w-114c, turns abstract policy into tangible relief, giving listeners a clear human story. Its specificity and emotional resonance elevate it above generic 'discount' headlines."
+          },
+          {
+            "rank": 4,
+            "headline": "Drug Companies Can\u2019t Opt Out",
+            "angle": "drama",
+            "newsworthiness_score": 8,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 24,
+            "rationale": "The fact that manufacturers cannot opt out\u2014even if they don\u2019t want to participate\u2014creates a powerful narrative of forced compliance. With evidence in 42 USC 1395w-114b and 1395w-115, this headline exposes a structural inevitability in the law, making it a gripping hook for audiences who enjoy political and corporate power struggles."
+          },
+          {
+            "rank": 5,
+            "headline": "Inflation Triggers Mandatory Rebates",
+            "angle": "regulatory",
+            "newsworthiness_score": 7,
+            "specificity_score": 9,
+            "appeal_score": 7,
+            "composite_score": 23,
+            "rationale": "The automatic rebate mechanism tied to inflation is a sophisticated, under-the-radar enforcement tool. While regulatory in tone, its specificity\u2014citing 42 USC 1395w-114b\u2014and real-world impact on drug pricing make it a strong contender, especially for legal and compliance audiences."
+          },
+          {
+            "rank": 6,
+            "headline": "Private Plans Must Disclose Nonparticipation",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 8,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "The transparency requirement for nonparticipating health plans is a subtle but powerful accountability mechanism. Though not as dramatic as penalties or caps, its hidden nature and legal grounding in 42 USC 1395w-114c make it newsworthy for watchdogs and journalists seeking systemic flaws."
+          },
+          {
+            "rank": 7,
+            "headline": "Medicaid Rebates Now Include New Discounts",
+            "angle": "watchdog",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 21,
+            "rationale": "Linking Medicare\u2019s new discounts to Medicaid rebates creates a cascading effect across federal programs. The specificity of the cross-program linkage (42 USC 1395w-132, 1396r-8) adds depth, though the appeal is narrower, appealing more to state-level policy watchers than general listeners."
+          },
+          {
+            "rank": 8,
+            "headline": "Retiree Plans Must Pass Discounts On",
+            "angle": "geopolitical",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 20,
+            "rationale": "The requirement for retiree health plans to pass on discounts reshapes employer-sponsored coverage, but the geopolitical angle is overstated. The provision is specific (42 USC 1395w-132, 1395w-151), and the impact is real, but the headline\u2019s framing overreaches in its geopolitical claim, limiting broader appeal."
+          },
+          {
+            "rank": 9,
+            "headline": "Medicare to Negotiate Drug Prices",
+            "angle": "fiscal",
+            "newsworthiness_score": 6,
+            "specificity_score": 6,
+            "appeal_score": 6,
+            "composite_score": 18,
+            "rationale": "While the core idea is significant, this headline is generic and widely known. The mention of 25 drugs starting in 2025 adds some specificity, but it\u2019s still a surface-level summary. It lacks a unique angle or hidden insight, making it less compelling than others."
+          },
+          {
+            "rank": 10,
+            "headline": "Drug Price Negotiations Start in 2025",
+            "angle": "scoop",
+            "newsworthiness_score": 5,
+            "specificity_score": 7,
+            "appeal_score": 5,
+            "composite_score": 17,
+            "rationale": "The headline is a basic announcement of a timeline with no deeper insight. While the 2025 start date is specific, the lack of a unique angle or consequence makes it feel like a press release. The 'scoop' label is misleading\u2014this is not a revelation, just a known fact."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "Drugmakers Face 10x Penalties",
+          "angle": "controversy",
+          "newsworthiness_score": 9,
+          "specificity_score": 9,
+          "appeal_score": 8,
+          "composite_score": 26,
+          "rationale": "This headline reveals a rarely discussed punitive mechanism\u201410x penalties for noncompliance\u2014that transforms price negotiation from a suggestion into a binding financial threat. The specificity of the multiplier and the legal basis in 42 USC 1395w-114b/c make it a standout, while the high-stakes drama appeals to listeners who follow corporate accountability and policy enforcement."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it combines high newsworthiness\u2014exposing a hidden, severe penalty mechanism\u2014with concrete specificity (10x the price difference, backed by 42 USC 1395w-114b/c) and strong listener appeal through dramatic tension. It reveals a real enforcement power that most people wouldn\u2019t know about, making it both surprising and impactful."
+      },
+      "elapsed_s": 15.09,
+      "prompt_tokens": 1641,
+      "completion_tokens": 1758,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 22.78,
+    "usc_cross_ref": 147.49,
+    "pork_finder": 17.34,
+    "conflict_spotter": 16.91,
+    "podcast_headlines": 9.96,
+    "headline_ranker": 15.09
+  },
+  "totals": {
+    "wall_clock_s": 231.03,
+    "prompt_tokens_total": 225835,
+    "completion_tokens_total": 11308
+  }
+}

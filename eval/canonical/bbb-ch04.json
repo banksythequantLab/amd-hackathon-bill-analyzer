@@ -1,0 +1,902 @@
+{
+  "bill_short": "bbb",
+  "bill_label": "Build Back Better Act 2021 (HR 5376)",
+  "bill_note": "House version, 5 chunks, ~2,468 pages",
+  "chunk_id": "ch04",
+  "title_marker": "Subtitle E",
+  "tokens": 166774,
+  "pages": [
+    1497,
+    1943
+  ],
+  "n_chunks": 6,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch04",
+        "title_marker": "Subtitle E",
+        "one_sentence_summary": "This section establishes a new grant program to support career pathways in health professions, with a focus on low-income individuals, people with criminal records, and those in rural or underserved areas, including specific demonstration projects for doulas and midwives.",
+        "bullets": [
+          "Creates a new grant program to train low-income individuals for health professions through a 'career pathways' approach, including support for adult education, job readiness, case management, and career coaching.",
+          "Requires applicants to demonstrate experience working with low-income populations and to include partnerships with local governments, educational institutions, and health care employers.",
+          "Establishes two types of demonstration projects: one for individuals with arrest or conviction records to enter health careers, and another for training in pregnancy, birth, and postpartum care, including doulas and midwives.",
+          "Sets aside specific funding ($6.375 million each) for the two demonstration project types and guarantees grants to at least two entities in each state and ten in Indian tribes.",
+          "Requires grantees to provide essential support services like child care, transportation, and cash stipends, and to offer post-employment support and ongoing training.",
+          "Authorizes technical assistance and peer conferences for grantees, and mandates rigorous evaluations of demonstration projects to assess workforce outcomes and program effectiveness.",
+          "Allocates $425 million annually from 2022 to 2026 for the program, with specific funding reserved for grants, technical assistance, and evaluation activities.",
+          "Includes provisions to ensure that grant funds are used only for eligible individuals and that recipients are not required to supplant existing state funding."
+        ],
+        "affected_groups": [
+          "low-income individuals",
+          "individuals with arrest or conviction records",
+          "doulas",
+          "midwives",
+          "rural communities",
+          "Indian tribes and tribal organizations"
+        ]
+      },
+      "elapsed_s": 198.57,
+      "prompt_tokens": 192146,
+      "completion_tokens": 416,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch04",
+        "citations": [
+          {
+            "citation": "26 USC 401(k)",
+            "bill_context": "Section 401(k) of the Internal Revenue Code is referenced in the context of retirement savings plans.",
+            "relevance": "definitions",
+            "resolved_to": "26 USC 401",
+            "usc_data": {
+              "title": "26",
+              "section": "401",
+              "heading": "Qualified pension, profit-sharing, and stock bonus plans",
+              "text_excerpt": "\u00a7 401. Qualified pension, profit-sharing, and stock bonus plans (a) Requirements for qualification A trust created or organized in the United States and forming part of a stock bonus, pension, or profit-sharing plan of an employer for the exclusive benefit of his employees or their beneficiaries shall constitute a qualified trust under this section\u2014 (1) if contributions are made to the trust by such employer, or employees, or both, or by another employer who is entitled to deduct his contributions under section 404(a)(3)(B) (relating to deduction for contributions to profit-sharing and stock b...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section401&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D",
+            "bill_context": "Section 45D of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 48",
+            "bill_context": "Section 48 of the Internal Revenue Code is referenced in the context of the energy credit for qualified property.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "48",
+              "heading": "Energy credit",
+              "text_excerpt": "\u00a7 48. Energy credit (a) Energy credit (1) In general For purposes of section 46, except as provided in paragraphs (1)(B), (2)(B), and (3)(B) of subsection (c), the energy credit for any taxable year is the energy percentage of the basis of each energy property placed in service during such taxable year. (2) Energy percentage (A) In general Except as provided in paragraphs (6) and (7), the energy percentage is\u2014 (i) 6 percent in the case of\u2014 (I) qualified fuel cell property, (II) energy property described in clause (i) or (iii) of paragraph (3)(A) but only with respect to property the constructi...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45Q",
+            "bill_context": "Section 45Q of the Internal Revenue Code is referenced in the context of the credit for carbon oxide sequestration.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45Q",
+              "heading": "Credit for carbon oxide sequestration",
+              "text_excerpt": "\u00a7 45Q. Credit for carbon oxide sequestration (a) General rule For purposes of section 38, the carbon oxide sequestration credit for any taxable year is an amount equal to the sum of\u2014 (1) $20 per metric ton of qualified carbon oxide which is\u2014 (A) captured by the taxpayer using carbon capture equipment which is originally placed in service at a qualified facility before the date of the enactment of the Bipartisan Budget Act of 2018, and (B) disposed of by the taxpayer in secure geological storage and not used by the taxpayer as described in paragraph (2)(B), (2) $10 per metric ton of qualified c...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45Q&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45X",
+            "bill_context": "Section 45X of the Internal Revenue Code is referenced in the context of the credit for production of clean hydrogen.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45X",
+              "heading": "Advanced manufacturing production credit",
+              "text_excerpt": "\u00a7 45X. Advanced manufacturing production credit (a) In general (1) Allowance of credit For purposes of section 38, the advanced manufacturing production credit for any taxable year is an amount equal to the sum of the credit amounts determined under subsection (b) with respect to each eligible component which is\u2014 (A) produced by the taxpayer, and (B) during the taxable year, sold by such taxpayer to an unrelated person. (2) Production and sale must be in trade or business Any eligible component produced and sold by the taxpayer shall be taken into account only if the production and sale descri...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45X&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45Z",
+            "bill_context": "Section 45Z of the Internal Revenue Code is referenced in the context of the labor costs of installing mechanical insulation property.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45Z",
+              "heading": "Clean fuel production credit",
+              "text_excerpt": "\u00a7 45Z. Clean fuel production credit (a) Amount of credit (1) In general For purposes of section 38, the clean fuel production credit for any taxable year is an amount equal to the product of\u2014 (A) the applicable amount per gallon (or gallon equivalent) with respect to any transportation fuel which is\u2014 (i) produced by the taxpayer at a qualified facility, and (ii) sold by the taxpayer in a manner described in paragraph (4) during the taxable year, and (B) the emissions factor for such fuel (as determined under subsection (b)). (2) Applicable amount (A) Base amount In the case of any transportati...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45Z&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45W",
+            "bill_context": "Section 45W of the Internal Revenue Code is referenced in the context of the zero-emission nuclear power production credit.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45W",
+              "heading": "Credit for qualified commercial clean vehicles",
+              "text_excerpt": "\u00a7 45W. Credit for qualified commercial clean vehicles (a) In general For purposes of section 38, the qualified commercial clean vehicle credit for any taxable year is an amount equal to the sum of the credit amounts determined under subsection (b) with respect to each qualified commercial clean vehicle placed in service by the taxpayer during the taxable year. (b) Per vehicle amount (1) In general Subject to paragraph (4), the amount determined under this subsection with respect to any qualified commercial clean vehicle shall be equal to the lesser of\u2014 (A) 15 percent of the basis of such vehic...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45W&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45V",
+            "bill_context": "Section 45V of the Internal Revenue Code is referenced in the context of the possessions economic activity credit.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45V",
+              "heading": "Credit for production of clean hydrogen",
+              "text_excerpt": "\u00a7 45V. Credit for production of clean hydrogen (a) Amount of credit For purposes of section 38, the clean hydrogen production credit for any taxable year is an amount equal to the product of\u2014 (1) the kilograms of qualified clean hydrogen produced by the taxpayer during such taxable year at a qualified clean hydrogen production facility during the 10-year period beginning on the date such facility was originally placed in service, multiplied by (2) the applicable amount (as determined under subsection (b)) with respect to such hydrogen. (b) Applicable amount (1) In general For purposes of subse...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45V&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 42",
+            "bill_context": "Section 42 of the Internal Revenue Code is referenced in the context of the low-income housing tax credit.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "42",
+              "heading": "Low-income housing credit",
+              "text_excerpt": "\u00a7 42. Low-income housing credit (a) In general For purposes of section 38, the amount of the low-income housing credit determined under this section for any taxable year in the credit period shall be an amount equal to\u2014 (1) the applicable percentage of (2) the qualified basis of each qualified low-income building. (b) Applicable percentage: 70 percent present value credit for certain new buildings; 30 percent present value credit for certain other buildings (1) Determination of applicable percentage For purposes of this section\u2014 (A) In general The term \u201capplicable percentage\u201d means, with respe...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section42&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 47",
+            "bill_context": "Section 47 of the Internal Revenue Code is referenced in the context of the rehabilitation credit.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "47",
+              "heading": "Rehabilitation credit",
+              "text_excerpt": "\u00a7 47. Rehabilitation credit (a) General rule (1) In general For purposes of section 46, for any taxable year during the 5-year period beginning in the taxable year in which a qualified rehabilitated building is placed in service, the rehabilitation credit for such year is an amount equal to the ratable share for such year. (2) Ratable share For purposes of paragraph (1), the ratable share for any taxable year during the period described in such paragraph is the amount equal to 20 percent of the qualified rehabilitation expenditures with respect to the qualified rehabilitated building, as alloc...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section47&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45",
+            "bill_context": "Section 45 of the Internal Revenue Code is referenced in the context of the renewable electricity production credit.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45",
+              "heading": "Electricity produced from certain renewable resources, etc.",
+              "text_excerpt": "\u00a7 45. Electricity produced from certain renewable resources, etc. (a) General rule For purposes of section 38, the renewable electricity production credit for any taxable year is an amount equal to the product of\u2014 (1) 0.3 cents, multiplied by (2) the kilowatt hours of electricity\u2014 (A) produced by the taxpayer\u2014 (i) from qualified energy resources, and (ii) at a qualified facility during the 10-year period beginning on the date the facility was originally placed in service, and (B) sold by the taxpayer to an unrelated person during the taxable year. (b) Limitations and adjustments (1) Phaseout o...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 48C",
+            "bill_context": "Section 48C of the Internal Revenue Code is referenced in the context of the advanced energy project credit.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "48C",
+              "heading": "Qualifying advanced energy project credit",
+              "text_excerpt": "\u00a7 48C. Qualifying advanced energy project credit (a) In general For purposes of section 46, the qualifying advanced energy project credit for any taxable year is an amount equal to 30 percent of the qualified investment for such taxable year with respect to any qualifying advanced energy project of the taxpayer. (b) Qualified investment (1) In general For purposes of subsection (a), the qualified investment for any taxable year is the basis of eligible property placed in service by the taxpayer during such taxable year which is part of a qualifying advanced energy project. (2) Certain qualifie...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48C&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45E",
+            "bill_context": "Section 45E of the Internal Revenue Code is referenced in the context of the credit for qualified clean hydrogen production.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "26",
+              "section": "45E",
+              "heading": "Small employer pension plan startup costs",
+              "text_excerpt": "\u00a7 45E. Small employer pension plan startup costs (a) General rule For purposes of section 38, in the case of an eligible employer, the small employer pension plan startup cost credit determined under this section for any taxable year is an amount equal to 50 percent of the qualified startup costs paid or incurred by the taxpayer during the taxable year. (b) Dollar limitation The amount of the credit determined under this section for any taxable year shall not exceed\u2014 (1) for the first credit year and each of the 2 taxable years immediately following the first credit year, the greater of\u2014 (A) $...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45E&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "26 USC 45D(e)",
+            "bill_context": "Section 45D(e) of the Internal Revenue Code is referenced in the context of low-income communities.",
+            "relevance": "definitions",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(f)",
+            "bill_context": "Section 45D(f) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit limitation.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(c)",
+            "bill_context": "Section 45D(c) of the Internal Revenue Code is referenced in the context of the definition of a low-income community.",
+            "relevance": "definitions",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(d)",
+            "bill_context": "Section 45D(d) of the Internal Revenue Code is referenced in the context of the definition of a qualified active low-income community business.",
+            "relevance": "definitions",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(e)",
+            "bill_context": "Section 45D(e) of the Internal Revenue Code is referenced in the context of the definition of a low-income community.",
+            "relevance": "definitions",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(g)",
+            "bill_context": "Section 45D(g) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(h)",
+            "bill_context": "Section 45D(h) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit allocation.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(i)",
+            "bill_context": "Section 45D(i) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit regulatory authority.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(j)",
+            "bill_context": "Section 45D(j) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit coordination with existing carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(k)",
+            "bill_context": "Section 45D(k) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit effective date.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(l)",
+            "bill_context": "Section 45D(l) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit coordination with existing carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(m)",
+            "bill_context": "Section 45D(m) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit effective date.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(n)",
+            "bill_context": "Section 45D(n) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit coordination with existing carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(o)",
+            "bill_context": "Section 45D(o) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit effective date.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(p)",
+            "bill_context": "Section 45D(p) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit coordination with existing carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(q)",
+            "bill_context": "Section 45D(q) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit effective date.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(r)",
+            "bill_context": "Section 45D(r) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit coordination with existing carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(s)",
+            "bill_context": "Section 45D(s) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit effective date.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(t)",
+            "bill_context": "Section 45D(t) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit coordination with existing carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(u)",
+            "bill_context": "Section 45D(u) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit effective date.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(v)",
+            "bill_context": "Section 45D(v) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit coordination with existing carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(w)",
+            "bill_context": "Section 45D(w) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit effective date.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(x)",
+            "bill_context": "Section 45D(x) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit coordination with existing carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(y)",
+            "bill_context": "Section 45D(y) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit effective date.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          },
+          {
+            "citation": "26 USC 45D(z)",
+            "bill_context": "Section 45D(z) of the Internal Revenue Code is referenced in the context of the New Markets Tax Credit coordination with existing carryover.",
+            "relevance": "amend",
+            "resolved_to": "26 USC 45D",
+            "usc_data": {
+              "title": "26",
+              "section": "45D",
+              "heading": "New markets tax credit",
+              "text_excerpt": "\u00a7 45D. New markets tax credit (a) Allowance of credit (1) In general For purposes of section 38, in the case of a taxpayer who holds a qualified equity investment on a credit allowance date of such investment which occurs during the taxable year, the new markets tax credit determined under this section for such taxable year is an amount equal to the applicable percentage of the amount paid to the qualified community development entity for such investment at its original issue. (2) Applicable percentage For purposes of paragraph (1), the applicable percentage is\u2014 (A) 5 percent with respect to t...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45D&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok-section-level"
+          }
+        ],
+        "note": null,
+        "_pipeline_notes": [
+          "deduped 39 -> 38 citations (truncation-recovery artifacts)"
+        ]
+      },
+      "elapsed_s": 264.23,
+      "prompt_tokens": 192295,
+      "completion_tokens": 2287,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 4338.65,
+        "lmdb_stats": {
+          "hits": 38,
+          "misses": 26,
+          "calls": 64,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch04",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 186.79,
+      "prompt_tokens": 192908,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch04",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 185.13,
+      "prompt_tokens": 192317,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch04",
+        "title_marker": "Subtitle E",
+        "headlines": [
+          {
+            "headline": "6.375M for Doulas? Yes.",
+            "angle": "hidden-provision",
+            "hook": "A little-noticed $6.375 million is earmarked specifically for training doulas and midwives in underserved communities.",
+            "target_audience": "Health policy enthusiasts, reproductive justice advocates",
+            "evidence_provisions": [
+              "Sets aside specific funding ($6.375 million each) for the two demonstration project types",
+              "Establishes two types of demonstration projects: one for individuals with arrest or conviction records to enter health careers, and another for training in pregnancy, birth, and postpartum care, including doulas and midwives."
+            ]
+          },
+          {
+            "headline": "Criminal Records? No Barrier.",
+            "angle": "human-impact",
+            "hook": "This bill removes a major hurdle: people with past convictions can now access health career training with federal support.",
+            "target_audience": "Criminal justice reform advocates, formerly incarcerated individuals",
+            "evidence_provisions": [
+              "Establishes two types of demonstration projects: one for individuals with arrest or conviction records to enter health careers",
+              "Requires applicants to demonstrate experience working with low-income populations and to include partnerships with local governments, educational institutions, and health care employers."
+            ]
+          },
+          {
+            "headline": "Rural Health Workers Get $425M",
+            "angle": "fiscal",
+            "hook": "A $425 million annual investment over five years is dedicated to building health workforces in rural and underserved areas.",
+            "target_audience": "Budget watchers, rural healthcare providers",
+            "evidence_provisions": [
+              "Allocates $425 million annually from 2022 to 2026 for the program",
+              "Focuses on low-income individuals, people with criminal records, and those in rural or underserved areas"
+            ]
+          },
+          {
+            "headline": "Tribal Health Grants Guaranteed",
+            "angle": "political",
+            "hook": "The bill mandates at least ten grants for Indian tribes\u2014ensuring federal health equity funding isn\u2019t left to chance.",
+            "target_audience": "Indigenous leaders, federal policy analysts",
+            "evidence_provisions": [
+              "Guarantees grants to at least two entities in each state and ten in Indian tribes",
+              "Sets aside specific funding ($6.375 million each) for the two demonstration project types"
+            ]
+          },
+          {
+            "headline": "Cash Stipends for Trainees?",
+            "angle": "regulatory",
+            "hook": "The program requires grantees to provide cash stipends\u2014making training accessible even for those with dependents.",
+            "target_audience": "Social services professionals, workforce development experts",
+            "evidence_provisions": [
+              "Requires grantees to provide essential support services like child care, transportation, and cash stipends",
+              "Requires grantees to offer post-employment support and ongoing training"
+            ]
+          },
+          {
+            "headline": "No Supplanting State Funds",
+            "angle": "watchdog",
+            "hook": "A strict rule prevents federal grants from replacing existing state health workforce spending.",
+            "target_audience": "Taxpayer watchdogs, state budget officials",
+            "evidence_provisions": [
+              "Includes provisions to ensure that grant funds are used only for eligible individuals",
+              "Recipient is not required to supplant existing state funding"
+            ]
+          },
+          {
+            "headline": "Drama: Grants to 10 Tribes",
+            "angle": "drama",
+            "hook": "The push to secure ten tribal grants becomes a political showdown over federal equity commitments.",
+            "target_audience": "Political insiders, tribal advocates",
+            "evidence_provisions": [
+              "Guarantees grants to at least two entities in each state and ten in Indian tribes",
+              "Establishes two types of demonstration projects: one for individuals with arrest or conviction records to enter health careers"
+            ]
+          },
+          {
+            "headline": "Post-Employment Training Mandate",
+            "angle": "scoop",
+            "hook": "Grantees must provide ongoing training after employment\u2014breaking the myth that training ends at graduation.",
+            "target_audience": "Workforce development specialists, health educators",
+            "evidence_provisions": [
+              "Requires grantees to offer post-employment support and ongoing training",
+              "Provides essential support services like child care, transportation, and cash stipends"
+            ]
+          },
+          {
+            "headline": "Child Care Support for Trainees",
+            "angle": "human-impact",
+            "hook": "For low-income women, access to child care through this program could mean the difference between training and quitting.",
+            "target_audience": "Single parents, social workers",
+            "evidence_provisions": [
+              "Requires grantees to provide essential support services like child care, transportation, and cash stipends",
+              "Focuses on low-income individuals, people with criminal records, and those in rural or underserved areas"
+            ]
+          },
+          {
+            "headline": "Evaluation Mandate: Prove It Works",
+            "angle": "geopolitical",
+            "hook": "The program\u2019s success isn\u2019t assumed\u2014rigorous evaluations are required to justify continued funding.",
+            "target_audience": "Federal evaluators, research institutions",
+            "evidence_provisions": [
+              "Mandates rigorous evaluations of demonstration projects to assess workforce outcomes and program effectiveness",
+              "Authorizes technical assistance and peer conferences for grantees"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 12.55,
+      "prompt_tokens": 7767,
+      "completion_tokens": 1237,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch04",
+        "title_marker": "Subtitle E",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "6.375M for Doulas? Yes.",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 9,
+            "specificity_score": 8,
+            "appeal_score": 9,
+            "composite_score": 26,
+            "rationale": "This headline reveals a highly specific, little-known allocation of $6.375 million for doula and midwife training\u2014directly tied to a concrete program with measurable impact on maternal health equity. The specificity of the dollar amount and the focus on underserved communities make it both surprising and actionable, appealing to reproductive justice advocates and health policy insiders alike."
+          },
+          {
+            "rank": 2,
+            "headline": "Criminal Records? No Barrier.",
+            "angle": "human-impact",
+            "newsworthiness_score": 9,
+            "specificity_score": 7,
+            "appeal_score": 8,
+            "composite_score": 24,
+            "rationale": "The provision allowing people with criminal records to access federally funded health training is a powerful, underreported policy shift. It combines a clear human story with a concrete legal mechanism, making it both newsworthy and emotionally resonant for justice reform audiences and formerly incarcerated individuals."
+          },
+          {
+            "rank": 3,
+            "headline": "Rural Health Workers Get $425M",
+            "angle": "fiscal",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 7,
+            "composite_score": 24,
+            "rationale": "The $425 million annual commitment over five years is a major fiscal detail rarely highlighted in health policy coverage. Its specificity and scale make it a standout for budget watchers, while the focus on rural and underserved areas adds real-world stakes, though the angle is slightly more wonky than the top two."
+          },
+          {
+            "rank": 4,
+            "headline": "Cash Stipends for Trainees?",
+            "angle": "regulatory",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 23,
+            "rationale": "The requirement for cash stipends is a rare regulatory detail that directly addresses a major barrier to training\u2014financial instability. It\u2019s specific, impactful, and ties into broader equity concerns, making it compelling for social services professionals and workforce experts, though less surprising than the top three."
+          },
+          {
+            "rank": 5,
+            "headline": "Post-Employment Training Mandate",
+            "angle": "scoop",
+            "newsworthiness_score": 8,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "The mandate for ongoing training after employment breaks a common myth that training ends at graduation. It\u2019s a fresh insight with real implications for workforce retention, though the angle is slightly less dramatic than others and appeals more narrowly to specialists."
+          },
+          {
+            "rank": 6,
+            "headline": "Child Care Support for Trainees",
+            "angle": "human-impact",
+            "newsworthiness_score": 7,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 21,
+            "rationale": "The inclusion of child care as a required support service is a concrete, human-centered detail that speaks directly to single parents and low-income women. While impactful, it\u2019s less surprising than other provisions and overlaps with the cash stipend angle, reducing its novelty."
+          },
+          {
+            "rank": 7,
+            "headline": "Tribal Health Grants Guaranteed",
+            "angle": "political",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 20,
+            "rationale": "The guarantee of ten tribal grants is a strong policy signal, but the political angle is underdeveloped. The specificity of the number is notable, but the headline lacks a clear conflict or drama, making it less engaging for general audiences despite its importance."
+          },
+          {
+            "rank": 8,
+            "headline": "Drama: Grants to 10 Tribes",
+            "angle": "drama",
+            "newsworthiness_score": 6,
+            "specificity_score": 6,
+            "appeal_score": 6,
+            "composite_score": 18,
+            "rationale": "While the idea of a political showdown over tribal grants adds narrative tension, the claim is speculative and not directly supported by the evidence. The headline leans on drama over substance, reducing its credibility and newsworthiness despite the potential for engagement."
+          },
+          {
+            "rank": 9,
+            "headline": "No Supplanting State Funds",
+            "angle": "watchdog",
+            "newsworthiness_score": 5,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 18,
+            "rationale": "The anti-supplanting rule is a useful regulatory safeguard, but it\u2019s a dry, procedural detail that appeals only to budget watchdogs. While specific, it lacks human stakes or surprise, making it less compelling for a general political audience."
+          },
+          {
+            "rank": 10,
+            "headline": "Evaluation Mandate: Prove It Works",
+            "angle": "geopolitical",
+            "newsworthiness_score": 4,
+            "specificity_score": 7,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "The evaluation requirement is a standard feature of federal programs and lacks a geopolitical or dramatic hook. The angle mislabels it as geopolitical, which is misleading. While specific, it\u2019s the least surprising and least engaging of the ten, appealing only to niche research audiences."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "6.375M for Doulas? Yes.",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 9,
+          "specificity_score": 8,
+          "appeal_score": 9,
+          "composite_score": 26,
+          "rationale": "This headline reveals a highly specific, little-known allocation of $6.375 million for doula and midwife training\u2014directly tied to a concrete program with measurable impact on maternal health equity. The specificity of the dollar amount and the focus on underserved communities make it both surprising and actionable, appealing to reproductive justice advocates and health policy insiders alike."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it combines high newsworthiness (a hidden, specific dollar amount for a marginalized health workforce), strong specificity (exact funding figure and program type), and broad listener appeal (reproductive justice, health equity, and policy innovation). It reveals something most listeners wouldn\u2019t know, names a concrete provision, and ties to real human impact\u2014making it the most compelling entry in the list."
+      },
+      "elapsed_s": 13.99,
+      "prompt_tokens": 1776,
+      "completion_tokens": 1573,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 198.57,
+    "usc_cross_ref": 264.23,
+    "pork_finder": 186.79,
+    "conflict_spotter": 185.13,
+    "podcast_headlines": 12.55,
+    "headline_ranker": 13.99
+  },
+  "totals": {
+    "wall_clock_s": 865.76,
+    "prompt_tokens_total": 779209,
+    "completion_tokens_total": 5572
+  }
+}

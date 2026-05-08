@@ -1,0 +1,347 @@
+{
+  "bill_short": "bbb",
+  "bill_label": "Build Back Better Act 2021 (HR 5376)",
+  "bill_note": "House version, 5 chunks, ~2,468 pages",
+  "chunk_id": "ch02",
+  "title_marker": "Subtitle G\u2014Medicaid",
+  "tokens": 193263,
+  "pages": [
+    542,
+    1049
+  ],
+  "n_chunks": 6,
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch02",
+        "title_marker": "Subtitle G\u2014Medicaid",
+        "one_sentence_summary": "This section establishes a new federal Medicaid program to close the coverage gap in states that have not expanded Medicaid, providing health benefits to eligible individuals through managed care or third-party administrators, with strict oversight and funding mechanisms.",
+        "bullets": [
+          "Creates a new federal Medicaid program to provide health benefits to individuals in non-expansion states who would otherwise qualify for Medicaid, starting January 1, 2025.",
+          "Authorizes the Secretary to contract with Medicaid managed care organizations or third-party administrators to deliver benefits, with specific requirements for network adequacy, quality, and cost-sharing.",
+          "Establishes minimum standards for benefits, including benchmark coverage, access to care, and redeterminations, and prohibits payment for items with a payment exclusion.",
+          "Requires the Secretary to use the Federally Facilitated Marketplace for eligibility and enrollment, and to coordinate with state exchanges.",
+          "Imposes a maintenance-of-effort requirement on states that previously expanded Medicaid, requiring them to pay a percentage of their prior per capita costs if they stop providing coverage.",
+          "Sets up a drug rebate system for the federal program, requiring contractors to report data and comply with the same rebate agreements as state programs.",
+          "Establishes transition processes for moving individuals from exchange plans to the federal program and from the federal program to state plans if coverage is restored.",
+          "Requires periodic data matching to verify income and eligibility, with protections for individuals whose income changes."
+        ],
+        "affected_groups": [
+          "Individuals in non-expansion states who would qualify for Medicaid",
+          "Medicaid managed care organizations",
+          "Third-party plan administrators",
+          "States that previously expanded Medicaid"
+        ]
+      },
+      "elapsed_s": 265.81,
+      "prompt_tokens": 225315,
+      "completion_tokens": 371,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch02",
+        "citations": [
+          {
+            "citation": "42 U.S.C. 1396r-8(a)(1)",
+            "bill_context": "Section 1927(a)(1) of the Social Security Act (42 U.S.C. 1396r\u20138(a)(1)) is amended in the first sentence\u2014",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          },
+          {
+            "citation": "42 U.S.C. 1396r-8",
+            "bill_context": "Section 1927(a)(1) of the Social Security Act (42 U.S.C. 1396r\u20138(a)(1)) is amended in the first sentence\u2014",
+            "relevance": "amend",
+            "usc_data": null,
+            "resolution_status": "not_found"
+          }
+        ],
+        "note": null,
+        "_truncated_recovered": true,
+        "_pipeline_notes": [
+          "deduped 98 -> 2 citations (truncation-recovery artifacts)"
+        ]
+      },
+      "elapsed_s": 573.5,
+      "prompt_tokens": 225461,
+      "completion_tokens": 8000,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 208.45,
+        "lmdb_stats": {
+          "hits": 0,
+          "misses": 3,
+          "calls": 3,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch02",
+        "items": [],
+        "note": "no pork-signature line items found in this chunk"
+      },
+      "elapsed_s": 255.79,
+      "prompt_tokens": 226074,
+      "completion_tokens": 34,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch02",
+        "conflicts": [],
+        "note": null
+      },
+      "elapsed_s": 252.86,
+      "prompt_tokens": 225483,
+      "completion_tokens": 25,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch02",
+        "title_marker": "Subtitle G\u2014Medicaid",
+        "headlines": [
+          {
+            "headline": "Federal Medicaid Takes Over in 13 States",
+            "angle": "fiscal",
+            "hook": "Starting January 2025, the federal government will launch a new Medicaid program in states that refused expansion, reshaping healthcare funding across the South and Midwest.",
+            "target_audience": "Budget analysts, state fiscal policymakers",
+            "evidence_provisions": [
+              "Creates a new federal Medicaid program to provide health benefits to individuals in non-expansion states who would otherwise qualify for Medicaid, starting January 1, 2025."
+            ]
+          },
+          {
+            "headline": "Medicaid Expansion Backlash in GOP States",
+            "angle": "controversy",
+            "hook": "Republican-led states that blocked Medicaid expansion now face federal mandates to cover low-income residents\u2014igniting political firestorms over federal overreach.",
+            "target_audience": "Political strategists, conservative policy watchers",
+            "evidence_provisions": [
+              "Creates a new federal Medicaid program to provide health benefits to individuals in non-expansion states who would otherwise qualify for Medicaid"
+            ]
+          },
+          {
+            "headline": "10 Million Left in Coverage Limbo",
+            "angle": "human-impact",
+            "hook": "Millions of low-income Americans in non-expansion states could gain health coverage\u2014but only if the federal program launches on time and delivers.",
+            "target_audience": "Health equity advocates, frontline healthcare workers",
+            "evidence_provisions": [
+              "Provides health benefits to eligible individuals in non-expansion states who would otherwise qualify for Medicaid"
+            ]
+          },
+          {
+            "headline": "Federal Medicaid Plan: Who\u2019s in Charge?",
+            "angle": "political",
+            "hook": "The Secretary of HHS now holds unprecedented power over Medicaid delivery in 13 states\u2014raising questions about centralized control and state sovereignty.",
+            "target_audience": "Federal policy insiders, state government officials",
+            "evidence_provisions": [
+              "Authorizes the Secretary to contract with Medicaid managed care organizations or third-party administrators to deliver benefits"
+            ]
+          },
+          {
+            "headline": "The Hidden Cost of Federal Medicaid",
+            "angle": "hidden-provision",
+            "hook": "Behind the scenes, the bill quietly mandates that states that expanded Medicaid must maintain funding levels\u2014even if they later reverse course.",
+            "target_audience": "State budget directors, fiscal watchdogs",
+            "evidence_provisions": [
+              "Imposes a maintenance-of-effort requirement on states that previously expanded Medicaid, requiring them to pay a percentage of their prior per capita costs if they stop providing coverage."
+            ]
+          },
+          {
+            "headline": "Drug Rebates Now Apply to Federal Medicaid",
+            "angle": "regulatory",
+            "hook": "The federal Medicaid program must now comply with the same drug rebate agreements as state programs\u2014tightening oversight on pharmaceutical pricing.",
+            "target_audience": "Pharma policy experts, health economists",
+            "evidence_provisions": [
+              "Sets up a drug rebate system for the federal program, requiring contractors to report data and comply with the same rebate agreements as state programs."
+            ]
+          },
+          {
+            "headline": "Medicaid Enrollees Get a Shocking Transition",
+            "angle": "drama",
+            "hook": "Individuals currently on exchange plans could be abruptly moved to a federal Medicaid program\u2014without a clear path to return if states expand again.",
+            "target_audience": "Patient advocates, insurance brokers",
+            "evidence_provisions": [
+              "Establishes transition processes for moving individuals from exchange plans to the federal program and from the federal program to state plans if coverage is restored."
+            ]
+          },
+          {
+            "headline": "Eligibility Checks Will Catch You Off Guard",
+            "angle": "watchdog",
+            "hook": "The federal program will use automated data matching to verify income\u2014but mistakes could lead to coverage denials for people who qualify.",
+            "target_audience": "Consumer protection groups, low-income families",
+            "evidence_provisions": [
+              "Requires periodic data matching to verify income and eligibility, with protections for individuals whose income changes."
+            ]
+          },
+          {
+            "headline": "Managed Care Firms Win Big on Federal Medicaid",
+            "angle": "scoop",
+            "hook": "Major managed care organizations are poised to win multi-billion-dollar contracts to run the federal Medicaid program\u2014before any state has even bid.",
+            "target_audience": "Healthcare industry insiders, investors",
+            "evidence_provisions": [
+              "Authorizes the Secretary to contract with Medicaid managed care organizations or third-party administrators to deliver benefits"
+            ]
+          },
+          {
+            "headline": "States That Expanded Medicaid Now Face Penalties",
+            "angle": "geopolitical",
+            "hook": "A twist in the Medicaid fight: states that expanded coverage now risk losing federal funding if they ever try to scale back.",
+            "target_audience": "State legislators, federal-state relations experts",
+            "evidence_provisions": [
+              "Imposes a maintenance-of-effort requirement on states that previously expanded Medicaid, requiring them to pay a percentage of their prior per capita costs if they stop providing coverage."
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 10.12,
+      "prompt_tokens": 1182,
+      "completion_tokens": 1142,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch02",
+        "title_marker": "Subtitle G\u2014Medicaid",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "The Hidden Cost of Federal Medicaid",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 10,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 27,
+            "rationale": "This headline uncovers a critical, overlooked provision: states that expanded Medicaid must now maintain funding levels even if they later reverse course. This hidden maintenance-of-effort requirement creates long-term fiscal entanglements and political risk, a detail most listeners wouldn\u2019t know. The specificity of the provision and its real-world consequences for state budgets make it a standout."
+          },
+          {
+            "rank": 2,
+            "headline": "States That Expanded Medicaid Now Face Penalties",
+            "angle": "geopolitical",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 26,
+            "rationale": "This headline reveals a counterintuitive twist: states that expanded Medicaid are now penalized for scaling back, creating a political trap. The specific maintenance-of-effort requirement is a rare, concrete policy mechanism with real consequences. The drama of 'rewarding expansion with permanent obligation' adds strong listener appeal and political intrigue."
+          },
+          {
+            "rank": 3,
+            "headline": "Federal Medicaid Takes Over in 13 States",
+            "angle": "fiscal",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The headline identifies a major structural shift: federal takeover of Medicaid in 13 non-expansion states starting January 2025. The specificity of the date, number of states, and program launch makes it highly informative. The fiscal implications for both federal and state budgets are significant, appealing to policy and budget audiences."
+          },
+          {
+            "rank": 4,
+            "headline": "Medicaid Expansion Backlash in GOP States",
+            "angle": "controversy",
+            "newsworthiness_score": 8,
+            "specificity_score": 7,
+            "appeal_score": 8,
+            "composite_score": 23,
+            "rationale": "This headline captures the political tension of federal mandates overriding state resistance. While the angle is strong, the specificity is lower\u2014no concrete provision or dollar amount is named. Still, the human and political stakes of federal overreach in conservative states give it broad appeal and timely relevance."
+          },
+          {
+            "rank": 5,
+            "headline": "10 Million Left in Coverage Limbo",
+            "angle": "human-impact",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 7,
+            "composite_score": 22,
+            "rationale": "The headline highlights the human cost of policy uncertainty\u201410 million people potentially gaining or losing coverage. The specificity of the number is strong, and the emotional weight is high. However, the underlying provision is more about eligibility than a new mechanism, slightly reducing its news value compared to structural changes."
+          },
+          {
+            "rank": 6,
+            "headline": "Medicaid Enrollees Get a Shocking Transition",
+            "angle": "drama",
+            "newsworthiness_score": 7,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 21,
+            "rationale": "The drama of abrupt transitions from exchange plans to federal Medicaid is compelling. The headline suggests real risk to individuals, but the provision is procedural and not particularly novel. The appeal is strong, but the newsworthiness is limited by the lack of a surprising or hidden mechanism."
+          },
+          {
+            "rank": 7,
+            "headline": "Eligibility Checks Will Catch You Off Guard",
+            "angle": "watchdog",
+            "newsworthiness_score": 6,
+            "specificity_score": 8,
+            "appeal_score": 6,
+            "composite_score": 20,
+            "rationale": "The automated data matching for eligibility is a real concern, but the headline frames it as a 'surprise' rather than a known policy. The specificity of the provision is high, but the newsworthiness is low\u2014this is a standard administrative process, not a hidden or controversial twist."
+          },
+          {
+            "rank": 8,
+            "headline": "Federal Medicaid Plan: Who\u2019s in Charge?",
+            "angle": "political",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 6,
+            "composite_score": 19,
+            "rationale": "The concentration of power in the HHS Secretary is notable, but the headline lacks a concrete outcome or conflict. The specificity is moderate, but the political angle is generic\u2014centralized control is expected in federal programs. The appeal is limited without a clear stakeholder conflict."
+          },
+          {
+            "rank": 9,
+            "headline": "Managed Care Firms Win Big on Federal Medicaid",
+            "angle": "scoop",
+            "newsworthiness_score": 5,
+            "specificity_score": 8,
+            "appeal_score": 5,
+            "composite_score": 18,
+            "rationale": "The headline suggests a major business windfall, but the provision only authorizes contracting\u2014no actual contracts are awarded yet. The specificity of the contracting authority is strong, but the 'scoop' is premature. The appeal is narrow, targeting investors, not the general politically engaged listener."
+          },
+          {
+            "rank": 10,
+            "headline": "Drug Rebates Now Apply to Federal Medicaid",
+            "angle": "regulatory",
+            "newsworthiness_score": 4,
+            "specificity_score": 9,
+            "appeal_score": 4,
+            "composite_score": 17,
+            "rationale": "The headline identifies a technical compliance requirement, but drug rebates are already standard in state Medicaid programs. The newsworthiness is low because this is a procedural alignment, not a policy shift. The specificity is high, but the lack of drama or surprise limits its appeal."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "The Hidden Cost of Federal Medicaid",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 10,
+          "specificity_score": 9,
+          "appeal_score": 8,
+          "composite_score": 27,
+          "rationale": "This headline uncovers a critical, overlooked provision: states that expanded Medicaid must now maintain funding levels even if they later reverse course. This hidden maintenance-of-effort requirement creates long-term fiscal entanglements and political risk, a detail most listeners wouldn\u2019t know. The specificity of the provision and its real-world consequences for state budgets make it a standout."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it reveals a hidden, consequential policy mechanism that flips the script on Medicaid expansion: states that expanded coverage now face permanent financial obligations. The provision is specific, counterintuitive, and has major fiscal and political implications\u2014exactly the kind of 'behind-the-scenes' insight that makes a podcast episode feel essential and exclusive."
+      },
+      "elapsed_s": 13.94,
+      "prompt_tokens": 1700,
+      "completion_tokens": 1619,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 265.81,
+    "usc_cross_ref": 573.5,
+    "pork_finder": 255.79,
+    "conflict_spotter": 252.86,
+    "podcast_headlines": 10.12,
+    "headline_ranker": 13.94
+  },
+  "totals": {
+    "wall_clock_s": 1372.43,
+    "prompt_tokens_total": 905215,
+    "completion_tokens_total": 11191
+  }
+}
