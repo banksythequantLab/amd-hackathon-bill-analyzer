@@ -424,6 +424,123 @@ def stage_compose(eval_dir, bill_short, n_scenes=19, log=print):
         return None
 
 
+def stage_avatar_render(script, eval_dir, log=print, prompt=None,
+                         image_1='podcast_pair_jordan_mask.png',
+                         image_2='podcast_pair_alex_mask.png'):
+    """Render each consecutive pair of dialog lines via InfiniteTalk on the cloud.
+
+    IMPORTANT - mask assignment (verified on capr26 Day 7.13):
+      audio_1 = Alex's line  -> uses VOICE_MAP['Alex'] = 'Ryan' (MALE voice)
+      audio_2 = Jordan's line -> uses VOICE_MAP['Jordan'] = 'Ono_anna' (FEMALE voice)
+      image_1 = jordan_mask  -> covers RIGHT half of ref (visible MALE character)
+      image_2 = alex_mask    -> covers LEFT half of ref (visible FEMALE character)
+    Result: voices match faces. The mask filenames are intentionally
+    "swapped" relative to the speaker name they're attached to, because
+    the original brand/podcast_pair_ref.png placed the female on the left
+    while Alex (left-named) speaks with a male voice.
+
+    Pair grouping: scene-01 + scene-02 -> pair_01.mp4, scene-03 + scene-04 ->
+    pair_02.mp4, etc. If the dialog has an odd number of lines, the last line
+    is dropped (single-speaker mode could be added later if needed).
+
+    Pre-conditions:
+      eval_dir/tts/scene-NN.flac     for each dialog line (1-indexed).
+      Mask + ref PNGs already uploaded to ComfyUI input dir (via Day 7.10
+      brand asset commit, persisted server-side until ComfyUI restart).
+
+    Resumable: if eval_dir/infinitetalk/pair_NN.mp4 exists with reasonable
+    size, that pair is skipped. Otherwise submitted to the cloud queue.
+
+    Concurrency: all pairs are submitted up-front, then a poll loop drains
+    the queue. ComfyUI processes them serially (one at a time), but submitting
+    in a batch means we don't sit blocked between renders.
+    """
+    import sys, math, uuid
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from infinitetalk_pipeline import (
+        make_infinitetalk_pair_workflow, _upload_audio, DEFAULT_PROMPT,
+    )
+    pair_prompt = prompt or DEFAULT_PROMPT
+
+    tts_dir = eval_dir / 'tts'
+    out_dir = eval_dir / 'infinitetalk'
+    out_dir.mkdir(exist_ok=True, parents=True)
+
+    dialog = script.get('dialog', [])
+    n_pairs = len(dialog) // 2
+    if not n_pairs:
+        log(f'STAGE 4-AVATAR: NO PAIRS (dialog has {len(dialog)} lines)')
+        return
+    log(f'STAGE 4-AVATAR: {len(dialog)} lines -> {n_pairs} pairs')
+
+    submissions = []
+    for pair_idx in range(1, n_pairs + 1):
+        scene_a = (pair_idx - 1) * 2 + 1
+        scene_b = scene_a + 1
+        out_path = out_dir / f'pair_{pair_idx:02d}.mp4'
+        if out_path.exists() and out_path.stat().st_size > 50_000:
+            log(f'  pair_{pair_idx:02d}: cached')
+            continue
+        a1 = tts_dir / f'scene-{scene_a:02d}.flac'
+        a2 = tts_dir / f'scene-{scene_b:02d}.flac'
+        if not a1.exists() or not a2.exists():
+            log(f'  pair_{pair_idx:02d}: MISSING ({a1.name} or {a2.name})')
+            continue
+        prefix = f'{eval_dir.name}_p{pair_idx:02d}'
+        a1n = f'{prefix}_a.flac'; a2n = f'{prefix}_b.flac'
+        _upload_audio(a1, a1n); _upload_audio(a2, a2n)
+        tf = math.ceil((dur(a1) + dur(a2)) * 25)
+        wf, s1, s2 = make_infinitetalk_pair_workflow(
+            audio_1_filename=a1n, audio_2_filename=a2n,
+            image_1_filename=image_1, image_2_filename=image_2,
+            total_frames=tf, prompt=pair_prompt,
+            seed=42 + pair_idx, prefix=prefix,
+        )
+        pid = submit(wf, f'avatar-{uuid.uuid4().hex[:8]}')
+        submissions.append({'idx': pair_idx, 'pid': pid, 'out': out_path,
+                            'frames': tf, 's1': s1, 's2': s2})
+        log(f'  pair_{pair_idx:02d}: queued ({tf} fr, {s1}+{s2}) pid={pid[:8]}')
+
+    if not submissions:
+        log('  all pairs cached; nothing to render')
+        return
+
+    log(f'  waiting for {len(submissions)} renders...')
+    t_start = time.time()
+    pending = {s['idx']: s for s in submissions}
+    while pending:
+        time.sleep(20)
+        finished = []
+        for idx, s in pending.items():
+            try:
+                h = httpx.get(f'{COMFY}/history/{s["pid"]}', timeout=10).json()
+            except Exception:
+                continue
+            if s['pid'] not in h:
+                continue
+            st = h[s['pid']]['status']
+            if st.get('status_str') == 'error':
+                log(f'  pair_{idx:02d}: ERROR')
+                finished.append(idx)
+                continue
+            if not st.get('completed'):
+                continue
+            outs = h[s['pid']].get('outputs', {}).get('162', {})
+            vids = outs.get('videos') or outs.get('images') or []
+            if vids:
+                v = vids[0]
+                download(v['filename'], v.get('subfolder', ''),
+                         v.get('type', 'output'), str(s['out']))
+                log(f'  pair_{idx:02d}: done [{int(time.time()-t_start)}s elapsed]')
+            else:
+                log(f'  pair_{idx:02d}: NO VIDEO output keys={list(h[s["pid"]].get("outputs",{}).keys())}')
+            finished.append(idx)
+        for idx in finished:
+            pending.pop(idx)
+
+    log(f'STAGE 4-AVATAR: done in {time.time()-t_start:.0f}s')
+
+
 def _downmix_pair_to_mono(src_mp4, out_mp4, log=print):
     """Re-encode an InfiniteTalk pair clip's audio from stereo->mono 24kHz.
 
