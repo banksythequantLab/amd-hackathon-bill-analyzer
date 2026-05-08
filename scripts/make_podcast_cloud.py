@@ -15,6 +15,7 @@ from src.agents.youtube_metadata_generator import YouTubeMetadataGenerator
 
 COMFY = "http://165.245.134.1:8188"
 VOICE_MAP = {'Alex': 'Ryan', 'Jordan': 'Ono_anna'}
+BRAND_DIR = REPO / 'brand'  # Dead Air intro/outro/closeout cards live here
 
 # ---- COMFY HELPERS ----
 def submit(wf, client_id):
@@ -274,6 +275,63 @@ def dur(path):
     r = subprocess.run([FFPROBE, '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', str(path)], capture_output=True, text=True)
     return float(r.stdout.strip()) if r.stdout.strip() else 0.0
 
+
+def _make_card_clip(png_path, out_path, duration_sec, log=print, w=832, h=480, fps=25):
+    """Build a still-frame mp4 clip from a brand PNG card.
+
+    Output format is locked to match scene clips EXACTLY so the final
+    concat with `-c copy` doesn't fail. Reference (probed from existing
+    scene clips):
+      video: libx264 High@L30 yuv420p {w}x{h} @ {fps}fps
+      audio: AAC LC mono 24kHz (silent)
+
+    The card image is scaled with `force_original_aspect_ratio=decrease`
+    plus a centered black pad so wider intro/outro cards (1920x1080) get
+    a thin 6px letterbox top/bottom and the square closeout card
+    (1024x1024) gets pillarboxing (176px black bars left/right).
+
+    Caches: if `out_path` already exists with reasonable size, skip rebuild.
+    """
+    png_path = Path(png_path)
+    out_path = Path(out_path)
+    if not png_path.exists():
+        log(f'  card SKIP: source PNG not found at {png_path.name}')
+        return None
+    if out_path.exists() and out_path.stat().st_size > 10_000:
+        log(f'  card cached: {out_path.name} ({out_path.stat().st_size//1024} KB)')
+        return out_path
+
+    vf = (
+        f"scale={w}:{h}:force_original_aspect_ratio=decrease,"
+        f"pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:black,"
+        f"format=yuv420p,fps={fps}"
+    )
+    # -loop 1 + -t makes ffmpeg generate `duration_sec * fps` frames from the still image.
+    # -f lavfi anullsrc generates a silent MONO 24kHz track to match the
+    #  AAC LC mono 24kHz audio in the existing dialog scene clips.
+    # Pinning -profile:v high -level 3.0 so `-c copy` concat sees identical
+    #  H.264 params across all clips.
+    cmd = [
+        FFMPEG, '-y',
+        '-loop', '1', '-t', f'{duration_sec:.3f}', '-i', str(png_path),
+        '-f', 'lavfi', '-t', f'{duration_sec:.3f}',
+        '-i', 'anullsrc=channel_layout=mono:sample_rate=24000',
+        '-vf', vf,
+        '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20',
+        '-profile:v', 'high', '-level', '3.0',
+        '-pix_fmt', 'yuv420p', '-r', str(fps),
+        '-c:a', 'aac', '-b:a', '96k', '-ar', '24000', '-ac', '1',
+        '-shortest', str(out_path)
+    ]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode == 0 and out_path.exists() and out_path.stat().st_size > 10_000:
+        log(f'  card built: {out_path.name} ({duration_sec:.1f}s, {out_path.stat().st_size//1024} KB)')
+        return out_path
+    else:
+        log(f'  card FAIL ({png_path.name}): {r.stderr[-200:]}')
+        return None
+
+
 def stage_compose(eval_dir, bill_short, n_scenes=19, log=print):
     wan_dir = eval_dir / 'wan'
     tts_dir = eval_dir / 'tts'
@@ -310,8 +368,49 @@ def stage_compose(eval_dir, bill_short, n_scenes=19, log=print):
     if not scenes:
         log('NO SCENES; aborting final concat')
         return None
+
+    # ---- BRAND CARDS: intro / outro / closeout ----
+    # Cards are pre-rendered to mp4s with the SAME codec params as scene
+    # clips so the final concat with `-c copy` works without re-encoding.
+    cards_dir = out_dir / '_cards'
+    cards_dir.mkdir(exist_ok=True, parents=True)
+    log('')
+    log('STAGE 5b: Brand cards (intro / outro / closeout)')
+
+    intro_clip = _make_card_clip(
+        BRAND_DIR / 'deadair_intro-1080.png',
+        cards_dir / 'intro.mp4',
+        duration_sec=4.0,
+        log=log,
+    )
+    outro_clip = _make_card_clip(
+        BRAND_DIR / 'deadair_outro-1080.png',
+        cards_dir / 'outro.mp4',
+        duration_sec=4.0,
+        log=log,
+    )
+    closeout_clip = _make_card_clip(
+        BRAND_DIR / 'deadair_closeout-1024.png',
+        cards_dir / 'closeout.mp4',
+        duration_sec=2.0,
+        log=log,
+    )
+
+    # Build final clip list: intro + scenes + outro + closeout.
+    # Any missing card is logged and silently dropped (graceful fallback)
+    # so a missing brand asset doesn't kill the whole render.
+    final_clips = []
+    if intro_clip:
+        final_clips.append(intro_clip)
+    final_clips.extend(scenes)
+    if outro_clip:
+        final_clips.append(outro_clip)
+    if closeout_clip:
+        final_clips.append(closeout_clip)
+    log(f'  final clip list: {len(final_clips)} clips ({len(scenes)} scenes + branding)')
+
     list_file = out_dir / '_master.txt'
-    list_file.write_text('\n'.join(f"file '{s}'" for s in scenes) + '\n')
+    list_file.write_text('\n'.join(f"file '{s}'" for s in final_clips) + '\n')
     final = eval_dir / f'final-{bill_short}-cloud-podcast.mp4'
     r = subprocess.run([FFMPEG, '-y', '-f', 'concat', '-safe', '0', '-i', str(list_file),
                         '-c', 'copy', str(final)], capture_output=True, text=True)
