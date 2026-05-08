@@ -1412,7 +1412,10 @@ def load_headlines_for_bill(bill_short: str):
 def generate_podcast_handler(bill_short, edited_headline='', creative_direction=''):
     """Streaming generator for the Podcast Studio.
 
-    Yields (log_text, video_path_or_None) every 0.5–0.6s.
+    Yields (log_text, video_path_or_None, master_path_str) every 0.5–0.6s.
+    The 3rd value is the REAL master mp4 path (e.g. B:\\...\\final-X.mp4),
+    routed directly to the YouTube upload textbox so it shows the actual
+    file location instead of Gradio's temp-dir copy of it.
 
     Three behaviors:
       1. Cached fast-path: if a master mp4 already exists for this exact
@@ -1424,13 +1427,13 @@ def generate_podcast_handler(bill_short, edited_headline='', creative_direction=
          flushed to the UI as they arrive.
     """
     if not _CLOUD_PIPELINE_AVAILABLE:
-        yield 'ERROR: cloud pipeline module not loaded.', None
+        yield 'ERROR: cloud pipeline module not loaded.', None, ''
         return
     if not bill_short:
-        yield 'Please pick a bill from the dropdown.', None
+        yield 'Please pick a bill from the dropdown.', None, ''
         return
     if not _canonical_report_path(bill_short):
-        yield f"ERROR: no canonical report for '{bill_short}'", None
+        yield f"ERROR: no canonical report for '{bill_short}'", None, ''
         return
 
     headline_arg = (edited_headline or '').strip() or None
@@ -1455,7 +1458,7 @@ def generate_podcast_handler(bill_short, edited_headline='', creative_direction=
             f'\n(Skipping pipeline — no compute needed. To force regeneration, '
             f'delete the eval folder for this combo.)'
         )
-        yield msg, str(cached)
+        yield msg, str(cached), str(cached)
         return
 
     # === LIVE PATH: kick off pipeline in a thread, stream progress ===
@@ -1562,7 +1565,7 @@ def generate_podcast_handler(bill_short, edited_headline='', creative_direction=
     if direction_arg:
         intro.append(f'  creative direction: {direction_arg[:120]}')
     log_lines.extend(intro)
-    yield _render(), None
+    yield _render(), None, gr.update()
 
     last_idx = len(log_lines)
     last_yield_t = _time.time()
@@ -1573,7 +1576,7 @@ def generate_podcast_handler(bill_short, edited_headline='', creative_direction=
         # (Wan i2v renders take 25-49s with no intermediate stdout)
         elapsed_changed = (_time.time() - last_yield_t) >= 1.0
         if new_log or elapsed_changed:
-            yield _render(), None
+            yield _render(), None, gr.update()
             last_idx = len(log_lines)
             last_yield_t = _time.time()
 
@@ -1582,10 +1585,12 @@ def generate_podcast_handler(bill_short, edited_headline='', creative_direction=
     elapsed_total = _time.time() - t0
     if final_path and _Path(str(final_path)).exists():
         log_lines.append(f'\n⏱  Total elapsed: {_fmt_elapsed(elapsed_total)}')
-        yield _render(), str(final_path)
+        # 3rd value = master path string, drives YouTube upload textbox directly
+        # (bypasses gr.Video's temp-dir copy that would otherwise show up).
+        yield _render(), str(final_path), str(final_path)
     else:
         err_suffix = f"\n\n(Pipeline error: {state['error']})" if state['error'] else ''
-        yield _render(extra_tail=err_suffix + '\n\n(no final video produced)'), None
+        yield _render(extra_tail=err_suffix + '\n\n(no final video produced)'), None, gr.update()
 
 
 def build_ui() -> gr.Blocks:
@@ -1965,16 +1970,11 @@ def build_ui() -> gr.Blocks:
                 value='' if _yt_ok else '(complete the one-time setup above to enable uploads)',
             )
 
-        # Auto-fill yt_video_path when a new podcast video is rendered.
-        def _sync_video_path(vid_path):
-            if not vid_path:
-                return gr.update()
-            return gr.update(value=str(vid_path))
-        podcast_video.change(
-            fn=_sync_video_path,
-            inputs=[podcast_video],
-            outputs=[yt_video_path],
-        )
+        # Auto-fill yt_video_path is now driven directly by the pipeline
+        # generator's 3rd yield value (the master path). The old approach
+        # (podcast_video.change) gave us Gradio's temp-dir copy of the file,
+        # which is confusing for the user. By writing the master path
+        # directly to the textbox we get the real B:\eval\... path.
 
         # Auto-generate metadata via YouTubeMetadataGenerator agent.
         def _yt_generate_metadata(bill_short, headline_text, direction_text):
@@ -2082,7 +2082,7 @@ def build_ui() -> gr.Blocks:
         podcast_generate_btn.click(
             fn=generate_podcast_handler,
             inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction],
-            outputs=[podcast_log, podcast_video],
+            outputs=[podcast_log, podcast_video, yt_video_path],
         )
 
         # Helper: build the Generate-button label for a given armed headline.
@@ -2114,7 +2114,7 @@ def build_ui() -> gr.Blocks:
             ).then(
                 fn=generate_podcast_handler,
                 inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction],
-                outputs=[podcast_log, podcast_video],
+                outputs=[podcast_log, podcast_video, yt_video_path],
             )
 
         # Sync Generate button label when the user types in the editable textbox.
