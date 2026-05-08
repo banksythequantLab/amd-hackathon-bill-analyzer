@@ -50,12 +50,31 @@ DEFAULT_PROMPT = (
 )
 
 
+def _quantize_length(L: int) -> int:
+    """Round L up to the nearest value where L % 4 == 1.
+
+    The WanInfiniteTalkToVideo node's audio embedding pipeline reshapes
+    `latter_frame_audio_emb` with a chunk-of-4 rearrange. The relevant
+    tensor has size (L - 1), so (L - 1) must be divisible by 4 — i.e.
+    L % 4 == 1. If L violates this, ComfyUI raises EinopsError mid-render.
+
+    Adds 0..3 frames of padding (max 0.12s @ 25fps), imperceptible.
+    """
+    rem = L % 4
+    if rem == 1:
+        return L
+    # (1 - rem) % 4 gives correct add: rem=0 -> +1, rem=2 -> +3, rem=3 -> +2
+    return L + ((1 - rem) % 4)
+
+
 def compute_stage_lengths(total_frames: int, stage_max: int = 321,
                           motion_frame_count: int = 9):
     """Return (stage_1_len, stage_2_len) for target total visible frame count.
 
     Returns (total_frames, 0) for short pairs that fit in one stage.
     Raises ValueError if pair exceeds the 2-stage envelope.
+
+    Both returned lengths are quantized to L % 4 == 1 (see _quantize_length).
     """
     max_two_stage = stage_max + (stage_max - motion_frame_count)
     if total_frames > max_two_stage:
@@ -64,9 +83,10 @@ def compute_stage_lengths(total_frames: int, stage_max: int = 321,
             f"> max {max_two_stage}. split pairs or implement 3-stage chunking."
         )
     if total_frames <= stage_max:
-        return total_frames, 0
-    stage_1_len = stage_max
-    stage_2_len = total_frames - stage_1_len + motion_frame_count
+        return _quantize_length(total_frames), 0
+    stage_1_len = stage_max  # 321 % 4 == 1 already, no quantize needed
+    stage_2_raw = total_frames - stage_1_len + motion_frame_count
+    stage_2_len = _quantize_length(stage_2_raw)
     return stage_1_len, stage_2_len
 
 

@@ -423,6 +423,95 @@ def stage_compose(eval_dir, bill_short, n_scenes=19, log=print):
         log(f'FINAL CONCAT FAIL: {r.stderr[-400:]}')
         return None
 
+
+def _downmix_pair_to_mono(src_mp4, out_mp4, log=print):
+    """Re-encode an InfiniteTalk pair clip's audio from stereo->mono 24kHz.
+
+    Video is copied without re-encode (-c:v copy), so this is essentially free.
+    The downmix is needed because InfiniteTalk's CreateVideo node emits AAC
+    LC stereo 24kHz, but the brand cards (and existing slide-mode scenes)
+    use AAC LC mono 24kHz. Mismatched channel layouts break `-c copy` concat.
+    """
+    src_mp4 = Path(src_mp4); out_mp4 = Path(out_mp4)
+    if out_mp4.exists() and out_mp4.stat().st_size > 10_000:
+        log(f'  pair mono cached: {out_mp4.name}')
+        return out_mp4
+    cmd = [FFMPEG, '-y', '-i', str(src_mp4),
+           '-c:v', 'copy',
+           '-c:a', 'aac', '-b:a', '96k', '-ar', '24000', '-ac', '1',
+           str(out_mp4)]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode == 0 and out_mp4.exists() and out_mp4.stat().st_size > 10_000:
+        log(f'  pair mono: {out_mp4.name} ({out_mp4.stat().st_size//1024} KB)')
+        return out_mp4
+    log(f'  pair mono FAIL ({src_mp4.name}): {r.stderr[-200:]}')
+    return None
+
+
+def stage_avatar_compose(eval_dir, bill_short, log=print):
+    """Concat InfiniteTalk pair clips + Dead Air brand cards into avatar master.
+
+    Reads pair_NN.mp4 files from <eval_dir>/infinitetalk/ (the dir created by
+    the avatar-mode render loop). Downmixes each pair's audio to mono 24kHz
+    so concat with the existing card format works. Bookends with the same
+    intro/outro/closeout cards used by slides-mode stage_compose.
+
+    Output: <eval_dir>/final-<bill_short>-cloud-avatar-podcast.mp4
+    (distinct from slides-mode final-<bill_short>-cloud-podcast.mp4 so both
+    can coexist for A/B comparison)
+    """
+    pairs_dir = eval_dir / 'infinitetalk'
+    if not pairs_dir.exists():
+        log(f'NO INFINITETALK DIR: {pairs_dir}')
+        return None
+    pair_clips = sorted(pairs_dir.glob('pair_*.mp4'))
+    if not pair_clips:
+        log(f'NO PAIR CLIPS in {pairs_dir}')
+        return None
+    log(f'STAGE 5-AVATAR: found {len(pair_clips)} InfiniteTalk pair clips')
+
+    out_dir = pairs_dir / 'compose'
+    out_dir.mkdir(exist_ok=True)
+    mono_clips = []
+    for src in pair_clips:
+        out = out_dir / f'{src.stem}_mono.mp4'
+        m = _downmix_pair_to_mono(src, out, log=log)
+        if m:
+            mono_clips.append(m)
+    if not mono_clips:
+        log('NO MONO CLIPS produced; aborting')
+        return None
+
+    cards_dir = out_dir / '_cards'
+    cards_dir.mkdir(exist_ok=True, parents=True)
+    log('STAGE 5b: Brand cards (intro / outro / closeout)')
+    intro_clip = _make_card_clip(BRAND_DIR / 'deadair_intro-1080.png',
+                                  cards_dir / 'intro.mp4', duration_sec=4.0, log=log)
+    outro_clip = _make_card_clip(BRAND_DIR / 'deadair_outro-1080.png',
+                                  cards_dir / 'outro.mp4', duration_sec=4.0, log=log)
+    closeout_clip = _make_card_clip(BRAND_DIR / 'deadair_closeout-1024.png',
+                                     cards_dir / 'closeout.mp4', duration_sec=2.0, log=log)
+
+    final_clips = []
+    if intro_clip: final_clips.append(intro_clip)
+    final_clips.extend(mono_clips)
+    if outro_clip: final_clips.append(outro_clip)
+    if closeout_clip: final_clips.append(closeout_clip)
+    log(f'  final clip list: {len(final_clips)} clips ({len(mono_clips)} pairs + branding)')
+
+    list_file = out_dir / '_master.txt'
+    list_file.write_text('\n'.join(f"file '{s}'" for s in final_clips) + '\n')
+    final = eval_dir / f'final-{bill_short}-cloud-avatar-podcast.mp4'
+    r = subprocess.run([FFMPEG, '-y', '-f', 'concat', '-safe', '0', '-i', str(list_file),
+                        '-c', 'copy', str(final)], capture_output=True, text=True)
+    if r.returncode == 0:
+        log(f'\n*** AVATAR MASTER: {final}')
+        log(f'    size = {final.stat().st_size/1024/1024:.1f} MB')
+        log(f'    dur  = {dur(final):.1f}s ({dur(final)/60:.2f} min)')
+        return final
+    log(f'FINAL CONCAT FAIL: {r.stderr[-400:]}')
+    return None
+
 # ---- HELPERS for the UI to predict the output path / detect cached runs ----
 def _resolve_eval_dir(bill_short: str, override_headline: str = None,
                       creative_direction: str = None):
