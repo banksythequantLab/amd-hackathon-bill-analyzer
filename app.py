@@ -801,9 +801,14 @@ def analyze_pdf(pdf_file, progress=gr.Progress()):
     else:
         mode_label = f"single chunk: <b>{chunks[0]['chunk_id']}</b>"
 
-    # Bill metadata derived from filename (lowercase stem)
+    # Bill metadata derived from filename (lowercase stem). Strip Windows-
+    # style duplicate suffixes like " (1)", "(2)", "-(3)" before slugifying so
+    # re-uploads don't collide with canonical reports already on disk.
+    import re as _re_dup
     pdf_stem = Path(pdf_file).stem
+    pdf_stem = _re_dup.sub(r"[\s\-_]*\(\d+\)\s*$", "", pdf_stem).strip()
     bill_short = pdf_stem.lower().replace(" ", "-").replace("_", "-")
+    bill_short = _re_dup.sub(r"-+", "-", bill_short).strip("-")
     bill_meta = {
         "bill_short": bill_short,
         "bill_label": pdf_stem,
