@@ -1614,14 +1614,19 @@ def build_ui() -> gr.Blocks:
                     )
                 gr.HTML(
                     '<div style="font-size:12px;color:#64748b;margin-top:4px;margin-bottom:14px">'
-                    '💡 No PDF handy? Click any pre-processed bill below for instant results — or use the canonical demo button.'
+                    '💡 No PDF handy? Click any pre-processed bill below for instant results.'
                     '</div>'
                 )
                 analyze_btn = gr.Button("🚀 Analyze Full Bill (all chunks)", variant="primary", size="lg")
-                with gr.Row():
-                    demo_btn = gr.Button("⚡ Load Canonical Demo (BBB Full Bill, 6 chunks, 2,468 pp)", variant="secondary", scale=2)
-                    health_btn = gr.Button("🔄 Status", variant="secondary", scale=1, size="sm")
-                health_out = gr.HTML(value="<div style='font-size:11px;color:#94a3b8;padding:4px 0'>Click 🔄 Status to verify endpoints</div>")
+                # Hidden refs - the BBB-specific demo button and Status button were
+                # removed because (a) the bill cards above and the dropdown below
+                # already cover canonical bill selection, and (b) the Status badge
+                # was based on a broken url.rstrip('/v1') check that always reported
+                # spine offline. Keeping these as hidden widgets so existing .click()
+                # wirings (line ~1710) don't NameError.
+                demo_btn = gr.Button("⚡ Load Canonical Demo", variant="secondary", visible=False)
+                health_btn = gr.Button("🔄 Status", variant="secondary", visible=False)
+                health_out = gr.HTML(value="", visible=False)
 
         gr.HTML('<div class="section-label" style="margin-top:14px">📡 Live Progress</div>')
         log_panel = gr.HTML(
@@ -1630,7 +1635,7 @@ def build_ui() -> gr.Blocks:
         )
 
         gr.HTML('<div class="section-label" style="margin-top:18px">📊 Analysis Output</div>')
-        overview_out = gr.HTML(value="<div style='padding:30px;text-align:center;color:#94a3b8'>Upload a PDF or click <b>Load Canonical Demo</b> above to begin.</div>")
+        overview_out = gr.HTML(value="<div style='padding:30px;text-align:center;color:#94a3b8'>Upload a PDF or pick a pre-processed bill above to begin.</div>")
 
         with gr.Tabs():
             with gr.TabItem("📝 Summary"):
