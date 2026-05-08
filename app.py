@@ -1414,6 +1414,47 @@ def load_headlines_for_bill(bill_short: str):
     return choices, default
 
 
+
+def _delete_bill_arm_or_fire(armed_short, current_short):
+    """Two-click delete. First click arms; second click on same bill deletes.
+
+    Returns: (new_armed_state, status_html). Caller chains a .then() with
+    _post_analyze_refresh so the UI re-scans the canonical dir after the
+    delete and rebuilds bill cards + dropdowns.
+    """
+    import shutil as _shutil
+    if not current_short:
+        return None, "<div style='color:#94a3b8;padding:6px'>Pick a bill to delete first.</div>"
+    canon_dir = _REPO_DIR / 'eval' / 'canonical'
+    if not canon_dir.exists():
+        return None, "<div style='color:#ef4444'>Canonical dir missing.</div>"
+    # Collect all files matching this bill_short
+    pat_prefixes = [f"{current_short}-merged.json", f"{current_short}-ch", f"{current_short}.json"]
+    matches = sorted({p for p in canon_dir.glob(f"{current_short}*") if p.is_file()})
+    if not matches:
+        return None, f"<div style='color:#ef4444'>No files found for <b>{current_short}</b></div>"
+    if armed_short != current_short:
+        # First click: arm
+        files_html = "<br>&nbsp;&nbsp;&bull; ".join(p.name for p in matches)
+        msg = (
+            f"<div style='background:#fef3c7;border:1px solid #f59e0b;padding:10px;border-radius:6px;color:#7c2d12'>"
+            f"⚠️ <b>About to delete {len(matches)} files</b> for <code>{current_short}</code>:<br>&nbsp;&nbsp;&bull; {files_html}"
+            f"<br><br>Click <b>🗑 Delete</b> again to confirm."
+            f"</div>"
+        )
+        return current_short, msg
+    # Second click on same bill: delete
+    deleted = []
+    for p in matches:
+        try:
+            p.unlink()
+            deleted.append(p.name)
+        except Exception as e:
+            return None, f"<div style='color:#ef4444'>Failed deleting {p.name}: {e}</div>"
+    msg = f"<div style='background:#dcfce7;border:1px solid #16a34a;padding:10px;border-radius:6px;color:#14532d'>✅ Deleted {len(deleted)} files for <b>{current_short}</b>.</div>"
+    return None, msg
+
+
 def _political_lean_directive(lean: int) -> str:
     """Translate a -100..+100 political lean slider value into a script-writer
     directive sentence. Returns empty string at neutral (no directive added).
@@ -1771,12 +1812,26 @@ def build_ui() -> gr.Blocks:
                 scale=3,
             )
             refresh_lookup_btn = gr.Button("🔄 Refresh", variant="secondary", scale=1, size="sm")
+            delete_lookup_btn = gr.Button("🗑 Delete", variant="stop", scale=1, size="sm")
+
+        # Delete-bill confirmation: two-click safety. First click arms the
+        # button; second click within ~30 sec actually deletes. The state
+        # tracks which bill is armed so the user can't arm A and accidentally
+        # delete B by changing the dropdown between clicks.
+        _delete_armed = gr.State(value=None)
+        delete_status = gr.HTML(value="", visible=True)
 
         # ---------------- WIRING ----------------
         outputs_full = [overview_out, summarizer_out, xref_html_out, xref_df_out,
                         pork_out, conflict_out, podcast_out, raw_out, download_out, log_panel]
 
         health_btn.click(fn=check_endpoints, outputs=health_out)
+
+        # Delete-bill: two-click confirm pattern. First click arms, second deletes.
+        # On successful delete, the 3rd return value is the deleted bill_short
+        # which we use to trigger _post_analyze_refresh (rebuilds bill cards +
+        # dropdowns from disk). Disarming happens automatically when the
+        # dropdown changes (see bill_dropdown.change wiring further down).
         # Capture the analyze click so we can chain a .then() refresh after
         # the Podcast Studio widgets are defined further down.
         _analyze_evt = analyze_btn.click(fn=analyze_pdf, inputs=[pdf_input], outputs=outputs_full)
@@ -2032,6 +2087,11 @@ def build_ui() -> gr.Blocks:
                 placeholder='e.g. legislation, congress, bill analysis, AI explainer',
             )
 
+            yt_auto_upload = gr.Checkbox(
+                label='🚀  Auto-upload to YouTube after podcast generation completes',
+                value=False,
+                info='If checked, the master mp4 is uploaded automatically once the pipeline finishes. Title/description/tags are auto-generated from the bill if blank. Privacy uses the dropdown above (default: Unlisted).',
+            )
             yt_upload_btn = gr.Button(
                 '📤  Upload to @DeadAirBroadcasting',
                 variant='primary',
@@ -2145,6 +2205,43 @@ def build_ui() -> gr.Blocks:
                 log_lines.append(f'  elapsed: {r["elapsed_s"]}s')
             yield '\n'.join(log_lines)
 
+
+        def _auto_yt_after_generate(do_upload, video_path, bill_short, edited_hdl, direction, lean, current_title, current_desc, current_tags, privacy):
+            """Streaming generator chained after generate_podcast_handler.
+
+            If the auto-upload checkbox is checked AND a video master exists,
+            (1) auto-fill title/description/tags from the bill if currently blank,
+            (2) run the standard _yt_do_upload generator end-to-end,
+            yielding (title, description, tags, status) tuples as the upload
+            progresses. If unchecked or no video, yields a single skip message.
+            """
+            if not do_upload:
+                yield (gr.update(), gr.update(), gr.update(), gr.update())
+                return
+            if not video_path:
+                yield (gr.update(), gr.update(), gr.update(), 'Auto-upload skipped: no video master path.')
+                return
+            # Step 1: auto-fill metadata if user left fields blank
+            t, d, g = current_title, current_desc, current_tags
+            if not (t and d and g):
+                try:
+                    new_t, new_d, new_g, status = _yt_generate_metadata(bill_short, edited_hdl, direction)
+                    if isinstance(new_t, dict):  # gr.update objects from error path
+                        yield (new_t, new_d, new_g, status)
+                        return
+                    t = new_t.get('value') if isinstance(new_t, dict) else (new_t or t)
+                    d = new_d.get('value') if isinstance(new_d, dict) else (new_d or d)
+                    g = new_g.get('value') if isinstance(new_g, dict) else (new_g or g)
+                except Exception as exc:
+                    yield (gr.update(), gr.update(), gr.update(), f'Auto-upload metadata gen failed: {exc!r}')
+                    return
+            # Step 2: stream upload progress
+            try:
+                for status_update in _yt_do_upload(video_path, t, d, g, privacy):
+                    yield (gr.update(value=t), gr.update(value=d), gr.update(value=g), status_update)
+            except Exception as exc:
+                yield (gr.update(value=t), gr.update(value=d), gr.update(value=g), f'Auto-upload failed: {exc!r}')
+
         yt_upload_btn.click(
             fn=_yt_do_upload,
             inputs=[yt_video_path, yt_title, yt_description, yt_tags, yt_privacy],
@@ -2160,6 +2257,10 @@ def build_ui() -> gr.Blocks:
             fn=generate_podcast_handler,
             inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction, political_lean],
             outputs=[podcast_log, podcast_video, yt_video_path],
+        ).then(
+            fn=_auto_yt_after_generate,
+            inputs=[yt_auto_upload, yt_video_path, podcast_bill_dropdown, podcast_headline_text, podcast_direction, political_lean, yt_title, yt_description, yt_tags, yt_privacy],
+            outputs=[yt_title, yt_description, yt_tags, yt_status],
         )
 
         # Helper: build the Generate-button label for a given armed headline.
@@ -2192,6 +2293,10 @@ def build_ui() -> gr.Blocks:
                 fn=generate_podcast_handler,
                 inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction, political_lean],
                 outputs=[podcast_log, podcast_video, yt_video_path],
+            ).then(
+                fn=_auto_yt_after_generate,
+                inputs=[yt_auto_upload, yt_video_path, podcast_bill_dropdown, podcast_headline_text, podcast_direction, political_lean, yt_title, yt_description, yt_tags, yt_privacy],
+                outputs=[yt_title, yt_description, yt_tags, yt_status],
             )
 
         # Sync Generate button label when the user types in the editable textbox.
@@ -2321,17 +2426,23 @@ def build_ui() -> gr.Blocks:
                 + [pod_gen_btn_update]                # 1 Generate button label
             )
 
-        _analyze_evt.then(
-            fn=_post_analyze_refresh,
-            outputs=(
-                bill_btns                              # 12
-                + [bill_dropdown]                      # 1
-                + [podcast_bill_dropdown]              # 1
-                + podcast_hdl_btns                     # 10
-                + [podcast_headline_text]              # 1
-                + [podcast_generate_btn]               # 1
-            ),
+        _refresh_outputs = (
+            bill_btns                              # 12
+            + [bill_dropdown]                      # 1
+            + [podcast_bill_dropdown]              # 1
+            + podcast_hdl_btns                     # 10
+            + [podcast_headline_text]              # 1
+            + [podcast_generate_btn]               # 1
         )
+        _analyze_evt.then(fn=_post_analyze_refresh, outputs=_refresh_outputs)
+        # Same refresh chained off the delete-bill click - when a bill is
+        # removed from eval/canonical/, the UI must re-scan and rebuild every
+        # widget that depends on the canonical list.
+        delete_lookup_btn.click(
+            fn=_delete_bill_arm_or_fire,
+            inputs=[_delete_armed, bill_dropdown],
+            outputs=[_delete_armed, delete_status],
+        ).then(fn=_post_analyze_refresh, outputs=_refresh_outputs)
 
 
     return app
