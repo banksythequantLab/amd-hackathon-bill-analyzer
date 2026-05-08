@@ -1409,7 +1409,52 @@ def load_headlines_for_bill(bill_short: str):
     return choices, default
 
 
-def generate_podcast_handler(bill_short, edited_headline='', creative_direction=''):
+def _political_lean_directive(lean: int) -> str:
+    """Translate a -100..+100 political lean slider value into a script-writer
+    directive sentence. Returns empty string at neutral (no directive added).
+
+    Buckets are coarse on purpose - five steps map to five distinct tones.
+    The directive is prepended to whatever the user typed in the
+    creative_direction box, so manual override + slider stack additively.
+    """
+    try:
+        lean = int(lean or 0)
+    except (TypeError, ValueError):
+        lean = 0
+    if lean <= -60:
+        return (
+            "POLITICAL FRAMING DIRECTIVE: Lean strongly progressive. "
+            "Emphasize impacts on workers, low-income families, marginalized "
+            "communities, climate, and consumer protections. Foreground "
+            "criticisms of corporate power and regressive provisions. Use "
+            "language a Pod Save America host would use."
+        )
+    if lean <= -20:
+        return (
+            "POLITICAL FRAMING DIRECTIVE: Lean somewhat progressive. "
+            "Highlight equity, public-interest, and worker-protection angles "
+            "where they exist in the bill, while keeping the tone factual."
+        )
+    if lean >= 60:
+        return (
+            "POLITICAL FRAMING DIRECTIVE: Lean strongly conservative. "
+            "Emphasize fiscal restraint, federalism / states' rights, "
+            "regulatory burden on businesses and individuals, constitutional "
+            "limits on federal power, and cost to taxpayers. Foreground "
+            "skepticism of expanded mandates. Use language a Wall Street "
+            "Journal editorial board member would use."
+        )
+    if lean >= 20:
+        return (
+            "POLITICAL FRAMING DIRECTIVE: Lean somewhat conservative. "
+            "Highlight fiscal cost, regulatory burden, and federalism "
+            "concerns where they exist in the bill, while keeping the tone "
+            "factual."
+        )
+    return ""  # neutral - no directive added
+
+
+def generate_podcast_handler(bill_short, edited_headline='', creative_direction='', political_lean=0):
     """Streaming generator for the Podcast Studio.
 
     Yields (log_text, video_path_or_None, master_path_str) every 0.5–0.6s.
@@ -1437,7 +1482,21 @@ def generate_podcast_handler(bill_short, edited_headline='', creative_direction=
         return
 
     headline_arg = (edited_headline or '').strip() or None
-    direction_arg = (creative_direction or '').strip() or None
+    user_direction = (creative_direction or '').strip()
+    lean_directive = _political_lean_directive(political_lean)
+    # Merge lean directive + user-typed direction. Lean comes first so the
+    # script writer agent reads it before any free-form user instruction.
+    # Both pieces feed into the cache key (via direction_arg), so changing
+    # the dial produces a distinct cached output instead of returning a
+    # stale slides-mode video.
+    if lean_directive and user_direction:
+        direction_arg = f"{lean_directive}\n\n{user_direction}"
+    elif lean_directive:
+        direction_arg = lean_directive
+    elif user_direction:
+        direction_arg = user_direction
+    else:
+        direction_arg = None
 
     # === FAST PATH: check for cached master mp4 ===
     try:
@@ -1860,6 +1919,14 @@ def build_ui() -> gr.Blocks:
                 placeholder='e.g. "Focus on the surveillance angle and the 4th Amendment risks. Keep tone dry and journalistic."',
                 info='Prepended to the bill analysis context the script writer sees. Leave blank to use defaults.',
             )
+            political_lean = gr.Slider(
+                minimum=-100,
+                maximum=100,
+                value=0,
+                step=10,
+                label='🎚️  Political Lean (script tone)',
+                info='-100 = strongly progressive framing  •  0 = neutral journalism  •  +100 = strongly conservative framing. Augments the creative direction sent to the script writer agent.',
+            )
 
         # --- Output: progress + video ---
         with gr.Row():
@@ -2086,7 +2153,7 @@ def build_ui() -> gr.Blocks:
         # bill changes).
         podcast_generate_btn.click(
             fn=generate_podcast_handler,
-            inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction],
+            inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction, political_lean],
             outputs=[podcast_log, podcast_video, yt_video_path],
         )
 
@@ -2118,7 +2185,7 @@ def build_ui() -> gr.Blocks:
                 outputs=[podcast_headline_text, podcast_generate_btn],
             ).then(
                 fn=generate_podcast_handler,
-                inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction],
+                inputs=[podcast_bill_dropdown, podcast_headline_text, podcast_direction, political_lean],
                 outputs=[podcast_log, podcast_video, yt_video_path],
             )
 
