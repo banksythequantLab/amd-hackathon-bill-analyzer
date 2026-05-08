@@ -8,7 +8,7 @@ sdk_version: 6.14.0
 app_file: app.py
 pinned: true
 license: mit
-short_description: Multi-agent legislative bill analyzer + podcast pipeline on AMD MI300X
+short_description: 10-agent bill analyzer + AI podcast on AMD MI300X
 ---
 
 # AMD Hackathon — Bill Analyzer + Podcast Studio
