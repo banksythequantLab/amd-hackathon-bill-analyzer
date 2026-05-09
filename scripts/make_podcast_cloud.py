@@ -276,8 +276,20 @@ def stage_tts(script, eval_dir, log=print):
 
 # ---- COMPOSE ----
 import subprocess
-FFMPEG = r"C:\\Users\\solti\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.1.1-full_build\\bin\\ffmpeg.exe"
-FFPROBE = r"C:\\Users\\solti\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-7.1.1-full_build\\bin\\ffprobe.exe"
+import shutil
+
+# ffmpeg / ffprobe location is OS-dependent. The HF Space container has
+# them on PATH (apt-installed); the local Windows dev box has them inside
+# the WinGet package directory. Resolve in this order:
+#   1) Whatever is on PATH (works on Linux container + macOS + any Windows
+#      box where ffmpeg has been added to PATH).
+#   2) Known WinGet path on the dev workstation.
+# If neither is found we still set the strings so the import succeeds; the
+# subprocess.run() call will surface the real error at compose time instead
+# of crashing the import.
+_WINGET_FFMPEG_DIR = r"C:\Users\solti\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-7.1.1-full_build\bin"
+FFMPEG  = shutil.which('ffmpeg')  or str(Path(_WINGET_FFMPEG_DIR) / 'ffmpeg.exe')
+FFPROBE = shutil.which('ffprobe') or str(Path(_WINGET_FFMPEG_DIR) / 'ffprobe.exe')
 
 def dur(path):
     r = subprocess.run([FFPROBE, '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', str(path)], capture_output=True, text=True)
