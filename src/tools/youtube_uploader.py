@@ -48,39 +48,87 @@ def _import_google_libs():
         return False
 
 
+def _env_creds_present() -> bool:
+    """True iff both YOUTUBE_CLIENT_SECRET_JSON and YOUTUBE_TOKEN_JSON env vars are set.
+
+    These are how OAuth secrets get into the HF Space without checking the JSON into git.
+    Set them as repository secrets in Settings on the Space, paste the full JSON contents.
+    """
+    import os
+    return bool(os.environ.get("YOUTUBE_CLIENT_SECRET_JSON")) and bool(
+        os.environ.get("YOUTUBE_TOKEN_JSON")
+    )
+
+
 def is_available() -> tuple[bool, str]:
-    """Return (ok, reason). UI uses this to show whether upload is wired up."""
+    """Return (ok, reason). UI uses this to show whether upload is wired up.
+
+    Credentials can come from either:
+      (a) on-disk: secrets/client_secret.json + secrets/youtube_token.json (local dev)
+      (b) env vars: YOUTUBE_CLIENT_SECRET_JSON + YOUTUBE_TOKEN_JSON (HF Space secrets)
+    """
     if not _import_google_libs():
-        return False, ('google-api-python-client / google-auth-oauthlib not installed. '
-                       'Run: pip install google-api-python-client google-auth-oauthlib google-auth-httplib2')
+        return False, ("google-api-python-client / google-auth-oauthlib not installed. "
+                       "Run: pip install google-api-python-client google-auth-oauthlib google-auth-httplib2")
+    if _env_creds_present():
+        return True, "ok (env)"
     if not CLIENT_SECRET_PATH.exists():
-        return False, (f'Missing {CLIENT_SECRET_PATH} - download OAuth client credentials '
-                       f'from Google Cloud Console (Desktop app type).')
+        return False, (f"Missing {CLIENT_SECRET_PATH} or env var YOUTUBE_CLIENT_SECRET_JSON - "
+                       f"download OAuth client credentials from Google Cloud Console (Desktop app type).")
     if not TOKEN_PATH.exists():
-        return False, (f'Missing {TOKEN_PATH} - run "python scripts/youtube_auth.py" once '
-                       f'to authorize uploads to your channel.')
-    return True, 'ok'
+        return False, (f"Missing {TOKEN_PATH} or env var YOUTUBE_TOKEN_JSON - "
+                       f"run \"python scripts/youtube_auth.py\" once to authorize uploads to your channel.")
+    return True, "ok (disk)"
 
 
 # ---------------------------------------------------------------------------
 # Credential loading (assumes auth dance already happened)
 # ---------------------------------------------------------------------------
 def load_credentials():
-    """Load the saved refresh token, refreshing the access token if expired."""
+    """Load the saved refresh token, refreshing the access token if expired.
+
+    Priority:
+      1. Env vars YOUTUBE_TOKEN_JSON + YOUTUBE_CLIENT_SECRET_JSON (HF Space secrets)
+      2. On-disk secrets/youtube_token.json (local dev)
+    """
+    import json as _json
+    import os
     from google.oauth2.credentials import Credentials
     from google.auth.transport.requests import Request
 
+    env_token = os.environ.get("YOUTUBE_TOKEN_JSON")
+    if env_token:
+        try:
+            tok_info = _json.loads(env_token)
+        except Exception as exc:
+            raise RuntimeError(
+                f"YOUTUBE_TOKEN_JSON env var is not valid JSON: {exc}"
+            ) from exc
+        creds = Credentials.from_authorized_user_info(tok_info, SCOPES)
+        if creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+            # Cant persist back to env; the access token is short-lived (~1h)
+            # and refreshes are cheap. Refresh token itself stays valid until revoked.
+        if not creds.valid:
+            raise RuntimeError(
+                "Loaded credentials from YOUTUBE_TOKEN_JSON are not valid - "
+                "regenerate via scripts/youtube_auth.py and update the Space secret."
+            )
+        return creds
+
+    # Fallback: on-disk
     if not TOKEN_PATH.exists():
         raise RuntimeError(
-            f'No saved YouTube token at {TOKEN_PATH}. Run scripts/youtube_auth.py first.'
+            f"No YouTube token at {TOKEN_PATH} and no YOUTUBE_TOKEN_JSON env var. "
+            "Run scripts/youtube_auth.py first, or set the Space secret."
         )
     creds = Credentials.from_authorized_user_file(str(TOKEN_PATH), SCOPES)
     if creds.expired and creds.refresh_token:
         creds.refresh(Request())
-        # Persist the refreshed token so we don't re-refresh every time
+        # Persist the refreshed token so we dont re-refresh every time
         TOKEN_PATH.write_text(creds.to_json())
     if not creds.valid:
-        raise RuntimeError('Loaded credentials are not valid - re-run scripts/youtube_auth.py')
+        raise RuntimeError("Loaded credentials are not valid - re-run scripts/youtube_auth.py")
     return creds
 
 
