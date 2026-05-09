@@ -294,6 +294,31 @@ def _make_card_clip(png_path, out_path, duration_sec, log=print, w=832, h=480, f
     """
     png_path = Path(png_path)
     out_path = Path(out_path)
+
+    # Day 7.20: Lipsync overlay short-circuit. If a pre-rendered lipsync
+    # intro/outro overlay exists at brand/lipsync/, use it instead of a
+    # still-frame card. Audio is downmixed stereo->mono 24kHz so `-c copy`
+    # final concat works (overlay mp4s are AAC stereo; cards/scenes are mono).
+    # Falls through to still-card logic if the overlay file is absent.
+    _overlay_map = {'intro.mp4': 'intro_lipsync_overlay.mp4',
+                    'outro.mp4': 'outro_lipsync_overlay.mp4'}
+    _overlay_name = _overlay_map.get(out_path.name)
+    if _overlay_name:
+        _overlay_src = BRAND_DIR / 'lipsync' / _overlay_name
+        if _overlay_src.exists():
+            if out_path.exists() and out_path.stat().st_size > 10_000:
+                log(f'  card cached (lipsync): {out_path.name} ({out_path.stat().st_size//1024} KB)')
+                return out_path
+            _cmd = [FFMPEG, '-y', '-i', str(_overlay_src),
+                    '-c:v', 'copy',
+                    '-c:a', 'aac', '-b:a', '96k', '-ar', '24000', '-ac', '1',
+                    str(out_path)]
+            _r = subprocess.run(_cmd, capture_output=True, text=True)
+            if _r.returncode == 0 and out_path.exists() and out_path.stat().st_size > 10_000:
+                log(f'  card built (lipsync): {out_path.name} ({dur(out_path):.1f}s, {out_path.stat().st_size//1024} KB)')
+                return out_path
+            log(f'  card lipsync FAIL ({_overlay_src.name}); falling through to still-card: {_r.stderr[-200:]}')
+
     if not png_path.exists():
         log(f'  card SKIP: source PNG not found at {png_path.name}')
         return None
@@ -628,6 +653,102 @@ def stage_avatar_compose(eval_dir, bill_short, log=print):
         return final
     log(f'FINAL CONCAT FAIL: {r.stderr[-400:]}')
     return None
+
+
+def stage_hybrid_compose(eval_dir, bill_short, log=print):
+    """Hybrid master: alternating talking-head and slide pairs (Day 7.20).
+
+    Pair-index alternation (1-indexed):
+      odd  -> slides       (uses scene-(2N-1).mp4 + scene-(2N).mp4 from compose/)
+      even -> talking head (uses pair_NN_mono.mp4 from infinitetalk/compose/)
+    Order is intro -> slide -> talking -> slide -> talking ... -> outro,
+    so the lipsync intro hands off to a slide first (which usually carries
+    the section setup / headline), then a talking-head pair reacts to it.
+
+    Bookends with the same brand cards as stage_avatar_compose, which means
+    the lipsync intro/outro overlay (Day 7.20) is picked up automatically
+    via _make_card_clip's overlay short-circuit. Replaces both the slides-
+    only and avatar-only masters; A/B comparison is no longer needed once
+    the hybrid is verified.
+
+    Output: <eval_dir>/final-<bill_short>-cloud-hybrid-podcast.mp4
+
+    All input clips share codec params (h264 High yuv420p 832x480 @25fps,
+    AAC LC mono 24kHz) so `-c copy` concat works without re-encoding. This
+    was verified on bbb-cloud Day 7.20 -- if the upstream stages ever change
+    encoding settings, this function will need a re-encode pass added.
+
+    Pre-conditions:
+      - infinitetalk/compose/pair_NN_mono.mp4 for each odd pair index
+      - compose/scene-NN.mp4 for each scene used by an even pair index
+    """
+    avatar_dir = eval_dir / 'infinitetalk' / 'compose'
+    slides_dir = eval_dir / 'compose'
+
+    pair_clips = sorted(avatar_dir.glob('pair_*_mono.mp4'))
+    if not pair_clips:
+        log(f'NO PAIR MONO CLIPS in {avatar_dir}; run stage_avatar_compose first')
+        return None
+    n_pairs = len(pair_clips)
+    log(f'STAGE 5-HYBRID: {n_pairs} pairs (alternating slides/avatar, odd=slides)')
+
+    body_clips = []
+    for pair_idx in range(1, n_pairs + 1):
+        if pair_idx % 2 == 1:
+            scene_a = (pair_idx - 1) * 2 + 1
+            scene_b = scene_a + 1
+            sa = slides_dir / f'scene-{scene_a:02d}.mp4'
+            sb = slides_dir / f'scene-{scene_b:02d}.mp4'
+            if not sa.exists() or not sb.exists():
+                log(f'  pair_{pair_idx:02d} (slides): MISSING {sa.name} or {sb.name}')
+                continue
+            body_clips.extend([sa, sb])
+            log(f'  pair_{pair_idx:02d} -> SLIDES ({sa.name}, {sb.name})')
+        else:
+            src = avatar_dir / f'pair_{pair_idx:02d}_mono.mp4'
+            if not src.exists():
+                log(f'  pair_{pair_idx:02d} (avatar): MISSING {src.name}')
+                continue
+            body_clips.append(src)
+            log(f'  pair_{pair_idx:02d} -> AVATAR ({src.name})')
+
+    if not body_clips:
+        log('NO BODY CLIPS; aborting hybrid concat')
+        return None
+
+    # Reuse the avatar-mode card directory so the cached lipsync intro/outro
+    # mp4s built by stage_avatar_compose are reused (no rebuild needed).
+    out_dir = avatar_dir
+    cards_dir = out_dir / '_cards'
+    cards_dir.mkdir(exist_ok=True, parents=True)
+    log('STAGE 5b: Brand cards (intro / outro / closeout)')
+    intro_clip = _make_card_clip(BRAND_DIR / 'deadair_intro-1080.png',
+                                  cards_dir / 'intro.mp4', duration_sec=4.0, log=log)
+    outro_clip = _make_card_clip(BRAND_DIR / 'deadair_outro-1080.png',
+                                  cards_dir / 'outro.mp4', duration_sec=4.0, log=log)
+    closeout_clip = _make_card_clip(BRAND_DIR / 'deadair_closeout-1024.png',
+                                     cards_dir / 'closeout.mp4', duration_sec=2.0, log=log)
+
+    final_clips = []
+    if intro_clip: final_clips.append(intro_clip)
+    final_clips.extend(body_clips)
+    if outro_clip: final_clips.append(outro_clip)
+    if closeout_clip: final_clips.append(closeout_clip)
+    log(f'  final clip list: {len(final_clips)} clips ({len(body_clips)} body + branding)')
+
+    list_file = out_dir / '_master_hybrid.txt'
+    list_file.write_text('\n'.join(f"file '{s}'" for s in final_clips) + '\n')
+    final = eval_dir / f'final-{bill_short}-cloud-hybrid-podcast.mp4'
+    r = subprocess.run([FFMPEG, '-y', '-f', 'concat', '-safe', '0', '-i', str(list_file),
+                        '-c', 'copy', str(final)], capture_output=True, text=True)
+    if r.returncode == 0:
+        log(f'\n*** HYBRID MASTER: {final}')
+        log(f'    size = {final.stat().st_size/1024/1024:.1f} MB')
+        log(f'    dur  = {dur(final):.1f}s ({dur(final)/60:.2f} min)')
+        return final
+    log(f'FINAL CONCAT FAIL: {r.stderr[-400:]}')
+    return None
+
 
 # ---- HELPERS for the UI to predict the output path / detect cached runs ----
 def _resolve_eval_dir(bill_short: str, override_headline: str = None,
