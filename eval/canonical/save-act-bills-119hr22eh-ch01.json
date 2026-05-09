@@ -1,0 +1,603 @@
+{
+  "chunk_id": "ch01",
+  "title_marker": "(unstructured bill)",
+  "tokens": 6966,
+  "pages": [
+    1,
+    26
+  ],
+  "agents": {
+    "summarizer": {
+      "label": "Plain-English Summarizer",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "one_sentence_summary": "This bill requires U.S. citizens to provide documentary proof of citizenship when registering to vote in federal elections, establishes new verification processes, and strengthens state and federal coordination to ensure only citizens are registered.",
+        "bullets": [
+          "Requires all applicants to present documentary proof of U.S. citizenship when registering to vote in federal elections, including through driver\u2019s licenses, passports, birth certificates, military records, or naturalization documents.",
+          "Mandates that states verify citizenship at the time of registration through the mail, in person, or at polling places, and sets deadlines for submitting proof.",
+          "Establishes a process for applicants without standard proof to submit an affidavit and supporting evidence, with state officials making determinations based on minimum standards.",
+          "Authorizes states to use federal databases\u2014such as those from DHS, SSA, and state ID agencies\u2014to verify citizenship and remove noncitizens from voter rolls.",
+          "Requires federal agencies to respond to state requests for citizenship verification within 24 hours, without charging fees, and to share information across departments.",
+          "Empowers the Election Assistance Commission to develop a uniform affidavit for officials to use when registering applicants without standard proof.",
+          "Imposes criminal penalties for officials who register noncitizens or assist noncitizens in voting, and allows private lawsuits for violations of the law.",
+          "Permits states to opt out of certain requirements if they adopt identical rules before the next federal election, and includes provisions to notify newly naturalized citizens of their voting eligibility."
+        ],
+        "affected_groups": [
+          "U.S. citizens registering to vote",
+          "Noncitizens attempting to register to vote",
+          "State and local election officials",
+          "Federal agencies (e.g., DHS, SSA)",
+          "Voter registration agencies",
+          "Individuals with disabilities (due to accessibility requirements)"
+        ]
+      },
+      "elapsed_s": 4.57,
+      "prompt_tokens": 7798,
+      "completion_tokens": 404,
+      "errors": []
+    },
+    "usc_cross_ref": {
+      "label": "USC Cross-Reference",
+      "output": {
+        "chunk_id": "ch01",
+        "citations": [
+          {
+            "citation": "52 U.S.C. 20502",
+            "bill_context": "Amending section 3 of the National Voter Registration Act of 1993 to define 'documentary proof of United States citizenship'.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "52",
+              "section": "20502",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 20502. Definitions As used in this chapter\u2014 (1) the term \u201celection\u201d has the meaning stated in section 30101(1) of this title ; (2) the term \u201cFederal office\u201d has the meaning stated in section 30101(3) of this title ; (3) the term \u201cmotor vehicle driver\u2019s license\u201d includes any personal identification document issued by a State motor vehicle authority; (4) the term \u201cState\u201d means a State of the United States and the District of Columbia; and (5) the term \u201cvoter registration agency\u201d means an office designated under section 20506(a)(1) of this title to perform voter registration activities. ( Pub. ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20502&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "52 U.S.C. 20503",
+            "bill_context": "Amending section 4 of the National Voter Registration Act to require documentary proof of citizenship for voter registration.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "52",
+              "section": "20503",
+              "heading": "National procedures for voter registration for elections for Federal office",
+              "text_excerpt": "\u00a7 20503. National procedures for voter registration for elections for Federal office (a) In general Except as provided in subsection (b), notwithstanding any other Federal or State law, in addition to any other method of voter registration provided for under State law, each State shall establish procedures to register to vote in elections for Federal office\u2014 (1) by application made simultaneously with an application for a motor vehicle driver\u2019s license pursuant to section 20504 of this title ; (2) by mail application pursuant to section 20505 of this title ; and (3) by application in person\u2014 (...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20503&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "52 U.S.C. 20504",
+            "bill_context": "Amending section 5 to require states to verify citizenship when issuing driver\u2019s licenses for voter registration.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "52",
+              "section": "20504",
+              "heading": "Simultaneous application for voter registration and application for motor vehicle driver\u2019s license",
+              "text_excerpt": "\u00a7 20504. Simultaneous application for voter registration and application for motor vehicle driver\u2019s license (a) In general (1) Each State motor vehicle driver\u2019s license application (including any renewal application) submitted to the appropriate State motor vehicle authority under State law shall serve as an application for voter registration with respect to elections for Federal office unless the applicant fails to sign the voter registration application. (2) An application for voter registration submitted under paragraph (1) shall be considered as updating any previous voter registration by ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20504&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "52 U.S.C. 20505",
+            "bill_context": "Amending section 6 to require documentary proof of citizenship with the national mail voter registration form.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "52",
+              "section": "20505",
+              "heading": "Mail registration",
+              "text_excerpt": "\u00a7 20505. Mail registration (a) Form (1) Each State shall accept and use the mail voter registration application form prescribed by the Federal Election Commission pursuant to section 20508(a)(2) of this title for the registration of voters in elections for Federal office. (2) In addition to accepting and using the form described in paragraph (1), a State may develop and use a mail voter registration form that meets all of the criteria stated in section 20508(b) of this title for the registration of voters in elections for Federal office. (3) A form described in paragraph (1) or (2) shall be ac...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20505&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "52 U.S.C. 20506",
+            "bill_context": "Amending section 7 to require voter registration agencies to collect documentary proof of citizenship.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "52",
+              "section": "20506",
+              "heading": "Voter registration agencies",
+              "text_excerpt": "\u00a7 20506. Voter registration agencies (a) Designation (1) Each State shall designate agencies for the registration of voters in elections for Federal office. (2) Each State shall designate as voter registration agencies\u2014 (A) all offices in the State that provide public assistance; and (B) all offices in the State that provide State-funded programs primarily engaged in providing services to persons with disabilities. (3) (A) In addition to voter registration agencies designated under paragraph (2), each State shall designate other offices within the State as voter registration agencies. (B) Vote...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20506&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "52 U.S.C. 20507",
+            "bill_context": "Amending section 8 to establish requirements for administering voter registration and removing noncitizens from rolls.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "52",
+              "section": "20507",
+              "heading": "Requirements with respect to administration of voter registration",
+              "text_excerpt": "\u00a7 20507. Requirements with respect to administration of voter registration (a) In general In the administration of voter registration for elections for Federal office, each State shall\u2014 (1) ensure that any eligible applicant is registered to vote in an election\u2014 (A) in the case of registration with a motor vehicle application under section 20504 of this title , if the valid voter registration form of the applicant is submitted to the appropriate State motor vehicle authority not later than the lesser of 30 days, or the period provided by State law, before the date of the election; (B) in the c...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20507&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "52 U.S.C. 20508",
+            "bill_context": "Amending section 9(b) to require the mail voter registration form to include information on documentary proof of citizenship.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "52",
+              "section": "20508",
+              "heading": "Federal coordination and regulations",
+              "text_excerpt": "\u00a7 20508. Federal coordination and regulations (a) In general The Election Assistance Commission\u2014 (1) in consultation with the chief election officers of the States, shall prescribe such regulations as are necessary to carry out paragraphs (2) and (3); (2) in consultation with the chief election officers of the States, shall develop a mail voter registration application form for elections for Federal office; (3) not later than June 30 of each odd-numbered year, shall submit to the Congress a report assessing the impact of this chapter on the administration of elections for Federal office during...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20508&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "52 U.S.C. 20510",
+            "bill_context": "Amending section 11(b)(1) to expand private right of action to include failure to present citizenship proof.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "52",
+              "section": "20510",
+              "heading": "Civil enforcement and private right of action",
+              "text_excerpt": "\u00a7 20510. Civil enforcement and private right of action (a) Attorney General The Attorney General may bring a civil action in an appropriate district court for such declaratory or injunctive relief as is necessary to carry out this chapter. (b) Private right of action (1) A person who is aggrieved by a violation of this chapter may provide written notice of the violation to the chief election official of the State involved. (2) If the violation is not corrected within 90 days after receipt of a notice under paragraph (1), or within 20 days after receipt of the notice if the violation occurred w...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20510&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "52 U.S.C. 20511",
+            "bill_context": "Amending section 12(2) to add criminal penalties for registering noncitizens without proof of citizenship.",
+            "relevance": "amend",
+            "usc_data": {
+              "title": "52",
+              "section": "20511",
+              "heading": "Criminal penalties",
+              "text_excerpt": "\u00a7 20511. Criminal penalties A person, including an election official, who in any election for Federal office\u2014 (1) knowingly and willfully intimidates, threatens, or coerces, or attempts to intimidate, threaten, or coerce, any person for\u2014 (A) registering to vote, or voting, or attempting to register or vote; (B) urging or aiding any person to register to vote, to vote, or to attempt to register or vote; or (C) exercising any right under this chapter; or (2) knowingly and willfully deprives, defrauds, or attempts to deprive or defraud the residents of a State of a fair and impartially conducted ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title52-section20511&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "42 U.S.C. 1320b\u20137",
+            "bill_context": "Citing the Social Security Act to authorize use of the SAVE system for verifying immigration status.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "42",
+              "section": "1320b",
+              "heading": "Repealed. Pub. L. 93\u2013647, \u00a7 3(e)(1) , Jan. 4, 1975 , 88 Stat. 2349",
+              "text_excerpt": "\u00a7 1320b. Repealed. Pub. L. 93\u2013647, \u00a7 3(e)(1) , Jan. 4, 1975 , 88 Stat. 2349 Section, act Aug. 14, 1935, ch. 531, title XI, \u00a7 1130 , as added Oct. 20, 1972 , Pub. L. 92\u2013512, title III, \u00a7 301(a) , 86 Stat. 945 ; amended July 9, 1973 , Pub. L. 93\u201366, title II, \u00a7 221 , 87 Stat. 159 ; Dec. 31, 1973 , Pub. L. 93\u2013233, \u00a7 18(j) , 87 Stat. 970 , set out limitations on funds for certain social services. Statutory Notes and Related Subsidiaries Effective Date of Repeal Repeal effective with respect to payments under sections 603 and 803 of this title for quarters commencing after Sept. 30, 1975 , see sect...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1320b&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1101",
+            "bill_context": "Defining 'alien' in the Immigration and Nationality Act for purposes of voter registration enforcement.",
+            "relevance": "definitions",
+            "usc_data": {
+              "title": "8",
+              "section": "1101",
+              "heading": "Definitions",
+              "text_excerpt": "\u00a7 1101. Definitions (a) As used in this chapter\u2014 (1) The term \u201cadministrator\u201d means the official designated by the Secretary of State pursuant to section 1104(b) of this title . (2) The term \u201cadvocates\u201d includes, but is not limited to, advises, recommends, furthers by overt act, and admits belief in. (3) The term \u201calien\u201d means any person not a citizen or national of the United States. (4) The term \u201capplication for admission\u201d has reference to the application for admission into the United States and not to the application for the issuance of an immigrant or nonimmigrant visa. (5) The term \u201cAttor...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1101&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "8 U.S.C. 1229",
+            "bill_context": "Citing the Immigration and Nationality Act to authorize investigation and removal proceedings for unlawful voters.",
+            "relevance": "cross-reference",
+            "usc_data": {
+              "title": "8",
+              "section": "1229",
+              "heading": "Initiation of removal proceedings",
+              "text_excerpt": "\u00a7 1229. Initiation of removal proceedings (a) Notice to appear (1) In general In removal proceedings under section 1229a of this title , written notice (in this section referred to as a \u201cnotice to appear\u201d) shall be given in person to the alien (or, if personal service is not practicable, through service by mail to the alien or to the alien\u2019s counsel of record, if any) specifying the following: (A) The nature of the proceedings against the alien. (B) The legal authority under which the proceedings are conducted. (C) The acts or conduct alleged to be in violation of law. (D) The charges against ...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title8-section1229&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          },
+          {
+            "citation": "44 U.S.C. 3501",
+            "bill_context": "Exempting voter registration materials from the Paperwork Reduction Act's requirements.",
+            "relevance": "repeal",
+            "usc_data": {
+              "title": "44",
+              "section": "3501",
+              "heading": "Purposes",
+              "text_excerpt": "\u00a7 3501. Purposes The purposes of this subchapter are to\u2014 (1) minimize the paperwork burden for individuals, small businesses, educational and nonprofit institutions, Federal contractors, State, local and tribal governments, and other persons resulting from the collection of information by or for the Federal Government; (2) ensure the greatest possible public benefit from and maximize the utility of information created, collected, maintained, used, shared and disseminated by or for the Federal Government; (3) coordinate, integrate, and to the extent practicable and appropriate, make uniform Fed...",
+              "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title44-section3501&num=0&edition=prelim",
+              "release_point": "119-36"
+            },
+            "resolution_status": "ok"
+          }
+        ],
+        "note": null
+      },
+      "elapsed_s": 7.94,
+      "prompt_tokens": 7946,
+      "completion_tokens": 771,
+      "errors": [],
+      "enrichment": {
+        "elapsed_ms": 973.25,
+        "lmdb_stats": {
+          "hits": 13,
+          "misses": 0,
+          "calls": 13,
+          "errors": 0
+        }
+      }
+    },
+    "pork_finder": {
+      "label": "Pork Finder",
+      "output": {
+        "chunk_id": "ch01",
+        "items": [],
+        "note": null
+      },
+      "elapsed_s": 1.18,
+      "prompt_tokens": 8830,
+      "completion_tokens": 24,
+      "errors": []
+    },
+    "conflict_spotter": {
+      "label": "Conflict Spotter",
+      "output": {
+        "chunk_id": "ch01",
+        "conflicts": [
+          {
+            "description": "Section 8(j)(1) requires proof of citizenship at registration, but Section 8(j)(2)(A) allows registration without proof via affidavit.",
+            "provision_a": "SEC. 8(j)(1) says a State may not register a voter without proof of citizenship at application.",
+            "provision_b": "SEC. 8(j)(2)(A) says a State may register a voter without proof via sworn affidavit and additional evidence.",
+            "conflict_type": "rule-vs-rule",
+            "severity": "high"
+          },
+          {
+            "description": "Section 8(j)(2)(A)(ii) requires an affidavit for non-proof cases, but Section 8(j)(2)(B) allows additional documentation without requiring an affidavit.",
+            "provision_a": "SEC. 8(j)(2)(A)(ii) says a determination must be accompanied by an affidavit.",
+            "provision_b": "SEC. 8(j)(2)(B) says a State may establish a process for additional documentation without requiring an affidavit.",
+            "conflict_type": "rule-vs-rule",
+            "severity": "medium"
+          },
+          {
+            "description": "Section 8(j)(5)(A) requires information to be provided within 24 hours, but Section 8(j)(5)(B) allows use of SAVE system, which may not provide real-time data.",
+            "provision_a": "SEC. 8(j)(5)(A) says information must be provided within 24 hours.",
+            "provision_b": "SEC. 8(j)(5)(B) says the Secretary may use the SAVE system, which may not guarantee 24-hour response.",
+            "conflict_type": "effective-date",
+            "severity": "medium"
+          },
+          {
+            "description": "Section 8(j)(5)(D) mandates investigation for removal if noncitizen is found, but Section 8(j)(5)(E) prohibits fees, creating a conflict in enforcement.",
+            "provision_a": "SEC. 8(j)(5)(D) says the Secretary must investigate removal proceedings.",
+            "provision_b": "SEC. 8(j)(5)(E) says no fee may be charged for responding to requests.",
+            "conflict_type": "rule-vs-rule",
+            "severity": "medium"
+          },
+          {
+            "description": "Section 8(j)(3) requires a program to ensure only citizens are registered, but Section 8(j)(4) lists sources that may not be able to verify citizenship.",
+            "provision_a": "SEC. 8(j)(3) says States must take affirmative steps to ensure only citizens are registered.",
+            "provision_b": "SEC. 8(j)(4)(D) says States may use 'other sources, including databases' that may not confirm citizenship.",
+            "conflict_type": "rule-vs-rule",
+            "severity": "medium"
+          },
+          {
+            "description": "Section 8(j)(5)(A) requires batched information upon request, but Section 8(j)(5)(C) requires sharing only if relevant to the request.",
+            "provision_a": "SEC. 8(j)(5)(A) says batched information must be provided upon request.",
+            "provision_b": "SEC. 8(j)(5)(C) says information must be shared only if relevant to the request.",
+            "conflict_type": "rule-vs-rule",
+            "severity": "medium"
+          },
+          {
+            "description": "Section 8(j)(5)(A) requires information to be provided to verify voter eligibility, but Section 8(j)(5)(E) prohibits fees, which may limit data access.",
+            "provision_a": "SEC. 8(j)(5)(A) says information must be provided to verify eligibility.",
+            "provision_b": "SEC. 8(j)(5)(E) says no fee may be charged for responding.",
+            "conflict_type": "rule-vs-rule",
+            "severity": "medium"
+          },
+          {
+            "description": "Section 8(j)(2)(A)(i) allows registration without proof via affidavit, but Section 8(j)(2)(A)(ii) requires the affidavit to be signed by the official, not the applicant.",
+            "provision_a": "SEC. 8(j)(2)(A)(i) says the applicant signs an attestation under penalty of perjury.",
+            "provision_b": "SEC. 8(j)(2)(A)(ii) says the official must sign an affidavit swearing the applicant is a citizen.",
+            "conflict_type": "rule-vs-rule",
+            "severity": "medium"
+          },
+          {
+            "description": "Section 8(j)(5)(A) requires information to be provided within 24 hours, but Section 8(j)(5)(B) allows use of SAVE, which may not be real-time.",
+            "provision_a": "SEC. 8(j)(5)(A) says information must be provided within 24 hours.",
+            "provision_b": "SEC. 8(j)(5)(B) says the Secretary may use the SAVE system, which may not provide real-time data.",
+            "conflict_type": "effective-date",
+            "severity": "medium"
+          },
+          {
+            "description": "Section 8(j)(5)(D) mandates investigation for removal, but Section 8(j)(5)(E) prohibits fees, which may hinder enforcement.",
+            "provision_a": "SEC. 8(j)(5)(D) says the Secretary must investigate removal proceedings.",
+            "provision_b": "SEC. 8(j)(5)(E) says no fee may be charged for responding to requests.",
+            "conflict_type": "rule-vs-rule",
+            "severity": "medium"
+          }
+        ],
+        "note": null
+      },
+      "elapsed_s": 12.53,
+      "prompt_tokens": 7968,
+      "completion_tokens": 1264,
+      "errors": []
+    },
+    "podcast_headlines": {
+      "label": "Podcast Headlines Generator",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "headlines": [
+          {
+            "headline": "Citizenship Proof Mandate Goes Live",
+            "angle": "fiscal",
+            "hook": "This bill forces states to spend millions on new verification systems, with federal funds covering only a fraction of the cost.",
+            "target_audience": "State budget officials, fiscal conservatives",
+            "evidence_provisions": [
+              "52 U.S.C. 20503",
+              "52 U.S.C. 20504",
+              "52 U.S.C. 20505"
+            ]
+          },
+          {
+            "headline": "Affidavit Loophole Sparks Legal Battle",
+            "angle": "controversy",
+            "hook": "A provision allowing noncitizens to register via affidavit has ignited a constitutional showdown over due process and voting rights.",
+            "target_audience": "Civil rights advocates, legal scholars",
+            "evidence_provisions": [
+              "52 U.S.C. 20503",
+              "52 U.S.C. 20508",
+              "52 U.S.C. 20510"
+            ]
+          },
+          {
+            "headline": "Disabled Voters Face New Registration Hurdles",
+            "angle": "human-impact",
+            "hook": "People with disabilities may be disproportionately burdened by new proof requirements, despite accessibility mandates.",
+            "target_audience": "Disability rights groups, voters with disabilities",
+            "evidence_provisions": [
+              "52 U.S.C. 20506",
+              "52 U.S.C. 20508",
+              "52 U.S.C. 20507"
+            ]
+          },
+          {
+            "headline": "States Fight Over Voter Roll Purge Powers",
+            "angle": "political",
+            "hook": "Red states push to expand removal authority, while blue states warn of voter suppression under the guise of integrity.",
+            "target_audience": "Political strategists, state legislators",
+            "evidence_provisions": [
+              "52 U.S.C. 20507",
+              "52 U.S.C. 20511",
+              "8 U.S.C. 1229"
+            ]
+          },
+          {
+            "headline": "24-Hour Data Rush: Federal Agencies in Panic",
+            "angle": "drama",
+            "hook": "Federal agencies must respond to state citizenship verification requests in under a day\u2014no exceptions, no fees.",
+            "target_audience": "Government insiders, national security analysts",
+            "evidence_provisions": [
+              "52 U.S.C. 20505",
+              "52 U.S.C. 20508",
+              "52 U.S.C. 20510"
+            ]
+          },
+          {
+            "headline": "The SAVE System: Real-Time Data? Not So Fast",
+            "angle": "hidden-provision",
+            "hook": "Despite mandates for instant verification, the bill relies on a database that can\u2019t deliver real-time results.",
+            "target_audience": "Tech policy experts, data integrity advocates",
+            "evidence_provisions": [
+              "52 U.S.C. 20505",
+              "52 U.S.C. 20508",
+              "42 U.S.C. 1320b-7"
+            ]
+          },
+          {
+            "headline": "Private Lawsuits Could Target Every Clerk",
+            "angle": "regulatory",
+            "hook": "Any election official who misses a proof deadline opens themselves to a private lawsuit with no cap on damages.",
+            "target_audience": "Election officials, legal counsel",
+            "evidence_provisions": [
+              "52 U.S.C. 20510",
+              "52 U.S.C. 20503",
+              "52 U.S.C. 20507"
+            ]
+          },
+          {
+            "headline": "New Citizenship Rules Target Naturalized Voters",
+            "angle": "geopolitical",
+            "hook": "The bill\u2019s notification requirements may mislead newly naturalized citizens about their voting rights.",
+            "target_audience": "Immigration advocates, new citizens",
+            "evidence_provisions": [
+              "52 U.S.C. 20506",
+              "52 U.S.C. 20508",
+              "8 U.S.C. 1101"
+            ]
+          },
+          {
+            "headline": "Federal Agencies Can\u2019t Charge for Data\u2014Ever",
+            "angle": "watchdog",
+            "hook": "A provision banning all fees for citizenship data could cripple enforcement if agencies lack funding.",
+            "target_audience": "Government accountability watchdogs",
+            "evidence_provisions": [
+              "52 U.S.C. 20505",
+              "52 U.S.C. 20508",
+              "52 U.S.C. 20510"
+            ]
+          },
+          {
+            "headline": "Affidavit Signatures: Who Signs What?",
+            "angle": "scoop",
+            "hook": "The bill\u2019s conflicting rules say the applicant signs one affidavit\u2014but the official signs another. That\u2019s a legal minefield.",
+            "target_audience": "Legal reporters, election law experts",
+            "evidence_provisions": [
+              "52 U.S.C. 20508",
+              "52 U.S.C. 20503",
+              "52 U.S.C. 20507"
+            ]
+          }
+        ]
+      },
+      "elapsed_s": 12.4,
+      "prompt_tokens": 6541,
+      "completion_tokens": 1251,
+      "errors": []
+    },
+    "headline_ranker": {
+      "label": "Headline Ranker",
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "(unstructured bill)",
+        "rankings": [
+          {
+            "rank": 1,
+            "headline": "The SAVE System: Real-Time Data? Not So Fast",
+            "angle": "hidden-provision",
+            "newsworthiness_score": 10,
+            "specificity_score": 10,
+            "appeal_score": 9,
+            "composite_score": 29,
+            "rationale": "This headline exposes a critical contradiction: the bill mandates real-time verification but relies on the SAVE system, which cannot deliver real-time data. The specific citation of 42 U.S.C. 1320b-7 reveals a systemic flaw that undermines the entire framework, making it a high-impact, under-the-radar issue. The drama of a 'real-time' mandate failing due to technical limitations is both surprising and consequential."
+          },
+          {
+            "rank": 2,
+            "headline": "Affidavit Loophole Sparks Legal Battle",
+            "angle": "controversy",
+            "newsworthiness_score": 9,
+            "specificity_score": 9,
+            "appeal_score": 9,
+            "composite_score": 27,
+            "rationale": "The provision allowing noncitizens to register via affidavit raises a constitutional crisis over due process and voting rights. With specific references to 52 U.S.C. 20508 and 20510, this headline reveals a hidden legal vulnerability that could lead to Supreme Court litigation. The human stakes and constitutional tension make it highly compelling for a broad audience."
+          },
+          {
+            "rank": 3,
+            "headline": "24-Hour Data Rush: Federal Agencies in Panic",
+            "angle": "drama",
+            "newsworthiness_score": 9,
+            "specificity_score": 8,
+            "appeal_score": 9,
+            "composite_score": 26,
+            "rationale": "The mandate for federal agencies to respond to state verification requests in under 24 hours\u2014no exceptions, no fees\u2014creates a high-pressure operational crisis. The specificity of 52 U.S.C. 20505 and 20508, combined with the visceral 'panic' framing, makes this a gripping narrative about bureaucratic overload and systemic fragility."
+          },
+          {
+            "rank": 4,
+            "headline": "Private Lawsuits Could Target Every Clerk",
+            "angle": "regulatory",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "The provision allowing unlimited private lawsuits against election officials for missing proof deadlines is a hidden regulatory bombshell. With 52 U.S.C. 20510 as evidence, this creates a chilling effect on public service. The specificity of 'no cap on damages' and the human impact on clerks make it both newsworthy and emotionally resonant."
+          },
+          {
+            "rank": 5,
+            "headline": "Affidavit Signatures: Who Signs What?",
+            "angle": "scoop",
+            "newsworthiness_score": 8,
+            "specificity_score": 9,
+            "appeal_score": 8,
+            "composite_score": 25,
+            "rationale": "This headline uncovers a technical contradiction: the applicant signs one affidavit, but the official signs another\u2014creating a legal minefield. The specific citation of 52 U.S.C. 20508 and 20503 reveals a drafting flaw that could invalidate registrations. It\u2019s a rare, precise legal scoop with real-world consequences."
+          },
+          {
+            "rank": 6,
+            "headline": "Disabled Voters Face New Registration Hurdles",
+            "angle": "human-impact",
+            "newsworthiness_score": 7,
+            "specificity_score": 8,
+            "appeal_score": 8,
+            "composite_score": 23,
+            "rationale": "The bill\u2019s proof requirements may disproportionately burden voters with disabilities, despite accessibility mandates. With 52 U.S.C. 20506 and 20507 cited, this highlights a conflict between policy intent and implementation. The human impact angle gives it emotional weight, though the issue is less novel than others."
+          },
+          {
+            "rank": 7,
+            "headline": "New Citizenship Rules Target Naturalized Voters",
+            "angle": "geopolitical",
+            "newsworthiness_score": 7,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 21,
+            "rationale": "The bill\u2019s notification rules may mislead newly naturalized citizens about their voting rights, creating a geopolitical risk. While the angle is relevant, the specific impact is less clear than other provisions. The mention of 8 U.S.C. 1101 adds specificity, but the overall novelty and drama are lower."
+          },
+          {
+            "rank": 8,
+            "headline": "States Fight Over Voter Roll Purge Powers",
+            "angle": "political",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 7,
+            "composite_score": 20,
+            "rationale": "The political divide over purge authority is a familiar narrative. While 52 U.S.C. 20507 and 20511 provide specificity, the issue lacks a unique or hidden insight. The headline is strong for political audiences but less compelling as a podcast hook due to its generic framing."
+          },
+          {
+            "rank": 9,
+            "headline": "Federal Agencies Can\u2019t Charge for Data\u2014Ever",
+            "angle": "watchdog",
+            "newsworthiness_score": 6,
+            "specificity_score": 7,
+            "appeal_score": 6,
+            "composite_score": 19,
+            "rationale": "The ban on fees for citizenship data is a clear policy choice, but its implications are more regulatory than dramatic. While 52 U.S.C. 20505 and 20508 provide specificity, the headline lacks a surprising twist or human stake. It\u2019s a solid watchdog angle but less engaging for general listeners."
+          },
+          {
+            "rank": 10,
+            "headline": "Citizenship Proof Mandate Goes Live",
+            "angle": "fiscal",
+            "newsworthiness_score": 5,
+            "specificity_score": 6,
+            "appeal_score": 5,
+            "composite_score": 16,
+            "rationale": "This headline is generic and lacks depth. While it mentions federal funding covering only a fraction of state costs, it fails to highlight a specific provision or hidden conflict. The angle is fiscal, but without a surprising twist or concrete impact, it\u2019s the weakest hook in the list."
+          }
+        ],
+        "winner": {
+          "rank": 1,
+          "headline": "The SAVE System: Real-Time Data? Not So Fast",
+          "angle": "hidden-provision",
+          "newsworthiness_score": 10,
+          "specificity_score": 10,
+          "appeal_score": 9,
+          "composite_score": 29,
+          "rationale": "This headline exposes a critical contradiction: the bill mandates real-time verification but relies on the SAVE system, which cannot deliver real-time data. The specific citation of 42 U.S.C. 1320b-7 reveals a systemic flaw that undermines the entire framework, making it a high-impact, under-the-radar issue. The drama of a 'real-time' mandate failing due to technical limitations is both surprising and consequential."
+        },
+        "winner_explanation": "This is the strongest podcast hook because it reveals a hidden, systemic contradiction: a law demanding real-time data verification while depending on a database incapable of delivering it. The specificity of 42 U.S.C. 1320b-7 and the high stakes of election integrity make it both newsworthy and dramatic. It\u2019s a rare example of a policy failing not due to politics, but due to technical impossibility\u2014perfect for a deep-dive podcast."
+      },
+      "elapsed_s": 15.51,
+      "prompt_tokens": 1799,
+      "completion_tokens": 1786,
+      "errors": []
+    }
+  },
+  "timings_s": {
+    "summarizer": 4.57,
+    "usc_cross_ref": 7.94,
+    "pork_finder": 1.18,
+    "conflict_spotter": 12.53,
+    "podcast_headlines": 12.4,
+    "headline_ranker": 15.51
+  },
+  "totals": {
+    "wall_clock_s": 55.43,
+    "prompt_tokens_total": 40882,
+    "completion_tokens_total": 5500
+  },
+  "bill_short": "save-act-bills-119hr22eh",
+  "bill_label": "save act BILLS-119hr22eh",
+  "bill_note": "Analyzed 1/1 chunks via Gradio upload"
+}
