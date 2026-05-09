@@ -817,7 +817,15 @@ def expected_final_path(bill_short: str, override_headline: str = None,
     this (bill, headline, direction) combo. Caller can stat() it to short-
     circuit if the video has already been rendered."""
     eval_dir, _is_custom, _auto = _resolve_eval_dir(bill_short, override_headline, creative_direction)
-    return eval_dir / f'final-{bill_short}-cloud-podcast.mp4'
+    # Prefer the hybrid master (Day 7.20 user-preferred pacing). Fall back to
+    # slides-only if that's all that exists (older renders pre-Day-7.22.4).
+    hybrid = eval_dir / f'final-{bill_short}-cloud-hybrid-podcast.mp4'
+    slides = eval_dir / f'final-{bill_short}-cloud-podcast.mp4'
+    if hybrid.exists():
+        return hybrid
+    if slides.exists():
+        return slides
+    return hybrid  # default expected path for fresh runs
 
 
 # ---- TOP-LEVEL PIPELINE (importable) ----
@@ -893,8 +901,28 @@ def run_full_pipeline(bill_short: str, log=print,
         stage_tts(script, eval_dir, log=log)
 
     log('')
-    log('[STAGE 4/4] FFMPEG compose')
-    final = stage_compose(eval_dir, bill_short, log=log)
+    log('[STAGE 4/5] InfiniteTalk avatar pairs (lipsync)')
+    try:
+        stage_avatar(script, eval_dir, log=log)
+    except Exception as _e:
+        log(f'  WARN: stage_avatar failed: {_e!r} -- continuing with slides-only')
+
+    log('')
+    log('[STAGE 5/5] FFMPEG compose -- slides + avatar + hybrid masters')
+    slides_master = stage_compose(eval_dir, bill_short, log=log)
+    try:
+        avatar_master = stage_avatar_compose(eval_dir, bill_short, log=log)
+    except Exception as _e:
+        log(f'  WARN: stage_avatar_compose failed: {_e!r}')
+        avatar_master = None
+    try:
+        hybrid_master = stage_hybrid_compose(eval_dir, bill_short, log=log)
+    except Exception as _e:
+        log(f'  WARN: stage_hybrid_compose failed: {_e!r}')
+        hybrid_master = None
+    # Hybrid is the user-preferred output (Day 7.20 pacing). Fall through
+    # to avatar-only or slides-only if any lipsync stage failed.
+    final = hybrid_master or avatar_master or slides_master
 
     log('')
     log(f'=== TOTAL: {time.time()-big_t0:.1f}s ===')
