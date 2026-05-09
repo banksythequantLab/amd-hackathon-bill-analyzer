@@ -1946,20 +1946,16 @@ def build_ui() -> gr.Blocks:
                     podcast_hdl_btns.append(_btn)
 
         # --- STEP 4: Generate (the only thing that actually fires the pipeline) ---
-        gr.HTML(
-            '<div style="margin: 18px 0 6px 0; padding: 10px 14px; '
-            'background: linear-gradient(90deg,#16a34a 0%,#22c55e 100%); '
-            'border-radius: 8px; color: #fff; font-size: 18px; font-weight: 700;">'
-            '🎙️ Step 4 — Generate (this is what kicks off the render)'
-            '</div>'
-        )
+        # No separate banner here -- the "Step 4" label is folded into the
+        # Generate button itself so the user sees one button-shaped CTA, not
+        # two stacked banner-and-button rectangles.
         # Initial label includes the auto-armed #1 ranked headline so the user
         # sees exactly what will fire. Updated dynamically when headline buttons
         # are clicked or when the textbox is edited.
         _initial_btn_label = (
-            f'🎙️ Generate Podcast Video — armed: "{_initial_headline[:80]}"'
+            f'🎙️ Step 4 — Generate Podcast Video — armed: "{_initial_headline[:80]}"'
             if _initial_headline else
-            '🎙️ Generate Podcast Video (pick a headline above first)'
+            '🎙️ Step 4 — Generate Podcast Video (pick a headline above first)'
         )
         podcast_generate_btn = gr.Button(
             _initial_btn_label,
@@ -2031,7 +2027,7 @@ def build_ui() -> gr.Blocks:
             '<div style="margin: 18px 0 6px 0; padding: 10px 14px; '
             'background: linear-gradient(90deg,#dc2626 0%,#ef4444 100%); '
             'border-radius: 8px; color: #fff; font-size: 18px; font-weight: 700;">'
-            '📺 Step 4 (optional) — Upload to YouTube @DeadAirBroadcasting'
+            '📺 Step 5 (optional) — Upload to YouTube @DeadAirBroadcasting'
             '</div>'
         )
         with gr.Accordion(
@@ -2276,8 +2272,8 @@ def build_ui() -> gr.Blocks:
         # Helper: build the Generate-button label for a given armed headline.
         def _gen_btn_label_for(hdl):
             if hdl and hdl.strip():
-                return f'🎙️ Generate Podcast Video — armed: "{hdl.strip()[:80]}"'
-            return '🎙️ Generate Podcast Video (pick a headline above first)'
+                return f'🎙️ Step 4 — Generate Podcast Video — armed: "{hdl.strip()[:80]}"'
+            return '🎙️ Step 4 — Generate Podcast Video (pick a headline above first)'
 
         # Step 2 buttons: click ARMS the headline AND immediately fires the
         # pipeline (one-click generate). The Step 3 button still exists for

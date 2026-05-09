@@ -15,7 +15,7 @@ short_description: 10-agent bill analyzer + AI podcast on AMD MI300X
 
 End-to-end legislative analysis pipeline for the [lablab.ai AMD Developer Hackathon](https://lablab.ai/ai-hackathons/amd-developer), May 2026. Runs entirely on a single AMD **MI300X** (192 GB VRAM) using vLLM + ROCm + ComfyUI.
 
-Drop a U.S. bill PDF in. Get back a structured analysis (USC cross-references, pork detection, conflict spotting, plain-English summary, ranked podcast headlines), then optionally turn the winning headline into a 2–3 minute podcast video with AI hosts, generated slides, motion animation, and TTS narration. **All-Qwen** stack, no proprietary models.
+Drop a U.S. bill PDF in. Get back a structured analysis (USC cross-references, pork detection, conflict spotting, plain-English summary, ranked podcast headlines), then optionally turn the winning headline into a 2–3 minute podcast video with AI hosts, generated slides, motion animation, and TTS narration. **Four Qwen models + Wan 2.2** stack — Qwen3 reasoning spine, Qwen3-VL critic, Qwen-Image slides, Qwen3-TTS voices, Wan 2.2 i2v animation — all hot at the same time on a single GPU.
 
 ---
 
@@ -24,10 +24,11 @@ Drop a U.S. bill PDF in. Get back a structured analysis (USC cross-references, p
 - [What it does](#what-it-does)
 - [Architecture](#architecture)
   - [Pipeline 1 — Bill Analysis](#pipeline-1--bill-analysis-cpu-orchestration--mi300x-inference)
-  - [Pipeline 2 — Podcast Studio](#pipeline-2--podcast-studio-all-qwen-media-generation-on-mi300x)
+  - [Pipeline 2 — Podcast Studio](#pipeline-2--podcast-studio-qwen--wan-media-generation-on-mi300x)
 - [Why MI300X](#why-mi300x)
 - [Multi-chunk handling](#multi-chunk-handling)
 - [Quality gate — dual-call slide critic](#quality-gate--dual-call-slide-critic)
+- [Avatar mode + hybrid composer](#avatar-mode--hybrid-composer)
 - [Repo layout](#repo-layout)
 - [Quick start](#quick-start)
 - [Demo bills](#demo-bills)
@@ -42,7 +43,7 @@ The Gradio UI has **two complementary surfaces** running on a shared MI300X back
 
 Upload a bill PDF (or pick a pre-processed canonical bill from the gallery). The pipeline:
 
-1. **Smart-chunks** the PDF on `DIVISION` / `TITLE` / `Subtitle` boundaries so cross-references stay intact (max 220K cl100k tokens per chunk).
+1. **Smart-chunks** the PDF on `DIVISION` / `TITLE` / `Subtitle` boundaries so cross-references stay intact (max 200K cl100k tokens per chunk).
 2. **Runs 6 specialist agents per chunk** sequentially against the Qwen3-30B FP8 spine:
    - Plain-English Summarizer
    - USC Cross-Reference (with live LMDB enrichment)
@@ -57,13 +58,12 @@ The UI streams agent-by-agent progress events to a live log panel so you can wat
 
 ### Podcast Studio surface
 
-For any pre-processed bill:
+The Bill Analysis flow above auto-feeds Podcast Studio: whichever bill you uploaded or clicked from the cards becomes the "armed" bill below. No separate bill-picker step.
 
-1. Pick the bill from a dropdown.
-2. The **headline picker** auto-populates with the 10 ranked candidates from `headline_ranker` (e.g. `#1 (27/30) Hidden Clause: Forests Must Now Protect Water`).
-3. Click any headline → it loads into an **editable text box**. Tweak it freely or type your own.
-4. Optional: add **creative direction** (a free-form prompt) — e.g. *"Focus on the surveillance angle and the 4th Amendment risks. Keep tone dry and journalistic."*
-5. Click **🎙️ Generate Podcast Video**. The full all-Qwen media pipeline runs on MI300X and a 2-3 minute mp4 streams back into the page.
+1. **(automatic)** When you click a bill card OR finish analyzing an uploaded PDF, the Podcast Studio **headline picker** auto-populates with the 10 ranked candidates from that bill's `headline_ranker` (e.g. `#1 (27/30) Hidden Clause: Forests Must Now Protect Water`).
+2. Click any headline → it loads into an **editable text box**. Tweak it freely or type your own.
+3. Optional: add **creative direction** (a free-form prompt) — e.g. *"Focus on the surveillance angle and the 4th Amendment risks. Keep tone dry and journalistic."*
+4. Click **🎙️ Step 4 — Generate**. The full Qwen+Wan media pipeline runs on MI300X and a 2-3 minute mp4 streams back into the page. Output mode is selectable (slides-only, all-talking-head, or **alternating hybrid** — see "Headline #5: Lipsync avatar mode" below).
 
 Custom runs (different headline or non-blank direction) get their own subfolder `eval/{bill}-cloud-custom-{8-char-hash}/`, so you can have multiple variants of the same bill side by side without clobbering the canonical render.
 
@@ -75,7 +75,7 @@ Custom runs (different headline or non-blank direction) get their own subfolder 
 
 ```mermaid
 flowchart TD
-    PDF[Bill PDF] --> CHUNK[Smart Chunker<br/>TITLE / Subtitle / DIVISION boundaries<br/>cap 220K cl100k tokens]
+    PDF[Bill PDF] --> CHUNK[Smart Chunker<br/>TITLE / Subtitle / DIVISION boundaries<br/>cap 200K cl100k tokens]
     CHUNK --> CHUNKS[N chunks]
 
     subgraph PerChunk["Per-chunk: 6 agents sequential, share KV cache via vLLM APC"]
@@ -101,7 +101,7 @@ flowchart TD
     class PDF,CANON io
 ```
 
-### Pipeline 2 — Podcast Studio (all-Qwen media generation on MI300X)
+### Pipeline 2 — Podcast Studio (Qwen + Wan media generation on MI300X)
 
 ```mermaid
 flowchart TD
@@ -162,14 +162,15 @@ Combined with vLLM's Automatic Prefix Caching on ROCm 7.2.3, all 6 specialist ag
 
 ## Multi-chunk handling
 
-Bills like the Build Back Better Act are 540+ pages and ~933K cl100k tokens — they don't fit in one chunk. The chunker splits BBB into 5 chunks at structural boundaries:
+Bills like the Build Back Better Act are 2,468 pages and ~927K cl100k tokens — they don't fit in one chunk. The chunker splits BBB into 6 chunks at structural boundaries:
 
 ```
-ch01: pp.3-542    | 199,381 tok | TITLE I—AGRICULTURE
-ch02: pp.542-1114 | 217,853 tok | Subtitle G—Medicaid
-ch03: pp.1114-1696| 218,139 tok | Subtitle C—Encouraging Small Business
-ch04: pp.1696-2110| 154,567 tok | Subtitle G—Green Energy
-ch05: pp.2110-2468| 137,352 tok | Subtitle I—Responsibly Funding
+ch01: pp.   3-542  | 199,381 tok | TITLE I—AGRICULTURE
+ch02: pp. 542-1049 | 193,263 tok | Subtitle G—Medicaid
+ch03: pp.1049-1497 | 167,315 tok | TITLE IX—COMMITTEE ON
+ch04: pp.1497-1943 | 166,774 tok | Subtitle E
+ch05: pp.1943-2344 | 152,884 tok | Subtitle H—Social Safety Net
+ch06: pp.2344-2468 |  47,675 tok | Subtitle J—Drug Pricing
 ```
 
 `analyze_pdf` runs all 6 agents on every chunk, then `src/multichunk.merge_chunk_reports` aggregates per-chunk outputs into a single canonical-shaped report:
@@ -192,6 +193,29 @@ Single-chunk bills round-trip identical to before (no breaking change to existin
 2. **Judgment call** — independent visual review with the expected headline **withheld** so the model can't be primed. Checks legibility, well-formed text, on-brand style, and absence of artifacts.
 
 Final verdict: pass requires `ocr_pass AND judgment_pass`. Disagreement is recorded as `agreement = ocr_only | judgment_only | both_pass | both_fail` for diagnostics. On the border25 19-slide run this caught 2 typos a single-call critic missed.
+
+---
+
+## Avatar mode + hybrid composer
+
+Day 7 of the hackathon added a fifth output mode: a talking-head podcast where two AI hosts (Alex and Jordan) deliver the bill summary on camera.
+
+- **Audio:** Qwen3-TTS (Ryan + Ono_anna voices), same as slides-mode.
+- **Faces + lipsync:** **InfiniteTalk-on-Wan22** running on the same Wan 2.2 i2v base model already in VRAM (no extra slot — InfiniteTalk is a Wan extension, not a new model).
+- **Format:** 832×480, 25 fps, ~10 s pair clips (one pair per two consecutive dialog lines).
+- **Brand overlay:** A DeadAir Broadcasting card composites on top of every clip (logo, channel handle, episode marker).
+
+Output mode is per-render. Three options ship from the same canonical script:
+
+| Mode | Compositor function | Output filename |
+|---|---|---|
+| Slides only | `stage_compose` | `final-{bill}-cloud-podcast.mp4` |
+| All talking heads | `stage_avatar_compose` | `final-{bill}-cloud-avatar-podcast.mp4` |
+| **Alternating hybrid** | `stage_hybrid_compose` | `final-{bill}-cloud-hybrid-podcast.mp4` |
+
+The hybrid compositor alternates *slide pairs* (Wan-animated stills with Qwen-Image visuals) and *talking-head pairs* (lipsynced avatars), cutting on dialog boundaries. The result is a slide → talking-head → slide → talking-head hybrid the brain can actually follow at podcast pacing, with a lipsync intro/outro setting tone.
+
+All three compositors use `-c copy` ffmpeg concat — no re-encoding. Every clip in every mode is normalized to the same H.264 High @ L3.0 / yuv420p / 832×480 / 25 fps + AAC LC mono 24kHz, so concat is instant and lossless. Verified end-to-end on `bbb-cloud` (17.2 MB master, 3:08 runtime, 17 clips: 5 slide pairs + 4 talking-head pairs + 3 brand cards).
 
 ---
 
@@ -293,7 +317,7 @@ Six U.S. bills are pre-processed and live in `eval/canonical/` — they appear i
 | `border25`  | Secure the Border Act (HR 2)                    | 214   | 59,735  | 1 |
 | `israel24`  | Israel Security Supplemental Appropriations     | 110   | 69,579  | 1 |
 | `capr26`    | Continuing Appropriations 2026                  | 161   | 114,441 | 1 |
-| `bbb`       | Build Back Better Act 2021 (HR 5376)            | 2,468 | 927,292 | 5 |
+| `bbb`       | Build Back Better Act 2021 (HR 5376)            | 2,468 | 927,292 | 6 |
 
 The first canonical podcast video shipped is for `border25` (`DNA Collected from Every Alien` — the auto-ranked winner) and lives at `eval/border25-cloud/final-border25-cloud-podcast.mp4` after a successful pipeline run.
 
