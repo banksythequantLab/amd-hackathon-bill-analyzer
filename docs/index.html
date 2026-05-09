@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Bill Analyzer — One MI300X analyzes a 2,400-page bill</title>
+<title>Bill Analyzer — One MI300X analyzes a 2,468-page bill</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Multi-agent legislative-bill analysis on a single AMD MI300X. 14.8x APC speedup, three Qwen models concurrent, 116 USC citations grounded in real statute text.">
+<meta name="description" content="10-agent legislative-bill analyzer + podcast generator on a single AMD MI300X (192 GB). Four Qwen models plus Wan 2.2: 30B reasoning spine, VL critic, image gen, TTS, plus Wan video gen — all hot at the same time, no model swaps.">
 <meta property="og:title" content="Bill Analyzer — AMD Developer Hackathon">
-<meta property="og:description" content="One MI300X. Three Qwen models. 14.8x speedup from APC. 116 USC citations from a real bill, automatically.">
+<meta property="og:description" content="One MI300X. Four Qwen models plus Wan 2.2 concurrent in 192 GB. 14.8x APC speedup. 10 specialist agents on a single GPU - no model swaps.">
 <meta property="og:type" content="website">
 
 <style>
@@ -174,6 +174,40 @@ table.runs tr.warm { background: rgba(0, 212, 170, 0.04); }
 }
 .footer a { color: var(--fg-2); border-bottom: 1px dotted var(--fg-2); }
 
+/* Hero CTA — green Try-It button at top */
+.hero-cta {
+  margin: 14px 0 22px;
+  text-align: left;
+}
+.hero-cta a {
+  display: inline-block;
+  background: var(--accent-2);
+  color: var(--bg) !important;
+  padding: 11px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none !important;
+  letter-spacing: 0.01em;
+  transition: filter 0.15s ease;
+}
+.hero-cta a:hover { filter: brightness(1.10); text-decoration: none !important; }
+.hero-cta .secondary {
+  display: inline-block;
+  margin-left: 14px;
+  color: var(--fg-2);
+  font-size: 13px;
+  font-family: var(--mono);
+}
+.hero-cta .secondary a {
+  background: none;
+  color: var(--accent-2) !important;
+  padding: 0;
+  text-decoration: underline !important;
+  font-weight: 500;
+  font-size: 13px;
+}
+
 /* Mobile */
 @media (max-width: 600px) {
   h1 { font-size: 28px; }
@@ -184,40 +218,53 @@ table.runs tr.warm { background: rgba(0, 212, 170, 0.04); }
 <body>
 <div class="container">
 
-<div class="brand">AMD DEVELOPER HACKATHON · MAY 4&ndash;10, 2026 · DAY 2 LIVE</div>
+<div class="brand">AMD DEVELOPER HACKATHON · MAY 4&ndash;10, 2026 · DAY 5 LIVE</div>
 
-<h1>Three Qwen models on one MI300X read a <span class="red">2,468-page bill</span> and tell you what's in it.</h1>
+<div class="hero-cta">
+  <a href="https://huggingface.co/spaces/joemama68BJ/amd-hackathon-bill-analyzer" target="_blank" rel="noopener">
+    🚀 Try the live app on Hugging Face &rarr;
+  </a>
+  <span class="secondary">
+    or <a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer" target="_blank" rel="noopener">read the source</a>
+  </span>
+</div>
+
+<h1>Four Qwen models plus Wan on one MI300X read a <span class="red">2,468-page bill</span> and tell you what's in it.</h1>
 
 <p class="lede">
 This is a working proof-of-concept built in 48 hours on AMD MI300X (192 GB VRAM) for the
 <a href="https://lablab.ai/event/amd-developer-hackathon">lablab.ai AMD Developer Hackathon</a>.
 The story below is the whole pitch: vLLM's Automatic Prefix Caching on ROCm makes multi-agent
-legislative analysis cheap, because 14 specialist agents can share one prefill of the bill text.
+legislative analysis cheap, because 10 specialist agents share one prefill of the bill text.
 </p>
 
 <div class="tiles">
   <div class="tile"><div class="num">94.15&times;</div><div class="label">APC TTFT speedup<br>(99,727-token prefix)</div></div>
   <div class="tile"><div class="num">14.8&times;</div><div class="label">Wall-clock speedup<br>(232K-tok summarizer)</div></div>
   <div class="tile"><div class="num green">68.5%</div><div class="label">Sustained APC<br>cache hit rate</div></div>
-  <div class="tile"><div class="num green">116</div><div class="label">USC citations<br>recovered, ch01</div></div>
+  <div class="tile"><div class="num green">5</div><div class="label">4 Qwen models concurrent<br>plus Wan 2.2</div></div>
 </div>
 
 <h2>The architecture</h2>
 
-<p>One MI300X. Three Qwen models hot at the same time, sharing 192 GB:</p>
+<p>One MI300X. Four Qwen models plus Wan 2.2 hot at the same time, sharing 192 GB &mdash;
+the entire pipeline (analysis + slide gen + animation + narration + critic) runs
+on a single GPU with zero model swapping mid-pipeline.</p>
 
-<pre><code>spine     Qwen3-30B-A3B-Instruct-2507-FP8   port 8001   ~80 GB   max_model_len=262,144
-vision    Qwen3-VL-8B-Thinking-FP8          port 8002   ~17 GB   max_model_len=16,384
-reasoner  Qwen3-32B-FP8                     port 8003   ~70 GB   max_model_len=32,768
+<pre><code>spine     Qwen3-30B-A3B-Instruct-2507-FP8   vLLM      port 8001   ~35 GB   max_model_len=262,144
+vision    Qwen3-VL-8B-Thinking-FP8          vLLM      port 8002    ~9 GB   dual-call critic
+imagegen  Qwen-Image-2512 FP8 + Lightning   ComfyUI   port 8188   ~22 GB   1280x720 in ~5 s
+videogen  Wan 2.2 i2v 14B FP8 + LightX2V    ComfyUI   port 8188   ~30 GB   832x480 81-frame clips
+tts       Qwen3-TTS-12Hz-1.7B-CustomVoice   ComfyUI   port 8188    ~5 GB   Alex/Jordan voices
 
-combined  176 / 192 GB VRAM (91.7%)
-backend   vllm/vllm-openai-rocm:v0.17.1 on ROCm 7.2.0</code></pre>
+combined  ~150 / 192 GB VRAM (78.1%, with 40+ GB headroom for KV cache)
+backend   vllm/vllm-openai-rocm:v0.17.1 on ROCm 7.2.3 + ComfyUI on PyTorch 2.10.0</code></pre>
 
 <p>
 The <em>spine</em> holds a 250K-token bill chunk in its context. Every specialist agent
 hits the same chunk. With <code>--enable-prefix-caching</code>, the chunk is prefilled
 <strong>once</strong>; every additional agent against that chunk pays only its short
-instruction overhead. On a 32 GB GPU each agent has to spill or re-prefill — so on
+instruction overhead. On a 32-80 GB GPU you cannot even fit this stack &mdash; the spine alone needs more than a 4090. On smaller GPUs, agents have to spill, re-prefill, or model-swap — so on
 consumer hardware this whole pattern doesn't work. <strong>192 GB is the unlock.</strong>
 </p>
 
@@ -227,13 +274,13 @@ consumer hardware this whole pattern doesn't work. <strong>192 GB is the unlock.
 <thead><tr><th>Act</th><th>Bill</th><th>Pages</th><th class="num">Tokens</th><th class="num">Chunks</th></tr></thead>
 <tbody>
 <tr><td>I</td><td>HR 1 &mdash; OBBB Act 2025 (enacted)</td><td>330</td><td class="num">230,925</td><td class="num">1</td></tr>
-<tr><td>II</td><td>HR 5376 &mdash; Build Back Better 2021</td><td>2,468</td><td class="num">927,623</td><td class="num">5</td></tr>
+<tr><td>II</td><td>HR 5376 &mdash; Build Back Better 2021</td><td>2,468</td><td class="num">927,292</td><td class="num">6</td></tr>
 <tr><td>III</td><td>HR 2670 &mdash; FY24 NDAA</td><td>1,236</td><td class="num">541,309</td><td class="num">3</td></tr>
 </tbody></table>
 
 <p>
 Smart chunker is title-boundary aware: never splits a TITLE / Subtitle mid-section, falls back to
-Subtitle-level cuts when a single Title overflows the 220K cl100k-token budget (calibrated for
+Subtitle-level cuts when a single Title overflows the 200K cl100k-token budget (calibrated for
 Qwen tokenizer's ~16% inflation over cl100k_base).
 </p>
 
@@ -337,10 +384,11 @@ LLM identifies <em>where</em>, the LMDB grounds <em>what</em>.
 </div>
 
 <p>
-<strong>116 citations recovered</strong> from chunk 1 alone (the truncation-recovery layer
-turned what would have been a parse failure at max_tokens into 116 valid grounded citations).
-23 of the first 30 resolved cleanly against the local USC LMDB (76.7% hit rate); the rest
-are sub-paragraph notations like <code>7 U.S.C. 3103(2)</code> that need finer canonicalization.
+The USC Cross-Reference agent extracts every citation in the bill text, then enriches each
+one against a local USC LMDB built from Title 1-54 of the U.S. Code (60K+ sections, ~10 us
+per hit). Sub-paragraph notations like <code>7 U.S.C. 3103(2)</code> are canonicalized down
+to their parent section. Multi-chunk bills get their citations concatenated with a chunk
+provenance tag so the merged report can attribute every reference to the chunk it came from.
 </p>
 
 <h2>Headline #4 &mdash; Vision pipeline reads tax tables off bill PDFs</h2>
@@ -364,6 +412,37 @@ a tax bracket schedule for joint filers) and emits structured JSON in <strong>11
 <p>
 All values verified exact against the source bill. The model can see the page,
 read the structure, and emit JSON. No OCR, no tabula post-processing.
+</p>
+
+<h2>Headline #5 &mdash; Lipsync avatar mode + hybrid podcast</h2>
+
+<p>
+On Day&nbsp;7 the Qwen+Wan pipeline gained a fifth output mode: a talking-head podcast
+where two AI hosts (Alex and Jordan) deliver the bill summary on camera. Audio is
+Qwen3-TTS (Ryan + Ono_anna voices), faces and lipsync come from
+<strong>InfiniteTalk-on-Wan22</strong> (832&times;480 / 25 fps, ~10&nbsp;s pair clips), and a
+brand overlay composites DeadAir Broadcasting cards on top.
+</p>
+
+<p>
+The hybrid compositor alternates <em>slide pairs</em> (Wan-animated stills with Qwen-Image
+visuals) and <em>talking-head pairs</em> (lipsynced avatars), cutting on dialog boundaries.
+The result is a slide&nbsp;&rarr;&nbsp;talking-head&nbsp;&rarr;&nbsp;slide&nbsp;&rarr;&nbsp;talking-head
+hybrid the brain can actually follow at podcast pacing, with a lipsync intro/outro setting tone.
+</p>
+
+<pre><code>BBB hybrid master   final-bbb-cloud-hybrid-podcast.mp4
+                    17.2 MB  /  3:08  /  17 clips (14 body + 3 brand)
+                    5 slide pairs + 4 talking-head pairs, alternating
+                    -c copy concat (no re-encode) - all clips share
+                    h264 High yuv420p 832x480 @25fps + AAC LC mono 24kHz</code></pre>
+
+<p>
+Lipsync intro/outro overlays add 14 seconds of DeadAir branding without breaking the
+audio-aligned cut chain. The same compositor wires all three output modes &mdash; a single
+source script can render slides-only, all-talking-head, or the alternating hybrid &mdash; so
+the right format for the bill (data-heavy =&gt; lean slides; vibe-heavy =&gt; lean avatars)
+is a one-line argument change.
 </p>
 
 <h2>How to read the artifacts</h2>
@@ -390,14 +469,36 @@ target time at FP8.
 </p>
 
 <div class="footer">
-  Built by <a href="https://github.com/banksythequantLab">Derek "Banksy AI" Soltis</a>
-  &mdash; SDNY/EDNY attorney, AI infrastructure builder.
+  Built by <a href="https://github.com/banksythequantLab">"Banksy AI"</a>
+  &mdash; Hackathon submission, AMD Developer Hackathon
+  <a href="https://lablab.ai/event/amd-developer-hackathon">(lablab.ai)</a>,
+  May 4&ndash;10, 2026.
   <br>
-  Cloud burn so far: ~$15 / $100 budget.
-  Hackathon submission deadline: Saturday, May 10, 2026.
-  Build-in-public posts: <a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/docs/bip-post-1-DRAFT.md">#1</a>
+  <strong>Live demo:</strong>
+  <a href="https://bills.nota.lawyer">bills.nota.lawyer</a>
   &middot;
-  this page is BiP #2.
+  <strong>Source:</strong>
+  <a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer">GitHub</a>
+  &middot;
+  <strong>HF Space:</strong>
+  <a href="https://huggingface.co/spaces/joemama68BJ/amd-hackathon-bill-analyzer">joemama68BJ/amd-hackathon-bill-analyzer</a>
+  &middot;
+  <strong>Podcast channel:</strong>
+  <a href="https://youtube.com/@DeadAirBroadcasting">@DeadAirBroadcasting</a>
+  <br>
+  Build-in-public posts:
+  <a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/docs/bip-post-1-DRAFT.md">Day 1</a>
+  &middot;
+  <a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/docs/bip-post-2-FINAL.md">Day 2</a>
+  &middot;
+  <a href="https://github.com/banksythequantLab/amd-hackathon-bill-analyzer/blob/main/docs/bip-post-3-FINAL.md">Day 3</a>
+  <br>
+  <em>
+    Channel logo &amp; brand assets generated by
+    <a href="https://huggingface.co/Qwen/Qwen-Image">Qwen-Image-2512 FP8</a>
+    + 4-step Lightning LoRA on the same MI300X
+    &mdash; one of the four Qwen models in the live pipeline (alongside Wan&nbsp;2.2 for video).
+  </em>
 </div>
 
 </div>
