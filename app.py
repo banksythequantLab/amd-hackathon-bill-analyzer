@@ -1706,7 +1706,7 @@ def build_ui() -> gr.Blocks:
         with gr.Row():
             with gr.Column(scale=3):
                 gr.HTML(
-                    '<div style="margin-top:8px"><span class="upload-step-label">📂 Step 1 — Upload</span></div>'
+                    '<div style="margin-top:8px"><span class="upload-step-label">📂 Step 1 — Upload PDF of Bill</span></div>'
                     '<div style="font-size:14px;color:#0f172a;font-weight:600;margin-bottom:6px">'
                     'Drop a US legislative bill PDF below to run the full 6-agent analysis pipeline.'
                     '</div>'
@@ -1769,13 +1769,9 @@ def build_ui() -> gr.Blocks:
         # ---------------- BILLS LOOKUP (bottom) ----------------
         gr.HTML(
             '<div style="margin-top:32px;border-top:2px solid #e5e7eb;padding-top:20px">'
-            '<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">'
-            '<div><div class="section-label" style="margin:0">📚 Pre-Processed Bills — Click to Load Instantly</div>'
-            '<div style="font-size:13px;color:#64748b;margin-top:4px">No live inference. Reports rendered from cached canonical JSON.</div></div>'
-            '<a href="https://www.congress.gov/most-viewed-bills" target="_blank" rel="noopener" '
-            'style="font-size:13px;color:#6366f1;font-weight:600;text-decoration:none">'
-            '📊 most-viewed-bills on congress.gov →</a>'
-            '</div></div>'
+            '<div class="section-label" style="margin:0">📚 Pre-Processed Bills — Click to Load Instantly</div>'
+            '<div style="font-size:13px;color:#64748b;margin-top:4px">No live inference. Reports rendered from cached canonical JSON.</div>'
+            '</div>'
         )
 
         # Load all canonical bills at startup; build one Gradio Button per bill.
@@ -1804,15 +1800,20 @@ def build_ui() -> gr.Blocks:
                     bill_btns.append(btn)
 
         with gr.Row():
+            # Hidden 2026-05: short-code dropdown + lookup row retired in favor
+            # of the bill-card grid above. Kept as visible=False widgets so the
+            # existing event wiring (refresh_lookup_btn.click, _yt_generate_metadata
+            # inputs, etc.) doesn't NameError.
             bill_dropdown = gr.Dropdown(
                 label="Or select by short code",
                 choices=[(_pretty_bill_label(b["short"]), b["short"]) for b in startup_bills],
                 value=None,
                 interactive=True,
                 scale=3,
+                visible=False,
             )
-            refresh_lookup_btn = gr.Button("🔄 Refresh", variant="secondary", scale=1, size="sm")
-            delete_lookup_btn = gr.Button("🗑 Delete", variant="stop", scale=1, size="sm")
+            refresh_lookup_btn = gr.Button("🔄 Refresh", variant="secondary", scale=1, size="sm", visible=False)
+            delete_lookup_btn = gr.Button("🗑 Delete", variant="stop", scale=1, size="sm", visible=False)
 
         # Delete-bill confirmation: two-click safety. First click arms the
         # button; second click within ~30 sec actually deletes. The state
@@ -1839,10 +1840,15 @@ def build_ui() -> gr.Blocks:
         bill_dropdown.change(fn=load_bill_by_short, inputs=bill_dropdown, outputs=outputs_full)
 
         # Wire each bill card button. Closure over short_code via default arg.
+        # Events captured into _bill_btn_evts so we can chain a Podcast Studio
+        # refresh after this loop (the chain has to be added later because
+        # podcast_bill_dropdown isn't defined yet at this point).
+        _bill_btn_evts = []
         for i, btn in enumerate(bill_btns):
             if i < len(startup_bills):
                 short_code = startup_bills[i]["short"]
-                btn.click(fn=lambda s=short_code: load_bill_by_short(s), outputs=outputs_full)
+                evt = btn.click(fn=lambda s=short_code: load_bill_by_short(s), outputs=outputs_full)
+                _bill_btn_evts.append((short_code, evt))
 
         # Refresh button: re-scan canonical/, update button labels & visibility, refresh dropdown.
         def _refresh_lookup():
@@ -1879,14 +1885,13 @@ def build_ui() -> gr.Blocks:
             'and quality-checked by a dual OCR + judgment **Qwen3-VL** critic - all on **AMD MI300X**.'
         )
 
-        # --- STEP 1: Bill picker (prominent) ---
-        gr.HTML(
-            '<div style="margin: 14px 0 6px 0; padding: 10px 14px; '
-            'background: linear-gradient(90deg,#3b82f6 0%,#6366f1 100%); '
-            'border-radius: 8px; color: #fff; font-size: 18px; font-weight: 700;">'
-            '📋 Step 1 — Pick a Bill'
-            '</div>'
-        )
+        # --- STEP 1 (Pick a Bill) RETIRED 2026-05 ---
+        # Bill is now selected via the upload PDF / bill cards / analyze flow
+        # at the top of the page. Whichever bill is loaded above auto-cascades
+        # into this Podcast Studio section (bill cards .then()-chain into
+        # podcast_bill_dropdown.value, which fires _on_bill_change to refresh
+        # the headline buttons). The banner + dropdown widgets below are
+        # kept as visible=False to preserve the existing event wiring.
         _initial_bill_pairs = [(_pretty_bill_label(b), b) for b in list_podcastable_bills()]
         _initial_bills = [v for _l, v in _initial_bill_pairs]
         _initial_bill = (_initial_bills or [None])[0]
@@ -1900,20 +1905,21 @@ def build_ui() -> gr.Blocks:
                 value=_initial_bill,
                 scale=4,
                 container=True,
+                visible=False,
             )
-            podcast_refresh_btn = gr.Button('🔄 Refresh List', scale=1, size='lg')
+            podcast_refresh_btn = gr.Button('🔄 Refresh List', scale=1, size='lg', visible=False)
 
-        # --- STEP 2: Pick a headline (ARMS, does NOT fire pipeline) ---
+        # --- STEP 3: Pick a headline (ARMS, does NOT fire pipeline) ---
         gr.HTML(
             '<div style="margin: 18px 0 6px 0; padding: 10px 14px; '
             'background: linear-gradient(90deg,#0ea5e9 0%,#3b82f6 100%); '
             'border-radius: 8px; color: #fff; font-size: 18px; font-weight: 700;">'
-            '📜 Step 2 — Pick a Headline (sets the topic — does not start the render)'
+            '📜 Step 3 — Pick a Headline (sets the topic — does not start the render)'
             '</div>'
         )
         gr.Markdown(
             "Clicking a headline below **arms** it. Review, then click the big "
-            "Generate button in Step 3 to start the render. If a video already "
+            "Generate button in Step 4 to start the render. If a video already "
             "exists for this exact (bill, headline, direction) combo, it plays "
             "instantly with no compute."
         )
@@ -1939,12 +1945,12 @@ def build_ui() -> gr.Blocks:
                     )
                     podcast_hdl_btns.append(_btn)
 
-        # --- STEP 3: Generate (the only thing that actually fires the pipeline) ---
+        # --- STEP 4: Generate (the only thing that actually fires the pipeline) ---
         gr.HTML(
             '<div style="margin: 18px 0 6px 0; padding: 10px 14px; '
             'background: linear-gradient(90deg,#16a34a 0%,#22c55e 100%); '
             'border-radius: 8px; color: #fff; font-size: 18px; font-weight: 700;">'
-            '🎙️ Step 3 — Generate (this is what kicks off the render)'
+            '🎙️ Step 4 — Generate (this is what kicks off the render)'
             '</div>'
         )
         # Initial label includes the auto-armed #1 ranked headline so the user
@@ -2330,6 +2336,20 @@ def build_ui() -> gr.Blocks:
             inputs=[podcast_bill_dropdown],
             outputs=podcast_hdl_btns + [podcast_headline_text, podcast_generate_btn],
         )
+
+        # 2026-05 cleanup: when a bill card is clicked above, also push that
+        # bill into podcast_bill_dropdown.value AND refresh the headline
+        # buttons in one shot. We do both in a single function so we don't
+        # depend on the dropdown's .change() event firing on programmatic
+        # value updates (Gradio's behavior there isn't guaranteed).
+        def _bill_card_to_podcast(bill_short):
+            return [gr.update(value=bill_short)] + _on_bill_change(bill_short)
+
+        for _short_code, _evt in _bill_btn_evts:
+            _evt.then(
+                fn=lambda s=_short_code: _bill_card_to_podcast(s),
+                outputs=[podcast_bill_dropdown] + podcast_hdl_btns + [podcast_headline_text, podcast_generate_btn],
+            )
 
         def _refresh_podcast_bills():
             """Refresh button: re-scan eval/canonical/, repopulate everything."""
