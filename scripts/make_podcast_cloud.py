@@ -4,7 +4,12 @@ import argparse, base64, copy, json, sys, time
 from pathlib import Path
 import httpx
 
-REPO = Path(r"B:\\amd-hackathon-bill-analyzer")
+# Repo root, derived from this file's location so it works on every OS:
+# scripts/make_podcast_cloud.py -> parent is scripts/ -> parent is repo root.
+# (Was a hardcoded Windows path B:\amd-hackathon-bill-analyzer for a long
+# time; that quietly broke canonical-report lookups on the HF Space because
+# Path("B:\\...") resolves to a junk relative path on Linux.)
+REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 
 from src.agents.podcast_script_writer import PodcastScriptWriter
@@ -182,11 +187,14 @@ def stage_slides(slides_obj, eval_dir, log=print):
         negative = s.get('negative_prompt', 'blurry low quality watermark')
         expected = s['headline_text']
         last_crit = None
-        # Up to 7 retry attempts: SlideCritic dual-call (OCR + judgment) is
+        # Up to 15 retry attempts: SlideCritic dual-call (OCR + judgment) is
         # strict about typos and visual quality. With 4-step Lightning the
         # tail of the seed distribution still produces ~10-20% slides that
-        # need a re-roll, so 7 attempts gives ~99.99% pass probability.
-        for attempt in range(7):
+        # need a re-roll. 15 attempts gives essentially 100% pass probability
+        # and rare failure cases (a tricky long headline, a stubborn typo)
+        # finally clear instead of pinning the slide on a bad seed for the
+        # whole render.
+        for attempt in range(15):
             seed = scene * 1000 + attempt * 17 + 42
             prefix = f'border-cloud/scene-{scene:02d}-att{attempt}'
             wf = qwen_image_workflow(positive, negative, seed, prefix)
