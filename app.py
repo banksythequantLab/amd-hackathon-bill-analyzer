@@ -1722,7 +1722,7 @@ def build_ui() -> gr.Blocks:
                     '💡 No PDF handy? Click any pre-processed bill below for instant results.'
                     '</div>'
                 )
-                analyze_btn = gr.Button("🚀 Analyze Full Bill (all chunks)", variant="primary", size="lg")
+                analyze_btn = gr.Button("🚀 Step 2 - Analyze the Bill - Click Here", variant="primary", size="lg")
                 # Hidden refs - the BBB-specific demo button and Status button were
                 # removed because (a) the bill cards above and the dropdown below
                 # already cover canonical bill selection, and (b) the Status badge
