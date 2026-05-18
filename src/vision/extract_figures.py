@@ -106,10 +106,16 @@ def extract_json(content: str) -> dict | None:
 
 
 def main() -> int:
+    # 3090 FORK: --pdf default derived from script location (was hardcoded
+    # to B:\amd-hackathon-bill-analyzer\..., old fork). parents[2] = repo root.
+    _repo = Path(__file__).resolve().parents[2]
     ap = argparse.ArgumentParser()
-    ap.add_argument("--pdf", type=Path, default=Path(r"B:\amd-hackathon-bill-analyzer\tests\fixtures\build_back_better_2021_hr5376.pdf"))
+    ap.add_argument("--pdf", type=Path, default=_repo / "tests" / "fixtures" / "build_back_better_2021_hr5376.pdf")
     ap.add_argument("--page", type=int, default=2222)
-    ap.add_argument("--endpoint", default="http://165.245.134.1:8002")
+    # 3090 FORK: was --endpoint http://165.245.134.1:8002 on the AMD vision
+    # server. Now defaults to local Ollama OpenAI-compat; will 404 until
+    # `ollama pull` + `cp` creates the 'vision' alias (TODO #4).
+    ap.add_argument("--endpoint", default="http://127.0.0.1:11434")
     ap.add_argument("--model", default="vision")
     ap.add_argument("--out-dir", type=Path, default=Path(r"B:\hackathon-build\vision-smoke"))
     args = ap.parse_args()

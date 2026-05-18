@@ -18,7 +18,13 @@ from src.agents.wan_motion_prompt_generator import WanMotionPromptGenerator
 from src.agents.slide_critic import SlideCritic
 from src.agents.youtube_metadata_generator import YouTubeMetadataGenerator
 
-COMFY = "http://165.245.134.1:8188"
+# 3090 FORK: ComfyUI runs locally on Johnson. The orchestrator
+# kill+restarts ComfyUI between Qwen-Image / Wan / InfiniteTalk stages
+# (subprocess-per-stage pipeline) because the 3090 only has 24 GB and
+# ComfyUI tends to retain ~21 GB VRAM after a render. AMD canonical
+# baseline pointed this at the cluster droplet on port 8188 (see
+# docs/day3-runbook.md for the historical address).
+COMFY = "http://127.0.0.1:8188"
 VOICE_MAP = {'Alex': 'Ryan', 'Jordan': 'Ono_anna'}
 BRAND_DIR = REPO / 'brand'  # Dead Air intro/outro/closeout cards live here
 

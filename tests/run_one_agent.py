@@ -8,14 +8,17 @@ Env var overrides (optional):
   BILL_ANALYZER_CHUNKS_DIR    - directory containing chunks-{bill}-full.json
   BILL_ANALYZER_OUT_DIR       - directory to write agent outputs
   BILL_ANALYZER_USC_LMDB      - path to the USC LMDB
-  BILL_ANALYZER_SPINE_URL     - spine endpoint URL (default: http://165.245.134.1:8001/v1)
-  BILL_ANALYZER_REASONER_URL  - reasoner endpoint URL
-  BILL_ANALYZER_VISION_URL    - vision endpoint URL
+  BILL_ANALYZER_SPINE_URL     - spine endpoint URL (default falls through to base.py: http://127.0.0.1:11434/v1 on Johnson; was http://165.245.134.1:8001/v1 on AMD)
+  BILL_ANALYZER_REASONER_URL  - reasoner endpoint URL (same Ollama instance, alias 'reasoner')
+  BILL_ANALYZER_VISION_URL    - vision endpoint URL (TBD per TODO #4: llava:7b or qwen2.5-vl:7b)
 
 Local example (Windows):
   python tests/run_one_agent.py --agent summarizer --bill bbb --chunk-id ch01
 
-Cloud example (Linux on instance, hitting localhost):
+3090 fork example (Johnson, hitting local Ollama):
+  python tests/run_one_agent.py --agent summarizer --bill bbb --chunk-id ch01
+
+Cloud example (Linux on AMD instance, hitting localhost):
   BILL_ANALYZER_CHUNKS_DIR=/root/bills \
   BILL_ANALYZER_OUT_DIR=/root/agent-smoke \
   BILL_ANALYZER_USC_LMDB=/root/usc/usc.lmdb \
@@ -170,7 +173,10 @@ def main():
         try:
             from src.agents.usc_xref import enrich_with_usc
             from src.tools.fetch_usc import FetchUsc
-            lmdb_path = os.environ.get("BILL_ANALYZER_USC_LMDB", r"B:\amd-hackathon-bill-analyzer\data\usc.lmdb")
+            # 3090 FORK: default LMDB path derived from this file's location
+            # (was hardcoded to B:\amd-hackathon-bill-analyzer\... old fork).
+            _default_lmdb = str(Path(__file__).resolve().parents[1] / "data" / "usc.lmdb")
+            lmdb_path = os.environ.get("BILL_ANALYZER_USC_LMDB", _default_lmdb)
             fetcher = FetchUsc(lmdb_path)
             t1 = time.perf_counter()
             result.output = enrich_with_usc(result.output, fetcher)

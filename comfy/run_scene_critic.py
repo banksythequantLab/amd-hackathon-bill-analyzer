@@ -5,7 +5,7 @@ For each scene, calls Qwen3-VL-8B-Thinking on the cloud vision endpoint with
 
 Usage:
     python comfy/run_scene_critic.py
-        [--endpoint http://165.245.134.1:8002/v1]
+        [--endpoint http://127.0.0.1:11434/v1]   # was http://165.245.134.1:8002/v1 on AMD
         [--master eval/day6-master-candidates/master-seed256.png]
         [--scenes-dir eval/day6-references]
         [--relay-file eval/prompt-relay-bbb-ch01-day6.json]
@@ -30,27 +30,32 @@ from src.agents.scene_critic import (
 
 
 def main():
+    # 3090 FORK: argparse defaults derived from script location, were
+    # hardcoded to B:\amd-hackathon-bill-analyzer\... (old fork).
+    repo_root = Path(__file__).resolve().parent.parent
+    eval_dir = repo_root / "eval"
+
     ap = argparse.ArgumentParser()
     ap.add_argument("--endpoint", default=VISION_ENDPOINT_DEFAULT)
     ap.add_argument(
         "--master",
         type=Path,
-        default=Path(r"B:\amd-hackathon-bill-analyzer\eval\day6-master-candidates\master-seed256.png"),
+        default=eval_dir / "day6-master-candidates" / "master-seed256.png",
     )
     ap.add_argument(
         "--scenes-dir",
         type=Path,
-        default=Path(r"B:\amd-hackathon-bill-analyzer\eval\day6-references"),
+        default=eval_dir / "day6-references",
     )
     ap.add_argument(
         "--relay-file",
         type=Path,
-        default=Path(r"B:\amd-hackathon-bill-analyzer\eval\prompt-relay-bbb-ch01-day6.json"),
+        default=eval_dir / "prompt-relay-bbb-ch01-day6.json",
     )
     ap.add_argument(
         "--out",
         type=Path,
-        default=Path(r"B:\amd-hackathon-bill-analyzer\eval\scene-critic-bbb-ch01-day6.json"),
+        default=eval_dir / "scene-critic-bbb-ch01-day6.json",
     )
     ap.add_argument("--smoke", action="store_true", help="Only critique scene-02 (smoke test)")
     args = ap.parse_args()

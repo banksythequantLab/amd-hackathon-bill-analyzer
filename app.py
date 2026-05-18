@@ -32,8 +32,11 @@ import gradio as gr
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-SPINE = os.environ.get("SPINE_ENDPOINT", "http://165.245.134.1:8001/v1")
-USC_HTTP = os.environ.get("USC_LMDB_HTTP", "http://165.245.134.1:8004")
+SPINE = os.environ.get("SPINE_ENDPOINT", "http://127.0.0.1:11434/v1")
+USC_HTTP = os.environ.get("USC_LMDB_HTTP", "http://127.0.0.1:8004")
+# 3090 FORK: SPINE was http://165.245.134.1:8001/v1 (Llama-stack on AMD).
+# Now Ollama OpenAI-compat on Johnson. USC_HTTP host moved to localhost;
+# the LMDB HTTP server still needs to be started (see TODO #3 / usc.lmdb).
 
 # Patch agent base BEFORE importing agents
 import src.agents.base as agent_base
@@ -66,11 +69,14 @@ except Exception as _e:
     _CLOUD_PIPELINE_AVAILABLE = False
     _cloud_run_pipeline = None
 
-# Force per-class endpoint update (class attrs cached the constant at import time)
+# Force per-class endpoint update. Class attrs cached the SPINE_ENDPOINT
+# constant at import time, so re-pointing it on the base module isn't enough.
+# We unconditionally re-set every class so this works whether base.py's
+# default was the old AMD droplet (http://165.245.134.1:8001/v1) or the
+# new 3090-fork local Ollama (http://127.0.0.1:11434/v1).
 for AgentClass in (PlainEnglishSummarizer, UscCrossReference, PorkFinder, ConflictSpotter,
                    PodcastHeadlinesGenerator, HeadlineRanker):
-    if AgentClass.target_endpoint.startswith("http://165.245.134.1:8001"):
-        AgentClass.target_endpoint = SPINE
+    AgentClass.target_endpoint = SPINE
 
 USC_LOCAL_LMDB = ROOT / "data" / "usc.lmdb"
 
@@ -110,12 +116,13 @@ def check_endpoints() -> str:
     """
     import httpx
     badges = []
-    # ComfyUI base URL is derived from SPINE host (same droplet, port 8188).
+    # ComfyUI base URL is derived from SPINE host (same machine, port 8188).
+    # On the 3090 fork that's localhost; on the AMD baseline it was the droplet.
     try:
         comfy_host = SPINE.split('://')[1].split(':')[0]
         comfy_url = f"http://{comfy_host}:8188"
     except Exception:
-        comfy_url = "http://165.245.134.1:8188"
+        comfy_url = "http://127.0.0.1:8188"  # 3090 FORK fallback; AMD used 165.245.134.1
 
     for short, url, kind in [
         ("USC", USC_HTTP, "usc"),

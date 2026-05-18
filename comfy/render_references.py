@@ -17,10 +17,12 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-DEFAULT_HOST = "165.245.134.1:8188"
-DEFAULT_RELAY_FILE = Path(r"B:\amd-hackathon-bill-analyzer\eval\prompt-relay-bbb-ch01-day6.json")
-DEFAULT_WORKFLOW = Path(r"B:\amd-hackathon-bill-analyzer\comfy\workflows\z-image-turbo-api.json")
-DEFAULT_OUT_DIR = Path(r"B:\amd-hackathon-bill-analyzer\eval\day6-references")
+DEFAULT_HOST = "127.0.0.1:8188"  # 3090 FORK: was 165.245.134.1:8188 on AMD cluster
+# 3090 FORK: paths derived from script location (were hardcoded to old fork).
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_RELAY_FILE = _REPO_ROOT / "eval" / "prompt-relay-bbb-ch01-day6.json"
+DEFAULT_WORKFLOW = _REPO_ROOT / "comfy" / "workflows" / "z-image-turbo-api.json"
+DEFAULT_OUT_DIR = _REPO_ROOT / "eval" / "day6-references"
 
 
 def http_post_json(url: str, payload: dict, timeout: float = 30.0) -> dict:

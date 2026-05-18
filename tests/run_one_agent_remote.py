@@ -40,8 +40,10 @@ import sys
 import time
 from pathlib import Path
 
-# Cloud-side paths (on the AMD instance)
-INSTANCE_HOST = "165.245.134.1"  # Update if droplet IP changes
+# Cloud-side paths (on the AMD instance). NOT used by the 3090 fork --
+# this whole script tunnels SSH to the AMD droplet for canonical runs.
+# On Johnson, run tests/run_one_agent.py directly instead.
+INSTANCE_HOST = "165.245.134.1"  # Update if droplet IP changes (AMD only)
 SSH_KEY = Path.home() / ".ssh" / "amd_hackathon"
 SSH_USER = "root"
 
@@ -51,10 +53,12 @@ REMOTE_USC_LMDB = "/root/usc/usc.lmdb"
 REMOTE_BILLS_DIR = "/root/bills"
 REMOTE_OUT_DIR  = "/root/agent-smoke"
 
-# Local-side paths (on Vesper)
+# Local-side paths (on Vesper). Comment header says Vesper but this script
+# also runs on Johnson (3090 fork). LOCAL_REPO derived so SCP+SSH commands
+# upload from THIS fork, not the side-by-side AMD-baseline copy.
 LOCAL_BILLS_DIR = Path(r"B:\hackathon-build")
 LOCAL_OUT_DIR   = Path(r"B:\hackathon-build\agent-smoke")
-LOCAL_REPO      = Path(r"B:\amd-hackathon-bill-analyzer")
+LOCAL_REPO      = Path(__file__).resolve().parents[1]  # was r"B:\amd-hackathon-bill-analyzer"
 
 CHUNK_FILE_NAMES = {
     "bbb":  "chunks-bbb-full.json",

@@ -15,7 +15,8 @@ CHUNK_FILES = {
     "hr1":  Path(r"B:\hackathon-build\chunks-hr1-full.json"),
     "ndaa": Path(r"B:\hackathon-build\chunks-ndaa-full.json"),
 }
-USC_LMDB = Path(r"B:\amd-hackathon-bill-analyzer\data\usc.lmdb")
+# 3090 FORK: was r"B:\amd-hackathon-bill-analyzer\data\usc.lmdb" (old fork copy).
+USC_LMDB = Path(__file__).resolve().parents[1] / "data" / "usc.lmdb"
 
 def load_chunk(bill, chunk_id):
     p = CHUNK_FILES[bill]

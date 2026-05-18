@@ -55,7 +55,9 @@ CHUNK_FILES = {
     "hr1":  Path(r"B:\hackathon-build\chunks-hr1-full.json"),
     "ndaa": Path(r"B:\hackathon-build\chunks-ndaa-full.json"),
 }
-USC_LMDB = Path(r"B:\amd-hackathon-bill-analyzer\data\usc.lmdb")
+# 3090 FORK: USC_LMDB derived from this file's location (was hardcoded
+# to old fork). parents[2] = .../src/orchestrator/run_chunk.py -> repo root.
+USC_LMDB = Path(__file__).resolve().parents[2] / "data" / "usc.lmdb"
 DEFAULT_OUT = Path(r"B:\hackathon-build\agent-smoke")
 
 AGENTS = [

@@ -15,8 +15,10 @@ import sys
 import time
 from pathlib import Path
 
-# Add the repo to sys.path so we can import src.*
-REPO_ROOT = Path(r"B:\amd-hackathon-bill-analyzer")
+# 3090 FORK: REPO_ROOT derived from script location (was hardcoded to old
+# fork). sys.path.insert lets this file import src.* whether run from
+# tests/ or repo root.
+REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
 from src.agents.summarizer import PlainEnglishSummarizer
@@ -24,7 +26,8 @@ from src.agents.usc_xref import UscCrossReference, enrich_with_usc
 from src.tools.fetch_usc import FetchUsc
 
 CHUNKS_PATH = Path(r"B:\hackathon-build\chunks-bbb-full.json")
-USC_LMDB = Path(r"B:\amd-hackathon-bill-analyzer\data\usc.lmdb")
+# 3090 FORK: was r"B:\amd-hackathon-bill-analyzer\data\usc.lmdb" (old fork).
+USC_LMDB = REPO_ROOT / "data" / "usc.lmdb"
 OUT_DIR = Path(r"B:\hackathon-build\agent-smoke")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

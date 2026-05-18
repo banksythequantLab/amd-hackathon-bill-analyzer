@@ -328,7 +328,9 @@ def render_pair(
 
 
 if __name__ == "__main__":
-    capr_tts = Path(r"B:\amd-hackathon-bill-analyzer\eval\capr26-cloud\tts")
+    # 3090 FORK: paths derived from script location (were hardcoded to old fork).
+    _repo = Path(__file__).resolve().parent.parent
+    capr_tts = _repo / "eval" / "capr26-cloud" / "tts"
     out = Path(r"B:\hackathon-build\_infinitetalk_smoke\pair_01.mp4")
     render_pair(
         audio_1_path=capr_tts / "scene-01.flac",

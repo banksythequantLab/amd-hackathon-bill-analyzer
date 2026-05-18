@@ -4,11 +4,13 @@ Skip scene-01 (already done). Per-scene substitution: frames, prompt, filename.
 import json, time, urllib.parse, urllib.request, urllib.error
 from pathlib import Path
 
-HOST = "165.245.134.1:8188"
-WF_FILE = Path(r"B:\amd-hackathon-bill-analyzer\comfy\workflows\ltx23-relay-i2v-cloud-api.json")
-RELAY_FILE = Path(r"B:\amd-hackathon-bill-analyzer\eval\prompt-relay-bbb-ch01-day6.json")
-DUR_FILE = Path(r"B:\amd-hackathon-bill-analyzer\eval\scene-durations-bbb-ch01-day6.json")
-OUT_DIR = Path(r"B:\amd-hackathon-bill-analyzer\eval\day6-ltx-clips")
+HOST = "127.0.0.1:8188"  # 3090 FORK: was 165.245.134.1:8188 on AMD cluster
+# 3090 FORK: paths derived from script location (were hardcoded to old fork).
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+WF_FILE = _REPO_ROOT / "comfy" / "workflows" / "ltx23-relay-i2v-cloud-api.json"
+RELAY_FILE = _REPO_ROOT / "eval" / "prompt-relay-bbb-ch01-day6.json"
+DUR_FILE = _REPO_ROOT / "eval" / "scene-durations-bbb-ch01-day6.json"
+OUT_DIR = _REPO_ROOT / "eval" / "day6-ltx-clips"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
