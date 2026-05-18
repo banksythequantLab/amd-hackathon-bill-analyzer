@@ -1,0 +1,153 @@
+{
+  "test": "hr1_summarizer_3090_fork",
+  "spine": {
+    "model": "qwen3:30b (Q4_K_M)",
+    "alias": "spine",
+    "num_ctx": 65536,
+    "kv_cache_type": "q8_0",
+    "endpoint": "http://127.0.0.1:11434/v1"
+  },
+  "max_input_cl100k_per_chunk": 50500,
+  "amd_baseline_hr1_ch01": {
+    "chunk_id": "ch01",
+    "title_marker": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+    "chunk_tokens_cl100k": 206299,
+    "summarizer_output": {
+      "chunk_id": "ch01",
+      "title_marker": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+      "one_sentence_summary": "This section reauthorizes and modifies key agricultural, nutrition, and forestry programs, including changes to SNAP benefits, farm commodity support, crop insurance, disaster assistance, and conservation funding.",
+      "bullets": [
+        "Revises the Thrifty Food Plan to base SNAP allotments on updated food cost data and household size, with a new re-evaluation of market baskets starting in 2027.",
+        "Modifies SNAP work requirements for able-bodied adults, including exemptions for non-contiguous states and expanded exceptions for medical, parental, and tribal status.",
+        "Expands eligibility for standard utility allowances to include households with elderly or disabled members and restricts internet service fees from being counted in shelter cost calculations.",
+        "Introduces a new payment error rate-based matching funds system for SNAP, where states with lower error rates receive higher federal funding shares.",
+        "Establishes a new administrative cost-sharing structure for SNAP, reducing state cost shares from 50% to 25% starting in 2027.",
+        "Authorizes new grants for national nutrition education and obesity prevention programs through 2025.",
+        "Restricts SNAP eligibility to specific categories of lawful residents, excluding most temporary visitors and non-resident aliens.",
+        "Rescinds unobligated funds for forestry programs and establishes new reference prices and base acres for farm commodity programs, with expanded support for beginning farmers and rural America."
+      ],
+      "affected_groups": [
+        "SNAP recipients",
+        "Small and beginning farmers",
+        "Rural communities",
+        "Farmers and ranchers",
+        "Conservation organizations",
+        "Forestry and land management agencies"
+      ]
+    },
+    "elapsed_s": 168.2,
+    "prompt_tokens": 220657,
+    "completion_tokens": 390,
+    "note": "Cold prefill on HR1 chunk text. APC was warm from earlier in day for the spine prefix template, but HR1 chunk content itself was new to the cache hence the longer time vs BBB warm rerun (21.4s)."
+  },
+  "fork_results": [
+    {
+      "chunk_id": "ch01",
+      "marker": "TITLE I",
+      "marker_label": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+      "start_page": 1,
+      "end_page": 66,
+      "chunk_tokens_cl100k": 47461,
+      "ok": true,
+      "elapsed_s": 84.43,
+      "prompt_tokens": 53663,
+      "completion_tokens": 1500,
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+        "one_sentence_summary": "This title updates nutrition assistance programs, modifies commodity and crop insurance programs, enhances disaster assistance, rescinds forestry funding, and increases rural investments.",
+        "bullets": [
+          "Updates SNAP program rules including work requirements, utility allowances, and eligibility for aliens.",
+          "Modifies commodity programs with new reference prices, base acres, and payment limits for farmers.",
+          "Enhances crop insurance with new benefits for beginning farmers and area-based coverage options.",
+          "Expands disaster assistance for livestock, honeybees, and tree losses.",
+          "Rescinds forestry funding previously allocated."
+        ],
+        "affected_groups": []
+      }
+    },
+    {
+      "chunk_id": "ch02",
+      "marker": "Subtitle A (subtitle-cut)",
+      "marker_label": "Subtitle A\u2014Oil and Gas Leasing",
+      "start_page": 66,
+      "end_page": 87,
+      "chunk_tokens_cl100k": 14561,
+      "ok": true,
+      "elapsed_s": 20.71,
+      "prompt_tokens": 16052,
+      "completion_tokens": 1033,
+      "output": {
+        "chunk_id": "ch02",
+        "title_marker": "Subtitle A\u2014Oil and Gas Leasing",
+        "one_sentence_summary": "This section revives and expands oil and gas leasing on federal lands by ending previous restrictions, mandating regular lease sales, and adjusting royalty rates and revenue sharing.",
+        "bullets": [
+          "Ends restrictions on onshore oil/gas leasing by repealing prior royalty rate rules and noncompetitive leasing provisions.",
+          "Mandates quarterly onshore lease sales in 9 specific states, requiring at least 50% of nominated parcels to be offered.",
+          "Requires 30 offshore lease sales in the Gulf of Mexico by 2040 and 6 in Alaska's Cook Inlet by 2032, with minimum acreage offerings.",
+          "Sets royalty rates at 12.5%-16.67% for offshore leases and adjusts revenue sharing to pay 70% of Alaska lease revenues to the state starting in 2034.",
+          "Requires the Secretary of the Interior to immediately resume lease sales after completing environmental reviews, with strict timing deadlines."
+        ],
+        "affected_groups": [
+          "Federal land management agencies",
+          "Oil and gas companies",
+          "State governments (especially Alaska)",
+          "Federal land leaseholders"
+        ]
+      }
+    },
+    {
+      "chunk_id": "ch03",
+      "marker": "TITLE VII",
+      "marker_label": "TITLE VII\u2014FINANCE",
+      "start_page": 87,
+      "end_page": 219,
+      "chunk_tokens_cl100k": 92862,
+      "skipped": true,
+      "skip_reason": "chunk 92,862 cl100k tokens exceeds 64K ctx budget"
+    },
+    {
+      "chunk_id": "ch04",
+      "marker": "Subtitle B (subtitle-cut)",
+      "marker_label": "Subtitle B\u2014Health",
+      "start_page": 219,
+      "end_page": 291,
+      "chunk_tokens_cl100k": 50049,
+      "ok": false,
+      "errors": [
+        "attempt 1: response was not parseable JSON"
+      ],
+      "raw_preview": ""
+    },
+    {
+      "chunk_id": "ch05",
+      "marker": "Subtitle B (subtitle-cut)",
+      "marker_label": "Subtitle B\u2014Governmental Affairs",
+      "start_page": 291,
+      "end_page": 330,
+      "chunk_tokens_cl100k": 25871,
+      "ok": true,
+      "elapsed_s": 37.92,
+      "prompt_tokens": 27369,
+      "completion_tokens": 1356,
+      "output": {
+        "chunk_id": "ch05",
+        "title_marker": "Subtitle B\u2014Governmental Affairs",
+        "one_sentence_summary": "This bill creates new verification rules for federal health benefits enrollment, establishes numerous immigration application fees with inflation adjustments, and funds immigration enforcement activities.",
+        "bullets": [
+          "Requires new verification of family relationships for federal health benefits enrollment, including audits of marriage/birth certificates",
+          "Creates dozens of new immigration application fees for asylum, parole, employment authorization, and status adjustments",
+          "Mandates annual inflation adjustments for all immigration fees based on Consumer Price Index",
+          "Directs fee revenues to specific agencies (like ICE and USCIS) or the general fund, with some funds restricted to fraud prevention",
+          "Appropriates billions for immigration enforcement, including hiring, detention, removal operations, and technology upgrades"
+        ],
+        "affected_groups": [
+          "Federal employees",
+          "Immigrants applying for asylum or status",
+          "U.S. Immigration and Customs Enforcement",
+          "U.S. Citizenship and Immigration Services"
+        ]
+      }
+    }
+  ]
+}

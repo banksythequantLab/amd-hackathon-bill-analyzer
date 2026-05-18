@@ -1,0 +1,27 @@
+{
+  "test": "ollama_openai_compat_wiring",
+  "model": "spine",
+  "alias_target": "qwen3:30b",
+  "endpoint": "http://127.0.0.1:11434/v1",
+  "elapsed_s": 34.9,
+  "prompt_tokens": 1345,
+  "completion_tokens": 771,
+  "output": {
+    "chunk_id": "hr1-smoke-ch01-first3500",
+    "title_marker": "TITLE I (wiring-test slice)",
+    "one_sentence_summary": "This title updates SNAP benefits, farm payment rules, forestry funding, crop insurance, and rural development programs.",
+    "bullets": [
+      "Updates SNAP work requirements and eligibility rules for able-bodied adults and utility allowances.",
+      "Changes farm payment systems including price loss coverage, risk management, and payment limits for large producers.",
+      "Rescinds funding for forestry programs and updates sugar/dairy policy.",
+      "Adjusts crop insurance rules for beginning farmers, area-based coverage, and premium support.",
+      "Creates new rural development programs for conservation, research, and horticulture."
+    ],
+    "affected_groups": [
+      "SNAP recipients",
+      "Farmers and ranchers",
+      "Rural communities"
+    ]
+  },
+  "raw_response_preview": "{\n  \"chunk_id\": \"hr1-smoke-ch01-first3500\",\n  \"title_marker\": \"TITLE I (wiring-test slice)\",\n  \"one_sentence_summary\": \"This title updates SNAP benefits, farm payment rules, forestry funding, crop insurance, and rural development programs.\",\n  \"bullets\": [\n    \"Updates SNAP work requirements and eligibility rules for able-bodied adults and utility allowances.\",\n    \"Changes farm payment systems including price loss coverage, risk management, and payment limits for large producers.\",\n    \"Rescinds funding for forestry programs and updates sugar/dairy policy.\",\n    \"Adjusts crop insurance rules "
+}

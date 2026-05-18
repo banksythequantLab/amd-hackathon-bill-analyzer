@@ -37,12 +37,33 @@ import tiktoken
 
 
 # Boundary patterns, ordered by preference for splitting.
-# Highest preference (DIVISION) -> lowest (TITLE).
-# Subtitle is the fallback when a Title is too big.
+# Highest preference (DIVISION) -> lowest (Subtitle, CHAPTER, SEC.).
+#
+# TITLE is intentionally case-sensitive (UPPER only) and Roman-only.
+# A line that starts "title VII of the Tariff Act of 1930" or "title 42,
+# Code of Federal Regulations" is a *reference* to an external statute,
+# not a bill structural marker -- the case-sensitive match avoids those.
+# Similarly we drop the `[0-9]+` arm (no real bill numbers TITLEs in
+# Arabic in our corpus) to prevent "TITLE 18" / "title 42" false hits.
+#
+# CHAPTER and SEC. are added as finer-grained fallbacks for monster
+# segments like HR1 TITLE VII Finance (93K cl100k tokens, no inner
+# Subtitle within the first half). They're only consulted by the
+# recursive sub-splitter in pack_chunks; they're NOT in the primary
+# greedy pack because that would over-fragment normal bills.
 BOUNDARY_PATTERNS = [
     ("DIVISION",  re.compile(r"^\s*(DIVISION\s+([A-Z]|[IVXLCDM]+))(?:\b|$)", re.MULTILINE)),
-    ("TITLE",     re.compile(r"^\s*(TITLE\s+([IVXLCDM]+|[0-9]+))(?:\b|$)",   re.MULTILINE | re.IGNORECASE)),
+    ("TITLE",     re.compile(r"^\s*(TITLE\s+([IVXLCDM]+))(?:\b|$)",          re.MULTILINE)),
     ("Subtitle",  re.compile(r"^\s*(Subtitle\s+([A-Z]|[0-9]+))(?:\b|$)",     re.MULTILINE)),
+]
+
+# Sub-splitter patterns -- consulted only when a single primary segment
+# is too large to fit in a chunk on its own.
+SUBSPLIT_PATTERNS = [
+    ("CHAPTER",   re.compile(r"^\s*(CHAPTER\s+(\d+|[IVXLCDM]+))\b",          re.MULTILINE)),
+    ("Subchapter",re.compile(r"^\s*(Subchapter\s+[A-Z])\b",                  re.MULTILINE)),
+    ("PART",      re.compile(r"^\s*(PART\s+[IVXLCDM]+)\b",                   re.MULTILINE)),
+    ("SEC",       re.compile(r"^\s*(SEC\.\s+\d+)\b",                         re.MULTILINE)),
 ]
 
 # Default token budget per chunk. Empirically calibrated against the spine
@@ -203,16 +224,37 @@ def pack_chunks(text: str, boundaries: list[Boundary], page_starts: list[int],
     for b, seg in segments:
         seg_tokens = count_tokens(seg, encoder)
 
-        # Single segment too large to fit alone? Sub-split on Subtitle (already done
-        # by find_boundaries since Subtitle is in the boundary list). If it's STILL
-        # too big, emit anyway with a warning.
+        # Single segment too large to fit alone? Try the recursive
+        # sub-splitter on CHAPTER/Subchapter/PART/SEC markers inside the
+        # segment. This handles HR1 TITLE VII (93K cl100k tokens, no
+        # inner Subtitle but 7 CHAPTER markers and 107 SEC. markers).
         if seg_tokens > max_tokens:
             if current_segs:
                 emit()
                 current_segs = []
                 current_tokens = 0
+            sub_chunks = _subsplit_oversized(b, seg, page_starts, max_tokens, encoder)
+            if len(sub_chunks) > 1:
+                # We managed to split it. Emit each sub-chunk as its own chunk.
+                for sb_label, sb_text, sb_first_b in sub_chunks:
+                    chunks.append(Chunk(
+                        chunk_id=f"ch{len(chunks) + 1:02d}",
+                        marker=f"{b.marker} {sb_label}",
+                        marker_label=f"{b.full_line} -> {sb_label}",
+                        start_page=sb_first_b.get("page", b.page),
+                        end_page=page_for_offset(
+                            sb_first_b.get("end_offset", b.char_offset + len(sb_text) - 1),
+                            page_starts,
+                        ),
+                        tokens=count_tokens(sb_text, encoder),
+                        char_count=len(sb_text),
+                        text=sb_text,
+                    ))
+                continue
+            # Could not split further -- emit whole with a warning (rare
+            # pathological case; the orchestrator will refuse this chunk).
             print(f"   ! Single segment {b.marker} is {seg_tokens:,} tokens "
-                  f"(over max {max_tokens:,}); emitting as oversized chunk.",
+                  f"(over max {max_tokens:,}); no sub-split found, emitting whole.",
                   file=sys.stderr)
             current_segs = [(b, seg)]
             current_tokens = seg_tokens
@@ -231,6 +273,103 @@ def pack_chunks(text: str, boundaries: list[Boundary], page_starts: list[int],
 
     emit()
     return chunks
+
+
+def _subsplit_oversized(parent_b: Boundary, seg_text: str, page_starts: list[int],
+                        max_tokens: int, encoder) -> list[tuple[str, str, dict]]:
+    """Recursively split an oversized parent segment.
+
+    Try SUBSPLIT_PATTERNS in order of preference. Return list of
+    (label, text, meta) tuples where meta has 'page' and 'end_offset'
+    keyed to absolute offsets in the parent text.
+
+    Returns the original segment as a single-element list if no
+    sub-split markers are found inside it.
+    """
+    # parent_b.char_offset is where seg_text starts in the FULL bill text;
+    # all sub-split match positions are relative to seg_text. We translate
+    # back to absolute positions via parent_b.char_offset + local_offset.
+    parent_offset = parent_b.char_offset
+
+    for label, regex in SUBSPLIT_PATTERNS:
+        matches = list(regex.finditer(seg_text))
+        # Need at least 2 matches to split meaningfully; the first match
+        # is usually the same point as the parent boundary (just deeper).
+        if len(matches) < 2:
+            continue
+
+        # Convert matches to (label_str, local_offset) pairs.
+        cuts: list[tuple[str, int]] = []
+        for m in matches:
+            line_end = seg_text.find("\n", m.end())
+            line = seg_text[m.start():line_end if line_end > 0 else m.end() + 80].strip()
+            cuts.append((line.replace("\n", " ")[:60], m.start()))
+
+        # Greedy-pack the sub-segments using token budget.
+        results: list[tuple[str, str, dict]] = []
+        pack_text: list[str] = []
+        pack_tokens = 0
+        pack_first_label = ""
+        pack_first_local_offset = 0
+
+        for i, (sub_label, sub_local_offset) in enumerate(cuts):
+            sub_end = cuts[i + 1][1] if i + 1 < len(cuts) else len(seg_text)
+            sub_text = seg_text[sub_local_offset:sub_end]
+            sub_tokens = count_tokens(sub_text, encoder)
+
+            # If this single sub-segment itself overflows, emit whatever's
+            # packed and then emit the sub-segment as its own chunk (still
+            # may be too big -- caller will handle if so).
+            if sub_tokens > max_tokens:
+                if pack_text:
+                    results.append((
+                        pack_first_label,
+                        "".join(pack_text),
+                        {"page": page_for_offset(parent_offset + pack_first_local_offset, page_starts),
+                         "end_offset": parent_offset + sub_local_offset - 1},
+                    ))
+                    pack_text = []
+                    pack_tokens = 0
+                results.append((
+                    sub_label,
+                    sub_text,
+                    {"page": page_for_offset(parent_offset + sub_local_offset, page_starts),
+                     "end_offset": parent_offset + sub_end - 1},
+                ))
+                continue
+
+            if pack_tokens + sub_tokens > max_tokens and pack_text:
+                results.append((
+                    pack_first_label,
+                    "".join(pack_text),
+                    {"page": page_for_offset(parent_offset + pack_first_local_offset, page_starts),
+                     "end_offset": parent_offset + sub_local_offset - 1},
+                ))
+                pack_text = []
+                pack_tokens = 0
+
+            if not pack_text:
+                pack_first_label = sub_label
+                pack_first_local_offset = sub_local_offset
+
+            pack_text.append(sub_text)
+            pack_tokens += sub_tokens
+
+        if pack_text:
+            results.append((
+                pack_first_label,
+                "".join(pack_text),
+                {"page": page_for_offset(parent_offset + pack_first_local_offset, page_starts),
+                 "end_offset": parent_offset + len(seg_text) - 1},
+            ))
+
+        # Only return if we actually managed multiple chunks.
+        if len(results) > 1:
+            return results
+
+    # No sub-pattern produced a useful split.
+    return [(parent_b.marker, seg_text, {"page": parent_b.page,
+                                          "end_offset": parent_offset + len(seg_text) - 1})]
 
 
 def chunk_pdf(pdf_path: Path, max_tokens: int = MAX_TOKENS_DEFAULT) -> list[dict]:

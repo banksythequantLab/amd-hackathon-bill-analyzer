@@ -21,9 +21,11 @@ from pydantic import BaseModel
 
 
 # Default endpoints — overridden in production via the orchestrator
-SPINE_ENDPOINT    = "http://165.245.134.1:8001/v1"
-REASONER_ENDPOINT = "http://165.245.134.1:8003/v1"
-VISION_ENDPOINT   = "http://165.245.134.1:8002/v1"
+# 3090 FORK: spine + reasoner served by local Ollama (qwen3:8b) on Johnson.
+# Vision endpoint pending (Ollama needs llava:7b or qwen2.5vl:7b pulled).
+SPINE_ENDPOINT    = "http://127.0.0.1:11434/v1"
+REASONER_ENDPOINT = "http://127.0.0.1:11434/v1"
+VISION_ENDPOINT   = "http://127.0.0.1:11434/v1"
 
 
 @dataclass
@@ -49,6 +51,8 @@ class AgentBase:
 
     name: str = "base"
     target_endpoint: str = SPINE_ENDPOINT  # override per-agent
+    # 3090 FORK: model name "spine"/"reasoner"/"vision" are Ollama aliases
+    # created via `ollama cp qwen3:8b spine` etc. Override per-agent unchanged.
     target_model: str = "spine"
     temperature: float = 0.0
     max_tokens: int = 2000

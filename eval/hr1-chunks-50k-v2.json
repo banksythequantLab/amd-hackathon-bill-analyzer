@@ -1,0 +1,72 @@
+[
+  {
+    "chunk_id": "ch01",
+    "marker": "TITLE I",
+    "marker_label": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+    "start_page": 1,
+    "end_page": 66,
+    "tokens": 47461,
+    "char_count": 174430,
+    "text_preview": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY\nSubtitle A\u2014Nutrition\nSec. 10101. Re-evaluation of thrifty food plan.\nSec. 10102. Modifications to SNAP work requirements for able-bodied adult..."
+  },
+  {
+    "chunk_id": "ch02",
+    "marker": "Subtitle A (subtitle-cut)",
+    "marker_label": "Subtitle A\u2014Oil and Gas Leasing",
+    "start_page": 66,
+    "end_page": 87,
+    "tokens": 14561,
+    "char_count": 55301,
+    "text_preview": "Subtitle A\u2014Oil and Gas Leasing\nSEC. 50101. ONSHORE OIL AND GAS LEASING.\n(a) REPEALOFINFLATIONREDUCTIONACTPROVISIONS.\u2014\n(1) ONSHORE OIL AND GAS ROYALTY RATES.\u2014Subsection (a)\nof section 50262 of Public L..."
+  },
+  {
+    "chunk_id": "ch03",
+    "marker": "TITLE VII CHAPTER 1\u2014PROVIDING PERMANENT TAX RELIEF FOR",
+    "marker_label": "TITLE VII\u2014FINANCE -> CHAPTER 1\u2014PROVIDING PERMANENT TAX RELIEF FOR",
+    "start_page": 87,
+    "end_page": 141,
+    "tokens": 39233,
+    "char_count": 146230,
+    "text_preview": "CHAPTER 1\u2014PROVIDING PERMANENT TAX RELIEF FOR\nMIDDLE-CLASS FAMILIES AND WORKERS\nSEC. 70101. EXTENSION AND ENHANCEMENT OF REDUCED RATES.\n(a) INGENERAL.\u2014Section 1(j) is amended\u2014\n(1) in paragraph (1), by ..."
+  },
+  {
+    "chunk_id": "ch04",
+    "marker": "TITLE VII CHAPTER 4\u2014INVESTING IN AMERICAN FAMILIES,",
+    "marker_label": "TITLE VII\u2014FINANCE -> CHAPTER 4\u2014INVESTING IN AMERICAN FAMILIES,",
+    "start_page": 141,
+    "end_page": 212,
+    "tokens": 49080,
+    "char_count": 185165,
+    "text_preview": "CHAPTER 4\u2014INVESTING IN AMERICAN FAMILIES,\nCOMMUNITIES, AND SMALL BUSINESSES\nSubchapter A\u2014Permanent Investments in Families and\nChildren\nSEC. 70401. ENHANCEMENT OF EMPLOYER-PROVIDED CHILD CARE\nCREDIT.\n..."
+  },
+  {
+    "chunk_id": "ch05",
+    "marker": "TITLE VII CHAPTER 6\u2014ENHANCING DEDUCTION AND INCOME TAX",
+    "marker_label": "TITLE VII\u2014FINANCE -> CHAPTER 6\u2014ENHANCING DEDUCTION AND INCOME TAX",
+    "start_page": 212,
+    "end_page": 219,
+    "tokens": 4391,
+    "char_count": 17152,
+    "text_preview": "CHAPTER 6\u2014ENHANCING DEDUCTION AND INCOME TAX\nCREDIT GUARDRAILS, AND OTHER REFORMS\nSEC. 70601. MODIFICATION AND EXTENSION OF LIMITATION ON\nEXCESS BUSINESS LOSSES OF NONCORPORATE TAX-\nPAYERS.\n(a) RULE M..."
+  },
+  {
+    "chunk_id": "ch06",
+    "marker": "Subtitle B (subtitle-cut)",
+    "marker_label": "Subtitle B\u2014Health",
+    "start_page": 219,
+    "end_page": 286,
+    "tokens": 47067,
+    "char_count": 181550,
+    "text_preview": "Subtitle B\u2014Health\nCHAPTER 1\u2014MEDICAID\nSubchapter A\u2014Reducing Fraud and Improving Enrollment\nProcesses\nSEC. 71101. MORATORIUM ON IMPLEMENTATION OF RULE RELATING\nTO ELIGIBILITY AND ENROLLMENT IN MEDICARE\n..."
+  },
+  {
+    "chunk_id": "ch07",
+    "marker": "Subtitle A (subtitle-cut)",
+    "marker_label": "Subtitle A\u2014Homeland Security Provisions",
+    "start_page": 286,
+    "end_page": 330,
+    "tokens": 28853,
+    "char_count": 116302,
+    "text_preview": "Subtitle A\u2014Homeland Security Provisions\nSEC. 90001. BORDER INFRASTRUCTURE AND WALL SYSTEM.\nIn addition to amounts otherwise available, there is appro-\npriated to the Commissioner of U.S. Customs and B..."
+  }
+]

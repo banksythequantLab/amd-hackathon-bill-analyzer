@@ -1,0 +1,283 @@
+{
+  "test": "hr1_summarizer_3090_fork_v2",
+  "spine": {
+    "model": "qwen3:30b-a3b-instruct-2507-q4_K_M",
+    "alias": "spine",
+    "num_ctx": 65536,
+    "kv_cache_type": "q8_0",
+    "endpoint": "http://127.0.0.1:11434/v1",
+    "thinking": false
+  },
+  "max_input_cl100k_per_chunk": 50500,
+  "amd_baseline_hr1_ch01": {
+    "chunk_id": "ch01",
+    "title_marker": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+    "chunk_tokens_cl100k": 206299,
+    "summarizer_output": {
+      "chunk_id": "ch01",
+      "title_marker": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+      "one_sentence_summary": "This section reauthorizes and modifies key agricultural, nutrition, and forestry programs, including changes to SNAP benefits, farm commodity support, crop insurance, disaster assistance, and conservation funding.",
+      "bullets": [
+        "Revises the Thrifty Food Plan to base SNAP allotments on updated food cost data and household size, with a new re-evaluation of market baskets starting in 2027.",
+        "Modifies SNAP work requirements for able-bodied adults, including exemptions for non-contiguous states and expanded exceptions for medical, parental, and tribal status.",
+        "Expands eligibility for standard utility allowances to include households with elderly or disabled members and restricts internet service fees from being counted in shelter cost calculations.",
+        "Introduces a new payment error rate-based matching funds system for SNAP, where states with lower error rates receive higher federal funding shares.",
+        "Establishes a new administrative cost-sharing structure for SNAP, reducing state cost shares from 50% to 25% starting in 2027.",
+        "Authorizes new grants for national nutrition education and obesity prevention programs through 2025.",
+        "Restricts SNAP eligibility to specific categories of lawful residents, excluding most temporary visitors and non-resident aliens.",
+        "Rescinds unobligated funds for forestry programs and establishes new reference prices and base acres for farm commodity programs, with expanded support for beginning farmers and rural America."
+      ],
+      "affected_groups": [
+        "SNAP recipients",
+        "Small and beginning farmers",
+        "Rural communities",
+        "Farmers and ranchers",
+        "Conservation organizations",
+        "Forestry and land management agencies"
+      ]
+    },
+    "elapsed_s": 168.2,
+    "prompt_tokens": 220657,
+    "completion_tokens": 390,
+    "note": "Cold prefill on HR1 chunk text. APC was warm from earlier in day for the spine prefix template, but HR1 chunk content itself was new to the cache hence the longer time vs BBB warm rerun (21.4s)."
+  },
+  "fork_results": [
+    {
+      "chunk_id": "ch01",
+      "marker": "TITLE I",
+      "marker_label": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+      "start_page": 1,
+      "end_page": 66,
+      "chunk_tokens_cl100k": 47461,
+      "ok": true,
+      "elapsed_s": 55.85,
+      "prompt_tokens": 53661,
+      "completion_tokens": 378,
+      "output": {
+        "chunk_id": "ch01",
+        "title_marker": "TITLE I\u2014COMMITTEE ON AGRICULTURE, NUTRITION, AND FORESTRY",
+        "one_sentence_summary": "This section updates nutrition assistance programs, modernizes agricultural support systems, and makes targeted changes to farm subsidies, disaster aid, and rural investments.",
+        "bullets": [
+          "Revises the Thrifty Food Plan to update food cost calculations, adjust household allotments, and require a re-evaluation of food baskets no earlier than 2027, with cost neutrality rules.",
+          "Modifies SNAP work requirements by expanding exemptions for vulnerable groups and creating a temporary waiver for noncontiguous states with a defined good faith effort standard.",
+          "Expands utility cost allowances for SNAP recipients with elderly or disabled members and restricts internet service fees from being counted in shelter cost deductions.",
+          "Introduces a performance-based matching fund system for states, where lower payment error rates lead to higher federal funding shares, with delayed implementation for high-error states.",
+          "Updates key agricultural programs including reference prices for commodities, base acres, and crop insurance, with new payment limits and inflation adjustments.",
+          "Expands support for beginning farmers through increased premium assistance and improves crop insurance affordability and administrative funding.",
+          "Enhances disaster assistance for livestock, honeybees, and trees, including new payments for unborn livestock and bird depredation on fish farms.",
+          "Increases funding for conservation, research, rural development, and specialty crops, with multi-year appropriations and new pilot programs."
+        ],
+        "affected_groups": [
+          "SNAP recipients",
+          "Small and beginning farmers",
+          "Rural communities",
+          "Livestock producers",
+          "State agencies administering SNAP",
+          "Agricultural researchers and extension services"
+        ]
+      }
+    },
+    {
+      "chunk_id": "ch02",
+      "marker": "Subtitle A (subtitle-cut)",
+      "marker_label": "Subtitle A\u2014Oil and Gas Leasing",
+      "start_page": 66,
+      "end_page": 87,
+      "chunk_tokens_cl100k": 14561,
+      "ok": true,
+      "elapsed_s": 13.1,
+      "prompt_tokens": 16050,
+      "completion_tokens": 453,
+      "output": {
+        "chunk_id": "ch02",
+        "title_marker": "Subtitle A\u2014Oil and Gas Leasing",
+        "one_sentence_summary": "This section repeals recent restrictions on oil and gas leasing, mandates immediate resumption of onshore and offshore lease sales with specific schedules and acreage requirements, and sets standardized royalty rates and lease terms to accelerate fossil fuel development on federal lands.",
+        "bullets": [
+          "Repeals recent federal restrictions on onshore oil and gas leasing, restoring pre-2022 royalty rates and allowing non-competitive leasing.",
+          "Requires the Secretary of the Interior to immediately resume quarterly onshore lease sales in specified states, with a minimum of 4 sales per year and at least 50% of available parcels offered.",
+          "Mandates a minimum of 30 region-wide offshore lease sales in the Gulf of America by 2040, with specific timing and acreage requirements (80 million acres minimum per sale).",
+          "Requires 6 offshore lease sales in Alaska's Cook Inlet region by 2032, with 70% of revenues from these sales going to the State of Alaska starting in 2034.",
+          "Sets a standardized royalty rate of 12.5% to 16.67% for offshore leases and allows commingling of production from multiple reservoirs under specified measurement standards.",
+          "Requires the Secretary to resume oil and gas leasing in the National Petroleum Reserve\u2013Alaska (NPR-A) with at least 5 lease sales over 10 years, offering 4 million acres per sale.",
+          "Establishes a new lease sale schedule for the Arctic National Wildlife Refuge (Coastal Plain), requiring 4 area-wide sales within 10 years with 400,000 acres minimum per sale and 70% of revenues going to Alaska after 2033."
+        ],
+        "affected_groups": [
+          "Oil and gas companies",
+          "State governments (especially Alaska)",
+          "Federal land managers (Bureau of Land Management)",
+          "Environmental advocacy groups",
+          "Indigenous communities near leasing areas"
+        ]
+      }
+    },
+    {
+      "chunk_id": "ch03",
+      "marker": "TITLE VII CHAPTER 1\u2014PROVIDING PERMANENT TAX RELIEF FOR",
+      "marker_label": "TITLE VII\u2014FINANCE -> CHAPTER 1\u2014PROVIDING PERMANENT TAX RELIEF FOR",
+      "start_page": 87,
+      "end_page": 141,
+      "chunk_tokens_cl100k": 39233,
+      "ok": true,
+      "elapsed_s": 43.4,
+      "prompt_tokens": 41616,
+      "completion_tokens": 436,
+      "output": {
+        "chunk_id": "ch03",
+        "title_marker": "TITLE VII\u2014FINANCE -> CHAPTER 1\u2014PROVIDING PERMANENT TAX RELIEF FOR",
+        "one_sentence_summary": "This chapter extends and enhances key tax breaks for middle-class families and workers, including permanent increases to the standard deduction, child tax credit, and senior deduction, while also expanding tax benefits for business investment and modifying international tax rules.",
+        "bullets": [
+          "Extends and permanently increases the standard deduction to $23,625 for single filers and $15,750 for married couples filing jointly, with inflation adjustments starting in 2025.",
+          "Permanently extends and increases the child tax credit to $2,200 per qualifying child, with a $1,400 refundable portion, and requires Social Security numbers for eligibility.",
+          "Creates a permanent $6,000 tax deduction for seniors aged 65 and older, with income phaseouts and a requirement to include a Social Security number.",
+          "Permanently extends and enhances the qualified business income deduction, including a new $400 minimum deduction and inflation adjustments.",
+          "Increases estate and gift tax exemptions to $15 million and extends the alternative minimum tax exemption amounts with updated inflation adjustments.",
+          "Expands tax relief for business investment by making full expensing permanent, increasing the Section 179 deduction limit to $2.5 million, and creating a new 100% depreciation allowance for qualified production property.",
+          "Introduces new tax benefits for workers, including a $25,000 deduction for qualified tips and a $12,500 deduction for qualified overtime pay, both with income limits and Social Security number requirements."
+        ],
+        "affected_groups": [
+          "middle-class families",
+          "seniors aged 65+",
+          "low- and middle-income workers",
+          "small business owners",
+          "employers offering paid family and medical leave",
+          "individuals with qualified business income"
+        ]
+      }
+    },
+    {
+      "chunk_id": "ch04",
+      "marker": "TITLE VII CHAPTER 4\u2014INVESTING IN AMERICAN FAMILIES,",
+      "marker_label": "TITLE VII\u2014FINANCE -> CHAPTER 4\u2014INVESTING IN AMERICAN FAMILIES,",
+      "start_page": 141,
+      "end_page": 212,
+      "chunk_tokens_cl100k": 49080,
+      "ok": true,
+      "elapsed_s": 46.73,
+      "prompt_tokens": 51489,
+      "completion_tokens": 363,
+      "output": {
+        "chunk_id": "ch04",
+        "title_marker": "TITLE VII\u2014FINANCE -> CHAPTER 4\u2014INVESTING IN AMERICAN FAMILIES,",
+        "one_sentence_summary": "This chapter enhances tax benefits for families, students, and small businesses by expanding child care and adoption credits, increasing education tax incentives, and strengthening community development programs.",
+        "bullets": [
+          "Expands the employer-provided child care credit to 40% (50% for small businesses) and raises the annual cap to $500,000 ($600,000 for small businesses), with inflation adjustments.",
+          "Makes the adoption credit partially refundable up to $5,000 and increases its inflation-adjusted dollar limits.",
+          "Creates a new tax credit for individuals who contribute to scholarship-granting organizations to fund education for low-income students, with strict eligibility and spending rules.",
+          "Expands the dependent care assistance program and increases the child and dependent care tax credit, with income-based phaseouts and inflation adjustments.",
+          "Strengthens community development incentives by permanently extending Opportunity Zones, enhancing reporting requirements, and requiring public impact reports.",
+          "Increases the low-income housing tax credit ceiling and modifies financing rules to encourage affordable housing development.",
+          "Permanently extends the New Markets Tax Credit and expands the charitable contribution deduction for non-itemizers to $1,000 ($2,000 for couples)."
+        ],
+        "affected_groups": [
+          "families with children",
+          "low-income students and families",
+          "small businesses",
+          "nonprofit organizations",
+          "low-income housing developers",
+          "rural communities",
+          "individuals making charitable contributions"
+        ]
+      }
+    },
+    {
+      "chunk_id": "ch05",
+      "marker": "TITLE VII CHAPTER 6\u2014ENHANCING DEDUCTION AND INCOME TAX",
+      "marker_label": "TITLE VII\u2014FINANCE -> CHAPTER 6\u2014ENHANCING DEDUCTION AND INCOME TAX",
+      "start_page": 212,
+      "end_page": 219,
+      "chunk_tokens_cl100k": 4391,
+      "ok": true,
+      "elapsed_s": 5.97,
+      "prompt_tokens": 4922,
+      "completion_tokens": 424,
+      "output": {
+        "chunk_id": "ch05",
+        "title_marker": "TITLE VII\u2014FINANCE -> CHAPTER 6\u2014ENHANCING DEDUCTION AND INCOME TAX",
+        "one_sentence_summary": "This chapter extends key tax provisions, strengthens enforcement on improper tax credits, expands rules on executive pay and partnership payments, introduces a new tax on cash remittances, and mandates Social Security numbers for certain education credits.",
+        "bullets": [
+          "Permanently extends the limit on excess business losses for noncorporate taxpayers, removing the prior expiration date of 2029.",
+          "Adjusts the base years used to calculate excess business losses to 2025 and 2024, updating the inflation and economic benchmarks.",
+          "Expands the scope of executive pay deductions by applying the $1 million cap to remuneration from any member of a controlled group, with allocable limits based on contribution share.",
+          "Imposes a 1% excise tax on cash remittance transfers (like money orders or cash) sent through providers, with collection and liability falling on the sender and provider if unpaid.",
+          "Strengthens enforcement on fraudulent Employee Retention Tax Credit (ERTC) claims by imposing a $1,000 penalty per failure to meet due diligence standards and limiting refunds to claims filed by January 31, 2024.",
+          "Requires Social Security numbers and employer IDs on tax returns for American Opportunity and Lifetime Learning Credits, treating omissions as clerical errors.",
+          "Establishes a task force to study replacing IRS direct e-file with a free, public-private tax filing system, including cost, feasibility, and taxpayer preference research."
+        ],
+        "affected_groups": [
+          "Noncorporate taxpayers with business losses",
+          "Large corporations with controlled groups",
+          "Remittance transfer providers and senders",
+          "Tax preparers and promoters of ERTC claims",
+          "Taxpayers claiming education credits",
+          "Low- and middle-income taxpayers using free filing"
+        ]
+      }
+    },
+    {
+      "chunk_id": "ch06",
+      "marker": "Subtitle B (subtitle-cut)",
+      "marker_label": "Subtitle B\u2014Health",
+      "start_page": 219,
+      "end_page": 291,
+      "chunk_tokens_cl100k": 50049,
+      "ok": true,
+      "elapsed_s": 46.69,
+      "prompt_tokens": 52962,
+      "completion_tokens": 290,
+      "output": {
+        "chunk_id": "ch06",
+        "title_marker": "Subtitle B\u2014Health",
+        "one_sentence_summary": "This section strengthens Medicaid and Medicare by reducing fraud, preventing duplicate enrollments, verifying eligibility, limiting payments to certain groups, and requiring work or community engagement for some beneficiaries.",
+        "bullets": [
+          "Imposes a moratorium on implementing new Medicaid and Medicare enrollment rules until 2034 to allow states time to adjust.",
+          "Creates a national system to prevent individuals from being enrolled in multiple state Medicaid programs simultaneously.",
+          "Requires states to verify beneficiary eligibility using data like the Death Master File to disenroll deceased individuals and providers.",
+          "Limits Medicaid payments to certain groups, including non-citizens, and restricts payments to organizations that provide abortions.",
+          "Requires certain Medicaid beneficiaries to demonstrate 'community engagement' through work, education, or service, with exceptions for vulnerable populations.",
+          "Expands access to home and community-based services under Medicaid waivers and provides funding to support such programs.",
+          "Increases accountability by requiring states to verify eligibility for premium tax credits and limiting coverage for certain individuals."
+        ],
+        "affected_groups": [
+          "Medicaid beneficiaries",
+          "Medicare beneficiaries",
+          "States administering Medicaid",
+          "Health care providers",
+          "Non-citizen immigrants",
+          "Rural hospitals and clinics",
+          "Students and borrowers"
+        ]
+      }
+    },
+    {
+      "chunk_id": "ch07",
+      "marker": "Subtitle B (subtitle-cut)",
+      "marker_label": "Subtitle B\u2014Governmental Affairs",
+      "start_page": 291,
+      "end_page": 330,
+      "chunk_tokens_cl100k": 25871,
+      "ok": true,
+      "elapsed_s": 19.45,
+      "prompt_tokens": 27367,
+      "completion_tokens": 286,
+      "output": {
+        "chunk_id": "ch07",
+        "title_marker": "Subtitle B\u2014Governmental Affairs",
+        "one_sentence_summary": "This section strengthens federal oversight and accountability by enhancing fraud prevention in the Federal Employees Health Benefits Program, increasing funding for pandemic oversight, and boosting budget efficiency efforts across federal agencies.",
+        "bullets": [
+          "Requires the Office of Personnel Management to verify the eligibility of family members added to federal health plans, including through audits and documentation reviews.",
+          "Mandates a comprehensive audit of family members covered under federal health plans to detect and prevent fraud.",
+          "Directs the creation of a process to disenroll individuals who are not eligible for federal health benefits, within 180 days of enactment.",
+          "Allocates $66 million in dedicated funding for fraud prevention and oversight activities under the FEHB Protection Act of 2025.",
+          "Appropriates $88 million for the Pandemic Response Accountability Committee to oversee pandemic-related spending through 2034.",
+          "Provides $100 million to the Office of Management and Budget to identify budget and accounting efficiencies in the executive branch through 2029."
+        ],
+        "affected_groups": [
+          "federal employees",
+          "federal health benefit program enrollees",
+          "federal agencies",
+          "pandemic response oversight bodies"
+        ]
+      }
+    }
+  ]
+}
