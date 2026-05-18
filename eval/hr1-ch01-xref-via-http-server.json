@@ -1,0 +1,1210 @@
+{
+  "test": "hr1_ch01_xref_via_http_server",
+  "spine": "http://127.0.0.1:11434/v1",
+  "usc_http_url": "http://127.0.0.1:8004",
+  "chunk": {
+    "chunk_id": "ch01",
+    "marker": "TITLE I",
+    "tokens_cl100k": 47461
+  },
+  "xref_elapsed_s": 169.33,
+  "xref_prompt_tokens": 53790,
+  "xref_completion_tokens": 4515,
+  "n_citations_extracted": 81,
+  "n_citations_resolved": 33,
+  "enrich_elapsed_ms": 2027.9,
+  "fetcher_stats": {
+    "hits": 81,
+    "misses": 48,
+    "calls": 129,
+    "errors": 0
+  },
+  "output": {
+    "chunk_id": "ch01",
+    "citations": [
+      {
+        "citation": "7 U.S.C. 2012",
+        "bill_context": "Amends section 3 of the Food and Nutrition Act of 2008 to redefine the thrifty food plan.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "2012",
+          "heading": "Definitions",
+          "text_excerpt": "\u00a7 2012. Definitions As used in this chapter, the term: (a) \u201cAccess device\u201d means any card, plate, code, account number, or other means of access, including point of sale devices, that can be used, alone or in conjunction with another access device, to obtain payments, allotments, benefits, money, goods, or other things of value, or that can be used to initiate a transfer of funds under this chapter. (b) \u201cAllotment\u201d means the total value of benefits a household is authorized to receive during each month. (c) \u201cAllowable medical expenses\u201d means expenditures for (1) medical and dental care, (2) ho...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2012&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 2015(o)",
+        "bill_context": "Amends SNAP work requirements for able-bodied adults, adding new exceptions and definitions.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 2015",
+        "usc_data": {
+          "title": "7",
+          "section": "2015",
+          "heading": "Eligibility disqualifications",
+          "text_excerpt": "\u00a7 2015. Eligibility disqualifications (a) Additional specific conditions rendering individuals ineligible In addition to meeting the standards of eligibility prescribed in section 2014 of this title , households and individuals who are members of eligible households must also meet and comply with the specific requirements of this section to be eligible for participation in the supplemental nutrition assistance program. (b) Fraud and misrepresentation; disqualification penalties; ineligibility period; applicable procedures (1) Any person who has been found by any State or Federal court or admin...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2015&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 2014(e)(6)(C)(iv)(I)",
+        "bill_context": "Amends standard utility allowance eligibility to include households with elderly or disabled members.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 2014",
+        "usc_data": {
+          "title": "7",
+          "section": "2014",
+          "heading": "Eligible households",
+          "text_excerpt": "\u00a7 2014. Eligible households (a) Income and other financial resources as substantial limiting factors in obtaining more nutritious diet; recipients under Social Security Act Participation in the supplemental nutrition assistance program shall be limited to those households whose incomes and other financial resources, held singly or in joint ownership, are determined to be a substantial limiting factor in permitting them to obtain a more nutritious diet. Notwithstanding any other provisions of this chapter except subsections (b), (d)(2), (g), and (r) of section 2015 of this title and section 201...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2014&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 2014(k)(4)",
+        "bill_context": "Amends third-party energy assistance payments to exclude households with elderly or disabled members.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 2014",
+        "usc_data": {
+          "title": "7",
+          "section": "2014",
+          "heading": "Eligible households",
+          "text_excerpt": "\u00a7 2014. Eligible households (a) Income and other financial resources as substantial limiting factors in obtaining more nutritious diet; recipients under Social Security Act Participation in the supplemental nutrition assistance program shall be limited to those households whose incomes and other financial resources, held singly or in joint ownership, are determined to be a substantial limiting factor in permitting them to obtain a more nutritious diet. Notwithstanding any other provisions of this chapter except subsections (b), (d)(2), (g), and (r) of section 2015 of this title and section 201...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2014&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 2014(e)(6)",
+        "bill_context": "Adds restrictions on internet expenses in calculating excess shelter deductions.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 2014",
+        "usc_data": {
+          "title": "7",
+          "section": "2014",
+          "heading": "Eligible households",
+          "text_excerpt": "\u00a7 2014. Eligible households (a) Income and other financial resources as substantial limiting factors in obtaining more nutritious diet; recipients under Social Security Act Participation in the supplemental nutrition assistance program shall be limited to those households whose incomes and other financial resources, held singly or in joint ownership, are determined to be a substantial limiting factor in permitting them to obtain a more nutritious diet. Notwithstanding any other provisions of this chapter except subsections (b), (d)(2), (g), and (r) of section 2015 of this title and section 201...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2014&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 2013(a)",
+        "bill_context": "Amends matching funds requirements for SNAP, introducing new payment error rate tiers.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 2013",
+        "usc_data": {
+          "title": "7",
+          "section": "2013",
+          "heading": "Establishment of supplemental nutrition assistance program",
+          "text_excerpt": "\u00a7 2013. Establishment of supplemental nutrition assistance program (a) Program (1) Establishment Subject to the availability of funds appropriated under section 2027 of this title , the Secretary is authorized to formulate and administer a supplemental nutrition assistance program under which, at the request of the State agency, eligible households within the State shall be provided an opportunity to obtain a more nutritious diet through the issuance to them of an allotment, except that a State may not participate in the supplemental nutrition assistance program if the Secretary determines tha...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2013&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 2022(a)(1)",
+        "bill_context": "Amends limitation on authority to include payment or disposition of State share under section 4(a)(2).",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 2022",
+        "usc_data": {
+          "title": "7",
+          "section": "2022",
+          "heading": "Disposition of claims",
+          "text_excerpt": "\u00a7 2022. Disposition of claims (a) General authority of the Secretary (1) Determination of claims Except in the case of an at-risk amount required under section 2025(c)(1)(D)(i)(II) or the payment or disposition of a State share under section 2013(a)(2) of this title , the Secretary shall have the power to determine the amount of and settle and adjust any claim and to compromise or deny all or part of any such claim or claims arising under the provisions of this chapter or the regulations issued pursuant to this chapter, including, but not limited to, claims arising from fraudulent and nonfraud...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2022&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 2025(a)",
+        "bill_context": "Amends administrative cost sharing for SNAP, adjusting the Federal share over time.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 2025",
+        "usc_data": {
+          "title": "7",
+          "section": "2025",
+          "heading": "Administrative cost-sharing and quality control",
+          "text_excerpt": "\u00a7 2025. Administrative cost-sharing and quality control (a) Administrative costs Subject to subsection (k), the Secretary is authorized to pay to each State agency, through fiscal year 2026, 50 percent, and for fiscal year 2027 and each fiscal year thereafter, 25 percent, of all administrative costs involved in each State agency\u2019s operation of the supplemental nutrition assistance program, which costs shall include, but not be limited to, the cost of (1) the certification of applicant households, (2) the acceptance, storage, protection, control, and accounting of benefits after their delivery ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2025&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 2036a(d)(1)(F)",
+        "bill_context": "Amends the National Education and Obesity Prevention Grant Program, changing its funding period.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 2036a",
+        "usc_data": {
+          "title": "7",
+          "section": "2036a",
+          "heading": "Nutrition education and obesity prevention grant program",
+          "text_excerpt": "\u00a7 2036a. Nutrition education and obesity prevention grant program (a) Definition of eligible individual In this section, the term \u201celigible individual\u201d means an individual who is eligible to receive benefits under a nutrition education and obesity prevention program under this section as a result of being\u2014 (1) an individual eligible for benefits under\u2014 (A) this chapter; (B) sections 1758(b)(1)(A) and 1766(c)(4) of title 42; or (C) section 1773(e)(1)(A) of title 42 ; (2) an individual who resides in a community with a significant low-income population, as determined by the Secretary; or (3) suc...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2036a&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 2015(f)",
+        "bill_context": "Amends alien SNAP eligibility, updating the definition of eligible individuals.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 2015",
+        "usc_data": {
+          "title": "7",
+          "section": "2015",
+          "heading": "Eligibility disqualifications",
+          "text_excerpt": "\u00a7 2015. Eligibility disqualifications (a) Additional specific conditions rendering individuals ineligible In addition to meeting the standards of eligibility prescribed in section 2014 of this title , households and individuals who are members of eligible households must also meet and comply with the specific requirements of this section to be eligible for participation in the supplemental nutrition assistance program. (b) Fraud and misrepresentation; disqualification penalties; ineligibility period; applicable procedures (1) Any person who has been found by any State or Federal court or admin...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2015&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9011(8)(B)(ii)",
+        "bill_context": "Amends the effective reference price for crop insurance, increasing it from 85 to 88 for crop year 2025.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9011",
+        "usc_data": {
+          "title": "7",
+          "section": "9011",
+          "heading": "Definitions",
+          "text_excerpt": "\u00a7 9011. Definitions In this subchapter and subchapter II: (1) Actual crop revenue The term \u201cactual crop revenue\u201d, with respect to a covered commodity for a crop year, means the amount determined by the Secretary under section 9017(b) of this title . (2) Agriculture risk coverage The term \u201cagriculture risk coverage\u201d means coverage provided under section 9017 of this title . (3) Agriculture risk coverage guarantee The term \u201cagriculture risk coverage guarantee\u201d, with respect to a covered commodity for a crop year, means the amount determined by the Secretary under section 9017(c) of this title . ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9011&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9011",
+        "bill_context": "Amends the reference price for covered commodities, updating values and effectiveness rules.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9011",
+          "heading": "Definitions",
+          "text_excerpt": "\u00a7 9011. Definitions In this subchapter and subchapter II: (1) Actual crop revenue The term \u201cactual crop revenue\u201d, with respect to a covered commodity for a crop year, means the amount determined by the Secretary under section 9017(b) of this title . (2) Agriculture risk coverage The term \u201cagriculture risk coverage\u201d means coverage provided under section 9017 of this title . (3) Agriculture risk coverage guarantee The term \u201cagriculture risk coverage guarantee\u201d, with respect to a covered commodity for a crop year, means the amount determined by the Secretary under section 9017(c) of this title . ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9011&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9012",
+        "bill_context": "Amends base acres, updating the effective date from 2023 to 2031 and adding new allocation rules.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9012",
+          "heading": "Base acres",
+          "text_excerpt": "\u00a7 9012. Base acres (a) Retention or 1-time reallocation of base acres (1) Election required (A) Notice of election opportunity As soon as practicable after February 7, 2014 , the Secretary shall provide notice to the owners of a farm regarding their opportunity to make an election, in the manner provided in this subsection\u2014 (i) to retain base acres, including any generic base acres, as provided in paragraph (2); or (ii) in lieu of retaining base acres, to reallocate base acres, other than any generic base acres, as provided in paragraph (3). (B) Content of notice The notice under subparagraph ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9012&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9015",
+        "bill_context": "Amends producer election for crop insurance, updating effective dates and coverage rules.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9015",
+          "heading": "Producer election",
+          "text_excerpt": "\u00a7 9015. Producer election (a) Election required For the 2014 through 2018 crop years (except as provided in subsection (g)) and for the 2019 through 2031 crop years (subject to subsection (h)), all of the producers on a farm shall make a 1-time, irrevocable election to obtain\u2014 (1) price loss coverage under section 9016 of this title on a covered commodity-by-covered-commodity basis; or (2) agriculture risk coverage under section 9017 of this title . (b) Coverage options In the election under subsection (a) or (h), as applicable, the producers on a farm that elect to obtain agriculture risk cov...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9015&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9016",
+        "bill_context": "Amends price loss coverage, updating effective dates and payment calculation rules.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9016",
+          "heading": "Price loss coverage",
+          "text_excerpt": "\u00a7 9016. Price loss coverage (a) Price loss coverage payments If all of the producers on a farm make the election under subsection (a) or (h) of section 9015 of this title to obtain price loss coverage or, subject to subsection (c)(1) of such section, are deemed to have made such election under subsection (c)(2) of such section, the Secretary shall make price loss coverage payments to producers on the farm on a covered commodity-by-covered-commodity basis if the Secretary determines that\u2014 (1) for any of the 2014 through 2018 crop years\u2014 (A) the effective price for the covered commodity for the ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9016&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9017",
+        "bill_context": "Amends agriculture risk coverage, updating benchmark revenue and payment calculation rules.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9017",
+          "heading": "Agriculture risk coverage",
+          "text_excerpt": "\u00a7 9017. Agriculture risk coverage (a) Agriculture risk coverage payments If all of the producers on a farm make the election under section 9015(a) of this title to obtain agriculture risk coverage, the Secretary shall make agriculture risk coverage payments (beginning with the 2019 crop year, based on the physical location of the farm) to producers on the farm if the Secretary determines that, for any of the 2014 through 2018 crop years or the 2019 through 2031 crop years, as applicable\u2014 (1) the actual crop revenue determined under subsection (b) for the crop year; is less than (2) the agricul...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9017&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 1308",
+        "bill_context": "Amends the definition of qualified pass-through entity and updates attribution rules.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "1308",
+          "heading": "Payment limitations",
+          "text_excerpt": "\u00a7 1308. Payment limitations (a) Definitions In this section through section 1308\u20135 of this title : (1) Covered commodity The term \u201ccovered commodity\u201d has the meaning given that term in section 1111 of the Agricultural Act of 2014 ( 7 U.S.C. 9011 ). (2) Family member The term \u201cfamily member\u201d means a person to whom a member in the farming operation is related as lineal ancestor, lineal descendant, sibling, first cousin, niece, nephew, spouse, or otherwise by marriage. (3) Legal entity The term \u201clegal entity\u201d means an entity that is created under Federal or State law and that\u2014 (A) owns land or an...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1308&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 1308\u20131(b)(2)",
+        "bill_context": "Amends the definition of persons actively engaged in farming, updating entity references.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "1308",
+          "heading": "Payment limitations",
+          "text_excerpt": "\u00a7 1308. Payment limitations (a) Definitions In this section through section 1308\u20135 of this title : (1) Covered commodity The term \u201ccovered commodity\u201d has the meaning given that term in section 1111 of the Agricultural Act of 2014 ( 7 U.S.C. 9011 ). (2) Family member The term \u201cfamily member\u201d means a person to whom a member in the farming operation is related as lineal ancestor, lineal descendant, sibling, first cousin, niece, nephew, spouse, or otherwise by marriage. (3) Legal entity The term \u201clegal entity\u201d means an entity that is created under Federal or State law and that\u2014 (A) owns land or an...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1308&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 1308\u20132(d)",
+        "bill_context": "Amends joint and several liability, replacing 'partnerships and joint ventures' with 'qualified pass-through entities'.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "1308",
+          "heading": "Payment limitations",
+          "text_excerpt": "\u00a7 1308. Payment limitations (a) Definitions In this section through section 1308\u20135 of this title : (1) Covered commodity The term \u201ccovered commodity\u201d has the meaning given that term in section 1111 of the Agricultural Act of 2014 ( 7 U.S.C. 9011 ). (2) Family member The term \u201cfamily member\u201d means a person to whom a member in the farming operation is related as lineal ancestor, lineal descendant, sibling, first cousin, niece, nephew, spouse, or otherwise by marriage. (3) Legal entity The term \u201clegal entity\u201d means an entity that is created under Federal or State law and that\u2014 (A) owns land or an...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1308&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 1308\u20133a(d)",
+        "bill_context": "Amends exclusion from AGI calculation, removing references to general partnerships and joint ventures.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "1308",
+          "heading": "Payment limitations",
+          "text_excerpt": "\u00a7 1308. Payment limitations (a) Definitions In this section through section 1308\u20135 of this title : (1) Covered commodity The term \u201ccovered commodity\u201d has the meaning given that term in section 1111 of the Agricultural Act of 2014 ( 7 U.S.C. 9011 ). (2) Family member The term \u201cfamily member\u201d means a person to whom a member in the farming operation is related as lineal ancestor, lineal descendant, sibling, first cousin, niece, nephew, spouse, or otherwise by marriage. (3) Legal entity The term \u201clegal entity\u201d means an entity that is created under Federal or State law and that\u2014 (A) owns land or an...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1308&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 1308\u20133a(b)",
+        "bill_context": "Amends adjusted gross income limitation, adding an exception for certain farming-related income.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "1308",
+          "heading": "Payment limitations",
+          "text_excerpt": "\u00a7 1308. Payment limitations (a) Definitions In this section through section 1308\u20135 of this title : (1) Covered commodity The term \u201ccovered commodity\u201d has the meaning given that term in section 1111 of the Agricultural Act of 2014 ( 7 U.S.C. 9011 ). (2) Family member The term \u201cfamily member\u201d means a person to whom a member in the farming operation is related as lineal ancestor, lineal descendant, sibling, first cousin, niece, nephew, spouse, or otherwise by marriage. (3) Legal entity The term \u201clegal entity\u201d means an entity that is created under Federal or State law and that\u2014 (A) owns land or an...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1308&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9031(b)(1)",
+        "bill_context": "Amends availability of nonrecourse marketing loans, updating the effective date to 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9031",
+        "usc_data": {
+          "title": "7",
+          "section": "9031",
+          "heading": "Availability of nonrecourse marketing assistance loans for loan commodities",
+          "text_excerpt": "\u00a7 9031. Availability of nonrecourse marketing assistance loans for loan commodities (a) Definition of loan commodity In this subchapter, the term \u201cloan commodity\u201d means wheat, corn, grain sorghum, barley, oats, upland cotton, extra long staple cotton, long grain rice, medium grain rice, peanuts, soybeans, other oilseeds, graded wool, nongraded wool, mohair, honey, dry peas, lentils, small chickpeas, and large chickpeas. (b) Nonrecourse loans available (1) In general For each of the 2014 through 2031 crops of each loan commodity, the Secretary shall make available to producers on a farm nonreco...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9031&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9032",
+        "bill_context": "Amends loan rates for nonrecourse marketing assistance loans, updating effective dates and rates.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9032",
+          "heading": "Loan rates for nonrecourse marketing assistance loans",
+          "text_excerpt": "\u00a7 9032. Loan rates for nonrecourse marketing assistance loans (a) 2014 through 2018 crop years For purposes of each of the 2014 through 2018 crop years, the loan rate for a marketing assistance loan under section 9031 of this title for a loan commodity shall be equal to the following: (1) In the case of wheat, $2.94 per bushel. (2) In the case of corn, $1.95 per bushel. (3) In the case of grain sorghum, $1.95 per bushel. (4) In the case of barley, $1.95 per bushel. (5) In the case of oats, $1.39 per bushel. (6) In the case of base quality of upland cotton, for each of the 2014 through 2018 cro...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9032&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9034(g)",
+        "bill_context": "Amends payment of cotton storage costs, updating effective dates and payment rates.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9034",
+        "usc_data": {
+          "title": "7",
+          "section": "9034",
+          "heading": "Repayment of loans",
+          "text_excerpt": "\u00a7 9034. Repayment of loans (a) General rule The Secretary shall permit the producers on a farm to repay a marketing assistance loan under section 9031 of this title for a loan commodity (other than upland cotton, long grain rice, medium grain rice, extra long staple cotton, peanuts and confectionery and each other kind of sunflower seed (other than oil sunflower seed)) at a rate that is the lesser of\u2014 (1) the loan rate established for the commodity under section 9032 of this title , plus interest (determined in accordance with section 7283 of this title ); (2) a rate (as determined by the Secr...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9034&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9035(a)(2)(B)",
+        "bill_context": "Amends loan deficiency payments, extending the effective date to 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9035",
+        "usc_data": {
+          "title": "7",
+          "section": "9035",
+          "heading": "Loan deficiency payments",
+          "text_excerpt": "\u00a7 9035. Loan deficiency payments (a) Availability of loan deficiency payments (1) In general Except as provided in subsection (d), the Secretary may make loan deficiency payments available to producers on a farm that, although eligible to obtain a marketing assistance loan under section 9031 of this title with respect to a loan commodity, agree to forgo obtaining the loan for the commodity in return for loan deficiency payments under this section. (2) Unshorn pelts, hay, and silage (A) Marketing assistance loans Subject to subparagraph (B), nongraded wool in the form of unshorn pelts and hay a...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9035&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9036",
+        "bill_context": "Amends payments in lieu of LDPS, updating effective dates to 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9036",
+          "heading": "Payments in lieu of loan deficiency payments for grazed acreage",
+          "text_excerpt": "\u00a7 9036. Payments in lieu of loan deficiency payments for grazed acreage (a) Eligible producers (1) In general Effective for each of the 2014 through 2031 crop years, in the case of a producer that would be eligible for a loan deficiency payment under section 9035 of this title for wheat, barley, or oats, but that elects to use acreage planted to the wheat, barley, or oats for the grazing of livestock, the Secretary shall make a payment to the producer under this section if the producer enters into an agreement with the Secretary to forgo any other harvesting of the wheat, barley, or oats on th...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9036&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9038(a)",
+        "bill_context": "Amends special competitive provisions for extra long staple cotton, updating the effective date to 2032.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9038",
+        "usc_data": {
+          "title": "7",
+          "section": "9038",
+          "heading": "Special competitive provisions for extra long staple cotton",
+          "text_excerpt": "\u00a7 9038. Special competitive provisions for extra long staple cotton (a) Competitiveness program Notwithstanding any other provision of law, during the period beginning on February 7, 2014 , through July 31, 2032 , the Secretary shall carry out a program\u2014 (1) to maintain and expand the domestic use of extra long staple cotton produced in the United States; (2) to increase exports of extra long staple cotton produced in the United States; and (3) to ensure that extra long staple cotton produced in the United States remains competitive in world markets. (b) Payments under program; trigger Under t...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9038&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9039",
+        "bill_context": "Amends availability of recourse loans, updating effective dates to 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9039",
+          "heading": "Availability of recourse loans for high moisture feed grains and seed cotton",
+          "text_excerpt": "\u00a7 9039. Availability of recourse loans for high moisture feed grains and seed cotton (a) High moisture feed grains (1) Definition of high moisture state In this subsection, the term \u201chigh moisture state\u201d means corn or grain sorghum having a moisture content in excess of Commodity Credit Corporation standards for marketing assistance loans made by the Secretary under section 9031 of this title . (2) Recourse loans available For each of the 2014 through 2031 crops of corn and grain sorghum, the Secretary shall make available recourse loans, as determined by the Secretary, to producers on a farm ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9039&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9034",
+        "bill_context": "Amends repayment of marketing loans, updating prevailing world market price rules.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9034",
+          "heading": "Repayment of loans",
+          "text_excerpt": "\u00a7 9034. Repayment of loans (a) General rule The Secretary shall permit the producers on a farm to repay a marketing assistance loan under section 9031 of this title for a loan commodity (other than upland cotton, long grain rice, medium grain rice, extra long staple cotton, peanuts and confectionery and each other kind of sunflower seed (other than oil sunflower seed)) at a rate that is the lesser of\u2014 (1) the loan rate established for the commodity under section 9032 of this title , plus interest (determined in accordance with section 7283 of this title ); (2) a rate (as determined by the Secr...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9034&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9037(c)",
+        "bill_context": "Amends economic adjustment assistance for textile mills, updating assistance value and effective dates.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9037",
+        "usc_data": {
+          "title": "7",
+          "section": "9037",
+          "heading": "Special marketing loan provisions for upland cotton",
+          "text_excerpt": "\u00a7 9037. Special marketing loan provisions for upland cotton (a) Special import quota (1) Definition of special import quota In this subsection, the term \u201cspecial import quota\u201d means a quantity of imports that is not subject to the over-quota tariff rate of a tariff-rate quota. (2) Establishment (A) In general The President shall carry out an import quota program beginning on August 1, 2014 , as provided in this subsection. (B) Program requirements Whenever the Secretary determines and announces that for any consecutive 4-week period, the Friday through Thursday average price quotation for the ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9037&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 7272",
+        "bill_context": "Amends loan rate modifications for sugar program, updating rates for 2025\u20132031 crop years.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "7272",
+          "heading": "Sugar program",
+          "text_excerpt": "\u00a7 7272. Sugar program (a) Sugarcane The Secretary shall make loans available to processors of domestically grown sugarcane at a rate equal to\u2014 (1) 18.00 cents per pound for raw cane sugar for the 2008 crop year; (2) 18.25 cents per pound for raw cane sugar for the 2009 crop year; (3) 18.50 cents per pound for raw cane sugar for the 2010 crop year; (4) 18.75 cents per pound for raw cane sugar for each of the 2011 through 2018 crop years; (5) 19.75 cents per pound for raw cane sugar for each of the 2019 through 2024 crop years; and (6) 24.00 cents per pound for raw cane sugar for each of the 202...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section7272&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 7287",
+        "bill_context": "Amends commodity credit corporation storage rates for sugar, updating effective dates and rates.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "7287",
+          "heading": "Commodity Credit Corporation storage payments",
+          "text_excerpt": "\u00a7 7287. Commodity Credit Corporation storage payments (a) In general For the 2025 crop year and each subsequent crop year, the Commodity Credit Corporation shall establish rates for the storage of forfeited sugar in an amount that is not less than\u2014 (1) in the case of refined sugar, 34 cents per hundredweight per month; and (2) in the case of raw cane sugar, 27 cents per hundredweight per month. (b) Prior crop years For each of the 2012 through 2024 crop years, the Commodity Credit Corporation shall establish rates for the storage of forfeited sugar in the same manner as was used on the day bef...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section7287&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 1359bb(a)(1)",
+        "bill_context": "Amends sugar estimates, updating effective date from 2023 to 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1359bb",
+        "usc_data": {
+          "title": "7",
+          "section": "1359bb",
+          "heading": "Flexible marketing allotments for sugar",
+          "text_excerpt": "\u00a7 1359bb. Flexible marketing allotments for sugar (a) Sugar estimates (1) In general Not later than August 1 before the beginning of each of the 2008 through 2031 crop years for sugarcane and sugar beets, the Secretary shall estimate\u2014 (A) the quantity of sugar that will be subject to human consumption in the United States during the crop year; (B) the quantity of sugar that would provide for reasonable carryover stocks; (C) the quantity of sugar that will be available from carry-in stocks for human consumption in the United States during the crop year; (D) the quantity of sugar that will be av...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1359bb&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1359cc(g)(2)",
+        "bill_context": "Amends allocation to processors, updating effective date and adding priority rules.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1359cc",
+        "usc_data": {
+          "title": "7",
+          "section": "1359cc",
+          "heading": "Establishment of flexible marketing allotments",
+          "text_excerpt": "\u00a7 1359cc. Establishment of flexible marketing allotments (a) In general The Secretary shall establish flexible marketing allotments for sugar for any crop year in which the allotments are required under section 1359bb(b) of this title in accordance with this section. (b) Overall allotment quantity (1) In general The Secretary shall establish the overall quantity of sugar to be allotted for the crop year (referred to in this subpart as the \u201coverall allotment quantity\u201d) at a level that is\u2014 (A) sufficient to maintain raw and refined sugar prices above forfeiture levels to avoid forfeiture of suga...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1359cc&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1359ee(b)(2)",
+        "bill_context": "Amends timing of reassessment, updating effective date and adding reallocation rules.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1359ee",
+        "usc_data": {
+          "title": "7",
+          "section": "1359ee",
+          "heading": "Reassignment of deficits",
+          "text_excerpt": "\u00a7 1359ee. Reassignment of deficits (a) Estimates of deficits At any time allotments are in effect under this subpart, the Secretary, from time to time, shall determine whether (in view of then-current inventories of sugar, the estimated production of sugar and expected marketings, and other pertinent factors) any processor of sugarcane will be unable to market the sugar covered by the portion of the State cane sugar allotment allocated to the processor and whether any processor of sugar beets will be unable to market sugar covered by the portion of the beet sugar allotment allocated to the pro...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1359ee&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1359kk",
+        "bill_context": "Amends reallocations of tariff-rate quota shortfall, adding new reallocation and termination rules.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "1359kk",
+          "heading": "Administration of tariff rate quotas",
+          "text_excerpt": "\u00a7 1359kk. Administration of tariff rate quotas (a) Establishment (1) In general Except as provided in paragraph (2) and notwithstanding any other provision of law, at the beginning of the quota year, the Secretary shall establish the tariff-rate quotas for raw cane sugar and refined sugars at the minimum level necessary to comply with obligations under international trade agreements that have been approved by Congress. (2) Exception Paragraph (1) shall not apply to specialty sugar. (b) Adjustment (1) Before April 1 Before April 1 of each fiscal year, for the sole purpose of responding directly...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1359kk&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9051(8)",
+        "bill_context": "Amends definition of production history for dairy margin coverage, removing reference to registration date.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9051",
+        "usc_data": {
+          "title": "7",
+          "section": "9051",
+          "heading": "Definitions",
+          "text_excerpt": "\u00a7 9051. Definitions In this part: (1) Actual dairy production margin The term \u201cactual dairy production margin\u201d means the difference between the all-milk price and the average feed cost, as calculated under section 9052 of this title . (2) All-milk price The term \u201call-milk price\u201d means the average price received, per hundredweight of milk, by dairy operations for all milk sold to plants and dealers in the United States, as determined by the Secretary. (3) Average feed cost The term \u201caverage feed cost\u201d means the average cost of feed used by a dairy operation to produce a hundredweight of milk, d...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9051&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9055",
+        "bill_context": "Amends production history of participating dairy operations, updating eligibility rules.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9055",
+          "heading": "Production history of participating dairy operations",
+          "text_excerpt": "\u00a7 9055. Production history of participating dairy operations (a) Production history Except as provided in subsection (b), the production history of a dairy operation for dairy margin coverage is equal to the highest annual milk marketings of the participating dairy operation during any 1 of the 2021, 2022, or 2023 calendar years. (b) Election by new dairy operations In the case of a participating dairy operation that has been in operation for less than a year, the participating dairy operation shall elect 1 of the following methods for the Secretary to determine the production history of the p...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9055&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9056(a)(1)(C)",
+        "bill_context": "Amends dairy margin coverage payments, increasing the threshold from 5,000,000 to 6,000,000.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9056",
+        "usc_data": {
+          "title": "7",
+          "section": "9056",
+          "heading": "Dairy margin coverage payments",
+          "text_excerpt": "\u00a7 9056. Dairy margin coverage payments (a) Coverage level threshold and coverage percentage (1) Coverage level threshold (A) In general For purposes of receiving dairy margin coverage payments for a month, a participating dairy operation shall annually elect a coverage level threshold that is equal to $4.00, $4.50, $5.00, $5.50, $6.00, $6.50, $7.00, $7.50, $8.00, $8.50, $9.00, or $9.50. (B) Applicability Except as provided in subparagraph (C), the coverage level threshold elected under subparagraph (A) shall apply to the covered production elected by the participating dairy operation under par...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9056&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9057(b)",
+        "bill_context": "Amends Tier I premiums for dairy margin coverage, increasing the threshold from 5,000,000 to 6,000,000.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9057",
+        "usc_data": {
+          "title": "7",
+          "section": "9057",
+          "heading": "Premiums for dairy margin coverage",
+          "text_excerpt": "\u00a7 9057. Premiums for dairy margin coverage (a) Calculation of premiums For purposes of participating in dairy margin coverage, a participating dairy operation shall pay an annual premium equal to the product obtained by multiplying\u2014 (1) the coverage percentage elected by the participating dairy operation under section 9056(a)(2) of this title ; (2) the production history of the participating dairy operation; and (3) the premium per hundredweight of milk imposed by this section for the coverage level selected. (b) Tier I: premium per hundredweight for first 6,000,000 pounds of production (1) In...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9057&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9057(c)",
+        "bill_context": "Amends Tier II premiums for dairy margin coverage, increasing the threshold from 5,000,000 to 6,000,000.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9057",
+        "usc_data": {
+          "title": "7",
+          "section": "9057",
+          "heading": "Premiums for dairy margin coverage",
+          "text_excerpt": "\u00a7 9057. Premiums for dairy margin coverage (a) Calculation of premiums For purposes of participating in dairy margin coverage, a participating dairy operation shall pay an annual premium equal to the product obtained by multiplying\u2014 (1) the coverage percentage elected by the participating dairy operation under section 9056(a)(2) of this title ; (2) the production history of the participating dairy operation; and (3) the premium per hundredweight of milk imposed by this section for the coverage level selected. (b) Tier I: premium per hundredweight for first 6,000,000 pounds of production (1) In...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9057&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9057(g)",
+        "bill_context": "Amends premium discounts for dairy margin coverage, updating effective dates and calculation rules.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9057",
+        "usc_data": {
+          "title": "7",
+          "section": "9057",
+          "heading": "Premiums for dairy margin coverage",
+          "text_excerpt": "\u00a7 9057. Premiums for dairy margin coverage (a) Calculation of premiums For purposes of participating in dairy margin coverage, a participating dairy operation shall pay an annual premium equal to the product obtained by multiplying\u2014 (1) the coverage percentage elected by the participating dairy operation under section 9056(a)(2) of this title ; (2) the production history of the participating dairy operation; and (3) the premium per hundredweight of milk imposed by this section for the coverage level selected. (b) Tier I: premium per hundredweight for first 6,000,000 pounds of production (1) In...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9057&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9059",
+        "bill_context": "Amends duration of dairy margin coverage, extending the effective date to 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "9059",
+          "heading": "Duration",
+          "text_excerpt": "Dairy margin coverage shall end on December 31, 2031 .",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9059&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 9097(c)",
+        "bill_context": "Amends implementation funding, adding $50 million for specific program activities.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9097",
+        "usc_data": {
+          "title": "7",
+          "section": "9097",
+          "heading": "Implementation",
+          "text_excerpt": "\u00a7 9097. Implementation (a) Maintenance of base acres and payment yields The Secretary shall maintain, for each covered commodity and upland cotton, base acres and payment yields on a farm established under sections 8702 and 8751 of this title, as adjusted pursuant to sections 8711, 8712, 8718, and 8752 of this title, as in effect on September 30, 2013 , and as adjusted pursuant to sections 9012 and 9013 of this title. (b) Streamlining In implementing this chapter and the amendments made by this title, 1 1 See References in Text note below. the Secretary shall\u2014 (1) continue to reduce administra...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9097&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9081(b)",
+        "bill_context": "Amends livestock indemnity payments, updating payment rates and definitions.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9081",
+        "usc_data": {
+          "title": "7",
+          "section": "9081",
+          "heading": "Supplemental agricultural disaster assistance",
+          "text_excerpt": "\u00a7 9081. Supplemental agricultural disaster assistance (a) Definitions In this section: (1) Covered producer The term \u201ccovered producer\u201d means an eligible producer on a farm that is\u2014 (A) as determined by the Secretary\u2014 (i) a beginning farmer or rancher; (ii) a socially disadvantaged farmer or rancher; or (iii) a limited resource farmer or rancher; or (B) a veteran farmer or rancher, as defined in section 2279(a) of this title . (2) Eligible producer on a farm (A) In general The term \u201celigible producer on a farm\u201d means an individual or entity described in subparagraph (B) that, as determined by ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9081&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9081(c)(3)(D)(ii)(I)",
+        "bill_context": "Amends livestock forage disaster program, increasing monthly payments from 1 to 2.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9081",
+        "usc_data": {
+          "title": "7",
+          "section": "9081",
+          "heading": "Supplemental agricultural disaster assistance",
+          "text_excerpt": "\u00a7 9081. Supplemental agricultural disaster assistance (a) Definitions In this section: (1) Covered producer The term \u201ccovered producer\u201d means an eligible producer on a farm that is\u2014 (A) as determined by the Secretary\u2014 (i) a beginning farmer or rancher; (ii) a socially disadvantaged farmer or rancher; or (iii) a limited resource farmer or rancher; or (B) a veteran farmer or rancher, as defined in section 2279(a) of this title . (2) Eligible producer on a farm (A) In general The term \u201celigible producer on a farm\u201d means an individual or entity described in subparagraph (B) that, as determined by ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9081&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9081(d)",
+        "bill_context": "Amends emergency assistance for livestock, honey bees, and farm-raised fish, adding new payment rules.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9081",
+        "usc_data": {
+          "title": "7",
+          "section": "9081",
+          "heading": "Supplemental agricultural disaster assistance",
+          "text_excerpt": "\u00a7 9081. Supplemental agricultural disaster assistance (a) Definitions In this section: (1) Covered producer The term \u201ccovered producer\u201d means an eligible producer on a farm that is\u2014 (A) as determined by the Secretary\u2014 (i) a beginning farmer or rancher; (ii) a socially disadvantaged farmer or rancher; or (iii) a limited resource farmer or rancher; or (B) a veteran farmer or rancher, as defined in section 2279(a) of this title . (2) Eligible producer on a farm (A) In general The term \u201celigible producer on a farm\u201d means an individual or entity described in subparagraph (B) that, as determined by ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9081&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 9081(e)",
+        "bill_context": "Amends tree assistance program, updating mortality and damage thresholds.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 9081",
+        "usc_data": {
+          "title": "7",
+          "section": "9081",
+          "heading": "Supplemental agricultural disaster assistance",
+          "text_excerpt": "\u00a7 9081. Supplemental agricultural disaster assistance (a) Definitions In this section: (1) Covered producer The term \u201ccovered producer\u201d means an eligible producer on a farm that is\u2014 (A) as determined by the Secretary\u2014 (i) a beginning farmer or rancher; (ii) a socially disadvantaged farmer or rancher; or (iii) a limited resource farmer or rancher; or (B) a veteran farmer or rancher, as defined in section 2279(a) of this title . (2) Eligible producer on a farm (A) In general The term \u201celigible producer on a farm\u201d means an individual or entity described in subparagraph (B) that, as determined by ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section9081&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1502(b)(3)",
+        "bill_context": "Amends definition of beginning farmer, increasing the required years of experience from 5 to 10.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1502",
+        "usc_data": {
+          "title": "7",
+          "section": "1502",
+          "heading": "Purpose; definitions; protection of information; relation to other laws",
+          "text_excerpt": "\u00a7 1502. Purpose; definitions; protection of information; relation to other laws (a) Purpose It is the purpose of this subchapter to promote the national welfare by improving the economic stability of agriculture through a sound system of crop insurance and providing the means for the research and experience helpful in devising and establishing such insurance. (b) Definitions As used in this subchapter: (1) Additional coverage The term \u201cadditional coverage\u201d means a plan of crop insurance coverage providing a level of coverage greater than the level available under catastrophic risk protection. ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1502&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1522(c)(7)",
+        "bill_context": "Amends conforming amendment to remove reference to subparagraph (F).",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1522",
+        "usc_data": {
+          "title": "7",
+          "section": "1522",
+          "heading": "Research and development",
+          "text_excerpt": "\u00a7 1522. Research and development (a) Definition of policy In this section, the term \u201cpolicy\u201d means a policy, plan of insurance, provision of a policy or plan of insurance, and related materials. (b) Reimbursement of research, development, and maintenance costs (1) Research and development payment (A) In general The Corporation shall provide a payment to an applicant for research and development costs in accordance with this subsection. (B) Reimbursement (i) In general An applicant who submits a policy under section 1508(h) of this title shall be eligible for the reimbursement of reasonable res...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1522&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1508(e)",
+        "bill_context": "Amends beginning farmer and rancher benefit, adding new premium assistance tiers.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1508",
+        "usc_data": {
+          "title": "7",
+          "section": "1508",
+          "heading": "Crop insurance",
+          "text_excerpt": "\u00a7 1508. Crop insurance (a) Authority to offer insurance (1) In general If sufficient actuarial data are available (as determined by the Corporation), the Corporation may insure, or provide reinsurance for insurers of, producers of agricultural commodities grown in the United States under 1 or more plans of insurance determined by the Corporation to be adapted to the agricultural commodity concerned. To qualify for coverage under a plan of insurance, the losses of the insured commodity must be due to drought, flood, or other natural disaster (as determined by the Secretary). (2) Period Except i...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1508&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1508(c)(4)",
+        "bill_context": "Amends area-based crop insurance coverage, updating coverage levels and premium subsidy rules.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1508",
+        "usc_data": {
+          "title": "7",
+          "section": "1508",
+          "heading": "Crop insurance",
+          "text_excerpt": "\u00a7 1508. Crop insurance (a) Authority to offer insurance (1) In general If sufficient actuarial data are available (as determined by the Corporation), the Corporation may insure, or provide reinsurance for insurers of, producers of agricultural commodities grown in the United States under 1 or more plans of insurance determined by the Corporation to be adapted to the agricultural commodity concerned. To qualify for coverage under a plan of insurance, the losses of the insured commodity must be due to drought, flood, or other natural disaster (as determined by the Secretary). (2) Period Except i...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1508&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1508(k)",
+        "bill_context": "Amends administrative and operating expense adjustments, adding new provisions for specialty crops and inflation.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1508",
+        "usc_data": {
+          "title": "7",
+          "section": "1508",
+          "heading": "Crop insurance",
+          "text_excerpt": "\u00a7 1508. Crop insurance (a) Authority to offer insurance (1) In general If sufficient actuarial data are available (as determined by the Corporation), the Corporation may insure, or provide reinsurance for insurers of, producers of agricultural commodities grown in the United States under 1 or more plans of insurance determined by the Corporation to be adapted to the agricultural commodity concerned. To qualify for coverage under a plan of insurance, the losses of the insured commodity must be due to drought, flood, or other natural disaster (as determined by the Secretary). (2) Period Except i...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1508&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1508(e)(2)(H)(i)",
+        "bill_context": "Amends premium support, increasing the subsidy rate from 65% to 80%.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1508",
+        "usc_data": {
+          "title": "7",
+          "section": "1508",
+          "heading": "Crop insurance",
+          "text_excerpt": "\u00a7 1508. Crop insurance (a) Authority to offer insurance (1) In general If sufficient actuarial data are available (as determined by the Corporation), the Corporation may insure, or provide reinsurance for insurers of, producers of agricultural commodities grown in the United States under 1 or more plans of insurance determined by the Corporation to be adapted to the agricultural commodity concerned. To qualify for coverage under a plan of insurance, the losses of the insured commodity must be due to drought, flood, or other natural disaster (as determined by the Secretary). (2) Period Except i...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1508&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1515(l)(2)",
+        "bill_context": "Amends program compliance and integrity, updating the annual funding cap for audits.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1515",
+        "usc_data": {
+          "title": "7",
+          "section": "1515",
+          "heading": "Program compliance and integrity",
+          "text_excerpt": "\u00a7 1515. Program compliance and integrity (a) Purpose (1) In general The purpose of this section is to improve compliance with, and the integrity of, the Federal crop insurance program. (2) Role of insurance providers The Corporation shall work actively with approved insurance providers to address program compliance and integrity issues as such issues develop. (b) Notification of compliance problems (1) Notification of errors, omissions, and failures The Corporation shall notify in writing an approved insurance provider of any error, omission, or failure to follow Corporation regulations or pro...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1515&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1516(b)(2)(C)(i)",
+        "bill_context": "Amends reviews, compliance, and integrity, updating the annual funding cap for audits.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1516",
+        "usc_data": {
+          "title": "7",
+          "section": "1516",
+          "heading": "Funding",
+          "text_excerpt": "\u00a7 1516. Funding (a) Authorization of appropriations (1) Discretionary expenses There are authorized to be appropriated for fiscal year 1999 and each subsequent fiscal year such sums as are necessary to cover the salaries and expenses of the Corporation. (2) Mandatory expenses There are authorized to be appropriated such sums as are necessary to cover for each of the 1999 and subsequent reinsurance years the following: (A) The administrative and operating expenses of the Corporation for the sales commissions of agents. (B) Premium subsidies, including the administrative and operating expenses o...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1516&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1523",
+        "bill_context": "Amends poultry insurance pilot program, establishing a new program for index-based insurance.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "1523",
+          "heading": "Pilot programs",
+          "text_excerpt": "\u00a7 1523. Pilot programs (a) General provisions (1) Authority Except as otherwise provided in this section, the Corporation may, at the sole discretion of the Corporation, conduct a pilot program submitted to and approved by the Board under section 1508(h) of this title , or that is developed under subsection (b) or section 1522 of this title , to evaluate whether a proposal or new risk management tool tested by the pilot program is suitable for the marketplace and addresses the needs of producers of agricultural commodities. (2) Private coverage Under this section, the Corporation shall not con...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1523&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "16 U.S.C. 3841(a)",
+        "bill_context": "Amends conservation funding, updating annual appropriations through 2031.",
+        "relevance": "amend",
+        "resolved_to": "16 U.S.C. 3841",
+        "usc_data": {
+          "title": "16",
+          "section": "3841",
+          "heading": "Commodity Credit Corporation",
+          "text_excerpt": "\u00a7 3841. Commodity Credit Corporation (a) Annual funding For each of fiscal years 2014 through 2031, the Secretary shall use the funds, facilities, and authorities of the Commodity Credit Corporation to carry out the following programs under this chapter (including the provision of technical assistance): (1) The conservation reserve program under subpart B of part I of subchapter IV, including, to the maximum extent practicable\u2014 (A) $12,000,000 for the period of fiscal years 2019 through 2023 to provide payments under section 3834(c) of this title ; and (B) $50,000,000 for the period of fiscal ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section3841&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "16 U.S.C. 3871d",
+        "bill_context": "Amends regional conservation partnership program, updating annual funding through 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "16",
+          "section": "3871d",
+          "heading": "Funding",
+          "text_excerpt": "\u00a7 3871d. Funding (a) Availability of funding Of the funds of the Commodity Credit Corporation, the Secretary shall use to carry out the program, to the maximum extent practicable\u2014 (1) $425,000,000 for fiscal year 2026; (2) $450,000,000 for fiscal year 2027; (3) $450,000,000 for fiscal year 2028; (4) $450,000,000 for fiscal year 2029; (5) $450,000,000 for fiscal year 2030; and (6) $450,000,000 for fiscal year 2031. (b) Duration of availability Funds made available under subsection (a) shall remain available until expended. (c) Allocation of funding Of the funds made available for the program un...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section3871d&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "16 U.S.C. 3839bb\u20132(b)",
+        "bill_context": "Amends grassroot source water protection program, updating effective date and funding.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "16",
+          "section": "3839bb",
+          "heading": "Conservation of private grazing land",
+          "text_excerpt": "\u00a7 3839bb. Conservation of private grazing land (a) Purpose It is the purpose of this section to authorize the Secretary to provide a coordinated technical, educational, and related assistance program to conserve and enhance private grazing land resources and provide related benefits to all citizens of the United States by\u2014 (1) establishing a coordinated and cooperative Federal, State, and local grazing conservation program for management of private grazing land; (2) strengthening technical, educational, and related assistance programs that provide assistance to owners and managers of private g...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section3839bb&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "16 U.S.C. 3839bb\u20135(f)(1)",
+        "bill_context": "Amends voluntary public access and habitat incentive program, updating funding through 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "16",
+          "section": "3839bb",
+          "heading": "Conservation of private grazing land",
+          "text_excerpt": "\u00a7 3839bb. Conservation of private grazing land (a) Purpose It is the purpose of this section to authorize the Secretary to provide a coordinated technical, educational, and related assistance program to conserve and enhance private grazing land resources and provide related benefits to all citizens of the United States by\u2014 (1) establishing a coordinated and cooperative Federal, State, and local grazing conservation program for management of private grazing land; (2) strengthening technical, educational, and related assistance programs that provide assistance to owners and managers of private g...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section3839bb&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "16 U.S.C. 1012a",
+        "bill_context": "Amends watershed protection and flood prevention, increasing annual funding to $150 million.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "16",
+          "section": "1012a",
+          "heading": "Funding",
+          "text_excerpt": "In addition to any other funds made available by this chapter, of the funds of the Commodity Credit Corporation, the Secretary shall make available to carry out this chapter $150,000,000 for fiscal year 2026 and each fiscal year thereafter, to remain available until expended.",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section1012a&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 8351 note",
+        "bill_context": "Amends feral swine eradication and control pilot program, updating funding through 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "8351",
+          "heading": "Predatory and other wild animals",
+          "text_excerpt": "\u00a7 8351. Predatory and other wild animals (a) In general The Secretary of Agriculture may conduct a program of wildlife services with respect to injurious animal species and take any action the Secretary considers necessary in conducting the program. (b) Administration The Secretary shall administer the program in a manner consistent with all of the wildlife services authorities in effect on the day before October 28, 2000 . (c) Action by FWS The Director of the United States Fish and Wildlife Service shall use the most expeditious procedure practicable to process and administer permits for tak...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section8351&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 7507(d)(5)",
+        "bill_context": "Amends nutrition program funding, updating effective date from 2024 to 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 7507",
+        "usc_data": {
+          "title": "7",
+          "section": "7507",
+          "heading": "State and local supplementation of commodities",
+          "text_excerpt": "\u00a7 7507. State and local supplementation of commodities (a) Authorization The Secretary shall establish procedures under which State and local agencies, charitable institutions, or any other persons may supplement the commodities distributed under the program authorized by this chapter for use by emergency feeding organizations with nutritious and wholesome commodities that such entities or persons donate to State agencies and emergency feeding organizations for distribution, in all or part of the State, in addition to the commodities otherwise made available under this chapter. (b) Use of fund...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section7507&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 5925g(d)(1)(B)",
+        "bill_context": "Amends urban, indoor, and other emerging agricultural production research, updating funding period.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 5925g",
+        "usc_data": {
+          "title": "7",
+          "section": "5925g",
+          "heading": "Urban, indoor, and other emerging agricultural production research, education, and extension initiative",
+          "text_excerpt": "\u00a7 5925g. Urban, indoor, and other emerging agricultural production research, education, and extension initiative (a) Competitive research and extension grants authorized In consultation with the Urban Agriculture and Innovative Production Advisory Committee established under section 6923(b) of this title , the Secretary may make competitive grants to support research, education, and extension activities for the purposes of facilitating the development of urban, indoor, and other emerging agricultural production, harvesting, transportation, aggregation, packaging, distribution, and markets, inc...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section5925g&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 5939(g)(1)(A)",
+        "bill_context": "Amends foundation for food and agriculture research, adding new mandatory funding.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 5939",
+        "usc_data": {
+          "title": "7",
+          "section": "5939",
+          "heading": "Foundation for Food and Agriculture Research",
+          "text_excerpt": "\u00a7 5939. Foundation for Food and Agriculture Research (a) Definitions In this section: (1) Board The term \u201cBoard\u201d means the Board of Directors described in subsection (e). (2) Department The term \u201cDepartment\u201d means the Department of Agriculture. (3) Foundation The term \u201cFoundation\u201d means the Foundation for Food and Agriculture Research established under subsection (b). (4) Secretary The term \u201cSecretary\u201d means the Secretary of Agriculture. (b) Establishment (1) In general The Secretary shall establish a nonprofit corporation to be known as the \u201cFoundation for Food and Agriculture Research\u201d. (2) ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section5939&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 3222a(b)(1)",
+        "bill_context": "Amends scholarships for students at 1890 institutions, adding new funding for 2026.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 3222a",
+        "usc_data": {
+          "title": "7",
+          "section": "3222a",
+          "heading": "Scholarships for students at 1890 Institutions",
+          "text_excerpt": "\u00a7 3222a. Scholarships for students at 1890 Institutions (a) In general (1) Scholarship grant program established The Secretary shall make grants to each college or university eligible to receive funds under the Act of August 30, 1890 (commonly known as the Second Morrill Act; 7 U.S.C. 322 [321] et seq.), including Tuskegee University, for purposes of awarding scholarships to individuals who\u2014 (A) have been accepted for admission at such college or university; (B) will be enrolled at such college or university not later than one year after the date of such acceptance; and (C) intend to pursue a ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section3222a&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 5933",
+        "bill_context": "Amends assistive technology program for farmers with disabilities, adding mandatory funding.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "5933",
+          "heading": "Assistive technology program for farmers with disabilities",
+          "text_excerpt": "\u00a7 5933. Assistive technology program for farmers with disabilities (a) Special demonstration grants (1) In general The Secretary of Agriculture, in consultation with other appropriate Federal agencies, shall make demonstration grants to support cooperative programs between State Cooperative Extension Service agencies and private nonprofit disability organizations to provide on-the-farm agricultural education and assistance directed at accommodating disability in farm operations for individuals with disabilities who are engaged in farming and farm-related occupations and their families. (2) Eli...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section5933&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 7632(k)(1)(B)",
+        "bill_context": "Amends specialty crop research initiative, updating funding levels through 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 7632",
+        "usc_data": {
+          "title": "7",
+          "section": "7632",
+          "heading": "Specialty crop research initiative",
+          "text_excerpt": "\u00a7 7632. Specialty crop research initiative (a) Definitions In this section: (1) Citrus disease subcommittee The term \u201ccitrus disease subcommittee\u201d means the subcommittee established under section 3123a(a)(2) of this title . (2) Initiative The term \u201cInitiative\u201d means the specialty crop research and extension initiative established by subsection (b). (3) Specialty crop The term \u201cspecialty crop\u201d has the meaning given that term in section 3 of the Specialty Crops Competitiveness Act of 2004 ( 7 U.S.C. 1621 note; Public Law 108\u2013465 ). (4) Specialty crops committee The term \u201cspecialty crops committe...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section7632&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 390d",
+        "bill_context": "Amends research facilities act, adding mandatory funding for competitive grants.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "390d",
+          "heading": "Authorization of appropriations",
+          "text_excerpt": "\u00a7 390d. Authorization of appropriations (a) In general Subject to subsections (b), (c), and (d), there are authorized to be appropriated such sums as are necessary for each of fiscal years 1996 through 2023 for the study, plan, design, structure, and related costs of agricultural research facilities under this subchapter. Funds appropriated pursuant to the preceding sentence shall be available until expended. (b) Allowable administrative costs Not more than 3 percent of the funds made available for any project for an agricultural research facility shall be available for administration of the p...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section390d&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 8105(g)(1)(F)",
+        "bill_context": "Amends energy program funding, updating effective date from 2024 to 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 8105",
+        "usc_data": {
+          "title": "7",
+          "section": "8105",
+          "heading": "Bioenergy program for advanced biofuels",
+          "text_excerpt": "\u00a7 8105. Bioenergy program for advanced biofuels (a) Definition of eligible producer In this section, the term \u201celigible producer\u201d means a producer of advanced biofuels. (b) Payments The Secretary shall make payments to eligible producers to support and ensure an expanding production of advanced biofuels. (c) Contracts To receive a payment, an eligible producer shall\u2014 (1) enter into a contract with the Secretary for production of advanced biofuels; and (2) submit to the Secretary such records as the Secretary may require as evidence of the production of advanced biofuels. (d) Basis for payments...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section8105&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 7721(f)",
+        "bill_context": "Amends plant pest and disease management, updating funding levels through 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 7721",
+        "usc_data": {
+          "title": "7",
+          "section": "7721",
+          "heading": "Plant pest and disease management and disaster prevention",
+          "text_excerpt": "\u00a7 7721. Plant pest and disease management and disaster prevention (a) Definitions In this section: (1) Early plant pest detection and surveillance The term \u201cearly plant pest detection and surveillance\u201d means the full range of activities undertaken to find newly introduced plant pests, whether the plant pests are new to the United States or new to certain areas of the United States, before\u2014 (A) the plant pests become established; or (B) the plant pest infestations become too large and costly to eradicate or control. (2) Specialty crop The term \u201cspecialty crop\u201d has the meaning given the term in ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section7721&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1621 note",
+        "bill_context": "Amends specialty crop block grants, updating funding levels through 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "1621",
+          "heading": "Congressional declaration of purpose; use of existing facilities; cooperation with States",
+          "text_excerpt": "The Congress declares that a sound, efficient, and privately operated system for distributing and marketing agricultural products is essential to a prosperous agriculture and is indispensable to the maintenance of full employment and to the welfare, prosperity, and health of the Nation. It is further declared to be the policy of Congress to promote through research, study, experimentation, and through cooperation among Federal and State agencies, farm organizations, and private industry a scientific approach to the problems of marketing, transportation, and distribution of agricultural product...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1621&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 6522(c)(4)",
+        "bill_context": "Amends modernization of international trade technology systems, updating funding levels.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 6522",
+        "usc_data": {
+          "title": "7",
+          "section": "6522",
+          "heading": "Funding",
+          "text_excerpt": "\u00a7 6522. Funding (a) In general There are authorized to be appropriated for each fiscal year such sums as may be necessary to carry out this chapter. (b) National organic program Notwithstanding any other provision of law, in order to carry out activities under the national organic program established under this chapter, there are authorized to be appropriated\u2014 (1) $15,000,000 for fiscal year 2018; (2) $16,500,000 for fiscal year 2019; (3) $18,000,000 for fiscal year 2020; (4) $20,000,000 for fiscal year 2021; (5) $22,000,000 for fiscal year 2022; and (6) $24,000,000 for fiscal year 2023. (c) M...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section6522&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 6523(d)(1)(C)",
+        "bill_context": "Amends national organic certification cost-share program, updating effective date to 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 6523",
+        "usc_data": {
+          "title": "7",
+          "section": "6523",
+          "heading": "National organic certification cost-share program",
+          "text_excerpt": "\u00a7 6523. National organic certification cost-share program (a) In general The Secretary of Agriculture shall establish a national organic certification cost-share program to assist producers and handlers of agricultural products in obtaining certification under the national organic production program established under the Organic Foods Production Act of 1990 ( 7 U.S.C. 6501 et seq.). (b) Federal share (1) In general Subject to paragraph (2), the Secretary shall pay under this section not more than 75 percent of the costs incurred by a producer or handler in obtaining certification under the nat...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section6523&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 8308a(d)(1)",
+        "bill_context": "Amends animal disease prevention and management, updating funding levels through 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 8308a",
+        "usc_data": {
+          "title": "7",
+          "section": "8308a",
+          "heading": "Animal disease prevention and management",
+          "text_excerpt": "\u00a7 8308a. Animal disease prevention and management (a) National Animal Health Laboratory Network (1) Definition of eligible laboratory In this subsection, the term \u201celigible laboratory\u201d means a diagnostic laboratory that meets specific criteria developed by the Secretary, in consultation with State animal health officials, State veterinary diagnostic laboratories, and veterinary diagnostic laboratories at institutions of higher education (as defined in section 1001 of title 20 ). (2) In general The Secretary, in consultation with State veterinarians, shall offer to enter into contracts, grants,...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section8308a&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 1627a(c)",
+        "bill_context": "Amends sheep production and marketing grant program, updating funding through 2031.",
+        "relevance": "amend",
+        "resolved_to": "7 U.S.C. 1627a",
+        "usc_data": {
+          "title": "7",
+          "section": "1627a",
+          "heading": "Sheep production and marketing grant program",
+          "text_excerpt": "\u00a7 1627a. Sheep production and marketing grant program (a) Establishment The Secretary of Agriculture, acting through the Administrator of the Agricultural Marketing Service, shall establish a competitive grant program for the purposes of strengthening and enhancing the production and marketing of sheep and sheep products in the United States, including through\u2014 (1) the improvement of\u2014 (A) infrastructure; (B) business; and (C) resource development; and (2) the development of innovative approaches to solve long-term needs. (b) Eligibility The Secretary shall make grants under this section to at ...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section1627a&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok-section-level"
+      },
+      {
+        "citation": "7 U.S.C. 2101 note",
+        "bill_context": "Amends Pima agriculture cotton trust fund, updating effective date to 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "2101",
+          "heading": "Congressional declaration of policy",
+          "text_excerpt": "Cotton is the basic natural fiber of the Nation. It is produced by many individual cottongrowers throughout the various cotton-producing States of the Nation and also outside the United States. Cotton moves in the channels of interstate and foreign commerce and such cotton which does not move in such channels directly burdens or affects interstate commerce in cotton and cotton products. The efficient production of cotton and the maintenance and expansion of existing markets and the development of new or improved markets and uses is vital to the welfare of cottongrowers and those concerned with...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section2101&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 7101 note",
+        "bill_context": "Amends agriculture wool apparel manufacturers trust fund, updating effective date to 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "7101",
+          "heading": "Findings and declaration of policy",
+          "text_excerpt": "\u00a7 7101. Findings and declaration of policy (a) Findings Congress finds that\u2014 (1) sheep and sheep products are important goods; (2) the production of sheep and sheep products play a significant role in the economy of the United States in that sheep and sheep products are produced throughout the United States and used by millions of people throughout the United States and foreign countries; (3) sheep and sheep products must be high quality, readily available, handled properly, and marketed efficiently to ensure that consumers have an adequate supply of sheep products; (4) the maintenance and exp...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section7101&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 7101 note",
+        "bill_context": "Amends wool research and promotion, updating effective date to 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "7101",
+          "heading": "Findings and declaration of policy",
+          "text_excerpt": "\u00a7 7101. Findings and declaration of policy (a) Findings Congress finds that\u2014 (1) sheep and sheep products are important goods; (2) the production of sheep and sheep products play a significant role in the economy of the United States in that sheep and sheep products are produced throughout the United States and used by millions of people throughout the United States and foreign countries; (3) sheep and sheep products must be high quality, readily available, handled properly, and marketed efficiently to ensure that consumers have an adequate supply of sheep products; (4) the maintenance and exp...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section7101&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      },
+      {
+        "citation": "7 U.S.C. 7632 note",
+        "bill_context": "Amends emergency citrus disease research and development trust fund, updating effective date to 2031.",
+        "relevance": "amend",
+        "usc_data": {
+          "title": "7",
+          "section": "7632",
+          "heading": "Specialty crop research initiative",
+          "text_excerpt": "\u00a7 7632. Specialty crop research initiative (a) Definitions In this section: (1) Citrus disease subcommittee The term \u201ccitrus disease subcommittee\u201d means the subcommittee established under section 3123a(a)(2) of this title . (2) Initiative The term \u201cInitiative\u201d means the specialty crop research and extension initiative established by subsection (b). (3) Specialty crop The term \u201cspecialty crop\u201d has the meaning given that term in section 3 of the Specialty Crops Competitiveness Act of 2004 ( 7 U.S.C. 1621 note; Public Law 108\u2013465 ). (4) Specialty crops committee The term \u201cspecialty crops committe...",
+          "source_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title7-section7632&num=0&edition=prelim",
+          "release_point": "119-36"
+        },
+        "resolution_status": "ok"
+      }
+    ],
+    "note": null
+  }
+}
