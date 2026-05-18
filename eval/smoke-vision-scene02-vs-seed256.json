@@ -1,0 +1,25 @@
+{
+  "test": "vision_smoke_scene02_vs_seed256",
+  "model_alias": "vision",
+  "endpoint": "http://127.0.0.1:11434/v1",
+  "metric": {
+    "scene_id": "scene-02",
+    "elapsed_s": 28.06,
+    "prompt_tokens": 2971,
+    "completion_tokens": 122,
+    "raw_response_chars": 442
+  },
+  "critique": {
+    "scene_id": "scene-02",
+    "verdict": "keep",
+    "confidence": "high",
+    "framing_observed": "Medium two-shot of Alex and Jordan seated at a wooden desk, facing the camera with microphones in front of them, matching the director's intent.",
+    "both_hosts_visible": true,
+    "seating_matches_master": true,
+    "identity_consistent": true,
+    "back_to_camera": false,
+    "director_intent_followed": true,
+    "issues": [],
+    "suggested_fix": null
+  }
+}

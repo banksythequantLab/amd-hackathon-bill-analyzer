@@ -32,7 +32,11 @@ import httpx
 from pydantic import BaseModel, Field, field_validator
 
 
-VISION_ENDPOINT_DEFAULT = "http://165.245.134.1:8002/v1"
+# 3090 FORK: was http://165.245.134.1:8002/v1 (dedicated vision server on AMD).
+# Now points at local Ollama OpenAI-compat. The 'vision' alias does NOT yet
+# exist on Johnson -- TODO #4 needs `ollama pull llava:7b` (or qwen2.5-vl:7b)
+# followed by `ollama cp llava:7b vision`. Until then this will 404.
+VISION_ENDPOINT_DEFAULT = "http://127.0.0.1:11434/v1"
 VISION_MODEL = "vision"
 TIMEOUT_S = 120.0
 
