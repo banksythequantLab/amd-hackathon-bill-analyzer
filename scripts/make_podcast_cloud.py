@@ -1006,10 +1006,15 @@ def run_full_pipeline(bill_short: str, log=print,
 
     log('')
     log('[STAGE 4/5] InfiniteTalk avatar pairs (lipsync)')
+    # 3090 fork: stage_avatar_render is the real fn name (line 576). The
+    # pre-fork pipeline called it as stage_avatar and the try/except masked
+    # the NameError, so the avatar stage silently skipped even when ComfyUI
+    # was up. With this fix it will actually attempt InfiniteTalk and only
+    # soft-fail on legitimate errors (ComfyUI down, missing mask asset, etc.)
     try:
-        stage_avatar(script, eval_dir, log=log)
+        stage_avatar_render(script, eval_dir, log=log)
     except Exception as _e:
-        log(f'  WARN: stage_avatar failed: {_e!r} -- continuing with slides-only')
+        log(f'  WARN: stage_avatar_render failed: {_e!r} -- continuing with slides-only')
 
     log('')
     log('[STAGE 5/5] FFMPEG compose -- slides + avatar + hybrid masters')
