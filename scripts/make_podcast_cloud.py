@@ -18,6 +18,11 @@ from src.agents.wan_motion_prompt_generator import WanMotionPromptGenerator
 from src.agents.slide_critic import SlideCritic
 from src.agents.youtube_metadata_generator import YouTubeMetadataGenerator
 
+# 3090 fork: TTS now runs through the local FreeClone server (VoxCPM2 +
+# Whisper) on :8300, replacing the AMD cluster Qwen-TTS ComfyUI nodes.
+# scripts/freeclone_tts.py is the thin wrapper. See TODO #5 commit.
+from scripts.freeclone_tts import render_podcast, ScriptLine, FreeCloneError, healthcheck as freeclone_health
+
 # 3090 FORK: ComfyUI runs locally on Johnson. The orchestrator
 # kill+restarts ComfyUI between Qwen-Image / Wan / InfiniteTalk stages
 # (subprocess-per-stage pipeline) because the 3090 only has 24 GB and
@@ -26,6 +31,10 @@ from src.agents.youtube_metadata_generator import YouTubeMetadataGenerator
 # docs/day3-runbook.md for the historical address).
 COMFY = "http://127.0.0.1:8188"
 VOICE_MAP = {'Alex': 'Ryan', 'Jordan': 'Ono_anna'}
+# 3090 fork: speaker -> FreeClone default-voice id. Matches AMD-canonical
+# host genders: Alex/Ryan -> echo (deep male American); Jordan/Ono_anna
+# -> nova (bright female American). Override via stage_tts(..., freeclone_voices=...).
+FREECLONE_VOICE_MAP = {'Alex': 'echo', 'Jordan': 'nova'}
 BRAND_DIR = REPO / 'brand'  # Dead Air intro/outro/closeout cards live here
 
 # ---- COMFY HELPERS ----
@@ -257,28 +266,90 @@ def stage_wan(slides_obj, motions_obj, eval_dir, log=print):
             sz = download(vids[0]['filename'], vids[0]['subfolder'], 'output', out_path)
             log(f'  [{scene:02d}-{half}] {elapsed:.1f}s -> {sz//1024}KB')
 
-def stage_tts(script, eval_dir, log=print):
+def stage_tts(script, eval_dir, log=print, freeclone_voices=None, freeclone_url="http://127.0.0.1:8300"):
+    """Render one FLAC per dialog line via the local FreeClone server.
+
+    3090 fork: replaces the AMD cluster's Qwen-TTS ComfyUI workflow with
+    a sequence of small FreeClone /api/podcast calls (one per dialog
+    line). Each call returns a WAV which we transcode to FLAC at
+    scene-NN.flac for downstream compatibility (compose/avatar stages
+    read these via ffmpeg, which is format-agnostic; the .flac extension
+    just preserves the existing cached-output naming).
+
+    Args:
+        script: PodcastScriptWriter output. Must have a 'dialog' list
+            of {'scene': int, 'speaker': str, 'line': str} entries.
+        eval_dir: parent dir; files written to eval_dir / 'tts' /
+            'scene-NN.flac'.
+        log: logger callable (defaults to print).
+        freeclone_voices: optional speaker -> FreeClone-voice-id map.
+            Defaults to FREECLONE_VOICE_MAP (Alex=echo, Jordan=nova).
+            Pass {} to use FreeClone's per-speaker fallback voices.
+        freeclone_url: FreeClone base URL. 127.0.0.1:8300 triggers the
+            studio-tier bypass in server.py (lifts the free-tier 4-line
+            cap so 19-30 line scripts work).
+
+    Cached files (>10 KB) are skipped on subsequent runs.
+    """
+    import subprocess  # subprocess is also imported at module level below the function defs
+
     tts_dir = eval_dir / 'tts'
     tts_dir.mkdir(exist_ok=True, parents=True)
+    voices = freeclone_voices if freeclone_voices is not None else FREECLONE_VOICE_MAP
+
+    # Pre-flight: fail fast if FreeClone isn't up, before we spend any
+    # time on lines. healthcheck raises httpx.RequestError on connection
+    # refused -- let that propagate so the caller sees "FreeClone down".
+    try:
+        h = freeclone_health(freeclone_url)
+        log(f'  freeclone /health: status={h.get("status")} gpu={h.get("gpu")} '
+            f'whisper={h.get("whisperLoaded")} voxcpm={h.get("voxcpmLoaded")}')
+    except Exception as e:
+        log(f'  [WARN] freeclone /health failed: {type(e).__name__}: {e}')
+        log(f'         Make sure FreeClone is running: B:\\freeclone-backend\\START_BFORK.bat')
+        raise
+
     for line in script['dialog']:
         scene = line['scene']
         speaker = line['speaker']
-        voice = VOICE_MAP.get(speaker, 'Ryan')
         text = line['line']
         out_path = tts_dir / f'scene-{scene:02d}.flac'
         if out_path.exists() and out_path.stat().st_size > 10_000:
             log(f'  [{scene:02d}] cached tts ({out_path.stat().st_size//1024}KB)')
             continue
-        prefix = f'border-tts/scene-{scene:02d}-{voice}'
-        wf = tts_workflow(text, voice, prefix)
-        pid = submit(wf, f'tts-{scene}')
-        outs, elapsed = wait_for(pid, f'tts-{scene}', timeout=180)
-        auds = outs.get('2', {}).get('audio', [])
-        if not auds:
-            log(f'  [{scene:02d}] no audio! outs={outs}')
+        voice_id = voices.get(speaker, 'echo')
+        # FreeClone speaker key is a string id ('1','2',...). We always
+        # use '1' for the single-line call and pass the resolved voice
+        # via default_voice_1. (FreeClone treats each request
+        # independently, so the speaker id doesn't need to match the
+        # logical Alex/Jordan distinction; the VOICE id is what carries
+        # the timbre.)
+        one_line_script = [ScriptLine('1', text, lang='en')]
+        wav_tmp = tts_dir / f'_scene-{scene:02d}.wav'
+        t0 = time.time()
+        try:
+            result = render_podcast(
+                one_line_script,
+                wav_tmp,
+                voices={'1': voice_id},
+                freeclone_url=freeclone_url,
+            )
+        except FreeCloneError as e:
+            log(f'  [{scene:02d}] FreeClone error (status {e.status_code}): {e}')
             continue
-        sz = download(auds[0]['filename'], auds[0]['subfolder'], 'output', out_path)
-        log(f'  [{scene:02d}] {voice}: {elapsed:.1f}s -> {sz//1024}KB | "{text[:60]}..."')
+        elapsed = time.time() - t0
+        # Transcode WAV -> FLAC for downstream compat (.flac is what the
+        # compose/avatar stages expect by name).
+        r = subprocess.run(
+            [FFMPEG, '-y', '-i', str(wav_tmp), '-c:a', 'flac', str(out_path)],
+            capture_output=True,
+        )
+        if r.returncode != 0:
+            log(f'  [{scene:02d}] ffmpeg flac transcode failed: {r.stderr[:200]!r}')
+            continue
+        wav_tmp.unlink(missing_ok=True)
+        sz = out_path.stat().st_size
+        log(f'  [{scene:02d}] {speaker}->{voice_id}: {elapsed:.1f}s -> {sz//1024}KB | "{text[:60]}..."')
 
 # ---- COMPOSE ----
 import subprocess
@@ -293,9 +364,36 @@ import shutil
 # If neither is found we still set the strings so the import succeeds; the
 # subprocess.run() call will surface the real error at compose time instead
 # of crashing the import.
-_WINGET_FFMPEG_DIR = r"C:\Users\solti\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-7.1.1-full_build\bin"
-FFMPEG  = shutil.which('ffmpeg')  or str(Path(_WINGET_FFMPEG_DIR) / 'ffmpeg.exe')
-FFPROBE = shutil.which('ffprobe') or str(Path(_WINGET_FFMPEG_DIR) / 'ffprobe.exe')
+# 3090 fork: search a list of plausible WinGet FFmpeg dirs because winget
+# installs different package versions over time (we have 7.1.1 + 8.1.1
+# side by side after Day 1 installed Gyan.FFmpeg.Shared 8.1.1 for the
+# FreeClone torchcodec/avcodec DLL dependency). Order: prefer system
+# PATH, then newest Gyan.FFmpeg install, then Gyan.FFmpeg.Shared, then
+# the historical 7.1.1 path. The WinGet alias dir is also tried; it
+# contains a launcher that resolves to whichever real install is active.
+def _find_ffmpeg_bin(name):
+    """Locate ffmpeg.exe / ffprobe.exe by trying PATH then known WinGet
+    install dirs. Returns the first existing path, or just the bare
+    command name (so subprocess.run will surface the FileNotFound)."""
+    via_path = shutil.which(name)
+    if via_path:
+        return via_path
+    winget_packages = Path(r"C:\Users\solti\AppData\Local\Microsoft\WinGet\Packages")
+    winget_links = Path(r"C:\Users\solti\AppData\Local\Microsoft\WinGet\Links")
+    candidates = []
+    # Newest first: any Gyan.FFmpeg* package directory with a build subdir.
+    for pkg_glob in ("Gyan.FFmpeg.Shared_*", "Gyan.FFmpeg_*"):
+        for pkg_dir in sorted(winget_packages.glob(pkg_glob), reverse=True):
+            for build_dir in sorted(pkg_dir.glob("ffmpeg-*"), reverse=True):
+                candidates.append(build_dir / "bin" / f"{name}.exe")
+    candidates.append(winget_links / f"{name}.exe")
+    for c in candidates:
+        if c.exists():
+            return str(c)
+    return name  # fall through to bare name; subprocess will FileNotFound clearly.
+
+FFMPEG  = _find_ffmpeg_bin('ffmpeg')
+FFPROBE = _find_ffmpeg_bin('ffprobe')
 
 def dur(path):
     r = subprocess.run([FFPROBE, '-v', 'error', '-show_entries', 'format=duration', '-of', 'default=nw=1:nk=1', str(path)], capture_output=True, text=True)
