@@ -75,10 +75,10 @@ def upload_image(path, name=None):
 # ---- WORKFLOW BUILDERS ----
 def qwen_image_workflow(positive, negative, seed, prefix, w=1280, h=720):
     return {
-        '1': {'class_type': 'UNETLoader', 'inputs': {'unet_name': 'qwen_image_2512_fp8_e4m3fn.safetensors', 'weight_dtype': 'default'}},
+        '1': {'class_type': 'UNETLoader', 'inputs': {'unet_name': 'qwen_image_2512_fp8_e4m3fn_scaled.safetensors', 'weight_dtype': 'default'}},
         '2': {'class_type': 'CLIPLoader', 'inputs': {'clip_name': 'qwen_2.5_vl_7b_fp8_scaled.safetensors', 'type': 'qwen_image', 'device': 'default'}},
         '3': {'class_type': 'VAELoader', 'inputs': {'vae_name': 'qwen_image_vae.safetensors'}},
-        '4': {'class_type': 'LoraLoaderModelOnly', 'inputs': {'model': ['1', 0], 'lora_name': 'Qwen-Image-Lightning-4steps-V2.0.safetensors', 'strength_model': 1.0}},
+        '4': {'class_type': 'LoraLoaderModelOnly', 'inputs': {'model': ['1', 0], 'lora_name': 'Qwen-Image-2512-Lightning-4steps-V1.0-bf16.safetensors', 'strength_model': 1.0}},
         '5': {'class_type': 'ModelSamplingAuraFlow', 'inputs': {'model': ['4', 0], 'shift': 3.0}},
         '10': {'class_type': 'CLIPTextEncode', 'inputs': {'clip': ['2', 0], 'text': positive}},
         '11': {'class_type': 'CLIPTextEncode', 'inputs': {'clip': ['2', 0], 'text': negative}},
